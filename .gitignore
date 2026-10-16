@@ -1,2 +1,4 @@
 cinematic-videos/build/
 __pycache__/
+cinematic-videos/out/reel_A.mp4
+cinematic-videos/out/reel_B.mp4
