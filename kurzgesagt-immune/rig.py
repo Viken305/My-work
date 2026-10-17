@@ -31,6 +31,12 @@ POSES = {
     "worried": dict(eo=0.92, tilt=-0.35, brow_y=0.28, brow_tilt=-0.55, curve=-0.65, open=0.1, mw=0.6, perk=0.65, squash=0.96, lean=-3),
     "smug": dict(eo=0.6, tilt=0.05, brow_raise_r=0.55, brow_tilt=0.1, curve=0.65, mw=0.72, skew=0.85, perk=1.1, lean=4),
     "wink": dict(eo=0.95, wink_l=1.0, lower=0.2, lower_curve=1.0, brow_raise_r=0.3, curve=0.85, mw=0.85, skew=0.5, open=0.12, teeth=0.6, perk=1.15),
+    "shout": dict(size=1.1, pupil=0.32, brow_y=0.5, brow_tilt=-0.45, tilt=-0.15, curve=-0.2, open=0.95, mw=0.75, teeth=0.8, perk=1.4, squash=0.94),
+    "hurt": dict(eo=0.62, tilt=-0.4, brow_y=0.2, brow_tilt=-0.6, curve=-0.7, open=0.18, mw=0.6, squash=0.97),
+    "exhausted": dict(eo=0.25, tilt=-0.2, brow_y=-0.05, brow_tilt=-0.3, curve=-0.3, mw=0.5, squash=0.92, perk=0.6),
+    "cheer": dict(lower=0.45, lower_curve=1.0, brow_y=0.4, brow_tilt=-0.1, curve=1.0, open=0.85, mw=1.0, teeth=1.0, blush=0.7, perk=1.4, squash=1.05),
+    "gulp": dict(size=1.05, pupil=0.4, brow_y=0.3, curve=0.3, open=1.0, mw=1.25, teeth=0.4, squash=1.03),
+    "chew": dict(eo=0.55, lower=0.25, lower_curve=1.0, curve=0.5, open=0.0, mw=0.55, blush=0.9),
     "angry": dict(eo=0.7, tilt=0.55, brow_y=-0.35, brow_tilt=0.7, curve=-0.4, open=0.25, mw=0.75, teeth=1.0, perk=1.3),
 }
 

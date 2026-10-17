@@ -95,3 +95,24 @@ def macrophage(c, x, y, r, t, expr="hungry", look=(0.0, 0.0), **kw):
 
 def kai_at(c, x, y, r, t, expr="determined", look=(0.0, 0.0), hop=0.0, rim=(255, 200, 150), **over):
     kai(c, x, y, r, t, pose(expr, **over), look, 0.0, hop=hop, rim=rim)
+
+
+def tissue_cell(c, x, y, r, t, p, look=(0.0, 0.0), blink=0.0, hurt=1.0, seed=0.0, rgb=(214, 110, 128)):
+    """A body (tissue) cell character: soft pink blob with a nucleus; 'hurt' adds a crack and a bruise."""
+    pth = blob_path(x, y, [r * (1 + 0.08 * math.sin(k * 2.3 + seed) + 0.03 * math.sin(t * 2 + k)) for k in range(12)], seed)
+    c.drawPath(pth, blur(fill((40, 0, 20), 90), r * 0.1))
+    c.drawPath(pth, shaded(radial((x - r * 0.3, y - r * 0.35), r * 1.6, [lighten(rgb, 0.22), rgb, darken(rgb, 0.3)], [0, 0.5, 1])))
+    c.save()
+    c.clipPath(pth, doAntiAlias=True)
+    c.drawCircle(x + r * 0.35, y + r * 0.42, r * 0.28, fill(darken(rgb, 0.35), 90))
+    if hurt > 0:
+        cr = skia.Path()
+        cr.moveTo(x - r * 0.9, y - r * 0.55)
+        cr.lineTo(x - r * 0.62, y - r * 0.42)
+        cr.lineTo(x - r * 0.7, y - r * 0.25)
+        cr.lineTo(x - r * 0.45, y - r * 0.12)
+        c.drawPath(cr, stroke((90, 20, 40), r * 0.05, 220 * hurt))
+        c.drawCircle(x - r * 0.55, y + r * 0.35, r * 0.18, fill((150, 60, 120), 90 * hurt))
+    c.restore()
+    c.drawPath(pth, stroke(darken(rgb, 0.45), r * 0.04))
+    face_rig(c, x + look[0] * r * 0.08, y - r * 0.08, r * 0.95, p, look, blink)

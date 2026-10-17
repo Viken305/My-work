@@ -52,6 +52,9 @@ _EXPR_MAP = {"sleepy": ("neutral", dict(eo=0.45)), "hungry": ("shocked", dict(pu
 def face(c, x, y, s, t, expr="neutral", look=(0.0, 0.0), blink=True, phase=0.0, mouth=0.0, ink=EYE_INK, brow_rgb=None, spread=0.42):
     """Shared cast face = the animated rig (rig.py) so every cell acts the same way as KAI."""
     from rig import face_rig, pose, blink_amount, POSES
+    if isinstance(expr, dict):      # an animated pose from a Track: draw it as is
+        face_rig(c, x, y + s * 0.02, s * 0.95, expr, look, blink if isinstance(blink, float) else 0.0, ink=ink, spread=spread * 0.64)
+        return
     name, over = _EXPR_MAP.get(expr, (expr if expr in POSES else "neutral", {}))
     over = dict(over)
     if mouth > 0:
@@ -191,7 +194,9 @@ def bacterium(c, x, y, s, t, ang=0.0, rgb=GERM, a=255, face_on=True, mood="grin"
         c.save()
         c.translate(L * 0.35, 0)
         c.rotate(-ang if abs(((ang + 180) % 360) - 180) > 90 else 0)
-        if mood == "scared":
+        if isinstance(mood, dict):
+            face(c, 0, -s * 0.05, s * 0.85, t, mood, (0, 0), 0.0, 1.3, 0.0, ink=(20, 40, 0))
+        elif mood == "scared":
             face(c, 0, -s * 0.05, s * 0.85, t, "shocked", (0, 0), True, 1.3, 0.0, ink=(20, 40, 0))
         elif mood == "sneaky":
             face(c, 0, -s * 0.05, s * 0.85, t, "determined", (0.6, 0), True, 1.3, 0.0, ink=(20, 40, 0))
@@ -278,7 +283,7 @@ def _finish_body(c, p, x, y, r, rim):
     c.restore()
 
 
-def neutrophil(c, x, y, r, t, expr="determined", look=(0.0, 0.0), a=255, rim=(255, 140, 160), seed=0.0, burst=0.0):
+def neutrophil(c, x, y, r, t, expr="determined", look=(0.0, 0.0), a=255, rim=(255, 140, 160), seed=0.0, burst=0.0, blink=True, squeeze=(1.0, 1.0)):
     """Fierce small cell with a 3-lobed nucleus. burst 0..1: explodes into a glowing DNA net."""
     if r <= 1 or a <= 1:
         return
@@ -290,19 +295,20 @@ def neutrophil(c, x, y, r, t, expr="determined", look=(0.0, 0.0), a=255, rim=(25
     if ba > 0.01:
         c.saveLayerAlpha(None, int(255 * ba))
         sc = 1 + 0.4 * burst
+        c.save()
+        c.translate(x, y)
+        c.scale(*squeeze)
+        c.translate(-x, -y)
         p = _cell_body(c, x, y, r * sc, t, NEUTRO, seed)
         c.save()
         c.clipPath(p, doAntiAlias=True)
-        for k in range(3):   # lobed nucleus, low and to the side so it never reads as a mouth
-            lx, ly = x + r * 0.05 + k * r * 0.24, y + r * 0.62 - (k % 2) * r * 0.1
-            c.drawCircle(lx, ly, r * 0.15, fill(NEUTRO_NUC, 70))
-        c.drawLine(x + r * 0.05, y + r * 0.62, x + r * 0.53, y + r * 0.62, stroke(NEUTRO_NUC, r * 0.05, 70))
         rng = np.random.default_rng(int(seed * 10) + 3)
         for k in range(16):
             c.drawCircle(x + rng.uniform(-0.7, 0.7) * r, y + rng.uniform(-0.7, 0.7) * r, r * 0.03, fill((200, 120, 200), 120))
         c.restore()
         _finish_body(c, p, x, y, r, rim)
-        face(c, x + look[0] * r * 0.1, y - r * 0.15, r, t, expr, look, True, seed * 1.7)
+        face(c, x + look[0] * r * 0.1, y - r * 0.08, r, t, expr, look, blink, seed * 1.7)
+        c.restore()
         c.restore()
     if a < 255:
         c.restore()
