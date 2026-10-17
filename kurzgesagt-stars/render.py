@@ -13,7 +13,7 @@ import skia
 import audio
 from engine import FPS, H, HERE, W, finish
 
-PARTS = ["part1", "part2", "part3", "part4", "part5", "part6"]
+PARTS = ["part1", "part2", "part3", "part4", "part5", "part6", "part7"]
 OUT = os.path.join(HERE, "out")
 _MOD = None
 

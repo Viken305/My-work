@@ -1,7 +1,7 @@
 # You Are Made of Dead Stars (script)
 
 **Working title:** *You Are Made of Dead Stars* · **Alt:** *The Secret Life of Stars*  
-**Length:** ~3:45 · **Guide character:** ORBI, a tiny deep-space probe (see STYLE_GUIDE.md)
+**Length:** ~4:45 (7 parts) · **Guide character:** ORBI, a tiny deep-space probe (see STYLE_GUIDE.md)
 
 
 ## 1. Hook (~0:25)
@@ -13,7 +13,22 @@
 > **S3** To understand where you came from, we have to follow the life of a star. From its first spark, to its spectacular end.
 
 
-## 2. Birth of a star (~0:42)
+## 2. The first stars (~0:58)
+
+> **U1** But to find the very first stars, we have to go back to the beginning of everything.
+>
+> **U2** Thirteen point eight billion years ago, the universe began in an incredibly hot, dense state, and it has been expanding ever since.
+>
+> **U3** In its first few minutes, it made only the lightest elements: hydrogen, helium, and a tiny pinch of lithium. Nothing else.
+>
+> **U4** Then the universe went dark. For millions of years there were no stars at all. Just cooling gas, slowly pulled together by gravity.
+>
+> **U5** Within the first few hundred million years, the very first stars ignited. They may have been giants, hundreds of times heavier than the Sun, made only of hydrogen and helium.
+>
+> **U6** They lived fast, died young, and forged the first heavy elements. Every star since has been built from their ashes.
+
+
+## 3. Birth of a star (~0:42)
 
 > **B1** Space isn't empty. Drifting between the stars are enormous clouds of gas and dust, mostly hydrogen, light-years across.
 >
@@ -24,7 +39,7 @@
 > **B4** When its core reaches around ten million degrees, hydrogen atoms start smashing together and fusing into helium, releasing enormous energy. A star is born.
 
 
-## 3. The life of a star (~0:38)
+## 4. The life of a star (~0:38)
 
 > **L1** For most of its life, a star is a tug of war. Gravity tries to crush it inward. The energy of fusion pushes outward.
 >
@@ -33,7 +48,7 @@
 > **L3** Size changes everything. Small red dwarf stars sip their fuel so slowly they could shine for trillions of years, far longer than the universe has existed. Giant stars burn through theirs in just a few million.
 
 
-## 4. Death of a Sun-like star (~0:33)
+## 5. Death of a Sun-like star (~0:33)
 
 > **D1** Eventually, a star like the Sun runs low on hydrogen in its core. In about five billion years, our Sun will swell into a red giant, hundreds of times larger, swallowing Mercury and Venus, and maybe Earth.
 >
@@ -42,7 +57,7 @@
 > **D3** What remains is its core: a white dwarf, about the size of Earth, slowly cooling for billions of years.
 
 
-## 5. Death of a giant (~0:47)
+## 6. Death of a giant (~0:47)
 
 > **G1** Giant stars die very differently. In their cores, fusion keeps building heavier and heavier elements. Carbon, oxygen, silicon, all the way to iron.
 >
@@ -53,7 +68,7 @@
 > **G4** Left behind is something incredibly strange. A neutron star, a city-sized ball so dense that a teaspoon of it would weigh around a billion tonnes. Or, if the core is heavy enough, a black hole.
 
 
-## 6. Star stuff + outro (~0:38)
+## 7. Star stuff + outro (~0:38)
 
 > **X1** And here's the beautiful part. Every exploding star scatters the elements it made out into space.
 >
@@ -70,6 +85,12 @@
 
 | Claim | How it's phrased | Source |
 |---|---|---|
+| The universe began ~13.8 billion years ago in a hot, dense state and is still expanding | "Thirteen point eight billion years ago… incredibly hot, dense state" | Planck Collaboration (2020), A&A 641, A6; NASA WMAP |
+| Big Bang nucleosynthesis made only H, He and traces of Li in the first minutes | "a tiny pinch of lithium. Nothing else." | Fields et al. (2020), JCAP; Particle Data Group review |
+| Cosmic "dark ages" before the first stars | "For millions of years there were no stars at all" | NASA / ESA (Cosmic Dark Ages); Loeb (2006), Scientific American |
+| First stars formed within a few hundred million years | "Within the first few hundred million years" | Bromm (2013), Rep. Prog. Phys. 76; JWST early-universe results |
+| Population III stars may have been hundreds of solar masses, metal-free | "may have been giants" (theory, not yet observed) | Bromm & Larson (2004), ARA&A 42 |
+| They made the first heavy elements, seeding later stars | "Every star since has been built from their ashes" | Heger & Woosley (2002), ApJ 567 |
 | Iron, calcium, oxygen in the body were made in stars | "None of it was made on Earth" | NASA (Cosmic origins of elements); Johnson, J. A. (2019), *Populating the periodic table*, Science 363 |
 | Star-forming clouds are mostly hydrogen, light-years across | as stated | NASA / ESA (molecular clouds) |
 | Collapse can be triggered by a nearby supernova shock | "maybe" | Boss & Keiser (2014), ApJ |

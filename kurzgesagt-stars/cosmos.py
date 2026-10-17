@@ -16,6 +16,14 @@ def tex_teal(seed=31):
     return nebula_texture("teal", seed, [(0.0, (10, 30, 70)), (0.5, (30, 120, 170)), (0.8, (60, 210, 200)), (1.0, (200, 255, 240))], density=0.9, warp=120)
 
 
+def tex_fire(seed=61):
+    return nebula_texture("fire", seed, [(0.0, (60, 10, 20)), (0.4, (200, 60, 30)), (0.7, (255, 160, 60)), (1.0, (255, 245, 210))], density=1.0, warp=140, lo=0.25)
+
+
+def tex_web(seed=71):
+    return nebula_texture("web", seed, [(0.0, (10, 14, 40)), (0.6, (50, 70, 150)), (1.0, (140, 170, 255))], density=0.9, warp=160, lo=0.42, hi=0.95)
+
+
 def tex_ring(seed=41):
     """Planetary-nebula shell: noise masked into a ring."""
     key = ("ring", seed)
@@ -63,8 +71,8 @@ def star(c, x, y, r, t, rgb=SOLAR, corona=1.0, a=255, rot_speed=4.0, flares=Fals
         return
     if a < 255:
         c.saveLayerAlpha(None, int(a))
-    light(c, x, y, r * 9.0 * corona, rgb, 110 * corona)
-    light(c, x, y, r * 3.2 * corona, lighten(rgb, 0.3), 255 * corona)
+    light(c, x, y, min(r * 9.0, r * 1.6 + 520) * corona, rgb, 110 * corona)
+    light(c, x, y, min(r * 3.2, r * 1.25 + 260) * corona, lighten(rgb, 0.3), 255 * corona)
     light(c, x, y, r * 1.6 * corona, HOTWHITE, 200 * corona)
     disc = circle_path(x, y, r)
     c.drawPath(disc, shaded(radial((x - r * 0.2, y - r * 0.2), r * 1.15, [HOTWHITE, lighten(rgb, 0.55), lighten(rgb, 0.15), darken(rgb, 0.15)], [0, 0.4, 0.82, 1])))
@@ -247,7 +255,8 @@ def shockwave(c, x, y, r, t, k, a=255):
 # ---------------------------------------------------------------- elements
 ELEMENTS = {"H": ("HYDROGEN", (150, 200, 255)), "He": ("HELIUM", (255, 220, 120)), "C": ("CARBON", (120, 120, 140)),
             "O": ("OXYGEN", (255, 110, 110)), "Si": ("SILICON", (180, 150, 255)), "Fe": ("IRON", (230, 140, 90)),
-            "Ca": ("CALCIUM", (240, 240, 230)), "Au": ("GOLD", (255, 200, 60))}
+            "Ca": ("CALCIUM", (240, 240, 230)), "Au": ("GOLD", (255, 200, 60)),
+            "Li": ("LITHIUM", (255, 120, 200))}
 
 
 def element_chip(c, x, y, s, sym, a=255, glow_a=120):

@@ -26,7 +26,7 @@ The same flat-vector family as the earlier videos, pushed to a **premium, cinema
 | Supernova | amber `#FFAA3C` + magenta + teal debris |
 | Gold (finale) | `#FFC83C` |
 
-Each chapter shifts the dominant light: **birth** = violet/magenta clouds, **life** = solar gold, **small death** = red then teal/pink nebula, **giant death** = amber flash into ice-blue, **star stuff** = the full palette returning, ending on Earth's blue.
+Each chapter shifts the dominant light: **first stars** = white-hot plasma cooling to a dark blue cosmic web lit by giant blue stars, **birth** = violet/magenta clouds, **life** = solar gold, **small death** = red then teal/pink nebula, **giant death** = amber flash into ice-blue, **star stuff** = the full palette returning, ending on Earth's blue.
 
 ## 3. ORBI (new guide character)
 A tiny deep-space probe that reacts to everything we see.
@@ -48,9 +48,10 @@ The same procedural pad, plucks and SFX, scored darker and wider: low drones in 
 | Part | Chapter | Length |
 |---|---|---|
 | 1 | Hook | ~0:25 |
-| 2 | Birth | ~0:42 |
-| 3 | Life | ~0:38 |
-| 4 | Death of a Sun-like star | ~0:33 |
-| 5 | Death of a giant | ~0:47 |
-| 6 | Star stuff + outro | ~0:38 |
-| | **Total** | **~3:45** |
+| 2 | The first stars (Big Bang, dark ages, Population III) | ~0:58 |
+| 3 | Birth | ~0:42 |
+| 4 | Life | ~0:38 |
+| 5 | A quiet end (Sun-like star) | ~0:34 |
+| 6 | A violent end (giant star) | ~0:48 |
+| 7 | Star stuff + outro | ~0:42 |
+| | **Total** | **~4:45** |
