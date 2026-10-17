@@ -2,3 +2,5 @@ cinematic-videos/build/
 __pycache__/
 cinematic-videos/out/reel_A.mp4
 cinematic-videos/out/reel_B.mp4
+kurzgesagt-minerals/build/
+kurzgesagt-minerals/out/part*[0-9].mp4
