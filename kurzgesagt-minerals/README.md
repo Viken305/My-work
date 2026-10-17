@@ -7,7 +7,7 @@ See `STORYBOARD.md` for the original plan and `script.py` for the final narratio
 | File | What |
 |---|---|
 | `out/full_share.mp4` | **The whole film**, preview quality |
-| `out/full_youtube.mp4` | The whole film, higher quality for uploading (if present) |
+| `out/full_youtube.mp4` | Higher-quality upload version (local only, too big for git; re-encode from `out/full.mp4`) |
 | `out/part1_share.mp4` … `part6_share.mp4` | Each part on its own |
 | `out/styleframes/board.png` | Style frames |
 
