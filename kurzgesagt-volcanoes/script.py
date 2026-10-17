@@ -1,0 +1,45 @@
+"""Narration lines per part, keyed so the renderer can schedule them."""
+PARTS = {
+    "part1": [  # Hook + inside the Earth
+        ("A1", "Right now, dozens of volcanoes are erupting somewhere on Earth."),
+        ("A2", "They've built islands, filled the sky with ash, and changed the history of life."),
+        ("A3", "But why does our planet explode at all?"),
+        ("A4", "To find out, we have to go down. Way down."),
+        ("A5", "Earth's core is about as hot as the surface of the Sun."),
+        ("A6", "Some of that heat is left over from when the planet formed. The rest comes from radioactive atoms, slowly decaying."),
+        ("A7", "And here's the surprise: the mantle is almost entirely solid rock."),
+        ("A8", "It flows, but incredibly slowly. About as fast as your fingernails grow."),
+    ],
+    "part2": [  # Three ways to melt a rock
+        ("B1", "So if the mantle is solid, where does magma come from?"),
+        ("B2", "There are three ways to melt a rock."),
+        ("B3", "One: take the pressure off. Hot rock deep down is squeezed so hard it can't melt. Let it rise, the pressure drops, and it melts."),
+        ("B4", "Two: add water. Water lowers the temperature that rock melts at, a bit like salt melting ice."),
+        ("B5", "Three: add heat. Rising magma can melt the rock around it."),
+        ("B6", "Magma is lighter than the rock around it, so it rises, like the blobs in a lava lamp, and collects in chambers beneath the surface."),
+    ],
+    "part3": [  # Where volcanoes are
+        ("C1", "Volcanoes aren't scattered randomly. They follow the cracks in Earth's surface."),
+        ("C2", "Earth's outer shell is broken into giant plates, slowly moving."),
+        ("C3", "Where one plate dives beneath another, it drags water down with it, and a line of volcanoes appears. About three quarters of the world's volcanoes sit around the Pacific, in the Ring of Fire."),
+        ("C4", "Where plates pull apart, magma rises to fill the gap. Most of this happens on the ocean floor, where no one sees it."),
+        ("C5", "And some volcanoes sit above hotspots, plumes of hot rock rising from deep below. As the plate slides over, it leaves a trail of islands, like Hawaii."),
+    ],
+    "part4": [  # Ooze or explode
+        ("E1", "But why do some volcanoes ooze, while others explode?"),
+        ("E2", "Magma is full of dissolved gas, like a bottle of soda."),
+        ("E3", "If the magma is runny, the gas bubbles escape easily, and lava flows out gently, like in Hawaii."),
+        ("E4", "But if the magma is thick and sticky, the bubbles get trapped. Pressure builds, and builds, until,"),
+        ("E5", "Boom!"),
+        ("E6", "In 1991, Mount Pinatubo in the Philippines blasted so much ash and gas into the sky, it cooled the entire planet by about half a degree."),
+    ],
+    "part5": [  # Why we need volcanoes + outro
+        ("G1", "Volcanoes can be deadly. But we owe them a lot."),
+        ("G2", "Billions of years ago, volcanic gases helped give Earth its air, and its oceans."),
+        ("G3", "Volcanic soils are some of the most fertile on the planet."),
+        ("G4", "Volcanoes build new land, like Iceland and Hawaii."),
+        ("G5", "And over millions of years, they help keep Earth's climate in balance, releasing carbon that rocks slowly soak back up."),
+        ("G6", "So the next time you see a volcano erupting, remember: it's not the Earth being angry."),
+        ("G7", "It's the Earth being alive."),
+    ],
+}

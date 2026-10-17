@@ -6,3 +6,7 @@ kurzgesagt-minerals/build/
 kurzgesagt-minerals/out/part*[0-9].mp4
 kurzgesagt-minerals/out/full.mp4
 kurzgesagt-minerals/out/full_youtube.mp4
+kurzgesagt-volcanoes/build/
+kurzgesagt-volcanoes/out/part*[0-9].mp4
+kurzgesagt-volcanoes/out/full.mp4
+kurzgesagt-volcanoes/out/full_youtube.mp4
