@@ -32,7 +32,7 @@ VIRUS = (190, 70, 220)
 NEUTRO = (214, 186, 236)
 NEUTRO_NUC = (140, 70, 190)
 DENDRI = (170, 120, 255)
-HELPER = (80, 160, 255)
+HELPER = (64, 136, 228)
 KILLER = (255, 96, 80)
 BCELL = (235, 178, 62)
 ANTIBODY = (255, 220, 110)
@@ -53,7 +53,8 @@ def face(c, x, y, s, t, expr="neutral", look=(0.0, 0.0), blink=True, phase=0.0, 
     """Shared cast face = the animated rig (rig.py) so every cell acts the same way as KAI."""
     from rig import face_rig, pose, blink_amount, POSES
     if isinstance(expr, dict):      # an animated pose from a Track: draw it as is
-        face_rig(c, x, y + s * 0.02, s * 0.95, expr, look, blink if isinstance(blink, float) else 0.0, ink=ink, spread=spread * 0.64)
+        b = blink if isinstance(blink, float) else (blink_amount(t, (), 4.1, phase * 1.7) if blink else 0.0)
+        face_rig(c, x, y + s * 0.02, s * 0.95, expr, look, b, ink=ink, spread=spread * 0.64)
         return
     name, over = _EXPR_MAP.get(expr, (expr if expr in POSES else "neutral", {}))
     over = dict(over)

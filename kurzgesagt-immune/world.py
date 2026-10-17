@@ -82,8 +82,8 @@ def lymph_world(c, t, cam=None, a=1.0):
 
 def outside_world(c, t, ground_y=600):
     """Above the skin: bright, airy, a little hazy (contrast with the fleshy inside)."""
-    c.drawRect(skia.Rect.MakeXYWH(0, 0, W, ground_y), shaded(linear((0, 0), (0, ground_y), [(150, 170, 210), (205, 175, 185)])))
-    light(c, 1500, 60, 700, (255, 240, 220), 60)
+    c.drawRect(skia.Rect.MakeXYWH(-600, -600, W + 1200, ground_y + 600), shaded(linear((0, 0), (0, ground_y), [(150, 170, 210), (205, 175, 185)])))
+    light(c, 1500, 60, 700, (255, 240, 220), 28)
     rng = np.random.default_rng(6)
     for k in range(40):   # dust in the air
         c.drawCircle(rng.uniform(0, W), rng.uniform(0, ground_y), rng.uniform(1.5, 4), fill(WHITE, 90))
@@ -116,3 +116,38 @@ def tissue_cell(c, x, y, r, t, p, look=(0.0, 0.0), blink=0.0, hurt=1.0, seed=0.0
     c.restore()
     c.drawPath(pth, stroke(darken(rgb, 0.45), r * 0.04))
     face_rig(c, x + look[0] * r * 0.08, y - r * 0.08, r * 0.95, p, look, blink)
+
+
+def child(c, x, y, s, t, expr="happy", look=(0.6, -0.2), blink=0.0):
+    """Flat-style child sitting on the ground hugging one knee (with a plaster). (x, y) = hips, s = head radius."""
+    SK, SK_D, SHIRT, SHORTS, HAIR = (232, 170, 136), (196, 128, 104), (60, 160, 170), (60, 70, 120), (60, 36, 40)
+
+    def limb(x0, y0, x1, y1, w, rgb):
+        c.drawLine(x0, y0, x1, y1, stroke(rgb, w))
+    c.drawOval(skia.Rect.MakeXYWH(x - s * 2.2, y + s * 0.2, s * 5.2, s * 0.6), blur(fill((30, 20, 40), 90), s * 0.15))
+    limb(x + s * 0.2, y, x + s * 2.6, y + s * 0.05, s * 0.62, SK_D)                 # back leg, lying forward
+    c.drawRRect(rrect(x + s * 2.4, y - s * 0.25, s * 0.7, s * 0.4, s * 0.2), fill((240, 240, 250)))
+    c.drawRRect(rrect(x - s * 0.9, y - s * 2.6, s * 1.8, s * 2.6, s * 0.8), fill(SHIRT))     # torso
+    c.drawRRect(rrect(x - s * 0.9, y - s * 0.6, s * 1.9, s * 0.75, s * 0.35), fill(SHORTS))
+    kx, ky = x + s * 1.6, y - s * 1.7                                                     # raised knee
+    limb(x + s * 0.4, y - s * 0.2, kx, ky, s * 0.7, SHORTS)
+    limb(kx, ky, x + s * 2.2, y + s * 0.1, s * 0.62, SK)
+    c.drawRRect(rrect(x + s * 1.95, y - s * 0.12, s * 0.8, s * 0.42, s * 0.2), fill((240, 240, 250)))
+    c.drawCircle(kx, ky, s * 0.38, fill(SK))
+    c.save()
+    c.translate(kx + s * 0.05, ky + s * 0.05)
+    c.rotate(-35)
+    c.drawRRect(rrect(-s * 0.4, -s * 0.17, s * 0.8, s * 0.34, s * 0.12), fill((250, 222, 180)))
+    c.drawRRect(rrect(-s * 0.15, -s * 0.12, s * 0.3, s * 0.24, s * 0.06), fill((236, 196, 150)))
+    c.restore()
+    limb(x + s * 0.6, y - s * 2.1, kx - s * 0.1, ky + s * 0.35, s * 0.42, SHIRT)           # arm hugging the knee
+    c.drawCircle(kx - s * 0.1, ky + s * 0.35, s * 0.24, fill(SK))
+    hx, hy = x + s * 0.05, y - s * 3.55
+    c.drawRRect(rrect(hx - s * 0.25, hy + s * 0.7, s * 0.5, s * 0.5, s * 0.2), fill(SK_D))   # neck
+    c.drawCircle(hx, hy, s, shaded(radial((hx - s * 0.3, hy - s * 0.3), s * 1.4, [lighten(SK, 0.1), SK, SK_D], [0, 0.6, 1])))
+    hair = skia.Path()
+    hair.addArc(skia.Rect.MakeXYWH(hx - s * 1.05, hy - s * 1.1, s * 2.1, s * 1.9), 185, 170)
+    hair.close()
+    c.drawPath(hair, fill(HAIR))
+    c.drawCircle(hx + s * 0.75, hy - s * 0.55, s * 0.32, fill(HAIR))
+    face_rig(c, hx + s * 0.12, hy + s * 0.08, s * 0.95, expr if isinstance(expr, dict) else pose(expr), look, blink)

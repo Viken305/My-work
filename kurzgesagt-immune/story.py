@@ -98,3 +98,57 @@ def path_vel(f, t, dt=1 / 60):
     x, y = f(t)
     x2, y2 = f(t + dt)
     return (x, y), ((x2 - x) / dt, (y2 - y) / dt)
+
+
+def xfade(c, t, t0, dur, draw_a, draw_b, push=0.25):
+    """Zoom-through transition: scene A pushes in and fades while scene B settles in from slightly smaller."""
+    k = in_out(prog(t, t0, t0 + dur))
+    if k <= 0:
+        draw_a(c, t)
+        return
+    if k >= 1:
+        draw_b(c, t)
+        return
+    c.save()
+    s = 1 + push * k
+    c.translate(W / 2, H / 2)
+    c.scale(s, s)
+    c.translate(-W / 2, -H / 2)
+    draw_a(c, t)
+    c.restore()
+    c.saveLayerAlpha(None, int(255 * k))
+    s = 1 - 0.12 * (1 - k)
+    c.translate(W / 2, H / 2)
+    c.scale(s, s)
+    c.translate(-W / 2, -H / 2)
+    draw_b(c, t)
+    c.restore()
+
+
+def fungus(c, x, y, s, t, a=255, ang=0.0):
+    """A fungal spore: round, beige, with sprouting threads (hyphae) and a little face."""
+    c.save()
+    c.translate(x, y)
+    c.rotate(ang)
+    for k in range(4):
+        an = math.radians(150 + k * 22)
+        p = skia.Path()
+        p.moveTo(math.cos(an) * s * 0.8, math.sin(an) * s * 0.8)
+        p.quadTo(math.cos(an) * s * 1.5 + 6 * math.sin(t * 2 + k), math.sin(an) * s * 1.5, math.cos(an + 0.3) * s * 2.1, math.sin(an + 0.3) * s * 2.1)
+        c.drawPath(p, stroke((200, 170, 110), s * 0.12, a))
+    c.drawCircle(0, 0, s, shaded(radial((-s * 0.3, -s * 0.3), s * 1.4, [(250, 230, 180), (220, 190, 120), (160, 120, 70)])))
+    c.drawCircle(0, 0, s, stroke((130, 95, 50), s * 0.08, a))
+    c.restore()
+    face_rig(c, x, y - s * 0.05, s * 0.9, pose("smug"), (0.3, 0), 0.0)
+
+
+def divide(c, x, y, r, t, k, draw_one, axis=0.0):
+    """Cell division: one cell pinches into two (k 0..1). draw_one(c, x, y, r) draws a single cell."""
+    if k <= 0:
+        draw_one(c, x, y, r)
+        return
+    d = r * 1.05 * out_back(clamp(k), 1.3)
+    dx, dy = math.cos(axis) * d, math.sin(axis) * d
+    rr = r * (1 - 0.18 * math.sin(math.pi * clamp(k)))
+    draw_one(c, x - dx, y - dy, rr)
+    draw_one(c, x + dx, y + dy, rr)
