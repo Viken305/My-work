@@ -1,0 +1,194 @@
+{
+  "params": {
+    "px": 0.18,
+    "back": 0.8,
+    "rim_w": 0.6,
+    "rim_top": 1.6,
+    "relief_h": 0.5,
+    "curl_size": 1.6,
+    "wall_w": 0.5,
+    "wall_top": 2.2,
+    "polki_corner": 0.35,
+    "pave_d": 1.1,
+    "pave_gap": 0.15,
+    "pave_top": 1.9,
+    "pave_band": 1.4,
+    "emerald": [
+      5.0,
+      7.0
+    ],
+    "bezel_w": 0.5,
+    "bezel_top": 2.4,
+    "pear_stone": [
+      6.5,
+      9.4
+    ],
+    "barrel_d": 7.9,
+    "barrel_len": 25.7,
+    "tube_wall": 0.7,
+    "collar_len": 1.6,
+    "collar_pave_d": 1.1,
+    "string_hole": 1.2,
+    "link_gap": 3.2,
+    "lug_r": 0.8,
+    "lug_hole": 0.4,
+    "lug_t": 0.8,
+    "ring_wire": 0.6,
+    "drop_pearl": [
+      8.2,
+      12.2
+    ],
+    "cluster_d": 1.8,
+    "chain_tube_d": 6.0,
+    "chain_tube_len": 20.0,
+    "seed": 7
+  },
+  "parts": {
+    "01_chandbali.stl": {
+      "qty": 1,
+      "volume_cm3": 1.3692,
+      "manifold_ok": "NoError",
+      "weights_g": {
+        "22K yellow (91.6%)": 24.37,
+        "18K yellow (75%)": 21.22,
+        "14K yellow (58.5%)": 17.8,
+        "Silver 925": 14.18,
+        "Casting wax (approx)": 1.37
+      },
+      "bbox_mm": [
+        -25.38,
+        -35.28,
+        0.0,
+        25.38,
+        10.33,
+        2.4
+      ]
+    },
+    "02_top_motif.stl": {
+      "qty": 1,
+      "volume_cm3": 0.5543,
+      "manifold_ok": "NoError",
+      "weights_g": {
+        "22K yellow (91.6%)": 9.87,
+        "18K yellow (75%)": 8.59,
+        "14K yellow (58.5%)": 7.21,
+        "Silver 925": 5.74,
+        "Casting wax (approx)": 0.55
+      },
+      "bbox_mm": [
+        -14.22,
+        23.23,
+        0.0,
+        14.22,
+        47.06,
+        2.4
+      ]
+    },
+    "03_barrel.stl": {
+      "qty": 1,
+      "volume_cm3": 0.5647,
+      "manifold_ok": "NoError",
+      "weights_g": {
+        "22K yellow (91.6%)": 10.05,
+        "18K yellow (75%)": 8.75,
+        "14K yellow (58.5%)": 7.34,
+        "Silver 925": 5.85,
+        "Casting wax (approx)": 0.56
+      },
+      "bbox_mm": [
+        -12.85,
+        11.23,
+        -4.27,
+        12.85,
+        22.33,
+        5.07
+      ]
+    },
+    "04_drop_cluster_cap.stl": {
+      "qty": 1,
+      "volume_cm3": 0.0214,
+      "manifold_ok": "NoError",
+      "weights_g": {
+        "22K yellow (91.6%)": 0.38,
+        "18K yellow (75%)": 0.33,
+        "14K yellow (58.5%)": 0.28,
+        "Silver 925": 0.22,
+        "Casting wax (approx)": 0.02
+      },
+      "bbox_mm": [
+        -2.38,
+        -2.22,
+        -1.3,
+        2.38,
+        10.33,
+        2.1
+      ]
+    },
+    "05_jump_rings_x5.stl": {
+      "qty": 1,
+      "volume_cm3": 0.0109,
+      "manifold_ok": "NoError",
+      "weights_g": {
+        "22K yellow (91.6%)": 0.19,
+        "18K yellow (75%)": 0.17,
+        "14K yellow (58.5%)": 0.14,
+        "Silver 925": 0.11,
+        "Casting wax (approx)": 0.01
+      },
+      "bbox_mm": [
+        -10.2,
+        9.23,
+        -1.15,
+        10.2,
+        24.33,
+        1.95
+      ]
+    },
+    "06_chain_tube_x1.stl": {
+      "qty": 2,
+      "volume_cm3": 0.316,
+      "manifold_ok": "NoError",
+      "weights_g": {
+        "22K yellow (91.6%)": 11.25,
+        "18K yellow (75%)": 9.8,
+        "14K yellow (58.5%)": 8.22,
+        "Silver 925": 6.55,
+        "Casting wax (approx)": 0.63
+      },
+      "bbox_mm": [
+        -10.0,
+        -3.75,
+        -3.71,
+        10.0,
+        3.75,
+        3.77
+      ]
+    }
+  },
+  "stones": {
+    "polki_chandbali": 21,
+    "polki_top_motif": 14,
+    "pave_rounds_chandbali": 69,
+    "pave_rounds_top_motif": 25,
+    "pave_rounds_barrel_collars": 44,
+    "cluster_rounds": 3,
+    "emerald_cab": "5.0 x 7.0 oval cab",
+    "drop_pearl_mm": [
+      8.2,
+      12.2
+    ]
+  },
+  "total_volume_cm3": 3.1525,
+  "total_weights_g": {
+    "22K yellow (91.6%)": 56.11,
+    "18K yellow (75%)": 48.86,
+    "14K yellow (58.5%)": 40.98,
+    "Silver 925": 32.66,
+    "Casting wax (approx)": 3.15
+  },
+  "assembly_size_mm": {
+    "width": 50.76,
+    "height": 82.34,
+    "depth": 9.34
+  }
+}
