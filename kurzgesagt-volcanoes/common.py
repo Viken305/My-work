@@ -15,6 +15,7 @@ ROCK = (78, 62, 118)
 CRUST_C = (96, 78, 140)
 MANTLE_C = (200, 70, 50)
 OCEAN = (40, 96, 210)
+OX = (255, 92, 92)       # oxygen atom
 
 
 class Timing:

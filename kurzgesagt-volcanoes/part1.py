@@ -109,7 +109,7 @@ def draw_space(c, t, stars=Stars()):
                 c.drawCircle(px, py, 6, fill(WHITE, 230 * min(1, g)))
                 text(c, label, lx, ly, 28, rgb if n else lighten(rgb, 0.4), 255 * min(1, g), 800, "left", spacing=3)
         k = pop(t, CORE_T + 0.2, 0.5) * (1 - smooth(prog(t, TO_MANTLE[0], TO_MANTLE[0] + 0.3)))
-        pill_tag(c, cx, cy - 60, "~5,200 °C", LAVA_HOT, k, 28)
+        pill_tag(c, cx, cy - 60, "5,000+ °C", LAVA_HOT, k, 28)
     # the Sun, for comparison
     g = pop(t, SUN_T, 0.6) * (1 - smooth(prog(t, LEFT_T - 0.5, LEFT_T)))
     if g > 0:
