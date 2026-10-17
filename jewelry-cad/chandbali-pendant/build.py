@@ -454,7 +454,7 @@ def build_top_motif():
     body = body - union([lug_hole_cut(x, y, 0) for x, y in lug_pts + chain_pts])
     gems = union([ext(unary_union([p.buffer(-0.05) for p in pockets]), B + 0.02, WT - 0.15),
                   ext(pear.buffer(-0.05), B + 0.02, P["bezel_top"] - 0.2), gm])
-    return body, gems, dict(polki=len(pockets) + 1, pave=n, lug_pts=lug_pts, bottom=bottom)
+    return body, gems, dict(polki=len(pockets) + 1, pave=n, lug_pts=lug_pts, bottom=bottom, chain_pts=chain_pts)
 
 
 # ----------------------------------------------------------------------------
@@ -647,6 +647,32 @@ def main():
     export(gems_all, "ref_diamonds_polki.stl")
     export(pearl, "ref_pearl.stl")
     export(union([beads, ci["emerald_body"]]), "ref_green_beads_emerald.stl")
+    # complete set in one file: pendant + both chain tubes rising from the shoulder loops
+    # (in the real piece pearls / beads are strung in the gap between loop and tube)
+    ang = math.radians(62)
+    tubes, tube_stones = [], []
+    for sx in (1, -1):
+        lx, ly = ti["chain_pts"][0 if sx < 0 else 1]
+        ly += top_dy
+        lx = sx * abs(lx)
+        dist = 9.0 + P["chain_tube_len"] / 2
+        cx, cy = lx + sx * math.cos(ang) * dist, ly + math.sin(ang) * dist
+        rot = math.degrees(ang) if sx > 0 else 180 - math.degrees(ang)
+        tubes.append(tube.rotate((0, 0, rot)).translate((cx, cy, zc)))
+        tube_stones.append(tube_gems.rotate((0, 0, rot)).translate((cx, cy, zc)))
+    complete = union([assembly] + tubes)
+    export(complete, "SET_COMPLETE_gold.stl")
+    report["set_complete_gold_g"] = {k: round(complete.volume() / 1000 * d, 2) for k, d in DENSITY.items()}
+    objs = {"gold_chandbali": chand, "gold_top_motif": top, "gold_barrel": barrel, "gold_drop": drop,
+            "gold_jump_rings": rings, "gold_chain_tube_L": tubes[1], "gold_chain_tube_R": tubes[0],
+            "stones_diamonds_polki": union([gems_all] + tube_stones), "stone_drop_pearl": pearl,
+            "stones_emerald_green_beads": union([beads, ci["emerald_body"]])}
+    scene = trimesh.Scene()
+    for name, m in objs.items():
+        mesh = m.to_mesh()
+        scene.add_geometry(trimesh.Trimesh(np.asarray(mesh.vert_properties)[:, :3], np.asarray(mesh.tri_verts),
+                                           process=False), geom_name=name, node_name=name)
+    scene.export(os.path.join(OUT_DIR, "SET_COMPLETE_with_stones.obj"), include_normals=False, include_color=False)
     bb = assembly.bounding_box()
     report["assembly_size_mm"] = {"width": round(bb[3] - bb[0], 2), "height": round(bb[4] - bb[1], 2),
                                   "depth": round(bb[5] - bb[2], 2)}

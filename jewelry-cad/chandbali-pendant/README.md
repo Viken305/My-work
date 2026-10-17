@@ -21,6 +21,12 @@ Every part is a closed, watertight solid (manifold check: `NoError`), so it is r
 | `06_chain_tube_x1.stl` | Engraved chain end tube Ø6 × 20 (make **2**) | 2 | 0.158 each | 11.25 (both) | 9.80 (both) |
 | **Total metal** | | | **3.153** | **56.1 g** | **48.9 g** |
 
+**Single-file versions (whole set in one file):**
+- `SET_COMPLETE_gold.stl`: all gold in one STL. It includes the pendant, all jump rings and both chain tubes in position: 56.1 g in 22K, 48.9 g in 18K. Use this one for weight checks and printing.
+- `SET_COMPLETE_with_stones.obj`: the same set plus all the stones. Each part is a separate named object (`gold_chandbali`, `gold_barrel`, `stones_diamonds_polki`, …), so in Matrix/Rhino you can hide the stones or pick a part. This file is for presentation only. Do not cast from it.
+
+![complete set](previews/complete.png)
+
 Other files:
 - `00_pendant_assembly_gold.stl`: all pendant gold parts in position, for viewing or a single print.
 - `ref_diamonds_polki.stl`, `ref_pearl.stl`, `ref_green_beads_emerald.stl`: stone bodies for renders only. They are **not** gold and are not counted in the weight.
