@@ -4,7 +4,7 @@ PARTS = {
     "part1": [   # hook
         ("H1", "Right now, as you watch this, you are under attack."),
         ("H2", "Bacteria, viruses and fungi are trying to get inside you, every single day. Almost all of them fail."),
-        ("H3", "Because inside you lives an army of nearly two trillion cells, fighting a war you never even notice. This is your immune system."),
+        ("H3", "Because inside you lives an army of nearly two trillion cells, fighting a war you never even notice. This is your immune system. And this is Kai, one of its toughest soldiers."),
     ],
     "part2": [   # chapter 1: the walls
         ("W1", "Your first line of defence is a wall. Your skin is a tough barrier of dead cells, stacked layer upon layer, that very few microbes can break through."),
@@ -15,7 +15,7 @@ PARTS = {
         ("F1", "Immediately, damaged cells sound the alarm. They release chemical signals that make nearby blood vessels widen and leak. That's why a wound turns red, swollen and warm."),
         ("F2", "Out of the blood pour the first responders: neutrophils. They arrive in huge numbers, often within minutes, and attack anything that doesn't belong."),
         ("F3", "Neutrophils fight so hard that many of them die in battle. Some even burst open, casting out sticky nets of DNA to trap bacteria. The pus in an infected wound is mostly dead neutrophils."),
-        ("F4", "Then come the big eaters. Macrophages, like Max here, swallow bacteria whole and dissolve them from the inside. A single macrophage can gulp down dozens of them."),
+        ("F4", "Then come the big eaters. Macrophages swallow bacteria whole and dissolve them from the inside. A single macrophage can gulp down dozens of them."),
     ],
     "part4": [   # chapter 3: the messenger
         ("M1", "But some invaders are too many, or too clever, for the first responders. So another cell gets to work: the dendritic cell."),
@@ -24,9 +24,9 @@ PARTS = {
     ],
     "part5": [   # chapter 4: special forces (adaptive immunity)
         ("S1", "Every T cell carries a unique receptor, like a lock that fits only one kind of key. When a helper T cell finds its match, it activates, and starts copying itself, again and again, into an army of thousands."),
-        ("S2", "Helper T cells are the commanders. They call in killer T cells, which hunt down your own cells that have been taken over by viruses, and order them to self-destruct."),
+        ("S2", "Helper T cells are the commanders. They call in killer T cells, like Kai, which hunt down your own cells that have been taken over by viruses, and order them to self-destruct."),
         ("S3", "They also wake up B cells, the weapons factories. B cells become plasma cells that pump out antibodies, thousands of them every second."),
-        ("S4", "Antibodies latch onto invaders, jam their machinery, and tag them for destruction. Max loves that. Tagged bacteria are much easier to catch."),
+        ("S4", "Antibodies latch onto invaders, jam their machinery, and tag them for destruction, so the big eaters can find them easily."),
     ],
     "part6": [   # chapter 5: memory
         ("R1", "Building this army takes about a week. When the battle is won, most of the soldiers die off. But a few stay behind: memory cells."),

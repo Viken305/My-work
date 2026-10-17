@@ -24,10 +24,12 @@ PLASMA = (255, 170, 150)
 MAX_BODY = (112, 214, 204)
 MAX_EDGE = (30, 120, 130)
 MAX_NUC = (40, 110, 130)
+MACRO = (214, 186, 140)      # supporting macrophage (cream "big eater")
+MACRO_EDGE = (150, 110, 70)
 GERM = (150, 220, 70)
 GERM_DARK = (60, 120, 30)
 VIRUS = (190, 70, 220)
-NEUTRO = (236, 204, 250)
+NEUTRO = (214, 186, 236)
 NEUTRO_NUC = (140, 70, 190)
 DENDRI = (170, 120, 255)
 HELPER = (80, 160, 255)
@@ -43,85 +45,22 @@ MAX_EXPR = ("neutral", "happy", "determined", "shocked", "worried", "hungry", "f
 
 
 # ---------------------------------------------------------------- shared face kit
+_EXPR_MAP = {"sleepy": ("neutral", dict(eo=0.45)), "hungry": ("shocked", dict(pupil=0.4, curve=0.5, open=0.45, teeth=0.6)),
+             "full": ("happy", dict(eo=0.04, lower=0.7, open=0.0, blush=1.0)), "chewing": ("neutral", dict(eo=0.55, blush=0.8, mw=0.5))}
+
+
 def face(c, x, y, s, t, expr="neutral", look=(0.0, 0.0), blink=True, phase=0.0, mouth=0.0, ink=EYE_INK, brow_rgb=None, spread=0.42):
-    """Big cartoon eyes + brows + mouth. s = face scale (≈ body radius). mouth 0..1 opens the jaw."""
-    cyc = (t + phase) % 4.4
-    open_ = 1.0
-    if blink and abs(cyc - 4.3) < 0.1:
-        open_ = abs(cyc - 4.3) / 0.1
-    er = s * 0.19
-    lx, ly = look[0] * er * 0.45, look[1] * er * 0.4
-    brow_rgb = brow_rgb or ink
-    for side in (-1, 1):
-        ex, ey = x + side * s * spread * 0.62, y
-        if expr in ("happy", "full"):
-            p = skia.Path()
-            p.moveTo(ex - er * 0.9, ey + er * 0.25)
-            p.quadTo(ex, ey - er * 1.1, ex + er * 0.9, ey + er * 0.25)
-            c.drawPath(p, stroke(ink, er * 0.32))
-            continue
-        h = {"shocked": 1.25, "hungry": 1.15, "chewing": 0.5, "determined": 0.72, "worried": 0.95}.get(expr, 1.0) * open_
-        w = 1.12 if expr == "shocked" else 1.0
-        c.save()
-        c.translate(ex, ey)
-        c.drawOval(skia.Rect.MakeXYWH(-er * w, -er * h, er * 2 * w, er * 2 * h), fill((252, 252, 255)))
-        c.drawOval(skia.Rect.MakeXYWH(-er * w, -er * h, er * 2 * w, er * 2 * h), stroke(ink, er * 0.12, 160))
-        if h > 0.12:
-            c.save()
-            c.clipRRect(skia.RRect.MakeOval(skia.Rect.MakeXYWH(-er * w, -er * h, er * 2 * w, er * 2 * h)), doAntiAlias=True)
-            pr = er * (0.42 if expr == "shocked" else 0.6)
-            c.drawCircle(lx, ly, pr, fill(ink))
-            c.drawCircle(lx - pr * 0.35, ly - pr * 0.4, pr * 0.34, fill(WHITE, 235))
-            # upper lid shading
-            c.drawRect(skia.Rect.MakeXYWH(-er * 1.3, -er * h - er * 0.1, er * 2.6, er * 0.35), fill(ink, 30))
-            c.restore()
-        c.restore()
-        # brows
-        by = ey - er * (1.45 if expr in ("shocked", "hungry") else 1.25)
-        tilt = {"determined": 0.5, "worried": -0.45, "shocked": -0.15, "hungry": -0.1}.get(expr, 0.0)
-        if expr in ("determined", "worried", "shocked", "hungry"):
-            inner, outer = ex - side * er * 0.8, ex + side * er * 0.85
-            c.drawLine(inner, by + tilt * er * 0.8, outer, by - tilt * er * 0.5, stroke(brow_rgb, er * 0.3))
-    # mouth
-    my = y + s * 0.34
-    mw = s * 0.26
-    if expr == "full":
-        p = skia.Path()
-        p.moveTo(x - mw * 0.7, my - s * 0.02)
-        p.quadTo(x, my + s * 0.1, x + mw * 0.7, my - s * 0.02)
-        c.drawPath(p, stroke(ink, s * 0.045))
-        for side in (-1, 1):   # puffed cheeks
-            c.drawCircle(x + side * s * 0.4, my - s * 0.05, s * 0.09, fill((255, 140, 160), 120))
-        return
+    """Shared cast face = the animated rig (rig.py) so every cell acts the same way as KAI."""
+    from rig import face_rig, pose, blink_amount, POSES
+    name, over = _EXPR_MAP.get(expr, (expr if expr in POSES else "neutral", {}))
+    over = dict(over)
+    if mouth > 0:
+        over["open"] = max(over.get("open", 0.0), mouth)
     if expr == "chewing":
-        k = 0.5 + 0.5 * math.sin(t * 14)
-        c.drawOval(skia.Rect.MakeXYWH(x - mw * 0.55, my - s * 0.03, mw * 1.1, s * (0.05 + 0.08 * k)), fill(ink))
-        for side in (-1, 1):
-            c.drawCircle(x + side * s * 0.38, my - s * 0.02, s * (0.08 + 0.02 * k), fill((255, 140, 160), 110))
-        return
-    op = max(mouth, {"shocked": 0.55, "hungry": 0.35}.get(expr, 0.0))
-    if op > 0.05:
-        mh = s * 0.32 * op
-        p = skia.Path()
-        p.moveTo(x - mw, my - mh * 0.15)
-        p.quadTo(x, my - mh * 0.35, x + mw, my - mh * 0.15)
-        p.quadTo(x + mw * 0.6, my + mh, x, my + mh)
-        p.quadTo(x - mw * 0.6, my + mh, x - mw, my - mh * 0.15)
-        p.close()
-        c.drawPath(p, fill((60, 14, 40)))
-        c.save()
-        c.clipPath(p, doAntiAlias=True)
-        c.drawOval(skia.Rect.MakeXYWH(x - mw * 0.5, my + mh * 0.45, mw, mh * 0.8), fill((255, 110, 130)))
-        c.restore()
-        if expr == "hungry":   # a drop of drool
-            c.drawCircle(x + mw * 0.7, my + mh * 0.6 + s * 0.04 * math.sin(t * 3), s * 0.035, fill((200, 255, 250), 220))
-        return
-    curve = {"happy": 0.12, "determined": 0.03, "worried": -0.06, "neutral": 0.06}.get(expr, 0.06)
-    p = skia.Path()
-    w2 = mw * (0.6 if expr == "determined" else 0.8)
-    p.moveTo(x - w2, my)
-    p.quadTo(x, my + s * curve * 2, x + w2, my - (s * 0.04 if expr == "determined" else 0))
-    c.drawPath(p, stroke(ink, s * 0.045))
+        over["open"] = 0.05 + 0.15 * (0.5 + 0.5 * math.sin(t * 14))
+    p = pose(name, **over)
+    b = blink_amount(t, (), 4.1, phase * 1.7) if blink else 0.0
+    face_rig(c, x, y + s * 0.02, s * 0.95, p, look, b, ink=ink, spread=spread * 0.64)
 
 
 # ---------------------------------------------------------------- MAX the macrophage
@@ -150,10 +89,11 @@ def max_outline(r, t, arms=(), gulp=None, vel=(0.0, 0.0), n=72, seed=0.0):
 
 
 def max_cell(c, x, y, r, t, expr="neutral", look=(0.0, 0.0), vel=(0.0, 0.0), arms=(), gulp=None, belly=(), a=255,
-             rim=(255, 120, 140), blink=True, mouth=0.0, face_on=True, glow_a=1.0):
+             rim=(255, 120, 140), blink=True, mouth=0.0, face_on=True, glow_a=1.0, body_rgb=None, edge_rgb=None):
     """MAX. belly: [(dx, dy, size, digest 0..1)] items inside (bacteria being dissolved)."""
     if r <= 1 or a <= 1:
         return
+    MAX_BODY_, MAX_EDGE_ = body_rgb or MAX_BODY, edge_rgb or MAX_EDGE
     if a < 255:
         c.saveLayerAlpha(None, int(a))
     sp = math.hypot(*vel)
@@ -169,10 +109,10 @@ def max_cell(c, x, y, r, t, expr="neutral", look=(0.0, 0.0), vel=(0.0, 0.0), arm
     c.scale(breathe, 1 / breathe)
     body = blob_path(0, 0, max_outline(r, t, arms, gulp, vel))
     # outer glow + soft drop shadow
-    light(c, 0, 0, r * 2.0, MAX_BODY, 32 * glow_a)
+    light(c, 0, 0, r * 2.0, MAX_BODY_, 32 * glow_a)
     c.drawPath(body, blur(fill((20, 0, 20), 90), r * 0.12))
     # jelly body: translucent, lighter towards the upper-left
-    c.drawPath(body, shaded(radial((-r * 0.3, -r * 0.4), r * 1.9, [(176, 238, 228), MAX_BODY, mix(MAX_BODY, MAX_EDGE, 0.6)], [0, 0.5, 1])))
+    c.drawPath(body, shaded(radial((-r * 0.3, -r * 0.4), r * 1.9, [lighten(MAX_BODY_, 0.35), MAX_BODY_, mix(MAX_BODY_, MAX_EDGE_, 0.6)], [0, 0.5, 1])))
     c.save()
     c.clipPath(body, doAntiAlias=True)
     # nucleus (kidney) + granules
@@ -184,7 +124,7 @@ def max_cell(c, x, y, r, t, expr="neutral", look=(0.0, 0.0), vel=(0.0, 0.0), arm
         gx, gy = rng.uniform(-0.75, 0.75), rng.uniform(-0.7, 0.75)
         gx += 0.05 * math.sin(t * 0.9 + k)
         gy += 0.05 * math.cos(t * 0.8 + k * 1.3)
-        c.drawCircle(gx * r, gy * r, r * rng.uniform(0.015, 0.035), fill(MAX_EDGE, 90))
+        c.drawCircle(gx * r, gy * r, r * rng.uniform(0.015, 0.035), fill(MAX_EDGE_, 90))
     # belly: eaten bacteria dissolving, surrounded by digestive vesicles
     for bx, by, bs, dg in belly:
         if dg >= 1:
@@ -203,10 +143,10 @@ def max_cell(c, x, y, r, t, expr="neutral", look=(0.0, 0.0), vel=(0.0, 0.0), arm
     c.drawPath(body, rp)
     c.drawOval(skia.Rect.MakeXYWH(-r * 0.62, -r * 0.82, r * 0.5, r * 0.2), fill(WHITE, 70))
     c.restore()
-    c.drawPath(body, stroke(darken(MAX_EDGE, 0.2), r * 0.035, 220))
+    c.drawPath(body, stroke(darken(MAX_EDGE_, 0.2), r * 0.035, 220))
     inner = skia.Path()
     inner.addPath(body, skia.Matrix.Scale(0.92, 0.92))
-    c.drawPath(inner, stroke(lighten(MAX_BODY, 0.6), r * 0.014, 110))
+    c.drawPath(inner, stroke(lighten(MAX_BODY_, 0.6), r * 0.014, 110))
     if face_on:
         fx = look[0] * r * 0.12
         face(c, fx, -r * 0.2 + look[1] * r * 0.06, r * 1.15, t, expr, look, blink, 0.0, mouth)
