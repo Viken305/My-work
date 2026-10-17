@@ -14,3 +14,7 @@ kurzgesagt-india/build/
 kurzgesagt-india/out/part*[0-9].mp4
 kurzgesagt-india/out/full.mp4
 kurzgesagt-india/out/full_youtube.mp4
+kurzgesagt-stars/build/
+kurzgesagt-stars/out/part*[0-9].mp4
+kurzgesagt-stars/out/full.mp4
+kurzgesagt-stars/out/full_youtube.mp4
