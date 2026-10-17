@@ -100,7 +100,7 @@ def render_full(rerender=False):
             pl += [(offset + a, offset + b) for a, b in m["plucks"]]
             rises += [(offset + a, offset + b) for a, b in m["rises"]]
             offset += mod.DURATION
-    music = dict(chords=chords, plucks=pl, bpm=96, rises=rises)
+    music = dict(chords=chords, plucks=pl, bpm=96, rises=rises, drone=importlib.import_module(PARTS[0]).MUSIC.get("drone"))
     wav = os.path.join(HERE, "build", "full_mix.wav")
     audio.render_mix(wav, offset, clips, events, music)
     video = os.path.join(HERE, "build", "full_video.mp4")

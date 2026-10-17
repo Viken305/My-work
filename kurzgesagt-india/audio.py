@@ -181,6 +181,19 @@ def plucks(chords, segments, bpm, rises, end):
     return out
 
 
+def drone(root, end):
+    """Tanpura-like drone: root, fifth and octave with slow shimmer, plucked in a 4-note cycle."""
+    t = tline(end + 1)
+    out = np.zeros_like(t)
+    for m, w in ((root, 1.0), (root + 7, 0.6), (root + 12, 0.7), (root - 12, 0.5)):
+        f = midi(m)
+        for h in range(1, 7):
+            out += w * np.sin(2 * np.pi * f * h * t * (1 + 0.0015 * np.sin(0.3 * t + h))) / h ** 1.3
+    cyc = 2.4  # gentle re-articulation like a tanpura cycle
+    env = 0.75 + 0.25 * np.exp(-((t % cyc) / 0.9))
+    return out * env * 0.012
+
+
 # ---------------------------------------------------------------- mix
 def load_vo(path):
     x, sr = sf.read(path)
@@ -203,6 +216,8 @@ def render_mix(out_wav, duration, vo_clips, events, music, fade_in=0.4, fade_out
     for t0, kind, gain in events:
         place(fx, t0, sfx(kind), gain)
     mus = pad(music["chords"], duration)[:n] + plucks(music["chords"], music["plucks"], music["bpm"], music["rises"], duration)[:n]
+    if music.get("drone"):
+        mus += drone(music["drone"], duration)[:n]
     # duck music + sfx under narration
     win = int(0.25 * SR)
     env = np.convolve(np.abs(vo), np.ones(win) / win, "same")
