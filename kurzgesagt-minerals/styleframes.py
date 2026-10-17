@@ -123,8 +123,10 @@ def _drop(x, y, s):
 
 
 def caption(c, s, x, y, rgb=WHITE, size=30, a=255):
+    if a <= 2:
+        return
     w = font(size, 800).measureText(s) + size * 0.08 * (len(s) - 1) + size * 1.4
-    c.drawRRect(rrect(x - w / 2, y - size * 1.05, w, size * 1.6, size * 0.8), fill((12, 10, 34), 200))
+    c.drawRRect(rrect(x - w / 2, y - size * 1.05, w, size * 1.6, size * 0.8), fill((12, 10, 34), 200 * a / 255))
     text(c, s, x, y, size, rgb, a, 800, spacing=size * 0.08)
 
 

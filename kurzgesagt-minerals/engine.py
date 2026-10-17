@@ -284,7 +284,7 @@ def finish(rgba, t):
     global _GRAIN
     if _GRAIN is None:
         rng = np.random.default_rng(7)
-        _GRAIN = [(rng.normal(0, 1, (H // 2, W // 2)) * 6).astype(np.int16) for _ in range(6)]
+        _GRAIN = [(rng.normal(0, 1, (H // 2, W // 2)) * 4).astype(np.int16) for _ in range(6)]
     g = _GRAIN[int(t * FPS) % len(_GRAIN)]
     g = np.repeat(np.repeat(g, 2, 0), 2, 1)
     rgb = rgba[:, :, :3].astype(np.int16) + g[:, :, None]

@@ -111,6 +111,35 @@ def sfx(kind):
         d = 0.6
         t = tline(d)
         return bandpass(noise(d), 2500, 7000) * np.sin(np.pi * t / d) * 0.08
+    if kind == "rumble":
+        d = 3.0
+        t = tline(d)
+        return bandpass(noise(d), 25, 160) / 2.5 * np.sin(np.pi * t / d) ** 1.5
+    if kind == "sizzle":
+        d = 2.4
+        t = tline(d)
+        return bandpass(noise(d), 2500, 11000) * env_ad(t, 0.05, 0.9) * 0.35
+    if kind == "ticks":
+        out = np.zeros(int(1.6 * SR))
+        for k in range(16):
+            place(out, k * 0.1, sfx("click"), 0.5)
+        return out
+    if kind == "ding":
+        x = bell(midi(84), 1.6, 0.5)
+        place(x, 0.18, bell(midi(79), 1.4, 0.5))
+        return x
+    if kind == "flicker":
+        out = np.zeros(int(0.7 * SR))
+        for k, g in ((0, 1), (0.12, 0.5), (0.2, 0.8), (0.45, 1)):
+            place(out, k, bandpass(noise(0.03), 300, 3000) * 0.4 * g)
+        return out
+    if kind == "bubble":
+        out = np.zeros(int(1.2 * SR))
+        for k in range(6):
+            t = tline(0.08)
+            f = RNG.uniform(500, 900) * (1 + t * 6)
+            place(out, k * 0.17, np.sin(2 * np.pi * np.cumsum(f) / SR) * env_ad(t, 0.004, 0.025) * 0.4)
+        return out
     raise ValueError(kind)
 
 
@@ -133,20 +162,22 @@ def pad(chords, end):
     return out
 
 
-def plucks(chords, start, bpm, rise, end):
+def plucks(chords, segments, bpm, rises, end):
+    """Marimba arpeggios over the chords; doubles speed and climbs inside each rise window."""
     out = np.zeros(int((end + 3) * SR))
     step = 60 / bpm / 2
-    t, k = start, 0
-    while t < end - 0.5:
-        ch = [c for c in chords if c[0] <= t][-1]
-        r = (t - rise[0]) / (rise[1] - rise[0]) if rise[0] <= t < rise[1] else (-1 if t < rise[0] else 2)
-        pattern = [0, 2, 1, 3, 2, 4, 3, 1]
-        iv = ch[2][pattern[k % 8] % len(ch[2])]
-        lift = 12 * int(max(0, min(1, r)) * 2) if 0 <= r <= 1 else 0
-        amp = 0.09 if r < 0 else 0.09 + 0.06 * min(1, max(0, r)) if r <= 1 else 0.07
-        place(out, t, pluck(midi(ch[1] + 12 + iv + lift), 0.9, amp))
-        t += step / 2 if 0 <= r <= 1 else step
-        k += 1
+    pattern = [0, 2, 1, 3, 2, 4, 3, 1]
+    for start, stop in segments:
+        t, k = start, 0
+        while t < stop - 0.4:
+            ch = [c for c in chords if c[0] <= t][-1]
+            r = next(((t - a) / (b - a) for a, b in rises if a <= t < b), None)
+            iv = ch[2][pattern[k % 8] % len(ch[2])]
+            lift = 12 * int(r * 2) if r is not None else 0
+            amp = 0.09 + 0.06 * r if r is not None else 0.08
+            place(out, t, pluck(midi(ch[1] + 12 + iv + lift), 0.9, amp))
+            t += step / 2 if r is not None else step
+            k += 1
     return out
 
 
@@ -160,25 +191,26 @@ def load_vo(path):
     return x
 
 
-def render_mix(out_wav, duration, vo_times, vo_dir, events, music):
+def render_mix(out_wav, duration, vo_clips, events, music, fade_in=0.4, fade_out=1.2):
+    """vo_clips: [(start, wav_path)], events: [(t, kind, gain)],
+    music: dict(chords=[(t, root, intervals)], plucks=[(start, stop)], bpm, rises=[(a, b)])."""
     n = int(duration * SR)
     vo = np.zeros(n)
-    for key, t0 in vo_times.items():
-        place(vo, t0, load_vo(os.path.join(vo_dir, f"{key}.wav")))
+    for t0, path in vo_clips:
+        place(vo, t0, load_vo(path))
     vo /= np.abs(vo).max() + 1e-9
     fx = np.zeros(n)
     for t0, kind, gain in events:
         place(fx, t0, sfx(kind), gain)
-    mus = pad(music["chords"], music["end"])[:n] + plucks(music["chords"], music["pluck_from"], music["pluck_bpm"], music["rise"], music["end"])[:n]
+    mus = pad(music["chords"], duration)[:n] + plucks(music["chords"], music["plucks"], music["bpm"], music["rises"], duration)[:n]
     # duck music + sfx under narration
     win = int(0.25 * SR)
     env = np.convolve(np.abs(vo), np.ones(win) / win, "same")
     env = np.clip(env / (env.max() + 1e-9) * 3, 0, 1)
     duck = 1 - 0.45 * env
     fade = np.ones(n)
-    tail = int(1.2 * SR)
-    fade[-tail:] = np.linspace(1, 0, tail)
-    fade[: int(0.4 * SR)] = np.linspace(0, 1, int(0.4 * SR))
+    fade[-int(fade_out * SR):] = np.linspace(1, 0, int(fade_out * SR))
+    fade[: int(fade_in * SR)] = np.linspace(0, 1, int(fade_in * SR))
     mixd = vo * 0.85 + mus * 0.55 * duck * fade + fx * 0.32 * (1 - 0.25 * env)
     mixd = np.tanh(mixd * 1.1) / np.tanh(1.1)
     stereo = np.stack([mixd, mixd], 1)

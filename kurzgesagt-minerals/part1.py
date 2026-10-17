@@ -1,21 +1,16 @@
 """Part 1 (0:00-0:40): Scene 1 "Hook" + Scene 2 "What is a mineral?".
 
-  python3 part1.py                 # full render -> out/part1.mp4
-  python3 part1.py --still 2,7,15  # PNG stills to build/part1/stills for checking
-  python3 part1.py --scale 0.5     # half-res quick preview
+  python3 render.py part1                 # full render -> out/part1.mp4 (+ _share)
+  python3 render.py part1 --still 2,7,15  # PNG stills to build/part1/stills for checking
 """
-import math, os, subprocess, sys
-from multiprocessing import Pool
+import math, sys
 
 import numpy as np
 import skia
 
 from engine import *  # noqa: F401,F403 (drawing kit + palette)
-import audio
 
 PART = "part1"
-OUT_DIR = os.path.join(HERE, "out")
-BUILD = os.path.join(HERE, "build", PART)
 
 # Narration start times (seconds). Durations come from build/part1/vo/durations.json.
 VO = {"L1": 0.7, "L2": 3.9, "L3": 6.4, "L4": 8.8, "L5": 12.0, "L6": 15.2,
@@ -728,22 +723,6 @@ def draw_frame(c, t):
         c.drawPaint(fill((8, 8, 24), 255 * end))
 
 
-def render(t, scale=1.0):
-    s = skia.Surface(int(W * scale), int(H * scale))
-    c = s.getCanvas()
-    c.scale(scale, scale)
-    draw_frame(c, t)
-    arr = s.makeImageSnapshot().toarray(colorType=skia.kRGBA_8888_ColorType)
-    if scale != 1.0:
-        return arr[:, :, :3].copy()
-    return finish(arr, t)
-
-
-def _job(args):
-    i, scale = args
-    return render(i / FPS, scale).tobytes()
-
-
 # ---------------------------------------------------------------- audio cues
 def sfx_events():
     ev = [(VO["L1"] + 0.1, "swell_soft", 0.6)]
@@ -775,46 +754,10 @@ MUSIC = dict(
     chords=[(0.0, 57, (0, 7, 12, 14, 16)), (6.0, 53, (0, 7, 11, 16, 19)), (12.0, 48, (0, 7, 12, 16, 21)),
             (17.6, 55, (0, 7, 12, 14, 19)), (23.0, 57, (0, 7, 12, 15, 19)), (28.5, 53, (0, 7, 11, 16, 19)),
             (34.5, 48, (0, 7, 12, 16, 19))],
-    pluck_from=17.9, pluck_bpm=96, rise=(28.5, 34.5), end=DURATION,
+    plucks=[(17.9, DURATION)], bpm=96, rises=[(28.5, 34.5)],
 )
 
 
-# ---------------------------------------------------------------- main
-def main():
-    args = sys.argv[1:]
-    scale = float(args[args.index("--scale") + 1]) if "--scale" in args else 1.0
-    if "--still" in args:
-        from PIL import Image
-        os.makedirs(os.path.join(BUILD, "stills"), exist_ok=True)
-        for ts in args[args.index("--still") + 1].split(","):
-            img = render(float(ts), scale)
-            p = os.path.join(BUILD, "stills", f"t{float(ts):05.2f}.png")
-            Image.fromarray(img).save(p)
-            print(p)
-        return
-    os.makedirs(OUT_DIR, exist_ok=True)
-    os.makedirs(BUILD, exist_ok=True)
-    wav = os.path.join(BUILD, "mix.wav")
-    audio.render_mix(wav, DURATION, VO, os.path.join(BUILD, "vo"), sfx_events(), MUSIC)
-    w, h = int(W * scale) // 2 * 2, int(H * scale) // 2 * 2
-    silent = os.path.join(BUILD, "video.mp4")
-    ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
-                           "-s", f"{int(W * scale)}x{int(H * scale)}", "-r", str(FPS), "-i", "-",
-                           "-vf", f"crop={w}:{h}:0:0", "-c:v", "libx264", "-preset", "medium", "-crf", "17",
-                           "-pix_fmt", "yuv420p", silent], stdin=subprocess.PIPE)
-    n = int(DURATION * FPS)
-    with Pool(os.cpu_count()) as pool:
-        for k, buf in enumerate(pool.imap(_job, [(i, scale) for i in range(n)], chunksize=4)):
-            ff.stdin.write(buf)
-            if k % 60 == 0:
-                print(f"frame {k}/{n}", flush=True)
-    ff.stdin.close()
-    ff.wait()
-    out = os.path.join(OUT_DIR, f"{PART}.mp4")
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", silent, "-i", wav, "-c:v", "copy",
-                    "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out], check=True)
-    print(out)
-
-
 if __name__ == "__main__":
-    main()
+    import render
+    render.main([PART] + sys.argv[1:])
