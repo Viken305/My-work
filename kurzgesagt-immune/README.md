@@ -1,22 +1,27 @@
 # There Is a War Inside You
 
-A premium Kurzgesagt-style explainer (~4:20) about the immune system, with a new hero: **MAX, a young macrophage**.
-Stage: **storyboard for review** (the full video gets built after approval).
+A premium Kurzgesagt-style explainer (~4:28, 7 chapters) about the immune system, rendered entirely in code.
+Hero: **KAI, a killer T cell**, on an animated face rig; every other cell acts with the same rig.
 
 - Script and fact sheet: `SCRIPT.md` (narration lines in `script.py`)
-- Style guide (palette, MAX, cast): `STYLE_GUIDE.md`
-- Storyboards, cast sheet, motion test: `out/storyboards/`
+- Style guide (palette, KAI, cast, face rig): `STYLE_GUIDE.md`
+- YouTube kit (description, chapters, sources): `DESCRIPTION.md`
+- Concept art: `out/storyboards/` (hero concepts, Kai acting test, big eater sheet), `out/styleframes/`, `out/thumbnail.png`
 
 ## Build
 Same setup as `../kurzgesagt-stars/README.md` (skia-python, numpy, opencv-python-headless, Pillow, soundfile, kokoro-onnx, ffmpeg).
 ```
-python cells.py           # cast sheet (MAX + supporting cells)
-python motion_test.py     # 12 s motion test: MAX hunts, gulps and digests a bacterium
-python storyboard.py      # storyboard sheets, one per part
-python voiceover.py part1 # narration (repeat for part2 … part7)
+python voiceover.py part1            # narration (repeat for part2 … part7)
+python render.py part3 --still 5,12  # quick stills -> build/part3/stills
+python render.py part3               # one chapter -> out/part3.mp4 + out/part3_share.mp4
+python render.py full                # all 7 chapters + one soundtrack -> out/full_share.mp4
+python thumbnail.py                  # -> out/thumbnail.png
+python kai_test.py                   # 14 s face-rig acting test
 ```
 
 ## Files
-- `cells.py`: MAX and the whole cast, plus the tissue environment (textures, bokeh cells, motes).
-- `boards.py`: storyboard key frames and props (skin wall, blood vessel, lymph node, body map, response graph, wanted poster).
-- `premium.py`, `engine.py`, `audio.py`, `render.py`, `voiceover.py`, `storyboard.py`: the shared kit from the stars video.
+- `rig.py`: the face rig (poses, expression tracks with overshoot, blinks, eye darts). `kai.py`: KAI. `bigeater.py`: the macrophage.
+- `cells.py`: the cast (bacteria, viruses, neutrophils + DNA nets, dendritic, T and B cells, antibodies, red blood cells).
+- `heroes.py`: the organic tissue environment (and the original three hero concepts). `world.py`: vessel, lymph node, outside world, child, tissue cells.
+- `story.py`: narration timing, camera paths, chapter titles, label chips, transitions. `part1.py` … `part7.py`: the chapters.
+- `boards.py`, `storyboard.py`, `styleframes.py`: planning frames. `premium.py`, `engine.py`, `audio.py`, `render.py`, `voiceover.py`: shared kit.

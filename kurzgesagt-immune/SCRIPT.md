@@ -1,19 +1,20 @@
 # There Is a War Inside You (script)
 
-**Topic:** the immune system · **Guide character:** MAX, a young macrophage (see STYLE_GUIDE.md)  
-**Length:** about 4:20 (narration timed with the temporary voice)
+**Topic:** the immune system · **Guide character:** KAI, a killer T cell (see STYLE_GUIDE.md)  
+**Length:** about 4:28 (narration timed with the temporary voice)
 
 
 
-## 1. Hook (~0:23)
+## 1. Hook (~0:27)
 
 > **H1** Right now, as you watch this, you are under attack.
 >
 > **H2** Bacteria, viruses and fungi are trying to get inside you, every single day. Almost all of them fail.
 >
-> **H3** Because inside you lives an army of nearly two trillion cells, fighting a war you never even notice. This is your immune system.
+> **H3** Because inside you lives an army of nearly two trillion cells, fighting a war you never even notice. This is your immune system. And this is Kai, one of its toughest soldiers.
 
-## 2. The walls (chapter 1) (~0:34)
+
+## 2. The walls (chapter 1) (~0:36)
 
 > **W1** Your first line of defence is a wall. Your skin is a tough barrier of dead cells, stacked layer upon layer, that very few microbes can break through.
 >
@@ -21,7 +22,8 @@
 >
 > **W3** But walls can be breached. One tiny cut, and thousands of bacteria rush in.
 
-## 3. First responders (chapter 2) (~0:52)
+
+## 3. First responders (chapter 2) (~0:54)
 
 > **F1** Immediately, damaged cells sound the alarm. They release chemical signals that make nearby blood vessels widen and leak. That's why a wound turns red, swollen and warm.
 >
@@ -29,9 +31,10 @@
 >
 > **F3** Neutrophils fight so hard that many of them die in battle. Some even burst open, casting out sticky nets of DNA to trap bacteria. The pus in an infected wound is mostly dead neutrophils.
 >
-> **F4** Then come the big eaters. Macrophages, like Max here, swallow bacteria whole and dissolve them from the inside. A single macrophage can gulp down dozens of them.
+> **F4** Then come the big eaters. Macrophages swallow bacteria whole and dissolve them from the inside. A single macrophage can gulp down dozens of them.
 
-## 4. The messenger (chapter 3) (~0:30)
+
+## 4. The messenger (chapter 3) (~0:31)
 
 > **M1** But some invaders are too many, or too clever, for the first responders. So another cell gets to work: the dendritic cell.
 >
@@ -39,17 +42,19 @@
 >
 > **M3** There, it shows the pieces around, searching for the rare cells that can recognise this exact enemy.
 
-## 5. Special forces (chapter 4) (~0:50)
+
+## 5. Special forces (chapter 4) (~0:51)
 
 > **S1** Every T cell carries a unique receptor, like a lock that fits only one kind of key. When a helper T cell finds its match, it activates, and starts copying itself, again and again, into an army of thousands.
 >
-> **S2** Helper T cells are the commanders. They call in killer T cells, which hunt down your own cells that have been taken over by viruses, and order them to self-destruct.
+> **S2** Helper T cells are the commanders. They call in killer T cells, like Kai, which hunt down your own cells that have been taken over by viruses, and order them to self-destruct.
 >
 > **S3** They also wake up B cells, the weapons factories. B cells become plasma cells that pump out antibodies, thousands of them every second.
 >
-> **S4** Antibodies latch onto invaders, jam their machinery, and tag them for destruction. Max loves that. Tagged bacteria are much easier to catch.
+> **S4** Antibodies latch onto invaders, jam their machinery, and tag them for destruction, so the big eaters can find them easily.
 
-## 6. Memory (chapter 5) (~0:37)
+
+## 6. Memory (chapter 5) (~0:39)
 
 > **R1** Building this army takes about a week. When the battle is won, most of the soldiers die off. But a few stay behind: memory cells.
 >
@@ -57,7 +62,8 @@
 >
 > **R3** That's why most people only get chickenpox once. And it's exactly how vaccines work: they show your immune system a harmless wanted poster, so it's ready before the real enemy arrives.
 
-## 7. You're winning (chapter 6) (~0:27)
+
+## 7. You're winning (chapter 6) (~0:31)
 
 > **O1** The army isn't perfect. Sometimes it overreacts to harmless things like pollen, and sometimes it even attacks the body it's meant to protect.
 >
