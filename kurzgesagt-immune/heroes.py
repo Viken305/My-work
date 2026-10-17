@@ -60,20 +60,22 @@ def body_world(c, t, cam=None, a=1.0, mood="warm"):
     """Inside living tissue: a far wall of packed cells (soft), a mid layer, warm light, drifting plasma specks.
     Bright and fleshy on purpose so it never reads as outer space."""
     cam = cam or Cam()
-    base = {"warm": (196, 70, 92), "cool": (120, 90, 170)}[mood]
+    base = {"warm": (150, 56, 92), "cool": (110, 80, 150)}[mood]
     c.drawPaint(fill(darken(base, 0.35)))
     far = _tissue_layer(41, 150, darken(base, 0.12), darken(base, 0.45), 6)
     cam.push(c, 0.35)
     c.drawImage(far, -far.width() / 2 + 20 * math.sin(t * 0.1), -far.height() / 2)
     cam.pop(c)
     # haze between layers = depth (fluid between cells)
-    c.drawPaint(fill(darken(base, 0.3), 120))
+    c.drawPaint(fill(darken(base, 0.45), 150))
     mid = _tissue_layer(43, 260, base, darken(base, 0.4), 0)
     cam.push(c, 0.6)
-    c.drawImage(mid, -mid.width() / 2, -mid.height() / 2 + 300)
+    pm = skia.Paint()
+    pm.setAlphaf(0.75)
+    c.drawImage(mid, -mid.width() / 2, -mid.height() / 2 + 300, skia.SamplingOptions(), pm)
     cam.pop(c)
     # gap in the tissue where the action happens: soft glowing fluid
-    c.drawPaint(shaded(radial((W / 2, H * 0.5), W * 0.62, [(lighten(base, 0.25), 150), (base, 70), (base, 0)], [0, 0.5, 1])))
+    c.drawPaint(shaded(radial((W / 2, H * 0.5), W * 0.62, [(lighten(base, 0.15), 110), (base, 50), (base, 0)], [0, 0.5, 1])))
     _MOTES_B.draw(c, t, cam, a, flow=(20.0, -4.0))
 
 
