@@ -1,10 +1,12 @@
-# How the Earth Makes Crystals — Storyboard
+# How the Earth Makes Crystals: Storyboard
+
+> The final narration lives in `script.py` (source of truth). Small wording changes from this plan were made while building.
 
 A Kurzgesagt-style short explainer about how natural minerals form.
 
 | | |
 |---|---|
-| **Runtime** | **~2:50** (main video, 16:9, 1920×1080, 30 fps) |
+| **Runtime** | **3:38** as built (planned ~2:50; natural narration pace ran longer). 16:9, 1920×1080, 30 fps |
 | **Narration** | ~430 words at a calm ~150 wpm |
 | **Bonus cut** | 55 s vertical YouTube Short (9:16), cut from scenes 1, 3, 5, 8 |
 | **Working title** | *How the Earth Makes Crystals* |
@@ -98,7 +100,7 @@ Rules: dark background in every scene, **one** glowing accent per shot that pull
 
 ### SCENE 4: Recipe 2, WATER (1:02–1:34)
 **Narration**
-> Recipe two: water. Water is brilliant at dissolving things, and at leaving them behind. When a salty lake dries up under the sun, the minerals have nowhere to go, and crystals of salt and gypsum appear. Underground, hot water carries dissolved minerals through cracks in the rock, cools, and drops them as veins of quartz… and sometimes gold. And in one cave in Mexico, mineral-rich water sat still at exactly the right temperature for half a million years. The result: crystals twelve metres long.
+> Recipe two: water. Water is brilliant at dissolving things, and at leaving them behind. When a salty lake dries up under the sun, the minerals have nowhere to go, and crystals of salt and gypsum appear. Underground, hot water carries dissolved minerals through cracks in the rock, cools, and drops them as veins of quartz… and sometimes gold. And in one cave in Mexico, mineral-rich water sat at just the right temperature for hundreds of thousands of years. The result? Crystals twelve metres long.
 
 **Visuals**
 - Title card: **RECIPE 2 · WATER** 💧 (cyan icon).
@@ -142,7 +144,9 @@ Rules: dark background in every scene, **one** glowing accent per shot that pull
 
 ### SCENE 7: Zoom out, deep time (2:28–2:42)
 **Narration**
-> The oldest piece of Earth we've ever found is a mineral: a tiny zircon crystal from Australia, 4.4 billion years old. It was here before the oceans. Before life. Before almost everything.
+> The oldest piece of Earth we've ever found is a mineral: a tiny zircon crystal from Australia, 4.4 billion years old. It formed when Earth was only about 150 million years old. Before life. Before almost everything.
+
+*(Fact-check fix: the original line said "before the oceans", but that zircon is itself evidence of liquid water 4.4 billion years ago.)*
 
 **Visuals**
 - A single tiny pink zircon grain glows alone on a black background. The camera pulls back slowly: Jack Hills, Australia → a young, molten, cratered Earth → a timeline bar stretching left across the screen, with "now" as a tiny dot at the far right.
