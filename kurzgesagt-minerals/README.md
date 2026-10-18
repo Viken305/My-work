@@ -60,3 +60,7 @@ Full-quality masters (100–700 MB) are **not** in git (GitHub's 100 MB limit). 
 - `audio.py`: procedural music + SFX, mixed and ducked under the narration.
 - `render.py`: renders parts and the full film with one continuous soundtrack.
 - `voiceover.py`: temporary Kokoro TTS narration.
+
+## Vertical 9:16 version
+`python3 vertical.py` turns `out/full.mp4` into `out/vertical.mp4` (1080x1920): the whole film in the middle, a blurred fill behind it, a title on top and word-by-word captions from the narration underneath.
+`python3 shorts.py` then cuts `out/vertical.mp4` to a 2:55 YouTube Short (`out/short.mp4`), dropping three side-trips (glass, diamonds rising, the oldest zircon).

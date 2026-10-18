@@ -26,3 +26,14 @@ kurzgesagt-immune/out/full.mp4
 kurzgesagt-immune/out/storyboards/*.mp4
 kurzgesagt-world/build/
 kurzgesagt-world/out/*.mp4
+kurzgesagt-minerals/out/vertical.mp4
+kurzgesagt-minerals/out/short.mp4
+kurzgesagt-gold/build/
+kurzgesagt-gold/out/*.mp4
+
+# never commit rendered videos (rebuild from code)
+*.mp4
+*.mov
+*.webm
+*.mkv
+kurzgesagt-gold/out/voices/
