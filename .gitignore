@@ -19,3 +19,8 @@ kurzgesagt-stars/out/part*[0-9].mp4
 kurzgesagt-stars/out/full.mp4
 kurzgesagt-stars/out/full_youtube.mp4
 kurzgesagt-stars/out/*_share.mp4
+kurzgesagt-immune/build/
+kurzgesagt-immune/out/part*[0-9].mp4
+kurzgesagt-immune/out/*_share.mp4
+kurzgesagt-immune/out/full.mp4
+kurzgesagt-immune/out/storyboards/*.mp4
