@@ -1,7 +1,7 @@
 # Kundan-Polki Chandbali Pendant: parametric CAD (trial)
 
 This is a generated 3D model of the antique-finish polki chandbali pendant set from the reference photo.
-Every part is a closed, watertight solid (manifold check: `NoError`), so it is ready for Matrix / Rhino and printing.
+Before any STL is written, every gold part is checked. It must be one single piece, closed (no open edges) and manifold (no edges shared by more than two faces), and the check runs on the single-precision coordinates an STL reader sees. A file that fails is not written.
 
 ![angle](previews/angle.png)
 
@@ -13,16 +13,16 @@ Every part is a closed, watertight solid (manifold check: `NoError`), so it is r
 
 | File | What it is | Qty | Volume cm³ | 22K g | 18K g |
 |---|---|---|---|---|---|
-| `01_chandbali.stl` | Main chandbali: lobed plate, nakashi scroll relief, 21-polki gallery, pavé ring, emerald bezel + halo | 1 | 1.369 | 24.37 | 21.22 |
-| `02_top_motif.stl` | Fan motif: 13 polki + pear polki with pavé halo, chain loops | 1 | 0.554 | 9.87 | 8.59 |
-| `03_barrel.stl` | Hollow engraved barrel, Ø7.9 × 25.7, pavé collars, link loops | 1 | 0.565 | 10.05 | 8.75 |
-| `04_drop_cluster_cap.stl` | 3-stone cluster, stem, pearl cap with peg | 1 | 0.021 | 0.38 | 0.33 |
+| `01_chandbali.stl` | Main chandbali: lobed plate, nakashi scroll relief, 21-polki gallery, pavé ring, emerald bezel + halo | 1 | 1.364 | 24.28 | 21.14 |
+| `02_top_motif.stl` | Fan motif: 13 polki + pear polki with pavé halo, chain loops | 1 | 0.553 | 9.85 | 8.57 |
+| `03_barrel.stl` | Hollow engraved barrel, Ø7.9 × 25.7, pavé collars, link loops | 1 | 0.558 | 9.93 | 8.65 |
+| `04_drop_cluster_cap.stl` | 3-stone cluster, stem, pearl cap with peg | 1 | 0.022 | 0.39 | 0.34 |
 | `05_jump_rings_x5.stl` | All 5 jump rings (Ø0.6 wire) | 1 set | 0.011 | 0.19 | 0.17 |
-| `06_chain_tube_x1.stl` | Engraved chain end tube Ø6 × 20 (make **2**) | 2 | 0.158 each | 11.25 (both) | 9.80 (both) |
-| **Total metal** | | | **3.153** | **56.1 g** | **48.9 g** |
+| `06_chain_tube_x1.stl` | Engraved chain end tube Ø6 × 20 (make **2**) | 2 | 0.312 each | 11.10 (both) | 9.67 (both) |
+| **Total metal** | | | **3.132** | **55.8 g** | **48.5 g** |
 
 **Single-file versions (whole set in one file):**
-- `SET_COMPLETE_gold.stl`: all gold in one STL. It includes the pendant, all jump rings and both chain tubes in position: 56.1 g in 22K, 48.9 g in 18K. Use this one for weight checks and printing.
+- `SET_COMPLETE_gold.stl`: all gold in one STL. It includes the pendant, all jump rings and both chain tubes in position: 55.8 g in 22K, 48.5 g in 18K. Use this one for weight checks and printing.
 - `SET_COMPLETE_with_stones.obj`: the same set plus all the stones. Each part is a separate named object (`gold_chandbali`, `gold_barrel`, `stones_diamonds_polki`, …), so in Matrix/Rhino you can hide the stones or pick a part. This file is for presentation only. Do not cast from it.
 
 ![complete set](previews/complete.png)

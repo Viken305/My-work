@@ -24,6 +24,9 @@ from shapely import affinity
 from shapely.geometry import LineString, MultiPolygon, Point, Polygon, box
 from shapely.ops import unary_union
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from stl_clean import clean_mesh, export_clean  # noqa: E402
+
 # ----------------------------------------------------------------------------
 # PARAMETERS (mm)
 # ----------------------------------------------------------------------------
@@ -75,6 +78,7 @@ from manifold3d import set_min_circular_angle, set_min_circular_edge_length  # n
 set_min_circular_angle(6.0)
 set_min_circular_edge_length(0.08)
 rng = np.random.default_rng(P["seed"])
+jit = np.random.default_rng(P["seed"] + 1000)  # separate stream: keeps the curl layout unchanged
 
 
 # ----------------------------------------------------------------------------
@@ -162,6 +166,9 @@ def brilliant(d):
     return union([crown, pav])
 
 
+SINK = 0.04  # sink add-on shapes into the surface so nothing is merely tangent
+
+
 def grain(r):
     return Manifold.sphere(r, 12)
 
@@ -188,7 +195,7 @@ def pave_row(path, d, top, gap, both_edges=True, band=None):
         nx, ny = -ty / n, tx / n
         for sgn in ((-1, 1) if both_edges else (1,)):
             off = (hw - 0.22) * sgn
-            grains.append(grain(0.24).translate((a.x + nx * off, a.y + ny * off, top)))
+            grains.append(grain(0.24).translate((a.x + nx * off, a.y + ny * off, top - SINK)))
     return union(cut), union(grains), union(gems), len(pts)
 
 
@@ -228,10 +235,10 @@ def sweep_solid(x, y, w, h, z0, depth=0.25, m=16):
     nx, ny = -dy / n, dx / n
     phi = np.linspace(0, 2 * math.pi, m, endpoint=False)
     c, s = np.cos(phi), np.sin(phi)
-    zz = np.where(s > 0, h, depth) * s
+    zz = np.where(s > 0, h + SINK, depth) * s
     a = (w[:, None] / 2) * c[None, :]
     V = np.stack([x[:, None] + nx[:, None] * a, y[:, None] + ny[:, None] * a,
-                  z0 + np.broadcast_to(zz, a.shape)], -1).reshape(-1, 3)
+                  z0 - SINK + np.broadcast_to(zz, a.shape)], -1).reshape(-1, 3)
     N = len(x)
     F = []
     for i in range(N - 1):
@@ -259,8 +266,13 @@ def curl_solid(px_, py_, size, rot, flip, h, z0):
         y = -y
     cr, sr = math.cos(rot), math.sin(rot)
     X, Y = px_ + cr * x - sr * y, py_ + sr * x + cr * y
-    head = Manifold.sphere(1, 24).scale((size * 0.30, size * 0.30, h * 1.05)).translate((X[0], Y[0], z0))
-    return sweep_solid(X, Y, w, h, z0) + head
+    # small per-curl jitter in height / depth: overlapping curls never share an
+    # exact surface level, which would leave non-manifold edges in the STL
+    jh = h * (1 + jit.uniform(-0.03, 0.03))
+    dz = jit.uniform(0.0, 0.015)
+    head = Manifold.sphere(1, 24).scale((size * 0.30, size * 0.30, jh * 1.05 + 0.03)) \
+        .translate((X[0], Y[0], z0 - SINK - 0.03 - dz))
+    return sweep_solid(X, Y, w, jh, z0 - dz) + head
 
 
 def scroll_layout(region, size, spacing_k=1.42, half=True, tries=12000):
@@ -442,7 +454,10 @@ def build_top_motif():
     body = union([body, g])
 
     bottom = tp(0, 321)[1]
-    lug_pts = [(sx * 47 * S, bottom - P["lug_r"] + 0.45) for sx in (-1, 1)]
+    # attach each lower loop to the motif's actual edge at that x (the bottom edge is curved)
+    lug_x = 47 * S
+    edge_y = LineString([(lug_x, -1e3), (lug_x, 1e3)]).intersection(body2d).bounds[1]
+    lug_pts = [(sx * lug_x, edge_y - P["lug_r"] + 0.45) for sx in (-1, 1)]
     # chain loops on the shoulders: where a 35 deg ray from the motif centre leaves the outline
     ox, oy = tp(0, 268)
     a = math.radians(35)
@@ -470,7 +485,10 @@ def build_barrel(D, L, collar_len, both_collars=True, seed_shift=0):
     lay = scroll_layout(region, P["curl_size"] * 0.95, half=False, tries=4000)
     h = P["relief_h"] * 0.9
     flat = union([curl_solid(x + k * C, y, s, r, f, h, 0.0) for x, y, s, r, f in lay for k in (-1, 0, 1)])
-    flat = (flat ^ ext(box(0, v0 + 0.1, C, v1 - 0.1), -1, 2)).refine_to_length(0.3)
+    # wrap the two halves separately and join them with a boolean, so the cut
+    # faces meeting at the seams are merged instead of touching inside one solid
+    halves = [(flat ^ ext(box(a, v0 + 0.1, b, v1 - 0.1), -1, 2)).refine_to_length(0.3)
+              for a, b in ((0, C / 2), (C / 2, C))]
 
     def wrap(v):
         u, w, h = v[:, 0], v[:, 1], v[:, 2]
@@ -478,7 +496,7 @@ def build_barrel(D, L, collar_len, both_collars=True, seed_shift=0):
         a = u / R
         return np.c_[rr * np.cos(a), rr * np.sin(a), w]
 
-    relief = flat.warp_batch(wrap)
+    relief = union([hh.warp_batch(wrap) for hh in halves])
     tube = Manifold.cylinder(L - 2 * 0.3, R, circular_segments=160).translate((0, 0, 0.3))
     col_r = R + 0.55
     collars = []
@@ -507,7 +525,7 @@ def build_barrel(D, L, collar_len, both_collars=True, seed_shift=0):
             cuts.append(cut.rotate((0, 90, 0)).rotate((0, 0, a)).translate((0, 0, zm)))
             gems.append(brilliant(pd).translate((0, 0, col_r - 0.30)).rotate((0, 90, 0)).rotate((0, 0, a)).translate((0, 0, zm)))
             for s in (-1, 1):
-                grains.append(grain(0.22).translate((0, 0, col_r)).rotate((0, 90, 0)).rotate((0, 0, a + 180 / n))
+                grains.append(grain(0.22).translate((0, 0, col_r - SINK)).rotate((0, 90, 0)).rotate((0, 0, a + 180 / n))
                               .translate((0, 0, zm + s * (collar_len / 2 - 0.25))))
     body = union([body - union(cuts)] + grains)
     # lay along X, centred
@@ -532,13 +550,16 @@ def build_drop():
         gems.append(brilliant(d).translate((x, y, zc + 0.5)))
     top_lug_y = cup_r + P["lug_r"] - 0.4
     body.append(lug(0, top_lug_y, zc))
+    # bridge plate joining the two upper cups to the loop
+    bh = top_lug_y - 0.5
+    body.append(Manifold.cube((sp, bh, 0.9)).translate((-sp / 2, 0, zc - 0.45)))
     # stem + bell cap below
     yb = -sp * 0.866 - cup_r
     stem = Manifold.cylinder(1.6, 0.45, 0.45, 32).rotate((90, 0, 0)).translate((0, yb + 0.3, zc))
     cap = (Manifold.sphere(1.7, 64) - Manifold.sphere(1.25, 64)) ^ Manifold.cube((5, 2, 5), center=True).translate((0, 1.0, 0))
     cap_y = yb - 1.3
     cap = cap.translate((0, cap_y - 1.0, zc))
-    peg = Manifold.cylinder(5.0, 0.4, 0.4, 24).rotate((90, 0, 0)).translate((0, cap_y - 0.6, zc))
+    peg = Manifold.cylinder(6.05, 0.4, 0.4, 24).rotate((90, 0, 0)).translate((0, cap_y + 0.45, zc))  # fused into cap
     m = union(body + [stem, cap, peg]) - union(cuts) - lug_hole_cut(0, top_lug_y, zc)
     pa, pb = P["drop_pearl"][0] / 2, P["drop_pearl"][1] / 2
     pearl = Manifold.sphere(1, 96).scale((pa, pb, pa)).translate((0, cap_y - 1.0 - pb + 0.4, zc))
@@ -550,12 +571,11 @@ def build_drop():
 # ASSEMBLY
 # ----------------------------------------------------------------------------
 def export(m, name, color=None):
-    mesh = m.to_mesh()
+    mesh = m.to_mesh64()
     v = np.asarray(mesh.vert_properties)[:, :3]
     f = np.asarray(mesh.tri_verts)
-    tm = trimesh.Trimesh(v, f, process=False)
     path = os.path.join(OUT_DIR, name)
-    tm.export(path)
+    tm, _ = export_clean(v, f, path)
     return path, tm
 
 
@@ -625,6 +645,10 @@ def main():
     total_vol = 0.0
     qty = {"06_chain_tube_x1.stl": 2}
     for name, m in parts.items():
+        pieces = sum(1 for p in m.decompose() if p.volume() > 1e-3)  # ignore zero-volume debris
+        expected = 5 if name.startswith("05_") else 1
+        if pieces != expected:
+            raise RuntimeError(f"{name}: {pieces} separate pieces, expected {expected} (something is not attached)")
         export(m, name)
         vol = m.volume() / 1000.0  # cm3
         q = qty.get(name, 1)
@@ -669,9 +693,9 @@ def main():
             "stones_emerald_green_beads": union([beads, ci["emerald_body"]])}
     scene = trimesh.Scene()
     for name, m in objs.items():
-        mesh = m.to_mesh()
-        scene.add_geometry(trimesh.Trimesh(np.asarray(mesh.vert_properties)[:, :3], np.asarray(mesh.tri_verts),
-                                           process=False), geom_name=name, node_name=name)
+        mesh = m.to_mesh64()
+        scene.add_geometry(clean_mesh(np.asarray(mesh.vert_properties)[:, :3], np.asarray(mesh.tri_verts)),
+                           geom_name=name, node_name=name)
     scene.export(os.path.join(OUT_DIR, "SET_COMPLETE_with_stones.obj"), include_normals=False, include_color=False)
     bb = assembly.bounding_box()
     report["assembly_size_mm"] = {"width": round(bb[3] - bb[0], 2), "height": round(bb[4] - bb[1], 2),

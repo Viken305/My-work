@@ -1,0 +1,47 @@
+{
+  "params": {
+    "diameter": 31.0,
+    "res": 0.04,
+    "ground": 0.8,
+    "boss_top": 4.2,
+    "leaf_h": 1.45,
+    "bud_h": 1.7,
+    "band_h": 1.25,
+    "bowl_rim": 1.2,
+    "bowl_depth": 0.95,
+    "bead_r": 0.42,
+    "vein_depth": 0.22,
+    "hollow_back": true,
+    "wall": 0.8,
+    "back_rim": 1.0,
+    "bail": true,
+    "bail_od": 2.8,
+    "bail_id": 1.8,
+    "bail_len": 5.0,
+    "simplify_tol": 0.002
+  },
+  "status": "NoError",
+  "triangles": 672204,
+  "mesh_check": {
+    "open_edges": 0,
+    "nonmanifold_edges": 0,
+    "watertight": true
+  },
+  "size_mm": {
+    "width": 31.2,
+    "height": 31.2,
+    "thickness": 6.65
+  },
+  "volume_cm3": 0.925,
+  "weights_g": {
+    "22K yellow (91.6%)": 16.47,
+    "18K yellow (75%)": 14.34,
+    "14K yellow (58.5%)": 12.03,
+    "Silver 925": 9.58,
+    "Casting wax (approx)": 0.93
+  },
+  "elements": {
+    "rim_beads": 80,
+    "berries": 20
+  }
+}

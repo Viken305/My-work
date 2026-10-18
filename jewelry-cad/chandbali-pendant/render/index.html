@@ -4,6 +4,7 @@
 import * as THREE from 'three';
 import {STLLoader} from 'three/addons/loaders/STLLoader.js';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {mergeVertices} from 'three/addons/utils/BufferGeometryUtils.js';
 const q=new URLSearchParams(location.search);
 const W=+q.get('w')||1400,H=+q.get('h')||1400;
 const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
@@ -17,7 +18,7 @@ const mats={gold:new THREE.MeshStandardMaterial({color:0xd9a441,metalness:1,roug
  beads:new THREE.MeshStandardMaterial({color:0x2e6b52,metalness:0,roughness:0.35})};
 const files=(q.get('f')||'00_pendant_assembly_gold:gold,ref_diamonds_polki:gems,ref_pearl:pearl,ref_green_beads_emerald:beads').split(',');
 const L=new STLLoader();const g=new THREE.Group();s.add(g);
-Promise.all(files.map(x=>{const [n,m]=x.split(':');return L.loadAsync('out/'+n+'.stl').then(geo=>{geo.computeVertexNormals();g.add(new THREE.Mesh(geo,mats[m]));});})).then(()=>{
+Promise.all(files.map(x=>{const [n,m]=x.split(':');return L.loadAsync('out/'+n+'.stl').then(geo=>{geo.deleteAttribute('normal');geo=mergeVertices(geo,1e-4);geo.computeVertexNormals();g.add(new THREE.Mesh(geo,mats[m]));});})).then(()=>{
  const b=new THREE.Box3().setFromObject(g);const c=b.getCenter(new THREE.Vector3());const sz=b.getSize(new THREE.Vector3());
  const tx=+(q.get('tx')??c.x),ty=+(q.get('ty')??c.y),span=+(q.get('span')||Math.max(sz.x,sz.y)*1.1);
  const cam=new THREE.OrthographicCamera(-span/2,span/2,span/2,-span/2,-500,500);
