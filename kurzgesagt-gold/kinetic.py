@@ -101,20 +101,24 @@ def hero(c, w, x, y, t, t0, size=200, settle=None):
     if u <= 0:
         return 0.0
     sc = lerp(2.4, 1.0, out_cubic(u)) * (1 + 0.06 * math.sin(math.pi * clamp((t - t0 - 0.45) / 0.25)))
+    fade_ = 1.0
     if settle:
         k = smooth(prog(t, settle, settle + 0.5))
-        sc *= lerp(1.0, 0.42, k)
-    gold_word(c, w, x, y, size, 255 * smooth(u * 2), sc, t)
+        sc *= lerp(1.0, 0.6, k)
+        fade_ = 1 - smooth(prog(t, settle + 0.3, settle + 0.7))
+    if fade_ <= 0.01:
+        return 0.0
+    gold_word(c, w, x, y - 30 * (1 - fade_), size, 255 * smooth(u * 2) * fade_, sc, t)
     if t0 < t < t0 + 0.25:
         light(c, x, y - size * 0.3, size * 3, GOLD_HI, 160 * (1 - prog(t, t0, t0 + 0.25)))
     return 14 * math.exp(-max(0.0, t - t0 - 0.35) * 9) * (t > t0 + 0.35)
 
 
-def react_collide(c, x, y, t, t0, size=110):
-    """COLLIDE: COLL and IDE fly in from both sides and smash together with a flash."""
+def react_collide(c, x, y, t, t0, size=110, word="COLLIDE"):
+    """COLLIDE: the two halves of the word fly in from both sides and smash together with a flash."""
     u = in_cubic(prog(t, t0, t0 + 0.5))
     f = font(size, 800)
-    a1, a2 = "COLL", "IDE"
+    a1, a2 = word[:len(word) // 2 + 1], word[len(word) // 2 + 1:]
     w1, w2 = f.measureText(a1), f.measureText(a2)
     _word(c, a1, x - w2 / 2 - lerp(700, 0, u), y, size, WHITE, 255 * smooth(prog(t, t0, t0 + 0.15)))
     _word(c, a2, x + w1 / 2 + lerp(700, 0, u), y, size, WHITE, 255 * smooth(prog(t, t0, t0 + 0.15)))
