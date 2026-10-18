@@ -57,7 +57,7 @@ Shots are animated and rendered in order of importance, and each is reviewed bef
 2. **The forge:** why stars can't make gold alone (only up to iron); the collision in slow motion; gold nuggets fly outward.
 3. **The lost gold:** the molten young Earth; gold drops sink to the core; a "4 m deep" golden layer wraps the planet.
 4. **The delivery and the squeeze:** meteorites rain gold onto the young Earth; hot water carries it through cracks;
-   an earthquake opens a crack, water flashes to steam, a gold-flecked quartz vein is left behind (Auri in a hard hat).
+   an earthquake opens a crack, water flashes to steam, a gold-flecked quartz vein is left behind.
 5. **The punchline:** all gold ever mined as one 22 m cube next to a house and a person; quick recap; end card.
 
 ## Kinetic captions
