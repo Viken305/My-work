@@ -5,12 +5,15 @@
 - **Length:** about 2:40 (under the 3-minute Shorts limit). Narration currently 1:45, plus visual beats.
 - **Safe zones:** nothing important in the top 220 px (search/back buttons), the bottom 400 px (title, channel, music)
   or the right 150 px between 900–1520 px (like/comment/share). Big visuals live in the middle band.
-- **Captions** burned in, word by word: Montserrat ExtraBold 70 px, white with the key word in gold, sitting just above
-  the bottom safe zone.
+- **Captions are animated (kinetic typography)**, not a fixed strip at the bottom. See section *Kinetic captions*.
 
-## Look
-Premium pipeline (same as the stars/immune/world videos): additive light, bloom, motion blur, grain, depth.
-Every scene is built around one strong vertical composition: one hero object, centred, big.
+## Look (premium)
+- Same premium pipeline as the stars, immune and world videos: additive light, bloom, motion blur (3–4 sub-frames),
+  depth of field, film grain, colour grade.
+- One strong vertical composition per shot: one hero object, big and centred, with a slow camera push or drift.
+- Continuous motion: every shot is alive (parallax stars, drifting particles, breathing light); transitions are
+  zoom-throughs and match cuts, never hard pops.
+- Impacts get camera shake, a flash frame and particles; Auri reacts to every big moment with an animated expression.
 
 ## Palette
 | Role | Colour |
@@ -40,6 +43,17 @@ A gold atom (79 protons) and the guide of the video.
 4. **The delivery and the squeeze:** meteorites rain gold onto the young Earth; hot water carries it through cracks;
    an earthquake opens a crack, water flashes to steam, a gold-flecked quartz vein is left behind (Auri in a hard hat).
 5. **The punchline:** all gold ever mined as one 22 m cube next to a house and a person; quick recap; end card.
+
+## Kinetic captions
+Narration is shown as short phrases (2–4 words, max 2 lines, auto-fitted to the safe width). They animate:
+| Treatment | What it does | Where |
+|---|---|---|
+| **Pop-in** | each word pops in (60% → 112% → 100%, rises, blur-in) as it is spoken; the spoken key word turns gold | every phrase |
+| **Anchored** | the phrase sits in the free space of the shot (top band, beside the hero object, or next to Auri, with a pointer line) and glides to the next anchor | every shot |
+| **Hero words** | key words and numbers (GOLD, 4 METRES, 22 M, OLDER THAN THE SUN) slam in huge as polished gold letters with a flash, a little shake and sparkles, then shrink back into the line | 1–2 per chapter |
+| **Reacting words** | COLLIDE smashes together, SANK drops letter by letter, STEAM rises and dissolves, EARTHQUAKE shakes | on their word |
+| **Exit** | phrases drift up and fade out, never just vanish | every phrase |
+Style: Montserrat ExtraBold, white with a dark soft shadow for readability, gold for key words.
 
 ## Typography
 Montserrat ExtraBold. Title "HOW EARTH / MAKES GOLD" on the hook. Small pill chips label each new idea at the top of the
