@@ -6,8 +6,8 @@
 from story import *  # noqa: F401,F403
 
 PART = "part3"
-VO, _end = schedule(PART, first=3.0, gap=0.8)
-DURATION = _end + 1.8
+VO, _end = schedule(PART, first=3.4, gap=1.35)
+DURATION = _end + 2.4
 TM = Timing(PART, VO)
 
 SPIN_T = TM.word("B1", "because it spins") - 0.2

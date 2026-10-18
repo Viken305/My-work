@@ -6,8 +6,8 @@ world; a dot-for-dot comparison shows trees beating stars many times over.
 from story import *  # noqa: F401,F403
 
 PART = "part2"
-VO, _end = schedule(PART, first=3.0, gap=0.8)
-DURATION = _end + 1.8
+VO, _end = schedule(PART, first=3.4, gap=1.35)
+DURATION = _end + 2.4
 TM = Timing(PART, VO)
 
 STARS_T = TM.word("T1", "between one hundred") - 0.3

@@ -227,9 +227,9 @@ def dunes(c, t, y0, rgb=DESERT, x_off=0.0):
 
 
 def ice_field(c, t, y0, x_off=0.0):
-    hills(c, y0 - 140, (190, 210, 236), t, 90, 0.002, 0.3, 255, x_off * 0.3)
-    hills(c, y0 - 40, (214, 228, 246), t, 40, 0.004, 1.1, 255, x_off * 0.6)
-    hills(c, y0 + 80, (236, 244, 252), t, 25, 0.006, 2.0, 255, x_off)
+    hills(c, y0 - 140, (150, 176, 214), t, 90, 0.002, 0.3, 255, x_off * 0.3)
+    hills(c, y0 - 40, (176, 198, 228), t, 40, 0.004, 1.1, 255, x_off * 0.6)
+    hills(c, y0 + 80, (200, 216, 238), t, 25, 0.006, 2.0, 255, x_off)
     rng = np.random.default_rng(5)
     for k in range(40):      # wind-blown snow
         u = (t * 0.4 + rng.random()) % 1.0

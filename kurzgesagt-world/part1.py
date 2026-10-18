@@ -5,7 +5,7 @@
 from story import *  # noqa: F401,F403
 
 PART = "part1"
-VO, _end = schedule(PART, first=0.8, gap=0.7)
+VO, _end = schedule(PART, first=0.8, gap=1.0)
 DURATION = _end + 1.6
 TM = Timing(PART, VO)
 
