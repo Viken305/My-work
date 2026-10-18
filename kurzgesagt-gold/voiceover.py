@@ -12,7 +12,7 @@ from script import PARTS
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MODEL_DIR = os.environ.get("KOKORO_DIR", "/tmp/claude-0/voices")
-VOICE, SPEED, LANG = "am_michael", 1.05, "en-us"   # sample A (US male)
+VOICE, SPEED, LANG = "af_heart", 1.05, "en-us"   # sample B (US female)
 
 if __name__ == "__main__":
     part = sys.argv[1] if len(sys.argv) > 1 else "part1"
