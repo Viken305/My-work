@@ -1,4 +1,4 @@
-"""Style frames + character sheet for approval (vertical 1080x1920).  python3 style.py -> out/style/"""
+"""Style frames for approval (vertical 1080x1920).  python3 style.py -> out/style/"""
 import math, os
 
 from PIL import Image
@@ -32,7 +32,6 @@ def sheet(c, t):
     space_bg(c, t, warm=0.3)
     text(c, "MEET AURI", W / 2, 200, 96, WHITE, 255, 800, spacing=10)
     text(c, "A GOLD ATOM · 79 PROTONS · OUR GUIDE", W / 2, 260, 26, GOLD, 240, 800, spacing=4)
-    auri(c, W / 2, 620, 210, t, pose("happy"), (0.2, 0.0))
     exprs = [("shocked", "SHOCKED"), ("worried", "WORRIED"), ("laugh", "LAUGH"), ("determined", "DETERMINED"), ("smug", "SMUG"), ("focused", "CURIOUS")]
     for i, (e, lab) in enumerate(exprs):
         x, y = 200 + (i % 3) * 340, 1110 + (i // 3) * 360
@@ -41,8 +40,18 @@ def sheet(c, t):
     text(c, "POLISHED METAL · ORBITING ELECTRONS · ANIMATED FACE · HARD HAT FOR MINING SCENES", W / 2, 1830, 17, WHITE, 170, 800, spacing=2)
 
 
+def sf0(c, t):
+    """Cold open (first frame of the video): the kilonova at full blast, hero line slammed over it."""
+    space_bg(c, t, warm=0.5)
+    kilonova(c, W / 2, 860, 640, t, 0.22, seed=5)
+    from kinetic import gold_word
+    text(c, "THIS EXPLOSION", W / 2, 1280, 92, WHITE, 255, 800, spacing=4)
+    text(c, "MADE YOUR", W / 2, 1385, 92, WHITE, 255, 800, spacing=4)
+    gold_word(c, "GOLD", W / 2, 1560, 200, 255, 1.0, t)
+
+
 def sf1(c, t):
-    """Hook: a ring floating in space, Auri peeking out, title."""
+    """Hook: a ring floating in space, title."""
     space_bg(c, t, warm=0.4)
     cx, cy = W / 2, 980
     light(c, cx, cy, 700, GOLD, 70)
@@ -55,7 +64,6 @@ def sf1(c, t):
     back = skia.Path()
     back.addArc(outer, 180, 180)
     c.drawPath(back, p)
-    auri(c, cx + 40, cy - 60, 130, t, pose("smug"), (-0.4, 0.2), env=(140, 100, 160))
     front = skia.Path()
     front.addArc(outer, 0, 180)
     c.drawPath(front, p)
@@ -77,7 +85,6 @@ def sf2(c, t):
     kilonova(c, cx, cy, 520, t, 0.34)
     neutron_star(c, cx - 90, cy + 30, 30, t, 120)
     chip(c, "NEUTRON STARS COLLIDE", W / 2, 300, NEUTRON, 32)
-    auri(c, 830, 1250, 90, t, pose("shocked"), (-0.8, -0.6), env=(255, 180, 120))
     caption(c, ["GOLD", "IS", "FORGED"], "GOLD")
 
 
@@ -96,7 +103,6 @@ def sf3(c, t):
         c.drawCircle(x, y, 18, fill((40, 10, 10), 160))
         gold_sphere(c, x, y, rng.uniform(10, 15), (255, 120, 60))
     chip(c, "HEAVY METALS SINK TO THE CORE", W / 2, 300, GOLD, 30)
-    auri(c, 860, 1420, 80, t, pose("worried"), (-0.6, -0.8), env=(255, 120, 60))
     caption(c, ["LOST", "TO", "THE", "CORE"], "CORE", y=1640)
 
 
@@ -129,7 +135,6 @@ def sf4(c, t):
     for s in (-1, 1):
         c.drawLine(560 + s * 120, 900, 560 + s * 220, 900, stroke((255, 220, 120), 8))
     chip(c, "EARTHQUAKE!", W / 2, 300, (255, 160, 120), 34)
-    auri(c, 830, 1100, 100, t, pose("determined"), (-0.7, 0.0), env=(200, 190, 220), hard_hat=True)
     caption(c, ["LEFT", "BEHIND", "IN", "A", "VEIN"], "VEIN", y=1640)
 
 
@@ -165,7 +170,6 @@ def sf5(c, t):
     text(c, "22 M", gx - 60, gy - s / 2, 36, WHITE, 255, 800, "right")
     chip(c, "ALL GOLD EVER MINED", W / 2, 300, GOLD, 34)
     text(c, "≈ 212,000 TONNES", W / 2, 400, 54, WHITE, 255, 800, spacing=4)
-    auri(c, 880, 620, 80, t, pose("laugh"), (-0.6, 0.4), env=(150, 190, 230))
     caption(c, ["FITS", "IN", "ONE", "CUBE"], "CUBE", y=1640)
 
 
@@ -180,7 +184,7 @@ def safe_zones(c, t):
     text(c, "BOTTOM: TITLE · CHANNEL · MUSIC", W / 2, 1820, 26, WHITE, 255, 800, spacing=3)
 
 
-FRAMES = [("character_sheet", sheet), ("sf1_hook", sf1), ("sf2_forge", sf2), ("sf3_lost_gold", sf3), ("sf4_earthquake_vein", sf4), ("sf5_cube", sf5),
+FRAMES = [("sf0_cold_open", sf0), ("sf1_hook", sf1), ("sf2_forge", sf2), ("sf3_lost_gold", sf3), ("sf4_earthquake_vein", sf4), ("sf5_cube", sf5),
           ("layout_safe_zones", safe_zones)]
 
 if __name__ == "__main__":

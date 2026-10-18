@@ -13,7 +13,7 @@
 - One strong vertical composition per shot: one hero object, big and centred, with a slow camera push or drift.
 - Continuous motion: every shot is alive (parallax stars, drifting particles, breathing light); transitions are
   zoom-throughs and match cuts, never hard pops.
-- Impacts get camera shake, a flash frame and particles; Auri reacts to every big moment with an animated expression.
+- Impacts get camera shake, a flash frame and particles.
 
 ## Palette
 | Role | Colour |
@@ -28,17 +28,33 @@
 Gold is always **metal**, never flat yellow: dark rim, warm body, a crisp window highlight and a coloured environment
 reflection, so it reads as shiny and valuable.
 
-## Character: AURI
-A gold atom (79 protons) and the guide of the video.
-- Polished gold ball with three tilted **electron orbits**; the electrons glow cyan and pass in front of and behind
-  the body (real depth).
-- Shared **animated face rig**: eyes, lids, brows and mouth morph between expressions with overshoot and blinks.
-- Expressions: happy, shocked, worried, laugh, determined (with a **miner's hard hat** for the earthquake scene), smug, curious.
-- The reflection band takes the colour of each scene (blue in space, red in the molten Earth, grey in the rock).
+## No character
+This video has **no mascot**. The objects are the stars: gold nuggets, neutron stars, the molten Earth, the quartz
+vein, the cube. Emotion comes from camera, light, sound and the kinetic captions, not from a face.
+
+## Attention first (retention plan)
+Shorts are decided in the first 1–2 seconds, so the video is built hook-first:
+1. **Frame 1 is the climax:** the video opens *inside* the kilonova at full blast (no title card, no build-up),
+   with the line **"THIS EXPLOSION MADE YOUR GOLD"** slamming in within the first second.
+2. **Open loop:** the hook promises a journey ("getting that gold into your hand took billions of years"), so
+   viewers stay to see how.
+3. **A new visual every 2–3 seconds:** never hold one shot longer than about 4 s without a camera move or new element.
+4. **Re-hooks every ~30 s:** each chapter opens with its own wow moment (gold sinking to the core, meteor rain,
+   the earthquake flash, the 22 m cube) before the explanation.
+5. **The payoff is saved for the end:** the cube scale reveal, then a 1-line loop back to the explosion so replays feel seamless.
+
+## Render order (most important first)
+Shots are animated and rendered in order of importance, and each is reviewed before moving on:
+1. **Cold open + collision** (0:00–0:20): the hook. Rendered and sent to you first.
+2. **The 22 m cube** (the payoff).
+3. **The earthquake vein** (the most surprising science).
+4. **The lost gold** (molten Earth) and **meteor delivery**.
+5. Connecting shots and the end card, then the full assembly with sound.
 
 ## Story beats (5 parts)
-1. **Hook:** a gold ring floating in space; "older than the Sun".
-2. **The forge:** two neutron stars spiral in and collide; a flash; gold nuggets fly outward.
+1. **Cold open:** straight into the kilonova at full blast, "THIS EXPLOSION MADE YOUR GOLD"; then rewind to two neutron
+   stars spiralling in; the golden ring appears with "older than the Earth and the Sun".
+2. **The forge:** why stars can't make gold alone (only up to iron); the collision in slow motion; gold nuggets fly outward.
 3. **The lost gold:** the molten young Earth; gold drops sink to the core; a "4 m deep" golden layer wraps the planet.
 4. **The delivery and the squeeze:** meteorites rain gold onto the young Earth; hot water carries it through cracks;
    an earthquake opens a crack, water flashes to steam, a gold-flecked quartz vein is left behind (Auri in a hard hat).
@@ -49,14 +65,14 @@ Narration is shown as short phrases (2–4 words, max 2 lines, auto-fitted to th
 | Treatment | What it does | Where |
 |---|---|---|
 | **Pop-in** | each word pops in (60% → 112% → 100%, rises, blur-in) as it is spoken; the spoken key word turns gold | every phrase |
-| **Anchored** | the phrase sits in the free space of the shot (top band, beside the hero object, or next to Auri, with a pointer line) and glides to the next anchor | every shot |
+| **Anchored** | the phrase sits in the free space of the shot (top band or beside the hero object, with a pointer line) and glides to the next anchor | every shot |
 | **Hero words** | key words and numbers (GOLD, 4 METRES, 22 M, OLDER THAN THE SUN) slam in huge as polished gold letters with a flash, a little shake and sparkles, then shrink back into the line | 1–2 per chapter |
 | **Reacting words** | COLLIDE smashes together, SANK drops letter by letter, STEAM rises and dissolves, EARTHQUAKE shakes | on their word |
 | **Exit** | phrases drift up and fade out, never just vanish | every phrase |
 Style: Montserrat ExtraBold, white with a dark soft shadow for readability, gold for key words.
 
 ## Typography
-Montserrat ExtraBold. Title "HOW EARTH / MAKES GOLD" on the hook. Small pill chips label each new idea at the top of the
+Montserrat ExtraBold. The title "HOW EARTH / MAKES GOLD" appears after the cold open (around 0:06), not first. Small pill chips label each new idea at the top of the
 middle band (below the top safe zone).
 
 ## Sound

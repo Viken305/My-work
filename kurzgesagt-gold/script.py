@@ -2,8 +2,8 @@
 
 PARTS = {
     "part1": [   # hook
-        ("H1", "The gold in a wedding ring is older than the Earth. Older than the Sun."),
-        ("H2", "It was made in one of the most violent events in the universe. And getting it into your hand took billions of years."),
+        ("H1", "This explosion made the gold in your ring."),
+        ("H2", "Two dead stars smashed together, long before the Earth or the Sun existed. And getting that gold into your hand took billions of years."),
     ],
     "part2": [   # the forge: dead stars colliding
         ("F1", "Stars can fuse atoms into heavier ones, but only up to iron. To build something as heavy as gold, you need something far more extreme."),
