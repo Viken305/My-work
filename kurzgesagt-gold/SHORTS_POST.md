@@ -1,4 +1,4 @@
-# YouTube Short: posting kit (out/full.mp4, ~1:46, 9:16)
+# YouTube Short: posting kit (out/full.mp4, ~1:47, 9:16)
 
 **Title:** The Gold in Your Ring Is Older Than the Sun ✨ #shorts
 

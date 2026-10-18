@@ -8,7 +8,7 @@ from story import *  # noqa: F401,F403
 
 PART = "part1"
 VO, _end = schedule(PART, first=0.5, gap=0.75, extra={"H2": 1.7})
-DURATION = _end + 1.6
+DURATION = _end + 2.0
 TM = Timing(PART, VO)
 
 BLAST_END = VO["H2"] - 0.7                  # the explosion holds until here
@@ -18,7 +18,7 @@ BEFORE_T = TM.word("H2", "long before") - 0.1
 ROAD_T = TM.word("H2", "and getting") - 0.2
 RING_T = TM.word("H2", "into your hand") - 0.1
 WRAP = (RING_T - 0.2, RING_T + 0.9)         # the nugget stretches into the ring band
-TITLE_T = _end - 0.3
+TITLE_T = _end + 0.3                       # after the last caption has cleared
 CX, CY = W / 2, 860
 RING_Y, RING_S = 1220, 0.9
 
@@ -155,7 +155,8 @@ def draw_frame(c, t):
     cam.pop(c)
     if t < 0.45:                            # frame 1: white-hot
         c.drawPaint(add(HOTWHITE, 255 * (1 - smooth(prog(t, 0.0, 0.45)))))
-    CAPS.draw(c, t)
+    if t < TITLE_T + 0.2:
+        CAPS.draw(c, t)
     ta = smooth(prog(t, TITLE_T, TITLE_T + 0.4))
     if ta > 0:
         tr = lerp(24, 8, out_cubic(prog(t, TITLE_T, TITLE_T + 1.2)))
