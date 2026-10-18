@@ -28,3 +28,5 @@ kurzgesagt-world/build/
 kurzgesagt-world/out/*.mp4
 kurzgesagt-minerals/out/vertical.mp4
 kurzgesagt-minerals/out/short.mp4
+kurzgesagt-gold/build/
+kurzgesagt-gold/out/*.mp4
