@@ -36,3 +36,4 @@ kurzgesagt-gold/out/*.mp4
 *.mov
 *.webm
 *.mkv
+kurzgesagt-gold/out/voices/
