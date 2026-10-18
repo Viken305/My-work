@@ -57,7 +57,7 @@ class Captions:
     heroes:  {WORD: (x, y, size)} words that slam in as gold letters instead of appearing in the phrase.
     reacts:  {WORD: (fn, x, y, size)} words acted out by a react_* function instead of appearing in the phrase."""
 
-    def __init__(self, tm, anchors=None, heroes=None, reacts=None, size=74, max_words=4, skip=()):
+    def __init__(self, tm, anchors=None, heroes=None, reacts=None, size=74, max_words=4, skip=(), hero_once=False):
         self.tm, self.size = tm, size
         self.heroes, self.reacts = heroes or {}, reacts or {}
         self.phrases, self.specials = [], []
@@ -79,7 +79,7 @@ class Captions:
                 keep = []
                 for (a, b, w) in g:
                     cw = _clean(w)
-                    if cw in self.heroes:
+                    if cw in self.heroes and not (hero_once and any(sp[2] == cw for sp in self.specials)):
                         self.specials.append(("hero", a, cw, self.heroes[cw]))
                     elif cw in self.reacts:
                         self.specials.append(("react", a, cw, self.reacts[cw]))
