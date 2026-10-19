@@ -86,24 +86,18 @@ The topic is sound, so the mix has to be the best yet.
   sunsets, ending on a single low note.
 - **Master:** ducking under the voice, mono-safe lows, -14 LUFS, true peak -1.2 dB.
 
-## 7. Story (hook first, ~1:40)
-1. **Hook (0–12 s).** Black. A faint thud. "In 1883, police on a tiny island in the Indian Ocean heard what sounded
-   like distant cannon fire. There were no ships. The sound had come from almost five thousand kilometres away."
-   Camera pulls back from Rodrigues across the ocean to Krakatoa. Title: *THE LOUDEST SOUND EVER HEARD*.
-2. **The island (12–30 s).** Krakatoa, 27 August 1883, after a night of eruptions. A clock ticks to 10:02 am.
-   The island seen in section: magma, sea water, pressure building. Silence. **BOOM.**
-3. **How loud (30–50 s).** Rings expand. A ship 64 km away: half the crew's eardrums burst. A gas plant gauge
-   160 km away jumps off its scale: about 172 decibels, louder than standing next to a jet engine. A dB meter shows
-   why every 10 dB is ten times the power.
-4. **How far (50–68 s).** The ring crosses the ocean. Four hours later it reaches Rodrigues, 4,800 km away. Back to
-   the hook: that was the "cannon fire".
-5. **The invisible part (68–85 s).** Most of the wave was too low to hear. The globe appears; the ring wraps around
-   it. Barometers in cities around the world twitch, about every 34 hours, for 5 days. It went around the planet
-   three to four times in each direction.
-6. **The cost and the sky (85–100 s).** Most of the island was gone. Tsunamis over 30 m high. About 36,000 people
-   died. Then the ash spread around the world, and the sunsets turned blood red for months.
-7. **End (100–108 s).** In 1927, a new island rose from the same spot: Anak Krakatau, "Child of Krakatoa". It is
-   still erupting today. The last sound is a soft thud, which loops back to the hook.
+## 7. Story (hook first, ~1:50; final narration in SCRIPT.md)
+1. **Hook (part 1).** Night on Rodrigues, 1883: a dull thud like cannon fire. The camera pulls back 4,800 km across
+   the ocean to Krakatoa ("From here."), the island in section at 10:02 am, silence, **BOOM**, blown ears, title.
+2. **How loud (part 2).** The ring crosses the Sunda Strait: the ship at 64 km (eardrums), the Batavia gas works at
+   160 km (gauge spike), then a brass dB meter swings past talk, pain and a jet engine to about 172 dB.
+3. **How far (part 3).** Pull back to the whole ocean while a clock counts the 4 hours; the ring reaches Rodrigues
+   (the cannon fire again); "farthest sound in recorded history".
+4. **The part nobody heard (part 4).** A hearing-range ruler with the wave below it; the globe with the wave lapping
+   it; a London barograph collecting seven spikes over five days; 3–4× around each way.
+5. **The cost and the child (part 5).** The island collapses (dashed "before"), a tsunami crest runs out, 36,000 in
+   sober red; blood-red sunsets with ash; night sea, and in 1927 a new cone breaks the surface: Anak Krakatau, still
+   active. A last distant thud loops back to the hook.
 
 ## 8. Fact sheet (status)
 | Claim | Status |
