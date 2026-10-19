@@ -250,11 +250,11 @@ def title(c, t):
     u = t - TITLE_T
     a = smooth(prog(u, -0.2, 0.4)) * (1 - smooth(prog(t, DURATION - 0.5, DURATION)))
     c.drawRect(skia.Rect.MakeLTRB(0, 0, W, H), paint(NIGHT, 150 * a))
-    tr = 0.42 + (0.2 - 0.42) * out_cubic(prog(u, 0, 1.8))
+    tr = 0.26 + (0.14 - 0.26) * out_cubic(prog(u, 0, 1.8))
     y = 880
     for i, ch in enumerate(["THE LOUDEST SOUND"]):
         k = smooth(prog(u, 0, 0.5))
-        label(c, ch, W / 2, y + 18 * (1 - k), 74, "black", PAPER, 255 * a * k, "center", tracking=tr, sigma=10 * (1 - k))
+        label(c, ch, W / 2, y + 18 * (1 - k), 70, "black", PAPER, 255 * a * k, "center", tracking=tr, sigma=10 * (1 - k))
     k2 = smooth(prog(u, 0.3, 0.9))
     label(c, "ever heard", W / 2, y + 150 + 18 * (1 - k2), 150, "serif_bold", SULFUR, 255 * a * k2, "center", sigma=10 * (1 - k2))
     q = out_cubic(prog(u, 0.3, 1.6))
