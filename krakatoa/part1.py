@@ -19,7 +19,7 @@ VO, _end = schedule(PART, first=1.0, gap=0.5, extra={"H3": 0.5})
 TM = Timing(PART, VO)
 ENV = VoiceEnvelope(PART, VO)
 
-YEAR_T = TM.word("H1", "1883,") - 0.1
+YEAR_T = TM.word("H1", "eighteen") - 0.1
 GUNS_T = TM.word("H1", "distant") - 0.1          # the sound arrives on Rodrigues
 PULL_T = TM.word("H2", "the sound") - 0.1         # pull back across the ocean
 FULL_T = TM.word("H2", "away.", end=True) + 0.1
@@ -42,20 +42,28 @@ def in_out(x):
     return 4 * x ** 3 if x < 0.5 else 1 - (-2 * x + 2) ** 3 / 2
 
 
+def anchored(pt, sx, sy, R):
+    """Camera centre (lon, lat) that puts geographic point pt at screen (sx, sy) at scale R (small-angle approx)."""
+    return (pt[0] - math.degrees((sx - W / 2) / (R * math.cos(math.radians(pt[1])))),
+            pt[1] + math.degrees((sy - 860) / R))
+
+
 def view(t):
-    """Map camera: lon, lat, R. Zooms are interpolated in log scale so the speed feels constant."""
+    """Map camera: lon, lat, R. Zooms run in log scale (constant felt speed); the point we leave (Rodrigues) or head
+    for (Krakatoa) is pinned to a screen position that glides between its place in the two views."""
+    full = Ortho(FULL_VIEW[0], FULL_VIEW[1], FULL_VIEW[2], W / 2, 860)
     if t < PULL_T:
-        a, b, u = ROD_VIEW, ROD_VIEW, 0.0
-        z = 1 + 0.06 * prog(t, 0, PULL_T)          # slow drift in while we wait on the island
-        return a[0], a[1], a[2] * z
+        return ROD_VIEW[0], ROD_VIEW[1], ROD_VIEW[2] * (1 + 0.06 * prog(t, 0, PULL_T))
     if t < PUSH_T:
-        a, b, u = ROD_VIEW, FULL_VIEW, in_out(prog(t, PULL_T, FULL_T))
+        a, b, u, pt, frm = ROD_VIEW, FULL_VIEW, in_out(prog(t, PULL_T, FULL_T)), RODRIGUES, False
     else:
-        a, b, u = FULL_VIEW, KRAK_VIEW, in_out(prog(t, PUSH_T, SECTION_T)) ** 1.6
-    lr = math.log(a[2]) + (math.log(b[2]) - math.log(a[2])) * u
-    # the centre follows the zoom (in log space too) so the start and end points stay on screen
-    k = (math.log(a[2]) - lr) / (math.log(a[2]) - math.log(b[2]))
-    return a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, math.exp(lr)
+        a, b, u, pt, frm = FULL_VIEW, KRAK_VIEW, in_out(prog(t, PUSH_T, SECTION_T)) ** 1.6, KRAKATOA, True
+    R = math.exp(math.log(a[2]) + (math.log(b[2]) - math.log(a[2])) * u)
+    fx, fy, _ = full(*pt)
+    k = 1 - u if frm else u                       # 0 = centre of the screen, 1 = its place in the whole-ocean view
+    lon, lat = anchored(pt, W / 2 + (fx - W / 2) * k, 860 + (fy - 860) * k, R)
+    w = k ** 4                                    # near the wide view, hand over to the exact projection centre
+    return lon + (FULL_VIEW[0] - lon) * w, lat + (FULL_VIEW[1] - lat) * w, R
 
 
 def map_scene(c, t):

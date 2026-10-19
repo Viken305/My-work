@@ -45,9 +45,11 @@ ASH = Ash(5000, 7, (0, 0, W, 1100))
 def island_path(sea=1040):
     """Section: a broad, ragged cone with its top blown open; flanks run under the sea to the seabed."""
     rng = np.random.default_rng(21)
-    prof = [(-40, sea + 170), (90, sea + 120), (200, sea + 30), (300, sea - 70), (380, sea - 170), (440, sea - 250),
-            (470, sea - 262), (505, sea - 200), (535, sea - 160), (590, sea - 158), (625, sea - 215), (660, sea - 270),
-            (700, sea - 245), (770, sea - 160), (860, sea - 60), (960, sea + 40), (1050, sea + 120), (1120, sea + 160)]
+    # three cones as in 1883: Rakata (tallest, left), Danan (the vent, centre), Perbuwatan (low, right)
+    prof = [(-40, sea + 170), (60, sea + 100), (140, sea + 20), (200, sea - 90), (255, sea - 210), (300, sea - 300),
+            (340, sea - 285), (395, sea - 200), (440, sea - 215), (470, sea - 238), (505, sea - 172), (535, sea - 152),
+            (590, sea - 152), (625, sea - 205), (660, sea - 242), (720, sea - 180), (780, sea - 126), (830, sea - 152),
+            (865, sea - 160), (905, sea - 110), (960, sea - 25), (1040, sea + 80), (1120, sea + 150)]
     p = skia.Path()
     p.moveTo(*prof[0])
     for (x0, y0), (x1, y1) in zip(prof, prof[1:]):

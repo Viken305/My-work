@@ -621,6 +621,39 @@ def SFX(kind):
             place1(y[:, 0], i * 1.0, tk, 0.7)
             place1(y[:, 1], i * 1.0 + 0.0004, tk, 0.7)
         return with_tail(y, 0.3, 1.4, 6000)
+    if kind == "ear_ring":
+        return tinnitus(1.6) * 0.7
+    if kind == "pen_scratch":
+        # barograph pen: filtered scratchy noise with a fast wobble, rising into the spike
+        d = 0.9
+        t = T(d)
+        y = sweep(noise(d, 14), lambda u: 1800 + 1500 * u, lambda u: 5000 + 3000 * u, 2.0)
+        y *= (0.4 + 0.6 * np.abs(np.sin(2 * np.pi * 17 * t))) * np.minimum(1, t / 0.05) * np.minimum(1, (d - t) / 0.08)
+        return st(norm(y) * 0.35, 0.25, 0.004)
+    if kind == "needle":
+        # brass gauge needle sweeping: a rising mechanical whine with ticks over the scale
+        d = 2.4
+        t = T(d)
+        f = 200 + 900 * (t / d) ** 1.5
+        whine = osc(f, d, "saw") * 0.15
+        whine = fft_filter(whine, 150, 3000) * np.minimum(1, t / 0.2)
+        y = st(norm(whine) * 0.35, 0, 0.006)
+        for i in range(18):
+            place(y, d * (i / 18) ** 0.8, SFX("tick"), 0.5)
+        return y
+    if kind == "wave_roar":
+        # tsunami: a deep rising roar of water, no impact
+        d = 5.0
+        t = T(d)
+        y = sweep(noise(d, 15), lambda u: 40, lambda u: 300 + 1200 * math.sin(math.pi * u) ** 2, 0.6)
+        y = norm(y) * np.sin(np.pi * np.clip(t / d, 0, 1)) ** 1.2 + norm(fft_filter(noise(d, 16), 20, 90)) * 0.5 * np.sin(np.pi * t / d)
+        return with_tail(st(norm(y) * 0.8, 0, 0.012), 0.3, 2.0, 2500)
+    if kind == "rise_water":
+        # the new island breaking the surface: bubbling, steam hiss, a low swell
+        d = 3.0
+        y = SFX("boil")[: int(d * SR)] * 0.7
+        hiss = fft_filter(noise(d, 17), 3000, 10000) * np.minimum(1, T(d) / 1.5) * 0.25
+        return y + st(hiss, 0, 0.01)
     if kind == "suck":
         return SFX("reverse_swell") * 1.1
     if kind == "title_hit":

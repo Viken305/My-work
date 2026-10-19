@@ -12,7 +12,7 @@ from multiprocessing import Pool
 import cyan
 from cyan import FPS, H, HERE, W
 
-PARTS = ["part1"]
+PARTS = ["part1", "part2", "part3", "part4", "part5"]
 OUT = os.path.join(HERE, "out")
 _MOD = None
 

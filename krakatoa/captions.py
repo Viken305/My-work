@@ -13,11 +13,31 @@ import soundfile as sf
 import skia
 
 from cyan import LAVA, PAPER, SULFUR, W, clamp, font, light, mix, out_cubic, paint, prog, smooth, spring, width
+from script import DISPLAY
 from timing import vo_dir
 
 
 def _clean(w):
     return re.sub(r"[^\w'%°.,\-]", "", w).strip(".,").lower()
+
+
+def displayed(items):
+    """Merge spoken number words into what the captions show: [(t0, t1, "eighteen"), (.., "eighty-three,")] ->
+    [(t0, t1, "1883,")], keeping the trailing punctuation of the last spoken word."""
+    out, i = [], 0
+    while i < len(items):
+        for spoken, shown in DISPLAY:
+            sw = spoken.split()
+            seg = items[i:i + len(sw)]
+            if len(seg) == len(sw) and all(_clean(a[2]) == b for a, b in zip(seg, sw)):
+                tail = re.sub(r"^.*?([.,?!;:]*)$", r"\1", seg[-1][2])
+                out.append((seg[0][0], seg[-1][1], shown + tail))
+                i += len(sw)
+                break
+        else:
+            out.append(items[i])
+            i += 1
+    return out
 
 
 class VoiceEnvelope:
@@ -62,7 +82,7 @@ class Captions:
                 continue
             ax, ay = (anchors or {}).get(k, (W / 2, 1380))
             cur, groups = [], []
-            for item in tm.words(k):
+            for item in displayed(tm.words(k)):
                 cur.append(item)
                 if len(cur) >= max_words or item[2][-1] in ".,?!:;" or len(" ".join(x[2] for x in cur)) > max_chars:
                     groups.append(cur)
