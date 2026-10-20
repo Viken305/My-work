@@ -10,11 +10,9 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-OUT = Path(sys.argv[1])
-OUT.mkdir(parents=True, exist_ok=True)
 W, H = 3000, 2000
 
-PALETTES = [
+FIELD_NOTES = [
     ("01", "Tidepool Ember",   ["#0B3C49", "#1F6F78", "#6FC2B0", "#FF7A59", "#FFD3B5"], 11),
     ("02", "Ultraviolet Dusk", ["#140832", "#4B1D7A", "#B0368F", "#F06E7C", "#FFC07A"], 23),
     ("03", "Matcha Static",    ["#0F2A1D", "#3E6B48", "#9CC69B", "#E9F5DB", "#C9A93E"], 37),
@@ -24,6 +22,27 @@ PALETTES = [
     ("07", "Solar Lichen",     ["#17181B", "#3B5A2A", "#8A9A3B", "#E0A800", "#F2E8C9"], 71),
     ("08", "Glacier Bloom",    ["#3F5E8C", "#7FA7D6", "#CFE6F2", "#F7D6E0", "#F28CB1"], 83),
 ]
+
+# Series 2: more in the Tidepool Ember / Ultraviolet Dusk directions
+TIDE_AND_DUSK = [
+    ("T1", "Tidepool Ember II",  FIELD_NOTES[0][2], 101),
+    ("T2", "Tidepool Ember III", FIELD_NOTES[0][2], 113),
+    ("T3", "Reef Lantern",       ["#072E3A", "#145C64", "#4FB3A9", "#FF9466", "#FFE3C8"], 127),
+    ("T4", "Saltwater Apricot",  ["#0E4A55", "#3A8F8E", "#A8DCD1", "#FFB38A", "#FF6F4F"], 139),
+    ("T5", "Kelp Sunset",        ["#062A2F", "#0F5257", "#5C9E8F", "#F2795A", "#F9C9A7"], 151),
+    ("D1", "Ultraviolet Dusk II",  FIELD_NOTES[1][2], 163),
+    ("D2", "Ultraviolet Dusk III", FIELD_NOTES[1][2], 173),
+    ("D3", "Neon Vesper",        ["#0F0526", "#3A1670", "#8E2DA8", "#FF5E8A", "#FFB26B"], 181),
+    ("D4", "Orchid Afterglow",   ["#1C0B36", "#5A2380", "#C04A9E", "#FF8A8A", "#FFD3A1"], 191),
+    ("D5", "Plum Ember",         ["#120621", "#43175F", "#9C2F7A", "#E85D5D", "#FFA35C"], 199),
+    ("X1", "Ember Dusk",         ["#0B3C49", "#1F6F78", "#B0368F", "#F06E7C", "#FFC07A"], 211),
+    ("X2", "Lilac Tide",         ["#123B4A", "#3E7F8C", "#C27BC0", "#F7A1A6", "#FFE0B8"], 223),
+]
+
+SERIES = {
+    "field-notes": ("FIELD NOTES  —  8 original grain-mesh gradients", FIELD_NOTES),
+    "tide-and-dusk": ("TIDE & DUSK  —  12 more in the Tidepool / Ultraviolet direction", TIDE_AND_DUSK),
+}
 
 
 def hex_to_srgb(h):
@@ -112,10 +131,11 @@ def render(colors, seed, w=W, h=H):
     return (np.clip(rgb, 0, 1) * 255 + 0.5).astype(np.uint8)
 
 
-def contact_sheet(thumbs, meta, path):
+def contact_sheet(thumbs, meta, title, path):
     tw, th = 720, 480
     pad, label = 40, 90
-    cols, rows = 4, 2
+    cols = 4
+    rows = -(-len(thumbs) // cols)
     sheet = Image.new("RGB", (cols * tw + (cols + 1) * pad, rows * (th + label) + (rows + 1) * pad + 110), "#F4F1EC")
     d = ImageDraw.Draw(sheet)
     try:
@@ -124,7 +144,7 @@ def contact_sheet(thumbs, meta, path):
         sm = ImageFont.truetype("DejaVuSansMono.ttf", 18)
     except OSError:
         big = mid = sm = ImageFont.load_default()
-    d.text((pad, 40), "FIELD NOTES  —  8 original grain-mesh gradients", fill="#1A1A1A", font=big)
+    d.text((pad, 40), title, fill="#1A1A1A", font=big)
     for k, (im, (num, name, colors, _)) in enumerate(zip(thumbs, meta)):
         cx = pad + (k % cols) * (tw + pad)
         cy = 110 + pad + (k // cols) * (th + label + pad)
@@ -138,14 +158,20 @@ def contact_sheet(thumbs, meta, path):
     sheet.save(path, quality=92)
 
 
+# usage: make_gradients.py OUT_DIR [field-notes|tide-and-dusk]
+OUT = Path(sys.argv[1])
+OUT.mkdir(parents=True, exist_ok=True)
+series = sys.argv[2] if len(sys.argv) > 2 else "field-notes"
+title, palettes = SERIES[series]
+
 thumbs = []
-for num, name, colors, seed in PALETTES:
+for num, name, colors, seed in palettes:
     img = Image.fromarray(render(colors, seed))
     slug = name.lower().replace(" ", "-")
     img.save(OUT / f"{num}-{slug}.png", optimize=True)
     thumbs.append(img)
     print("wrote", num, name, flush=True)
 
-contact_sheet(thumbs, PALETTES, OUT / "00-field-notes-contact-sheet.jpg")
+contact_sheet(thumbs, palettes, title, OUT / f"00-{series}-contact-sheet.jpg")
 (OUT / "palettes.json").write_text(json.dumps(
-    [{"id": n, "name": nm, "colors": c, "seed": s} for n, nm, c, s in PALETTES], indent=2))
+    [{"id": n, "name": nm, "colors": c, "seed": s} for n, nm, c, s in palettes], indent=2))

@@ -21,7 +21,8 @@ and film grain. Every piece is seeded, so it re-renders identically.
 
 ```
 pip install numpy pillow
-python3 make_gradients.py out/
+python3 make_gradients.py out/                 # Field Notes
+python3 make_gradients.py out2/ tide-and-dusk  # series 2
 ```
 
-Edit `PALETTES` (colours + seed) to make new ones.
+Edit `FIELD_NOTES` / `TIDE_AND_DUSK` (colours + seed) to make new ones.
