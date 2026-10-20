@@ -1,4 +1,4 @@
-"""Storyboard: one key frame per shot (drawn with the real kit and real model data), laid out on sheets with timing,
+"""Storyboard: one key frame per shot (drawn with the kit; every picture is vector art from art.py), laid out on sheets with timing,
 voice-over, action and sound notes.
 
   python3 storyboard.py   -> out/storyboard_1.png ... (and out/panels/NN.png at full 1080x1920)
@@ -11,6 +11,7 @@ import numpy as np
 import skia
 from PIL import Image
 
+import art
 import kit
 from kit import *  # noqa: F401,F403
 from script import PARTS
@@ -34,37 +35,41 @@ def cap(c, words, emph=(), rgb=AMBER):
 
 
 def hero(name="hero"):
-    return load(f"{name}/final.png")
+    return art.image(name)
 
 
-def step(i, name="hero", kind="x0"):
-    return load(f"{name}/{kind}/{i:02d}.png")
+def step(i, name="hero"):
+    return art.step(i, name=name)
 
 
-def big_card(c, arr, y=430, w=860, caption=None, glow=None):
+SEEDS = {"hero": 1883, "seed_a": 11, "seed_b": 22, "seed_c": 33}
+
+
+def big_card(c, arr, y=430, w=760, caption=None, glow=None):
     card(c, arr, (W - w) / 2, y, w, caption, glow=glow)
 
 
 # ---------------------------------------------------------------- the shots
 def s01(c):
     background(c)
-    prompt_box(c, meta("hero")["prompt"], 110, 250, 860, typed=None, caret=False)
-    big_card(c, hero(), 470, caption=f"SEED {meta('hero')['seed']} · 30 STEPS")
-    cap(c, "made by an AI", emph=("ai",), rgb=VIOLET)
+    prompt_box(c, art.PROMPT, 110, 250, 860, typed=None, caret=False)
+    big_card(c, hero(), 440, caption=f"SEED {SEEDS['hero']} · 30 STEPS")
+    label(c, "ILLUSTRATION", 910, 1240, 18, "mono", SMOKE, 200, "right", 0.2)
+    cap(c, "in seconds.", emph=("seconds.",), rgb=VIOLET)
 
 
 def s02(c):
     background(c)
     n = static(1883)
     img = noisy(hero(), n, 0.7)
-    big_card(c, img, 470, caption="REWINDING…")
+    big_card(c, img, 440, caption="REWINDING…")
     label(c, "◀◀", W / 2, 360, 70, "bold", PAPER, 230, "center")
     cap(c, "Pure noise.", emph=("noise",), rgb=VIOLET)
 
 
 def s03(c):
     background(c)
-    big_card(c, noisy(hero(), static(1883), 1.0), 470, caption="STEP 0 / 30")
+    big_card(c, noisy(hero(), static(1883), 1.0), 440, caption="STEP 0 / 30")
     for k, (x, y) in enumerate(((200, 380), (880, 1390), (150, 1450))):
         label(c, "?", x, y, 90, "serif_bold", AMBER, 120 - k * 30)
     cap(c, "turn static into", emph=("static",), rgb=VIOLET)
@@ -81,8 +86,8 @@ def s04(c):
 
 def s05(c):
     background(c)
-    toks = meta("hero")["tokens"][1:-1]
-    prompt_box(c, meta("hero")["prompt"], 110, 300, 860, caret=False, a=90)
+    toks = art.TOKENS
+    prompt_box(c, art.PROMPT, 110, 300, 860, caret=False, a=90)
     x, y = 110, 620
     for tk in toks:
         tk = tk.replace("</w>", "")
@@ -91,40 +96,31 @@ def s05(c):
             x, y = 110, y + 90
         chip(c, tk, x, y)
         x += wd + 16
-    fig(c, 2, f"{len(toks)} TOKENS (THE MODEL'S OWN SPLIT)", 110, 560)
+    fig(c, 2, f"{len(toks)} TOKENS", 110, 560)
     cap(c, "pieces called tokens", emph=("tokens",))
 
 
 def s06(c):
     background(c)
-    emb = np.load(os.path.join(RUNS, "hero", "attn.npz"))["emb"].astype(np.float32)
-    toks = [t.replace("</w>", "") for t in meta("hero")["tokens"]]
-    i = toks.index("cat")
     chip(c, "cat", 110, 330)
-    barcode(c, emb[i], 110, 470, 860, 300)
+    barcode(c, art.embedding("cat"), 110, 470, 860, 300)
     label(c, "768", W / 2, 960, 170, "mono_bold", VIOLET, 255, "center")
     label(c, "NUMBERS PER TOKEN", W / 2, 1020, 26, "mono", SMOKE, 255, "center", 0.3)
-    fig(c, 3, "THE REAL VECTOR FOR “cat”", 110, 300)
+    fig(c, 3, "“cat” AS NUMBERS (ILLUSTRATION)", 110, 300)
     cap(c, "768 numbers", emph=("numbers",), rgb=VIOLET)
 
 
 def s07(c):
     background(c)
-    d = np.load(os.path.join(HERE, "data", "words.npz"))
-    v = d["vec"].astype(np.float32)
-    v = v - v.mean(0)
-    u, s_, vt = np.linalg.svd(v, full_matrices=False)
-    p = v @ vt[:2].T
-    p = (p - p.min(0)) / (p.max(0) - p.min(0))
     focus = {"cat", "kitten", "moon", "planet"}
-    for w, (a, b) in zip(d["words"], p):
+    for w, (a, b) in art.MEANING.items():
         x, y = 160 + a * 760, 380 + b * 760
         hot = w in focus
         c.drawCircle(x, y, 9 if hot else 6, paint(AMBER if hot else SMOKE, 255 if hot else 160))
         if hot:
             c.drawCircle(x, y, 26, paint(AMBER, 120, sigma=12))
         label(c, str(w), x + 16, y + 8, 28 if hot else 22, "mono_bold" if hot else "mono", AMBER if hot else SMOKE)
-    fig(c, 4, "MEANING MAP (768 → 2 DIMENSIONS)", 110, 320)
+    fig(c, 4, "MAP OF MEANING (SIMPLIFIED)", 110, 320)
     cap(c, "near kitten", emph=("kitten",))
 
 
@@ -170,8 +166,8 @@ def s10(c):
 
 def s11(c):
     background(c)
-    big_card(c, load("hero/steps/start.png"), 470, caption=f"SEED {meta('hero')['seed']} · STEP 0 / 30")
-    label(c, "NEW RANDOM STATIC", W / 2, 380, 30, "mono_bold", VIOLET, 255, "center", 0.3)
+    big_card(c, noisy(hero(), static(1), 1.0), 440, caption=f"SEED {SEEDS['hero']} · STEP 0 / 30")
+    label(c, "NEW RANDOM STATIC", W / 2, 390, 30, "mono_bold", VIOLET, 255, "center", 0.3)
     cap(c, "fresh random static", emph=("static",), rgb=VIOLET)
 
 
@@ -180,15 +176,12 @@ def s12(c):
     for i, s_ in enumerate((2, 6, 12, 28)):
         x, y = 90 + (i % 2) * 460, 330 + (i // 2) * 520
         card(c, step(s_), x, y, 440, f"STEP {s_ + 1} · MODEL'S GUESS")
-    fig(c, 7, "REAL STEPS FROM STABLE DIFFUSION 1.5", 90, 290)
+    fig(c, 7, "THE MODEL'S GUESS, STEP BY STEP", 90, 290)
     cap(c, "Then shapes.", emph=("shapes",), rgb=VIOLET)
 
 
 def _attn(word):
-    m = meta("hero")
-    toks = [t.replace("</w>", "") for t in m["tokens"]]
-    a = np.load(os.path.join(RUNS, "hero", "attn.npz"))["attn"].astype(np.float32)
-    return a[len(a) // 2:].mean(0)[:, toks.index(word)].reshape(16, 16)
+    return art.attn(word)
 
 
 def s13(c):
@@ -202,7 +195,7 @@ def s13(c):
         p.moveTo(x0, 360)
         p.cubicTo(x0, 400, x1, 390, x1, 520)
         c.drawPath(p, paint(AMBER, 220, stroke=2.5))
-    fig(c, 8, "REAL CROSS-ATTENTION MAPS", 90, 960)
+    fig(c, 8, "ATTENTION: WORD → PLACE", 90, 960)
     cap(c, "looking for moon", emph=("moon",))
 
 
@@ -217,9 +210,7 @@ def s14(c):
 
 def s15(c):
     background(c)
-    lat = np.load(os.path.join(RUNS, "hero", "start_latent.npy"))[0]
-    fin = load("hero/x0/28.png")
-    small = cv2.resize(fin, (64, 64), interpolation=cv2.INTER_AREA)
+    small = cv2.resize(hero(), (64, 64), interpolation=cv2.INTER_AREA)
     card(c, cv2.resize(small, (512, 512), interpolation=cv2.INTER_NEAREST), 90, 520, 300, "64 × 64 × 4")
     r = skia.Rect.MakeXYWH(420, 600, 160, 140)
     c.drawRRect(skia.RRect.MakeRectXY(r, 20, 20), paint(CARD))
@@ -232,7 +223,7 @@ def s15(c):
 
 def s16(c):
     background(c)
-    for i, (n, sd) in enumerate((n, meta(n)["seed"]) for n in ("hero", "seed_a", "seed_b", "seed_c")):
+    for i, (n, sd) in enumerate(SEEDS.items()):
         x, y = 90 + (i % 2) * 460, 330 + (i // 2) * 520
         card(c, hero(n), x, y, 440, f"SEED {sd}")
     fig(c, 10, "SAME PROMPT, 4 DIFFERENT STARTING STATICS", 90, 290)
@@ -241,7 +232,7 @@ def s16(c):
 
 def s17(c):
     background(c)
-    sd = meta("hero")["seed"]
+    sd = SEEDS["hero"]
     card(c, hero(), 90, 520, 440, f"SEED {sd}")
     card(c, hero(), 550, 520, 440, f"SEED {sd}")
     label(c, "=", W / 2, 790, 90, "bold", PAPER, 255, "center")
@@ -250,24 +241,24 @@ def s17(c):
 
 def s18(c):
     background(c)
-    big_card(c, noisy(hero(), static(1883), 0.5), 470, caption="→ STEP 0")
+    big_card(c, noisy(hero(), static(1883), 0.5), 440, caption="→ STEP 0")
     cap(c, "sculpted by words", emph=("words",))
 
 
 SHOTS = [  # fn, time, VO key, action, sound
-    (s01, "0:00–0:04", "H1", "Finished hero picture on a floating card, its real prompt above. Slow push-in.", "Soft synth chord; card 'whoosh' in."),
-    (s02, "0:04–0:07", "H2", "The picture REWINDS: noise floods back over it (real forward-noise maths).", "Tape-rewind zip; hiss rises with the noise."),
+    (s01, "0:00–0:04", "H1", "Finished hero picture on a floating card, its prompt above; small 'ILLUSTRATION' tag. Slow push-in.", "Soft synth chord; card 'whoosh' in."),
+    (s02, "0:04–0:07", "H2", "The picture REWINDS: noise floods back over it (the real forward-noise maths).", "Tape-rewind zip; hiss rises with the noise."),
     (s03, "0:07–0:11", "H2", "Pure static fills the card. Hold one beat.", "Full static hiss, then 1 beat of silence."),
-    (s04, "0:11–0:16", "H3", "Static plays forward at 4× speed into the cat (all 30 real steps), then the title resolves out of grain.", "Ticks speed up; hiss falls away; title hit."),
-    (s05, "0:16–0:24", "A1–A2", "Prompt box; the sentence snaps apart into the model's real tokens (amber chips).", "Key clicks; a 'snap' per chip."),
-    (s06, "0:24–0:29", "A2", "The 'cat' chip unfolds into its real 768-number vector (violet barcode). Counter to 768.", "Data sparkle, rising counter ticks."),
-    (s07, "0:29–0:38", "A3", "Chips fly into the meaning map (real text-encoder vectors, flattened). cat lands by kitten, moon by planet.", "Soft pings as each word lands."),
+    (s04, "0:11–0:16", "H3", "Static plays forward at 4× speed into the cat (30 steps), then the title resolves out of grain.", "Ticks speed up; hiss falls away; title hit."),
+    (s05, "0:16–0:24", "A1–A2", "Prompt box; the sentence snaps apart into tokens (amber chips).", "Key clicks; a 'snap' per chip."),
+    (s06, "0:24–0:29", "A2", "The 'cat' chip unfolds into 768 numbers (violet barcode). Counter to 768.", "Data sparkle, rising counter ticks."),
+    (s07, "0:29–0:38", "A3", "Chips fly into a map of meaning. cat lands by kitten, moon by planet.", "Soft pings as each word lands."),
     (s08, "0:38–0:44", "B1", "A wall of captioned pictures scrolls up fast.", "Fast shutter flicker, music lifts."),
     (s09, "0:44–0:51", "B2", "One picture (dog) gets buried in noise across 5 cards, 0 → 1,000.", "Hiss grows card by card."),
     (s10, "0:51–0:58", "B3", "Noisy picture → MODEL box → its guess: the noise. The model's one job.", "Glassy 'click' as the guess appears."),
     (s11, "0:58–1:02", "C1", "Hard reset: brand-new static on the card, SEED shown, STEP 0/30.", "Static burst; music drops to pulse."),
-    (s12, "1:02–1:12", "C2", "Real steps: blobs of colour → shapes → fur and craters. Step counter runs 1 → 30.", "Rising tick per step; hiss fades."),
-    (s13, "1:12–1:19", "C3", "Amber threads from the 'cat' and 'moon' chips into the picture; real attention maps glow where it looks.", "String pluck per thread."),
+    (s12, "1:02–1:12", "C2", "Steps: blobs of colour → shapes → fur and craters. Step counter runs 1 → 30.", "Rising tick per step; hiss fades."),
+    (s13, "1:12–1:19", "C3", "Amber threads from the 'cat' and 'moon' chips into the picture; a glow shows where it looks.", "String pluck per thread."),
     (s14, "1:19–1:26", "C4", "Split: the same seed without the prompt (mush) vs with it, pushed 7.5×.", "Two-note 'push' swell."),
     (s15, "1:26–1:34", "C5", "The real work happens on a tiny 64×64 grid; a decoder blows it up to full size. '48× smaller'.", "Low 'whomp' as it scales up."),
     (s16, "1:34–1:40", "D1", "Same prompt, 4 seeds, 4 different cats (pop in one by one).", "4 pops on the beat."),
@@ -285,11 +276,11 @@ def sheet(shots, n0, path):
     c = s.getCanvas()
     c.clear(col(CARBON))
     label(c, "HOW AI DRAWS FROM NOTHING · STORYBOARD", gap, 70, 34, "black", PAPER, 255, tracking=0.06)
-    label(c, f"SHEET {n0 // 6 + 1} · 9:16 SHORT · ~1:52 · REAL STABLE DIFFUSION 1.5 DATA", gap, 112, 20, "mono",
+    label(c, f"SHEET {n0 // 6 + 1} · 9:16 SHORT · ~1:52 · ALL PICTURES DRAWN IN CODE", gap, 112, 20, "mono",
           SMOKE, 255, tracking=0.15)
     os.makedirs(os.path.join(HERE, "out", "panels"), exist_ok=True)
     for i, (fn, tm, vo, act, sfx) in enumerate(shots):
-        frame = kit.render(fn, 0.0, samples=1)
+        frame = kit.render(lambda c, t: fn(c), 0.0, samples=1)
         Image.fromarray(frame).save(os.path.join(HERE, "out", "panels", f"{n0 + i + 1:02d}.png"))
         x, y = gap + (i % cols) * (pw + gap), 150 + (i // cols) * (ph + tx + gap)
         img = sk_image(cv2.resize(frame, (pw, ph), interpolation=cv2.INTER_AREA))
@@ -307,7 +298,7 @@ def sheet(shots, n0, path):
         for ln in textwrap.wrap(act, 42)[:4]:
             label(c, ln, x, yy, 16, "medium", PAPER, 200)
             yy += 21
-        for ln in textwrap.wrap("♪ " + sfx, 44)[:2]:
+        for ln in textwrap.wrap("SFX: " + sfx, 38)[:2]:
             label(c, ln, x, yy + 4, 15, "mono", VIOLET, 230)
             yy += 20
     rgb = s.makeImageSnapshot().toarray(colorType=skia.kRGBA_8888_ColorType)[..., :3]

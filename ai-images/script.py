@@ -5,7 +5,7 @@ Numbers are written the way they must be spoken; captions show them as digits ag
 
 PARTS = {
     "part1": [   # hook: static becomes a picture
-        ("H1", "This picture was made by an AI in about thirty seconds."),
+        ("H1", "Type one sentence, and an AI can turn it into a picture like this in seconds."),
         ("H2", "And it started as this. Pure noise. No photo. No sketch. Just static."),
         ("H3", "So how does a machine turn static into a cat on the moon?"),
     ],
@@ -35,6 +35,6 @@ PARTS = {
 
 # spoken words -> what the captions show
 DISPLAY = [
-    ("thirty seconds", "30 seconds"), ("seven hundred and sixty eight", "768"),
+    ("seven hundred and sixty eight", "768"),
     ("forty eight times", "48 times"),
 ]

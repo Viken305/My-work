@@ -10,10 +10,10 @@ into focus, one step at a time. The hero of the video is **the noise itself**: w
 ## 1. Big idea
 - **Everything starts as static.** Every image, every caption word, even the title, arrives by denoising out of
   grain. The viewer learns the core idea from the visual language before the narrator says it.
-- **Show the real thing, not a cartoon of it.** The examples come from a **real open-source image model run here
-  in code** (Stable Diffusion 1.5, CPU, see §8). We save the model's actual intermediate steps, its real attention
-  maps (which word it is "looking at" in which part of the picture) and its real tokens. Nothing is faked to look
-  like AI. This is the hook for a channel about understanding things: *this is literally what happened inside.*
+- **Every picture is vector art drawn in code** (`art.py`): the astronaut cat, its seed variants, Paris, and the
+  training examples. No AI-generated images are used. The noising uses the real diffusion maths on those drawings;
+  the step-by-step guesses, attention glows and number barcodes are simplified illustrations of what a model does,
+  and are labelled as such on screen where it matters.
 - **Words are amber, the model is violet.** The prompt is something you say; the model is something that listens.
   Two colours, two characters, used the same way all video.
 
@@ -36,14 +36,14 @@ Rules:
 - **Studio grain:** fine, moving film grain over everything; slightly stronger in the corners.
 - **Image tiles:** each picture sits on a floating card with soft shadow, thin white frame, rounded 18 px corners,
   and a mono label strip underneath (`STEP 12 / 30 · SEED 1883`).
-- **Noise is real noise:** Gaussian per-pixel noise, mixed with the image using the model's own schedule, so the
+- **Noise is real noise:** Gaussian per-pixel noise, mixed with the image using a standard diffusion noise schedule, so the
   "forward" noising in part 3 is mathematically the same process the model was trained on.
 - **Token chips:** prompt words split into rounded chips; each chip unfolds into a column of 768 thin bars
-  (its embedding, real values, drawn as a barcode).
+  (an illustrative embedding, drawn as a barcode).
 - **Meaning map:** a dark 3D point cloud of words (cat near kitten, moon near planet), slowly orbiting, depth of
   field, points glow when mentioned.
 - **Attention threads:** amber curves from a token chip down into the picture, ending in a soft heat map taken from
-  the real cross-attention of that word.
+  the drawing's own layers for that word.
 - **Camera:** smooth push-ins and match cuts: static → TV screen → image tile; a token chip → a point in the
   meaning map; a small latent grid → the full-size picture.
 - **Post:** motion blur (3 samples), bloom only on amber and violet, gentle chromatic aberration at the edges, grain,
@@ -87,29 +87,26 @@ but under 2:00 keeps retention high.
 
 | Part | Time | What happens |
 |---|---|---|
-| 1. Hook | 0:00–0:16 | Full-screen static. A prompt types itself: *"an astronaut cat riding a bicycle on the moon."* In 2 s the static pulls into the real image. "This picture started as pure noise. No photo. No sketch. Just static." Title resolves from grain. |
+| 1. Hook | 0:00–0:16 | Full-screen static. A prompt types itself: *"a cat wearing an astronaut suit riding a bicycle on the moon, digital art"* In 2 s the static pulls into the picture. "This picture started as pure noise. No photo. No sketch. Just static." Title resolves from grain. |
 | 2. Reading your words | 0:16–0:38 | The prompt splits into tokens. Each becomes 768 numbers. The chips fly into a meaning map where *cat* sits near *kitten* and *moon* near *planet*. "It doesn't read words. It reads where they sit in a map of meaning." |
 | 3. How it learned | 0:38–0:58 | Billions of captioned images rush past. One photo gets noisier step by step until it is static. "Its whole training is one tiny job: look at a noisy picture and guess the noise." |
-| 4. Making the picture | 0:58–1:30 | A new seed of random static. Step counter 1 → 30, real steps from the model: blurry blobs of colour first, then shapes, then fur and craters. Amber threads show *cat* lighting up the cat and *moon* lighting up the ground. Guidance: the same step with and without the prompt, side by side; the model pushes further toward your words. A small 64×64 latent grid blows up into the full picture ("it works on a picture 48 times smaller, then a decoder paints the pixels"). |
+| 4. Making the picture | 0:58–1:30 | A new seed of random static. Step counter 1 → 30, simulated steps: blurry blobs of colour first, then shapes, then fur and craters. Amber threads show *cat* lighting up the cat and *moon* lighting up the ground. Guidance: the same step with and without the prompt, side by side; the model pushes further toward your words. A small 64×64 latent grid blows up into the full picture ("it works on a picture 48 times smaller, then a decoder paints the pixels"). |
 | 5. Same words, new noise | 1:30–1:50 | Four seeds, same prompt: four different cats. Same seed again: the identical cat. "Every AI image is random noise, sculpted by your words." The final image dissolves back to static, which loops to the hook. |
 
-**Image examples planned** (all real model outputs, all made here):
-- Hero: *an astronaut cat riding a bicycle on the moon* (seed shown on screen) with its 30 saved steps.
-- Seed grid: the same prompt with 4 seeds.
+**Image examples** (all vector illustrations in `art.py`):
+- Hero: *a cat wearing an astronaut suit riding a bicycle on the moon* with 30 simulated steps.
+- Seed grid: the same prompt, 4 "seeds" (different cat, bike colour, sky, pose).
 - Prompt edit: *"…on the moon"* vs *"…in Paris"* with the same seed (same pose, new world).
 - Guidance: the same seed at guidance 1 vs 7.5 (mush vs clear subject).
-- Training strip: 3 simple images (a dog, a mountain, a lighthouse) being noised, made by the same model.
+- Training strip: 3 simple pictures (a dog, a mountain, a lighthouse) being noised.
 
 ## 8. Production notes
-- **Model:** Stable Diffusion 1.5 (CreativeML OpenRAIL-M licence: outputs may be used commercially), run with
-  `diffusers` on CPU. About 1–2 minutes per 512×512 image at 30 steps on this machine. We hook the pipeline to save
-  the latent at every step (decoded to pixels), the cross-attention maps per token, and the CLIP tokens and
-  embeddings. All of that is saved as data in `ai-images/data/` so the video can be rebuilt from code.
-- **Resolution:** 512×512 images are shown at ~860 px wide on cards with grain, which hides softness. The hero can
-  be upscaled 2× with the model's own upscaler if needed.
-- **Honesty line on screen** (small, part 4): `REAL STEPS FROM STABLE DIFFUSION 1.5`.
-- **Your own images:** if you want a gallery shot of newer models (for example your own generations), send them and
-  they go in part 5 as "today's models work the same basic way", credited on screen.
+- **No AI-generated images** (decision, Oct 2026). All pictures are vector illustrations in `art.py`.
+- **Simulated steps:** the model's guess at step k = the drawing blurred by a shrinking amount plus fading noise
+  (coarse first, detail last, which is how real models behave). The forward noise uses the real cosine schedule.
+- **Attention glows** come from the drawing's own layers (the cat layer for "cat", the ground for "moon").
+- **Number barcodes and the meaning map** are illustrative and labelled "illustration" / "simplified".
+- **Storyboard:** `python3 storyboard.py` -> `out/storyboard_1..3.png`.
 
 ## 9. Fact sheet (status)
 | Claim | Status |
@@ -120,9 +117,9 @@ but under 2:00 keeps retention high.
 | Prompt split into tokens; each becomes a list of numbers (768 in SD 1.5's CLIP text encoder), max 77 tokens | Confirmed |
 | Similar meanings sit close together in that number space | Confirmed (embedding geometry); our 3D map is a projection, labelled as such |
 | Works in a compressed 64×64×4 latent for a 512×512 image (48× fewer numbers), a decoder makes the pixels | Confirmed (512·512·3 / 64·64·4 = 48) |
-| Cross-attention links words to image regions | Confirmed; we show the real maps |
+| Cross-attention links words to image regions | Confirmed; we show simplified glows |
 | Guidance compares a prediction with and without the prompt and pushes toward the prompt (scale ~7.5) | Confirmed (classifier-free guidance) |
-| Coarse layout appears first, fine detail last | Confirmed, and visible in our real steps |
+| Coarse layout appears first, fine detail last | Confirmed; our simulated steps follow it |
 | Same prompt + same seed + same settings = same image | Confirmed (deterministic on the same setup) |
 | "All AI image models work this way" | **Not said.** Newer models (SD3, FLUX) use transformers and flow matching, and some generate differently; we say "most image generators" and "the basic idea" |
 | "It copies and pastes pieces of training images" | **Not said**; it is a misconception. We avoid making claims about copying either way |
