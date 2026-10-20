@@ -37,3 +37,7 @@ kurzgesagt-gold/out/*.mp4
 *.webm
 *.mkv
 kurzgesagt-gold/out/voices/
+deep-hole/build/
+deep-hole/out/*.mp4
+krakatoa/out/
+krakatoa/build/
