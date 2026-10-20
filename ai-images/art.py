@@ -30,11 +30,11 @@ CATS = {
 }
 
 MEANING = {   # word: (x, y) in 0..1, clustered by meaning
-    "cat": (0.18, 0.30), "kitten": (0.25, 0.22), "tiger": (0.12, 0.42), "dog": (0.32, 0.38), "puppy": (0.38, 0.30),
-    "moon": (0.78, 0.22), "planet": (0.86, 0.32), "mars": (0.72, 0.36), "star": (0.88, 0.14), "astronaut": (0.64, 0.18),
-    "rocket": (0.70, 0.08), "bicycle": (0.62, 0.72), "car": (0.72, 0.80), "train": (0.56, 0.84),
-    "paris": (0.22, 0.78), "london": (0.14, 0.70), "city": (0.30, 0.86),
-    "pizza": (0.44, 0.56), "apple": (0.50, 0.48), "bread": (0.40, 0.64),
+    "cat": (0.16, 0.24), "kitten": (0.27, 0.14), "tiger": (0.06, 0.34), "dog": (0.26, 0.36), "puppy": (0.36, 0.26),
+    "moon": (0.76, 0.16), "planet": (0.90, 0.26), "mars": (0.80, 0.34), "star": (0.92, 0.06), "astronaut": (0.64, 0.26),
+    "rocket": (0.68, 0.04), "bicycle": (0.70, 0.80), "car": (0.86, 0.88), "train": (0.78, 0.96),
+    "paris": (0.18, 0.86), "london": (0.06, 0.78), "city": (0.24, 0.96),
+    "pizza": (0.44, 0.54), "apple": (0.56, 0.50), "bread": (0.50, 0.62),
 }
 
 
@@ -326,6 +326,13 @@ def image(name, size=S):
 
 def step(k, n=30, name="hero", size=S):
     """The model's guess of the final picture at step k (0..n-1): blur shrinks as steps go on, a little noise left."""
+    key = ("step", k, n, name, size)
+    if key not in _CACHE:
+        _CACHE[key] = _step(k, n, name, size)
+    return _CACHE[key]
+
+
+def _step(k, n, name, size):
     u = (k + 1) / n
     img = image(name, size)
     sig = size * 0.09 * (1 - u) ** 2.2

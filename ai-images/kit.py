@@ -237,17 +237,26 @@ def fig(c, n, text, x, y, a=255, align="left", size=20):
     label(c, f"FIG. {n} · {text}", x, y, size, "mono", SMOKE, a, align, 0.18)
 
 
+_BG = None
+
+
 def background(c, t=0.0):
-    c.drawPaint(skia.Paint(Shader=skia.GradientShader.MakeRadial(
-        (W / 2, H * 0.42), H * 0.75, [col(mix(CARBON, (30, 27, 40), 0.6)), col(CARBON), col(INK)], [0, 0.55, 1])))
+    """Studio backdrop: a soft warm-violet glow behind centre, falling to ink (cached as an image)."""
+    global _BG
+    if _BG is None:
+        s = skia.Surface(W, H)
+        s.getCanvas().drawPaint(skia.Paint(Shader=skia.GradientShader.MakeRadial(
+            (W / 2, H * 0.42), H * 0.75, [col(mix(CARBON, (30, 27, 40), 0.6)), col(CARBON), col(INK)], [0, 0.55, 1])))
+        _BG = s.makeImageSnapshot()
+    c.drawImage(_BG, 0, 0)
 
 
 # ---------------------------------------------------------------- post
 _GRAIN = _VIG = None
 
 
-def post(img, t, bloom=1.0, ca=0.6, grain=6.0):
-    """img float32 HxWx3. Bloom only on amber and violet light."""
+def post(img, t, bloom=1.0, ca=0.6, grain=6.0, glitch=0.0, flash=0.0):
+    """img float32 HxWx3. Bloom only on amber and violet light. glitch: horizontal tearing bands + RGB split."""
     global _GRAIN, _VIG
     if _GRAIN is None:
         rng = np.random.default_rng(3)
@@ -270,6 +279,19 @@ def post(img, t, bloom=1.0, ca=0.6, grain=6.0):
         img = img.copy()
         img[..., 0] = cv2.warpAffine(img[..., 0], Mr, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
         img[..., 2] = cv2.warpAffine(img[..., 2], Mb, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
+    if glitch > 0:
+        rng = np.random.default_rng(int(t * FPS * 7))
+        img = img.copy()
+        for _ in range(int(3 + 9 * glitch)):
+            y0 = int(rng.uniform(0, H - 40))
+            h = int(rng.uniform(6, 22 + 120 * glitch))
+            img[y0:y0 + h] = np.roll(img[y0:y0 + h], int(rng.normal(0, 60 * glitch)), axis=1)
+        sh = int(14 * glitch)
+        if sh:
+            img[..., 0] = np.roll(img[..., 0], sh, axis=1)
+            img[..., 2] = np.roll(img[..., 2], -sh, axis=1)
+    if flash > 0:
+        img = img + (255 - img) * flash
     img = img * _VIG + cv2.resize(_GRAIN[int(t * FPS) % 8], (W, H), interpolation=cv2.INTER_NEAREST)[..., None]
     return np.clip(img, 0, 255).astype(np.uint8)
 
