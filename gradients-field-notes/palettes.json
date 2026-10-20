@@ -1,0 +1,98 @@
+[
+  {
+    "id": "01",
+    "name": "Tidepool Ember",
+    "colors": [
+      "#0B3C49",
+      "#1F6F78",
+      "#6FC2B0",
+      "#FF7A59",
+      "#FFD3B5"
+    ],
+    "seed": 11
+  },
+  {
+    "id": "02",
+    "name": "Ultraviolet Dusk",
+    "colors": [
+      "#140832",
+      "#4B1D7A",
+      "#B0368F",
+      "#F06E7C",
+      "#FFC07A"
+    ],
+    "seed": 23
+  },
+  {
+    "id": "03",
+    "name": "Matcha Static",
+    "colors": [
+      "#0F2A1D",
+      "#3E6B48",
+      "#9CC69B",
+      "#E9F5DB",
+      "#C9A93E"
+    ],
+    "seed": 37
+  },
+  {
+    "id": "04",
+    "name": "Chrome Peach",
+    "colors": [
+      "#2B2D42",
+      "#8DA9C4",
+      "#F6E7DA",
+      "#F7A072",
+      "#E85D4A"
+    ],
+    "seed": 41
+  },
+  {
+    "id": "05",
+    "name": "Midnight Citrus",
+    "colors": [
+      "#050A30",
+      "#1B2CC1",
+      "#00C2A8",
+      "#C8F169",
+      "#F9F871"
+    ],
+    "seed": 53
+  },
+  {
+    "id": "06",
+    "name": "Rosewater Smoke",
+    "colors": [
+      "#2E1F27",
+      "#6E3B57",
+      "#B07A92",
+      "#E8C3CB",
+      "#F7ECEE"
+    ],
+    "seed": 67
+  },
+  {
+    "id": "07",
+    "name": "Solar Lichen",
+    "colors": [
+      "#17181B",
+      "#3B5A2A",
+      "#8A9A3B",
+      "#E0A800",
+      "#F2E8C9"
+    ],
+    "seed": 71
+  },
+  {
+    "id": "08",
+    "name": "Glacier Bloom",
+    "colors": [
+      "#3F5E8C",
+      "#7FA7D6",
+      "#CFE6F2",
+      "#F7D6E0",
+      "#F28CB1"
+    ],
+    "seed": 83
+  }
+]
