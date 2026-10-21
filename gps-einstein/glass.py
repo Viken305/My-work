@@ -29,6 +29,7 @@ FX = P["style"]["post"]
 LIGHT = (-0.62, -0.78)       # direction towards the key light (top left)
 HERE = os.path.dirname(os.path.abspath(__file__))
 np.seterr(divide="ignore", invalid="ignore", over="ignore")
+cv2.setNumThreads(1)
 YY, XX = np.mgrid[0:H, 0:W].astype(np.float32)   # pixel grids, shared
 
 
