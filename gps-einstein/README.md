@@ -1,6 +1,6 @@
 # Your Phone Does Einstein's Math
 
-A 9:16 Short (about 1:55) about why GPS only works because of Einstein's relativity, rendered entirely in code in
+A 9:16 Short (1:41) about why GPS only works because of Einstein's relativity, rendered entirely in code in
 the **Frosted Glass** style (see `STYLE_GUIDE.md`, which also has the checked fact sheet). It is a studio project:
 `python3 ../studio/server.py` edits `project.json` and runs the tools below.
 

@@ -49,3 +49,4 @@ ai-images/build/
 studio/mockups/out/
 gps-einstein/build/
 gps-einstein/out/*.mp4
+gps-einstein/out/panels/

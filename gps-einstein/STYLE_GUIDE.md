@@ -1,6 +1,6 @@
 # Your Phone Does Einstein's Math: style guide
 
-A 9:16 Short (**~1:50**) about why GPS only works because of Einstein's relativity, rendered in code for
+A 9:16 Short (**1:41**) about why GPS only works because of Einstein's relativity, rendered in code for
 @BrighterMinds.
 
 The style is new. It is not Kurzgesagt flat shapes, not the graphite noir of `deep-hole/`, not the cyanotype of
