@@ -1,0 +1,125 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Studio · Script &amp; Voice</title>
+<link rel="stylesheet" href="studio.css">
+<style>
+.wrap { display: grid; grid-template-columns: 1fr 360px; gap: 18px; flex: 1; min-height: 0; }
+.left { display: flex; flex-direction: column; gap: 14px; min-height: 0; }
+.dur { display: flex; height: 34px; border-radius: 9px; overflow: hidden; gap: 2px; }
+.dur div { display: flex; align-items: center; padding: 0 10px; font: 700 11px Mono; color: var(--ink); white-space: nowrap; }
+.parts { overflow: hidden; display: flex; flex-direction: column; gap: 10px; }
+.part { background: var(--carbon); border: 1px solid var(--line); border-radius: 12px; }
+.part > .ph { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.part > .ph b { font-size: 14px; }
+.part > .ph .r { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+.line { display: grid; grid-template-columns: 44px 1fr 170px 54px; gap: 12px; align-items: center; padding: 9px 14px; }
+.line + .line { border-top: 1px solid #1f1e27; }
+.line .id { font: 700 12px Mono; color: var(--smoke); }
+.line .tx { font-size: 15px; line-height: 1.45; }
+.line .tx em { font-style: normal; border-radius: 4px; padding: 0 3px; }
+.line .tx em.a { color: var(--amber); background: #ffb5471a; }
+.line .tx em.v { color: #b6a4ff; background: #8b6cff1f; }
+.line .tx u { text-decoration: none; border-bottom: 1.5px dashed var(--smoke); }
+.line.sel { background: #ffb5470c; box-shadow: inset 3px 0 0 var(--amber); }
+.wave { height: 28px; display: flex; align-items: center; gap: 2px; }
+.wave i { flex: 1; background: var(--violet); border-radius: 1px; opacity: .8; }
+.line .t { font: 700 12px Mono; text-align: right; }
+.collapsed .line { display: none; }
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+td { padding: 6px 4px; border-top: 1px solid var(--line); }
+td.m { font-family: Mono; font-size: 12px; }
+.cast { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; }
+.cast div { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 7px 9px; font-size: 12px; }
+.cast div.on { border-color: var(--amber); }
+.cast small { display: block; color: var(--smoke); font-size: 10.5px; }
+.facts li { font-size: 12px; margin: 0 0 6px 16px; color: #d6d2cb; }
+</style></head>
+<body data-page="script"><script src="nav.js"></script>
+<main>
+  <header><div><div class="step">STEP 1</div><h1>Script &amp; Voice</h1></div><div class="sp"></div>
+    <span class="btn violet">✦ Ask Claude: make the hook punchier</span><span class="btn">⟲ Version 4</span>
+    <span class="btn primary">▶ Generate all voice</span></header>
+
+  <div class="wrap">
+    <div class="left">
+      <div class="panel" style="padding:12px 16px">
+        <h3 style="margin-bottom:8px">Total duration <span class="r"><b style="color:var(--paper);font:700 15px Inter">1:41.8</b> <span class="smoke">· target 1:40 · Shorts max 3:00</span></span></h3>
+        <div class="dur">
+          <div style="width:16%;background:var(--amber)">1 · HOOK 16.3s</div>
+          <div style="width:20.1%;background:#ffc977">2 · READING WORDS 20.5s</div>
+          <div style="width:17.4%;background:#b6a4ff">3 · LEARNING 17.7s</div>
+          <div style="width:32.9%;background:var(--violet)">4 · MAKING THE PICTURE 33.5s</div>
+          <div style="width:13.6%;background:#d9d4ff">5 · SEEDS 13.9s</div>
+        </div>
+      </div>
+
+      <div class="parts">
+        <div class="part collapsed"><div class="ph"><span class="chip a">PART 1</span><b>Hook: static becomes a picture</b><span class="smoke">3 lines</span>
+          <div class="r"><span class="chip g">VOICE ✓</span><span class="mono">16.3 s</span><span class="smoke">▸</span></div></div></div>
+
+        <div class="part"><div class="ph"><span class="chip a">PART 2</span><b>Reading your words</b><span class="smoke">3 lines</span>
+          <div class="r"><span class="chip g">VOICE ✓</span><span class="mono">20.5 s</span><span class="smoke">▾</span></div></div>
+          <div class="line"><span class="id">A1</span><div class="tx">First, it has to read your <em class="a">prompt</em>. But it doesn't read words like you do.</div>
+            <div class="wave" id="w1"></div><span class="t">4.6s</span></div>
+          <div class="line sel"><span class="id">A2</span><div class="tx">It chops the sentence into pieces called <em class="a">tokens</em>, and turns each one into a list of <u>seven hundred and sixty eight</u> <em class="v">numbers</em>.</div>
+            <div class="wave" id="w2"></div><span class="t">7.2s</span></div>
+          <div class="line"><span class="id">A3</span><div class="tx">Those numbers are a location on a <em class="v">map of meaning</em>. Cat sits near <em class="a">kitten</em>. Moon sits near <em class="a">planet</em>. That's how it knows what you mean.</div>
+            <div class="wave" id="w3"></div><span class="t">8.1s</span></div>
+        </div>
+
+        <div class="part"><div class="ph"><span class="chip a">PART 3</span><b>How it learned</b><span class="smoke">3 lines</span>
+          <div class="r"><span class="chip a">EDITED · RE-VOICE</span><span class="mono">17.7 s</span><span class="smoke">▾</span></div></div>
+          <div class="line"><span class="id">B1</span><div class="tx">To learn to draw, it studied <em class="v">billions</em> of <em class="a">images</em> with captions.</div>
+            <div class="wave" id="w4"></div><span class="t">3.9s</span></div>
+          <div class="line"><span class="id">B2</span><div class="tx">But here's the trick. During training, each picture was buried in <em class="v">noise</em>, a little more at every step, until nothing was left.</div>
+            <div class="wave" id="w5" style="opacity:.35"></div><span class="t amber">~7.4s</span></div>
+        </div>
+        <div class="part collapsed"><div class="ph"><span class="chip a">PART 4</span><b>Making the picture</b><span class="smoke">5 lines</span>
+          <div class="r"><span class="chip g">VOICE ✓</span><span class="mono">33.5 s</span><span class="smoke">▸</span></div></div></div>
+        <div class="part collapsed"><div class="ph"><span class="chip a">PART 5</span><b>Same words, new noise</b><span class="smoke">3 lines</span>
+          <div class="r"><span class="chip g">VOICE ✓</span><span class="mono">13.9 s</span><span class="smoke">▸</span></div></div></div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px;min-height:0">
+      <div class="panel">
+        <h3>Voice</h3>
+        <div class="cast">
+          <div class="on">▶ <b>af_heart</b><small>warm · used on 4 videos</small></div>
+          <div>▶ <b>am_michael</b><small>deep · documentary</small></div>
+          <div>▶ <b>bf_emma</b><small>British · bright</small></div>
+          <div>▶ <b>af_nova</b><small>fast · energetic</small></div>
+        </div>
+        <div class="field"><label>Speed <b>1.05×</b></label><div class="slider"><span style="width:55%"></span></div></div>
+        <div class="field"><label>Pause between lines <b>0.5 s</b></label><div class="slider"><span style="width:33%"></span></div></div>
+        <div class="row"><span class="btn sm">▶ Preview A2</span><span class="btn sm">⟳ Re-voice changed (1)</span></div>
+      </div>
+      <div class="panel">
+        <h3>Caption words <span class="r"><span class="amber">● your words</span> · <span class="violet">● the model</span></span></h3>
+        <div class="smoke" style="font-size:12px;margin-bottom:8px">Click a word in the script to highlight it. Highlighted words use the serif italic + scan-line sweep.</div>
+        <h3 style="margin:12px 0 6px">Say it → show it</h3>
+        <table><tr><td>seven hundred and sixty eight</td><td class="m amber">768</td></tr>
+          <tr><td>forty eight times</td><td class="m amber">48 times</td></tr>
+          <tr><td class="smoke">＋ add replacement</td><td></td></tr></table>
+      </div>
+      <div class="panel" style="flex:1">
+        <h3>Fact check <span class="r green">9 / 9 ✓</span></h3>
+        <ul class="facts"><li>768 numbers per token (CLIP ViT-L/14) ✓</li><li>Latent 64×64×4 vs 512×512×3 = 48× ✓</li>
+          <li>Classifier-free guidance: two predictions ✓</li><li>Training: noise added step by step, model predicts it ✓</li>
+          <li>Same seed + prompt + settings = same image ✓</li><li>Attention maps per word (cross-attention) ✓</li>
+          <li>Decoder (VAE) turns latent into pixels ✓</li><li>"Billions of captioned images" (LAION-5B) ✓</li>
+          <li class="smoke">Wording avoids "copies training images" ✓</li></ul>
+        <div class="smoke" style="font-size:11.5px;margin-top:10px">Sources: Rombach et al. 2022 · Ho et al. 2020 · Ho &amp; Salimans 2022 · Radford et al. 2021</div>
+        <span class="btn sm" style="margin-top:10px">Open fact sheet ↗</span>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="note" data-n="1" style="left:520px;top:58px">Live total length: each part's voice clip timed exactly</div>
+<div class="note" data-n="2" style="left:700px;top:600px">Edit a line → only that line is re-voiced</div>
+<div class="note" data-n="3" style="left:330px;top:780px">Dashed words (A2) are spoken one way and captioned another</div>
+<script>
+const wave = (id, n, seed) => { let s = seed, h = ""; for (let i = 0; i < n; i++) { s = (s * 9301 + 49297) % 233280;
+  const v = 0.2 + 0.8 * Math.abs(Math.sin(i / 3.1 + seed)) * (s / 233280); h += `<i style="height:${Math.round(4 + 22 * v)}px"></i>`; }
+  document.getElementById(id).innerHTML = h; };
+[["w1", 1], ["w2", 2], ["w3", 3], ["w4", 4], ["w5", 5]].forEach(([id, s]) => wave(id, 46, s));
+</script>
+</body></html>
