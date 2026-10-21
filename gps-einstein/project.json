@@ -1,0 +1,346 @@
+{
+ "title": "Your Phone Does Einstein's Math",
+ "format": "9:16",
+ "target_seconds": 110,
+ "parts": [
+  {
+   "id": "part1",
+   "title": "Hook: Einstein in your pocket",
+   "lines": [
+    {
+     "id": "H1",
+     "text": "Right now, your phone is doing Einstein's math."
+    },
+    {
+     "id": "H2",
+     "text": "Without it, the blue dot on your map would drift off by about ten kilometres, every single day."
+    },
+    {
+     "id": "H3",
+     "text": "So what does Einstein have to do with finding a coffee shop?"
+    }
+   ]
+  },
+  {
+   "id": "part2",
+   "title": "Clocks in the sky",
+   "lines": [
+    {
+     "id": "A1",
+     "text": "Twenty thousand kilometres above you, about thirty satellites circle the Earth."
+    },
+    {
+     "id": "A2",
+     "text": "Each one carries atomic clocks, and keeps shouting the same message. Here's where I am, and here's the exact time."
+    },
+    {
+     "id": "A3",
+     "text": "Your phone hears that message a split second later. That delay tells it how far away the satellite is."
+    }
+   ]
+  },
+  {
+   "id": "part3",
+   "title": "Four satellites, one dot",
+   "lines": [
+    {
+     "id": "B1",
+     "text": "One satellite puts you somewhere on a giant sphere. Add two more, and the spheres narrow it down to a single point. That's you."
+    },
+    {
+     "id": "B2",
+     "text": "A fourth satellite fixes your phone's own clock, because a phone clock is never exact."
+    },
+    {
+     "id": "B3",
+     "text": "And the timing has to be perfect. Light travels thirty centimetres in a billionth of a second. Be off by a millionth, and you're off by three hundred metres."
+    }
+   ]
+  },
+  {
+   "id": "part4",
+   "title": "Einstein's problem",
+   "lines": [
+    {
+     "id": "C1",
+     "text": "Here's the problem. Those clocks don't tick at the same speed as ours."
+    },
+    {
+     "id": "C2",
+     "text": "They fly at fourteen thousand kilometres an hour, and Einstein showed that moving clocks run slow. Seven microseconds a day."
+    },
+    {
+     "id": "C3",
+     "text": "But up there, gravity is weaker. And weaker gravity makes time run faster. Forty five microseconds a day."
+    },
+    {
+     "id": "C4",
+     "text": "Add them up, and the satellite clocks gain thirty eight microseconds, every day."
+    }
+   ]
+  },
+  {
+   "id": "part5",
+   "title": "The fix and the payoff",
+   "lines": [
+    {
+     "id": "D1",
+     "text": "So engineers slow them down before launch. On the ground, they tick a tiny bit too slow. In orbit, they tick exactly right."
+    },
+    {
+     "id": "D2",
+     "text": "Without that fix, every map in the world would be about ten kilometres wrong by tomorrow."
+    },
+    {
+     "id": "D3",
+     "text": "Relativity isn't just a theory. It's in your pocket, every time you check where you are."
+    }
+   ]
+  }
+ ],
+ "display": [
+  [
+   "ten kilometres",
+   "10 km"
+  ],
+  [
+   "Twenty thousand kilometres",
+   "20,000 km"
+  ],
+  [
+   "thirty satellites",
+   "30 satellites"
+  ],
+  [
+   "thirty centimetres",
+   "30 cm"
+  ],
+  [
+   "a billionth of a second",
+   "1 billionth of a second"
+  ],
+  [
+   "three hundred metres",
+   "300 m"
+  ],
+  [
+   "fourteen thousand kilometres an hour",
+   "14,000 km/h"
+  ],
+  [
+   "Seven microseconds",
+   "7 µs"
+  ],
+  [
+   "Forty five microseconds",
+   "45 µs"
+  ],
+  [
+   "thirty eight microseconds",
+   "38 µs"
+  ]
+ ],
+ "words": [
+  "delay",
+  "dot",
+  "kilometres",
+  "map",
+  "message",
+  "metres",
+  "phone",
+  "pocket",
+  "point",
+  "sphere",
+  "you"
+ ],
+ "model": [
+  "atomic",
+  "clock",
+  "clocks",
+  "einstein",
+  "einstein's",
+  "exact",
+  "faster",
+  "gravity",
+  "microseconds",
+  "perfect",
+  "relativity",
+  "slow",
+  "time"
+ ],
+ "voice": {
+  "name": "af_heart",
+  "speed": 1.05,
+  "lang": "en-us",
+  "gap": 0.5,
+  "first": 0.4,
+  "pauses": {},
+  "first_by_part": {
+   "part1": 0.6
+  }
+ },
+ "style": {
+  "preset": "Frosted Glass",
+  "palette": {
+   "amber": "#FFC27A",
+   "violet": "#A99BFF",
+   "cyan": "#7FE3FF",
+   "paper": "#F4F7FB",
+   "smoke": "#8C9BB5",
+   "carbon": "#0B1630",
+   "ink": "#050A18",
+   "card": "#1A2A4A"
+  },
+  "post": {
+   "bloom": 0.9,
+   "ca": 0.5,
+   "grain": 0.5,
+   "glitch": 0.0,
+   "samples": 3,
+   "refraction": 1.0,
+   "caustics": 1.0,
+   "dof": 1.0
+  },
+  "captions": {
+   "size": 80,
+   "max_words": 3,
+   "y": 1380
+  },
+  "vector_only": true
+ },
+ "audio": {
+  "voice": 0.72,
+  "music": 0.42,
+  "fx": 0.5,
+  "lufs": -14.0,
+  "sfx": {},
+  "beds": {}
+ },
+ "shots": [
+  {
+   "n": 1,
+   "line": "H1",
+   "action": "A frosted-glass phone floats in a deep navy void, a map on its screen with the blue dot. Behind it, Einstein's time equation hangs as etched glass, bending the light. Slow orbit of the camera, rainbow caustics sweep the floor.",
+   "sound": "Soft glass chime; airy pad fades in.",
+   "panel": "out/panels/01.png"
+  },
+  {
+   "n": 2,
+   "line": "H2",
+   "action": "The blue dot slides off its street, block by block, leaving a warm amber trail. A mono counter ticks up: +1 km … +10 km / day.",
+   "sound": "Low detuned drone rising under a ticking clock.",
+   "panel": "out/panels/02.png"
+  },
+  {
+   "n": 3,
+   "line": "H3",
+   "action": "A coffee-cup pin; the dot misses it. Cut to black: title 'YOUR PHONE DOES EINSTEIN'S MATH' builds as glass letters with light refracting through them.",
+   "sound": "Glass hit + shimmer tail.",
+   "panel": "out/panels/03.png"
+  },
+  {
+   "n": 4,
+   "line": "A1",
+   "action": "Camera rises from the phone through frosted cloud layers to orbit: a glass Earth with six thin orbital rings of light and ~30 small glass satellites gliding.",
+   "sound": "Rising whoosh into a wide, airy space pad.",
+   "panel": "out/panels/04.png"
+  },
+  {
+   "n": 5,
+   "line": "A2",
+   "action": "Close on one glass satellite: an atomic clock glows inside it, seen through the glass. It sends out a ring of light carrying a small glass card: WHERE · WHEN.",
+   "sound": "Clean electronic pulse on each ring.",
+   "panel": "out/panels/05.png"
+  },
+  {
+   "n": 6,
+   "line": "A3",
+   "action": "The ring travels down a beam of light to the phone. A stopwatch reads 0.067 s; a glass card shows delay × speed of light = distance.",
+   "sound": "Travel whoosh, arrival ping.",
+   "panel": "out/panels/06.png"
+  },
+  {
+   "n": 7,
+   "line": "B1",
+   "action": "A glass bubble grows around satellite 1 and slices through Earth; a second and a third bubble join; where all three meet, one point flares: YOU.",
+   "sound": "Three ascending chimes; the third resolves.",
+   "panel": "out/panels/07.png"
+  },
+  {
+   "n": 8,
+   "line": "B2",
+   "action": "Satellite 4 lights up. The phone's own little clock wobbles, then snaps into sync with the satellites.",
+   "sound": "Ratchet ticks, then a soft lock click.",
+   "panel": "out/panels/08.png"
+  },
+  {
+   "n": 9,
+   "line": "B3",
+   "action": "A glass ruler: light covers 30 cm in 1 ns. Then a 1 µs slip: the dot on the map jumps 300 m.",
+   "sound": "Two clean ticks, then a sliding 'slip' sound.",
+   "panel": "out/panels/09.png"
+  },
+  {
+   "n": 10,
+   "line": "C1",
+   "action": "Two identical glass clocks side by side, GROUND and ORBIT. Their second hands start together, then slowly drift apart.",
+   "sound": "Two ticking clocks slowly phasing.",
+   "panel": "out/panels/10.png"
+  },
+  {
+   "n": 11,
+   "line": "C2",
+   "action": "The satellite streaks past with motion blur at 14,000 km/h; its clock face stretches along the motion; violet counter −7 µs / day.",
+   "sound": "Doppler whoosh; tick slows.",
+   "panel": "out/panels/11.png"
+  },
+  {
+   "n": 12,
+   "line": "C3",
+   "action": "Gravity as a curved glass funnel around Earth; the satellite sits high on the shallow rim; its clock speeds up; violet counter +45 µs / day.",
+   "sound": "Rising shimmer; tick speeds up.",
+   "panel": "out/panels/12.png"
+  },
+  {
+   "n": 13,
+   "line": "C4",
+   "action": "Equation card in glass: −7 + 45 = +38 µs / day. The numbers refract, slide and merge into one glowing 38.",
+   "sound": "Glass clink on each number, bass hit on 38.",
+   "panel": "out/panels/13.png"
+  },
+  {
+   "n": 14,
+   "line": "D1",
+   "action": "A hand-dial turns the satellite clock: mono readout 10.23 MHz → 10.22999999543 MHz. Launch; in orbit, the ORBIT and GROUND clock hands lock together.",
+   "sound": "Fine dial clicks, launch rumble, warm lock chime.",
+   "panel": "out/panels/14.png"
+  },
+  {
+   "n": 15,
+   "line": "D2",
+   "action": "What-if: a glass world map where every blue dot drifts off at once, '+10 km' labels scattering.",
+   "sound": "Dissonant drone swells, then a hard cut to silence.",
+   "panel": "out/panels/15.png"
+  },
+  {
+   "n": 16,
+   "line": "D3",
+   "action": "Back to the phone: the blue dot sits right on the coffee shop. The etched equation shimmers behind it, matching the first frame so the Short loops.",
+   "sound": "Warm resolving chord; glass chime that loops into the opening.",
+   "panel": "out/panels/16.png"
+  }
+ ],
+ "posted": false,
+ "posting": {
+  "titles": [
+   "Your Phone Does Einstein's Math #shorts",
+   "Why GPS Needs Einstein #shorts",
+   "GPS Would Be Wrong Without Relativity #shorts"
+  ],
+  "title": "Your Phone Does Einstein's Math #shorts",
+  "description": "Every time you open a map, your phone relies on Einstein's relativity.\n\nAbout 30 GPS satellites orbit 20,000 km up, each carrying atomic clocks and broadcasting where it is and the exact time. Your phone measures how long each signal took to arrive, and with four satellites it works out where you are and fixes its own clock.\n\nBut the satellite clocks don't tick like ours. Moving at 14,000 km/h, they lose about 7 µs a day (special relativity). In weaker gravity, they gain about 45 µs a day (general relativity). Net: +38 µs a day. Since light travels 300 m in a microsecond, uncorrected positions would drift by about 10 km a day. So the clocks are set to tick slightly slow before launch: 10.22999999543 MHz instead of 10.23 MHz.\n\nSimplified for a Short: real receivers also correct for the atmosphere, orbit errors and more.\n\n#physics #einstein #relativity #gps #science #explained #shorts",
+  "tags": "how gps works, gps relativity, einstein relativity explained, time dilation, general relativity, special relativity, atomic clocks, gps satellites, physics explained, science shorts, brighterminds",
+  "pinned": "Fun fact: GPS satellite clocks are tuned to 10.22999999543 MHz on the ground so they read exactly 10.23 MHz in orbit. Which everyday thing secretly runs on physics should we do next? 👇",
+  "settings": "- Made for kids: No · Category: Education\n- Altered or synthetic content: No (animated explainer drawn in code)\n- Cover: `youtube_upload_cover.mp4` ends on the thumbnail for 0.4 s, so the phone cover can be picked from it"
+ }
+}
