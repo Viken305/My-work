@@ -11,18 +11,17 @@ from captions import Captions, VoiceEnvelope, _static  # noqa: F401
 
 grain_patch = _static           # colour static clipped to a rect (exported name)
 from kit import *  # noqa: F401,F403
+from project import P
 from timing import Timing, schedule  # noqa: F401
 
-SAMPLES = 3
+SAMPLES = int(P["style"]["post"].get("samples", 3))
 RES = 768                       # pixel size the vector pictures are drawn at
 SEED = 1883                     # the hero's "seed" shown on screen
 SEEDS = {"hero": 1883, "seed_a": 11, "seed_b": 22, "seed_c": 33}
 
-# caption emphasis: amber = your words, violet = the model
-WORDS = {"sentence", "prompt", "prompt.", "words", "cat", "moon", "moon?", "kitten.", "planet.", "captions.", "mean.",
-         "yours.", "words.", "cat.", "cat,", "moon.", "tokens,"}
-MODEL = {"noise.", "noise", "static.", "static", "numbers.", "map", "meaning.", "guess", "guesses", "reverse.", "step,",
-         "step.", "decoder", "smaller.", "billions", "model", "job.", "shapes.", "colour.", "trick.", "random"}
+# caption emphasis: amber = your words, violet = the model (edited in the dashboard)
+WORDS = set(P["words"])
+MODEL = set(P["model"])
 
 _IMG, _NZ = {}, {}
 

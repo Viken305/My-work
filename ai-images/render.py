@@ -6,13 +6,14 @@
   python3 render.py full                    # all parts -> out/full.mp4 + out/full_share.mp4
 Narration clips must exist first:  python3 voiceover.py partN
 """
-import importlib, os, subprocess, sys
+import hashlib, importlib, json, os, subprocess, sys
 from multiprocessing import Pool
 
 import kit as cyan
 from kit import FPS, H, HERE, W
+from project import P
 
-PARTS = ["part1", "part2", "part3", "part4", "part5"]
+PARTS = [part["id"] for part in P["parts"]]
 OUT = os.path.join(HERE, "out")
 _MOD = None
 
@@ -24,7 +25,45 @@ def build_dir(name):
 def frame(mod, t):
     """Motion blur + bloom + grade (cyan.render); a part may add per-frame post (flash, RGB split) via post_kw(t)."""
     kw = mod.post_kw(t) if hasattr(mod, "post_kw") else {}
-    return cyan.render(mod.draw_frame, t, samples=getattr(mod, "SAMPLES", 3), **kw)
+    samples = int(os.environ.get("STUDIO_SAMPLES", 0)) or getattr(mod, "SAMPLES", 3)   # dashboard draft = 1
+    return cyan.render(mod.draw_frame, t, samples=samples, **kw)
+
+
+ENGINE = ["kit.py", "film.py", "captions.py", "art.py", "timing.py", "script.py", "project.py"]
+
+
+def render_key(name):
+    """Fingerprint of everything that changes the picture of one part (code, look, script, voice clips)."""
+    h = hashlib.sha1()
+    for f in ENGINE + [f"{name}.py"]:
+        h.update(open(os.path.join(HERE, f), "rb").read())
+    look = {k: P[k] for k in ("parts", "display", "words", "model", "style")}
+    look["voice"] = {k: v for k, v in P["voice"].items() if k != "name"}
+    h.update(json.dumps(look, sort_keys=True).encode())
+    try:
+        h.update(open(os.path.join(build_dir(name), "vo", "durations.json"), "rb").read())
+    except OSError:
+        pass
+    h.update(os.environ.get("STUDIO_SAMPLES", "").encode())
+    return h.hexdigest()[:16]
+
+
+def sfx_gain(kind):
+    return P["audio"].get("sfx", {}).get(kind, 1.0)
+
+
+def mix_events(mod, offset=0.0):
+    """The part's sound effects with the dashboard's per-effect volume (0 = muted)."""
+    return [(offset + t, k, g * sfx_gain(k)) for t, k, g in mod.sfx_events() if g * sfx_gain(k) > 0]
+
+
+def mix_music(mod, offset=0.0):
+    beds = [(offset + a, offset + b, k, g * P["audio"].get("beds", {}).get(k, 1.0)) for a, b, k, g in mod.MUSIC.get("beds", [])]
+    pulse = [(offset + a, offset + b, bpm) for a, b, bpm in mod.MUSIC.get("pulse", [])]
+    return dict(beds=[b for b in beds if b[3] > 0], pulse=pulse)
+
+
+LEVELS = {k: P["audio"][k] for k in ("voice", "music", "fx", "lufs")}
 
 
 def _init(name):
@@ -53,11 +92,22 @@ def render_video(name):
     with Pool(os.cpu_count(), initializer=_init, initargs=(name,)) as pool:
         for k, buf in enumerate(pool.imap(_job, range(n), chunksize=4)):
             ff.stdin.write(buf)
-            if k % 150 == 0:
+            if k % 30 == 0:
                 print(f"{name}: frame {k}/{n}", flush=True)
     ff.stdin.close()
     ff.wait()
+    print(f"{name}: frame {n}/{n}", flush=True)
+    json.dump(dict(key=render_key(name), duration=mod.DURATION), open(os.path.join(build_dir(name), "video.json"), "w"))
     return out
+
+
+def up_to_date(name):
+    """True when build/<part>/video.mp4 was rendered from the current code, script, look and voice clips."""
+    try:
+        meta = json.load(open(os.path.join(build_dir(name), "video.json")))
+    except (OSError, ValueError):
+        return False
+    return os.path.exists(os.path.join(build_dir(name), "video.mp4")) and meta.get("key") == render_key(name)
 
 
 def vo_clips(name, mod, offset=0.0):
@@ -74,7 +124,7 @@ def render_part(name):
     mod = importlib.import_module(name)
     wav = os.path.join(build_dir(name), "mix.wav")
     os.makedirs(build_dir(name), exist_ok=True)
-    audio.render_mix(wav, mod.DURATION, vo_clips(name, mod), mod.sfx_events(), mod.MUSIC)
+    audio.render_mix(wav, mod.DURATION, vo_clips(name, mod), mix_events(mod), mix_music(mod), LEVELS)
     os.makedirs(OUT, exist_ok=True)
     master = os.path.join(OUT, f"{name}.mp4")
     mux(render_video(name), wav, master)
@@ -91,22 +141,41 @@ def render_full(rerender=False):
         for name in PARTS:
             mod = importlib.import_module(name)
             video = os.path.join(build_dir(name), "video.mp4")
-            if rerender or not os.path.exists(video):
+            if rerender or not up_to_date(name):
                 render_video(name)
             f.write(f"file '{video}'\n")
             clips += vo_clips(name, mod, offset)
-            events += [(offset + t, k, g) for t, k, g in mod.sfx_events()]
-            beds += [(offset + a, offset + b, k, g) for a, b, k, g in mod.MUSIC.get("beds", [])]
-            pulses += [(offset + a, offset + b, bpm) for a, b, bpm in mod.MUSIC.get("pulse", [])]
+            events += mix_events(mod, offset)
+            m = mix_music(mod, offset)
+            beds += m["beds"]
+            pulses += m["pulse"]
             offset += mod.DURATION
     wav = os.path.join(HERE, "build", "full_mix.wav")
-    audio.render_mix(wav, offset, clips, events, dict(beds=beds, pulse=pulses))
+    audio.render_mix(wav, offset, clips, events, dict(beds=beds, pulse=pulses), LEVELS)
     video = os.path.join(HERE, "build", "full_video.mp4")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", video], check=True)
     master = os.path.join(OUT, "full.mp4")
     mux(video, wav, master)
     encode(master, os.path.join(OUT, "full_share.mp4"), 26)
+    upload_cover(master)
     print(master, f"{offset:.1f}s")
+
+
+def upload_cover(master):
+    """full.mp4 + the phone thumbnail held for 0.4 s at the end, so the cover can be picked from the last frame."""
+    thumb = os.path.join(OUT, "thumb_short.png")
+    if not os.path.exists(thumb):
+        return
+    tail = os.path.join(HERE, "build", "cover_tail.mp4")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-t", "0.4", "-i", thumb, "-f", "lavfi", "-t", "0.4",
+                    "-i", "anullsrc=r=48000:cl=stereo", "-r", str(FPS), "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac",
+                    "-b:a", "192k", "-shortest", tail], check=True)
+    lst = os.path.join(HERE, "build", "cover_list.txt")
+    with open(lst, "w") as f:
+        f.write(f"file '{master}'\nfile '{tail}'\n")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst, "-c:v", "libx264",
+                    "-crf", "26", "-preset", "slow", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+                    "-movflags", "+faststart", os.path.join(OUT, "youtube_upload_cover.mp4")], check=True)
 
 
 def stills(name, times):
@@ -126,7 +195,8 @@ def main(argv):
         import audio
         mod = importlib.import_module(name)
         os.makedirs(build_dir(name), exist_ok=True)
-        print(audio.render_mix(os.path.join(build_dir(name), "mix.wav"), mod.DURATION, vo_clips(name, mod), mod.sfx_events(), mod.MUSIC))
+        print(audio.render_mix(os.path.join(build_dir(name), "mix.wav"), mod.DURATION, vo_clips(name, mod), mix_events(mod),
+                               mix_music(mod), LEVELS))
     elif "--still" in argv:
         stills(name, [float(x) for x in argv[argv.index("--still") + 1].split(",")])
     elif name == "full":

@@ -19,13 +19,16 @@ RUNS = os.path.join(HERE, "data", "runs")
 cv2.setNumThreads(1)
 
 # ---------------------------------------------------------------- palette
-CARBON = (14, 13, 18)
-INK = (7, 7, 10)
-PAPER = (242, 239, 233)
-SMOKE = (138, 135, 148)
-AMBER = (255, 181, 71)        # your words
-VIOLET = (139, 108, 255)      # the model
-CARD = (24, 23, 30)
+from project import P, palette  # noqa: E402
+
+CARBON = palette("carbon")
+INK = palette("ink")
+PAPER = palette("paper")
+SMOKE = palette("smoke")
+AMBER = palette("amber")      # your words
+VIOLET = palette("violet")    # the model
+CARD = palette("card")
+FX = P["style"]["post"]       # dashboard multipliers for bloom, chromatic aberration, grain, glitch
 
 FONTS = {
     "regular": "InterDisplay-Regular.otf", "medium": "InterDisplay-Medium.otf", "semibold": "InterDisplay-SemiBold.otf",
@@ -258,6 +261,7 @@ _GRAIN = _VIG = None
 def post(img, t, bloom=1.0, ca=0.6, grain=6.0, glitch=0.0, flash=0.0):
     """img float32 HxWx3. Bloom only on amber and violet light. glitch: horizontal tearing bands + RGB split."""
     global _GRAIN, _VIG
+    bloom, ca, grain, glitch = bloom * FX["bloom"], ca * FX["ca"], grain * FX["grain"], glitch * FX["glitch"]
     if _GRAIN is None:
         rng = np.random.default_rng(3)
         _GRAIN = [(rng.normal(0, 1, (H // 2, W // 2)) * grain).astype(np.float32) for _ in range(8)]

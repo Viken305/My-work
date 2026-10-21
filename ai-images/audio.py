@@ -477,8 +477,10 @@ def tape_stop(bus, t0, dur=0.7):
         bus[i0:i0 + n, ch] = np.interp(pos, np.arange(len(bus)), bus[:, ch]) * np.linspace(1, 0.2, n)
 
 
-def render_mix(out_wav, duration, vo_clips, events, music):
-    """vo_clips [(t, wav)], events [(t, kind, gain)], music dict(beds=[(t0, t1, kind, gain)], pulse=[(t0, t1, bpm)])."""
+def render_mix(out_wav, duration, vo_clips, events, music, levels=None):
+    """vo_clips [(t, wav)], events [(t, kind, gain)], music dict(beds=[(t0, t1, kind, gain)], pulse=[(t0, t1, bpm)]).
+    levels: dict(voice, music, fx, lufs) bus levels and loudness target (defaults below)."""
+    lv = {**dict(voice=0.72, music=0.42, fx=0.5, lufs=-14.0), **(levels or {})}
     n = int(duration * SR)
     vo = np.zeros(n)
     for t0, path in vo_clips:
@@ -516,8 +518,8 @@ def render_mix(out_wav, duration, vo_clips, events, music):
     e = np.clip(e / (e.max() + 1e-9) * 2.5, 0, 1)
     duck_m = (1 - 0.6 * e)[:, None]
     duck_f = (1 - 0.3 * e)[:, None]
-    voice = st(vo, 0.0) * 0.72
-    mix = voice + mus * 0.42 * duck_m + fx * 0.5 * duck_f
+    voice = st(vo, 0.0) * lv["voice"]
+    mix = voice + mus * lv["music"] * duck_m + fx * lv["fx"] * duck_f
     # glue compression on the master (slow RMS), then soft clip
     lvl = follower(mix.mean(1), 0.01, 0.25)
     gain = np.where(lvl > 0.35, (0.35 + (lvl - 0.35) / 3) / np.maximum(lvl, 1e-6), 1.0)[:, None]
@@ -526,10 +528,10 @@ def render_mix(out_wav, duration, vo_clips, events, music):
     sf.write(raw, mix.astype(np.float32), SR)
     # linear loudness normalisation (measure, one gain, true-peak limiter): unlike single-pass loudnorm it keeps the
     # quiet-then-violent dynamics of the mix intact
-    meas = subprocess.run(["ffmpeg", "-hide_banner", "-i", raw, "-af", "loudnorm=I=-14:TP=-1.2:print_format=json", "-f", "null", "-"],
+    meas = subprocess.run(["ffmpeg", "-hide_banner", "-i", raw, "-af", f"loudnorm=I={lv['lufs']}:TP=-1.2:print_format=json", "-f", "null", "-"],
                           capture_output=True, text=True).stderr
     import json
-    gain = -14.0 - float(json.loads(meas[meas.rindex("{"):])["input_i"])
+    gain = lv["lufs"] - float(json.loads(meas[meas.rindex("{"):])["input_i"])
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af",
                     f"volume={gain:.2f}dB,alimiter=limit={10 ** (-1.2 / 20):.4f}:attack=2:release=80:level=false",
                     "-ar", str(SR), out_wav], check=True)

@@ -1,0 +1,332 @@
+{
+ "title": "How AI Draws From Nothing",
+ "format": "9:16",
+ "target_seconds": 100,
+ "parts": [
+  {
+   "id": "part1",
+   "title": "Hook: static becomes a picture",
+   "lines": [
+    {
+     "id": "H1",
+     "text": "Type one sentence, and an AI can turn it into a picture like this in seconds."
+    },
+    {
+     "id": "H2",
+     "text": "And it started as this. Pure noise. No photo. No sketch. Just static."
+    },
+    {
+     "id": "H3",
+     "text": "So how does a machine turn static into a cat on the moon?"
+    }
+   ]
+  },
+  {
+   "id": "part2",
+   "title": "Reading your words",
+   "lines": [
+    {
+     "id": "A1",
+     "text": "First, it has to read your prompt. But it doesn't read words like you do."
+    },
+    {
+     "id": "A2",
+     "text": "It chops the sentence into pieces called tokens, and turns each one into a list of seven hundred and sixty eight numbers."
+    },
+    {
+     "id": "A3",
+     "text": "Those numbers are a location on a map of meaning. Cat sits near kitten. Moon sits near planet. That's how it knows what you mean."
+    }
+   ]
+  },
+  {
+   "id": "part3",
+   "title": "How it learned",
+   "lines": [
+    {
+     "id": "B1",
+     "text": "To learn to draw, it studied billions of images with captions."
+    },
+    {
+     "id": "B2",
+     "text": "But here's the trick. During training, each picture was buried in noise, a little more at every step, until nothing was left."
+    },
+    {
+     "id": "B3",
+     "text": "And the model had one job. Look at a noisy picture and guess which part is noise."
+    }
+   ]
+  },
+  {
+   "id": "part4",
+   "title": "Making the picture",
+   "lines": [
+    {
+     "id": "C1",
+     "text": "Now it runs that in reverse. It starts from fresh random static."
+    },
+    {
+     "id": "C2",
+     "text": "At every step, it guesses the noise, and removes a little of it. First come blobs of colour. Then shapes. Then fur and craters."
+    },
+    {
+     "id": "C3",
+     "text": "Your words steer every step. Here's where it's looking for cat. And here's where it's looking for moon."
+    },
+    {
+     "id": "C4",
+     "text": "It even makes two guesses at once, one with your prompt and one without, and pushes harder toward yours."
+    },
+    {
+     "id": "C5",
+     "text": "To save time, all of this happens on a tiny version of the picture, forty eight times smaller. Then a decoder paints in the full image."
+    }
+   ]
+  },
+  {
+   "id": "part5",
+   "title": "Same words, new noise",
+   "lines": [
+    {
+     "id": "D1",
+     "text": "Change the starting static, and you get a different cat, every time."
+    },
+    {
+     "id": "D2",
+     "text": "Use the exact same static, and you get the exact same cat."
+    },
+    {
+     "id": "D3",
+     "text": "So every AI image is just random noise, sculpted by your words."
+    }
+   ]
+  }
+ ],
+ "display": [
+  [
+   "seven hundred and sixty eight",
+   "768"
+  ],
+  [
+   "forty eight times",
+   "48 times"
+  ]
+ ],
+ "words": [
+  "captions",
+  "cat",
+  "kitten",
+  "mean",
+  "moon",
+  "planet",
+  "prompt",
+  "sentence",
+  "tokens",
+  "words",
+  "yours"
+ ],
+ "model": [
+  "billions",
+  "colour",
+  "decoder",
+  "guess",
+  "guesses",
+  "job",
+  "map",
+  "meaning",
+  "model",
+  "noise",
+  "numbers",
+  "random",
+  "reverse",
+  "shapes",
+  "smaller",
+  "static",
+  "step",
+  "trick"
+ ],
+ "voice": {
+  "name": "af_heart",
+  "speed": 1.05,
+  "lang": "en-us",
+  "gap": 0.5,
+  "first": 0.4,
+  "pauses": {},
+  "first_by_part": {
+   "part1": 0.6
+  }
+ },
+ "style": {
+  "preset": "Static & Signal",
+  "palette": {
+   "amber": "#FFB547",
+   "violet": "#8B6CFF",
+   "paper": "#F2EFE9",
+   "smoke": "#8A8794",
+   "carbon": "#0E0D12",
+   "ink": "#07070A",
+   "card": "#18171E"
+  },
+  "post": {
+   "bloom": 1.0,
+   "ca": 1.0,
+   "grain": 1.0,
+   "glitch": 1.0,
+   "samples": 3
+  },
+  "captions": {
+   "size": 80,
+   "max_words": 3,
+   "y": 1380
+  },
+  "vector_only": true
+ },
+ "audio": {
+  "voice": 0.72,
+  "music": 0.42,
+  "fx": 0.5,
+  "lufs": -14.0,
+  "sfx": {},
+  "beds": {}
+ },
+ "shots": [
+  {
+   "n": 1,
+   "line": "H1",
+   "action": "Finished hero picture on a floating card, its prompt above; small 'ILLUSTRATION' tag. Slow push-in.",
+   "sound": "Soft synth chord; card 'whoosh' in.",
+   "panel": "out/panels/01.png"
+  },
+  {
+   "n": 2,
+   "line": "H2",
+   "action": "The picture REWINDS: noise floods back over it (the real forward-noise maths).",
+   "sound": "Tape-rewind zip; hiss rises with the noise.",
+   "panel": "out/panels/02.png"
+  },
+  {
+   "n": 3,
+   "line": "H2",
+   "action": "Pure static fills the card. Hold one beat.",
+   "sound": "Full static hiss, then 1 beat of silence.",
+   "panel": "out/panels/03.png"
+  },
+  {
+   "n": 4,
+   "line": "H3",
+   "action": "Static plays forward at 4× speed into the cat (30 steps), then the title resolves out of grain.",
+   "sound": "Ticks speed up; hiss falls away; title hit.",
+   "panel": "out/panels/04.png"
+  },
+  {
+   "n": 5,
+   "line": "A1",
+   "action": "Prompt box; the sentence snaps apart into tokens (amber chips).",
+   "sound": "Key clicks; a 'snap' per chip.",
+   "panel": "out/panels/05.png"
+  },
+  {
+   "n": 6,
+   "line": "A2",
+   "action": "The 'cat' chip unfolds into 768 numbers (violet barcode). Counter to 768.",
+   "sound": "Data sparkle, rising counter ticks.",
+   "panel": "out/panels/06.png"
+  },
+  {
+   "n": 7,
+   "line": "A3",
+   "action": "Chips fly into a map of meaning. cat lands by kitten, moon by planet.",
+   "sound": "Soft pings as each word lands.",
+   "panel": "out/panels/07.png"
+  },
+  {
+   "n": 8,
+   "line": "B1",
+   "action": "A wall of captioned pictures scrolls up fast.",
+   "sound": "Fast shutter flicker, music lifts.",
+   "panel": "out/panels/08.png"
+  },
+  {
+   "n": 9,
+   "line": "B2",
+   "action": "One picture (dog) gets buried in noise across 5 cards, 0 → 1,000.",
+   "sound": "Hiss grows card by card.",
+   "panel": "out/panels/09.png"
+  },
+  {
+   "n": 10,
+   "line": "B3",
+   "action": "Noisy picture → MODEL box → its guess: the noise. The model's one job.",
+   "sound": "Glassy 'click' as the guess appears.",
+   "panel": "out/panels/10.png"
+  },
+  {
+   "n": 11,
+   "line": "C1",
+   "action": "Hard reset: brand-new static on the card, SEED shown, STEP 0/30.",
+   "sound": "Static burst; music drops to pulse.",
+   "panel": "out/panels/11.png"
+  },
+  {
+   "n": 12,
+   "line": "C2",
+   "action": "Steps: blobs of colour → shapes → fur and craters. Step counter runs 1 → 30.",
+   "sound": "Rising tick per step; hiss fades.",
+   "panel": "out/panels/12.png"
+  },
+  {
+   "n": 13,
+   "line": "C3",
+   "action": "Amber threads from the 'cat' and 'moon' chips into the picture; a glow shows where it looks.",
+   "sound": "String pluck per thread.",
+   "panel": "out/panels/13.png"
+  },
+  {
+   "n": 14,
+   "line": "C4",
+   "action": "Split: the same seed without the prompt (mush) vs with it, pushed 7.5×.",
+   "sound": "Two-note 'push' swell.",
+   "panel": "out/panels/14.png"
+  },
+  {
+   "n": 15,
+   "line": "C5",
+   "action": "The real work happens on a tiny 64×64 grid; a decoder blows it up to full size. '48× smaller'.",
+   "sound": "Low 'whomp' as it scales up.",
+   "panel": "out/panels/15.png"
+  },
+  {
+   "n": 16,
+   "line": "D1",
+   "action": "Same prompt, 4 seeds, 4 different cats (pop in one by one).",
+   "sound": "4 pops on the beat.",
+   "panel": "out/panels/16.png"
+  },
+  {
+   "n": 17,
+   "line": "D2",
+   "action": "Same seed twice → identical cats, '='.",
+   "sound": "Lock-in 'clunk'.",
+   "panel": "out/panels/17.png"
+  },
+  {
+   "n": 18,
+   "line": "D3",
+   "action": "Final cat dissolves back into static, which becomes the opening frame (loop).",
+   "sound": "Hiss swells, cut to silence; loops.",
+   "panel": "out/panels/18.png"
+  }
+ ],
+ "posting": {
+  "titles": [
+   "How AI Turns Static Into a Picture #shorts",
+   "Every AI Image Starts as This #shorts",
+   "How Does AI Actually Draw? #shorts"
+  ],
+  "title": "How AI Turns Static Into a Picture #shorts",
+  "description": "Type one sentence and an AI turns it into a picture in seconds. But every one of those pictures starts as pure static.\n\nHere's what actually happens: your prompt is chopped into tokens and turned into numbers on a map of meaning. The model was trained on billions of captioned images to do one job: guess the noise in a noisy picture. To make a new image it starts from random static and removes a little noise at every step, steered by your words, on a tiny 64×64 version of the picture that a decoder then paints in full.\n\nSame words + new static = a new picture. Same static = the exact same picture.\n\nAll pictures in this video are illustrations drawn in code, not AI output. Simplified: real models differ in the details.\n\n#ai #aiart #howitworks #science #explained #machinelearning #diffusion #shorts",
+  "tags": "how ai generates images, ai image generator explained, diffusion model, stable diffusion explained, how does ai draw, text to image, ai explained, machine learning, neural network, tokens, latent space, prompt, brighterminds",
+  "pinned": "Fun fact: if you use the same prompt *and* the same starting static (the \"seed\"), you get the exact same picture every time. What prompt should we sculpt out of noise next? 👇",
+  "settings": "- Made for kids: No · Category: Education\n- Altered or synthetic content: No (animated explainer; the pictures are hand-coded illustrations, not realistic AI imagery)\n- Cover: `youtube_upload_cover.mp4` ends on the thumbnail for 0.4 s, so the phone cover can be picked from it"
+ }
+}
