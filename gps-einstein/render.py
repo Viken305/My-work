@@ -9,7 +9,7 @@ Narration clips must exist first:  python3 voiceover.py partN
 import hashlib, importlib, json, os, subprocess, sys
 from multiprocessing import Pool
 
-import kit as cyan
+import glass as cyan
 from kit import FPS, H, HERE, W
 from project import P
 
@@ -23,13 +23,15 @@ def build_dir(name):
 
 
 def frame(mod, t):
-    """Motion blur + bloom + grade (cyan.render); a part may add per-frame post (flash, RGB split) via post_kw(t)."""
+    """Motion blur + bloom + grade (glass.render); a part may add per-frame post via post_kw(t) and ask for more
+    motion-blur sub-frames during fast moves via samples_at(t)."""
     kw = mod.post_kw(t) if hasattr(mod, "post_kw") else {}
-    samples = int(os.environ.get("STUDIO_SAMPLES", 0)) or getattr(mod, "SAMPLES", 3)   # dashboard draft = 1
+    samples = int(os.environ.get("STUDIO_SAMPLES", 0)) or (mod.samples_at(t) if hasattr(mod, "samples_at")
+                                                           else getattr(mod, "SAMPLES", 1))   # dashboard draft = 1
     return cyan.render(mod.draw_frame, t, samples=samples, **kw)
 
 
-ENGINE = ["kit.py", "film.py", "captions.py", "art.py", "timing.py", "script.py", "project.py"]
+ENGINE = ["kit.py", "glass.py", "film.py", "captions.py", "timing.py", "script.py", "project.py"]
 
 
 def render_key(name):

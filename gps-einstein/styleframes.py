@@ -166,7 +166,7 @@ def sf2_orbit(t=2.0):
     # a small glass data card: where + when
     card = mask(lambda c, p: c.drawRRect(rrect(hx - 620, hy - 170, 420, 128, 26), p))
     glass(img, card, bevel=16, refract=10, frost=16, tint=0.42, lift=8)
-    img = over(img, layer(lambda c: (label(c, "WHERE  40.4°N 3.7°W", hx - 596, hy - 118, 22, "mono", PAPER, 240),
+    img = over(img, layer(lambda c: (label(c, "WHERE  51.9°N 21.3°E", hx - 596, hy - 118, 22, "mono", PAPER, 240),
                                      label(c, "WHEN   12:00:00.000 000 000", hx - 596, hy - 76, 22, "mono", VIOLET,
                                            255))))
     img = over(img, layer(lambda c: label(c, "20,200 km UP · 6 ORBITAL PLANES", W / 2, 290, 28, "mono", SMOKE,

@@ -29,6 +29,7 @@ FX = P["style"]["post"]
 LIGHT = (-0.62, -0.78)       # direction towards the key light (top left)
 HERE = os.path.dirname(os.path.abspath(__file__))
 np.seterr(divide="ignore", invalid="ignore", over="ignore")
+YY, XX = np.mgrid[0:H, 0:W].astype(np.float32)   # pixel grids, shared
 
 
 # ---------------------------------------------------------------- layers
@@ -77,25 +78,21 @@ def blur_layer(lay, sigma):
 _CAU = {}
 
 
-def caustics(t, w, h, scale=3.0, speed=0.35, seed=0.0, disp=0.014, squash=1.0):
-    """Moving caustic bands (Dave Hoskins' water caustic), one pass per channel at a slightly different scale so the
-    bright lines get rainbow fringes. Returns HxWx3 float 0..~1.5."""
-    key = (round(t, 3), w, h, scale, speed, seed, disp, squash)
+def caustics(t, w, h, scale=3.0, speed=0.35, seed=0.0, squash=1.0):
+    """Moving caustic bands (Dave Hoskins' water caustic), one channel, w x h. Returns float 0..~1.5."""
+    key = (round(t, 3), w, h, scale, speed, seed, squash)
     if key in _CAU:
         return _CAU[key]
     yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
-    out = np.zeros((h, w, 3), np.float32)
-    for ch, k in enumerate((1 - disp, 1.0, 1 + disp)):
-        px = (xx / w * scale * k + seed * 1.37) * 2 * math.pi - 250
-        py = (yy / w * scale * k * squash + seed) * 2 * math.pi - 250
-        ix, iy, c, inten = px.copy(), py.copy(), np.ones_like(px), 0.005
-        for n in range(5):
-            tt = t * speed * (1 - 3.5 / (n + 1)) + seed
-            ix, iy = px + np.cos(tt - ix) + np.sin(tt + iy), py + np.sin(tt - iy) + np.cos(tt + ix)
-            c += 1 / np.sqrt((px / (np.sin(ix + tt) / inten)) ** 2 + (py / (np.cos(iy + tt) / inten)) ** 2)
-        c = 1.17 - (c / 5) ** 1.4
-        out[..., ch] = np.nan_to_num(np.abs(c) ** 8)
-    out = np.clip(out, 0, 1.5)
+    px = (xx / w * scale + seed * 1.37) * 2 * math.pi - 250
+    py = (yy / w * scale * squash + seed) * 2 * math.pi - 250
+    ix, iy, c, inten = px.copy(), py.copy(), np.ones_like(px), 0.005
+    for n in range(5):
+        tt = t * speed * (1 - 3.5 / (n + 1)) + seed
+        ix, iy = px + np.cos(tt - ix) + np.sin(tt + iy), py + np.sin(tt - iy) + np.cos(tt + ix)
+        c += 1 / np.sqrt((px / (np.sin(ix + tt) / inten)) ** 2 + (py / (np.cos(iy + tt) / inten)) ** 2)
+    c = 1.17 - (c / 5) ** 1.4
+    out = np.clip(np.nan_to_num(np.abs(c) ** 8), 0, 1.5).astype(np.float32)
     if len(_CAU) > 24:
         _CAU.clear()
     _CAU[key] = out
@@ -104,16 +101,20 @@ def caustics(t, w, h, scale=3.0, speed=0.35, seed=0.0, disp=0.014, squash=1.0):
 
 def caustic_light(t, scale=3.0, speed=0.35, seed=0.0, tint=(225, 238, 255), squash=1.0, fringe=0.35):
     """Full-frame caustic light (computed at half size), already coloured. squash > 1 flattens the pattern, as on a
-    floor seen at an angle; fringe keeps only part of the rainbow split so the lines stay mostly white-cyan."""
-    q = caustics(t, W // 2, H // 2, scale, speed, seed, squash=squash)
-    q = q * fringe + q.mean(axis=2, keepdims=True) * (1 - fringe)
-    return cv2.resize(q, (W, H), interpolation=cv2.INTER_LINEAR) * (np.float32(tint) / 255)
+    floor seen at an angle; fringe = how much the red and blue copies are pulled apart (rainbow edges)."""
+    q = caustics(t, W // 2, H // 2, scale, speed, seed, squash)
+    q = cv2.resize(q, (W, H), interpolation=cv2.INTER_LINEAR)
+    sh = int(round(3 * fringe / 0.35))
+    out = np.empty((H, W, 3), np.float32)
+    out[..., 1] = q
+    out[..., 0] = np.roll(q, -sh, axis=0) * fringe + q * (1 - fringe)
+    out[..., 2] = np.roll(q, sh, axis=0) * fringe + q * (1 - fringe)
+    return out * (np.float32(tint) / 255)
 
 
 def ellipse(cx, cy, rx, ry, soft=0.5):
     """Soft elliptical pool 0..1."""
-    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
-    r = np.sqrt(((xx - cx) / rx) ** 2 + ((yy - cy) / ry) ** 2)
+    r = np.sqrt(((XX - cx) / rx) ** 2 + ((YY - cy) / ry) ** 2)
     return np.clip((1 - r) / soft, 0, 1) ** 1.5
 
 
@@ -121,7 +122,7 @@ def ellipse(cx, cy, rx, ry, soft=0.5):
 _BG = {}
 
 
-def backdrop(t, glow=(0.5, 0.42), floor=0.70, caustic=1.0, pool=None, seed=0.0):
+def backdrop(t, glow=(0.5, 0.42), floor=0.70, caustic=1.0, pool=None, seed=0.0, floor_k=1.0):
     """Deep navy studio: key-light glow, a horizon where the floor begins, caustics on the floor.
     pool = (cx, cy, rx, ry): a pool of caustic light cast through the hero glass onto the floor."""
     key = (glow, floor)
@@ -137,11 +138,12 @@ def backdrop(t, glow=(0.5, 0.42), floor=0.70, caustic=1.0, pool=None, seed=0.0):
         img += np.float32(mix(CARBON, PAPER, 0.35)) * (hz * 0.35)[..., None]
         _BG[key] = img.astype(np.float32)
     img = _BG[key].copy()
+    caustic *= FX.get("caustics", 1.0)
     if caustic > 0:
         cl = caustic_light(t, 2.2, 0.3, seed, squash=3.2)
         yy = np.arange(H, dtype=np.float32)[:, None]
         fl = np.clip((yy - H * floor) / 90, 0, 1) * np.clip(1 - (yy - H * floor) / (H * 0.42), 0, 1)
-        img += cl * (fl * 22 * caustic)[..., None]
+        img += cl * (fl * 22 * caustic * floor_k)[..., None]
         if pool:
             img += cl * (ellipse(*pool) * 120 * caustic)[..., None]
             img += np.float32(CYAN) * (ellipse(pool[0], pool[1], pool[2] * 1.3, pool[3] * 1.4, 1.0) * 0.10)[..., None]
@@ -163,6 +165,7 @@ def glass(img, m, bevel=24.0, refract=16.0, frost=9.0, tint=0.30, rgb=None, rim=
     y0, y1 = max(0, ys.min() - pad), min(H, ys.max() + pad + 1)
     sub = img[y0:y1, x0:x1]
     mm = m[y0:y1, x0:x1]
+    refract *= FX.get("refraction", 1.0)
     blur = cv2.GaussianBlur(sub, (0, 0), frost) if frost > 0 else sub
     d = cv2.distanceTransform((mm > 0.5).astype(np.uint8), cv2.DIST_L2, 5)
     u = np.clip(d / bevel, 0, 1)
@@ -223,9 +226,18 @@ def shard(c, x, y, s, rot, a=255):
 
 
 def glass_text(img, s, x, y, size, kind="black", tracking=0.0, align="center", tint=0.26, lift=34, rgb=None,
-               caustic_t=None, glow=None, rim=1.2):
-    """Text made of glass: the scene bends through each letter, with a rim light and caustics moving inside."""
-    m = mask(lambda c, p: label(c, s, x, y, size, kind, (255, 255, 255), 255, align, tracking))
+               caustic_t=None, glow=None, rim=1.2, a=1.0, scale=1.0):
+    """Text made of glass: the scene bends through each letter, with a rim light and caustics moving inside.
+    a fades it (0..1); scale grows it about its centre."""
+    if a <= 0.01:
+        return img
+    def shape(c, p):
+        if scale != 1.0:
+            c.translate(x, y - size * 0.35)
+            c.scale(scale, scale)
+            c.translate(-x, -(y - size * 0.35))
+        label(c, s, x, y, size, kind, (255, 255, 255), 255, align, tracking)
+    m = mask(shape) * a
     if glow:
         g = cv2.GaussianBlur(m, (0, 0), size * 0.22)
         img += np.float32(glow) * (g * 0.55)[..., None]
@@ -317,8 +329,7 @@ def earth(img, cx, cy, r, t, lon0=-20.0, lat0=22.0, spin=4.0):
             _poly(c, pts, paint(PAPER, 34, stroke=1.4))
     img = over(img, layer(grid))
     # night side (lower right) and the key-light highlight (upper left)
-    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
-    dx, dy = (xx - cx) / r, (yy - cy) / r
+    dx, dy = (XX - cx) / r, (YY - cy) / r
     inside = disc
     night = np.clip((dx * 0.62 + dy * 0.78) * 0.9 + 0.05, 0, 1) ** 1.3
     img *= (1 - night * inside * 0.62)[..., None]
@@ -494,3 +505,33 @@ def post(img, t, bloom=1.0, ca=1.0, grain=4.0):
     g = cv2.resize(_GRAIN[int(t * FPS) % 8], (W, H), interpolation=cv2.INTER_NEAREST)[..., None]
     img = img * _VIG + g * grain
     return np.clip(img, 0, 255).astype(np.uint8)
+
+
+# ---------------------------------------------------------------- camera and frames
+def cam(img, s=1.0, cx=W / 2, cy=H / 2, dx=0.0, dy=0.0, rot=0.0):
+    """Camera move on the finished picture: scale s about (cx, cy), then shift; small moves only (raster)."""
+    if s == 1.0 and dx == 0 and dy == 0 and rot == 0:
+        return img
+    M = cv2.getRotationMatrix2D((cx, cy), rot, s)
+    M[0, 2] += dx
+    M[1, 2] += dy
+    return cv2.warpAffine(img, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
+
+
+def fade(img, k, rgb=(0, 0, 0)):
+    """Dip towards a colour (black by default), k 0..1."""
+    if k <= 0:
+        return img
+    return img * (1 - k) + np.float32(rgb) * k
+
+
+def render(draw, t, samples=1, shutter=0.5, **kw):
+    """draw(t) -> float RGB frame. Motion blur = average of `samples` sub-frames across half a frame; then post."""
+    if samples <= 1:
+        return post(draw(t), t, **kw)
+    acc = None
+    for i in range(samples):
+        ts = t + ((i + 0.5) / samples - 0.5) * shutter / FPS
+        f = draw(ts)
+        acc = f if acc is None else acc + f
+    return post(acc / samples, t, **kw)

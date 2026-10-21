@@ -116,10 +116,6 @@
    "30 cm"
   ],
   [
-   "a billionth of a second",
-   "1 billionth of a second"
-  ],
-  [
    "three hundred metres",
    "300 m"
   ],
@@ -196,7 +192,7 @@
    "ca": 0.5,
    "grain": 0.5,
    "glitch": 0.0,
-   "samples": 3,
+   "samples": 1,
    "refraction": 1.0,
    "caustics": 1.0,
    "dof": 1.0
@@ -227,7 +223,7 @@
   {
    "n": 2,
    "line": "H2",
-   "action": "The blue dot slides off its street, block by block, leaving a warm amber trail. A mono counter ticks up: +1 km … +10 km / day.",
+   "action": "Camera pushes onto the map; the blue dot drifts away from YOU with an amber trail, the map zooms out, ERROR counts to +11 km, then DAY 2 +22 km, DAY 3 +33 km.",
    "sound": "Low detuned drone rising under a ticking clock.",
    "panel": "out/panels/02.png"
   },
@@ -248,7 +244,7 @@
   {
    "n": 5,
    "line": "A2",
-   "action": "Close on one glass satellite: an atomic clock glows inside it, seen through the glass. It sends out a ring of light carrying a small glass card: WHERE · WHEN.",
+   "action": "The hero glass satellite slides in; its atomic clock glows violet inside; rings of light; a glass card types WHERE (the satellite's own position and altitude) and WHEN (a running clock).",
    "sound": "Clean electronic pulse on each ring.",
    "panel": "out/panels/05.png"
   },

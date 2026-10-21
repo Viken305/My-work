@@ -662,6 +662,58 @@ def SFX(kind):
         y = with_tail(st(boom(70, 40, 2.0, 0.4) * 0.6 * np.exp(-T(2.0) / 0.8) + fft_filter(noise(2.0, 12), 80, 600) * np.exp(-T(2.0) / 0.3) * 0.3),
                       0.45, 3.0, 2500)
         return y * 0.8
+    # ---- GPS Short (Frosted Glass)
+    if kind == "chime":            # a struck glass: inharmonic partials, long shimmering decay
+        d = 3.0
+        t = T(d)
+        y = sum(g * np.sin(2 * np.pi * f * t + i) * np.exp(-t * k) for i, (f, g, k) in
+                enumerate(((1046.5, 1, 1.4), (2793, 0.45, 2.6), (4186, 0.22, 4.0), (1569.8, 0.35, 1.9), (5274, 0.1, 6))))
+        y *= np.minimum(1, t / 0.002) * (1 + 0.05 * np.sin(2 * np.pi * 5.5 * t))
+        return with_tail(st(y * 0.42, R.uniform(-0.25, 0.25), 0.008), 0.55, 3.0, 9000)
+    if kind == "clink":            # small glass touching glass
+        d = 0.6
+        t = T(d)
+        y = sum(g * np.sin(2 * np.pi * f * t) * np.exp(-t * k) for f, g, k in ((3520, 1, 14), (5920, 0.5, 22), (8370, 0.25, 30)))
+        cl = norm(click(0.004, 6000)) * 0.3
+        y[:len(cl)] += cl
+        return with_tail(st(y * 0.4, R.uniform(-0.3, 0.3), 0.004), 0.35, 1.4, 9000)
+    if kind == "ping":             # a clean electronic signal pulse
+        d = 0.9
+        t = T(d)
+        y = (np.sin(2 * np.pi * 1760 * t) + 0.35 * np.sin(2 * np.pi * 2640 * t)) * np.exp(-t * 9) * np.minimum(1, t / 0.003)
+        return with_tail(st(y * 0.32, R.uniform(-0.2, 0.2), 0.01), 0.45, 1.8, 8000)
+    if kind == "lock":             # two warm notes landing in sync
+        y = np.zeros((int(3.2 * SR), 2))
+        for i, (f, tt) in enumerate(((659.25, 0.0), (987.77, 0.11))):
+            tb = T(2.6)
+            g = sum(np.sin(2 * np.pi * f * h * tb) / h for h in (1, 2, 3.01)) * np.exp(-tb * 2.2) * np.minimum(1, tb / 0.004)
+            place(y, tt, st(g * 0.28, (i - 0.5) * 0.3, 0.01))
+        return with_tail(y, 0.4, 2.4, 7000)
+    if kind == "glass_whoosh":     # air past a glass pane, with a faint ring on the way out
+        y = SFX("whoosh") * 0.9
+        tb = T(1.4)
+        ring = np.sin(2 * np.pi * 2093 * tb) * np.exp(-tb * 3) * np.minimum(1, tb / 0.3) * 0.05
+        place(y, 0.25, st(ring, 0.2, 0.01))
+        return y
+    if kind == "launch":           # rocket rumble that rises and thins out
+        d = 3.5
+        t = T(d)
+        u = t / d
+        rum = sweep(noise(d, 31), lambda v: 25, lambda v: 260 + 900 * v, 0.5)
+        crackle = fft_filter(noise(d, 32), 800, 5000) * (0.5 + 0.5 * np.sign(np.sin(2 * np.pi * 17 * t))) * 0.15
+        y = (norm(rum) * 0.9 + crackle) * np.minimum(1, t / 0.25) * (1 - u) ** 1.3
+        return with_tail(st(norm(y) * 0.85, 0, 0.012), 0.3, 2.0, 3000)
+    if kind == "detune":           # the world going wrong: a dissonant cluster that swells, then cuts
+        d = 3.2
+        t = T(d)
+        y = sum(osc(f * (1 + 0.012 * np.sin(2 * np.pi * 0.7 * t + i)), d, "saw") for i, f in enumerate((110, 116.5, 164.8, 174.6)))
+        y = sweep(y, lambda v: 40, lambda v: 300 + 1500 * v ** 2)
+        return st(norm(y) * 0.5 * (t / d) ** 1.6, 0, 0.012)
+    if kind == "dial":             # fine detent clicks of a precision dial
+        y = np.zeros((int(1.8 * SR), 2))
+        for i in range(18):
+            place(y, 1.5 * (i / 18) ** 1.3, SFX("tick"), 0.35 + 0.25 * (i % 3 == 0))
+        return y
     # ---- AI Short
     if kind.startswith("static"):
         # TV static: hiss whose loudness follows how noisy the picture is.
@@ -796,6 +848,31 @@ def bed(kind, d, seed=0):
             place(y, i * step, st(g * 0.06 * (0.6 + 0.4 * (i % 4 == 0)), ((i % 3) - 1) * 0.35), 1.0)
             i += 1
         y = with_tail(y, 0.4, 2.0, 6000)[: len(t)]
+    elif kind == "glass":          # airy glass pad (slow bell partials over a soft fifth) with a quiet clock tick
+        u = t / d
+        y0 = sum(np.sin(2 * np.pi * f * (1 + det) * t + r.uniform(0, 6)) * g for f, g in ((110, 0.5), (164.8, 0.35), (329.6, 0.12))
+                 for det in (-0.0025, 0.0025))
+        bells = sum(np.sin(2 * np.pi * f * t + r.uniform(0, 6)) * (0.5 + 0.5 * np.sin(2 * np.pi * lfo * t + r.uniform(0, 6))) ** 3
+                    for f, lfo in ((1318.5, 0.11), (1975.5, 0.07), (2637.0, 0.13), (987.8, 0.09)))
+        air = sweep(noise(d, seed + 3), lambda v: 2500, lambda v: 5200, 1.5)
+        y = st(y0 * 0.16, 0, 0.012) + st(bells * 0.018, 0.25, 0.017) + st(norm(air) * 0.02, -0.2, 0.011)
+        tick = np.zeros(len(t))
+        k = 0.5
+        while k < d:
+            tk = fft_filter(click(0.012, 2400), 900, 6000) * 0.2
+            place1(tick, k, tk, 1.0 if int(k) % 2 == 0 else 0.7)
+            k += 1.0
+        y += st(tick, 0.0, 0.003)
+    elif kind == "resolve":        # the end: the glass pad landing on a warm major chord
+        y = np.zeros((len(t), 2))
+        tt = T(d)
+        e = np.minimum(1, tt / 1.2)
+        pad = sum(np.sin(2 * np.pi * f * (1 + det) * tt + r.uniform(0, 6)) for f in (130.8, 196, 261.6, 329.6, 392)
+                  for det in (-0.003, 0.003)) * e
+        y += st(pad * 0.07, 0, 0.015)
+        bells = sum(np.sin(2 * np.pi * f * tt) * np.exp(-((tt - 0.3 - i * 0.45) % 1e9) * 1.2) * (tt > 0.3 + i * 0.45)
+                    for i, f in enumerate((1046.5, 1318.5, 1568, 2093)))
+        y += st(bells * 0.05, 0.2, 0.017)
     else:
         return _bed_base(kind, d, seed)
     fade = np.minimum(1, np.minimum(t / 0.6, (d - t) / 0.8))[:, None]

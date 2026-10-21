@@ -88,6 +88,7 @@ formulas (checked by hand below) and match course notes such as Penn State GEOG 
 | A1 | Orbit height | "twenty thousand kilometres" | Ashby: "about 20 000 km above Earth's surface"; nominal 20,200 km | ✅ |
 | A1 | Satellites | "about thirty" | 31–32 active today (24-slot baseline plus spares) | ✅ |
 | A2 | Atomic clocks on board | yes | rubidium / caesium clocks | ✅ |
+| A2 | "Here's where I am" | the satellite's own position | the broadcast carries the satellite's orbit data and time, not the user's position (the card shows satellite coordinates + altitude) | ✅ |
 | A3 | Signal delay = distance | "a split second" | 20,200 km ÷ c ≈ 0.067 s (shown on screen) | ✅ |
 | B1 | Three spheres → a point | simplified | three spheres meet at two points; one is far out in space and is discarded | ✅ simplified |
 | B2 | 4th satellite fixes the phone clock | yes | receivers solve x, y, z and clock bias | ✅ |
