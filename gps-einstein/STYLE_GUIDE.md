@@ -78,17 +78,30 @@ Rainbow caustics are the only place the full spectrum appears, as thin, faint ba
 
 16 shots are listed in `project.json` → `shots`. The last frame matches the first so the Short loops.
 
-## 8. Fact sheet
-| Claim | Value used | Note |
-|---|---|---|
-| Orbit height | ~20,200 km → "twenty thousand kilometres" | medium Earth orbit |
-| Satellites | ~31 operational → "about thirty" | the count changes as satellites are replaced |
-| Orbital speed | ~3.9 km/s ≈ 14,000 km/h | |
-| Special relativity (speed) | clocks lose ~7 µs / day | |
-| General relativity (weaker gravity) | clocks gain ~45 µs / day | |
-| Net | +38 µs / day | |
-| Light per µs / ns | ~300 m / ~30 cm | |
-| Drift if uncorrected | 38 µs × c ≈ 11 km / day → "about ten kilometres" | widely quoted figure |
-| Clock fix | 10.22999999543 MHz on the ground instead of 10.23 MHz | factory offset |
-| Signal travel time | ~0.067 s from 20,200 km | shown on screen in A3 |
-| Satellites needed | 4: three for position, one for the receiver's clock | simplified: three spheres meet at two points, one is far out in space |
+## 8. Fact sheet (checked)
+Main source: N. Ashby, "Relativity and the Global Positioning System", *Physics Today* 55(5), 41 (2002),
+https://physicstoday.aip.org/features/relativity-and-the-global-positioning-system . Per-day figures are worked out from its
+formulas (checked by hand below) and match course notes such as Penn State GEOG 862.
+
+| Line | Claim | Value used | Check | Status |
+|---|---|---|---|---|
+| A1 | Orbit height | "twenty thousand kilometres" | Ashby: "about 20 000 km above Earth's surface"; nominal 20,200 km | ✅ |
+| A1 | Satellites | "about thirty" | 31–32 active today (24-slot baseline plus spares) | ✅ |
+| A2 | Atomic clocks on board | yes | rubidium / caesium clocks | ✅ |
+| A3 | Signal delay = distance | "a split second" | 20,200 km ÷ c ≈ 0.067 s (shown on screen) | ✅ |
+| B1 | Three spheres → a point | simplified | three spheres meet at two points; one is far out in space and is discarded | ✅ simplified |
+| B2 | 4th satellite fixes the phone clock | yes | receivers solve x, y, z and clock bias | ✅ |
+| B3 | Light: 30 cm per ns, 300 m per µs | yes | c = 299,792 km/s | ✅ |
+| C2 | Speed | "fourteen thousand km/h" | Ashby "about 4 km/s"; 3.87 km/s = 13,950 km/h | ✅ |
+| C2 | Moving clocks lose | "seven µs a day" | v²/2c² = 8.3×10⁻¹¹ × 86,400 s = 7.2 µs | ✅ |
+| C3 | Weaker gravity, clocks gain | "forty five µs a day" | GM/c² (1/R⊕ − 1/r) = 5.3×10⁻¹⁰ × 86,400 s = 45.7 µs (Ashby: "about 5×10⁻¹⁰") | ✅ |
+| C4 | Net | "thirty eight µs a day" | Ashby: net 4.4645×10⁻¹⁰ × 86,400 s = 38.6 µs | ✅ |
+| D1 | Clocks tuned slow before launch | yes | 10.23 MHz × (1 − 4.4645×10⁻¹⁰) = 10.22999999543 MHz | ✅ |
+| H2, D2 | Error if uncorrected | "more than ten kilometres" a day | Ashby: errors "building up in just one day would cause navigational errors of more than 11 km". Changed from "about ten" to match him. | ✅ fixed |
+| shot 1 | Equation | Δτ ≈ Δt (1 + Φ/c² − v²/2c²) | the weak-field clock-rate formula (Φ = −GM/r is negative) | ✅ (≈, not =) |
+| shot 13 | Clock hands | drift exaggerated | a real 38 µs can't be seen on a clock face; the frame says so on screen | ✅ labelled |
+
+Simplification to keep in mind: the "km a day" figure is the range error that would build up. In a real receiver, part
+of a drift shared by all satellites would be absorbed into the receiver clock bias. "More than 11 km a day" is the standard
+figure from the physicist who worked on GPS relativity, so we keep it, but the narration never claims an exact position
+error.

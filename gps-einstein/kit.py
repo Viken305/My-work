@@ -31,7 +31,7 @@ CARD = palette("card")
 FX = P["style"]["post"]       # dashboard multipliers for bloom, chromatic aberration, grain, glitch
 
 FONTS = {
-    "regular": "InterDisplay-Regular.otf", "medium": "InterDisplay-Medium.otf", "semibold": "InterDisplay-SemiBold.otf",
+    "light": "InterDisplay-Light.otf", "regular": "InterDisplay-Regular.otf", "medium": "InterDisplay-Medium.otf", "semibold": "InterDisplay-SemiBold.otf",
     "bold": "InterDisplay-Bold.otf", "black": "InterDisplay-Black.otf",
     "serif": "NotoSerifDisplay-Italic.ttf", "serif_bold": "NotoSerifDisplay-BoldItalic.ttf",
     "mono": "NotoSansMono-Regular.ttf", "mono_bold": "NotoSansMono-Bold.ttf",

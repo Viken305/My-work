@@ -5,7 +5,7 @@ Voice: Kokoro `af_heart`, 1.05×, en-us. Numbers are spoken as words; captions s
 ## 1. Hook: Einstein in your pocket
 
 - **H1** Right now, your phone is doing Einstein's math.
-- **H2** Without it, the blue dot on your map would drift off by about ten kilometres, every single day.
+- **H2** Without it, the blue dot on your map would drift off by more than ten kilometres, every single day.
 - **H3** So what does Einstein have to do with finding a coffee shop?
 
 ## 2. Clocks in the sky
@@ -30,5 +30,5 @@ Voice: Kokoro `af_heart`, 1.05×, en-us. Numbers are spoken as words; captions s
 ## 5. The fix and the payoff
 
 - **D1** So engineers slow them down before launch. On the ground, they tick a tiny bit too slow. In orbit, they tick exactly right.
-- **D2** Without that fix, every map in the world would be about ten kilometres wrong by tomorrow.
+- **D2** Without that fix, every map in the world would be more than ten kilometres wrong by tomorrow.
 - **D3** Relativity isn't just a theory. It's in your pocket, every time you check where you are.

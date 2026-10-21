@@ -10,7 +10,7 @@ Every time you open a map, your phone relies on Einstein's relativity.
 
 About 30 GPS satellites orbit 20,000 km up, each carrying atomic clocks and broadcasting where it is and the exact time. Your phone measures how long each signal took to arrive, and with four satellites it works out where you are and fixes its own clock.
 
-But the satellite clocks don't tick like ours. Moving at 14,000 km/h, they lose about 7 µs a day (special relativity). In weaker gravity, they gain about 45 µs a day (general relativity). Net: +38 µs a day. Since light travels 300 m in a microsecond, uncorrected positions would drift by about 10 km a day. So the clocks are set to tick slightly slow before launch: 10.22999999543 MHz instead of 10.23 MHz.
+But the satellite clocks don't tick like ours. Moving at 14,000 km/h, they lose about 7 µs a day (special relativity). In weaker gravity, they gain about 45 µs a day (general relativity). Net: +38 µs a day. Since light travels 300 m in a microsecond, without the fix, errors would build up by more than 10 km a day. So the clocks are set to tick slightly slow before launch: 10.22999999543 MHz instead of 10.23 MHz.
 
 Simplified for a Short: real receivers also correct for the atmosphere, orbit errors and more.
 
