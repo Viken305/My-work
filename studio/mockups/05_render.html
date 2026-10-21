@@ -1,0 +1,124 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Studio · Render &amp; Publish</title>
+<link rel="stylesheet" href="studio.css">
+<style>
+.wrap { display: grid; grid-template-columns: 1fr 1fr 400px; gap: 16px; flex: 1; min-height: 0; }
+.col { display: flex; flex-direction: column; gap: 14px; min-height: 0; }
+.job { display: grid; grid-template-columns: 70px 1fr 64px; gap: 10px; align-items: center; padding: 9px 0; border-top: 1px solid var(--line); }
+.job:first-of-type { border-top: 0; }
+.job b { font-size: 13px; }
+.job .bar { height: 6px; border-radius: 3px; background: var(--card2); margin-top: 6px; overflow: hidden; }
+.job .bar i { display: block; height: 100%; background: var(--green); }
+.job .bar i.run { background: linear-gradient(90deg, var(--violet), var(--amber)); }
+.job small { color: var(--smoke); font-size: 11px; }
+.job .st { font: 700 11px Mono; text-align: right; }
+.meter { display: flex; gap: 3px; align-items: flex-end; height: 64px; }
+.meter i { flex: 1; border-radius: 2px 2px 0 0; background: var(--violet); opacity: .85; }
+.outs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.out { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px; display: flex; gap: 10px; align-items: center; }
+.out .th { width: 46px; height: 70px; border-radius: 6px; background-size: cover; flex: none; }
+.out .th.w { width: 84px; height: 47px; }
+.out b { font-size: 12.5px; display: block; } .out small { color: var(--smoke); font: 400 10.5px Mono; }
+.check { display: flex; gap: 10px; align-items: center; padding: 6px 0; font-size: 13px; }
+.check i { width: 18px; height: 18px; border-radius: 5px; display: grid; place-items: center; font: 700 11px Mono; font-style: normal;
+           background: #5fd38d22; color: var(--green); flex: none; }
+.check i.w { background: #ffb54722; color: var(--amber); }
+.title { background: var(--card); border: 1px solid var(--amber); border-radius: 8px; padding: 9px 11px; font-weight: 700; font-size: 14px; }
+.desc { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; font-size: 12px; color: #d6d2cb; line-height: 1.5; height: 116px; overflow: hidden; }
+.phone { width: 150px; aspect-ratio: 9/16; border-radius: 14px; background: url(assets/thumb_short.jpg) center/cover;
+         box-shadow: 0 0 0 1px var(--line), 0 10px 40px #000; flex: none; }
+.git { display: block; }
+</style></head>
+<body data-page="render"><script src="nav.js"></script>
+<main>
+  <header><div><div class="step">STEP 4</div><h1>Render &amp; Publish</h1></div><div class="sp"></div>
+    <div class="seg" style="width:330px"><div>Draft 540p · fast</div><div class="on">Final 1080p · 30 fps</div></div>
+    <span class="btn primary">◉ Render full video</span></header>
+  <div class="wrap">
+    <div class="col">
+      <div class="panel">
+        <h3>Render queue <span class="r smoke">8 CPU cores · ≈ 0.5 s / frame</span></h3>
+        <div class="job"><span class="chip a">PART 1</span><div><b>Hook</b> <small>· 488 frames</small><div class="bar"><i style="width:100%"></i></div></div><span class="st green">DONE</span></div>
+        <div class="job"><span class="chip a">PART 2</span><div><b>Reading words</b> <small>· 614 frames</small><div class="bar"><i style="width:100%"></i></div></div><span class="st green">DONE</span></div>
+        <div class="job"><span class="chip a">PART 3</span><div><b>Learning</b> <small>· 530 frames · line B2 changed</small><div class="bar"><i class="run" style="width:64%"></i></div></div><span class="st amber">64%</span></div>
+        <div class="job"><span class="chip a">PART 4</span><div><b>Making the picture</b> <small>· 1,005 frames</small><div class="bar"><i style="width:100%"></i></div></div><span class="st green">REUSED</span></div>
+        <div class="job"><span class="chip a">PART 5</span><div><b>Seeds</b> <small>· 416 frames</small><div class="bar"><i style="width:100%"></i></div></div><span class="st green">REUSED</span></div>
+        <div class="job"><span class="chip v">FULL</span><div><b>Join + music + sound mix</b> <small>· waits for part 3</small><div class="bar"><i style="width:0"></i></div></div><span class="st smoke">≈ 3 min</span></div>
+      </div>
+      <div class="panel">
+        <h3>Quick stills <span class="r smoke">check a frame before a full render</span></h3>
+        <div class="row" style="gap:8px">
+          <div style="flex:1;aspect-ratio:9/16;border-radius:8px;background:url(assets/p08.jpg) center/cover"></div>
+          <div style="flex:1;aspect-ratio:9/16;border-radius:8px;background:url(assets/p09.jpg) center/cover"></div>
+          <div style="flex:1;aspect-ratio:9/16;border-radius:8px;background:url(assets/p10.jpg) center/cover;box-shadow:0 0 0 2px var(--amber)"></div>
+          <div style="flex:1;aspect-ratio:9/16;border-radius:8px;border:1.5px dashed var(--line);display:grid;place-items:center;color:var(--smoke);font-size:22px">＋</div>
+        </div>
+        <div class="row smoke mono" style="font-size:10.5px;margin-top:8px;gap:0;justify-content:space-around"><span>0:39.5</span><span>0:44.0</span><span>0:51.2</span><span>add time</span></div>
+      </div>
+      <div class="panel" style="flex:1">
+        <h3>Version history</h3>
+        <div class="job"><span class="chip">v4</span><div><b>Re-voiced B2, new wall counter</b><br><small>today · 101.8 s · rendering</small></div><span class="st amber">NOW</span></div>
+        <div class="job"><span class="chip">v3</span><div><b>Final render, posted cover</b><br><small>Oct 19 · 101.8 s</small></div><span class="st smoke">open</span></div>
+        <div class="job"><span class="chip">v2</span><div><b>Vector art replaces photos</b><br><small>Oct 18 · 99.4 s</small></div><span class="st smoke">open</span></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="panel">
+        <h3>Sound check <span class="r"><span class="chip g">−14.1 LUFS ✓</span> <span class="chip g">PEAK −1.1 dB ✓</span></span></h3>
+        <div class="meter" id="meter"></div>
+        <div class="row smoke mono" style="font-size:10px;justify-content:space-between;margin-top:6px"><span>0:00</span><span>voice · music · effects</span><span>1:41.8</span></div>
+      </div>
+      <div class="panel">
+        <h3>Files</h3>
+        <div class="outs">
+          <div class="out"><div class="th" style="background-image:url(assets/thumb_short.jpg)"></div><div><b>youtube_upload_cover.mp4</b><small>102.2 s · 154 MB</small><br><small class="green">ends on the cover ✓</small></div></div>
+          <div class="out"><div class="th" style="background-image:url(assets/p01.jpg)"></div><div><b>full.mp4</b><small>101.8 s · 1080×1920</small><br><small>master copy</small></div></div>
+          <div class="out"><div class="th" style="background-image:url(assets/thumb_short.jpg)"></div><div><b>thumb_short.png</b><small>1080×1920</small><br><small>phone cover</small></div></div>
+          <div class="out"><div class="th w" style="background-image:url(assets/thumb_wide.jpg)"></div><div><b>thumb_wide.png</b><small>1280×720</small><br><small>desktop</small></div></div>
+        </div>
+        <div class="row" style="margin-top:12px"><span class="btn sm">⬇ Download all</span><span class="btn sm">⧉ Share link</span></div>
+      </div>
+      <div class="panel" style="flex:1">
+        <h3>Before you post</h3>
+        <div class="check"><i>✓</i>Length under 3:00 (1:42)</div>
+        <div class="check"><i>✓</i>Captions inside the safe zone in every shot</div>
+        <div class="check"><i>✓</i>Facts checked, sources saved</div>
+        <div class="check"><i>✓</i>All pictures are vector drawings</div>
+        <div class="check"><i class="w">!</i>Part 3 changed after the last full render</div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="panel" style="flex:1">
+        <h3>Posting kit</h3>
+        <div class="row" style="align-items:flex-start;gap:14px;margin-bottom:12px">
+          <div class="phone"></div>
+          <div style="flex:1">
+            <div class="field"><label>Title <b class="green">41 / 100</b></label><div class="title">How AI Turns Static Into a Picture #shorts</div></div>
+            <div class="smoke" style="font-size:11.5px;margin-bottom:4px">Other options</div>
+            <div class="input" style="font-size:12px;margin-bottom:6px">Every AI Image Starts as This</div><div class="input" style="font-size:12px">How Does AI Actually Draw?</div>
+          </div>
+        </div>
+        <div class="field"><label>Description</label><div class="desc">Type one sentence and an AI turns it into a picture in seconds. But every one of those pictures starts as pure static. Here's what actually happens: your prompt is chopped into tokens and turned into numbers on a map of meaning…</div></div>
+        <div class="field"><label>Hashtags · tags</label><div class="row" style="flex-wrap:wrap;gap:5px">
+          <span class="chip v">#ai</span><span class="chip v">#aiart</span><span class="chip v">#howitworks</span><span class="chip v">#science</span><span class="chip v">#diffusion</span><span class="chip">+ 13 tags</span></div></div>
+        <div class="field"><label>Pinned comment</label><div class="input" style="font-size:12px">Fun fact: same prompt + same static = the exact same picture…</div></div>
+        <div class="row" style="gap:8px;flex-wrap:wrap"><span class="chip">Education</span><span class="chip">Not for kids</span><span class="chip">Altered content: No</span></div>
+      </div>
+      <div class="panel">
+        <h3>Save</h3>
+        <div class="row" style="gap:8px"><span class="btn" style="flex:1;justify-content:center">⎇ Save code to GitHub</span><span class="btn primary" style="flex:1;justify-content:center">⇪ Upload to YouTube</span></div>
+        <div class="smoke" style="font-size:11.5px;margin-top:8px">Saves the script, scenes, art and settings. Videos are left out: they can be rebuilt from the code.</div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="note" data-n="1" style="left:600px;top:14px">Only changed parts re-render. The rest are reused</div>
+<div class="note" data-n="2" style="left:880px;top:880px;max-width:250px">Checklist catches problems before you upload</div>
+<div class="note" data-n="3" style="left:1330px;top:760px;max-width:230px">Title, description, tags and cover made with the video</div>
+<script>
+let s = 3, h = ""; for (let i = 0; i < 90; i++) { s = (s * 9301 + 49297) % 233280;
+  const v = 0.35 + 0.55 * Math.abs(Math.sin(i / 6)) + 0.1 * s / 233280; h += `<i style="height:${Math.round(64 * Math.min(v, 1))}%;${v > .93 ? "background:var(--amber)" : ""}"></i>`; }
+document.getElementById("meter").innerHTML = h;
+</script>
+</body></html>

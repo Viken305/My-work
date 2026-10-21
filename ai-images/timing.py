@@ -9,6 +9,7 @@ import json, os, re
 import numpy as np
 import soundfile as sf
 
+from project import P
 from script import PARTS
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -22,12 +23,17 @@ def durations(part):
     return json.load(open(os.path.join(vo_dir(part), "durations.json")))
 
 
-def schedule(part, first=0.4, gap=0.5, extra=None):
-    """Start time of each line: lines follow each other with `gap` seconds between, plus optional extra per line."""
+def schedule(part, first=None, gap=None, extra=None):
+    """Start time of each line: lines follow each other with `gap` seconds between, plus an extra pause per line.
+    Defaults come from the voice settings in project.json (first, gap, pauses)."""
+    v = P["voice"]
+    first = v.get("first_by_part", {}).get(part, v["first"]) if first is None else first
+    gap = v["gap"] if gap is None else gap
+    extra = {**v.get("pauses", {}), **(extra or {})}
     dur = durations(part)
     vo, t = {}, first
     for k, _ in PARTS[part]:
-        t += (extra or {}).get(k, 0.0)
+        t += extra.get(k, 0.0)
         vo[k] = round(t, 3)
         t += dur[k] + gap
     return vo, t
@@ -131,6 +137,9 @@ def words(part):
     return res
 
 
+MISSING = []           # scene anchors (line, word) the current script no longer contains
+
+
 class Timing:
     """Absolute word times for one part, given its line schedule."""
 
@@ -150,7 +159,10 @@ class Timing:
         for i in range(len(clean) - len(target) + 1):
             if clean[i:i + len(target)] == target:
                 return self.vo[k] + (ws[i + len(target) - 1][1] if end else ws[i][0])
-        raise KeyError((k, phrase))
+        # the line was edited and no longer has this word: keep rendering, fall back to the middle of the line
+        MISSING.append((k, phrase))
+        print(f"warning: scene anchor '{phrase}' not found in line {k}; using the middle of the line", flush=True)
+        return self.vo[k] + (ws[-1][1] if ws else 0.0) * 0.5
 
     def end(self, k):
         return self.vo[k] + self.rel[k][-1][1]

@@ -12,7 +12,7 @@
 from film import *  # noqa: F401,F403
 
 PART = "part4"
-VO, _end = schedule(PART, first=0.4, gap=0.5)
+VO, _end = schedule(PART)
 TM = Timing(PART, VO)
 ENV = VoiceEnvelope(PART, VO)
 DURATION = _end + 0.6

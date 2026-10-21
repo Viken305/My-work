@@ -1,0 +1,100 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Studio · Projects</title>
+<link rel="stylesheet" href="studio.css">
+<style>
+.wrap { display: grid; grid-template-columns: 1fr 430px; gap: 18px; flex: 1; min-height: 0; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; align-content: start; }
+.vid { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.vid .cover { height: 196px; background-size: cover; background-position: center; position: relative; }
+.vid .cover .len { position: absolute; right: 8px; bottom: 8px; font: 700 11px Mono; background: #000a; padding: 2px 7px; border-radius: 5px; }
+.vid .cover .fmt { position: absolute; left: 8px; top: 8px; }
+.vid .meta { padding: 10px 12px 12px; }
+.vid .meta b { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.pipe { display: flex; gap: 3px; margin-top: 8px; }
+.pipe i { flex: 1; height: 4px; border-radius: 2px; background: var(--card2); }
+.pipe i.d { background: var(--green); } .pipe i.w { background: var(--amber); }
+.new { border: 1.5px dashed #ffb54788; display: grid; place-items: center; text-align: center; color: var(--amber); }
+.new big { font-size: 40px; font-weight: 300; display: block; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.stat { background: var(--carbon); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.stat small { font: 400 10px Mono; color: var(--smoke); letter-spacing: .15em; }
+.stat div { font-size: 26px; font-weight: 800; margin-top: 2px; }
+.stat span { font-size: 12px; color: var(--smoke); }
+.wiz { display: flex; flex-direction: column; }
+.wiz .topic { font-size: 16px; font-weight: 600; padding: 12px 13px; }
+.styles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.sty { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--card); }
+.sty .sw { height: 54px; }
+.sty p { font-size: 11.5px; font-weight: 600; padding: 6px 8px; }
+.sty.on { border-color: var(--amber); box-shadow: 0 0 0 2px #ffb54733; }
+.est { background: var(--card); border-radius: 10px; padding: 12px; display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin: 4px 0 14px; }
+.est div small { font: 400 9.5px Mono; color: var(--smoke); letter-spacing: .12em; display: block; }
+.est div b { font-size: 17px; }
+</style></head>
+<body data-page="projects"><script src="nav.js"></script>
+<main>
+  <header><div><div class="step">HOME</div><h1>Your videos</h1></div><div class="sp"></div>
+    <div class="input" style="width:260px">⌕ <span class="smoke">Search projects</span></div>
+    <span class="btn">⇅ Sort: last edited</span><span class="btn primary">＋ New video</span></header>
+
+  <div class="stats">
+    <div class="stat"><small>VIDEOS</small><div>11</div><span>9 Shorts · 2 wide</span></div>
+    <div class="stat"><small>READY TO POST</small><div class="green">1</div><span>How AI Draws From Nothing</span></div>
+    <div class="stat"><small>AVG LENGTH</small><div>1:42</div><span>Shorts limit 3:00</span></div>
+    <div class="stat"><small>LAST RENDER</small><div>101.8 s</div><span>−14.1 LUFS · −1.1 dBFS peak</span></div>
+  </div>
+
+  <div class="wrap">
+    <div class="grid">
+      <div class="vid"><div class="cover" style="background-image:url(assets/thumb_short.jpg)"><span class="chip a fmt">9:16</span><span class="len">1:42</span></div>
+        <div class="meta"><b>How AI Draws From Nothing</b><span class="chip g"><span class="dot"></span>READY TO POST</span>
+          <div class="pipe"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></div></div></div>
+      <div class="vid"><div class="cover" style="background:radial-gradient(circle at 50% 40%,#3a2a1a,#0b0a0c 70%)"><span class="chip a fmt">9:16</span><span class="len">1:38</span></div>
+        <div class="meta"><b>The Deepest Hole on Earth</b><span class="chip g"><span class="dot"></span>POSTED</span>
+          <div class="pipe"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></div></div></div>
+      <div class="vid"><div class="cover" style="background:radial-gradient(circle at 50% 70%,#ff6a2a,#401010 45%,#0b0a0c 80%)"><span class="chip a fmt">9:16</span><span class="len">1:51</span></div>
+        <div class="meta"><b>Krakatoa: The Loudest Sound</b><span class="chip g"><span class="dot"></span>POSTED</span>
+          <div class="pipe"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></div></div></div>
+      <div class="vid"><div class="cover" style="background:linear-gradient(160deg,#1d3b6b,#0f1a33 60%,#2b6cb0)"><span class="chip a fmt">9:16</span><span class="len">—</span></div>
+        <div class="meta"><b>Why Stars Twinkle</b><span class="chip a"><span class="dot"></span>SCRIPT · DRAFT</span>
+          <div class="pipe"><i class="w"></i><i></i><i></i><i></i><i></i></div></div></div>
+      <div class="vid"><div class="cover" style="background:linear-gradient(160deg,#d9a33b,#7a4f12)"><span class="chip fmt">16:9</span><span class="len">4:10</span></div>
+        <div class="meta"><b>Where Gold Comes From</b><span class="chip g"><span class="dot"></span>POSTED</span>
+          <div class="pipe"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></div></div></div>
+      <div class="vid"><div class="cover" style="background:radial-gradient(circle at 40% 40%,#ff7aa8,#3b1a5b 60%)"><span class="chip a fmt">9:16</span><span class="len">1:29</span></div>
+        <div class="meta"><b>Your Immune System</b><span class="chip v"><span class="dot"></span>RENDERING 62%</span>
+          <div class="pipe"><i class="d"></i><i class="d"></i><i class="d"></i><i class="w"></i><i></i></div></div></div>
+      <div class="vid"><div class="cover" style="background:linear-gradient(160deg,#2f8f6b,#123b33)"><span class="chip a fmt">9:16</span><span class="len">1:45</span></div>
+        <div class="meta"><b>Minerals That Run the World</b><span class="chip g"><span class="dot"></span>POSTED</span>
+          <div class="pipe"><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i></div></div></div>
+      <div class="vid new"><div><big>＋</big><b>New video</b><br><span class="smoke" style="font-size:12px">topic → script → voice →<br>scenes → render → post</span></div></div>
+    </div>
+
+    <div class="panel wiz">
+      <h3>New video <span class="r smoke">step 1 of 5</span></h3>
+      <div class="field"><label>Topic</label><div class="input topic">How do noise-cancelling headphones work?</div></div>
+      <div class="field"><label>Format</label><div class="seg"><div class="on">Short 9:16</div><div>Wide 16:9</div><div>Both</div></div></div>
+      <div class="field"><label>Target length <b>1:40</b></label><div class="slider"><span style="width:52%"></span></div>
+        <div class="row smoke mono" style="font-size:10px;justify-content:space-between"><span>0:30</span><span>Shorts max 3:00</span></div></div>
+      <div class="field"><label>Style preset</label>
+        <div class="styles">
+          <div class="sty on"><div class="sw static" style="box-shadow:inset 0 -14px 0 #ffb547, inset 0 -22px 0 #8b6cff"></div><p>Static &amp; Signal</p></div>
+          <div class="sty"><div class="sw" style="background:radial-gradient(circle at 70% 60%,#3a2a1a,#0b0a0c)"></div><p>Deep Noir</p></div>
+          <div class="sty"><div class="sw" style="background:linear-gradient(135deg,#ff6b9d,#6b5bff,#2bd4ff)"></div><p>Bright Flat</p></div>
+        </div></div>
+      <div class="field"><label>Voice</label><div class="input">▶ <b>af_heart</b> <span class="smoke">· warm female · 1.05×</span><span class="caret">▼</span></div></div>
+      <div class="row" style="margin-bottom:8px"><div class="toggle on"></div><span>Vector art only <span class="smoke">(no AI-generated images)</span></span></div>
+      <div class="row" style="margin-bottom:12px"><div class="toggle on"></div><span>Write a fact sheet with sources first</span></div>
+      <div class="est">
+        <div><small>VO WORDS</small><b>≈ 260</b></div>
+        <div><small>PARTS</small><b>5</b></div>
+        <div><small>RENDER TIME</small><b>≈ 25 min</b></div>
+      </div>
+      <span class="btn primary" style="justify-content:center">Draft script with Claude →</span>
+      <div class="field" style="margin:14px 0 0"><label>Or pick a suggested topic</label>
+        <div class="row" style="flex-wrap:wrap;gap:6px"><span class="chip">Why is the sky dark at night?</span><span class="chip">How GPS knows where you are</span><span class="chip">What is a black hole made of?</span></div></div>
+    </div>
+  </div>
+</main>
+<div class="note" data-n="1" style="left:1290px;top:180px">Start every video here: topic, format, length, look, voice</div>
+<div class="note" data-n="2" style="left:262px;top:520px">Pipeline bar: script · voice · scenes · render · post</div>
+</body></html>

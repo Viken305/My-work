@@ -13,6 +13,7 @@ import soundfile as sf
 import skia
 
 from kit import AMBER, PAPER, VIOLET, W, clamp, font, mix, out_cubic, paint, prog, smooth, spring, width
+from project import P
 from script import DISPLAY
 from timing import vo_dir
 
@@ -72,7 +73,9 @@ class Captions:
     hide     {line_key: [(t0, t1)]} windows where captions are suppressed (a title says it instead)
     """
 
-    def __init__(self, tm, env=None, words=(), model=(), anchors=None, hide=None, size=80, max_words=3, max_chars=18, skip=()):
+    def __init__(self, tm, env=None, words=(), model=(), anchors=None, hide=None, size=None, max_words=None, max_chars=18, skip=()):
+        cfg = P["style"]["captions"]
+        size, max_words = size or cfg["size"], max_words or cfg["max_words"]
         self.size, self.env = size, env
         self.colour = {**{w: AMBER for w in words}, **{w: VIOLET for w in model}}
         self.hide = hide or {}
@@ -80,7 +83,7 @@ class Captions:
         for k in tm.vo:
             if k in skip:
                 continue
-            ax, ay = (anchors or {}).get(k, (W / 2, 1380))
+            ax, ay = (anchors or {}).get(k, (W / 2, cfg["y"]))
             cur, groups = [], []
             for item in displayed(tm.words(k)):
                 cur.append(item)

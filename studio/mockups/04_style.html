@@ -1,0 +1,108 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Studio · Style &amp; Art</title>
+<link rel="stylesheet" href="studio.css">
+<style>
+.wrap { display: grid; grid-template-columns: 380px 1fr 380px; gap: 16px; flex: 1; min-height: 0; }
+.col { display: flex; flex-direction: column; gap: 14px; min-height: 0; }
+.sw { display: grid; grid-template-columns: 44px 1fr auto; gap: 10px; align-items: center; padding: 6px 0; }
+.sw i { width: 44px; height: 30px; border-radius: 7px; border: 1px solid #ffffff22; }
+.sw b { font-size: 13px; display: block; } .sw small { color: var(--smoke); font-size: 11px; }
+.sw .mono { font-size: 11px; color: var(--smoke); }
+.type div { padding: 7px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; }
+.type div:first-child { border-top: 0; }
+.cap { height: 210px; border-radius: 12px; background: #0b0a0f; position: relative; overflow: hidden; display: grid; place-items: center; }
+.cap .w { white-space: nowrap; font: 800 40px Inter; letter-spacing: -.01em; }
+.cap .w .serif { color: var(--amber); font-size: 50px; }
+.scan { position: absolute; left: 40%; top: 32%; bottom: 32%; width: 3px; background: var(--amber); box-shadow: 0 0 16px var(--amber); }
+.patch { display: inline-block; width: 120px; height: 46px; border-radius: 5px; vertical-align: middle; filter: blur(.4px); }
+.compare { border-radius: 12px; overflow: hidden; position: relative; background: #0b0a0f url(assets/hero.jpg) center/auto 100% no-repeat; }
+.compare .on { position: absolute; left: 50%; top: 0; width: 125px; bottom: 0; backdrop-filter: saturate(1.35) contrast(1.08) brightness(1.05);
+   box-shadow: inset -30px 0 50px -10px #000a, inset 0 0 40px #0008; }
+.compare span { position: absolute; top: 10px; font: 700 10px Mono; background: #000b; padding: 3px 7px; border-radius: 5px; z-index: 2; }
+.compare .bar { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--paper); z-index: 2; box-shadow: 0 0 10px #fff8; }
+.fx { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 18px; }
+.lib { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.art { border-radius: 9px; overflow: hidden; border: 1px solid var(--line); background: var(--card); }
+.art div { aspect-ratio: 1; background-size: cover; }
+.art p { font: 700 10px Mono; padding: 5px 7px; color: var(--smoke); }
+.art.on { border-color: var(--amber); }
+.rule { display: flex; gap: 10px; align-items: center; padding: 6px 0; font-size: 13px; }
+</style></head>
+<body data-page="style"><script src="nav.js"></script>
+<main>
+  <header><div><div class="step">STEP 3</div><h1>Style &amp; Art</h1></div><div class="sp"></div>
+    <div class="input" style="width:260px">Preset: <b>Static &amp; Signal</b><span class="caret">▼</span></div>
+    <span class="btn">⧉ Save as new preset</span><span class="btn">📄 Style guide</span></header>
+  <div class="wrap">
+    <div class="col">
+      <div class="panel">
+        <h3>Palette <span class="r smoke">colour = meaning</span></h3>
+        <div class="sw"><i style="background:#ffb547"></i><div><b>Amber</b><small>your words, the prompt</small></div><span class="mono">#FFB547</span></div>
+        <div class="sw"><i style="background:#8b6cff"></i><div><b>Violet</b><small>the model, noise, maths</small></div><span class="mono">#8B6CFF</span></div>
+        <div class="sw"><i style="background:#f2efe9"></i><div><b>Paper</b><small>main text</small></div><span class="mono">#F2EFE9</span></div>
+        <div class="sw"><i style="background:#8a8794"></i><div><b>Smoke</b><small>labels, figures</small></div><span class="mono">#8A8794</span></div>
+        <div class="sw"><i style="background:#0e0d12"></i><div><b>Carbon</b><small>background</small></div><span class="mono">#0E0D12</span></div>
+      </div>
+      <div class="panel type">
+        <h3>Type</h3>
+        <div><span style="font:900 22px Inter">Inter Display Black</span><span class="mono smoke" style="font-size:11px">titles</span></div>
+        <div><span class="serif amber" style="font-size:24px">Noto Serif italic</span><span class="mono smoke" style="font-size:11px">emphasis</span></div>
+        <div><span class="mono" style="font-size:15px;font-weight:700">NOTO SANS MONO</span><span class="mono smoke" style="font-size:11px">labels, data</span></div>
+      </div>
+      <div class="panel" style="flex:1">
+        <h3>Sound palette</h3>
+        <div class="field"><label>Music bed</label><div class="seg"><div class="on">Synth</div><div>Arp</div><div>Drone</div><div>Off</div></div></div>
+        <div class="row" style="flex-wrap:wrap;gap:6px;margin-bottom:12px"><span class="chip a">▶ static burst</span><span class="chip">▶ pop</span><span class="chip">▶ whoosh</span>
+          <span class="chip v">▶ steps fast</span><span class="chip">▶ pluck</span><span class="chip">▶ glass ting</span><span class="chip">▶ clunk</span><span class="chip">▶ typing</span><span class="chip">＋ 14 more</span></div>
+        <div class="field"><label>Loudness target <b>−14 LUFS</b></label><div class="slider"><span style="width:62%"></span></div></div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="panel">
+        <h3>Captions <span class="r"><span class="chip a">DENOISE-IN</span></span></h3>
+        <div class="cap"><div class="w">pieces called <span class="serif">tokens</span> <span class="patch static" style="width:70px;height:40px"></span></div><div class="scan"></div></div>
+        <div class="row" style="margin-top:12px;gap:8px">
+          <div class="seg" style="flex:1"><div class="on">Denoise-in</div><div>Pop</div><div>Typewriter</div><div>Karaoke</div></div></div>
+        <div class="fx" style="margin-top:12px">
+          <div class="field"><label>Size <b>78 px</b></label><div class="slider"><span style="width:60%"></span></div></div>
+          <div class="field"><label>Words on screen <b>≤ 4</b></label><div class="slider"><span style="width:40%"></span></div></div>
+        </div>
+      </div>
+      <div class="panel" style="flex:1">
+        <h3>Finish (post effects) <span class="r smoke">drag the bar to compare</span></h3>
+        <div class="compare" style="height:250px"><span style="left:10px">OFF</span><div class="on"></div><span style="right:10px">ON</span><i class="bar"></i></div>
+        <div class="fx" style="margin-top:14px">
+          <div class="field"><label>Bloom (amber/violet only) <b>1.0</b></label><div class="slider"><span style="width:50%"></span></div></div>
+          <div class="field"><label>Film grain <b>6</b></label><div class="slider"><span style="width:40%"></span></div></div>
+          <div class="field"><label>Chromatic aberration <b>0.6</b></label><div class="slider v"><span style="width:30%"></span></div></div>
+          <div class="field"><label>Vignette <b>0.5</b></label><div class="slider"><span style="width:50%"></span></div></div>
+          <div class="field"><label>Motion blur samples <b>3</b></label><div class="slider v"><span style="width:38%"></span></div></div>
+          <div class="field"><label>Glitch strength <b>0.25</b></label><div class="slider v"><span style="width:25%"></span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="panel" style="flex:1">
+        <h3>Vector art library <span class="r smoke">9 drawings · code</span></h3>
+        <div class="lib" id="lib"></div>
+        <span class="btn violet" style="margin-top:12px;justify-content:center;display:flex">✦ Draw a new picture: "a lighthouse in a storm"</span>
+      </div>
+      <div class="panel">
+        <h3>Rules</h3>
+        <div class="rule"><div class="toggle on"></div>Vector art only, no AI-generated images</div>
+        <div class="rule"><div class="toggle on"></div>Label every picture "illustration"</div>
+        <div class="rule"><div class="toggle on"></div>Keep captions above the YouTube buttons</div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="note" data-n="1" style="left:345px;top:915px">One preset = colours, fonts, captions and finish for the whole video</div>
+<div class="note" data-n="2" style="left:1270px;top:660px;max-width:250px">Every picture is drawn in code, any size, never blurry</div>
+<script>
+const art = [["hero","HERO"],["seed_a","SEED A"],["seed_b","SEED B"],["seed_c","SEED C"],["paris","PARIS"],["train_dog","DOG"],
+  ["train_mountain","MOUNTAIN"],["train_lighthouse","LIGHTHOUSE"],["noguide","NO PROMPT"]];
+document.getElementById("lib").innerHTML = art.map(([f, n], i) =>
+  `<div class="art ${i ? "" : "on"}"><div style="background-image:url(assets/${f}.jpg)"></div><p>${n}</p></div>`).join("");
+</script>
+</body></html>
