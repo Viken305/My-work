@@ -168,7 +168,8 @@ def glass(img, m, bevel=24.0, refract=16.0, frost=9.0, tint=0.30, rgb=None, rim=
     mm = m[y0:y1, x0:x1]
     refract *= FX.get("refraction", 1.0)
     blur = cv2.GaussianBlur(sub, (0, 0), frost) if frost > 0 else sub
-    d = cv2.distanceTransform((mm > 0.5).astype(np.uint8), cv2.DIST_L2, 5)
+    solid = mm > 0.5 * mm.max()           # the shape itself, whatever the object's opacity
+    d = cv2.distanceTransform(solid.astype(np.uint8), cv2.DIST_L2, 5)
     u = np.clip(d / bevel, 0, 1)
     hgt = cv2.GaussianBlur(1 - (1 - u) ** 2, (0, 0), 1.0)
     gy, gx = np.gradient(hgt)
@@ -189,7 +190,7 @@ def glass(img, m, bevel=24.0, refract=16.0, frost=9.0, tint=0.30, rgb=None, rim=
     if sheen:
         pos, wd, k = sheen
         ax = (X + Y * 0.55)
-        a0, a1 = ax[mm > 0.5].min(), ax[mm > 0.5].max()
+        a0, a1 = ax[solid].min(), ax[solid].max()
         band = np.exp(-((ax - (a0 + (a1 - a0) * pos)) / wd) ** 2) * u
         out += np.float32(PAPER) * (band * k)[..., None]
     if inner is not None:
