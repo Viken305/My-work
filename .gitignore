@@ -47,3 +47,6 @@ ai-images/build/
 # studio: every project's build/ (voice clips, frames, history) and mockup screenshots
 */build/
 studio/mockups/out/
+
+# Kokoro voice model files (download, ~340 MB)
+voices/

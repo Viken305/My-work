@@ -7,9 +7,25 @@ pip install -r studio/requirements.txt      # once (ffmpeg must be installed too
 python3 studio/server.py                    # then open http://localhost:8765
 ```
 
+Run these from the repository folder (the one that contains `studio/` and `ai-images/`).
+
 Narration uses the Kokoro voice model. Download `kokoro-v1.0.onnx` and `voices-v1.0.bin` from
-https://github.com/thewh1teagle/kokoro-onnx/releases (model-files-v1.0) into one folder and point to it:
-`export KOKORO_DIR=/path/to/that/folder`.
+https://github.com/thewh1teagle/kokoro-onnx/releases (model-files-v1.0) into a `voices/` folder at the top of the
+repository (it is not committed), or put them anywhere and set `KOKORO_DIR` to that folder.
+
+### On Windows (PowerShell)
+
+```
+winget install Python.Python.3.12 Git.Git Gyan.FFmpeg      # once; then close and reopen PowerShell
+git clone https://github.com/Viken305/My-work.git
+cd My-work
+git checkout claude/cinematic-videos-images-up2v7n
+py -m pip install -r studio\requirements.txt
+mkdir voices                                                # put kokoro-v1.0.onnx and voices-v1.0.bin in here
+py studio\server.py                                        # then open http://localhost:8765
+```
+
+Windows has no `python3` command: use `py` (or `python`).
 
 ## What you can do
 

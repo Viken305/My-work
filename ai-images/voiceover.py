@@ -4,7 +4,7 @@ Usage: python3 voiceover.py part1            -> build/part1/vo/<line>.wav + dura
        python3 voiceover.py part1 --all      -> re-voice every line of the part
        python3 voiceover.py part1 --lines H2,H3
        python3 voiceover.py --preview af_heart 1.05 "text"  -> build/_preview/<voice>_<speed>.wav
-Needs the Kokoro model files; set KOKORO_DIR (default /tmp/claude-0/voices).
+Needs the Kokoro model files: put them in the repo's voices/ folder, or set KOKORO_DIR.
 A line is re-voiced when its text or the voice settings changed (hashes in build/<part>/vo/meta.json).
 """
 import hashlib, json, os, sys
@@ -15,7 +15,8 @@ from project import P
 from script import PARTS
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-MODEL_DIR = os.environ.get("KOKORO_DIR", "/tmp/claude-0/voices")
+MODEL_DIR = os.environ.get("KOKORO_DIR") or next(
+    (d for d in (os.path.join(HERE, "..", "voices"), "/tmp/claude-0/voices") if os.path.isdir(d)), os.path.join(HERE, "..", "voices"))
 
 
 def kokoro():

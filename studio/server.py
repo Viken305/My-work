@@ -16,6 +16,7 @@ REPO = os.path.dirname(STUDIO)
 APP = os.path.join(STUDIO, "app")
 PY = sys.executable
 HISTORY_KEEP = 40
+os.environ["PYTHONUTF8"] = "1"  # project files are UTF-8 (arrows, ×); Windows would otherwise read them as cp1252
 
 
 # ---------------------------------------------------------------- projects
@@ -310,6 +311,9 @@ def cancel(jid):
 
 def _kill_tree(pid):
     """Stop a job and the render workers it started (only its own children, never this server)."""
+    if os.name == "nt":
+        subprocess.run(["taskkill", "/T", "/F", "/PID", str(pid)], capture_output=True)
+        return
     try:
         kids = subprocess.run(["pgrep", "-P", str(pid)], capture_output=True, text=True).stdout.split()
     except FileNotFoundError:
@@ -503,4 +507,9 @@ def main():
 
 
 if __name__ == "__main__":
+    if not sys.flags.utf8_mode:  # Windows: restart in UTF-8 mode so project.json reads and writes correctly
+        try:
+            sys.exit(subprocess.call([PY, "-X", "utf8", *sys.argv]))
+        except KeyboardInterrupt:
+            sys.exit(0)
     main()
