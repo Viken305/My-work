@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Dive watch</title>
+  <defs>
+    <linearGradient id="cal-diver-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-diver-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-diver-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="cal-diver-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="cal-diver-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="cal-diver-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="cal-diver-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M153 92H159Q162 92 162 95V105Q162 108 159 108H153Q150 108 150 105V95Q150 92 153 92Z" fill="url(#cal-diver-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M146 84L156 88V112L146 116Z" fill="url(#cal-diver-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M44 100A56 56 0 1 0 156 100A56 56 0 1 0 44 100Z" stroke="#0d1015" stroke-width="11.4"/><path d="M44 100A56 56 0 1 0 156 100A56 56 0 1 0 44 100Z" stroke="url(#cal-diver-chrome)" stroke-width="9"/><path d="M44 100A56 56 0 1 0 156 100A56 56 0 1 0 44 100Z" stroke="#fff" stroke-width="1.98" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M126 54.97L130 48.04M145.03 74L151.96 70M152 100L160 100M145.03 126L151.96 130M126 145.03L130 151.96M100 152L100 160M74 145.03L70 151.96M54.97 126L48.04 130M48 100L40 100M54.97 74L48.04 70M74 54.97L70 48.04" stroke="url(#cal-diver-chrome)" stroke-width="2"/>
+    <path d="M100 50L92 38L108 38Z" fill="url(#cal-diver-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke="#0d1015" stroke-width="5.4"/><path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke="url(#cal-diver-chrome)" stroke-width="3"/><path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 70L100 62M130 100L138 100M100 130L100 138M70 100L62 100" fill="url(#cal-diver-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M100 70L100 62M130 100L138 100M100 130L100 138M70 100L62 100" stroke="url(#cal-diver-chrome)" stroke-width="5"/>
+    <path d="M105.2 103L80.95 89" stroke="#08112e" stroke-width="8"/><path d="M105.2 103L80.95 89" stroke="url(#cal-diver-blue)" stroke-width="6"/><path d="M105.2 103L80.95 89" stroke="#d6e6ff" stroke-width="1.20" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M92.48 102.74L130.07 89.06" stroke="#08112e" stroke-width="6.5"/><path d="M92.48 102.74L130.07 89.06" stroke="url(#cal-diver-blue)" stroke-width="4.5"/><path d="M92.48 102.74L130.07 89.06" stroke="#d6e6ff" stroke-width="0.90" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M95 100A5 5 0 1 0 105 100A5 5 0 1 0 95 100Z" fill="url(#cal-diver-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>

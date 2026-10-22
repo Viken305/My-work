@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Loupe</title>
+  <defs>
+    <linearGradient id="cal-loupe-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-loupe-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-loupe-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="cal-loupe-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="cal-loupe-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="cal-loupe-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="cal-loupe-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M114.3 128.44L128.44 114.3L173.7 159.56L159.56 173.7Z" fill="url(#cal-loupe-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M120.67 133.39L133.39 120.67M126.32 139.05L139.05 126.32M131.98 144.71L144.71 131.98M137.64 150.36L150.36 137.64M143.29 156.02L156.02 143.29M148.95 161.68L161.68 148.95M154.6 167.33L167.33 154.6" stroke="url(#cal-loupe-chrome)" stroke-width="1.2"/>
+    <path d="M116 116L124 124" stroke="#0d1015" stroke-width="10.4"/><path d="M116 116L124 124" stroke="url(#cal-loupe-chrome)" stroke-width="8"/><path d="M116 116L124 124" stroke="#fff" stroke-width="1.76" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M36 82A46 46 0 1 0 128 82A46 46 0 1 0 36 82Z" fill="url(#cal-loupe-glass)"/>
+    <path d="M58 70C62 58 70 52 80 48" stroke="url(#cal-loupe-chrome)" stroke-width="3"/>
+    <path d="M34 82A48 48 0 1 0 130 82A48 48 0 1 0 34 82Z" stroke="#0d1015" stroke-width="10.4"/><path d="M34 82A48 48 0 1 0 130 82A48 48 0 1 0 34 82Z" stroke="url(#cal-loupe-chrome)" stroke-width="8"/><path d="M34 82A48 48 0 1 0 130 82A48 48 0 1 0 34 82Z" stroke="#fff" stroke-width="1.76" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Alarm</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M42 66A26 26 0 0 1 80 40Z" stroke-width="2.4"/>
+    <path d="M120 40A26 26 0 0 1 158 66Z" stroke-width="2.4"/>
+    <path d="M100 54V38M86 38H114" stroke-width="4"/>
+    <path d="M66 160L54 178M134 160L146 178" stroke-width="5"/>
+    <path d="M50 112A50 50 0 1 0 150 112A50 50 0 1 0 50 112Z" stroke-width="7"/>
+    <path d="M100 76L100 70M118 80.82L121 75.63M131.18 94L136.37 91M136 112L142 112M131.18 130L136.37 133M118 143.18L121 148.37M100 148L100 154M82 143.18L79 148.37M68.82 130L63.63 133M64 112L58 112M68.82 94L63.63 91M82 80.82L79 75.63" stroke-width="2.2"/>
+    <path d="M103.21 115.83L85.86 95.15" stroke-width="4.5"/>
+    <path d="M94.8 115L127.71 96" stroke-width="3.5"/>
+    <path d="M100 112L89.74 140.19" stroke-width="2"/>
+    <path d="M95.5 112A4.5 4.5 0 1 0 104.5 112A4.5 4.5 0 1 0 95.5 112Z" stroke-width="2.4"/>
+  </g>
+</svg>

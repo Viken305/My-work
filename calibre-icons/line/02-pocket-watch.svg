@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Pocket watch</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M88 30A12 12 0 1 0 112 30A12 12 0 1 0 88 30Z" stroke-width="5"/>
+    <path d="M95 44H105Q108 44 108 47V55Q108 58 105 58H95Q92 58 92 55V47Q92 44 95 44Z" stroke-width="2.4"/>
+    <path d="M44 114A56 56 0 1 0 156 114A56 56 0 1 0 44 114Z" stroke-width="6"/>
+    <path d="M54 114A46 46 0 1 0 146 114A46 46 0 1 0 54 114Z" stroke-width="1.4"/>
+    <path d="M100 76L100 69M119 81.09L122.5 75.03M132.91 95L138.97 91.5M138 114L145 114M132.91 133L138.97 136.5M119 146.91L122.5 152.97M100 152L100 159M81 146.91L77.5 152.97M67.09 133L61.03 136.5M62 114L55 114M67.09 95L61.03 91.5M81 81.09L77.5 75.03" stroke-width="2.4"/>
+    <path d="M89 140A11 11 0 1 0 111 140A11 11 0 1 0 89 140Z" stroke-width="1.4"/>
+    <path d="M100 140L106.93 144" stroke-width="1.6"/>
+    <path d="M103.86 118.6L83.29 94.08" stroke-width="4.5"/>
+    <path d="M94.86 120.13L123.14 86.42" stroke-width="3.5"/>
+    <path d="M95.5 114A4.5 4.5 0 1 0 104.5 114A4.5 4.5 0 1 0 95.5 114Z" stroke-width="2.4"/>
+  </g>
+</svg>

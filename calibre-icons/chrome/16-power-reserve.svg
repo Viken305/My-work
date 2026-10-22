@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Power reserve</title>
+  <defs>
+    <linearGradient id="cal-power-reserve-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-power-reserve-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-power-reserve-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="cal-power-reserve-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="cal-power-reserve-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="cal-power-reserve-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="cal-power-reserve-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M37.98 105.43A66 66 0 0 1 162.02 105.43" stroke="#0d1015" stroke-width="8.4"/><path d="M37.98 105.43A66 66 0 0 1 162.02 105.43" stroke="url(#cal-power-reserve-chrome)" stroke-width="6"/><path d="M37.98 105.43A66 66 0 0 1 162.02 105.43" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M51.14 110.21L41.74 106.79M54.97 102L49.77 99M60.17 94.58L55.57 90.72M66.58 88.17L62.72 83.57M74 82.97L71 77.77M82.21 79.14L80.16 73.5M90.97 76.79L89.93 70.88M100 76L100 66M109.03 76.79L110.07 70.88M117.79 79.14L119.84 73.5M126 82.97L129 77.77M133.42 88.17L137.28 83.57M139.83 94.58L144.43 90.72M145.03 102L150.23 99M148.86 110.21L158.26 106.79" stroke="url(#cal-power-reserve-chrome)" stroke-width="1.8"/>
+    <path d="M59.05 110.47A5 5 0 1 0 69.05 110.47A5 5 0 1 0 59.05 110.47Z" fill="url(#cal-power-reserve-ruby)" stroke="#3a0610" stroke-width="1.2"/>
+    <path d="M130.95 110.47A5 5 0 1 0 140.95 110.47A5 5 0 1 0 130.95 110.47Z" fill="url(#cal-power-reserve-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M100 128L128 79.5" stroke="#08112e" stroke-width="6.5"/><path d="M100 128L128 79.5" stroke="url(#cal-power-reserve-blue)" stroke-width="4.5"/><path d="M100 128L128 79.5" stroke="#d6e6ff" stroke-width="0.90" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M92 128A8 8 0 1 0 108 128A8 8 0 1 0 92 128Z" fill="url(#cal-power-reserve-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M44 160H156" stroke="#0d1015" stroke-width="6.4"/><path d="M44 160H156" stroke="url(#cal-power-reserve-chrome)" stroke-width="4"/><path d="M44 160H156" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+  </g>
+</svg>

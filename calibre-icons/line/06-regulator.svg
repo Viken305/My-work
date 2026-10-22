@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Regulator clock</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 30H140V176H60Z" stroke-width="5"/>
+    <path d="M60 30L100 12L140 30" stroke-width="4"/>
+    <path d="M74 64A26 26 0 1 0 126 64A26 26 0 1 0 74 64Z" stroke-width="4"/>
+    <path d="M100 46L100 41M109 48.41L111.5 44.08M115.59 55L119.92 52.5M118 64L123 64M115.59 73L119.92 75.5M109 79.59L111.5 83.92M100 82L100 87M91 79.59L88.5 83.92M84.41 73L80.08 75.5M82 64L77 64M84.41 55L80.08 52.5M91 48.41L88.5 44.08" stroke-width="1.6"/>
+    <path d="M101.5 66.6L93.5 52.74" stroke-width="3"/>
+    <path d="M96.06 64.69L118.71 60.7" stroke-width="2.6"/>
+    <path d="M72 96H128V168H72Z" stroke-width="1.4"/>
+    <path d="M100 92V150" stroke-width="3"/>
+    <path d="M88 152A12 12 0 1 0 112 152A12 12 0 1 0 88 152Z" stroke-width="2.4"/>
+    <path d="M94 152A6 6 0 1 0 106 152A6 6 0 1 0 94 152Z" stroke-width="1.4"/>
+  </g>
+</svg>

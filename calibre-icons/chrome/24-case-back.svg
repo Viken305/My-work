@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Case back</title>
+  <defs>
+    <linearGradient id="cal-case-back-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-case-back-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-case-back-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="cal-case-back-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="cal-case-back-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="cal-case-back-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="cal-case-back-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 100A66 66 0 1 0 166 100A66 66 0 1 0 34 100Z" stroke="#0d1015" stroke-width="8.4"/><path d="M34 100A66 66 0 1 0 166 100A66 66 0 1 0 34 100Z" stroke="url(#cal-case-back-chrome)" stroke-width="6"/><path d="M34 100A66 66 0 1 0 166 100A66 66 0 1 0 34 100Z" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M94 27L106 27L106 41L94 41Z" fill="url(#cal-case-back-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M160.22 58.3L166.22 68.7L154.1 75.7L148.1 65.3Z" fill="url(#cal-case-back-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M166.22 131.3L160.22 141.7L148.1 134.7L154.1 124.3Z" fill="url(#cal-case-back-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M106 173L94 173L94 159L106 159Z" fill="url(#cal-case-back-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M39.78 141.7L33.78 131.3L45.9 124.3L51.9 134.7Z" fill="url(#cal-case-back-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M33.78 68.7L39.78 58.3L51.9 65.3L45.9 75.7Z" fill="url(#cal-case-back-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M44 100A56 56 0 1 0 156 100A56 56 0 1 0 44 100Z" stroke="url(#cal-case-back-chrome)" stroke-width="1.4"/>
+    <path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" fill="url(#cal-case-back-glass)"/>
+    <path d="M124 100L129.94 101.88L129.28 106.54L123.05 106.7L120.78 112L124.99 116.6L122.08 120.31L116.61 117.32L112 120.78L113.34 126.87L108.97 128.63L105.72 123.31L100 124L98.12 129.94L93.46 129.28L93.3 123.05L88 120.78L83.4 124.99L79.69 122.08L82.68 116.61L79.22 112L73.13 113.34L71.37 108.97L76.69 105.72L76 100L70.06 98.12L70.72 93.46L76.95 93.3L79.22 88L75.01 83.4L77.92 79.69L83.39 82.68L88 79.22L86.66 73.13L91.03 71.37L94.28 76.69L100 76L101.88 70.06L106.54 70.72L106.7 76.95L112 79.22L116.6 75.01L120.31 77.92L117.32 83.39L120.78 88L126.87 86.66L128.63 91.03L123.31 94.28ZM82 100A18 18 0 1 0 118 100A18 18 0 1 0 82 100Z" stroke="url(#cal-case-back-chrome)" stroke-width="1.4"/>
+    <path d="M96 100A4 4 0 1 0 104 100A4 4 0 1 0 96 100Z" fill="url(#cal-case-back-ruby)" stroke="#3a0610" stroke-width="1.2"/>
+    <path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke="#0d1015" stroke-width="6.4"/><path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke="url(#cal-case-back-chrome)" stroke-width="4"/><path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Loupe</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M114.3 128.44L128.44 114.3L173.7 159.56L159.56 173.7Z" stroke-width="2.4"/>
+    <path d="M120.67 133.39L133.39 120.67M126.32 139.05L139.05 126.32M131.98 144.71L144.71 131.98M137.64 150.36L150.36 137.64M143.29 156.02L156.02 143.29M148.95 161.68L161.68 148.95M154.6 167.33L167.33 154.6" stroke-width="1.2"/>
+    <path d="M116 116L124 124" stroke-width="8"/>
+    <path d="M58 70C62 58 70 52 80 48" stroke-width="3"/>
+    <path d="M34 82A48 48 0 1 0 130 82A48 48 0 1 0 34 82Z" stroke-width="8"/>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Power reserve</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M37.98 105.43A66 66 0 0 1 162.02 105.43" stroke-width="6"/>
+    <path d="M51.14 110.21L41.74 106.79M54.97 102L49.77 99M60.17 94.58L55.57 90.72M66.58 88.17L62.72 83.57M74 82.97L71 77.77M82.21 79.14L80.16 73.5M90.97 76.79L89.93 70.88M100 76L100 66M109.03 76.79L110.07 70.88M117.79 79.14L119.84 73.5M126 82.97L129 77.77M133.42 88.17L137.28 83.57M139.83 94.58L144.43 90.72M145.03 102L150.23 99M148.86 110.21L158.26 106.79" stroke-width="1.8"/>
+    <path d="M59.05 110.47A5 5 0 1 0 69.05 110.47A5 5 0 1 0 59.05 110.47Z" fill="currentColor"/>
+    <path d="M130.95 110.47A5 5 0 1 0 140.95 110.47A5 5 0 1 0 130.95 110.47Z" fill="currentColor"/>
+    <path d="M100 128L128 79.5" stroke-width="4.5"/>
+    <path d="M92 128A8 8 0 1 0 108 128A8 8 0 1 0 92 128Z" stroke-width="2.4"/>
+    <path d="M44 160H156" stroke-width="4"/>
+  </g>
+</svg>

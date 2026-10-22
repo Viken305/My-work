@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Carriage clock</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M76 58C76 30 124 30 124 58" stroke-width="5"/>
+    <path d="M50 60H150V168H50Z" stroke-width="6"/>
+    <path d="M50 78H150" stroke-width="3"/>
+    <path d="M50 150H150" stroke-width="3"/>
+    <path d="M46 168H62V178H46Z" stroke-width="2.4"/>
+    <path d="M138 168H154V178H138Z" stroke-width="2.4"/>
+    <path d="M72 114A28 28 0 1 0 128 114A28 28 0 1 0 72 114Z" stroke-width="4"/>
+    <path d="M100 94L100 89M110 96.68L112.5 92.35M117.32 104L121.65 101.5M120 114L125 114M117.32 124L121.65 126.5M110 131.32L112.5 135.65M100 134L100 139M90 131.32L87.5 135.65M82.68 124L78.35 126.5M80 114L75 114M82.68 104L78.35 101.5M90 96.68L87.5 92.35" stroke-width="1.8"/>
+    <path d="M103.46 116L87.88 107" stroke-width="3.5"/>
+    <path d="M95.67 116.5L118.19 103.5" stroke-width="3"/>
+    <path d="M96.5 114A3.5 3.5 0 1 0 103.5 114A3.5 3.5 0 1 0 96.5 114Z" stroke-width="2.4"/>
+  </g>
+</svg>

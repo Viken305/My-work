@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Calibre Icons</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0e0f12; --fg: #e9ecf0; --muted: #8a909a; --line: #23262c; --accent: #4b7de6; }
+  body.alt { --bg: #eceef1; --fg: #15181d; --muted: #6b717b; --line: #d6d9de; --accent: #1a3a8f; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 400 15px/1.5 'Manrope', system-ui, sans-serif; transition: background .3s, color .3s; }
+  main { max-width: 1120px; margin: 0 auto; padding: 56px 16px 80px; }
+  header { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: end; border-bottom: 1px solid var(--line); padding-bottom: 28px; }
+  h1 { font: 300 clamp(52px, 9vw, 96px)/.9 'Manrope', sans-serif; margin: 0; letter-spacing: .22em; }
+  header p { margin: 14px 0 0; color: var(--muted); max-width: 48ch; font-size: 14px; }
+  .ref { font: 500 12px 'JetBrains Mono', monospace; color: var(--accent); letter-spacing: .12em; }
+  .controls { display: grid; gap: 10px; font: 500 12px 'JetBrains Mono', monospace; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+  .seg button { all: unset; cursor: pointer; padding: 6px 14px; border-radius: 999px; color: var(--muted); }
+  .seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+  .seg button:focus-visible { outline: 2px solid var(--accent); }
+  h2 { font: 300 24px 'Manrope', sans-serif; letter-spacing: .24em; text-transform: uppercase; margin: 52px 0 18px; display: flex; gap: 14px; align-items: baseline; }
+  h2 span { font: 500 12px 'JetBrains Mono', monospace; color: var(--muted); letter-spacing: 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  figure { margin: 0; background: var(--bg); padding: 22px 16px 14px; display: grid; justify-items: center; gap: 12px; transition: background .3s; }
+  figure svg { width: 100%; max-width: 132px; height: auto; color: var(--fg); }
+  body[data-size="48"] figure svg { width: 48px; }
+  body[data-size="24"] figure svg { width: 24px; }
+  figcaption { display: grid; gap: 2px; text-align: center; font-size: 11px; }
+  figcaption b { font-weight: 600; font-size: 13px; }
+  figcaption code { font-family: 'JetBrains Mono', monospace; color: var(--muted); }
+  .v-b, body.alt .v-a { display: none; }
+  body.alt .v-b { display: block; }
+</style>
+<body data-size="full">
+<main>
+  <header>
+    <div>
+      <div class="ref">REF. CAL-24</div>
+      <h1>CALIBRE</h1>
+      <p>24 watchmaking icons in polished chrome with blued-steel hands and ruby jewels. Chrome for rich grounds, Line for any single colour.</p>
+    </div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Version">
+        <button data-v="a" aria-pressed="true">Chrome</button><button data-v="b" aria-pressed="false">Line</button>
+      </div>
+      <div class="seg" role="group" aria-label="Size">
+        <button data-s="full" aria-pressed="true">Full</button><button data-s="48" aria-pressed="false">48 px</button><button data-s="24" aria-pressed="false">24 px</button>
+      </div>
+    </div>
+  </header>
+  <div class="v-a">
+<section>
+  <h2>Timepieces<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Wristwatch</title>
+  <defs>
+    <linearGradient id="chrome-wristwatch-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-wristwatch-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-wristwatch-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-wristwatch-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-wristwatch-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-wristwatch-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-wristwatch-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M74 18H126L120 58H80Z" fill="url(#chrome-wristwatch-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M80 142H120L126 182H74Z" fill="url(#chrome-wristwatch-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M78 30H122M77 40H123M80 160H120M78 170H122" stroke="url(#chrome-wristwatch-chrome)" stroke-width="1.4"/>
+    <path d="M149 92H155Q158 92 158 95V105Q158 108 155 108H149Q146 108 146 105V95Q146 92 149 92Z" fill="url(#chrome-wristwatch-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M54 100A46 46 0 1 0 146 100A46 46 0 1 0 54 100Z" stroke="#0d1015" stroke-width="9.4"/><path d="M54 100A46 46 0 1 0 146 100A46 46 0 1 0 54 100Z" stroke="url(#chrome-wristwatch-chrome)" stroke-width="7"/><path d="M54 100A46 46 0 1 0 146 100A46 46 0 1 0 54 100Z" stroke="#fff" stroke-width="1.54" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 68L100 61M116 72.29L119.5 66.23M127.71 84L133.77 80.5M132 100L139 100M127.71 116L133.77 119.5M116 127.71L119.5 133.77M100 132L100 139M84 127.71L80.5 133.77M72.29 116L66.23 119.5M68 100L61 100M72.29 84L66.23 80.5M84 72.29L80.5 66.23" stroke="url(#chrome-wristwatch-chrome)" stroke-width="2.4"/>
+    <path d="M103.87 63.2L104.08 61.21M107.69 63.81L108.11 61.85M111.43 64.81L112.05 62.91M115.05 66.2L115.86 64.37M121.75 70.07L122.92 68.45M124.76 72.5L126.1 71.02M127.5 75.24L128.98 73.9M129.93 78.25L131.55 77.08M133.8 84.95L135.63 84.14M135.19 88.57L137.09 87.95M136.19 92.31L138.15 91.89M136.8 96.13L138.79 95.92M136.8 103.87L138.79 104.08M136.19 107.69L138.15 108.11M135.19 111.43L137.09 112.05M133.8 115.05L135.63 115.86M129.93 121.75L131.55 122.92M127.5 124.76L128.98 126.1M124.76 127.5L126.1 128.98M121.75 129.93L122.92 131.55M115.05 133.8L115.86 135.63M111.43 135.19L112.05 137.09M107.69 136.19L108.11 138.15M103.87 136.8L104.08 138.79M96.13 136.8L95.92 138.79M92.31 136.19L91.89 138.15M88.57 135.19L87.95 137.09M84.95 133.8L84.14 135.63M78.25 129.93L77.08 131.55M75.24 127.5L73.9 128.98M72.5 124.76L71.02 126.1M70.07 121.75L68.45 122.92M66.2 115.05L64.37 115.86M64.81 111.43L62.91 112.05M63.81 107.69L61.85 108.11M63.2 103.87L61.21 104.08M63.2 96.13L61.21 95.92M63.81 92.31L61.85 91.89M64.81 88.57L62.91 87.95M66.2 84.95L64.37 84.14M70.07 78.25L68.45 77.08M72.5 75.24L71.02 73.9M75.24 72.5L73.9 71.02M78.25 70.07L77.08 68.45M84.95 66.2L84.14 64.37M88.57 64.81L87.95 62.91M92.31 63.81L91.89 61.85M96.13 63.2L95.92 61.21" stroke="url(#chrome-wristwatch-chrome)" stroke-width="1"/>
+    <path d="M105.2 103L79.22 88" stroke="#08112e" stroke-width="6.5"/><path d="M105.2 103L79.22 88" stroke="url(#chrome-wristwatch-blue)" stroke-width="4.5"/><path d="M105.2 103L79.22 88" stroke="#d6e6ff" stroke-width="0.90" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M93.07 104L128.58 83.5" stroke="#08112e" stroke-width="5.5"/><path d="M93.07 104L128.58 83.5" stroke="url(#chrome-wristwatch-blue)" stroke-width="3.5"/><path d="M93.07 104L128.58 83.5" stroke="#d6e6ff" stroke-width="0.70" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M95.5 100A4.5 4.5 0 1 0 104.5 100A4.5 4.5 0 1 0 95.5 100Z" fill="url(#chrome-wristwatch-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>Wristwatch</b><code>01-wristwatch.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Pocket watch</title>
+  <defs>
+    <linearGradient id="chrome-pocket-watch-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-pocket-watch-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-pocket-watch-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-pocket-watch-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-pocket-watch-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-pocket-watch-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-pocket-watch-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M88 30A12 12 0 1 0 112 30A12 12 0 1 0 88 30Z" stroke="#0d1015" stroke-width="7.4"/><path d="M88 30A12 12 0 1 0 112 30A12 12 0 1 0 88 30Z" stroke="url(#chrome-pocket-watch-chrome)" stroke-width="5"/><path d="M88 30A12 12 0 1 0 112 30A12 12 0 1 0 88 30Z" stroke="#fff" stroke-width="1.10" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M95 44H105Q108 44 108 47V55Q108 58 105 58H95Q92 58 92 55V47Q92 44 95 44Z" fill="url(#chrome-pocket-watch-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M44 114A56 56 0 1 0 156 114A56 56 0 1 0 44 114Z" stroke="#0d1015" stroke-width="8.4"/><path d="M44 114A56 56 0 1 0 156 114A56 56 0 1 0 44 114Z" stroke="url(#chrome-pocket-watch-chrome)" stroke-width="6"/><path d="M44 114A56 56 0 1 0 156 114A56 56 0 1 0 44 114Z" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M54 114A46 46 0 1 0 146 114A46 46 0 1 0 54 114Z" stroke="url(#chrome-pocket-watch-chrome)" stroke-width="1.4"/>
+    <path d="M100 76L100 69M119 81.09L122.5 75.03M132.91 95L138.97 91.5M138 114L145 114M132.91 133L138.97 136.5M119 146.91L122.5 152.97M100 152L100 159M81 146.91L77.5 152.97M67.09 133L61.03 136.5M62 114L55 114M67.09 95L61.03 91.5M81 81.09L77.5 75.03" stroke="url(#chrome-pocket-watch-chrome)" stroke-width="2.4"/>
+    <path d="M89 140A11 11 0 1 0 111 140A11 11 0 1 0 89 140Z" stroke="url(#chrome-pocket-watch-chrome)" stroke-width="1.4"/>
+    <path d="M100 140L106.93 144" stroke="url(#chrome-pocket-watch-chrome)" stroke-width="1.6"/>
+    <path d="M103.86 118.6L83.29 94.08" stroke="#08112e" stroke-width="6.5"/><path d="M103.86 118.6L83.29 94.08" stroke="url(#chrome-pocket-watch-blue)" stroke-width="4.5"/><path d="M103.86 118.6L83.29 94.08" stroke="#d6e6ff" stroke-width="0.90" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M94.86 120.13L123.14 86.42" stroke="#08112e" stroke-width="5.5"/><path d="M94.86 120.13L123.14 86.42" stroke="url(#chrome-pocket-watch-blue)" stroke-width="3.5"/><path d="M94.86 120.13L123.14 86.42" stroke="#d6e6ff" stroke-width="0.70" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M95.5 114A4.5 4.5 0 1 0 104.5 114A4.5 4.5 0 1 0 95.5 114Z" fill="url(#chrome-pocket-watch-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>Pocket watch</b><code>02-pocket-watch.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Dive watch</title>
+  <defs>
+    <linearGradient id="chrome-diver-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-diver-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-diver-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-diver-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-diver-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-diver-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-diver-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M153 92H159Q162 92 162 95V105Q162 108 159 108H153Q150 108 150 105V95Q150 92 153 92Z" fill="url(#chrome-diver-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M146 84L156 88V112L146 116Z" fill="url(#chrome-diver-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M44 100A56 56 0 1 0 156 100A56 56 0 1 0 44 100Z" stroke="#0d1015" stroke-width="11.4"/><path d="M44 100A56 56 0 1 0 156 100A56 56 0 1 0 44 100Z" stroke="url(#chrome-diver-chrome)" stroke-width="9"/><path d="M44 100A56 56 0 1 0 156 100A56 56 0 1 0 44 100Z" stroke="#fff" stroke-width="1.98" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M126 54.97L130 48.04M145.03 74L151.96 70M152 100L160 100M145.03 126L151.96 130M126 145.03L130 151.96M100 152L100 160M74 145.03L70 151.96M54.97 126L48.04 130M48 100L40 100M54.97 74L48.04 70M74 54.97L70 48.04" stroke="url(#chrome-diver-chrome)" stroke-width="2"/>
+    <path d="M100 50L92 38L108 38Z" fill="url(#chrome-diver-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke="#0d1015" stroke-width="5.4"/><path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke="url(#chrome-diver-chrome)" stroke-width="3"/><path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 70L100 62M130 100L138 100M100 130L100 138M70 100L62 100" fill="url(#chrome-diver-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M100 70L100 62M130 100L138 100M100 130L100 138M70 100L62 100" stroke="url(#chrome-diver-chrome)" stroke-width="5"/>
+    <path d="M105.2 103L80.95 89" stroke="#08112e" stroke-width="8"/><path d="M105.2 103L80.95 89" stroke="url(#chrome-diver-blue)" stroke-width="6"/><path d="M105.2 103L80.95 89" stroke="#d6e6ff" stroke-width="1.20" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M92.48 102.74L130.07 89.06" stroke="#08112e" stroke-width="6.5"/><path d="M92.48 102.74L130.07 89.06" stroke="url(#chrome-diver-blue)" stroke-width="4.5"/><path d="M92.48 102.74L130.07 89.06" stroke="#d6e6ff" stroke-width="0.90" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M95 100A5 5 0 1 0 105 100A5 5 0 1 0 95 100Z" fill="url(#chrome-diver-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>Dive watch</b><code>03-diver.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Carriage clock</title>
+  <defs>
+    <linearGradient id="chrome-carriage-clock-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-carriage-clock-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-carriage-clock-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-carriage-clock-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-carriage-clock-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-carriage-clock-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-carriage-clock-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M76 58C76 30 124 30 124 58" stroke="#0d1015" stroke-width="7.4"/><path d="M76 58C76 30 124 30 124 58" stroke="url(#chrome-carriage-clock-chrome)" stroke-width="5"/><path d="M76 58C76 30 124 30 124 58" stroke="#fff" stroke-width="1.10" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M50 60H150V168H50Z" stroke="#0d1015" stroke-width="8.4"/><path d="M50 60H150V168H50Z" stroke="url(#chrome-carriage-clock-chrome)" stroke-width="6"/><path d="M50 60H150V168H50Z" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M50 78H150" stroke="#0d1015" stroke-width="5.4"/><path d="M50 78H150" stroke="url(#chrome-carriage-clock-chrome)" stroke-width="3"/><path d="M50 78H150" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M50 150H150" stroke="#0d1015" stroke-width="5.4"/><path d="M50 150H150" stroke="url(#chrome-carriage-clock-chrome)" stroke-width="3"/><path d="M50 150H150" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M46 168H62V178H46Z" fill="url(#chrome-carriage-clock-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M138 168H154V178H138Z" fill="url(#chrome-carriage-clock-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M72 114A28 28 0 1 0 128 114A28 28 0 1 0 72 114Z" stroke="#0d1015" stroke-width="6.4"/><path d="M72 114A28 28 0 1 0 128 114A28 28 0 1 0 72 114Z" stroke="url(#chrome-carriage-clock-chrome)" stroke-width="4"/><path d="M72 114A28 28 0 1 0 128 114A28 28 0 1 0 72 114Z" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 94L100 89M110 96.68L112.5 92.35M117.32 104L121.65 101.5M120 114L125 114M117.32 124L121.65 126.5M110 131.32L112.5 135.65M100 134L100 139M90 131.32L87.5 135.65M82.68 124L78.35 126.5M80 114L75 114M82.68 104L78.35 101.5M90 96.68L87.5 92.35" stroke="url(#chrome-carriage-clock-chrome)" stroke-width="1.8"/>
+    <path d="M103.46 116L87.88 107" stroke="#08112e" stroke-width="5.5"/><path d="M103.46 116L87.88 107" stroke="url(#chrome-carriage-clock-blue)" stroke-width="3.5"/><path d="M103.46 116L87.88 107" stroke="#d6e6ff" stroke-width="0.70" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M95.67 116.5L118.19 103.5" stroke="#08112e" stroke-width="5"/><path d="M95.67 116.5L118.19 103.5" stroke="url(#chrome-carriage-clock-blue)" stroke-width="3"/><path d="M95.67 116.5L118.19 103.5" stroke="#d6e6ff" stroke-width="0.60" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M96.5 114A3.5 3.5 0 1 0 103.5 114A3.5 3.5 0 1 0 96.5 114Z" fill="url(#chrome-carriage-clock-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>Carriage clock</b><code>04-carriage-clock.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Hourglass</title>
+  <defs>
+    <linearGradient id="chrome-hourglass-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-hourglass-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-hourglass-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-hourglass-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-hourglass-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-hourglass-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-hourglass-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M66 40C66 78 92 88 92 100C92 112 66 122 66 160H134C134 122 108 112 108 100C108 88 134 78 134 40Z" fill="url(#chrome-hourglass-glass)"/>
+    <path d="M78 64H122C118 80 104 88 100 96C96 88 82 80 78 64Z" fill="url(#chrome-hourglass-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M72 158C76 138 92 132 100 128C108 132 124 138 128 158Z" fill="url(#chrome-hourglass-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M100 98V128" stroke="url(#chrome-hourglass-chrome)" stroke-width="1.6"/>
+    <path d="M66 40C66 78 92 88 92 100C92 112 66 122 66 160M134 40C134 78 108 88 108 100C108 112 134 122 134 160" stroke="#0d1015" stroke-width="5.4"/><path d="M66 40C66 78 92 88 92 100C92 112 66 122 66 160M134 40C134 78 108 88 108 100C108 112 134 122 134 160" stroke="url(#chrome-hourglass-chrome)" stroke-width="3"/><path d="M66 40C66 78 92 88 92 100C92 112 66 122 66 160M134 40C134 78 108 88 108 100C108 112 134 122 134 160" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M54 38V162M146 38V162" stroke="#0d1015" stroke-width="8.4"/><path d="M54 38V162M146 38V162" stroke="url(#chrome-hourglass-chrome)" stroke-width="6"/><path d="M54 38V162M146 38V162" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M44 22H156Q160 22 160 26V34Q160 38 156 38H44Q40 38 40 34V26Q40 22 44 22Z" fill="url(#chrome-hourglass-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M44 162H156Q160 162 160 166V174Q160 178 156 178H44Q40 178 40 174V166Q40 162 44 162Z" fill="url(#chrome-hourglass-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>Hourglass</b><code>05-hourglass.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Regulator clock</title>
+  <defs>
+    <linearGradient id="chrome-regulator-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-regulator-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-regulator-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-regulator-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-regulator-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-regulator-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-regulator-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 30H140V176H60Z" stroke="#0d1015" stroke-width="7.4"/><path d="M60 30H140V176H60Z" stroke="url(#chrome-regulator-chrome)" stroke-width="5"/><path d="M60 30H140V176H60Z" stroke="#fff" stroke-width="1.10" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M60 30L100 12L140 30" stroke="#0d1015" stroke-width="6.4"/><path d="M60 30L100 12L140 30" stroke="url(#chrome-regulator-chrome)" stroke-width="4"/><path d="M60 30L100 12L140 30" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M74 64A26 26 0 1 0 126 64A26 26 0 1 0 74 64Z" stroke="#0d1015" stroke-width="6.4"/><path d="M74 64A26 26 0 1 0 126 64A26 26 0 1 0 74 64Z" stroke="url(#chrome-regulator-chrome)" stroke-width="4"/><path d="M74 64A26 26 0 1 0 126 64A26 26 0 1 0 74 64Z" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 46L100 41M109 48.41L111.5 44.08M115.59 55L119.92 52.5M118 64L123 64M115.59 73L119.92 75.5M109 79.59L111.5 83.92M100 82L100 87M91 79.59L88.5 83.92M84.41 73L80.08 75.5M82 64L77 64M84.41 55L80.08 52.5M91 48.41L88.5 44.08" stroke="url(#chrome-regulator-chrome)" stroke-width="1.6"/>
+    <path d="M101.5 66.6L93.5 52.74" stroke="#08112e" stroke-width="5"/><path d="M101.5 66.6L93.5 52.74" stroke="url(#chrome-regulator-blue)" stroke-width="3"/><path d="M101.5 66.6L93.5 52.74" stroke="#d6e6ff" stroke-width="0.60" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M96.06 64.69L118.71 60.7" stroke="#08112e" stroke-width="4.6"/><path d="M96.06 64.69L118.71 60.7" stroke="url(#chrome-regulator-blue)" stroke-width="2.6"/><path d="M96.06 64.69L118.71 60.7" stroke="#d6e6ff" stroke-width="0.60" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M72 96H128V168H72Z" stroke="url(#chrome-regulator-chrome)" stroke-width="1.4"/>
+    <path d="M100 92V150" stroke="#0d1015" stroke-width="5.4"/><path d="M100 92V150" stroke="url(#chrome-regulator-chrome)" stroke-width="3"/><path d="M100 92V150" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M88 152A12 12 0 1 0 112 152A12 12 0 1 0 88 152Z" fill="url(#chrome-regulator-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M94 152A6 6 0 1 0 106 152A6 6 0 1 0 94 152Z" stroke="url(#chrome-regulator-chrome)" stroke-width="1.4"/>
+  </g>
+</svg>
+<figcaption><b>Regulator clock</b><code>06-regulator.svg</code></figcaption></figure>
+  </div>
+</section>
+<section>
+  <h2>Movement<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Gear</title>
+  <defs>
+    <linearGradient id="chrome-gear-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-gear-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-gear-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-gear-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-gear-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-gear-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-gear-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M158 100L171.94 103.02L171.23 110.52L156.97 110.87L154.5 119.84L166.57 127.44L163.33 134.24L149.82 129.7L144.43 137.28L153.17 148.55L147.8 153.84L136.66 144.95L129 150.23L133.36 163.81L126.5 166.94L119.07 154.77L110.07 157.12L109.52 171.37L102.01 171.97L99.19 157.99L89.93 157.12L84.54 170.32L77.27 168.32L79.4 154.22L71 150.23L61.42 160.79L55.28 156.43L62.1 143.91L55.57 137.28L42.96 143.93L38.68 137.73L49.37 128.3L45.5 119.84L31.37 121.77L29.47 114.48L42.75 109.27L42 100L28.06 96.98L28.77 89.48L43.03 89.13L45.5 80.16L33.43 72.56L36.67 65.76L50.18 70.3L55.57 62.72L46.83 51.45L52.2 46.16L63.34 55.05L71 49.77L66.64 36.19L73.5 33.06L80.93 45.23L89.93 42.88L90.48 28.63L97.99 28.03L100.81 42.01L110.07 42.88L115.46 29.68L122.73 31.68L120.6 45.78L129 49.77L138.58 39.21L144.72 43.57L137.9 56.09L144.43 62.72L157.04 56.07L161.32 62.27L150.63 71.7L154.5 80.16L168.63 78.23L170.53 85.52L157.25 90.73Z" stroke="#0d1015" stroke-width="6.4"/><path d="M158 100L171.94 103.02L171.23 110.52L156.97 110.87L154.5 119.84L166.57 127.44L163.33 134.24L149.82 129.7L144.43 137.28L153.17 148.55L147.8 153.84L136.66 144.95L129 150.23L133.36 163.81L126.5 166.94L119.07 154.77L110.07 157.12L109.52 171.37L102.01 171.97L99.19 157.99L89.93 157.12L84.54 170.32L77.27 168.32L79.4 154.22L71 150.23L61.42 160.79L55.28 156.43L62.1 143.91L55.57 137.28L42.96 143.93L38.68 137.73L49.37 128.3L45.5 119.84L31.37 121.77L29.47 114.48L42.75 109.27L42 100L28.06 96.98L28.77 89.48L43.03 89.13L45.5 80.16L33.43 72.56L36.67 65.76L50.18 70.3L55.57 62.72L46.83 51.45L52.2 46.16L63.34 55.05L71 49.77L66.64 36.19L73.5 33.06L80.93 45.23L89.93 42.88L90.48 28.63L97.99 28.03L100.81 42.01L110.07 42.88L115.46 29.68L122.73 31.68L120.6 45.78L129 49.77L138.58 39.21L144.72 43.57L137.9 56.09L144.43 62.72L157.04 56.07L161.32 62.27L150.63 71.7L154.5 80.16L168.63 78.23L170.53 85.52L157.25 90.73Z" stroke="url(#chrome-gear-chrome)" stroke-width="4"/><path d="M158 100L171.94 103.02L171.23 110.52L156.97 110.87L154.5 119.84L166.57 127.44L163.33 134.24L149.82 129.7L144.43 137.28L153.17 148.55L147.8 153.84L136.66 144.95L129 150.23L133.36 163.81L126.5 166.94L119.07 154.77L110.07 157.12L109.52 171.37L102.01 171.97L99.19 157.99L89.93 157.12L84.54 170.32L77.27 168.32L79.4 154.22L71 150.23L61.42 160.79L55.28 156.43L62.1 143.91L55.57 137.28L42.96 143.93L38.68 137.73L49.37 128.3L45.5 119.84L31.37 121.77L29.47 114.48L42.75 109.27L42 100L28.06 96.98L28.77 89.48L43.03 89.13L45.5 80.16L33.43 72.56L36.67 65.76L50.18 70.3L55.57 62.72L46.83 51.45L52.2 46.16L63.34 55.05L71 49.77L66.64 36.19L73.5 33.06L80.93 45.23L89.93 42.88L90.48 28.63L97.99 28.03L100.81 42.01L110.07 42.88L115.46 29.68L122.73 31.68L120.6 45.78L129 49.77L138.58 39.21L144.72 43.57L137.9 56.09L144.43 62.72L157.04 56.07L161.32 62.27L150.63 71.7L154.5 80.16L168.63 78.23L170.53 85.52L157.25 90.73Z" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M56 100A44 44 0 1 0 144 100A44 44 0 1 0 56 100Z" stroke="#0d1015" stroke-width="6.4"/><path d="M56 100A44 44 0 1 0 144 100A44 44 0 1 0 56 100Z" stroke="url(#chrome-gear-chrome)" stroke-width="4"/><path d="M56 100A44 44 0 1 0 144 100A44 44 0 1 0 56 100Z" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 88L100 56M111.41 96.29L141.85 86.4M107.05 109.71L125.86 135.6M92.95 109.71L74.14 135.6M88.59 96.29L58.15 86.4" stroke="#0d1015" stroke-width="7.4"/><path d="M100 88L100 56M111.41 96.29L141.85 86.4M107.05 109.71L125.86 135.6M92.95 109.71L74.14 135.6M88.59 96.29L58.15 86.4" stroke="url(#chrome-gear-chrome)" stroke-width="5"/><path d="M100 88L100 56M111.41 96.29L141.85 86.4M107.05 109.71L125.86 135.6M92.95 109.71L74.14 135.6M88.59 96.29L58.15 86.4" stroke="#fff" stroke-width="1.10" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M87 100A13 13 0 1 0 113 100A13 13 0 1 0 87 100Z" fill="url(#chrome-gear-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M95 100A5 5 0 1 0 105 100A5 5 0 1 0 95 100Z" fill="url(#chrome-gear-ruby)" stroke="#3a0610" stroke-width="1.2"/>
+  </g>
+</svg>
+<figcaption><b>Gear</b><code>07-gear.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Escape wheel</title>
+  <defs>
+    <linearGradient id="chrome-escape-wheel-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-escape-wheel-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-escape-wheel-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-escape-wheel-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-escape-wheel-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-escape-wheel-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-escape-wheel-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M144 120L159.35 137.92L154.28 140.44L140.91 136.2L140.2 137.9L146.93 160.51L141.27 160.75L130.79 151.44L129.44 152.7L126.4 176.1L121.13 174.02L115.34 161.24L113.6 161.85L101.3 181.99L97.33 177.94L97.24 163.91L95.4 163.76L75.97 177.16L73.99 171.84L79.61 158.99L78 158.11L54.8 162.44L55.16 156.78L65.52 147.33L64.4 145.86L41.45 140.39L44.07 135.36L57.38 130.94L56.96 129.15L38.22 114.81L42.66 111.29L56.62 112.66L56.96 110.85L45.67 90.13L51.16 88.72L63.35 95.65L64.4 94.14L62.51 70.62L68.11 71.56L76.42 82.85L78 81.89L85.84 59.64L90.57 62.77L93.57 76.47L95.4 76.24L111.62 59.1L114.66 63.88L111.83 77.62L113.6 78.15L135.38 69.09L136.22 74.7L128.05 86.1L129.44 87.3L153.03 87.88L151.51 93.34L139.41 100.44L140.2 102.1L161.51 112.23L157.9 116.6L143.96 118.16Z" stroke="#0d1015" stroke-width="5.9"/><path d="M144 120L159.35 137.92L154.28 140.44L140.91 136.2L140.2 137.9L146.93 160.51L141.27 160.75L130.79 151.44L129.44 152.7L126.4 176.1L121.13 174.02L115.34 161.24L113.6 161.85L101.3 181.99L97.33 177.94L97.24 163.91L95.4 163.76L75.97 177.16L73.99 171.84L79.61 158.99L78 158.11L54.8 162.44L55.16 156.78L65.52 147.33L64.4 145.86L41.45 140.39L44.07 135.36L57.38 130.94L56.96 129.15L38.22 114.81L42.66 111.29L56.62 112.66L56.96 110.85L45.67 90.13L51.16 88.72L63.35 95.65L64.4 94.14L62.51 70.62L68.11 71.56L76.42 82.85L78 81.89L85.84 59.64L90.57 62.77L93.57 76.47L95.4 76.24L111.62 59.1L114.66 63.88L111.83 77.62L113.6 78.15L135.38 69.09L136.22 74.7L128.05 86.1L129.44 87.3L153.03 87.88L151.51 93.34L139.41 100.44L140.2 102.1L161.51 112.23L157.9 116.6L143.96 118.16Z" stroke="url(#chrome-escape-wheel-chrome)" stroke-width="3.5"/><path d="M144 120L159.35 137.92L154.28 140.44L140.91 136.2L140.2 137.9L146.93 160.51L141.27 160.75L130.79 151.44L129.44 152.7L126.4 176.1L121.13 174.02L115.34 161.24L113.6 161.85L101.3 181.99L97.33 177.94L97.24 163.91L95.4 163.76L75.97 177.16L73.99 171.84L79.61 158.99L78 158.11L54.8 162.44L55.16 156.78L65.52 147.33L64.4 145.86L41.45 140.39L44.07 135.36L57.38 130.94L56.96 129.15L38.22 114.81L42.66 111.29L56.62 112.66L56.96 110.85L45.67 90.13L51.16 88.72L63.35 95.65L64.4 94.14L62.51 70.62L68.11 71.56L76.42 82.85L78 81.89L85.84 59.64L90.57 62.77L93.57 76.47L95.4 76.24L111.62 59.1L114.66 63.88L111.83 77.62L113.6 78.15L135.38 69.09L136.22 74.7L128.05 86.1L129.44 87.3L153.03 87.88L151.51 93.34L139.41 100.44L140.2 102.1L161.51 112.23L157.9 116.6L143.96 118.16Z" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M66 120A34 34 0 1 0 134 120A34 34 0 1 0 66 120Z" stroke="#0d1015" stroke-width="6.4"/><path d="M66 120A34 34 0 1 0 134 120A34 34 0 1 0 66 120Z" stroke="url(#chrome-escape-wheel-chrome)" stroke-width="4"/><path d="M66 120A34 34 0 1 0 134 120A34 34 0 1 0 66 120Z" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M105.66 125.66L124.04 144.04M94.34 125.66L75.96 144.04M94.34 114.34L75.96 95.96M105.66 114.34L124.04 95.96" stroke="#0d1015" stroke-width="6.4"/><path d="M105.66 125.66L124.04 144.04M94.34 125.66L75.96 144.04M94.34 114.34L75.96 95.96M105.66 114.34L124.04 95.96" stroke="url(#chrome-escape-wheel-chrome)" stroke-width="4"/><path d="M105.66 125.66L124.04 144.04M94.34 125.66L75.96 144.04M94.34 114.34L75.96 95.96M105.66 114.34L124.04 95.96" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M91 120A9 9 0 1 0 109 120A9 9 0 1 0 91 120Z" fill="url(#chrome-escape-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M100 50L56 34M100 50L144 34M100 50V18" stroke="#08112e" stroke-width="7"/><path d="M100 50L56 34M100 50L144 34M100 50V18" stroke="url(#chrome-escape-wheel-blue)" stroke-width="5"/><path d="M100 50L56 34M100 50L144 34M100 50V18" stroke="#d6e6ff" stroke-width="1.00" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M49.85 30.79L57.36 28.05L62.15 41.21L54.64 43.95Z" fill="url(#chrome-escape-wheel-ruby)" stroke="#3a0610" stroke-width="1.2"/>
+    <path d="M142.64 28.05L150.15 30.79L145.36 43.95L137.85 41.21Z" fill="url(#chrome-escape-wheel-ruby)" stroke="#3a0610" stroke-width="1.2"/>
+    <path d="M94 50A6 6 0 1 0 106 50A6 6 0 1 0 94 50Z" fill="url(#chrome-escape-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>Escape wheel</b><code>08-escape-wheel.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Balance wheel</title>
+  <defs>
+    <linearGradient id="chrome-balance-wheel-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-balance-wheel-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-balance-wheel-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-balance-wheel-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-balance-wheel-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-balance-wheel-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-balance-wheel-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M105 100L105.07 100.67L105.05 101.35L104.94 102.05L104.73 102.73L104.43 103.4L104.03 104.03L103.54 104.61L102.96 105.13L102.31 105.58L101.59 105.95L100.82 106.22L100 106.39L99.15 106.45L98.29 106.39L97.42 106.22L96.57 105.93L95.76 105.53L94.99 105.01L94.29 104.38L93.67 103.66L93.14 102.84L92.71 101.95L92.4 101L92.22 100L92.17 98.97L92.26 97.93L92.49 96.89L92.86 95.88L93.37 94.91L94.01 94.01L94.77 93.19L95.65 92.46L96.62 91.85L97.69 91.37L98.82 91.03L100 90.83L101.21 90.8L102.43 90.92L103.64 91.21L104.81 91.66L105.93 92.27L106.97 93.03L107.92 93.93L108.74 94.95L109.43 96.09L109.97 97.33L110.35 98.64L110.56 100L110.58 101.39L110.42 102.79L110.07 104.17L109.54 105.51L108.83 106.78L107.95 107.95L106.92 109.02L105.74 109.94L104.44 110.71L103.03 111.31L101.54 111.73L100 111.94L98.43 111.96L96.85 111.76L95.3 111.36L93.8 110.75L92.38 109.94L91.06 108.94L89.88 107.76L88.85 106.44L88 104.97L87.34 103.39L86.9 101.73L86.67 100L86.67 98.24L86.9 96.49L87.36 94.76L88.05 93.1L88.96 91.53L90.08 90.08L91.39 88.78L92.87 87.65L94.5 86.72L96.25 86L98.09 85.52L100 85.28L101.94 85.29L103.87 85.56L105.77 86.08L107.59 86.85L109.31 87.86L110.9 89.1L112.32 90.54L113.55 92.18L114.56 93.97L115.34 95.89L115.86 97.91L116.11 100L116.09 102.12L115.79 104.23L115.21 106.3L114.35 108.29L113.24 110.16L111.88 111.88L110.3 113.42L108.52 114.75L106.56 115.85L104.47 116.68L102.27 117.24L100 117.5L97.7 117.47L95.41 117.13L93.17 116.49L91.02 115.56L88.99 114.34L87.13 112.87L85.47 111.15L84.04 109.21L82.87 107.1L81.98 104.83L81.39 102.45L81.11 100L81.16 97.52L81.53 95.05L82.23 92.64L83.24 90.32L84.56 88.15L86.15 86.15L88.01 84.37L90.09 82.84L92.37 81.59L94.81 80.64L97.37 80.01L100 79.72L102.66 79.78L105.31 80.19L107.89 80.94L110.37 82.04L112.7 83.45L114.83 85.17L116.73 87.16L118.36 89.4L119.7 91.84L120.7 94.45L121.37 97.19L121.67 100L121.6 102.84L121.15 105.67L120.34 108.42L119.16 111.06L117.65 113.54L115.81 115.81L113.68 117.83L111.3 119.57L108.69 120.98L105.91 122.05L102.99 122.74L100 123.06L96.98 122.97L93.97 122.49L91.04 121.62L88.24 120.37L85.61 118.75L83.21 116.79L81.07 114.53L79.23 111.99L77.74 109.22L76.61 106.27L75.88 103.18L75.56 100L75.65 96.79L76.16 93.61L77.1 90.51L78.43 87.55L80.15 84.77L82.22 82.22L84.63 79.96L87.31 78.03L90.25 76.45L93.37 75.27L96.64 74.5L100 74.17L103.39 74.27L106.75 74.82L110.02 75.81L113.15 77.23L116.08 79.05L118.76 81.24L121.14 83.78L123.17 86.62L124.83 89.72L126.07 93.01L126.87 96.46L127.22 100L127.1 103.57L126.52 107.11L125.47 110.55L123.98 113.84L122.06 116.92L119.74 119.74L117.07 122.24L114.07 124.38L110.82 126.11L107.35 127.41L103.72 128.25L100 128.61L96.25 128.48L92.53 127.86L88.92 126.75L85.46 125.18L82.23 123.16L79.28 120.72L76.66 117.91L74.42 114.77L72.6 111.35L71.25 107.7L70.37 103.9L70 100" stroke="#08112e" stroke-width="3.8"/><path d="M105 100L105.07 100.67L105.05 101.35L104.94 102.05L104.73 102.73L104.43 103.4L104.03 104.03L103.54 104.61L102.96 105.13L102.31 105.58L101.59 105.95L100.82 106.22L100 106.39L99.15 106.45L98.29 106.39L97.42 106.22L96.57 105.93L95.76 105.53L94.99 105.01L94.29 104.38L93.67 103.66L93.14 102.84L92.71 101.95L92.4 101L92.22 100L92.17 98.97L92.26 97.93L92.49 96.89L92.86 95.88L93.37 94.91L94.01 94.01L94.77 93.19L95.65 92.46L96.62 91.85L97.69 91.37L98.82 91.03L100 90.83L101.21 90.8L102.43 90.92L103.64 91.21L104.81 91.66L105.93 92.27L106.97 93.03L107.92 93.93L108.74 94.95L109.43 96.09L109.97 97.33L110.35 98.64L110.56 100L110.58 101.39L110.42 102.79L110.07 104.17L109.54 105.51L108.83 106.78L107.95 107.95L106.92 109.02L105.74 109.94L104.44 110.71L103.03 111.31L101.54 111.73L100 111.94L98.43 111.96L96.85 111.76L95.3 111.36L93.8 110.75L92.38 109.94L91.06 108.94L89.88 107.76L88.85 106.44L88 104.97L87.34 103.39L86.9 101.73L86.67 100L86.67 98.24L86.9 96.49L87.36 94.76L88.05 93.1L88.96 91.53L90.08 90.08L91.39 88.78L92.87 87.65L94.5 86.72L96.25 86L98.09 85.52L100 85.28L101.94 85.29L103.87 85.56L105.77 86.08L107.59 86.85L109.31 87.86L110.9 89.1L112.32 90.54L113.55 92.18L114.56 93.97L115.34 95.89L115.86 97.91L116.11 100L116.09 102.12L115.79 104.23L115.21 106.3L114.35 108.29L113.24 110.16L111.88 111.88L110.3 113.42L108.52 114.75L106.56 115.85L104.47 116.68L102.27 117.24L100 117.5L97.7 117.47L95.41 117.13L93.17 116.49L91.02 115.56L88.99 114.34L87.13 112.87L85.47 111.15L84.04 109.21L82.87 107.1L81.98 104.83L81.39 102.45L81.11 100L81.16 97.52L81.53 95.05L82.23 92.64L83.24 90.32L84.56 88.15L86.15 86.15L88.01 84.37L90.09 82.84L92.37 81.59L94.81 80.64L97.37 80.01L100 79.72L102.66 79.78L105.31 80.19L107.89 80.94L110.37 82.04L112.7 83.45L114.83 85.17L116.73 87.16L118.36 89.4L119.7 91.84L120.7 94.45L121.37 97.19L121.67 100L121.6 102.84L121.15 105.67L120.34 108.42L119.16 111.06L117.65 113.54L115.81 115.81L113.68 117.83L111.3 119.57L108.69 120.98L105.91 122.05L102.99 122.74L100 123.06L96.98 122.97L93.97 122.49L91.04 121.62L88.24 120.37L85.61 118.75L83.21 116.79L81.07 114.53L79.23 111.99L77.74 109.22L76.61 106.27L75.88 103.18L75.56 100L75.65 96.79L76.16 93.61L77.1 90.51L78.43 87.55L80.15 84.77L82.22 82.22L84.63 79.96L87.31 78.03L90.25 76.45L93.37 75.27L96.64 74.5L100 74.17L103.39 74.27L106.75 74.82L110.02 75.81L113.15 77.23L116.08 79.05L118.76 81.24L121.14 83.78L123.17 86.62L124.83 89.72L126.07 93.01L126.87 96.46L127.22 100L127.1 103.57L126.52 107.11L125.47 110.55L123.98 113.84L122.06 116.92L119.74 119.74L117.07 122.24L114.07 124.38L110.82 126.11L107.35 127.41L103.72 128.25L100 128.61L96.25 128.48L92.53 127.86L88.92 126.75L85.46 125.18L82.23 123.16L79.28 120.72L76.66 117.91L74.42 114.77L72.6 111.35L71.25 107.7L70.37 103.9L70 100" stroke="url(#chrome-balance-wheel-blue)" stroke-width="1.8"/><path d="M105 100L105.07 100.67L105.05 101.35L104.94 102.05L104.73 102.73L104.43 103.4L104.03 104.03L103.54 104.61L102.96 105.13L102.31 105.58L101.59 105.95L100.82 106.22L100 106.39L99.15 106.45L98.29 106.39L97.42 106.22L96.57 105.93L95.76 105.53L94.99 105.01L94.29 104.38L93.67 103.66L93.14 102.84L92.71 101.95L92.4 101L92.22 100L92.17 98.97L92.26 97.93L92.49 96.89L92.86 95.88L93.37 94.91L94.01 94.01L94.77 93.19L95.65 92.46L96.62 91.85L97.69 91.37L98.82 91.03L100 90.83L101.21 90.8L102.43 90.92L103.64 91.21L104.81 91.66L105.93 92.27L106.97 93.03L107.92 93.93L108.74 94.95L109.43 96.09L109.97 97.33L110.35 98.64L110.56 100L110.58 101.39L110.42 102.79L110.07 104.17L109.54 105.51L108.83 106.78L107.95 107.95L106.92 109.02L105.74 109.94L104.44 110.71L103.03 111.31L101.54 111.73L100 111.94L98.43 111.96L96.85 111.76L95.3 111.36L93.8 110.75L92.38 109.94L91.06 108.94L89.88 107.76L88.85 106.44L88 104.97L87.34 103.39L86.9 101.73L86.67 100L86.67 98.24L86.9 96.49L87.36 94.76L88.05 93.1L88.96 91.53L90.08 90.08L91.39 88.78L92.87 87.65L94.5 86.72L96.25 86L98.09 85.52L100 85.28L101.94 85.29L103.87 85.56L105.77 86.08L107.59 86.85L109.31 87.86L110.9 89.1L112.32 90.54L113.55 92.18L114.56 93.97L115.34 95.89L115.86 97.91L116.11 100L116.09 102.12L115.79 104.23L115.21 106.3L114.35 108.29L113.24 110.16L111.88 111.88L110.3 113.42L108.52 114.75L106.56 115.85L104.47 116.68L102.27 117.24L100 117.5L97.7 117.47L95.41 117.13L93.17 116.49L91.02 115.56L88.99 114.34L87.13 112.87L85.47 111.15L84.04 109.21L82.87 107.1L81.98 104.83L81.39 102.45L81.11 100L81.16 97.52L81.53 95.05L82.23 92.64L83.24 90.32L84.56 88.15L86.15 86.15L88.01 84.37L90.09 82.84L92.37 81.59L94.81 80.64L97.37 80.01L100 79.72L102.66 79.78L105.31 80.19L107.89 80.94L110.37 82.04L112.7 83.45L114.83 85.17L116.73 87.16L118.36 89.4L119.7 91.84L120.7 94.45L121.37 97.19L121.67 100L121.6 102.84L121.15 105.67L120.34 108.42L119.16 111.06L117.65 113.54L115.81 115.81L113.68 117.83L111.3 119.57L108.69 120.98L105.91 122.05L102.99 122.74L100 123.06L96.98 122.97L93.97 122.49L91.04 121.62L88.24 120.37L85.61 118.75L83.21 116.79L81.07 114.53L79.23 111.99L77.74 109.22L76.61 106.27L75.88 103.18L75.56 100L75.65 96.79L76.16 93.61L77.1 90.51L78.43 87.55L80.15 84.77L82.22 82.22L84.63 79.96L87.31 78.03L90.25 76.45L93.37 75.27L96.64 74.5L100 74.17L103.39 74.27L106.75 74.82L110.02 75.81L113.15 77.23L116.08 79.05L118.76 81.24L121.14 83.78L123.17 86.62L124.83 89.72L126.07 93.01L126.87 96.46L127.22 100L127.1 103.57L126.52 107.11L125.47 110.55L123.98 113.84L122.06 116.92L119.74 119.74L117.07 122.24L114.07 124.38L110.82 126.11L107.35 127.41L103.72 128.25L100 128.61L96.25 128.48L92.53 127.86L88.92 126.75L85.46 125.18L82.23 123.16L79.28 120.72L76.66 117.91L74.42 114.77L72.6 111.35L71.25 107.7L70.37 103.9L70 100" stroke="#d6e6ff" stroke-width="0.60" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M46 100A54 54 0 1 0 154 100A54 54 0 1 0 46 100Z" stroke="#0d1015" stroke-width="8.4"/><path d="M46 100A54 54 0 1 0 154 100A54 54 0 1 0 46 100Z" stroke="url(#chrome-balance-wheel-chrome)" stroke-width="6"/><path d="M46 100A54 54 0 1 0 154 100A54 54 0 1 0 46 100Z" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M46 100L154 100" stroke="#0d1015" stroke-width="6.4"/><path d="M46 100L154 100" stroke="url(#chrome-balance-wheel-chrome)" stroke-width="4"/><path d="M46 100L154 100" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M147.66 113.98A4.5 4.5 0 1 0 156.66 113.98A4.5 4.5 0 1 0 147.66 113.98Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M133.68 138.18A4.5 4.5 0 1 0 142.68 138.18A4.5 4.5 0 1 0 133.68 138.18Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M109.48 152.16A4.5 4.5 0 1 0 118.48 152.16A4.5 4.5 0 1 0 109.48 152.16Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M81.52 152.16A4.5 4.5 0 1 0 90.52 152.16A4.5 4.5 0 1 0 81.52 152.16Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M57.32 138.18A4.5 4.5 0 1 0 66.32 138.18A4.5 4.5 0 1 0 57.32 138.18Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M43.34 113.98A4.5 4.5 0 1 0 52.34 113.98A4.5 4.5 0 1 0 43.34 113.98Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M43.34 86.02A4.5 4.5 0 1 0 52.34 86.02A4.5 4.5 0 1 0 43.34 86.02Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M57.32 61.82A4.5 4.5 0 1 0 66.32 61.82A4.5 4.5 0 1 0 57.32 61.82Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M81.52 47.84A4.5 4.5 0 1 0 90.52 47.84A4.5 4.5 0 1 0 81.52 47.84Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M109.48 47.84A4.5 4.5 0 1 0 118.48 47.84A4.5 4.5 0 1 0 109.48 47.84Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M133.68 61.82A4.5 4.5 0 1 0 142.68 61.82A4.5 4.5 0 1 0 133.68 61.82Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M147.66 86.02A4.5 4.5 0 1 0 156.66 86.02A4.5 4.5 0 1 0 147.66 86.02Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M93 100A7 7 0 1 0 107 100A7 7 0 1 0 93 100Z" fill="url(#chrome-balance-wheel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M97 100A3 3 0 1 0 103 100A3 3 0 1 0 97 100Z" fill="url(#chrome-balance-wheel-ruby)" stroke="#3a0610" stroke-width="1.2"/>
+  </g>
+</svg>
+<figcaption><b>Balance wheel</b><code>09-balance-wheel.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Mainspring</title>
+  <defs>
+    <linearGradient id="chrome-mainspring-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-mainspring-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-mainspring-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-mainspring-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-mainspring-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-mainspring-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-mainspring-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M166 100L173.99 101.39L173.84 104.88L165.76 105.59L165.19 110.32L172.86 112.95L172.17 116.37L164.08 115.81L162.77 120.4L169.93 124.19L168.72 127.46L160.82 125.64L158.81 129.96L165.29 134.83L163.58 137.87L156.06 134.84L153.4 138.79L159.04 144.62L156.87 147.35L149.92 143.18L146.67 146.67L151.33 153.3L148.76 155.66L142.55 150.46L138.79 153.4L142.36 160.68L139.45 162.6L134.13 156.49L129.96 158.81L132.35 166.56L129.18 168.01L124.87 161.13L120.4 162.77L121.54 170.8L118.18 171.73L115 164.27L110.32 165.19L110.2 173.29L106.73 173.69L104.76 165.83L100 166L98.61 173.99L95.12 173.84L94.41 165.76L89.68 165.19L87.05 172.86L83.63 172.17L84.19 164.08L79.6 162.77L75.81 169.93L72.54 168.72L74.36 160.82L70.04 158.81L65.17 165.29L62.13 163.58L65.16 156.06L61.21 153.4L55.38 159.04L52.65 156.87L56.82 149.92L53.33 146.67L46.7 151.33L44.34 148.76L49.54 142.55L46.6 138.79L39.32 142.36L37.4 139.45L43.51 134.13L41.19 129.96L33.44 132.35L31.99 129.18L38.87 124.87L37.23 120.4L29.2 121.54L28.27 118.18L35.73 115L34.81 110.32L26.71 110.2L26.31 106.73L34.17 104.76L34 100L26.01 98.61L26.16 95.12L34.24 94.41L34.81 89.68L27.14 87.05L27.83 83.63L35.92 84.19L37.23 79.6L30.07 75.81L31.28 72.54L39.18 74.36L41.19 70.04L34.71 65.17L36.42 62.13L43.94 65.16L46.6 61.21L40.96 55.38L43.13 52.65L50.08 56.82L53.33 53.33L48.67 46.7L51.24 44.34L57.45 49.54L61.21 46.6L57.64 39.32L60.55 37.4L65.87 43.51L70.04 41.19L67.65 33.44L70.82 31.99L75.13 38.87L79.6 37.23L78.46 29.2L81.82 28.27L85 35.73L89.68 34.81L89.8 26.71L93.27 26.31L95.24 34.17L100 34L101.39 26.01L104.88 26.16L105.59 34.24L110.32 34.81L112.95 27.14L116.37 27.83L115.81 35.92L120.4 37.23L124.19 30.07L127.46 31.28L125.64 39.18L129.96 41.19L134.83 34.71L137.87 36.42L134.84 43.94L138.79 46.6L144.62 40.96L147.35 43.13L143.18 50.08L146.67 53.33L153.3 48.67L155.66 51.24L150.46 57.45L153.4 61.21L160.68 57.64L162.6 60.55L156.49 65.87L158.81 70.04L166.56 67.65L168.01 70.82L161.13 75.13L162.77 79.6L170.8 78.46L171.73 81.82L164.27 85L165.19 89.68L173.29 89.8L173.69 93.27L165.83 95.24Z" stroke="#0d1015" stroke-width="4.9"/><path d="M166 100L173.99 101.39L173.84 104.88L165.76 105.59L165.19 110.32L172.86 112.95L172.17 116.37L164.08 115.81L162.77 120.4L169.93 124.19L168.72 127.46L160.82 125.64L158.81 129.96L165.29 134.83L163.58 137.87L156.06 134.84L153.4 138.79L159.04 144.62L156.87 147.35L149.92 143.18L146.67 146.67L151.33 153.3L148.76 155.66L142.55 150.46L138.79 153.4L142.36 160.68L139.45 162.6L134.13 156.49L129.96 158.81L132.35 166.56L129.18 168.01L124.87 161.13L120.4 162.77L121.54 170.8L118.18 171.73L115 164.27L110.32 165.19L110.2 173.29L106.73 173.69L104.76 165.83L100 166L98.61 173.99L95.12 173.84L94.41 165.76L89.68 165.19L87.05 172.86L83.63 172.17L84.19 164.08L79.6 162.77L75.81 169.93L72.54 168.72L74.36 160.82L70.04 158.81L65.17 165.29L62.13 163.58L65.16 156.06L61.21 153.4L55.38 159.04L52.65 156.87L56.82 149.92L53.33 146.67L46.7 151.33L44.34 148.76L49.54 142.55L46.6 138.79L39.32 142.36L37.4 139.45L43.51 134.13L41.19 129.96L33.44 132.35L31.99 129.18L38.87 124.87L37.23 120.4L29.2 121.54L28.27 118.18L35.73 115L34.81 110.32L26.71 110.2L26.31 106.73L34.17 104.76L34 100L26.01 98.61L26.16 95.12L34.24 94.41L34.81 89.68L27.14 87.05L27.83 83.63L35.92 84.19L37.23 79.6L30.07 75.81L31.28 72.54L39.18 74.36L41.19 70.04L34.71 65.17L36.42 62.13L43.94 65.16L46.6 61.21L40.96 55.38L43.13 52.65L50.08 56.82L53.33 53.33L48.67 46.7L51.24 44.34L57.45 49.54L61.21 46.6L57.64 39.32L60.55 37.4L65.87 43.51L70.04 41.19L67.65 33.44L70.82 31.99L75.13 38.87L79.6 37.23L78.46 29.2L81.82 28.27L85 35.73L89.68 34.81L89.8 26.71L93.27 26.31L95.24 34.17L100 34L101.39 26.01L104.88 26.16L105.59 34.24L110.32 34.81L112.95 27.14L116.37 27.83L115.81 35.92L120.4 37.23L124.19 30.07L127.46 31.28L125.64 39.18L129.96 41.19L134.83 34.71L137.87 36.42L134.84 43.94L138.79 46.6L144.62 40.96L147.35 43.13L143.18 50.08L146.67 53.33L153.3 48.67L155.66 51.24L150.46 57.45L153.4 61.21L160.68 57.64L162.6 60.55L156.49 65.87L158.81 70.04L166.56 67.65L168.01 70.82L161.13 75.13L162.77 79.6L170.8 78.46L171.73 81.82L164.27 85L165.19 89.68L173.29 89.8L173.69 93.27L165.83 95.24Z" stroke="url(#chrome-mainspring-chrome)" stroke-width="2.5"/><path d="M166 100L173.99 101.39L173.84 104.88L165.76 105.59L165.19 110.32L172.86 112.95L172.17 116.37L164.08 115.81L162.77 120.4L169.93 124.19L168.72 127.46L160.82 125.64L158.81 129.96L165.29 134.83L163.58 137.87L156.06 134.84L153.4 138.79L159.04 144.62L156.87 147.35L149.92 143.18L146.67 146.67L151.33 153.3L148.76 155.66L142.55 150.46L138.79 153.4L142.36 160.68L139.45 162.6L134.13 156.49L129.96 158.81L132.35 166.56L129.18 168.01L124.87 161.13L120.4 162.77L121.54 170.8L118.18 171.73L115 164.27L110.32 165.19L110.2 173.29L106.73 173.69L104.76 165.83L100 166L98.61 173.99L95.12 173.84L94.41 165.76L89.68 165.19L87.05 172.86L83.63 172.17L84.19 164.08L79.6 162.77L75.81 169.93L72.54 168.72L74.36 160.82L70.04 158.81L65.17 165.29L62.13 163.58L65.16 156.06L61.21 153.4L55.38 159.04L52.65 156.87L56.82 149.92L53.33 146.67L46.7 151.33L44.34 148.76L49.54 142.55L46.6 138.79L39.32 142.36L37.4 139.45L43.51 134.13L41.19 129.96L33.44 132.35L31.99 129.18L38.87 124.87L37.23 120.4L29.2 121.54L28.27 118.18L35.73 115L34.81 110.32L26.71 110.2L26.31 106.73L34.17 104.76L34 100L26.01 98.61L26.16 95.12L34.24 94.41L34.81 89.68L27.14 87.05L27.83 83.63L35.92 84.19L37.23 79.6L30.07 75.81L31.28 72.54L39.18 74.36L41.19 70.04L34.71 65.17L36.42 62.13L43.94 65.16L46.6 61.21L40.96 55.38L43.13 52.65L50.08 56.82L53.33 53.33L48.67 46.7L51.24 44.34L57.45 49.54L61.21 46.6L57.64 39.32L60.55 37.4L65.87 43.51L70.04 41.19L67.65 33.44L70.82 31.99L75.13 38.87L79.6 37.23L78.46 29.2L81.82 28.27L85 35.73L89.68 34.81L89.8 26.71L93.27 26.31L95.24 34.17L100 34L101.39 26.01L104.88 26.16L105.59 34.24L110.32 34.81L112.95 27.14L116.37 27.83L115.81 35.92L120.4 37.23L124.19 30.07L127.46 31.28L125.64 39.18L129.96 41.19L134.83 34.71L137.87 36.42L134.84 43.94L138.79 46.6L144.62 40.96L147.35 43.13L143.18 50.08L146.67 53.33L153.3 48.67L155.66 51.24L150.46 57.45L153.4 61.21L160.68 57.64L162.6 60.55L156.49 65.87L158.81 70.04L166.56 67.65L168.01 70.82L161.13 75.13L162.77 79.6L170.8 78.46L171.73 81.82L164.27 85L165.19 89.68L173.29 89.8L173.69 93.27L165.83 95.24Z" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M38 100A62 62 0 1 0 162 100A62 62 0 1 0 38 100Z" stroke="#0d1015" stroke-width="6.4"/><path d="M38 100A62 62 0 1 0 162 100A62 62 0 1 0 38 100Z" stroke="url(#chrome-mainspring-chrome)" stroke-width="4"/><path d="M38 100A62 62 0 1 0 162 100A62 62 0 1 0 38 100Z" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M112.12 107L111.27 108.64L110.18 110.17L108.89 111.57L107.41 112.8L105.75 113.84L103.95 114.66L102.04 115.25L100.03 115.58L97.98 115.65L95.9 115.45L93.85 114.96L91.86 114.21L89.95 113.18L88.18 111.9L86.58 110.38L85.17 108.65L83.99 106.72L83.06 104.63L82.4 102.41L82.04 100.09L81.98 97.73L82.24 95.35L82.82 93L83.7 90.72L84.89 88.56L86.37 86.55L88.12 84.73L90.11 83.15L92.31 81.82L94.69 80.78L97.21 80.06L99.83 79.66L102.51 79.62L105.19 79.93L107.83 80.59L110.39 81.6L112.82 82.96L115.07 84.63L117.1 86.6L118.87 88.84L120.34 91.32L121.49 93.99L122.29 96.81L122.71 99.74L122.75 102.73L122.39 105.71L121.64 108.66L120.5 111.5L118.99 114.19L117.12 116.68L114.92 118.92L112.43 120.88L109.68 122.5L106.72 123.76L103.6 124.63L100.36 125.09L97.07 125.12L93.77 124.71L90.54 123.88L87.41 122.61L84.45 120.94L81.72 118.88L79.26 116.46L77.12 113.72L75.35 110.7L73.98 107.45L73.03 104.03L72.54 100.48L72.51 96.88L72.96 93.28L73.88 89.74L75.27 86.33L77.1 83.11L79.35 80.13L81.99 77.46L84.98 75.13L88.27 73.21L91.81 71.72L95.53 70.7L99.38 70.16L103.29 70.14L107.2 70.63L111.04 71.64L114.74 73.14L118.23 75.13L121.45 77.58L124.34 80.44L126.85 83.67L128.93 87.23L130.54 91.05L131.64 95.07L132.21 99.23L132.23 103.46L131.7 107.67L130.61 111.81L128.99 115.79L126.85 119.55L124.21 123.01L121.13 126.13L117.65 128.83L113.83 131.06L109.72 132.79L105.4 133.97L100.93 134.58L96.4 134.61L91.88 134.03L87.44 132.87L83.17 131.13L79.14 128.83L75.43 126.01L72.1 122.72L69.21 118.99L66.81 114.9L64.97 110.51L63.7 105.88L63.05 101.11L63.02 96.27L63.63 91.44L64.87 86.7L66.73 82.15L69.17 77.85L72.18 73.88L75.69 70.33L79.66 67.25L84.02 64.7L88.7 62.73L93.62 61.38L98.69 60.68L103.85 60.64L108.99 61.29L114.02 62.6L118.87 64.57L123.44 67.17L127.65 70.36L131.43 74.09L134.7 78.3L137.42 82.92L139.51 87.88L140.95 93.1L141.7 98.49L141.73 103.95L141.06 109.4L139.67 114.73L137.59 119.87L134.84 124.71L131.47 129.17L127.53 133.18L123.08 136.65L118.19 139.52L112.94 141.74L107.43 143.27L101.74 144.06L95.96 144.11L90.21 143.4L84.57 141.94L79.14 139.75L74.03 136.86L69.32 133.31L65.09 129.15L61.42 124.46L58.38 119.31L56.03 113.78L54.41 107.97L53.57 101.98L53.51 95.89L54.25 89.83L55.77 83.89L58.08 78.17L61.11 72.78L64.84 67.81L69.21 63.36L74.14 59.49L79.55 56.29L85.36 53.81L91.47 52.1L97.77 51.2L104.17 51.13L110.54 51.89L116.78 53.49L122.79 55.9L128.45 59.08L133.68 62.99L138.36 67.56L142.43 72.73L145.8 78.4L148.41 84.49L150.21 90.9L151.17 97.5L151.25 104.21L150.46 110.89L148.8 117.44L146.29 123.74L142.96 129.68L138.88 135.15L134.1 140.07L128.69 144.34L122.76 147.88L116.39 150.62L109.69 152.52L102.78 153.53L95.76 153.64L88.77 152.82" stroke="#08112e" stroke-width="6"/><path d="M112.12 107L111.27 108.64L110.18 110.17L108.89 111.57L107.41 112.8L105.75 113.84L103.95 114.66L102.04 115.25L100.03 115.58L97.98 115.65L95.9 115.45L93.85 114.96L91.86 114.21L89.95 113.18L88.18 111.9L86.58 110.38L85.17 108.65L83.99 106.72L83.06 104.63L82.4 102.41L82.04 100.09L81.98 97.73L82.24 95.35L82.82 93L83.7 90.72L84.89 88.56L86.37 86.55L88.12 84.73L90.11 83.15L92.31 81.82L94.69 80.78L97.21 80.06L99.83 79.66L102.51 79.62L105.19 79.93L107.83 80.59L110.39 81.6L112.82 82.96L115.07 84.63L117.1 86.6L118.87 88.84L120.34 91.32L121.49 93.99L122.29 96.81L122.71 99.74L122.75 102.73L122.39 105.71L121.64 108.66L120.5 111.5L118.99 114.19L117.12 116.68L114.92 118.92L112.43 120.88L109.68 122.5L106.72 123.76L103.6 124.63L100.36 125.09L97.07 125.12L93.77 124.71L90.54 123.88L87.41 122.61L84.45 120.94L81.72 118.88L79.26 116.46L77.12 113.72L75.35 110.7L73.98 107.45L73.03 104.03L72.54 100.48L72.51 96.88L72.96 93.28L73.88 89.74L75.27 86.33L77.1 83.11L79.35 80.13L81.99 77.46L84.98 75.13L88.27 73.21L91.81 71.72L95.53 70.7L99.38 70.16L103.29 70.14L107.2 70.63L111.04 71.64L114.74 73.14L118.23 75.13L121.45 77.58L124.34 80.44L126.85 83.67L128.93 87.23L130.54 91.05L131.64 95.07L132.21 99.23L132.23 103.46L131.7 107.67L130.61 111.81L128.99 115.79L126.85 119.55L124.21 123.01L121.13 126.13L117.65 128.83L113.83 131.06L109.72 132.79L105.4 133.97L100.93 134.58L96.4 134.61L91.88 134.03L87.44 132.87L83.17 131.13L79.14 128.83L75.43 126.01L72.1 122.72L69.21 118.99L66.81 114.9L64.97 110.51L63.7 105.88L63.05 101.11L63.02 96.27L63.63 91.44L64.87 86.7L66.73 82.15L69.17 77.85L72.18 73.88L75.69 70.33L79.66 67.25L84.02 64.7L88.7 62.73L93.62 61.38L98.69 60.68L103.85 60.64L108.99 61.29L114.02 62.6L118.87 64.57L123.44 67.17L127.65 70.36L131.43 74.09L134.7 78.3L137.42 82.92L139.51 87.88L140.95 93.1L141.7 98.49L141.73 103.95L141.06 109.4L139.67 114.73L137.59 119.87L134.84 124.71L131.47 129.17L127.53 133.18L123.08 136.65L118.19 139.52L112.94 141.74L107.43 143.27L101.74 144.06L95.96 144.11L90.21 143.4L84.57 141.94L79.14 139.75L74.03 136.86L69.32 133.31L65.09 129.15L61.42 124.46L58.38 119.31L56.03 113.78L54.41 107.97L53.57 101.98L53.51 95.89L54.25 89.83L55.77 83.89L58.08 78.17L61.11 72.78L64.84 67.81L69.21 63.36L74.14 59.49L79.55 56.29L85.36 53.81L91.47 52.1L97.77 51.2L104.17 51.13L110.54 51.89L116.78 53.49L122.79 55.9L128.45 59.08L133.68 62.99L138.36 67.56L142.43 72.73L145.8 78.4L148.41 84.49L150.21 90.9L151.17 97.5L151.25 104.21L150.46 110.89L148.8 117.44L146.29 123.74L142.96 129.68L138.88 135.15L134.1 140.07L128.69 144.34L122.76 147.88L116.39 150.62L109.69 152.52L102.78 153.53L95.76 153.64L88.77 152.82" stroke="url(#chrome-mainspring-blue)" stroke-width="4"/><path d="M112.12 107L111.27 108.64L110.18 110.17L108.89 111.57L107.41 112.8L105.75 113.84L103.95 114.66L102.04 115.25L100.03 115.58L97.98 115.65L95.9 115.45L93.85 114.96L91.86 114.21L89.95 113.18L88.18 111.9L86.58 110.38L85.17 108.65L83.99 106.72L83.06 104.63L82.4 102.41L82.04 100.09L81.98 97.73L82.24 95.35L82.82 93L83.7 90.72L84.89 88.56L86.37 86.55L88.12 84.73L90.11 83.15L92.31 81.82L94.69 80.78L97.21 80.06L99.83 79.66L102.51 79.62L105.19 79.93L107.83 80.59L110.39 81.6L112.82 82.96L115.07 84.63L117.1 86.6L118.87 88.84L120.34 91.32L121.49 93.99L122.29 96.81L122.71 99.74L122.75 102.73L122.39 105.71L121.64 108.66L120.5 111.5L118.99 114.19L117.12 116.68L114.92 118.92L112.43 120.88L109.68 122.5L106.72 123.76L103.6 124.63L100.36 125.09L97.07 125.12L93.77 124.71L90.54 123.88L87.41 122.61L84.45 120.94L81.72 118.88L79.26 116.46L77.12 113.72L75.35 110.7L73.98 107.45L73.03 104.03L72.54 100.48L72.51 96.88L72.96 93.28L73.88 89.74L75.27 86.33L77.1 83.11L79.35 80.13L81.99 77.46L84.98 75.13L88.27 73.21L91.81 71.72L95.53 70.7L99.38 70.16L103.29 70.14L107.2 70.63L111.04 71.64L114.74 73.14L118.23 75.13L121.45 77.58L124.34 80.44L126.85 83.67L128.93 87.23L130.54 91.05L131.64 95.07L132.21 99.23L132.23 103.46L131.7 107.67L130.61 111.81L128.99 115.79L126.85 119.55L124.21 123.01L121.13 126.13L117.65 128.83L113.83 131.06L109.72 132.79L105.4 133.97L100.93 134.58L96.4 134.61L91.88 134.03L87.44 132.87L83.17 131.13L79.14 128.83L75.43 126.01L72.1 122.72L69.21 118.99L66.81 114.9L64.97 110.51L63.7 105.88L63.05 101.11L63.02 96.27L63.63 91.44L64.87 86.7L66.73 82.15L69.17 77.85L72.18 73.88L75.69 70.33L79.66 67.25L84.02 64.7L88.7 62.73L93.62 61.38L98.69 60.68L103.85 60.64L108.99 61.29L114.02 62.6L118.87 64.57L123.44 67.17L127.65 70.36L131.43 74.09L134.7 78.3L137.42 82.92L139.51 87.88L140.95 93.1L141.7 98.49L141.73 103.95L141.06 109.4L139.67 114.73L137.59 119.87L134.84 124.71L131.47 129.17L127.53 133.18L123.08 136.65L118.19 139.52L112.94 141.74L107.43 143.27L101.74 144.06L95.96 144.11L90.21 143.4L84.57 141.94L79.14 139.75L74.03 136.86L69.32 133.31L65.09 129.15L61.42 124.46L58.38 119.31L56.03 113.78L54.41 107.97L53.57 101.98L53.51 95.89L54.25 89.83L55.77 83.89L58.08 78.17L61.11 72.78L64.84 67.81L69.21 63.36L74.14 59.49L79.55 56.29L85.36 53.81L91.47 52.1L97.77 51.2L104.17 51.13L110.54 51.89L116.78 53.49L122.79 55.9L128.45 59.08L133.68 62.99L138.36 67.56L142.43 72.73L145.8 78.4L148.41 84.49L150.21 90.9L151.17 97.5L151.25 104.21L150.46 110.89L148.8 117.44L146.29 123.74L142.96 129.68L138.88 135.15L134.1 140.07L128.69 144.34L122.76 147.88L116.39 150.62L109.69 152.52L102.78 153.53L95.76 153.64L88.77 152.82" stroke="#d6e6ff" stroke-width="0.80" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M88 100A12 12 0 1 0 112 100A12 12 0 1 0 88 100Z" fill="url(#chrome-mainspring-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M92 100H108" stroke="url(#chrome-mainspring-chrome)" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>Mainspring</b><code>10-mainspring.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Ruby jewel</title>
+  <defs>
+    <linearGradient id="chrome-ruby-jewel-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-ruby-jewel-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-ruby-jewel-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-ruby-jewel-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-ruby-jewel-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-ruby-jewel-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-ruby-jewel-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 100A64 64 0 1 0 164 100A64 64 0 1 0 36 100Z" stroke="#0d1015" stroke-width="9.4"/><path d="M36 100A64 64 0 1 0 164 100A64 64 0 1 0 36 100Z" stroke="url(#chrome-ruby-jewel-chrome)" stroke-width="7"/><path d="M36 100A64 64 0 1 0 164 100A64 64 0 1 0 36 100Z" stroke="#fff" stroke-width="1.54" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M48 100A52 52 0 1 0 152 100A52 52 0 1 0 48 100Z" stroke="#0d1015" stroke-width="5.4"/><path d="M48 100A52 52 0 1 0 152 100A52 52 0 1 0 48 100Z" stroke="url(#chrome-ruby-jewel-chrome)" stroke-width="3"/><path d="M48 100A52 52 0 1 0 152 100A52 52 0 1 0 48 100Z" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M140.65 116.84L116.84 140.65L83.16 140.65L59.35 116.84L59.35 83.16L83.16 59.35L116.84 59.35L140.65 83.16Z" fill="url(#chrome-ruby-jewel-ruby)" stroke="#3a0610" stroke-width="1.2"/>
+    <path d="M122.17 109.18L109.18 122.17L90.82 122.17L77.83 109.18L77.83 90.82L90.82 77.83L109.18 77.83L122.17 90.82ZM122.17 109.18L140.65 116.84M109.18 122.17L116.84 140.65M90.82 122.17L83.16 140.65M77.83 109.18L59.35 116.84M77.83 90.82L59.35 83.16M90.82 77.83L83.16 59.35M109.18 77.83L116.84 59.35M122.17 90.82L140.65 83.16" stroke="url(#chrome-ruby-jewel-chrome)" stroke-width="1.3"/>
+    <path d="M94 100A6 6 0 1 0 106 100A6 6 0 1 0 94 100Z" fill="url(#chrome-ruby-jewel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M136.01 141.01A5 5 0 1 0 146.01 141.01A5 5 0 1 0 136.01 141.01Z" fill="url(#chrome-ruby-jewel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M53.99 141.01A5 5 0 1 0 63.99 141.01A5 5 0 1 0 53.99 141.01Z" fill="url(#chrome-ruby-jewel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M53.99 58.99A5 5 0 1 0 63.99 58.99A5 5 0 1 0 53.99 58.99Z" fill="url(#chrome-ruby-jewel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M136.01 58.99A5 5 0 1 0 146.01 58.99A5 5 0 1 0 136.01 58.99Z" fill="url(#chrome-ruby-jewel-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>Ruby jewel</b><code>11-ruby-jewel.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Winding crown</title>
+  <defs>
+    <linearGradient id="chrome-crown-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-crown-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-crown-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-crown-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-crown-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-crown-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-crown-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M160 100Q166.43 108.75 157.96 115.53Q161.9 125.64 151.96 130Q153.15 140.79 142.43 142.43Q140.79 153.15 130 151.96Q125.64 161.9 115.53 157.96Q108.75 166.43 100 160Q91.25 166.43 84.47 157.96Q74.36 161.9 70 151.96Q59.21 153.15 57.57 142.43Q46.85 140.79 48.04 130Q38.1 125.64 42.04 115.53Q33.57 108.75 40 100Q33.57 91.25 42.04 84.47Q38.1 74.36 48.04 70Q46.85 59.21 57.57 57.57Q59.21 46.85 70 48.04Q74.36 38.1 84.47 42.04Q91.25 33.57 100 40Q108.75 33.57 115.53 42.04Q125.64 38.1 130 48.04Q140.79 46.85 142.43 57.57Q153.15 59.21 151.96 70Q161.9 74.36 157.96 84.47Q166.43 91.25 160 100Z" stroke="#0d1015" stroke-width="6.4"/><path d="M160 100Q166.43 108.75 157.96 115.53Q161.9 125.64 151.96 130Q153.15 140.79 142.43 142.43Q140.79 153.15 130 151.96Q125.64 161.9 115.53 157.96Q108.75 166.43 100 160Q91.25 166.43 84.47 157.96Q74.36 161.9 70 151.96Q59.21 153.15 57.57 142.43Q46.85 140.79 48.04 130Q38.1 125.64 42.04 115.53Q33.57 108.75 40 100Q33.57 91.25 42.04 84.47Q38.1 74.36 48.04 70Q46.85 59.21 57.57 57.57Q59.21 46.85 70 48.04Q74.36 38.1 84.47 42.04Q91.25 33.57 100 40Q108.75 33.57 115.53 42.04Q125.64 38.1 130 48.04Q140.79 46.85 142.43 57.57Q153.15 59.21 151.96 70Q161.9 74.36 157.96 84.47Q166.43 91.25 160 100Z" stroke="url(#chrome-crown-chrome)" stroke-width="4"/><path d="M160 100Q166.43 108.75 157.96 115.53Q161.9 125.64 151.96 130Q153.15 140.79 142.43 142.43Q140.79 153.15 130 151.96Q125.64 161.9 115.53 157.96Q108.75 166.43 100 160Q91.25 166.43 84.47 157.96Q74.36 161.9 70 151.96Q59.21 153.15 57.57 142.43Q46.85 140.79 48.04 130Q38.1 125.64 42.04 115.53Q33.57 108.75 40 100Q33.57 91.25 42.04 84.47Q38.1 74.36 48.04 70Q46.85 59.21 57.57 57.57Q59.21 46.85 70 48.04Q74.36 38.1 84.47 42.04Q91.25 33.57 100 40Q108.75 33.57 115.53 42.04Q125.64 38.1 130 48.04Q140.79 46.85 142.43 57.57Q153.15 59.21 151.96 70Q161.9 74.36 157.96 84.47Q166.43 91.25 160 100Z" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M56 100A44 44 0 1 0 144 100A44 44 0 1 0 56 100Z" fill="url(#chrome-crown-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M64 100A36 36 0 1 0 136 100A36 36 0 1 0 64 100Z" stroke="url(#chrome-crown-chrome)" stroke-width="1.4"/>
+    <path d="M116 100L134 100M115.76 102.78L133.48 105.9M115.04 105.47L131.95 111.63M113.86 108L129.44 117M112.26 110.28L126.05 121.85M110.28 112.26L121.85 126.05M108 113.86L117 129.44M105.47 115.04L111.63 131.95M102.78 115.76L105.9 133.48M100 116L100 134M97.22 115.76L94.1 133.48M94.53 115.04L88.37 131.95M92 113.86L83 129.44M89.72 112.26L78.15 126.05M87.74 110.28L73.95 121.85M86.14 108L70.56 117M84.96 105.47L68.05 111.63M84.24 102.78L66.52 105.9M84 100L66 100M84.24 97.22L66.52 94.1M84.96 94.53L68.05 88.37M86.14 92L70.56 83M87.74 89.72L73.95 78.15M89.72 87.74L78.15 73.95M92 86.14L83 70.56M94.53 84.96L88.37 68.05M97.22 84.24L94.1 66.52M100 84L100 66M102.78 84.24L105.9 66.52M105.47 84.96L111.63 68.05M108 86.14L117 70.56M110.28 87.74L121.85 73.95M112.26 89.72L126.05 78.15M113.86 92L129.44 83M115.04 94.53L131.95 88.37M115.76 97.22L133.48 94.1" stroke="url(#chrome-crown-chrome)" stroke-width="1"/>
+    <path d="M88 100A12 12 0 1 0 112 100A12 12 0 1 0 88 100Z" fill="url(#chrome-crown-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M94 100A6 6 0 1 0 106 100A6 6 0 1 0 94 100Z" stroke="url(#chrome-crown-chrome)" stroke-width="1.2"/>
+  </g>
+</svg>
+<figcaption><b>Winding crown</b><code>12-crown.svg</code></figcaption></figure>
+  </div>
+</section>
+<section>
+  <h2>Complications<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Chronograph</title>
+  <defs>
+    <linearGradient id="chrome-chronograph-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-chronograph-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-chronograph-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-chronograph-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-chronograph-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-chronograph-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-chronograph-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M142.43 50.5L149.5 57.57L139.6 67.47L132.53 60.4Z" fill="url(#chrome-chronograph-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M132.53 139.6L139.6 132.53L149.5 142.43L142.43 149.5Z" fill="url(#chrome-chronograph-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M153 93H159Q162 93 162 96V104Q162 107 159 107H153Q150 107 150 104V96Q150 93 153 93Z" fill="url(#chrome-chronograph-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M48 100A52 52 0 1 0 152 100A52 52 0 1 0 48 100Z" stroke="#0d1015" stroke-width="9.4"/><path d="M48 100A52 52 0 1 0 152 100A52 52 0 1 0 48 100Z" stroke="url(#chrome-chronograph-chrome)" stroke-width="7"/><path d="M48 100A52 52 0 1 0 152 100A52 52 0 1 0 48 100Z" stroke="#fff" stroke-width="1.54" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 56L100 52M104.6 56.24L105.02 52.26M109.15 56.96L109.98 53.05M113.6 58.15L114.83 54.35M117.9 59.8L119.52 56.15M122 61.89L124 58.43M125.86 64.4L128.21 61.17M129.44 67.3L132.12 64.33M132.7 70.56L135.67 67.88M135.6 74.14L138.83 71.79M138.11 78L141.57 76M140.2 82.1L143.85 80.48M141.85 86.4L145.65 85.17M143.04 90.85L146.95 90.02M143.76 95.4L147.74 94.98M144 100L148 100M143.76 104.6L147.74 105.02M143.04 109.15L146.95 109.98M141.85 113.6L145.65 114.83M140.2 117.9L143.85 119.52M138.11 122L141.57 124M135.6 125.86L138.83 128.21M132.7 129.44L135.67 132.12M129.44 132.7L132.12 135.67M125.86 135.6L128.21 138.83M122 138.11L124 141.57M117.9 140.2L119.52 143.85M113.6 141.85L114.83 145.65M109.15 143.04L109.98 146.95M104.6 143.76L105.02 147.74M100 144L100 148M95.4 143.76L94.98 147.74M90.85 143.04L90.02 146.95M86.4 141.85L85.17 145.65M82.1 140.2L80.48 143.85M78 138.11L76 141.57M74.14 135.6L71.79 138.83M70.56 132.7L67.88 135.67M67.3 129.44L64.33 132.12M64.4 125.86L61.17 128.21M61.89 122L58.43 124M59.8 117.9L56.15 119.52M58.15 113.6L54.35 114.83M56.96 109.15L53.05 109.98M56.24 104.6L52.26 105.02M56 100L52 100M56.24 95.4L52.26 94.98M56.96 90.85L53.05 90.02M58.15 86.4L54.35 85.17M59.8 82.1L56.15 80.48M61.89 78L58.43 76M64.4 74.14L61.17 71.79M67.3 70.56L64.33 67.88M70.56 67.3L67.88 64.33M74.14 64.4L71.79 61.17M78 61.89L76 58.43M82.1 59.8L80.48 56.15M86.4 58.15L85.17 54.35M90.85 56.96L90.02 53.05M95.4 56.24L94.98 52.26" stroke="url(#chrome-chronograph-chrome)" stroke-width="1"/>
+    <path d="M88 74A12 12 0 1 0 112 74A12 12 0 1 0 88 74ZM64 106A12 12 0 1 0 88 106A12 12 0 1 0 64 106ZM112 106A12 12 0 1 0 136 106A12 12 0 1 0 112 106Z" stroke="url(#chrome-chronograph-chrome)" stroke-width="1.8"/>
+    <path d="M100 74L105.79 67.11M76 106L67.54 109.08M124 106L130.89 111.79" stroke="#08112e" stroke-width="4.2"/><path d="M100 74L105.79 67.11M76 106L67.54 109.08M124 106L130.89 111.79" stroke="url(#chrome-chronograph-blue)" stroke-width="2.2"/><path d="M100 74L105.79 67.11M76 106L67.54 109.08M124 106L130.89 111.79" stroke="#d6e6ff" stroke-width="0.60" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M103 105.2L85 74.02" stroke="#08112e" stroke-width="6"/><path d="M103 105.2L85 74.02" stroke="url(#chrome-chronograph-blue)" stroke-width="4"/><path d="M103 105.2L85 74.02" stroke="#d6e6ff" stroke-width="0.80" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M98 103.46L120 65.36" stroke="#08112e" stroke-width="5"/><path d="M98 103.46L120 65.36" stroke="url(#chrome-chronograph-blue)" stroke-width="3"/><path d="M98 103.46L120 65.36" stroke="#d6e6ff" stroke-width="0.60" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M94 89.61L122 138.11" stroke="#0d1015" stroke-width="4"/><path d="M94 89.61L122 138.11" stroke="url(#chrome-chronograph-chrome)" stroke-width="1.6"/><path d="M94 89.61L122 138.11" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M95.5 100A4.5 4.5 0 1 0 104.5 100A4.5 4.5 0 1 0 95.5 100Z" fill="url(#chrome-chronograph-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>Chronograph</b><code>13-chronograph.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Moon phase</title>
+  <defs>
+    <linearGradient id="chrome-moon-phase-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-moon-phase-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-moon-phase-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-moon-phase-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-moon-phase-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-moon-phase-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-moon-phase-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 126A64 64 0 0 1 164 126Z" fill="url(#chrome-moon-phase-sky)"/>
+    <path d="M70 76Q70 82 76 82Q70 82 70 88Q70 82 64 82Q70 82 70 76Z" fill="url(#chrome-moon-phase-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M128 65Q128 70 133 70Q128 70 128 75Q128 70 123 70Q128 70 128 65Z" fill="url(#chrome-moon-phase-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M146 100Q146 104 150 104Q146 104 146 108Q146 104 142 104Q146 104 146 100Z" fill="url(#chrome-moon-phase-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M86 104.5Q86 108 89.5 108Q86 108 86 111.5Q86 108 82.5 108Q86 108 86 104.5Z" fill="url(#chrome-moon-phase-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M84 92A20 20 0 1 0 124 92A20 20 0 1 0 84 92Z" fill="url(#chrome-moon-phase-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M94 88A4 4 0 1 0 102 88A4 4 0 1 0 94 88ZM107 100A3 3 0 1 0 113 100A3 3 0 1 0 107 100Z" stroke="url(#chrome-moon-phase-chrome)" stroke-width="1.2"/>
+    <path d="M36 126A30 30 0 0 1 96 126Z" fill="url(#chrome-moon-phase-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M104 126A30 30 0 0 1 164 126Z" fill="url(#chrome-moon-phase-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M28 128A72 72 0 0 1 172 128Z" stroke="#0d1015" stroke-width="8.4"/><path d="M28 128A72 72 0 0 1 172 128Z" stroke="url(#chrome-moon-phase-chrome)" stroke-width="6"/><path d="M28 128A72 72 0 0 1 172 128Z" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M22 128L14 128M24.66 107.81L20.79 106.78M32.45 89L28.99 87M44.85 72.85L39.19 67.19M61 60.45L59 56.99M79.81 52.66L78.78 48.79M100 50L100 42M120.19 52.66L121.22 48.79M139 60.45L141 56.99M155.15 72.85L160.81 67.19M167.55 89L171.01 87M175.34 107.81L179.21 106.78M178 128L186 128" stroke="url(#chrome-moon-phase-chrome)" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>Moon phase</b><code>14-moon-phase.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Tourbillon</title>
+  <defs>
+    <linearGradient id="chrome-tourbillon-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-tourbillon-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-tourbillon-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-tourbillon-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-tourbillon-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-tourbillon-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-tourbillon-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M38 100A62 62 0 1 0 162 100A62 62 0 1 0 38 100Z" stroke="#0d1015" stroke-width="6.4"/><path d="M38 100A62 62 0 1 0 162 100A62 62 0 1 0 38 100Z" stroke="url(#chrome-tourbillon-chrome)" stroke-width="4"/><path d="M38 100A62 62 0 1 0 162 100A62 62 0 1 0 38 100Z" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M166 100L171.99 101.13L171.89 103.96L165.84 104.66L165.44 108.61L171.23 110.52L170.76 113.31L164.66 113.21L163.75 117.08L169.25 119.73L168.42 122.43L162.39 121.54L160.98 125.26L166.08 128.59L164.9 131.17L159.04 129.5L157.16 133L161.78 136.97L160.28 139.37L154.68 136.95L152.36 140.18L156.43 144.72L154.63 146.9L149.39 143.78L146.67 146.67L150.11 151.71L148.04 153.63L143.26 149.85L140.18 152.36L142.93 157.8L140.63 159.44L136.38 155.07L133 157.16L135.02 162.91L132.52 164.24L128.88 159.35L125.26 160.98L126.5 166.94L123.86 167.93L120.89 162.61L117.08 163.75L117.54 169.83L114.79 170.47L112.54 164.8L108.61 165.44L108.28 171.52L105.46 171.79L103.97 165.88L100 166L98.87 171.99L96.04 171.89L95.34 165.84L91.39 165.44L89.48 171.23L86.69 170.76L86.79 164.66L82.92 163.75L80.27 169.25L77.57 168.42L78.46 162.39L74.74 160.98L71.41 166.08L68.83 164.9L70.5 159.04L67 157.16L63.03 161.78L60.63 160.28L63.05 154.68L59.82 152.36L55.28 156.43L53.1 154.63L56.22 149.39L53.33 146.67L48.29 150.11L46.37 148.04L50.15 143.26L47.64 140.18L42.2 142.93L40.56 140.63L44.93 136.38L42.84 133L37.09 135.02L35.76 132.52L40.65 128.88L39.02 125.26L33.06 126.5L32.07 123.86L37.39 120.89L36.25 117.08L30.17 117.54L29.53 114.79L35.2 112.54L34.56 108.61L28.48 108.28L28.21 105.46L34.12 103.97L34 100L28.01 98.87L28.11 96.04L34.16 95.34L34.56 91.39L28.77 89.48L29.24 86.69L35.34 86.79L36.25 82.92L30.75 80.27L31.58 77.57L37.61 78.46L39.02 74.74L33.92 71.41L35.1 68.83L40.96 70.5L42.84 67L38.22 63.03L39.72 60.63L45.32 63.05L47.64 59.82L43.57 55.28L45.37 53.1L50.61 56.22L53.33 53.33L49.89 48.29L51.96 46.37L56.74 50.15L59.82 47.64L57.07 42.2L59.37 40.56L63.62 44.93L67 42.84L64.98 37.09L67.48 35.76L71.12 40.65L74.74 39.02L73.5 33.06L76.14 32.07L79.11 37.39L82.92 36.25L82.46 30.17L85.21 29.53L87.46 35.2L91.39 34.56L91.72 28.48L94.54 28.21L96.03 34.12L100 34L101.13 28.01L103.96 28.11L104.66 34.16L108.61 34.56L110.52 28.77L113.31 29.24L113.21 35.34L117.08 36.25L119.73 30.75L122.43 31.58L121.54 37.61L125.26 39.02L128.59 33.92L131.17 35.1L129.5 40.96L133 42.84L136.97 38.22L139.37 39.72L136.95 45.32L140.18 47.64L144.72 43.57L146.9 45.37L143.78 50.61L146.67 53.33L151.71 49.89L153.63 51.96L149.85 56.74L152.36 59.82L157.8 57.07L159.44 59.37L155.07 63.62L157.16 67L162.91 64.98L164.24 67.48L159.35 71.12L160.98 74.74L166.94 73.5L167.93 76.14L162.61 79.11L163.75 82.92L169.83 82.46L170.47 85.21L164.8 87.46L165.44 91.39L171.52 91.72L171.79 94.54L165.88 96.03Z" stroke="url(#chrome-tourbillon-chrome)" stroke-width="1.2"/>
+    <path d="M66 100A34 34 0 1 0 134 100A34 34 0 1 0 66 100Z" stroke="#08112e" stroke-width="5"/><path d="M66 100A34 34 0 1 0 134 100A34 34 0 1 0 66 100Z" stroke="url(#chrome-tourbillon-blue)" stroke-width="3"/><path d="M66 100A34 34 0 1 0 134 100A34 34 0 1 0 66 100Z" stroke="#d6e6ff" stroke-width="0.60" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M104 100L104.09 100.54L104.11 101.1L104.04 101.67L103.9 102.25L103.67 102.82L103.36 103.36L102.97 103.87L102.5 104.33L101.96 104.73L101.36 105.07L100.7 105.33L100 105.5L99.27 105.58L98.51 105.55L97.75 105.43L97 105.2L96.27 104.86L95.58 104.42L94.94 103.88L94.37 103.25L93.88 102.54L93.48 101.75L93.18 100.9L93 100L92.94 99.07L93 98.12L93.19 97.18L93.5 96.25L93.95 95.36L94.52 94.52L95.21 93.75L96 93.07L96.89 92.49L97.86 92.03L98.91 91.7L100 91.5L101.13 91.45L102.26 91.55L103.4 91.8L104.5 92.21L105.55 92.76L106.54 93.46L107.44 94.29L108.23 95.25L108.89 96.32L109.42 97.48L109.79 98.71L110 100L110.04 101.32L109.9 102.65L109.59 103.97L109.09 105.25L108.43 106.47L107.6 107.6L106.62 108.63L105.5 109.53L104.26 110.28L102.91 110.87L101.48 111.28L100 111.5L98.48 111.53L96.96 111.35L95.46 110.97L94 110.39L92.62 109.62L91.34 108.66L90.18 107.53L89.17 106.25L88.34 104.83L87.68 103.3L87.24 101.68L87 100L86.99 98.29L87.2 96.57L87.64 94.88L88.31 93.25L89.19 91.71L90.28 90.28L91.55 88.99L93 87.88L94.59 86.95L96.31 86.24L98.12 85.75L100 85.5L101.91 85.5L103.82 85.75L105.69 86.26L107.5 87.01L109.21 88L110.78 89.22L112.2 90.64L113.42 92.25L114.44 94.02L115.21 95.92L115.74 97.93L116 100L115.99 102.1L115.7 104.21L115.13 106.27L114.29 108.25L113.19 110.12L111.84 111.84L110.27 113.39L108.5 114.72L106.55 115.82L104.46 116.66L102.27 117.23L100 117.5L97.7 117.47L95.41 117.15L93.16 116.51L91 115.59L88.97 114.38L87.1 112.9L85.42 111.19L83.98 109.25L82.79 107.13L81.89 104.85L81.29 102.46L81 100L81.04 97.5L81.41 95.02L82.1 92.59L83.11 90.25L84.43 88.05L86.03 86.03L87.9 84.23L90 82.68L92.3 81.41L94.76 80.44L97.34 79.8L100 79.5L102.69 79.55L105.37 79.96L107.99 80.71L110.5 81.81L112.86 83.24L115.03 84.97L116.96 86.99L118.62 89.25L119.98 91.72L121.01 94.37L121.69 97.14L122 100" stroke="#08112e" stroke-width="3.4"/><path d="M104 100L104.09 100.54L104.11 101.1L104.04 101.67L103.9 102.25L103.67 102.82L103.36 103.36L102.97 103.87L102.5 104.33L101.96 104.73L101.36 105.07L100.7 105.33L100 105.5L99.27 105.58L98.51 105.55L97.75 105.43L97 105.2L96.27 104.86L95.58 104.42L94.94 103.88L94.37 103.25L93.88 102.54L93.48 101.75L93.18 100.9L93 100L92.94 99.07L93 98.12L93.19 97.18L93.5 96.25L93.95 95.36L94.52 94.52L95.21 93.75L96 93.07L96.89 92.49L97.86 92.03L98.91 91.7L100 91.5L101.13 91.45L102.26 91.55L103.4 91.8L104.5 92.21L105.55 92.76L106.54 93.46L107.44 94.29L108.23 95.25L108.89 96.32L109.42 97.48L109.79 98.71L110 100L110.04 101.32L109.9 102.65L109.59 103.97L109.09 105.25L108.43 106.47L107.6 107.6L106.62 108.63L105.5 109.53L104.26 110.28L102.91 110.87L101.48 111.28L100 111.5L98.48 111.53L96.96 111.35L95.46 110.97L94 110.39L92.62 109.62L91.34 108.66L90.18 107.53L89.17 106.25L88.34 104.83L87.68 103.3L87.24 101.68L87 100L86.99 98.29L87.2 96.57L87.64 94.88L88.31 93.25L89.19 91.71L90.28 90.28L91.55 88.99L93 87.88L94.59 86.95L96.31 86.24L98.12 85.75L100 85.5L101.91 85.5L103.82 85.75L105.69 86.26L107.5 87.01L109.21 88L110.78 89.22L112.2 90.64L113.42 92.25L114.44 94.02L115.21 95.92L115.74 97.93L116 100L115.99 102.1L115.7 104.21L115.13 106.27L114.29 108.25L113.19 110.12L111.84 111.84L110.27 113.39L108.5 114.72L106.55 115.82L104.46 116.66L102.27 117.23L100 117.5L97.7 117.47L95.41 117.15L93.16 116.51L91 115.59L88.97 114.38L87.1 112.9L85.42 111.19L83.98 109.25L82.79 107.13L81.89 104.85L81.29 102.46L81 100L81.04 97.5L81.41 95.02L82.1 92.59L83.11 90.25L84.43 88.05L86.03 86.03L87.9 84.23L90 82.68L92.3 81.41L94.76 80.44L97.34 79.8L100 79.5L102.69 79.55L105.37 79.96L107.99 80.71L110.5 81.81L112.86 83.24L115.03 84.97L116.96 86.99L118.62 89.25L119.98 91.72L121.01 94.37L121.69 97.14L122 100" stroke="url(#chrome-tourbillon-blue)" stroke-width="1.4"/><path d="M104 100L104.09 100.54L104.11 101.1L104.04 101.67L103.9 102.25L103.67 102.82L103.36 103.36L102.97 103.87L102.5 104.33L101.96 104.73L101.36 105.07L100.7 105.33L100 105.5L99.27 105.58L98.51 105.55L97.75 105.43L97 105.2L96.27 104.86L95.58 104.42L94.94 103.88L94.37 103.25L93.88 102.54L93.48 101.75L93.18 100.9L93 100L92.94 99.07L93 98.12L93.19 97.18L93.5 96.25L93.95 95.36L94.52 94.52L95.21 93.75L96 93.07L96.89 92.49L97.86 92.03L98.91 91.7L100 91.5L101.13 91.45L102.26 91.55L103.4 91.8L104.5 92.21L105.55 92.76L106.54 93.46L107.44 94.29L108.23 95.25L108.89 96.32L109.42 97.48L109.79 98.71L110 100L110.04 101.32L109.9 102.65L109.59 103.97L109.09 105.25L108.43 106.47L107.6 107.6L106.62 108.63L105.5 109.53L104.26 110.28L102.91 110.87L101.48 111.28L100 111.5L98.48 111.53L96.96 111.35L95.46 110.97L94 110.39L92.62 109.62L91.34 108.66L90.18 107.53L89.17 106.25L88.34 104.83L87.68 103.3L87.24 101.68L87 100L86.99 98.29L87.2 96.57L87.64 94.88L88.31 93.25L89.19 91.71L90.28 90.28L91.55 88.99L93 87.88L94.59 86.95L96.31 86.24L98.12 85.75L100 85.5L101.91 85.5L103.82 85.75L105.69 86.26L107.5 87.01L109.21 88L110.78 89.22L112.2 90.64L113.42 92.25L114.44 94.02L115.21 95.92L115.74 97.93L116 100L115.99 102.1L115.7 104.21L115.13 106.27L114.29 108.25L113.19 110.12L111.84 111.84L110.27 113.39L108.5 114.72L106.55 115.82L104.46 116.66L102.27 117.23L100 117.5L97.7 117.47L95.41 117.15L93.16 116.51L91 115.59L88.97 114.38L87.1 112.9L85.42 111.19L83.98 109.25L82.79 107.13L81.89 104.85L81.29 102.46L81 100L81.04 97.5L81.41 95.02L82.1 92.59L83.11 90.25L84.43 88.05L86.03 86.03L87.9 84.23L90 82.68L92.3 81.41L94.76 80.44L97.34 79.8L100 79.5L102.69 79.55L105.37 79.96L107.99 80.71L110.5 81.81L112.86 83.24L115.03 84.97L116.96 86.99L118.62 89.25L119.98 91.72L121.01 94.37L121.69 97.14L122 100" stroke="#d6e6ff" stroke-width="0.60" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M100 100L100 38M100 100L153.69 131M100 100L46.31 131" stroke="#0d1015" stroke-width="8.4"/><path d="M100 100L100 38M100 100L153.69 131M100 100L46.31 131" stroke="url(#chrome-tourbillon-chrome)" stroke-width="6"/><path d="M100 100L100 38M100 100L153.69 131M100 100L46.31 131" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M93 38A7 7 0 1 0 107 38A7 7 0 1 0 93 38Z" fill="url(#chrome-tourbillon-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M146.69 131A7 7 0 1 0 160.69 131A7 7 0 1 0 146.69 131Z" fill="url(#chrome-tourbillon-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M39.31 131A7 7 0 1 0 53.31 131A7 7 0 1 0 39.31 131Z" fill="url(#chrome-tourbillon-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M89 100A11 11 0 1 0 111 100A11 11 0 1 0 89 100Z" fill="url(#chrome-tourbillon-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M95 100A5 5 0 1 0 105 100A5 5 0 1 0 95 100Z" fill="url(#chrome-tourbillon-ruby)" stroke="#3a0610" stroke-width="1.2"/>
+  </g>
+</svg>
+<figcaption><b>Tourbillon</b><code>15-tourbillon.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Power reserve</title>
+  <defs>
+    <linearGradient id="chrome-power-reserve-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-power-reserve-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-power-reserve-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-power-reserve-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-power-reserve-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-power-reserve-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-power-reserve-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M37.98 105.43A66 66 0 0 1 162.02 105.43" stroke="#0d1015" stroke-width="8.4"/><path d="M37.98 105.43A66 66 0 0 1 162.02 105.43" stroke="url(#chrome-power-reserve-chrome)" stroke-width="6"/><path d="M37.98 105.43A66 66 0 0 1 162.02 105.43" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M51.14 110.21L41.74 106.79M54.97 102L49.77 99M60.17 94.58L55.57 90.72M66.58 88.17L62.72 83.57M74 82.97L71 77.77M82.21 79.14L80.16 73.5M90.97 76.79L89.93 70.88M100 76L100 66M109.03 76.79L110.07 70.88M117.79 79.14L119.84 73.5M126 82.97L129 77.77M133.42 88.17L137.28 83.57M139.83 94.58L144.43 90.72M145.03 102L150.23 99M148.86 110.21L158.26 106.79" stroke="url(#chrome-power-reserve-chrome)" stroke-width="1.8"/>
+    <path d="M59.05 110.47A5 5 0 1 0 69.05 110.47A5 5 0 1 0 59.05 110.47Z" fill="url(#chrome-power-reserve-ruby)" stroke="#3a0610" stroke-width="1.2"/>
+    <path d="M130.95 110.47A5 5 0 1 0 140.95 110.47A5 5 0 1 0 130.95 110.47Z" fill="url(#chrome-power-reserve-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M100 128L128 79.5" stroke="#08112e" stroke-width="6.5"/><path d="M100 128L128 79.5" stroke="url(#chrome-power-reserve-blue)" stroke-width="4.5"/><path d="M100 128L128 79.5" stroke="#d6e6ff" stroke-width="0.90" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M92 128A8 8 0 1 0 108 128A8 8 0 1 0 92 128Z" fill="url(#chrome-power-reserve-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M44 160H156" stroke="#0d1015" stroke-width="6.4"/><path d="M44 160H156" stroke="url(#chrome-power-reserve-chrome)" stroke-width="4"/><path d="M44 160H156" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+  </g>
+</svg>
+<figcaption><b>Power reserve</b><code>16-power-reserve.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>World time</title>
+  <defs>
+    <linearGradient id="chrome-world-time-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-world-time-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-world-time-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-world-time-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-world-time-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-world-time-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-world-time-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 100A70 70 0 1 0 170 100A70 70 0 1 0 30 100Z" stroke="#0d1015" stroke-width="5.4"/><path d="M30 100A70 70 0 1 0 170 100A70 70 0 1 0 30 100Z" stroke="url(#chrome-world-time-chrome)" stroke-width="3"/><path d="M30 100A70 70 0 1 0 170 100A70 70 0 1 0 30 100Z" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 36L100 30M116.56 38.18L118.12 32.39M132 44.57L135 39.38M145.25 54.75L149.5 50.5M155.43 68L160.62 65M161.82 83.44L167.61 81.88M164 100L170 100M161.82 116.56L167.61 118.12M155.43 132L160.62 135M145.25 145.25L149.5 149.5M132 155.43L135 160.62M116.56 161.82L118.12 167.61M100 164L100 170M83.44 161.82L81.88 167.61M68 155.43L65 160.62M54.75 145.25L50.5 149.5M44.57 132L39.38 135M38.18 116.56L32.39 118.12M36 100L30 100M38.18 83.44L32.39 81.88M44.57 68L39.38 65M54.75 54.75L50.5 50.5M68 44.57L65 39.38M83.44 38.18L81.88 32.39" stroke="url(#chrome-world-time-chrome)" stroke-width="1.8"/>
+    <path d="M50 100A50 50 0 1 0 150 100A50 50 0 1 0 50 100Z" fill="url(#chrome-world-time-sky)"/>
+    <path d="M78 100A22 50 0 1 0 122 100A22 50 0 1 0 78 100ZM50 100H150M56 76H144M56 124H144" stroke="#0d1015" stroke-width="4.9"/><path d="M78 100A22 50 0 1 0 122 100A22 50 0 1 0 78 100ZM50 100H150M56 76H144M56 124H144" stroke="url(#chrome-world-time-chrome)" stroke-width="2.5"/><path d="M78 100A22 50 0 1 0 122 100A22 50 0 1 0 78 100ZM50 100H150M56 76H144M56 124H144" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M50 100A50 50 0 1 0 150 100A50 50 0 1 0 50 100Z" stroke="#0d1015" stroke-width="7.4"/><path d="M50 100A50 50 0 1 0 150 100A50 50 0 1 0 50 100Z" stroke="url(#chrome-world-time-chrome)" stroke-width="5"/><path d="M50 100A50 50 0 1 0 150 100A50 50 0 1 0 50 100Z" stroke="#fff" stroke-width="1.10" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 100L139.85 52.51" stroke="#08112e" stroke-width="5.5"/><path d="M100 100L139.85 52.51" stroke="url(#chrome-world-time-blue)" stroke-width="3.5"/><path d="M100 100L139.85 52.51" stroke="#d6e6ff" stroke-width="0.70" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M95 100A5 5 0 1 0 105 100A5 5 0 1 0 95 100Z" fill="url(#chrome-world-time-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>World time</b><code>17-world-time.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Alarm</title>
+  <defs>
+    <linearGradient id="chrome-alarm-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-alarm-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-alarm-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-alarm-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-alarm-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-alarm-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-alarm-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M42 66A26 26 0 0 1 80 40Z" fill="url(#chrome-alarm-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M120 40A26 26 0 0 1 158 66Z" fill="url(#chrome-alarm-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M100 54V38M86 38H114" stroke="#0d1015" stroke-width="6.4"/><path d="M100 54V38M86 38H114" stroke="url(#chrome-alarm-chrome)" stroke-width="4"/><path d="M100 54V38M86 38H114" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M66 160L54 178M134 160L146 178" stroke="#0d1015" stroke-width="7.4"/><path d="M66 160L54 178M134 160L146 178" stroke="url(#chrome-alarm-chrome)" stroke-width="5"/><path d="M66 160L54 178M134 160L146 178" stroke="#fff" stroke-width="1.10" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M50 112A50 50 0 1 0 150 112A50 50 0 1 0 50 112Z" stroke="#0d1015" stroke-width="9.4"/><path d="M50 112A50 50 0 1 0 150 112A50 50 0 1 0 50 112Z" stroke="url(#chrome-alarm-chrome)" stroke-width="7"/><path d="M50 112A50 50 0 1 0 150 112A50 50 0 1 0 50 112Z" stroke="#fff" stroke-width="1.54" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 76L100 70M118 80.82L121 75.63M131.18 94L136.37 91M136 112L142 112M131.18 130L136.37 133M118 143.18L121 148.37M100 148L100 154M82 143.18L79 148.37M68.82 130L63.63 133M64 112L58 112M68.82 94L63.63 91M82 80.82L79 75.63" stroke="url(#chrome-alarm-chrome)" stroke-width="2.2"/>
+    <path d="M103.21 115.83L85.86 95.15" stroke="#08112e" stroke-width="6.5"/><path d="M103.21 115.83L85.86 95.15" stroke="url(#chrome-alarm-blue)" stroke-width="4.5"/><path d="M103.21 115.83L85.86 95.15" stroke="#d6e6ff" stroke-width="0.90" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M94.8 115L127.71 96" stroke="#08112e" stroke-width="5.5"/><path d="M94.8 115L127.71 96" stroke="url(#chrome-alarm-blue)" stroke-width="3.5"/><path d="M94.8 115L127.71 96" stroke="#d6e6ff" stroke-width="0.70" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M100 112L89.74 140.19" stroke="url(#chrome-alarm-sand)" stroke-width="2"/>
+    <path d="M95.5 112A4.5 4.5 0 1 0 104.5 112A4.5 4.5 0 1 0 95.5 112Z" fill="url(#chrome-alarm-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>Alarm</b><code>18-alarm.svg</code></figcaption></figure>
+  </div>
+</section>
+<section>
+  <h2>Atelier<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Loupe</title>
+  <defs>
+    <linearGradient id="chrome-loupe-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-loupe-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-loupe-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-loupe-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-loupe-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-loupe-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-loupe-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M114.3 128.44L128.44 114.3L173.7 159.56L159.56 173.7Z" fill="url(#chrome-loupe-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M120.67 133.39L133.39 120.67M126.32 139.05L139.05 126.32M131.98 144.71L144.71 131.98M137.64 150.36L150.36 137.64M143.29 156.02L156.02 143.29M148.95 161.68L161.68 148.95M154.6 167.33L167.33 154.6" stroke="url(#chrome-loupe-chrome)" stroke-width="1.2"/>
+    <path d="M116 116L124 124" stroke="#0d1015" stroke-width="10.4"/><path d="M116 116L124 124" stroke="url(#chrome-loupe-chrome)" stroke-width="8"/><path d="M116 116L124 124" stroke="#fff" stroke-width="1.76" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M36 82A46 46 0 1 0 128 82A46 46 0 1 0 36 82Z" fill="url(#chrome-loupe-glass)"/>
+    <path d="M58 70C62 58 70 52 80 48" stroke="url(#chrome-loupe-chrome)" stroke-width="3"/>
+    <path d="M34 82A48 48 0 1 0 130 82A48 48 0 1 0 34 82Z" stroke="#0d1015" stroke-width="10.4"/><path d="M34 82A48 48 0 1 0 130 82A48 48 0 1 0 34 82Z" stroke="url(#chrome-loupe-chrome)" stroke-width="8"/><path d="M34 82A48 48 0 1 0 130 82A48 48 0 1 0 34 82Z" stroke="#fff" stroke-width="1.76" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+  </g>
+</svg>
+<figcaption><b>Loupe</b><code>19-loupe.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Screwdriver</title>
+  <defs>
+    <linearGradient id="chrome-screwdriver-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-screwdriver-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-screwdriver-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-screwdriver-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-screwdriver-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-screwdriver-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-screwdriver-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-45 100 100)">
+    <path d="M100 112V178" stroke="#0d1015" stroke-width="6.4"/><path d="M100 112V178" stroke="url(#chrome-screwdriver-chrome)" stroke-width="4"/><path d="M100 112V178" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M97 178H103" stroke="url(#chrome-screwdriver-chrome)" stroke-width="2"/>
+    <path d="M92 40H108Q114 40 114 46V108Q114 114 108 114H92Q86 114 86 108V46Q86 40 92 40Z" fill="url(#chrome-screwdriver-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M94 50V104M100 50V104M106 50V104" stroke="url(#chrome-screwdriver-chrome)" stroke-width="1.3"/>
+    <path d="M90 30A10 10 0 1 0 110 30A10 10 0 1 0 90 30Z" stroke="#08112e" stroke-width="6"/><path d="M90 30A10 10 0 1 0 110 30A10 10 0 1 0 90 30Z" stroke="url(#chrome-screwdriver-blue)" stroke-width="4"/><path d="M90 30A10 10 0 1 0 110 30A10 10 0 1 0 90 30Z" stroke="#d6e6ff" stroke-width="0.80" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M94 30A6 6 0 1 0 106 30A6 6 0 1 0 94 30Z" fill="url(#chrome-screwdriver-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>Screwdriver</b><code>20-screwdriver.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Tweezers</title>
+  <defs>
+    <linearGradient id="chrome-tweezers-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-tweezers-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-tweezers-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-tweezers-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-tweezers-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-tweezers-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-tweezers-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M94 24C86 80 80 140 86 178" stroke="#0d1015" stroke-width="8.4"/><path d="M94 24C86 80 80 140 86 178" stroke="url(#chrome-tweezers-chrome)" stroke-width="6"/><path d="M94 24C86 80 80 140 86 178" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M106 24C114 80 120 140 114 178" stroke="#0d1015" stroke-width="8.4"/><path d="M106 24C114 80 120 140 114 178" stroke="url(#chrome-tweezers-chrome)" stroke-width="6"/><path d="M106 24C114 80 120 140 114 178" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M88 80L112 80" stroke="url(#chrome-tweezers-chrome)" stroke-width="1.4"/>
+    <path d="M94 16H106Q112 16 112 22V30Q112 36 106 36H94Q88 36 88 30V22Q88 16 94 16Z" fill="url(#chrome-tweezers-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M96 182A4 4 0 1 0 104 182A4 4 0 1 0 96 182Z" fill="url(#chrome-tweezers-ruby)" stroke="#3a0610" stroke-width="1.2"/>
+  </g>
+</svg>
+<figcaption><b>Tweezers</b><code>21-tweezers.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Watch box</title>
+  <defs>
+    <linearGradient id="chrome-watch-box-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-watch-box-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-watch-box-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-watch-box-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-watch-box-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-watch-box-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-watch-box-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 104L50 40H150L166 104Z" fill="url(#chrome-watch-box-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M48 98L60 50H140L152 98Z" fill="url(#chrome-watch-box-sky)"/>
+    <path d="M30 104H170V164H30Z" stroke="#0d1015" stroke-width="7.4"/><path d="M30 104H170V164H30Z" stroke="url(#chrome-watch-box-chrome)" stroke-width="5"/><path d="M30 104H170V164H30Z" stroke="#fff" stroke-width="1.10" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M30 120H170" stroke="url(#chrome-watch-box-chrome)" stroke-width="1.4"/>
+    <path d="M94 128H106Q108 128 108 130V138Q108 140 106 140H94Q92 140 92 138V130Q92 128 94 128Z" fill="url(#chrome-watch-box-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M82 80A18 18 0 1 0 118 80A18 18 0 1 0 82 80Z" stroke="#0d1015" stroke-width="5.4"/><path d="M82 80A18 18 0 1 0 118 80A18 18 0 1 0 82 80Z" stroke="url(#chrome-watch-box-chrome)" stroke-width="3"/><path d="M82 80A18 18 0 1 0 118 80A18 18 0 1 0 82 80Z" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 80L91.34 75M100 80L111.26 73.5" stroke="#08112e" stroke-width="4.2"/><path d="M100 80L91.34 75M100 80L111.26 73.5" stroke="url(#chrome-watch-box-blue)" stroke-width="2.2"/><path d="M100 80L91.34 75M100 80L111.26 73.5" stroke="#d6e6ff" stroke-width="0.60" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+  </g>
+</svg>
+<figcaption><b>Watch box</b><code>22-watch-box.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Buckle</title>
+  <defs>
+    <linearGradient id="chrome-buckle-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-buckle-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-buckle-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-buckle-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-buckle-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-buckle-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-buckle-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M80 16H120Q126 16 126 22V58Q126 64 120 64H80Q74 64 74 58V22Q74 16 80 16Z" fill="url(#chrome-buckle-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M80 136H120Q126 136 126 142V178Q126 184 120 184H80Q74 184 74 178V142Q74 136 80 136Z" fill="url(#chrome-buckle-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M78 32H122M78 48H122M78 152H122M78 168H122" stroke="url(#chrome-buckle-chrome)" stroke-width="1.4"/>
+    <path d="M74 70H126Q144 70 144 88V112Q144 130 126 130H74Q56 130 56 112V88Q56 70 74 70Z" stroke="#0d1015" stroke-width="9.4"/><path d="M74 70H126Q144 70 144 88V112Q144 130 126 130H74Q56 130 56 112V88Q56 70 74 70Z" stroke="url(#chrome-buckle-chrome)" stroke-width="7"/><path d="M74 70H126Q144 70 144 88V112Q144 130 126 130H74Q56 130 56 112V88Q56 70 74 70Z" stroke="#fff" stroke-width="1.54" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M56 100H144" stroke="#0d1015" stroke-width="6.4"/><path d="M56 100H144" stroke="url(#chrome-buckle-chrome)" stroke-width="4"/><path d="M56 100H144" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 100V60" stroke="#08112e" stroke-width="7"/><path d="M100 100V60" stroke="url(#chrome-buckle-blue)" stroke-width="5"/><path d="M100 100V60" stroke="#d6e6ff" stroke-width="1.00" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+  </g>
+</svg>
+<figcaption><b>Buckle</b><code>23-buckle.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Case back</title>
+  <defs>
+    <linearGradient id="chrome-case-back-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-case-back-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="chrome-case-back-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="chrome-case-back-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="chrome-case-back-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="chrome-case-back-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="chrome-case-back-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 100A66 66 0 1 0 166 100A66 66 0 1 0 34 100Z" stroke="#0d1015" stroke-width="8.4"/><path d="M34 100A66 66 0 1 0 166 100A66 66 0 1 0 34 100Z" stroke="url(#chrome-case-back-chrome)" stroke-width="6"/><path d="M34 100A66 66 0 1 0 166 100A66 66 0 1 0 34 100Z" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M94 27L106 27L106 41L94 41Z" fill="url(#chrome-case-back-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M160.22 58.3L166.22 68.7L154.1 75.7L148.1 65.3Z" fill="url(#chrome-case-back-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M166.22 131.3L160.22 141.7L148.1 134.7L154.1 124.3Z" fill="url(#chrome-case-back-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M106 173L94 173L94 159L106 159Z" fill="url(#chrome-case-back-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M39.78 141.7L33.78 131.3L45.9 124.3L51.9 134.7Z" fill="url(#chrome-case-back-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M33.78 68.7L39.78 58.3L51.9 65.3L45.9 75.7Z" fill="url(#chrome-case-back-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M44 100A56 56 0 1 0 156 100A56 56 0 1 0 44 100Z" stroke="url(#chrome-case-back-chrome)" stroke-width="1.4"/>
+    <path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" fill="url(#chrome-case-back-glass)"/>
+    <path d="M124 100L129.94 101.88L129.28 106.54L123.05 106.7L120.78 112L124.99 116.6L122.08 120.31L116.61 117.32L112 120.78L113.34 126.87L108.97 128.63L105.72 123.31L100 124L98.12 129.94L93.46 129.28L93.3 123.05L88 120.78L83.4 124.99L79.69 122.08L82.68 116.61L79.22 112L73.13 113.34L71.37 108.97L76.69 105.72L76 100L70.06 98.12L70.72 93.46L76.95 93.3L79.22 88L75.01 83.4L77.92 79.69L83.39 82.68L88 79.22L86.66 73.13L91.03 71.37L94.28 76.69L100 76L101.88 70.06L106.54 70.72L106.7 76.95L112 79.22L116.6 75.01L120.31 77.92L117.32 83.39L120.78 88L126.87 86.66L128.63 91.03L123.31 94.28ZM82 100A18 18 0 1 0 118 100A18 18 0 1 0 82 100Z" stroke="url(#chrome-case-back-chrome)" stroke-width="1.4"/>
+    <path d="M96 100A4 4 0 1 0 104 100A4 4 0 1 0 96 100Z" fill="url(#chrome-case-back-ruby)" stroke="#3a0610" stroke-width="1.2"/>
+    <path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke="#0d1015" stroke-width="6.4"/><path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke="url(#chrome-case-back-chrome)" stroke-width="4"/><path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+  </g>
+</svg>
+<figcaption><b>Case back</b><code>24-case-back.svg</code></figcaption></figure>
+  </div>
+</section>
+  </div>
+  <div class="v-b">
+<section>
+  <h2>Timepieces<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Wristwatch</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M74 18H126L120 58H80Z" stroke-width="2.4"/>
+    <path d="M80 142H120L126 182H74Z" stroke-width="2.4"/>
+    <path d="M78 30H122M77 40H123M80 160H120M78 170H122" stroke-width="1.4"/>
+    <path d="M149 92H155Q158 92 158 95V105Q158 108 155 108H149Q146 108 146 105V95Q146 92 149 92Z" stroke-width="2.4"/>
+    <path d="M54 100A46 46 0 1 0 146 100A46 46 0 1 0 54 100Z" stroke-width="7"/>
+    <path d="M100 68L100 61M116 72.29L119.5 66.23M127.71 84L133.77 80.5M132 100L139 100M127.71 116L133.77 119.5M116 127.71L119.5 133.77M100 132L100 139M84 127.71L80.5 133.77M72.29 116L66.23 119.5M68 100L61 100M72.29 84L66.23 80.5M84 72.29L80.5 66.23" stroke-width="2.4"/>
+    <path d="M103.87 63.2L104.08 61.21M107.69 63.81L108.11 61.85M111.43 64.81L112.05 62.91M115.05 66.2L115.86 64.37M121.75 70.07L122.92 68.45M124.76 72.5L126.1 71.02M127.5 75.24L128.98 73.9M129.93 78.25L131.55 77.08M133.8 84.95L135.63 84.14M135.19 88.57L137.09 87.95M136.19 92.31L138.15 91.89M136.8 96.13L138.79 95.92M136.8 103.87L138.79 104.08M136.19 107.69L138.15 108.11M135.19 111.43L137.09 112.05M133.8 115.05L135.63 115.86M129.93 121.75L131.55 122.92M127.5 124.76L128.98 126.1M124.76 127.5L126.1 128.98M121.75 129.93L122.92 131.55M115.05 133.8L115.86 135.63M111.43 135.19L112.05 137.09M107.69 136.19L108.11 138.15M103.87 136.8L104.08 138.79M96.13 136.8L95.92 138.79M92.31 136.19L91.89 138.15M88.57 135.19L87.95 137.09M84.95 133.8L84.14 135.63M78.25 129.93L77.08 131.55M75.24 127.5L73.9 128.98M72.5 124.76L71.02 126.1M70.07 121.75L68.45 122.92M66.2 115.05L64.37 115.86M64.81 111.43L62.91 112.05M63.81 107.69L61.85 108.11M63.2 103.87L61.21 104.08M63.2 96.13L61.21 95.92M63.81 92.31L61.85 91.89M64.81 88.57L62.91 87.95M66.2 84.95L64.37 84.14M70.07 78.25L68.45 77.08M72.5 75.24L71.02 73.9M75.24 72.5L73.9 71.02M78.25 70.07L77.08 68.45M84.95 66.2L84.14 64.37M88.57 64.81L87.95 62.91M92.31 63.81L91.89 61.85M96.13 63.2L95.92 61.21" stroke-width="1"/>
+    <path d="M105.2 103L79.22 88" stroke-width="4.5"/>
+    <path d="M93.07 104L128.58 83.5" stroke-width="3.5"/>
+    <path d="M95.5 100A4.5 4.5 0 1 0 104.5 100A4.5 4.5 0 1 0 95.5 100Z" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>Wristwatch</b><code>01-wristwatch.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Pocket watch</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M88 30A12 12 0 1 0 112 30A12 12 0 1 0 88 30Z" stroke-width="5"/>
+    <path d="M95 44H105Q108 44 108 47V55Q108 58 105 58H95Q92 58 92 55V47Q92 44 95 44Z" stroke-width="2.4"/>
+    <path d="M44 114A56 56 0 1 0 156 114A56 56 0 1 0 44 114Z" stroke-width="6"/>
+    <path d="M54 114A46 46 0 1 0 146 114A46 46 0 1 0 54 114Z" stroke-width="1.4"/>
+    <path d="M100 76L100 69M119 81.09L122.5 75.03M132.91 95L138.97 91.5M138 114L145 114M132.91 133L138.97 136.5M119 146.91L122.5 152.97M100 152L100 159M81 146.91L77.5 152.97M67.09 133L61.03 136.5M62 114L55 114M67.09 95L61.03 91.5M81 81.09L77.5 75.03" stroke-width="2.4"/>
+    <path d="M89 140A11 11 0 1 0 111 140A11 11 0 1 0 89 140Z" stroke-width="1.4"/>
+    <path d="M100 140L106.93 144" stroke-width="1.6"/>
+    <path d="M103.86 118.6L83.29 94.08" stroke-width="4.5"/>
+    <path d="M94.86 120.13L123.14 86.42" stroke-width="3.5"/>
+    <path d="M95.5 114A4.5 4.5 0 1 0 104.5 114A4.5 4.5 0 1 0 95.5 114Z" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>Pocket watch</b><code>02-pocket-watch.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Dive watch</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M153 92H159Q162 92 162 95V105Q162 108 159 108H153Q150 108 150 105V95Q150 92 153 92Z" stroke-width="2.4"/>
+    <path d="M146 84L156 88V112L146 116Z" stroke-width="2.4"/>
+    <path d="M44 100A56 56 0 1 0 156 100A56 56 0 1 0 44 100Z" stroke-width="9"/>
+    <path d="M126 54.97L130 48.04M145.03 74L151.96 70M152 100L160 100M145.03 126L151.96 130M126 145.03L130 151.96M100 152L100 160M74 145.03L70 151.96M54.97 126L48.04 130M48 100L40 100M54.97 74L48.04 70M74 54.97L70 48.04" stroke-width="2"/>
+    <path d="M100 50L92 38L108 38Z" fill="currentColor"/>
+    <path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke-width="3"/>
+    <path d="M100 70L100 62M130 100L138 100M100 130L100 138M70 100L62 100" fill="currentColor"/>
+    <path d="M100 70L100 62M130 100L138 100M100 130L100 138M70 100L62 100" stroke-width="5"/>
+    <path d="M105.2 103L80.95 89" stroke-width="6"/>
+    <path d="M92.48 102.74L130.07 89.06" stroke-width="4.5"/>
+    <path d="M95 100A5 5 0 1 0 105 100A5 5 0 1 0 95 100Z" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>Dive watch</b><code>03-diver.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Carriage clock</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M76 58C76 30 124 30 124 58" stroke-width="5"/>
+    <path d="M50 60H150V168H50Z" stroke-width="6"/>
+    <path d="M50 78H150" stroke-width="3"/>
+    <path d="M50 150H150" stroke-width="3"/>
+    <path d="M46 168H62V178H46Z" stroke-width="2.4"/>
+    <path d="M138 168H154V178H138Z" stroke-width="2.4"/>
+    <path d="M72 114A28 28 0 1 0 128 114A28 28 0 1 0 72 114Z" stroke-width="4"/>
+    <path d="M100 94L100 89M110 96.68L112.5 92.35M117.32 104L121.65 101.5M120 114L125 114M117.32 124L121.65 126.5M110 131.32L112.5 135.65M100 134L100 139M90 131.32L87.5 135.65M82.68 124L78.35 126.5M80 114L75 114M82.68 104L78.35 101.5M90 96.68L87.5 92.35" stroke-width="1.8"/>
+    <path d="M103.46 116L87.88 107" stroke-width="3.5"/>
+    <path d="M95.67 116.5L118.19 103.5" stroke-width="3"/>
+    <path d="M96.5 114A3.5 3.5 0 1 0 103.5 114A3.5 3.5 0 1 0 96.5 114Z" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>Carriage clock</b><code>04-carriage-clock.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Hourglass</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M78 64H122C118 80 104 88 100 96C96 88 82 80 78 64Z" fill="currentColor"/>
+    <path d="M72 158C76 138 92 132 100 128C108 132 124 138 128 158Z" fill="currentColor"/>
+    <path d="M100 98V128" stroke-width="1.6"/>
+    <path d="M66 40C66 78 92 88 92 100C92 112 66 122 66 160M134 40C134 78 108 88 108 100C108 112 134 122 134 160" stroke-width="3"/>
+    <path d="M54 38V162M146 38V162" stroke-width="6"/>
+    <path d="M44 22H156Q160 22 160 26V34Q160 38 156 38H44Q40 38 40 34V26Q40 22 44 22Z" stroke-width="2.4"/>
+    <path d="M44 162H156Q160 162 160 166V174Q160 178 156 178H44Q40 178 40 174V166Q40 162 44 162Z" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>Hourglass</b><code>05-hourglass.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Regulator clock</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 30H140V176H60Z" stroke-width="5"/>
+    <path d="M60 30L100 12L140 30" stroke-width="4"/>
+    <path d="M74 64A26 26 0 1 0 126 64A26 26 0 1 0 74 64Z" stroke-width="4"/>
+    <path d="M100 46L100 41M109 48.41L111.5 44.08M115.59 55L119.92 52.5M118 64L123 64M115.59 73L119.92 75.5M109 79.59L111.5 83.92M100 82L100 87M91 79.59L88.5 83.92M84.41 73L80.08 75.5M82 64L77 64M84.41 55L80.08 52.5M91 48.41L88.5 44.08" stroke-width="1.6"/>
+    <path d="M101.5 66.6L93.5 52.74" stroke-width="3"/>
+    <path d="M96.06 64.69L118.71 60.7" stroke-width="2.6"/>
+    <path d="M72 96H128V168H72Z" stroke-width="1.4"/>
+    <path d="M100 92V150" stroke-width="3"/>
+    <path d="M88 152A12 12 0 1 0 112 152A12 12 0 1 0 88 152Z" stroke-width="2.4"/>
+    <path d="M94 152A6 6 0 1 0 106 152A6 6 0 1 0 94 152Z" stroke-width="1.4"/>
+  </g>
+</svg>
+<figcaption><b>Regulator clock</b><code>06-regulator.svg</code></figcaption></figure>
+  </div>
+</section>
+<section>
+  <h2>Movement<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Gear</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M158 100L171.94 103.02L171.23 110.52L156.97 110.87L154.5 119.84L166.57 127.44L163.33 134.24L149.82 129.7L144.43 137.28L153.17 148.55L147.8 153.84L136.66 144.95L129 150.23L133.36 163.81L126.5 166.94L119.07 154.77L110.07 157.12L109.52 171.37L102.01 171.97L99.19 157.99L89.93 157.12L84.54 170.32L77.27 168.32L79.4 154.22L71 150.23L61.42 160.79L55.28 156.43L62.1 143.91L55.57 137.28L42.96 143.93L38.68 137.73L49.37 128.3L45.5 119.84L31.37 121.77L29.47 114.48L42.75 109.27L42 100L28.06 96.98L28.77 89.48L43.03 89.13L45.5 80.16L33.43 72.56L36.67 65.76L50.18 70.3L55.57 62.72L46.83 51.45L52.2 46.16L63.34 55.05L71 49.77L66.64 36.19L73.5 33.06L80.93 45.23L89.93 42.88L90.48 28.63L97.99 28.03L100.81 42.01L110.07 42.88L115.46 29.68L122.73 31.68L120.6 45.78L129 49.77L138.58 39.21L144.72 43.57L137.9 56.09L144.43 62.72L157.04 56.07L161.32 62.27L150.63 71.7L154.5 80.16L168.63 78.23L170.53 85.52L157.25 90.73Z" stroke-width="4"/>
+    <path d="M56 100A44 44 0 1 0 144 100A44 44 0 1 0 56 100Z" stroke-width="4"/>
+    <path d="M100 88L100 56M111.41 96.29L141.85 86.4M107.05 109.71L125.86 135.6M92.95 109.71L74.14 135.6M88.59 96.29L58.15 86.4" stroke-width="5"/>
+    <path d="M87 100A13 13 0 1 0 113 100A13 13 0 1 0 87 100Z" stroke-width="2.4"/>
+    <path d="M95 100A5 5 0 1 0 105 100A5 5 0 1 0 95 100Z" fill="currentColor"/>
+  </g>
+</svg>
+<figcaption><b>Gear</b><code>07-gear.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Escape wheel</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M144 120L159.35 137.92L154.28 140.44L140.91 136.2L140.2 137.9L146.93 160.51L141.27 160.75L130.79 151.44L129.44 152.7L126.4 176.1L121.13 174.02L115.34 161.24L113.6 161.85L101.3 181.99L97.33 177.94L97.24 163.91L95.4 163.76L75.97 177.16L73.99 171.84L79.61 158.99L78 158.11L54.8 162.44L55.16 156.78L65.52 147.33L64.4 145.86L41.45 140.39L44.07 135.36L57.38 130.94L56.96 129.15L38.22 114.81L42.66 111.29L56.62 112.66L56.96 110.85L45.67 90.13L51.16 88.72L63.35 95.65L64.4 94.14L62.51 70.62L68.11 71.56L76.42 82.85L78 81.89L85.84 59.64L90.57 62.77L93.57 76.47L95.4 76.24L111.62 59.1L114.66 63.88L111.83 77.62L113.6 78.15L135.38 69.09L136.22 74.7L128.05 86.1L129.44 87.3L153.03 87.88L151.51 93.34L139.41 100.44L140.2 102.1L161.51 112.23L157.9 116.6L143.96 118.16Z" stroke-width="3.5"/>
+    <path d="M66 120A34 34 0 1 0 134 120A34 34 0 1 0 66 120Z" stroke-width="4"/>
+    <path d="M105.66 125.66L124.04 144.04M94.34 125.66L75.96 144.04M94.34 114.34L75.96 95.96M105.66 114.34L124.04 95.96" stroke-width="4"/>
+    <path d="M91 120A9 9 0 1 0 109 120A9 9 0 1 0 91 120Z" stroke-width="2.4"/>
+    <path d="M100 50L56 34M100 50L144 34M100 50V18" stroke-width="5"/>
+    <path d="M49.85 30.79L57.36 28.05L62.15 41.21L54.64 43.95Z" fill="currentColor"/>
+    <path d="M142.64 28.05L150.15 30.79L145.36 43.95L137.85 41.21Z" fill="currentColor"/>
+    <path d="M94 50A6 6 0 1 0 106 50A6 6 0 1 0 94 50Z" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>Escape wheel</b><code>08-escape-wheel.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Balance wheel</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M105 100L105.07 100.67L105.05 101.35L104.94 102.05L104.73 102.73L104.43 103.4L104.03 104.03L103.54 104.61L102.96 105.13L102.31 105.58L101.59 105.95L100.82 106.22L100 106.39L99.15 106.45L98.29 106.39L97.42 106.22L96.57 105.93L95.76 105.53L94.99 105.01L94.29 104.38L93.67 103.66L93.14 102.84L92.71 101.95L92.4 101L92.22 100L92.17 98.97L92.26 97.93L92.49 96.89L92.86 95.88L93.37 94.91L94.01 94.01L94.77 93.19L95.65 92.46L96.62 91.85L97.69 91.37L98.82 91.03L100 90.83L101.21 90.8L102.43 90.92L103.64 91.21L104.81 91.66L105.93 92.27L106.97 93.03L107.92 93.93L108.74 94.95L109.43 96.09L109.97 97.33L110.35 98.64L110.56 100L110.58 101.39L110.42 102.79L110.07 104.17L109.54 105.51L108.83 106.78L107.95 107.95L106.92 109.02L105.74 109.94L104.44 110.71L103.03 111.31L101.54 111.73L100 111.94L98.43 111.96L96.85 111.76L95.3 111.36L93.8 110.75L92.38 109.94L91.06 108.94L89.88 107.76L88.85 106.44L88 104.97L87.34 103.39L86.9 101.73L86.67 100L86.67 98.24L86.9 96.49L87.36 94.76L88.05 93.1L88.96 91.53L90.08 90.08L91.39 88.78L92.87 87.65L94.5 86.72L96.25 86L98.09 85.52L100 85.28L101.94 85.29L103.87 85.56L105.77 86.08L107.59 86.85L109.31 87.86L110.9 89.1L112.32 90.54L113.55 92.18L114.56 93.97L115.34 95.89L115.86 97.91L116.11 100L116.09 102.12L115.79 104.23L115.21 106.3L114.35 108.29L113.24 110.16L111.88 111.88L110.3 113.42L108.52 114.75L106.56 115.85L104.47 116.68L102.27 117.24L100 117.5L97.7 117.47L95.41 117.13L93.17 116.49L91.02 115.56L88.99 114.34L87.13 112.87L85.47 111.15L84.04 109.21L82.87 107.1L81.98 104.83L81.39 102.45L81.11 100L81.16 97.52L81.53 95.05L82.23 92.64L83.24 90.32L84.56 88.15L86.15 86.15L88.01 84.37L90.09 82.84L92.37 81.59L94.81 80.64L97.37 80.01L100 79.72L102.66 79.78L105.31 80.19L107.89 80.94L110.37 82.04L112.7 83.45L114.83 85.17L116.73 87.16L118.36 89.4L119.7 91.84L120.7 94.45L121.37 97.19L121.67 100L121.6 102.84L121.15 105.67L120.34 108.42L119.16 111.06L117.65 113.54L115.81 115.81L113.68 117.83L111.3 119.57L108.69 120.98L105.91 122.05L102.99 122.74L100 123.06L96.98 122.97L93.97 122.49L91.04 121.62L88.24 120.37L85.61 118.75L83.21 116.79L81.07 114.53L79.23 111.99L77.74 109.22L76.61 106.27L75.88 103.18L75.56 100L75.65 96.79L76.16 93.61L77.1 90.51L78.43 87.55L80.15 84.77L82.22 82.22L84.63 79.96L87.31 78.03L90.25 76.45L93.37 75.27L96.64 74.5L100 74.17L103.39 74.27L106.75 74.82L110.02 75.81L113.15 77.23L116.08 79.05L118.76 81.24L121.14 83.78L123.17 86.62L124.83 89.72L126.07 93.01L126.87 96.46L127.22 100L127.1 103.57L126.52 107.11L125.47 110.55L123.98 113.84L122.06 116.92L119.74 119.74L117.07 122.24L114.07 124.38L110.82 126.11L107.35 127.41L103.72 128.25L100 128.61L96.25 128.48L92.53 127.86L88.92 126.75L85.46 125.18L82.23 123.16L79.28 120.72L76.66 117.91L74.42 114.77L72.6 111.35L71.25 107.7L70.37 103.9L70 100" stroke-width="1.8"/>
+    <path d="M46 100A54 54 0 1 0 154 100A54 54 0 1 0 46 100Z" stroke-width="6"/>
+    <path d="M46 100L154 100" stroke-width="4"/>
+    <path d="M147.66 113.98A4.5 4.5 0 1 0 156.66 113.98A4.5 4.5 0 1 0 147.66 113.98Z" stroke-width="2.4"/>
+    <path d="M133.68 138.18A4.5 4.5 0 1 0 142.68 138.18A4.5 4.5 0 1 0 133.68 138.18Z" stroke-width="2.4"/>
+    <path d="M109.48 152.16A4.5 4.5 0 1 0 118.48 152.16A4.5 4.5 0 1 0 109.48 152.16Z" stroke-width="2.4"/>
+    <path d="M81.52 152.16A4.5 4.5 0 1 0 90.52 152.16A4.5 4.5 0 1 0 81.52 152.16Z" stroke-width="2.4"/>
+    <path d="M57.32 138.18A4.5 4.5 0 1 0 66.32 138.18A4.5 4.5 0 1 0 57.32 138.18Z" stroke-width="2.4"/>
+    <path d="M43.34 113.98A4.5 4.5 0 1 0 52.34 113.98A4.5 4.5 0 1 0 43.34 113.98Z" stroke-width="2.4"/>
+    <path d="M43.34 86.02A4.5 4.5 0 1 0 52.34 86.02A4.5 4.5 0 1 0 43.34 86.02Z" stroke-width="2.4"/>
+    <path d="M57.32 61.82A4.5 4.5 0 1 0 66.32 61.82A4.5 4.5 0 1 0 57.32 61.82Z" stroke-width="2.4"/>
+    <path d="M81.52 47.84A4.5 4.5 0 1 0 90.52 47.84A4.5 4.5 0 1 0 81.52 47.84Z" stroke-width="2.4"/>
+    <path d="M109.48 47.84A4.5 4.5 0 1 0 118.48 47.84A4.5 4.5 0 1 0 109.48 47.84Z" stroke-width="2.4"/>
+    <path d="M133.68 61.82A4.5 4.5 0 1 0 142.68 61.82A4.5 4.5 0 1 0 133.68 61.82Z" stroke-width="2.4"/>
+    <path d="M147.66 86.02A4.5 4.5 0 1 0 156.66 86.02A4.5 4.5 0 1 0 147.66 86.02Z" stroke-width="2.4"/>
+    <path d="M93 100A7 7 0 1 0 107 100A7 7 0 1 0 93 100Z" stroke-width="2.4"/>
+    <path d="M97 100A3 3 0 1 0 103 100A3 3 0 1 0 97 100Z" fill="currentColor"/>
+  </g>
+</svg>
+<figcaption><b>Balance wheel</b><code>09-balance-wheel.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Mainspring</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M166 100L173.99 101.39L173.84 104.88L165.76 105.59L165.19 110.32L172.86 112.95L172.17 116.37L164.08 115.81L162.77 120.4L169.93 124.19L168.72 127.46L160.82 125.64L158.81 129.96L165.29 134.83L163.58 137.87L156.06 134.84L153.4 138.79L159.04 144.62L156.87 147.35L149.92 143.18L146.67 146.67L151.33 153.3L148.76 155.66L142.55 150.46L138.79 153.4L142.36 160.68L139.45 162.6L134.13 156.49L129.96 158.81L132.35 166.56L129.18 168.01L124.87 161.13L120.4 162.77L121.54 170.8L118.18 171.73L115 164.27L110.32 165.19L110.2 173.29L106.73 173.69L104.76 165.83L100 166L98.61 173.99L95.12 173.84L94.41 165.76L89.68 165.19L87.05 172.86L83.63 172.17L84.19 164.08L79.6 162.77L75.81 169.93L72.54 168.72L74.36 160.82L70.04 158.81L65.17 165.29L62.13 163.58L65.16 156.06L61.21 153.4L55.38 159.04L52.65 156.87L56.82 149.92L53.33 146.67L46.7 151.33L44.34 148.76L49.54 142.55L46.6 138.79L39.32 142.36L37.4 139.45L43.51 134.13L41.19 129.96L33.44 132.35L31.99 129.18L38.87 124.87L37.23 120.4L29.2 121.54L28.27 118.18L35.73 115L34.81 110.32L26.71 110.2L26.31 106.73L34.17 104.76L34 100L26.01 98.61L26.16 95.12L34.24 94.41L34.81 89.68L27.14 87.05L27.83 83.63L35.92 84.19L37.23 79.6L30.07 75.81L31.28 72.54L39.18 74.36L41.19 70.04L34.71 65.17L36.42 62.13L43.94 65.16L46.6 61.21L40.96 55.38L43.13 52.65L50.08 56.82L53.33 53.33L48.67 46.7L51.24 44.34L57.45 49.54L61.21 46.6L57.64 39.32L60.55 37.4L65.87 43.51L70.04 41.19L67.65 33.44L70.82 31.99L75.13 38.87L79.6 37.23L78.46 29.2L81.82 28.27L85 35.73L89.68 34.81L89.8 26.71L93.27 26.31L95.24 34.17L100 34L101.39 26.01L104.88 26.16L105.59 34.24L110.32 34.81L112.95 27.14L116.37 27.83L115.81 35.92L120.4 37.23L124.19 30.07L127.46 31.28L125.64 39.18L129.96 41.19L134.83 34.71L137.87 36.42L134.84 43.94L138.79 46.6L144.62 40.96L147.35 43.13L143.18 50.08L146.67 53.33L153.3 48.67L155.66 51.24L150.46 57.45L153.4 61.21L160.68 57.64L162.6 60.55L156.49 65.87L158.81 70.04L166.56 67.65L168.01 70.82L161.13 75.13L162.77 79.6L170.8 78.46L171.73 81.82L164.27 85L165.19 89.68L173.29 89.8L173.69 93.27L165.83 95.24Z" stroke-width="2.5"/>
+    <path d="M38 100A62 62 0 1 0 162 100A62 62 0 1 0 38 100Z" stroke-width="4"/>
+    <path d="M112.12 107L111.27 108.64L110.18 110.17L108.89 111.57L107.41 112.8L105.75 113.84L103.95 114.66L102.04 115.25L100.03 115.58L97.98 115.65L95.9 115.45L93.85 114.96L91.86 114.21L89.95 113.18L88.18 111.9L86.58 110.38L85.17 108.65L83.99 106.72L83.06 104.63L82.4 102.41L82.04 100.09L81.98 97.73L82.24 95.35L82.82 93L83.7 90.72L84.89 88.56L86.37 86.55L88.12 84.73L90.11 83.15L92.31 81.82L94.69 80.78L97.21 80.06L99.83 79.66L102.51 79.62L105.19 79.93L107.83 80.59L110.39 81.6L112.82 82.96L115.07 84.63L117.1 86.6L118.87 88.84L120.34 91.32L121.49 93.99L122.29 96.81L122.71 99.74L122.75 102.73L122.39 105.71L121.64 108.66L120.5 111.5L118.99 114.19L117.12 116.68L114.92 118.92L112.43 120.88L109.68 122.5L106.72 123.76L103.6 124.63L100.36 125.09L97.07 125.12L93.77 124.71L90.54 123.88L87.41 122.61L84.45 120.94L81.72 118.88L79.26 116.46L77.12 113.72L75.35 110.7L73.98 107.45L73.03 104.03L72.54 100.48L72.51 96.88L72.96 93.28L73.88 89.74L75.27 86.33L77.1 83.11L79.35 80.13L81.99 77.46L84.98 75.13L88.27 73.21L91.81 71.72L95.53 70.7L99.38 70.16L103.29 70.14L107.2 70.63L111.04 71.64L114.74 73.14L118.23 75.13L121.45 77.58L124.34 80.44L126.85 83.67L128.93 87.23L130.54 91.05L131.64 95.07L132.21 99.23L132.23 103.46L131.7 107.67L130.61 111.81L128.99 115.79L126.85 119.55L124.21 123.01L121.13 126.13L117.65 128.83L113.83 131.06L109.72 132.79L105.4 133.97L100.93 134.58L96.4 134.61L91.88 134.03L87.44 132.87L83.17 131.13L79.14 128.83L75.43 126.01L72.1 122.72L69.21 118.99L66.81 114.9L64.97 110.51L63.7 105.88L63.05 101.11L63.02 96.27L63.63 91.44L64.87 86.7L66.73 82.15L69.17 77.85L72.18 73.88L75.69 70.33L79.66 67.25L84.02 64.7L88.7 62.73L93.62 61.38L98.69 60.68L103.85 60.64L108.99 61.29L114.02 62.6L118.87 64.57L123.44 67.17L127.65 70.36L131.43 74.09L134.7 78.3L137.42 82.92L139.51 87.88L140.95 93.1L141.7 98.49L141.73 103.95L141.06 109.4L139.67 114.73L137.59 119.87L134.84 124.71L131.47 129.17L127.53 133.18L123.08 136.65L118.19 139.52L112.94 141.74L107.43 143.27L101.74 144.06L95.96 144.11L90.21 143.4L84.57 141.94L79.14 139.75L74.03 136.86L69.32 133.31L65.09 129.15L61.42 124.46L58.38 119.31L56.03 113.78L54.41 107.97L53.57 101.98L53.51 95.89L54.25 89.83L55.77 83.89L58.08 78.17L61.11 72.78L64.84 67.81L69.21 63.36L74.14 59.49L79.55 56.29L85.36 53.81L91.47 52.1L97.77 51.2L104.17 51.13L110.54 51.89L116.78 53.49L122.79 55.9L128.45 59.08L133.68 62.99L138.36 67.56L142.43 72.73L145.8 78.4L148.41 84.49L150.21 90.9L151.17 97.5L151.25 104.21L150.46 110.89L148.8 117.44L146.29 123.74L142.96 129.68L138.88 135.15L134.1 140.07L128.69 144.34L122.76 147.88L116.39 150.62L109.69 152.52L102.78 153.53L95.76 153.64L88.77 152.82" stroke-width="4"/>
+    <path d="M88 100A12 12 0 1 0 112 100A12 12 0 1 0 88 100Z" stroke-width="2.4"/>
+    <path d="M92 100H108" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>Mainspring</b><code>10-mainspring.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Ruby jewel</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 100A64 64 0 1 0 164 100A64 64 0 1 0 36 100Z" stroke-width="7"/>
+    <path d="M48 100A52 52 0 1 0 152 100A52 52 0 1 0 48 100Z" stroke-width="3"/>
+    <path d="M140.65 116.84L116.84 140.65L83.16 140.65L59.35 116.84L59.35 83.16L83.16 59.35L116.84 59.35L140.65 83.16Z" stroke-width="2.4"/>
+    <path d="M122.17 109.18L109.18 122.17L90.82 122.17L77.83 109.18L77.83 90.82L90.82 77.83L109.18 77.83L122.17 90.82ZM122.17 109.18L140.65 116.84M109.18 122.17L116.84 140.65M90.82 122.17L83.16 140.65M77.83 109.18L59.35 116.84M77.83 90.82L59.35 83.16M90.82 77.83L83.16 59.35M109.18 77.83L116.84 59.35M122.17 90.82L140.65 83.16" stroke-width="1.3"/>
+    <path d="M94 100A6 6 0 1 0 106 100A6 6 0 1 0 94 100Z" stroke-width="2.4"/>
+    <path d="M136.01 141.01A5 5 0 1 0 146.01 141.01A5 5 0 1 0 136.01 141.01Z" stroke-width="2.4"/>
+    <path d="M53.99 141.01A5 5 0 1 0 63.99 141.01A5 5 0 1 0 53.99 141.01Z" stroke-width="2.4"/>
+    <path d="M53.99 58.99A5 5 0 1 0 63.99 58.99A5 5 0 1 0 53.99 58.99Z" stroke-width="2.4"/>
+    <path d="M136.01 58.99A5 5 0 1 0 146.01 58.99A5 5 0 1 0 136.01 58.99Z" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>Ruby jewel</b><code>11-ruby-jewel.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Winding crown</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M160 100Q166.43 108.75 157.96 115.53Q161.9 125.64 151.96 130Q153.15 140.79 142.43 142.43Q140.79 153.15 130 151.96Q125.64 161.9 115.53 157.96Q108.75 166.43 100 160Q91.25 166.43 84.47 157.96Q74.36 161.9 70 151.96Q59.21 153.15 57.57 142.43Q46.85 140.79 48.04 130Q38.1 125.64 42.04 115.53Q33.57 108.75 40 100Q33.57 91.25 42.04 84.47Q38.1 74.36 48.04 70Q46.85 59.21 57.57 57.57Q59.21 46.85 70 48.04Q74.36 38.1 84.47 42.04Q91.25 33.57 100 40Q108.75 33.57 115.53 42.04Q125.64 38.1 130 48.04Q140.79 46.85 142.43 57.57Q153.15 59.21 151.96 70Q161.9 74.36 157.96 84.47Q166.43 91.25 160 100Z" stroke-width="4"/>
+    <path d="M56 100A44 44 0 1 0 144 100A44 44 0 1 0 56 100Z" stroke-width="2.4"/>
+    <path d="M64 100A36 36 0 1 0 136 100A36 36 0 1 0 64 100Z" stroke-width="1.4"/>
+    <path d="M116 100L134 100M115.76 102.78L133.48 105.9M115.04 105.47L131.95 111.63M113.86 108L129.44 117M112.26 110.28L126.05 121.85M110.28 112.26L121.85 126.05M108 113.86L117 129.44M105.47 115.04L111.63 131.95M102.78 115.76L105.9 133.48M100 116L100 134M97.22 115.76L94.1 133.48M94.53 115.04L88.37 131.95M92 113.86L83 129.44M89.72 112.26L78.15 126.05M87.74 110.28L73.95 121.85M86.14 108L70.56 117M84.96 105.47L68.05 111.63M84.24 102.78L66.52 105.9M84 100L66 100M84.24 97.22L66.52 94.1M84.96 94.53L68.05 88.37M86.14 92L70.56 83M87.74 89.72L73.95 78.15M89.72 87.74L78.15 73.95M92 86.14L83 70.56M94.53 84.96L88.37 68.05M97.22 84.24L94.1 66.52M100 84L100 66M102.78 84.24L105.9 66.52M105.47 84.96L111.63 68.05M108 86.14L117 70.56M110.28 87.74L121.85 73.95M112.26 89.72L126.05 78.15M113.86 92L129.44 83M115.04 94.53L131.95 88.37M115.76 97.22L133.48 94.1" stroke-width="1"/>
+    <path d="M88 100A12 12 0 1 0 112 100A12 12 0 1 0 88 100Z" fill="currentColor"/>
+    <path d="M94 100A6 6 0 1 0 106 100A6 6 0 1 0 94 100Z" stroke-width="1.2"/>
+  </g>
+</svg>
+<figcaption><b>Winding crown</b><code>12-crown.svg</code></figcaption></figure>
+  </div>
+</section>
+<section>
+  <h2>Complications<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Chronograph</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M142.43 50.5L149.5 57.57L139.6 67.47L132.53 60.4Z" stroke-width="2.4"/>
+    <path d="M132.53 139.6L139.6 132.53L149.5 142.43L142.43 149.5Z" stroke-width="2.4"/>
+    <path d="M153 93H159Q162 93 162 96V104Q162 107 159 107H153Q150 107 150 104V96Q150 93 153 93Z" stroke-width="2.4"/>
+    <path d="M48 100A52 52 0 1 0 152 100A52 52 0 1 0 48 100Z" stroke-width="7"/>
+    <path d="M100 56L100 52M104.6 56.24L105.02 52.26M109.15 56.96L109.98 53.05M113.6 58.15L114.83 54.35M117.9 59.8L119.52 56.15M122 61.89L124 58.43M125.86 64.4L128.21 61.17M129.44 67.3L132.12 64.33M132.7 70.56L135.67 67.88M135.6 74.14L138.83 71.79M138.11 78L141.57 76M140.2 82.1L143.85 80.48M141.85 86.4L145.65 85.17M143.04 90.85L146.95 90.02M143.76 95.4L147.74 94.98M144 100L148 100M143.76 104.6L147.74 105.02M143.04 109.15L146.95 109.98M141.85 113.6L145.65 114.83M140.2 117.9L143.85 119.52M138.11 122L141.57 124M135.6 125.86L138.83 128.21M132.7 129.44L135.67 132.12M129.44 132.7L132.12 135.67M125.86 135.6L128.21 138.83M122 138.11L124 141.57M117.9 140.2L119.52 143.85M113.6 141.85L114.83 145.65M109.15 143.04L109.98 146.95M104.6 143.76L105.02 147.74M100 144L100 148M95.4 143.76L94.98 147.74M90.85 143.04L90.02 146.95M86.4 141.85L85.17 145.65M82.1 140.2L80.48 143.85M78 138.11L76 141.57M74.14 135.6L71.79 138.83M70.56 132.7L67.88 135.67M67.3 129.44L64.33 132.12M64.4 125.86L61.17 128.21M61.89 122L58.43 124M59.8 117.9L56.15 119.52M58.15 113.6L54.35 114.83M56.96 109.15L53.05 109.98M56.24 104.6L52.26 105.02M56 100L52 100M56.24 95.4L52.26 94.98M56.96 90.85L53.05 90.02M58.15 86.4L54.35 85.17M59.8 82.1L56.15 80.48M61.89 78L58.43 76M64.4 74.14L61.17 71.79M67.3 70.56L64.33 67.88M70.56 67.3L67.88 64.33M74.14 64.4L71.79 61.17M78 61.89L76 58.43M82.1 59.8L80.48 56.15M86.4 58.15L85.17 54.35M90.85 56.96L90.02 53.05M95.4 56.24L94.98 52.26" stroke-width="1"/>
+    <path d="M88 74A12 12 0 1 0 112 74A12 12 0 1 0 88 74ZM64 106A12 12 0 1 0 88 106A12 12 0 1 0 64 106ZM112 106A12 12 0 1 0 136 106A12 12 0 1 0 112 106Z" stroke-width="1.8"/>
+    <path d="M100 74L105.79 67.11M76 106L67.54 109.08M124 106L130.89 111.79" stroke-width="2.2"/>
+    <path d="M103 105.2L85 74.02" stroke-width="4"/>
+    <path d="M98 103.46L120 65.36" stroke-width="3"/>
+    <path d="M94 89.61L122 138.11" stroke-width="1.6"/>
+    <path d="M95.5 100A4.5 4.5 0 1 0 104.5 100A4.5 4.5 0 1 0 95.5 100Z" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>Chronograph</b><code>13-chronograph.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Moon phase</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M70 76Q70 82 76 82Q70 82 70 88Q70 82 64 82Q70 82 70 76Z" fill="currentColor"/>
+    <path d="M128 65Q128 70 133 70Q128 70 128 75Q128 70 123 70Q128 70 128 65Z" fill="currentColor"/>
+    <path d="M146 100Q146 104 150 104Q146 104 146 108Q146 104 142 104Q146 104 146 100Z" fill="currentColor"/>
+    <path d="M86 104.5Q86 108 89.5 108Q86 108 86 111.5Q86 108 82.5 108Q86 108 86 104.5Z" fill="currentColor"/>
+    <path d="M84 92A20 20 0 1 0 124 92A20 20 0 1 0 84 92Z" fill="currentColor"/>
+    <path d="M94 88A4 4 0 1 0 102 88A4 4 0 1 0 94 88ZM107 100A3 3 0 1 0 113 100A3 3 0 1 0 107 100Z" stroke-width="1.2"/>
+    <path d="M36 126A30 30 0 0 1 96 126Z" stroke-width="2.4"/>
+    <path d="M104 126A30 30 0 0 1 164 126Z" stroke-width="2.4"/>
+    <path d="M28 128A72 72 0 0 1 172 128Z" stroke-width="6"/>
+    <path d="M22 128L14 128M24.66 107.81L20.79 106.78M32.45 89L28.99 87M44.85 72.85L39.19 67.19M61 60.45L59 56.99M79.81 52.66L78.78 48.79M100 50L100 42M120.19 52.66L121.22 48.79M139 60.45L141 56.99M155.15 72.85L160.81 67.19M167.55 89L171.01 87M175.34 107.81L179.21 106.78M178 128L186 128" stroke-width="1.6"/>
+  </g>
+</svg>
+<figcaption><b>Moon phase</b><code>14-moon-phase.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Tourbillon</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M38 100A62 62 0 1 0 162 100A62 62 0 1 0 38 100Z" stroke-width="4"/>
+    <path d="M166 100L171.99 101.13L171.89 103.96L165.84 104.66L165.44 108.61L171.23 110.52L170.76 113.31L164.66 113.21L163.75 117.08L169.25 119.73L168.42 122.43L162.39 121.54L160.98 125.26L166.08 128.59L164.9 131.17L159.04 129.5L157.16 133L161.78 136.97L160.28 139.37L154.68 136.95L152.36 140.18L156.43 144.72L154.63 146.9L149.39 143.78L146.67 146.67L150.11 151.71L148.04 153.63L143.26 149.85L140.18 152.36L142.93 157.8L140.63 159.44L136.38 155.07L133 157.16L135.02 162.91L132.52 164.24L128.88 159.35L125.26 160.98L126.5 166.94L123.86 167.93L120.89 162.61L117.08 163.75L117.54 169.83L114.79 170.47L112.54 164.8L108.61 165.44L108.28 171.52L105.46 171.79L103.97 165.88L100 166L98.87 171.99L96.04 171.89L95.34 165.84L91.39 165.44L89.48 171.23L86.69 170.76L86.79 164.66L82.92 163.75L80.27 169.25L77.57 168.42L78.46 162.39L74.74 160.98L71.41 166.08L68.83 164.9L70.5 159.04L67 157.16L63.03 161.78L60.63 160.28L63.05 154.68L59.82 152.36L55.28 156.43L53.1 154.63L56.22 149.39L53.33 146.67L48.29 150.11L46.37 148.04L50.15 143.26L47.64 140.18L42.2 142.93L40.56 140.63L44.93 136.38L42.84 133L37.09 135.02L35.76 132.52L40.65 128.88L39.02 125.26L33.06 126.5L32.07 123.86L37.39 120.89L36.25 117.08L30.17 117.54L29.53 114.79L35.2 112.54L34.56 108.61L28.48 108.28L28.21 105.46L34.12 103.97L34 100L28.01 98.87L28.11 96.04L34.16 95.34L34.56 91.39L28.77 89.48L29.24 86.69L35.34 86.79L36.25 82.92L30.75 80.27L31.58 77.57L37.61 78.46L39.02 74.74L33.92 71.41L35.1 68.83L40.96 70.5L42.84 67L38.22 63.03L39.72 60.63L45.32 63.05L47.64 59.82L43.57 55.28L45.37 53.1L50.61 56.22L53.33 53.33L49.89 48.29L51.96 46.37L56.74 50.15L59.82 47.64L57.07 42.2L59.37 40.56L63.62 44.93L67 42.84L64.98 37.09L67.48 35.76L71.12 40.65L74.74 39.02L73.5 33.06L76.14 32.07L79.11 37.39L82.92 36.25L82.46 30.17L85.21 29.53L87.46 35.2L91.39 34.56L91.72 28.48L94.54 28.21L96.03 34.12L100 34L101.13 28.01L103.96 28.11L104.66 34.16L108.61 34.56L110.52 28.77L113.31 29.24L113.21 35.34L117.08 36.25L119.73 30.75L122.43 31.58L121.54 37.61L125.26 39.02L128.59 33.92L131.17 35.1L129.5 40.96L133 42.84L136.97 38.22L139.37 39.72L136.95 45.32L140.18 47.64L144.72 43.57L146.9 45.37L143.78 50.61L146.67 53.33L151.71 49.89L153.63 51.96L149.85 56.74L152.36 59.82L157.8 57.07L159.44 59.37L155.07 63.62L157.16 67L162.91 64.98L164.24 67.48L159.35 71.12L160.98 74.74L166.94 73.5L167.93 76.14L162.61 79.11L163.75 82.92L169.83 82.46L170.47 85.21L164.8 87.46L165.44 91.39L171.52 91.72L171.79 94.54L165.88 96.03Z" stroke-width="1.2"/>
+    <path d="M66 100A34 34 0 1 0 134 100A34 34 0 1 0 66 100Z" stroke-width="3"/>
+    <path d="M104 100L104.09 100.54L104.11 101.1L104.04 101.67L103.9 102.25L103.67 102.82L103.36 103.36L102.97 103.87L102.5 104.33L101.96 104.73L101.36 105.07L100.7 105.33L100 105.5L99.27 105.58L98.51 105.55L97.75 105.43L97 105.2L96.27 104.86L95.58 104.42L94.94 103.88L94.37 103.25L93.88 102.54L93.48 101.75L93.18 100.9L93 100L92.94 99.07L93 98.12L93.19 97.18L93.5 96.25L93.95 95.36L94.52 94.52L95.21 93.75L96 93.07L96.89 92.49L97.86 92.03L98.91 91.7L100 91.5L101.13 91.45L102.26 91.55L103.4 91.8L104.5 92.21L105.55 92.76L106.54 93.46L107.44 94.29L108.23 95.25L108.89 96.32L109.42 97.48L109.79 98.71L110 100L110.04 101.32L109.9 102.65L109.59 103.97L109.09 105.25L108.43 106.47L107.6 107.6L106.62 108.63L105.5 109.53L104.26 110.28L102.91 110.87L101.48 111.28L100 111.5L98.48 111.53L96.96 111.35L95.46 110.97L94 110.39L92.62 109.62L91.34 108.66L90.18 107.53L89.17 106.25L88.34 104.83L87.68 103.3L87.24 101.68L87 100L86.99 98.29L87.2 96.57L87.64 94.88L88.31 93.25L89.19 91.71L90.28 90.28L91.55 88.99L93 87.88L94.59 86.95L96.31 86.24L98.12 85.75L100 85.5L101.91 85.5L103.82 85.75L105.69 86.26L107.5 87.01L109.21 88L110.78 89.22L112.2 90.64L113.42 92.25L114.44 94.02L115.21 95.92L115.74 97.93L116 100L115.99 102.1L115.7 104.21L115.13 106.27L114.29 108.25L113.19 110.12L111.84 111.84L110.27 113.39L108.5 114.72L106.55 115.82L104.46 116.66L102.27 117.23L100 117.5L97.7 117.47L95.41 117.15L93.16 116.51L91 115.59L88.97 114.38L87.1 112.9L85.42 111.19L83.98 109.25L82.79 107.13L81.89 104.85L81.29 102.46L81 100L81.04 97.5L81.41 95.02L82.1 92.59L83.11 90.25L84.43 88.05L86.03 86.03L87.9 84.23L90 82.68L92.3 81.41L94.76 80.44L97.34 79.8L100 79.5L102.69 79.55L105.37 79.96L107.99 80.71L110.5 81.81L112.86 83.24L115.03 84.97L116.96 86.99L118.62 89.25L119.98 91.72L121.01 94.37L121.69 97.14L122 100" stroke-width="1.4"/>
+    <path d="M100 100L100 38M100 100L153.69 131M100 100L46.31 131" stroke-width="6"/>
+    <path d="M93 38A7 7 0 1 0 107 38A7 7 0 1 0 93 38Z" stroke-width="2.4"/>
+    <path d="M146.69 131A7 7 0 1 0 160.69 131A7 7 0 1 0 146.69 131Z" stroke-width="2.4"/>
+    <path d="M39.31 131A7 7 0 1 0 53.31 131A7 7 0 1 0 39.31 131Z" stroke-width="2.4"/>
+    <path d="M89 100A11 11 0 1 0 111 100A11 11 0 1 0 89 100Z" stroke-width="2.4"/>
+    <path d="M95 100A5 5 0 1 0 105 100A5 5 0 1 0 95 100Z" fill="currentColor"/>
+  </g>
+</svg>
+<figcaption><b>Tourbillon</b><code>15-tourbillon.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Power reserve</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M37.98 105.43A66 66 0 0 1 162.02 105.43" stroke-width="6"/>
+    <path d="M51.14 110.21L41.74 106.79M54.97 102L49.77 99M60.17 94.58L55.57 90.72M66.58 88.17L62.72 83.57M74 82.97L71 77.77M82.21 79.14L80.16 73.5M90.97 76.79L89.93 70.88M100 76L100 66M109.03 76.79L110.07 70.88M117.79 79.14L119.84 73.5M126 82.97L129 77.77M133.42 88.17L137.28 83.57M139.83 94.58L144.43 90.72M145.03 102L150.23 99M148.86 110.21L158.26 106.79" stroke-width="1.8"/>
+    <path d="M59.05 110.47A5 5 0 1 0 69.05 110.47A5 5 0 1 0 59.05 110.47Z" fill="currentColor"/>
+    <path d="M130.95 110.47A5 5 0 1 0 140.95 110.47A5 5 0 1 0 130.95 110.47Z" fill="currentColor"/>
+    <path d="M100 128L128 79.5" stroke-width="4.5"/>
+    <path d="M92 128A8 8 0 1 0 108 128A8 8 0 1 0 92 128Z" stroke-width="2.4"/>
+    <path d="M44 160H156" stroke-width="4"/>
+  </g>
+</svg>
+<figcaption><b>Power reserve</b><code>16-power-reserve.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>World time</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 100A70 70 0 1 0 170 100A70 70 0 1 0 30 100Z" stroke-width="3"/>
+    <path d="M100 36L100 30M116.56 38.18L118.12 32.39M132 44.57L135 39.38M145.25 54.75L149.5 50.5M155.43 68L160.62 65M161.82 83.44L167.61 81.88M164 100L170 100M161.82 116.56L167.61 118.12M155.43 132L160.62 135M145.25 145.25L149.5 149.5M132 155.43L135 160.62M116.56 161.82L118.12 167.61M100 164L100 170M83.44 161.82L81.88 167.61M68 155.43L65 160.62M54.75 145.25L50.5 149.5M44.57 132L39.38 135M38.18 116.56L32.39 118.12M36 100L30 100M38.18 83.44L32.39 81.88M44.57 68L39.38 65M54.75 54.75L50.5 50.5M68 44.57L65 39.38M83.44 38.18L81.88 32.39" stroke-width="1.8"/>
+    <path d="M78 100A22 50 0 1 0 122 100A22 50 0 1 0 78 100ZM50 100H150M56 76H144M56 124H144" stroke-width="2.5"/>
+    <path d="M50 100A50 50 0 1 0 150 100A50 50 0 1 0 50 100Z" stroke-width="5"/>
+    <path d="M100 100L139.85 52.51" stroke-width="3.5"/>
+    <path d="M95 100A5 5 0 1 0 105 100A5 5 0 1 0 95 100Z" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>World time</b><code>17-world-time.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Alarm</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M42 66A26 26 0 0 1 80 40Z" stroke-width="2.4"/>
+    <path d="M120 40A26 26 0 0 1 158 66Z" stroke-width="2.4"/>
+    <path d="M100 54V38M86 38H114" stroke-width="4"/>
+    <path d="M66 160L54 178M134 160L146 178" stroke-width="5"/>
+    <path d="M50 112A50 50 0 1 0 150 112A50 50 0 1 0 50 112Z" stroke-width="7"/>
+    <path d="M100 76L100 70M118 80.82L121 75.63M131.18 94L136.37 91M136 112L142 112M131.18 130L136.37 133M118 143.18L121 148.37M100 148L100 154M82 143.18L79 148.37M68.82 130L63.63 133M64 112L58 112M68.82 94L63.63 91M82 80.82L79 75.63" stroke-width="2.2"/>
+    <path d="M103.21 115.83L85.86 95.15" stroke-width="4.5"/>
+    <path d="M94.8 115L127.71 96" stroke-width="3.5"/>
+    <path d="M100 112L89.74 140.19" stroke-width="2"/>
+    <path d="M95.5 112A4.5 4.5 0 1 0 104.5 112A4.5 4.5 0 1 0 95.5 112Z" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>Alarm</b><code>18-alarm.svg</code></figcaption></figure>
+  </div>
+</section>
+<section>
+  <h2>Atelier<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Loupe</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M114.3 128.44L128.44 114.3L173.7 159.56L159.56 173.7Z" stroke-width="2.4"/>
+    <path d="M120.67 133.39L133.39 120.67M126.32 139.05L139.05 126.32M131.98 144.71L144.71 131.98M137.64 150.36L150.36 137.64M143.29 156.02L156.02 143.29M148.95 161.68L161.68 148.95M154.6 167.33L167.33 154.6" stroke-width="1.2"/>
+    <path d="M116 116L124 124" stroke-width="8"/>
+    <path d="M58 70C62 58 70 52 80 48" stroke-width="3"/>
+    <path d="M34 82A48 48 0 1 0 130 82A48 48 0 1 0 34 82Z" stroke-width="8"/>
+  </g>
+</svg>
+<figcaption><b>Loupe</b><code>19-loupe.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Screwdriver</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-45 100 100)">
+    <path d="M100 112V178" stroke-width="4"/>
+    <path d="M97 178H103" stroke-width="2"/>
+    <path d="M92 40H108Q114 40 114 46V108Q114 114 108 114H92Q86 114 86 108V46Q86 40 92 40Z" stroke-width="2.4"/>
+    <path d="M94 50V104M100 50V104M106 50V104" stroke-width="1.3"/>
+    <path d="M90 30A10 10 0 1 0 110 30A10 10 0 1 0 90 30Z" stroke-width="4"/>
+    <path d="M94 30A6 6 0 1 0 106 30A6 6 0 1 0 94 30Z" stroke-width="2.4"/>
+  </g>
+</svg>
+<figcaption><b>Screwdriver</b><code>20-screwdriver.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Tweezers</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M94 24C86 80 80 140 86 178" stroke-width="6"/>
+    <path d="M106 24C114 80 120 140 114 178" stroke-width="6"/>
+    <path d="M88 80L112 80" stroke-width="1.4"/>
+    <path d="M94 16H106Q112 16 112 22V30Q112 36 106 36H94Q88 36 88 30V22Q88 16 94 16Z" stroke-width="2.4"/>
+    <path d="M96 182A4 4 0 1 0 104 182A4 4 0 1 0 96 182Z" fill="currentColor"/>
+  </g>
+</svg>
+<figcaption><b>Tweezers</b><code>21-tweezers.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Watch box</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 104L50 40H150L166 104Z" stroke-width="2.4"/>
+    <path d="M30 104H170V164H30Z" stroke-width="5"/>
+    <path d="M30 120H170" stroke-width="1.4"/>
+    <path d="M94 128H106Q108 128 108 130V138Q108 140 106 140H94Q92 140 92 138V130Q92 128 94 128Z" stroke-width="2.4"/>
+    <path d="M82 80A18 18 0 1 0 118 80A18 18 0 1 0 82 80Z" stroke-width="3"/>
+    <path d="M100 80L91.34 75M100 80L111.26 73.5" stroke-width="2.2"/>
+  </g>
+</svg>
+<figcaption><b>Watch box</b><code>22-watch-box.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Buckle</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M80 16H120Q126 16 126 22V58Q126 64 120 64H80Q74 64 74 58V22Q74 16 80 16Z" stroke-width="2.4"/>
+    <path d="M80 136H120Q126 136 126 142V178Q126 184 120 184H80Q74 184 74 178V142Q74 136 80 136Z" stroke-width="2.4"/>
+    <path d="M78 32H122M78 48H122M78 152H122M78 168H122" stroke-width="1.4"/>
+    <path d="M74 70H126Q144 70 144 88V112Q144 130 126 130H74Q56 130 56 112V88Q56 70 74 70Z" stroke-width="7"/>
+    <path d="M56 100H144" stroke-width="4"/>
+    <path d="M100 100V60" stroke-width="5"/>
+  </g>
+</svg>
+<figcaption><b>Buckle</b><code>23-buckle.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Case back</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 100A66 66 0 1 0 166 100A66 66 0 1 0 34 100Z" stroke-width="6"/>
+    <path d="M94 27L106 27L106 41L94 41Z" stroke-width="2.4"/>
+    <path d="M160.22 58.3L166.22 68.7L154.1 75.7L148.1 65.3Z" stroke-width="2.4"/>
+    <path d="M166.22 131.3L160.22 141.7L148.1 134.7L154.1 124.3Z" stroke-width="2.4"/>
+    <path d="M106 173L94 173L94 159L106 159Z" stroke-width="2.4"/>
+    <path d="M39.78 141.7L33.78 131.3L45.9 124.3L51.9 134.7Z" stroke-width="2.4"/>
+    <path d="M33.78 68.7L39.78 58.3L51.9 65.3L45.9 75.7Z" stroke-width="2.4"/>
+    <path d="M44 100A56 56 0 1 0 156 100A56 56 0 1 0 44 100Z" stroke-width="1.4"/>
+    <path d="M124 100L129.94 101.88L129.28 106.54L123.05 106.7L120.78 112L124.99 116.6L122.08 120.31L116.61 117.32L112 120.78L113.34 126.87L108.97 128.63L105.72 123.31L100 124L98.12 129.94L93.46 129.28L93.3 123.05L88 120.78L83.4 124.99L79.69 122.08L82.68 116.61L79.22 112L73.13 113.34L71.37 108.97L76.69 105.72L76 100L70.06 98.12L70.72 93.46L76.95 93.3L79.22 88L75.01 83.4L77.92 79.69L83.39 82.68L88 79.22L86.66 73.13L91.03 71.37L94.28 76.69L100 76L101.88 70.06L106.54 70.72L106.7 76.95L112 79.22L116.6 75.01L120.31 77.92L117.32 83.39L120.78 88L126.87 86.66L128.63 91.03L123.31 94.28ZM82 100A18 18 0 1 0 118 100A18 18 0 1 0 82 100Z" stroke-width="1.4"/>
+    <path d="M96 100A4 4 0 1 0 104 100A4 4 0 1 0 96 100Z" fill="currentColor"/>
+    <path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke-width="4"/>
+  </g>
+</svg>
+<figcaption><b>Case back</b><code>24-case-back.svg</code></figcaption></figure>
+  </div>
+</section>
+  </div>
+</main>
+<script>
+  const press = (sel, b) => document.querySelectorAll(sel).forEach((x) => x.setAttribute('aria-pressed', x === b));
+  document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => { document.body.classList.toggle('alt', b.dataset.v === 'b'); press('[data-v]', b); });
+  document.querySelectorAll('[data-s]').forEach((b) => b.onclick = () => { document.body.dataset.size = b.dataset.s; press('[data-s]', b); });
+</script>
+</body>
+</html>

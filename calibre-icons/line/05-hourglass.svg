@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Hourglass</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M78 64H122C118 80 104 88 100 96C96 88 82 80 78 64Z" fill="currentColor"/>
+    <path d="M72 158C76 138 92 132 100 128C108 132 124 138 128 158Z" fill="currentColor"/>
+    <path d="M100 98V128" stroke-width="1.6"/>
+    <path d="M66 40C66 78 92 88 92 100C92 112 66 122 66 160M134 40C134 78 108 88 108 100C108 112 134 122 134 160" stroke-width="3"/>
+    <path d="M54 38V162M146 38V162" stroke-width="6"/>
+    <path d="M44 22H156Q160 22 160 26V34Q160 38 156 38H44Q40 38 40 34V26Q40 22 44 22Z" stroke-width="2.4"/>
+    <path d="M44 162H156Q160 162 160 166V174Q160 178 156 178H44Q40 178 40 174V166Q40 162 44 162Z" stroke-width="2.4"/>
+  </g>
+</svg>

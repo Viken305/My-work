@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Dive watch</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M153 92H159Q162 92 162 95V105Q162 108 159 108H153Q150 108 150 105V95Q150 92 153 92Z" stroke-width="2.4"/>
+    <path d="M146 84L156 88V112L146 116Z" stroke-width="2.4"/>
+    <path d="M44 100A56 56 0 1 0 156 100A56 56 0 1 0 44 100Z" stroke-width="9"/>
+    <path d="M126 54.97L130 48.04M145.03 74L151.96 70M152 100L160 100M145.03 126L151.96 130M126 145.03L130 151.96M100 152L100 160M74 145.03L70 151.96M54.97 126L48.04 130M48 100L40 100M54.97 74L48.04 70M74 54.97L70 48.04" stroke-width="2"/>
+    <path d="M100 50L92 38L108 38Z" fill="currentColor"/>
+    <path d="M58 100A42 42 0 1 0 142 100A42 42 0 1 0 58 100Z" stroke-width="3"/>
+    <path d="M100 70L100 62M130 100L138 100M100 130L100 138M70 100L62 100" fill="currentColor"/>
+    <path d="M100 70L100 62M130 100L138 100M100 130L100 138M70 100L62 100" stroke-width="5"/>
+    <path d="M105.2 103L80.95 89" stroke-width="6"/>
+    <path d="M92.48 102.74L130.07 89.06" stroke-width="4.5"/>
+    <path d="M95 100A5 5 0 1 0 105 100A5 5 0 1 0 95 100Z" stroke-width="2.4"/>
+  </g>
+</svg>

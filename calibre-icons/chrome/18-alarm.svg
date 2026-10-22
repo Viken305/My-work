@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Alarm</title>
+  <defs>
+    <linearGradient id="cal-alarm-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-alarm-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-alarm-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="cal-alarm-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="cal-alarm-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="cal-alarm-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="cal-alarm-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M42 66A26 26 0 0 1 80 40Z" fill="url(#cal-alarm-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M120 40A26 26 0 0 1 158 66Z" fill="url(#cal-alarm-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M100 54V38M86 38H114" stroke="#0d1015" stroke-width="6.4"/><path d="M100 54V38M86 38H114" stroke="url(#cal-alarm-chrome)" stroke-width="4"/><path d="M100 54V38M86 38H114" stroke="#fff" stroke-width="0.88" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M66 160L54 178M134 160L146 178" stroke="#0d1015" stroke-width="7.4"/><path d="M66 160L54 178M134 160L146 178" stroke="url(#cal-alarm-chrome)" stroke-width="5"/><path d="M66 160L54 178M134 160L146 178" stroke="#fff" stroke-width="1.10" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M50 112A50 50 0 1 0 150 112A50 50 0 1 0 50 112Z" stroke="#0d1015" stroke-width="9.4"/><path d="M50 112A50 50 0 1 0 150 112A50 50 0 1 0 50 112Z" stroke="url(#cal-alarm-chrome)" stroke-width="7"/><path d="M50 112A50 50 0 1 0 150 112A50 50 0 1 0 50 112Z" stroke="#fff" stroke-width="1.54" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 76L100 70M118 80.82L121 75.63M131.18 94L136.37 91M136 112L142 112M131.18 130L136.37 133M118 143.18L121 148.37M100 148L100 154M82 143.18L79 148.37M68.82 130L63.63 133M64 112L58 112M68.82 94L63.63 91M82 80.82L79 75.63" stroke="url(#cal-alarm-chrome)" stroke-width="2.2"/>
+    <path d="M103.21 115.83L85.86 95.15" stroke="#08112e" stroke-width="6.5"/><path d="M103.21 115.83L85.86 95.15" stroke="url(#cal-alarm-blue)" stroke-width="4.5"/><path d="M103.21 115.83L85.86 95.15" stroke="#d6e6ff" stroke-width="0.90" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M94.8 115L127.71 96" stroke="#08112e" stroke-width="5.5"/><path d="M94.8 115L127.71 96" stroke="url(#cal-alarm-blue)" stroke-width="3.5"/><path d="M94.8 115L127.71 96" stroke="#d6e6ff" stroke-width="0.70" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+    <path d="M100 112L89.74 140.19" stroke="url(#cal-alarm-sand)" stroke-width="2"/>
+    <path d="M95.5 112A4.5 4.5 0 1 0 104.5 112A4.5 4.5 0 1 0 95.5 112Z" fill="url(#cal-alarm-plate)" stroke="#0d1015" stroke-width="1.6"/>
+  </g>
+</svg>

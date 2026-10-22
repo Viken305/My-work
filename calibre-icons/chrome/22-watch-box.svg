@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Watch box</title>
+  <defs>
+    <linearGradient id="cal-watch-box-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-watch-box-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-watch-box-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="cal-watch-box-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="cal-watch-box-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="cal-watch-box-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="cal-watch-box-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 104L50 40H150L166 104Z" fill="url(#cal-watch-box-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M48 98L60 50H140L152 98Z" fill="url(#cal-watch-box-sky)"/>
+    <path d="M30 104H170V164H30Z" stroke="#0d1015" stroke-width="7.4"/><path d="M30 104H170V164H30Z" stroke="url(#cal-watch-box-chrome)" stroke-width="5"/><path d="M30 104H170V164H30Z" stroke="#fff" stroke-width="1.10" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M30 120H170" stroke="url(#cal-watch-box-chrome)" stroke-width="1.4"/>
+    <path d="M94 128H106Q108 128 108 130V138Q108 140 106 140H94Q92 140 92 138V130Q92 128 94 128Z" fill="url(#cal-watch-box-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M82 80A18 18 0 1 0 118 80A18 18 0 1 0 82 80Z" stroke="#0d1015" stroke-width="5.4"/><path d="M82 80A18 18 0 1 0 118 80A18 18 0 1 0 82 80Z" stroke="url(#cal-watch-box-chrome)" stroke-width="3"/><path d="M82 80A18 18 0 1 0 118 80A18 18 0 1 0 82 80Z" stroke="#fff" stroke-width="0.80" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M100 80L91.34 75M100 80L111.26 73.5" stroke="#08112e" stroke-width="4.2"/><path d="M100 80L91.34 75M100 80L111.26 73.5" stroke="url(#cal-watch-box-blue)" stroke-width="2.2"/><path d="M100 80L91.34 75M100 80L111.26 73.5" stroke="#d6e6ff" stroke-width="0.60" stroke-opacity=".7" transform="translate(-.4 -.6)"/>
+  </g>
+</svg>

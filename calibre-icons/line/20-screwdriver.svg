@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Screwdriver</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-45 100 100)">
+    <path d="M100 112V178" stroke-width="4"/>
+    <path d="M97 178H103" stroke-width="2"/>
+    <path d="M92 40H108Q114 40 114 46V108Q114 114 108 114H92Q86 114 86 108V46Q86 40 92 40Z" stroke-width="2.4"/>
+    <path d="M94 50V104M100 50V104M106 50V104" stroke-width="1.3"/>
+    <path d="M90 30A10 10 0 1 0 110 30A10 10 0 1 0 90 30Z" stroke-width="4"/>
+    <path d="M94 30A6 6 0 1 0 106 30A6 6 0 1 0 94 30Z" stroke-width="2.4"/>
+  </g>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Moon phase</title>
+  <defs>
+    <linearGradient id="cal-moon-phase-chrome" gradientUnits="userSpaceOnUse" x1="0" y1="14" x2="34" y2="190"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-moon-phase-plate" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="190" y2="200"><stop offset="0" stop-color="#ffffff"/><stop offset="0.16" stop-color="#c9d0d9"/><stop offset="0.3" stop-color="#6b7584"/><stop offset="0.38" stop-color="#2a313b"/><stop offset="0.46" stop-color="#e8edf2"/><stop offset="0.62" stop-color="#a3acb8"/><stop offset="0.78" stop-color="#4a5361"/><stop offset="0.9" stop-color="#cfd6de"/><stop offset="1" stop-color="#f5f7f9"/></linearGradient>
+    <linearGradient id="cal-moon-phase-blue" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#9cc1ff"/><stop offset="0.3" stop-color="#3f6fd8"/><stop offset="0.5" stop-color="#163587"/><stop offset="0.72" stop-color="#4b7de6"/><stop offset="1" stop-color="#12286a"/></linearGradient>
+    <radialGradient id="cal-moon-phase-ruby" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset="0.45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
+    <linearGradient id="cal-moon-phase-sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c9"/><stop offset="0.5" stop-color="#e0b864"/><stop offset="1" stop-color="#9d7330"/></linearGradient>
+    <linearGradient id="cal-moon-phase-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b56b8"/><stop offset="1" stop-color="#0b1a4a"/></linearGradient>
+    <radialGradient id="cal-moon-phase-glass" cx=".3" cy=".25" r=".9"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".5"/><stop offset=".55" stop-color="#9fbde6" stop-opacity=".14"/><stop offset="1" stop-color="#7fa6d9" stop-opacity=".04"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 126A64 64 0 0 1 164 126Z" fill="url(#cal-moon-phase-sky)"/>
+    <path d="M70 76Q70 82 76 82Q70 82 70 88Q70 82 64 82Q70 82 70 76Z" fill="url(#cal-moon-phase-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M128 65Q128 70 133 70Q128 70 128 75Q128 70 123 70Q128 70 128 65Z" fill="url(#cal-moon-phase-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M146 100Q146 104 150 104Q146 104 146 108Q146 104 142 104Q146 104 146 100Z" fill="url(#cal-moon-phase-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M86 104.5Q86 108 89.5 108Q86 108 86 111.5Q86 108 82.5 108Q86 108 86 104.5Z" fill="url(#cal-moon-phase-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M84 92A20 20 0 1 0 124 92A20 20 0 1 0 84 92Z" fill="url(#cal-moon-phase-sand)" stroke="#3b2a10" stroke-width="1"/>
+    <path d="M94 88A4 4 0 1 0 102 88A4 4 0 1 0 94 88ZM107 100A3 3 0 1 0 113 100A3 3 0 1 0 107 100Z" stroke="url(#cal-moon-phase-chrome)" stroke-width="1.2"/>
+    <path d="M36 126A30 30 0 0 1 96 126Z" fill="url(#cal-moon-phase-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M104 126A30 30 0 0 1 164 126Z" fill="url(#cal-moon-phase-plate)" stroke="#0d1015" stroke-width="1.6"/>
+    <path d="M28 128A72 72 0 0 1 172 128Z" stroke="#0d1015" stroke-width="8.4"/><path d="M28 128A72 72 0 0 1 172 128Z" stroke="url(#cal-moon-phase-chrome)" stroke-width="6"/><path d="M28 128A72 72 0 0 1 172 128Z" stroke="#fff" stroke-width="1.32" stroke-opacity=".8" transform="translate(-.5 -.7)"/>
+    <path d="M22 128L14 128M24.66 107.81L20.79 106.78M32.45 89L28.99 87M44.85 72.85L39.19 67.19M61 60.45L59 56.99M79.81 52.66L78.78 48.79M100 50L100 42M120.19 52.66L121.22 48.79M139 60.45L141 56.99M155.15 72.85L160.81 67.19M167.55 89L171.01 87M175.34 107.81L179.21 106.78M178 128L186 128" stroke="url(#cal-moon-phase-chrome)" stroke-width="1.6"/>
+  </g>
+</svg>
