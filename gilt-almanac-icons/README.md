@@ -50,3 +50,20 @@ node src/build.mjs
 ```
 
 This regenerates both folders and `preview.html`.
+
+## Rebuilding the Dribbble shots
+
+The shots are rendered from `dribbble/build-shots.mjs` with Playwright (Chromium). From this folder, run:
+
+```sh
+node src/build.mjs                                   # SVGs first; the shots use them
+NODE_PATH=$(npm root -g) node dribbble/build-shots.mjs
+```
+
+This writes the 1600 × 1200 PNGs and @2x PNGs into `dribbble/`. To make the @2x JPEGs used for upload (Pillow required):
+
+```sh
+python3 -c "from PIL import Image; import glob, os
+for f in glob.glob('dribbble/*@2x.png'):
+    Image.open(f).convert('RGB').save(f[:-4] + '.jpg', quality=92, optimize=True); os.remove(f)"
+```
