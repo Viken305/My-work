@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Pour-over</title>
+  <defs>
+    <filter id="riso-pour-over-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-pour-over-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-pour-over-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-pour-over-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M72 126 C66 148 70 168 84 178 H116 C130 168 134 148 128 126 Z" fill="url(#riso-pour-over-dots)"/>
+    <path d="M54 50 H146 L120 110 H80 Z" fill="#ff48b0"/>
+    <circle cx="100" cy="134" r="3.5" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-pour-over-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="48" y="44" width="104" height="8" rx="2" fill="#0078bf" stroke="none"/>
+    <path d="M74 60 L88 104 M100 60 V104 M126 60 L112 104"/>
+    <rect x="78" y="110" width="44" height="8" rx="2" fill="#0078bf" stroke="none"/>
+    <path d="M68 123 H132"/>
+    <path d="M71 124 C65 148 69 168 84 178 H116 C131 168 135 148 129 124"/>
+    <path d="M70 152 C70 164 75 172 84 178 H116 C125 172 130 164 130 152 Z" fill="#0078bf" stroke="none"/>
+    <path d="M130 134 C146 134 148 160 127 164" stroke-width="6"/>
+  </g>
+</svg>

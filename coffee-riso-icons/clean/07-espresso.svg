@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Espresso</title>
+  <defs>
+    <clipPath id="riso-espresso-tint-area">
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z"/>
+    </clipPath>
+    <clipPath id="riso-espresso-pink-area">
+    <ellipse cx="100" cy="153" rx="66" ry="14"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <ellipse cx="100" cy="153" rx="66" ry="14" fill="#ff48b0"/>
+    <path d="M84 80 C76 68 92 62 84 48 M116 80 C108 68 124 62 116 48" fill="none" stroke="#ff48b0" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="153" rx="66" ry="14"/>
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z"/>
+    <ellipse cx="100" cy="94" rx="42" ry="7" fill="#0078bf" stroke="none"/>
+    <path d="M141 104 C162 102 162 130 134 130" stroke-width="6"/>
+    <path d="M100 78 C92 64 108 58 100 42" stroke-width="6"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-espresso-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="153" rx="66" ry="14"/>
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z"/>
+    <ellipse cx="100" cy="94" rx="42" ry="7" fill="#0054a5" stroke="none"/>
+    <path d="M141 104 C162 102 162 130 134 130" stroke-width="6"/>
+    <path d="M100 78 C92 64 108 58 100 42" stroke-width="6"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-espresso-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="153" rx="66" ry="14"/>
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z"/>
+    <ellipse cx="100" cy="94" rx="42" ry="7" fill="#002284" stroke="none"/>
+    <path d="M141 104 C162 102 162 130 134 130" stroke-width="6"/>
+    <path d="M100 78 C92 64 108 58 100 42" stroke-width="6"/>
+  </g>
+</svg>

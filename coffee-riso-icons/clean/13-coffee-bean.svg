@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Coffee bean</title>
+  <defs>
+    <clipPath id="riso-coffee-bean-tint-area">
+    <ellipse cx="116" cy="116" rx="46" ry="62" transform="rotate(-30 116 116)"/>
+    </clipPath>
+    <clipPath id="riso-coffee-bean-pink-area">
+    <ellipse cx="96" cy="96" rx="46" ry="62" transform="rotate(-30 96 96)"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <ellipse cx="116" cy="116" rx="46" ry="62" transform="rotate(-30 116 116)" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <ellipse cx="96" cy="96" rx="46" ry="62" transform="rotate(-30 96 96)" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="96" cy="96" rx="46" ry="62" transform="rotate(-30 96 96)"/>
+    <path d="M96 36 C80 68 112 124 96 156" transform="rotate(-30 96 96)" stroke-width="6"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-coffee-bean-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="96" cy="96" rx="46" ry="62" transform="rotate(-30 96 96)"/>
+    <path d="M96 36 C80 68 112 124 96 156" transform="rotate(-30 96 96)" stroke-width="6"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-coffee-bean-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="96" cy="96" rx="46" ry="62" transform="rotate(-30 96 96)"/>
+    <path d="M96 36 C80 68 112 124 96 156" transform="rotate(-30 96 96)" stroke-width="6"/>
+  </g>
+</svg>

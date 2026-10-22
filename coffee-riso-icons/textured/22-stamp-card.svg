@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Loyalty card</title>
+  <defs>
+    <filter id="riso-stamp-card-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-stamp-card-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-stamp-card-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-stamp-card-ink-p)" transform="translate(2.2 -1.6)">
+    <rect x="34" y="56" width="132" height="90" rx="8" fill="url(#riso-stamp-card-dots)"/>
+    <circle cx="62" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="88" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="114" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="140" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="62" cy="122" r="11" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-stamp-card-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="34" y="56" width="132" height="90" rx="8"/>
+    <path d="M48 70 H98" stroke-width="4"/>
+    <circle cx="62" cy="92" r="11" stroke-width="3"/>
+    <circle cx="88" cy="92" r="11" stroke-width="3"/>
+    <circle cx="114" cy="92" r="11" stroke-width="3"/>
+    <circle cx="140" cy="92" r="11" stroke-width="3"/>
+    <circle cx="62" cy="122" r="11" stroke-width="3"/>
+    <circle cx="88" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <circle cx="114" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <path d="M140 110 L143.2 116.6 L150.5 117.7 L145.2 122.8 L146.5 130 L140 126.6 L133.5 130 L134.8 122.8 L129.5 117.7 L136.8 116.6 Z" fill="#0078bf" stroke="none"/>
+    <path d="M58 92 L61 95 L67 88 M84 92 L87 95 L93 88 M110 92 L113 95 L119 88 M136 92 L139 95 L145 88 M58 122 L61 125 L67 118" stroke-width="2.5"/>
+  </g>
+</svg>

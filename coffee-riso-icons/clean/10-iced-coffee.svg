@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Iced coffee</title>
+  <defs>
+    <clipPath id="riso-iced-coffee-tint-area">
+    <path d="M63.3 72 H136.7 L135.5 90 H64.5 Z"/>
+    </clipPath>
+    <clipPath id="riso-iced-coffee-pink-area">
+    <path d="M64.5 90 H135.5 L130 168 H70 Z"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <path d="M63.3 72 H136.7 L135.5 90 H64.5 Z" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <path d="M64.5 90 H135.5 L130 168 H70 Z" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M126 24 L114 50 V150" stroke-width="6"/>
+    <path d="M62 54 H138 L130 168 H70 Z"/>
+    <rect x="76" y="100" width="20" height="20" rx="2" transform="rotate(10 86 110)" stroke-width="3.5"/>
+    <rect x="96" y="112" width="18" height="18" rx="2" transform="rotate(-8 105 121)" stroke-width="3.5"/>
+    <rect x="80" y="134" width="18" height="18" rx="2" transform="rotate(-4 89 143)" stroke-width="3.5"/>
+    <path d="M64.5 90 H135.5" stroke-width="3"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-iced-coffee-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M126 24 L114 50 V150" stroke-width="6"/>
+    <path d="M62 54 H138 L130 168 H70 Z"/>
+    <rect x="76" y="100" width="20" height="20" rx="2" transform="rotate(10 86 110)" stroke-width="3.5"/>
+    <rect x="96" y="112" width="18" height="18" rx="2" transform="rotate(-8 105 121)" stroke-width="3.5"/>
+    <rect x="80" y="134" width="18" height="18" rx="2" transform="rotate(-4 89 143)" stroke-width="3.5"/>
+    <path d="M64.5 90 H135.5" stroke-width="3"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-iced-coffee-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M126 24 L114 50 V150" stroke-width="6"/>
+    <path d="M62 54 H138 L130 168 H70 Z"/>
+    <rect x="76" y="100" width="20" height="20" rx="2" transform="rotate(10 86 110)" stroke-width="3.5"/>
+    <rect x="96" y="112" width="18" height="18" rx="2" transform="rotate(-8 105 121)" stroke-width="3.5"/>
+    <rect x="80" y="134" width="18" height="18" rx="2" transform="rotate(-4 89 143)" stroke-width="3.5"/>
+    <path d="M64.5 90 H135.5" stroke-width="3"/>
+  </g>
+</svg>

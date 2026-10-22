@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Portafilter</title>
+  <defs>
+    <filter id="riso-portafilter-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-portafilter-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-portafilter-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-portafilter-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M66 150 H112 C112 166 102 174 89 174 C76 174 66 166 66 150 Z" fill="url(#riso-portafilter-dots)"/>
+    <path d="M54 80 H122 V96 C122 112 108 122 88 122 C68 122 54 112 54 96 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-portafilter-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="50" y="72" width="76" height="8" rx="2" fill="#0078bf" stroke="none"/>
+    <path d="M54 80 V96 C54 112 68 122 88 122 C108 122 122 112 122 96 V80"/>
+    <path d="M122 84 H170 C176 84 180 88 180 94 C180 100 176 104 170 104 H122 Z" fill="#0078bf" stroke="none"/>
+    <path d="M80 122 V132 M96 122 V132" stroke-width="5"/>
+    <path d="M80 138 C78 141 78 143 80 144 C82 143 82 141 80 138 Z M96 140 C94 143 94 145 96 146 C98 145 98 143 96 140 Z" fill="#0078bf"/>
+    <path d="M66 150 H112 C112 166 102 174 89 174 C76 174 66 166 66 150 Z"/>
+    <path d="M112 154 C124 154 124 166 110 166" stroke-width="4"/>
+  </g>
+</svg>

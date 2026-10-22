@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Roast level</title>
+  <defs>
+    <clipPath id="riso-roast-gauge-tint-area">
+    <path d="M30 140 A70 70 0 0 1 65 79.4 L77 100.2 A46 46 0 0 0 54 140 Z"/>
+    </clipPath>
+    <clipPath id="riso-roast-gauge-pink-area">
+    <path d="M65 79.4 A70 70 0 0 1 135 79.4 L123 100.2 A46 46 0 0 0 77 100.2 Z"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <path d="M30 140 A70 70 0 0 1 65 79.4 L77 100.2 A46 46 0 0 0 54 140 Z" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <path d="M65 79.4 A70 70 0 0 1 135 79.4 L123 100.2 A46 46 0 0 0 77 100.2 Z" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M135 79.4 A70 70 0 0 1 170 140 L146 140 A46 46 0 0 0 123 100.2 Z" fill="#0078bf" stroke="none"/>
+    <path d="M30 140 A70 70 0 0 1 170 140 M54 140 A46 46 0 0 1 146 140"/>
+    <path d="M100 140 L100 84" stroke-width="5"/>
+    <circle cx="100" cy="140" r="9" fill="#0078bf" stroke="none"/>
+    <path d="M24 140 H176"/>
+    <ellipse cx="42" cy="160" rx="8" ry="5.5" transform="rotate(-15 42 160)" stroke-width="3"/>
+    <ellipse cx="158" cy="160" rx="8" ry="5.5" transform="rotate(15 158 160)" fill="#0078bf" stroke="none"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-roast-gauge-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M135 79.4 A70 70 0 0 1 170 140 L146 140 A46 46 0 0 0 123 100.2 Z" fill="#0054a5" stroke="none"/>
+    <path d="M30 140 A70 70 0 0 1 170 140 M54 140 A46 46 0 0 1 146 140"/>
+    <path d="M100 140 L100 84" stroke-width="5"/>
+    <circle cx="100" cy="140" r="9" fill="#0054a5" stroke="none"/>
+    <path d="M24 140 H176"/>
+    <ellipse cx="42" cy="160" rx="8" ry="5.5" transform="rotate(-15 42 160)" stroke-width="3"/>
+    <ellipse cx="158" cy="160" rx="8" ry="5.5" transform="rotate(15 158 160)" fill="#0054a5" stroke="none"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-roast-gauge-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M135 79.4 A70 70 0 0 1 170 140 L146 140 A46 46 0 0 0 123 100.2 Z" fill="#002284" stroke="none"/>
+    <path d="M30 140 A70 70 0 0 1 170 140 M54 140 A46 46 0 0 1 146 140"/>
+    <path d="M100 140 L100 84" stroke-width="5"/>
+    <circle cx="100" cy="140" r="9" fill="#002284" stroke="none"/>
+    <path d="M24 140 H176"/>
+    <ellipse cx="42" cy="160" rx="8" ry="5.5" transform="rotate(-15 42 160)" stroke-width="3"/>
+    <ellipse cx="158" cy="160" rx="8" ry="5.5" transform="rotate(15 158 160)" fill="#002284" stroke="none"/>
+  </g>
+</svg>

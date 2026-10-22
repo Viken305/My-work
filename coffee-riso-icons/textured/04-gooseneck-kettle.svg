@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Gooseneck kettle</title>
+  <defs>
+    <filter id="riso-gooseneck-kettle-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-gooseneck-kettle-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-gooseneck-kettle-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-gooseneck-kettle-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="100" cy="176" rx="56" ry="6" fill="url(#riso-gooseneck-kettle-dots)"/>
+    <path d="M58 98 C58 80 74 70 100 70 C126 70 142 80 142 98 V156 C142 164 136 168 128 168 H72 C64 168 58 164 58 156 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-gooseneck-kettle-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 98 C58 80 74 70 100 70 C126 70 142 80 142 98 V156 C142 164 136 168 128 168 H72 C64 168 58 164 58 156 Z"/>
+    <path d="M76 70 C78 57 122 57 124 70 Z" fill="#0078bf" stroke="none"/>
+    <circle cx="100" cy="54" r="5" fill="#0078bf" stroke="none"/>
+    <path d="M60 142 C40 142 34 122 38 102 C41 88 38 74 24 66" stroke-width="6"/>
+    <path d="M142 86 C168 86 170 142 142 148" stroke-width="7"/>
+    <circle cx="100" cy="118" r="13"/>
+    <path d="M100 118 L107 111" stroke-width="3"/>
+    <path d="M58 154 H142" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Roast bag</title>
+  <defs>
+    <filter id="riso-roast-bag-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-roast-bag-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-roast-bag-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-roast-bag-ink-p)" transform="translate(2.2 -1.6)">
+    <rect x="54" y="38" width="92" height="20" rx="2" fill="url(#riso-roast-bag-dots)"/>
+    <path d="M58 60 H142 L148 170 H52 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-roast-bag-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="38" width="92" height="20" rx="2" stroke-width="3"/>
+    <rect x="48" y="55" width="104" height="7" rx="3.5" fill="#0078bf" stroke="none"/>
+    <path d="M58 62 L52 170 H148 L142 62"/>
+    <circle cx="100" cy="80" r="5" stroke-width="3"/>
+    <rect x="74" y="96" width="52" height="54" rx="2" stroke-width="3.5"/>
+    <ellipse cx="100" cy="116" rx="9" ry="12" transform="rotate(-20 100 116)" stroke-width="3"/>
+    <path d="M101 104 C96 112 104 120 99 128" stroke-width="2.5"/>
+    <path d="M84 140 H116" stroke-width="3"/>
+  </g>
+</svg>

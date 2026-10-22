@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Coffee cherry</title>
+  <defs>
+    <clipPath id="riso-coffee-cherry-tint-area">
+    <path d="M122 84 C132 58 154 50 170 54 C162 72 144 88 122 84 Z"/>
+    <path d="M66 138 C48 122 32 122 24 130 C38 146 54 148 66 138 Z"/>
+    </clipPath>
+    <clipPath id="riso-coffee-cherry-pink-area">
+    <circle cx="88" cy="130" r="12"/>
+    <circle cx="112" cy="126" r="12"/>
+    <circle cx="100" cy="148" r="12"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <path d="M122 84 C132 58 154 50 170 54 C162 72 144 88 122 84 Z" fill="#ffb3dc"/>
+    <path d="M66 138 C48 122 32 122 24 130 C38 146 54 148 66 138 Z" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <circle cx="88" cy="130" r="12" fill="#ff48b0"/>
+    <circle cx="112" cy="126" r="12" fill="#ff48b0"/>
+    <circle cx="100" cy="148" r="12" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 164 C70 132 110 100 164 46" stroke-width="5"/>
+    <path d="M122 84 C132 58 154 50 170 54 C162 72 144 88 122 84 Z" stroke-width="3"/>
+    <path d="M126 80 C138 70 150 62 166 56" stroke-width="2.5"/>
+    <path d="M66 138 C48 122 32 122 24 130 C38 146 54 148 66 138 Z" stroke-width="3"/>
+    <path d="M62 136 C50 132 40 130 28 130" stroke-width="2.5"/>
+    <path d="M92 112 L90 118 M106 108 L110 114 M98 114 L100 136" stroke-width="3"/>
+    <path d="M78 136 A12 12 0 0 0 98 138" stroke-width="3"/>
+    <path d="M106 136 A12 12 0 0 0 124 128" stroke-width="3"/>
+    <path d="M90 156 A12 12 0 0 0 112 152" stroke-width="3"/>
+    <circle cx="88" cy="141" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="112" cy="137" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="100" cy="159" r="2" fill="#0078bf" stroke="none"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-coffee-cherry-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 164 C70 132 110 100 164 46" stroke-width="5"/>
+    <path d="M122 84 C132 58 154 50 170 54 C162 72 144 88 122 84 Z" stroke-width="3"/>
+    <path d="M126 80 C138 70 150 62 166 56" stroke-width="2.5"/>
+    <path d="M66 138 C48 122 32 122 24 130 C38 146 54 148 66 138 Z" stroke-width="3"/>
+    <path d="M62 136 C50 132 40 130 28 130" stroke-width="2.5"/>
+    <path d="M92 112 L90 118 M106 108 L110 114 M98 114 L100 136" stroke-width="3"/>
+    <path d="M78 136 A12 12 0 0 0 98 138" stroke-width="3"/>
+    <path d="M106 136 A12 12 0 0 0 124 128" stroke-width="3"/>
+    <path d="M90 156 A12 12 0 0 0 112 152" stroke-width="3"/>
+    <circle cx="88" cy="141" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="112" cy="137" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="100" cy="159" r="2" fill="#0054a5" stroke="none"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-coffee-cherry-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 164 C70 132 110 100 164 46" stroke-width="5"/>
+    <path d="M122 84 C132 58 154 50 170 54 C162 72 144 88 122 84 Z" stroke-width="3"/>
+    <path d="M126 80 C138 70 150 62 166 56" stroke-width="2.5"/>
+    <path d="M66 138 C48 122 32 122 24 130 C38 146 54 148 66 138 Z" stroke-width="3"/>
+    <path d="M62 136 C50 132 40 130 28 130" stroke-width="2.5"/>
+    <path d="M92 112 L90 118 M106 108 L110 114 M98 114 L100 136" stroke-width="3"/>
+    <path d="M78 136 A12 12 0 0 0 98 138" stroke-width="3"/>
+    <path d="M106 136 A12 12 0 0 0 124 128" stroke-width="3"/>
+    <path d="M90 156 A12 12 0 0 0 112 152" stroke-width="3"/>
+    <circle cx="88" cy="141" r="2" fill="#002284" stroke="none"/>
+    <circle cx="112" cy="137" r="2" fill="#002284" stroke="none"/>
+    <circle cx="100" cy="159" r="2" fill="#002284" stroke="none"/>
+  </g>
+</svg>

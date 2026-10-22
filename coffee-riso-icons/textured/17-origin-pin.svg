@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Origin pin</title>
+  <defs>
+    <filter id="riso-origin-pin-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-origin-pin-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-origin-pin-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-origin-pin-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="100" cy="170" rx="62" ry="13" fill="url(#riso-origin-pin-dots)"/>
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-origin-pin-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="170" rx="62" ry="13" stroke-width="3"/>
+    <ellipse cx="100" cy="170" rx="38" ry="7" stroke-width="3"/>
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z"/>
+    <path fill-rule="evenodd" d="M79 88 A21 21 0 1 0 121 88 A21 21 0 1 0 79 88 Z M92.75 91.38 A8 11 -25 1 0 107.25 84.62 A8 11 -25 1 0 92.75 91.38 Z" fill="#0078bf" stroke="none"/>
+    <path d="M102.5 78.5 C96 86 104 91 97.5 97.5" stroke-width="2.5"/>
+  </g>
+</svg>

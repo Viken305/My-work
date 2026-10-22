@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Roast bag</title>
+  <defs>
+    <clipPath id="riso-roast-bag-tint-area">
+    <rect x="54" y="38" width="92" height="20" rx="2"/>
+    </clipPath>
+    <clipPath id="riso-roast-bag-pink-area">
+    <path d="M58 60 H142 L148 170 H52 Z"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <rect x="54" y="38" width="92" height="20" rx="2" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <path d="M58 60 H142 L148 170 H52 Z" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="38" width="92" height="20" rx="2" stroke-width="3"/>
+    <rect x="48" y="55" width="104" height="7" rx="3.5" fill="#0078bf" stroke="none"/>
+    <path d="M58 62 L52 170 H148 L142 62"/>
+    <circle cx="100" cy="80" r="5" stroke-width="3"/>
+    <rect x="74" y="96" width="52" height="54" rx="2" stroke-width="3.5"/>
+    <ellipse cx="100" cy="116" rx="9" ry="12" transform="rotate(-20 100 116)" stroke-width="3"/>
+    <path d="M101 104 C96 112 104 120 99 128" stroke-width="2.5"/>
+    <path d="M84 140 H116" stroke-width="3"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-roast-bag-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="38" width="92" height="20" rx="2" stroke-width="3"/>
+    <rect x="48" y="55" width="104" height="7" rx="3.5" fill="#0054a5" stroke="none"/>
+    <path d="M58 62 L52 170 H148 L142 62"/>
+    <circle cx="100" cy="80" r="5" stroke-width="3"/>
+    <rect x="74" y="96" width="52" height="54" rx="2" stroke-width="3.5"/>
+    <ellipse cx="100" cy="116" rx="9" ry="12" transform="rotate(-20 100 116)" stroke-width="3"/>
+    <path d="M101 104 C96 112 104 120 99 128" stroke-width="2.5"/>
+    <path d="M84 140 H116" stroke-width="3"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-roast-bag-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="38" width="92" height="20" rx="2" stroke-width="3"/>
+    <rect x="48" y="55" width="104" height="7" rx="3.5" fill="#002284" stroke="none"/>
+    <path d="M58 62 L52 170 H148 L142 62"/>
+    <circle cx="100" cy="80" r="5" stroke-width="3"/>
+    <rect x="74" y="96" width="52" height="54" rx="2" stroke-width="3.5"/>
+    <ellipse cx="100" cy="116" rx="9" ry="12" transform="rotate(-20 100 116)" stroke-width="3"/>
+    <path d="M101 104 C96 112 104 120 99 128" stroke-width="2.5"/>
+    <path d="M84 140 H116" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Constellation</title>
+  <defs>
+    <linearGradient id="alm-constellation-gold" gradientUnits="userSpaceOnUse" x1="18" y1="12" x2="182" y2="188"><stop offset="0" stop-color="#fbe8b4"/><stop offset="0.28" stop-color="#e2b85c"/><stop offset="0.5" stop-color="#a37632"/><stop offset="0.72" stop-color="#f1d58b"/><stop offset="1" stop-color="#b98b3d"/></linearGradient>
+    <mask id="alm-constellation-m0" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><rect x="-20" y="-20" width="240" height="240" fill="#fff"/><path d="M21 66A9 9 0 1 0 39 66A9 9 0 1 0 21 66Z" fill="#000"/><path d="M47 70A9 9 0 1 0 65 70A9 9 0 1 0 47 70Z" fill="#000"/><path d="M71 84A9 9 0 1 0 89 84A9 9 0 1 0 71 84Z" fill="#000"/><path d="M91 100A9 9 0 1 0 109 100A9 9 0 1 0 91 100Z" fill="#000"/><path d="M95 134A9 9 0 1 0 113 134A9 9 0 1 0 95 134Z" fill="#000"/><path d="M137 142A9 9 0 1 0 155 142A9 9 0 1 0 137 142Z" fill="#000"/><path d="M145 106A9 9 0 1 0 163 106A9 9 0 1 0 145 106Z" fill="#000"/><path d="M149 38A9 9 0 1 0 167 38A9 9 0 1 0 149 38Z" fill="#000"/></mask>
+    <mask id="alm-constellation-m1" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><rect x="-20" y="-20" width="240" height="240" fill="#fff"/><path d="M21 66A9 9 0 1 0 39 66A9 9 0 1 0 21 66Z" fill="#000"/><path d="M47 70A9 9 0 1 0 65 70A9 9 0 1 0 47 70Z" fill="#000"/><path d="M71 84A9 9 0 1 0 89 84A9 9 0 1 0 71 84Z" fill="#000"/><path d="M91 100A9 9 0 1 0 109 100A9 9 0 1 0 91 100Z" fill="#000"/><path d="M95 134A9 9 0 1 0 113 134A9 9 0 1 0 95 134Z" fill="#000"/><path d="M137 142A9 9 0 1 0 155 142A9 9 0 1 0 137 142Z" fill="#000"/><path d="M145 106A9 9 0 1 0 163 106A9 9 0 1 0 145 106Z" fill="#000"/><path d="M149 38A9 9 0 1 0 167 38A9 9 0 1 0 149 38Z" fill="#000"/></mask>
+  </defs>
+  <g fill="none" stroke="url(#alm-constellation-gold)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M84 38A74 74 0 1 0 232 38A74 74 0 1 0 84 38Z" stroke-width="1" stroke-dasharray="1 6"/>
+    <path d="M30 38A128 128 0 1 0 286 38A128 128 0 1 0 30 38Z" stroke-width="1" stroke-dasharray="1 6"/>
+    <path d="M30 66L56 70L80 84L100 100L104 134L146 142L154 106L100 100" stroke-width="1.6" mask="url(#alm-constellation-m0)"/>
+    <path d="M154 106L158 38" stroke-width="1.2" mask="url(#alm-constellation-m1)" stroke-dasharray="3 5"/>
+    <path d="M30 59Q31.26 64.74 37 66Q31.26 67.26 30 73Q28.74 67.26 23 66Q28.74 64.74 30 59Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M56 62Q57.44 68.56 64 70Q57.44 71.44 56 78Q54.56 71.44 48 70Q54.56 68.56 56 62Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M80 76Q81.44 82.56 88 84Q81.44 85.44 80 92Q78.56 85.44 72 84Q78.56 82.56 80 76Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M100 91Q101.62 98.38 109 100Q101.62 101.62 100 109Q98.38 101.62 91 100Q98.38 98.38 100 91Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M104 126Q105.44 132.56 112 134Q105.44 135.44 104 142Q102.56 135.44 96 134Q102.56 132.56 104 126Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M146 133Q147.62 140.38 155 142Q147.62 143.62 146 151Q144.38 143.62 137 142Q144.38 140.38 146 133Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M154 96Q155.8 104.2 164 106Q155.8 107.8 154 116Q152.2 107.8 144 106Q152.2 104.2 154 96Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M158 25Q159.56 36.44 171 38Q159.56 39.56 158 51Q156.44 39.56 145 38Q156.44 36.44 158 25Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M153 38A5 5 0 1 0 163 38A5 5 0 1 0 153 38Z" stroke-width="1.2"/>
+    <path d="M38.6 128A1.4 1.4 0 1 0 41.4 128A1.4 1.4 0 1 0 38.6 128Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M68.6 160A1.4 1.4 0 1 0 71.4 160A1.4 1.4 0 1 0 68.6 160Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M126.6 64A1.4 1.4 0 1 0 129.4 64A1.4 1.4 0 1 0 126.6 64Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M176.6 88A1.4 1.4 0 1 0 179.4 88A1.4 1.4 0 1 0 176.6 88Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M182.6 170A1.4 1.4 0 1 0 185.4 170A1.4 1.4 0 1 0 182.6 170Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M22.6 30A1.4 1.4 0 1 0 25.4 30A1.4 1.4 0 1 0 22.6 30Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M94.6 30A1.4 1.4 0 1 0 97.4 30A1.4 1.4 0 1 0 94.6 30Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M128.6 178A1.4 1.4 0 1 0 131.4 178A1.4 1.4 0 1 0 128.6 178Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+    <path d="M58.6 112A1.4 1.4 0 1 0 61.4 112A1.4 1.4 0 1 0 58.6 112Z" fill="url(#alm-constellation-gold)" stroke="none"/>
+  </g>
+</svg>

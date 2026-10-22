@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Croissant</title>
+  <defs>
+    <clipPath id="riso-croissant-tint-area">
+    <ellipse cx="100" cy="154" rx="66" ry="9"/>
+    </clipPath>
+    <clipPath id="riso-croissant-pink-area">
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <ellipse cx="100" cy="154" rx="66" ry="9" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z"/>
+    <path d="M54 104 C58 112 58 118 56 122 M78 80 C81 98 81 116 78 132 M100 72 C102 92 102 114 100 134 M122 80 C119 98 119 116 122 132 M146 104 C142 112 142 118 144 122" stroke-width="3.5"/>
+    <path d="M88 92 L90 96 M110 100 L112 104 M66 108 L68 112 M132 110 L134 106" stroke-width="2.5"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-croissant-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z"/>
+    <path d="M54 104 C58 112 58 118 56 122 M78 80 C81 98 81 116 78 132 M100 72 C102 92 102 114 100 134 M122 80 C119 98 119 116 122 132 M146 104 C142 112 142 118 144 122" stroke-width="3.5"/>
+    <path d="M88 92 L90 96 M110 100 L112 104 M66 108 L68 112 M132 110 L134 106" stroke-width="2.5"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-croissant-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z"/>
+    <path d="M54 104 C58 112 58 118 56 122 M78 80 C81 98 81 116 78 132 M100 72 C102 92 102 114 100 134 M122 80 C119 98 119 116 122 132 M146 104 C142 112 142 118 144 122" stroke-width="3.5"/>
+    <path d="M88 92 L90 96 M110 100 L112 104 M66 108 L68 112 M132 110 L134 106" stroke-width="2.5"/>
+  </g>
+</svg>
