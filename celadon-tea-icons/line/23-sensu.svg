@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Folding fan</title>
+  <defs>
+    <clipPath id="cel-sensu-c0"><path d="M100 160L26 96A100 100 0 0 1 174 96Z"/></clipPath>
+    <clipPath id="cel-sensu-c1"><path d="M100 160L26 96A100 100 0 0 1 174 96Z"/></clipPath>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 160L26 96A100 100 0 0 1 174 96Z" stroke-width="1.6"/>
+    <path d="M44 106C62 96 74 112 92 100C110 88 124 106 144 94C152 90 158 92 162 96" stroke-width="2.4" clip-path="url(#cel-sensu-c0)"/>
+    <path d="M58 82C74 74 84 86 100 78C116 70 128 82 142 76" stroke-width="2.4" clip-path="url(#cel-sensu-c1)"/>
+    <path d="M100 160L58 114A56 56 0 0 1 142 114Z" stroke-width="1.6"/>
+    <path d="M100 160L34.39 84.53M100 160L48.5 74.28M100 160L64.16 66.64M100 160L80.92 61.84M100 160L100 60M100 160L119.08 61.84M100 160L135.84 66.64M100 160L151.5 74.28M100 160L165.61 84.53" stroke-width="1.2"/>
+    <path d="M94 160A6 6 0 1 0 106 160A6 6 0 1 0 94 160Z" stroke-width="1.6"/>
+    <path d="M100 160L26 96A100 100 0 0 1 174 96Z" stroke-width="2.6"/>
+    <path d="M58 114A56 56 0 0 1 142 114" stroke-width="2"/>
+  </g>
+</svg>

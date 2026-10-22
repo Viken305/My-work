@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Folding fan</title>
+  <defs>
+    <linearGradient id="cel-sensu-clay" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c9a3"/><stop offset="1" stop-color="#b88b60"/></linearGradient>
+    <radialGradient id="cel-sensu-paper" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#fff6e2"/><stop offset=".55" stop-color="#f4dfb4"/><stop offset="1" stop-color="#d9b679"/></radialGradient>
+    <radialGradient id="cel-sensu-bamboo" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#f6e7bd"/><stop offset=".55" stop-color="#dcc283"/><stop offset="1" stop-color="#a8873e"/></radialGradient>
+    <radialGradient id="cel-sensu-lacquer" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#4a3a36"/><stop offset=".55" stop-color="#1c1414"/><stop offset="1" stop-color="#070505"/></radialGradient>
+    <clipPath id="cel-sensu-c0"><path d="M100 160L26 96A100 100 0 0 1 174 96Z"/></clipPath>
+    <clipPath id="cel-sensu-c1"><path d="M100 160L26 96A100 100 0 0 1 174 96Z"/></clipPath>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <g><path d="M100 160L26 96A100 100 0 0 1 174 96Z" fill="url(#cel-sensu-paper)"/></g>
+    <path d="M44 106C62 96 74 112 92 100C110 88 124 106 144 94C152 90 158 92 162 96" stroke="#2f56a8" stroke-width="3.5" clip-path="url(#cel-sensu-c0)"/>
+    <path d="M58 82C74 74 84 86 100 78C116 70 128 82 142 76" stroke="#2f56a8" stroke-width="2.4" clip-path="url(#cel-sensu-c1)"/>
+    <g><path d="M100 160L58 114A56 56 0 0 1 142 114Z" fill="url(#cel-sensu-bamboo)"/></g>
+    <path d="M100 160L34.39 84.53M100 160L48.5 74.28M100 160L64.16 66.64M100 160L80.92 61.84M100 160L100 60M100 160L119.08 61.84M100 160L135.84 66.64M100 160L151.5 74.28M100 160L165.61 84.53" stroke="#3a2a1f" stroke-width="1.2"/>
+    <g><path d="M94 160A6 6 0 1 0 106 160A6 6 0 1 0 94 160Z" fill="url(#cel-sensu-lacquer)"/></g>
+    <path d="M100 160L26 96A100 100 0 0 1 174 96Z" stroke="#3a2a1f" stroke-width="2.6"/>
+    <path d="M58 114A56 56 0 0 1 142 114" stroke="#3a2a1f" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Tea tin</title>
+  <defs>
+    <linearGradient id="cel-tea-tin-clay" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c9a3"/><stop offset="1" stop-color="#b88b60"/></linearGradient>
+    <radialGradient id="cel-tea-tin-vermilion" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#f48a6a"/><stop offset=".55" stop-color="#d4442a"/><stop offset="1" stop-color="#8e1f10"/></radialGradient>
+    <radialGradient id="cel-tea-tin-shino" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#fffaf0"/><stop offset=".55" stop-color="#efe2cc"/><stop offset="1" stop-color="#cfb594"/></radialGradient>
+    <radialGradient id="cel-tea-tin-matcha" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#c9e08a"/><stop offset=".55" stop-color="#8cb043"/><stop offset="1" stop-color="#4f7020"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <g><path d="M56 52H144V156C144 166 56 166 56 156Z" fill="url(#cel-tea-tin-vermilion)"/></g>
+    <g><path d="M52 36C52 30 148 30 148 36V58C148 64 52 64 52 58Z" fill="url(#cel-tea-tin-vermilion)"/></g>
+    <g><path d="M56 82H144V136H56Z" fill="url(#cel-tea-tin-shino)"/></g>
+    <g><path d="M84.68 120.86C85.91 106.77 101.23 93.91 115.32 95.14C114.09 109.23 98.77 122.09 84.68 120.86Z" fill="url(#cel-tea-tin-matcha)"/></g>
+    <path d="M86.98 118.93L113.02 97.07" stroke="#3a2a1f" stroke-width="1.2"/>
+    <path d="M66 94V128" stroke="#fff" stroke-opacity=".78" stroke-width="3"/>
+    <path d="M64 62V76" stroke="#fff" stroke-opacity=".78" stroke-width="3"/>
+    <path d="M64 142V150" stroke="#fff" stroke-opacity=".78" stroke-width="3"/>
+    <path d="M56 52H144V156C144 166 56 166 56 156Z" stroke="#3a2a1f" stroke-width="2.6"/>
+    <path d="M52 36C52 30 148 30 148 36V58C148 64 52 64 52 58Z" stroke="#3a2a1f" stroke-width="2.6"/>
+    <path d="M56 82H144M56 136H144" stroke="#3a2a1f" stroke-width="2"/>
+    <path d="M84.68 120.86C85.91 106.77 101.23 93.91 115.32 95.14C114.09 109.23 98.77 122.09 84.68 120.86Z" stroke="#3a2a1f" stroke-width="1.6"/>
+  </g>
+</svg>

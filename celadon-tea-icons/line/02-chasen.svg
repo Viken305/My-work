@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Whisk</title>
+  <defs>
+    
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M84 86C58 102 50 140 62 172H138C150 140 142 102 116 86Z" stroke-width="1.6"/>
+    <path d="M86 30C86 24 114 24 114 30V88H86Z" stroke-width="1.6"/>
+    <path d="M100 92C84 112 80 140 84 170M100 92C116 112 120 140 116 170M100 92V170M100 92C72 110 64 140 70 170M100 92C128 110 136 140 130 170" stroke-width="1.4"/>
+    <path d="M86 116A14 18 0 1 0 114 116A14 18 0 1 0 86 116Z" stroke-width="1.6"/>
+    <path d="M88 104C92 118 92 128 90 132M112 104C108 118 108 128 110 132" stroke-width="1.2"/>
+    <path d="M86 58H114" stroke-width="2"/>
+    <path d="M84 86C58 102 50 140 62 172H138C150 140 142 102 116 86Z" stroke-width="2.6"/>
+    <path d="M86 30C86 24 114 24 114 30V88H86Z" stroke-width="2.6"/>
+  </g>
+</svg>

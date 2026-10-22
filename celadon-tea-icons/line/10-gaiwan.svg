@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Gaiwan</title>
+  <defs>
+    
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M26 152A74 16 0 1 0 174 152A74 16 0 1 0 26 152Z" stroke-width="1.6"/>
+    <path d="M44 150A56 10 0 1 0 156 150A56 10 0 1 0 44 150Z" stroke-width="1.6"/>
+    <path d="M50 98H150C150 132 128 150 100 150C72 150 50 132 50 98Z" stroke-width="1.6"/>
+    <path d="M44 98C44 70 156 70 156 98Z" stroke-width="1.6"/>
+    <path d="M88 70A12 6 0 1 0 112 70A12 6 0 1 0 88 70Z" stroke-width="1.6"/>
+    <path d="M56 116C80 124 120 124 144 116" stroke-width="2.4"/>
+    <path d="M52 90C80 82 120 82 148 90" stroke-width="2.4"/>
+    <path d="M26 152A74 16 0 1 0 174 152A74 16 0 1 0 26 152Z" stroke-width="2.6"/>
+    <path d="M50 98C50 132 72 150 100 150C128 150 150 132 150 98" stroke-width="2.6"/>
+    <path d="M44 98C44 70 156 70 156 98Z" stroke-width="2.6"/>
+    <path d="M88 70A12 6 0 1 0 112 70A12 6 0 1 0 88 70Z" stroke-width="2"/>
+  </g>
+</svg>

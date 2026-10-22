@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Bonsai</title>
+  <defs>
+    <linearGradient id="cel-bonsai-clay" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c9a3"/><stop offset="1" stop-color="#b88b60"/></linearGradient>
+    <radialGradient id="cel-bonsai-matcha" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#c9e08a"/><stop offset=".55" stop-color="#8cb043"/><stop offset="1" stop-color="#4f7020"/></radialGradient>
+    <radialGradient id="cel-bonsai-matchaLight" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#e2efb0"/><stop offset=".55" stop-color="#b5d46a"/><stop offset="1" stop-color="#7fa33b"/></radialGradient>
+    <radialGradient id="cel-bonsai-ruri" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#8fb0ea"/><stop offset=".55" stop-color="#2f56a8"/><stop offset="1" stop-color="#14295e"/></radialGradient>
+    <radialGradient id="cel-bonsai-ruriDark" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#3a5fae"/><stop offset=".55" stop-color="#1c3a80"/><stop offset="1" stop-color="#0c1d48"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M98 140C96 120 84 112 86 96C88 82 104 80 110 66M92 108C80 104 70 96 62 84M104 92C118 92 130 86 140 78" stroke="#3a2a1f" stroke-width="4"/>
+    <g><path d="M30 86C30 70 50 64 64 70C74 60 96 64 98 78C100 90 80 98 64 94C52 100 30 98 30 86Z" fill="url(#cel-bonsai-matcha)"/></g>
+    <g><path d="M110 74C108 58 130 50 144 58C160 54 176 66 170 80C166 92 146 94 134 88C122 92 112 86 110 74Z" fill="url(#cel-bonsai-matcha)"/></g>
+    <g><path d="M80 52C80 38 98 32 110 38C124 34 136 46 130 58C124 68 108 68 98 64C88 66 80 60 80 52Z" fill="url(#cel-bonsai-matchaLight)"/></g>
+    <g><path d="M50 140H150L144 168H56Z" fill="url(#cel-bonsai-ruri)"/></g>
+    <g><path d="M46 134H154V144H46Z" fill="url(#cel-bonsai-ruriDark)"/></g>
+    <path d="M60 150L64 162" stroke="#fff" stroke-opacity=".78" stroke-width="3"/>
+    <path d="M40 80C42 74 48 72 54 72" stroke="#fff" stroke-opacity=".78" stroke-width="2.4"/>
+    <path d="M120 66C122 62 128 60 134 60" stroke="#fff" stroke-opacity=".78" stroke-width="2.4"/>
+    <path d="M30 86C30 70 50 64 64 70C74 60 96 64 98 78C100 90 80 98 64 94C52 100 30 98 30 86Z" stroke="#3a2a1f" stroke-width="2.2"/>
+    <path d="M110 74C108 58 130 50 144 58C160 54 176 66 170 80C166 92 146 94 134 88C122 92 112 86 110 74Z" stroke="#3a2a1f" stroke-width="2.2"/>
+    <path d="M80 52C80 38 98 32 110 38C124 34 136 46 130 58C124 68 108 68 98 64C88 66 80 60 80 52Z" stroke="#3a2a1f" stroke-width="2.2"/>
+    <path d="M50 144H150L144 168H56Z" stroke="#3a2a1f" stroke-width="2.6"/>
+    <path d="M46 134H154V144H46Z" stroke="#3a2a1f" stroke-width="2.2"/>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Tea scoop</title>
+  <defs>
+    
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-28 100 100)">
+    <path d="M24 100C24 92 34 88 48 90L176 96C182 96 182 104 176 104L48 110C36 112 24 108 24 100Z" stroke-width="1.6"/>
+    <path d="M26 94A12 6 0 1 0 50 94A12 6 0 1 0 26 94Z" stroke-width="1.6"/>
+    <path d="M120 93V107" stroke-width="2.4"/>
+    <path d="M114 95C116 98 116 102 114 105" stroke-width="1.2"/>
+    <path d="M24 100C24 92 34 88 48 90L176 96C182 96 182 104 176 104L48 110C36 112 24 108 24 100Z" stroke-width="2.6"/>
+    <path d="M26 94A12 6 0 1 0 50 94A12 6 0 1 0 26 94Z" stroke-width="1.6"/>
+  </g>
+</svg>

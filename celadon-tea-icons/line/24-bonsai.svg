@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Bonsai</title>
+  <defs>
+    
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M98 140C96 120 84 112 86 96C88 82 104 80 110 66M92 108C80 104 70 96 62 84M104 92C118 92 130 86 140 78" stroke-width="4"/>
+    <path d="M30 86C30 70 50 64 64 70C74 60 96 64 98 78C100 90 80 98 64 94C52 100 30 98 30 86Z" stroke-width="1.6"/>
+    <path d="M110 74C108 58 130 50 144 58C160 54 176 66 170 80C166 92 146 94 134 88C122 92 112 86 110 74Z" stroke-width="1.6"/>
+    <path d="M80 52C80 38 98 32 110 38C124 34 136 46 130 58C124 68 108 68 98 64C88 66 80 60 80 52Z" stroke-width="1.6"/>
+    <path d="M50 140H150L144 168H56Z" stroke-width="1.6"/>
+    <path d="M46 134H154V144H46Z" stroke-width="1.6"/>
+    <path d="M30 86C30 70 50 64 64 70C74 60 96 64 98 78C100 90 80 98 64 94C52 100 30 98 30 86Z" stroke-width="2.2"/>
+    <path d="M110 74C108 58 130 50 144 58C160 54 176 66 170 80C166 92 146 94 134 88C122 92 112 86 110 74Z" stroke-width="2.2"/>
+    <path d="M80 52C80 38 98 32 110 38C124 34 136 46 130 58C124 68 108 68 98 64C88 66 80 60 80 52Z" stroke-width="2.2"/>
+    <path d="M50 144H150L144 168H56Z" stroke-width="2.6"/>
+    <path d="M46 134H154V144H46Z" stroke-width="2.2"/>
+  </g>
+</svg>

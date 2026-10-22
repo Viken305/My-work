@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Ladle</title>
+  <defs>
+    <linearGradient id="cel-hishaku-clay" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c9a3"/><stop offset="1" stop-color="#b88b60"/></linearGradient>
+    <radialGradient id="cel-hishaku-bamboo" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#f6e7bd"/><stop offset=".55" stop-color="#dcc283"/><stop offset="1" stop-color="#a8873e"/></radialGradient>
+    <radialGradient id="cel-hishaku-bambooDark" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#cfae68"/><stop offset=".55" stop-color="#a8873e"/><stop offset="1" stop-color="#6f5622"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <g><path d="M70 98L178 158L174 166L66 106Z" fill="url(#cel-hishaku-bamboo)"/></g>
+    <g><path d="M28 64H72V118C72 126 28 126 28 118Z" fill="url(#cel-hishaku-bamboo)"/></g>
+    <g><path d="M28 64A22 7 0 1 0 72 64A22 7 0 1 0 28 64Z" fill="url(#cel-hishaku-bambooDark)"/></g>
+    <path d="M28 84H72" stroke="#3a2a1f" stroke-width="1.8"/>
+    <path d="M36 72V112" stroke="#fff" stroke-opacity=".78" stroke-width="3"/>
+    <path d="M70 98L178 158L174 166L66 106Z" stroke="#3a2a1f" stroke-width="2.6"/>
+    <path d="M28 64H72V118C72 126 28 126 28 118Z" stroke="#3a2a1f" stroke-width="2.6"/>
+    <path d="M28 64A22 7 0 1 0 72 64A22 7 0 1 0 28 64Z" stroke="#3a2a1f" stroke-width="2"/>
+  </g>
+</svg>

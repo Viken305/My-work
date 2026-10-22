@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Tea leaf</title>
+  <defs>
+    <clipPath id="cel-tea-leaf-c0"><path d="M47.67 152.33C45.55 97.88 97.88 45.55 152.33 47.67C154.45 102.12 102.12 154.45 47.67 152.33Z"/></clipPath>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M47.67 152.33C45.55 97.88 97.88 45.55 152.33 47.67C154.45 102.12 102.12 154.45 47.67 152.33Z" stroke-width="1.6"/>
+    <path d="M55.52 144.48L144.48 55.52M71.72 128.28L69.1 98.4M71.72 128.28L41.83 125.67M88.69 111.31L86.07 81.43M88.69 111.31L58.8 108.7M105.66 94.34L103.04 64.46M105.66 94.34L75.77 91.73M122.63 77.37L120.01 47.49M122.63 77.37L92.74 74.76" stroke-width="1.6" clip-path="url(#cel-tea-leaf-c0)"/>
+    <path d="M47.67 152.33C45.55 97.88 97.88 45.55 152.33 47.67C154.45 102.12 102.12 154.45 47.67 152.33Z" stroke-width="2.6"/>
+    <path d="M48 152L36 164" stroke-width="3"/>
+  </g>
+</svg>

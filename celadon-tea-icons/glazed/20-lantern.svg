@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Paper lantern</title>
+  <defs>
+    <linearGradient id="cel-lantern-clay" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c9a3"/><stop offset="1" stop-color="#b88b60"/></linearGradient>
+    <radialGradient id="cel-lantern-paper" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#fff6e2"/><stop offset=".55" stop-color="#f4dfb4"/><stop offset="1" stop-color="#d9b679"/></radialGradient>
+    <radialGradient id="cel-lantern-lacquer" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#4a3a36"/><stop offset=".55" stop-color="#1c1414"/><stop offset="1" stop-color="#070505"/></radialGradient>
+    <clipPath id="cel-lantern-c0"><path d="M48 100C48 60 72 40 100 40C128 40 152 60 152 100C152 140 128 160 100 160C72 160 48 140 48 100Z"/></clipPath>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 12V30" stroke="#3a2a1f" stroke-width="2.4"/>
+    <g><path d="M48 100C48 60 72 40 100 40C128 40 152 60 152 100C152 140 128 160 100 160C72 160 48 140 48 100Z" fill="url(#cel-lantern-paper)"/></g>
+    <path d="M52 74C80 70 120 70 148 74M48 100H152M52 126C80 130 120 130 148 126M62 56C84 52 116 52 138 56M62 144C84 148 116 148 138 144" stroke="#3a2a1f" stroke-width="1.4" clip-path="url(#cel-lantern-c0)"/>
+    <g><path d="M72 28H128V42H72Z" fill="url(#cel-lantern-lacquer)"/></g>
+    <g><path d="M72 158H128V172H72Z" fill="url(#cel-lantern-lacquer)"/></g>
+    <path d="M82 100A18 18 0 1 0 118 100A18 18 0 1 0 82 100Z" stroke="#d4442a" stroke-width="4"/>
+    <path d="M100 100C96.03 92.77 100 89 100 89C100 89 103.97 92.77 100 100ZM100 100C108.25 100.17 109.53 105.5 109.53 105.5C109.53 105.5 104.27 107.06 100 100ZM100 100C95.73 107.06 90.47 105.5 90.47 105.5C90.47 105.5 91.75 100.17 100 100Z" stroke="#d4442a" stroke-width="2.4"/>
+    <path d="M100 172V188" stroke="#3a2a1f" stroke-width="2.4"/>
+    <path d="M66 70C62 84 62 108 66 126" stroke="#fff" stroke-opacity=".78" stroke-width="4"/>
+    <path d="M48 100C48 60 72 40 100 40C128 40 152 60 152 100C152 140 128 160 100 160C72 160 48 140 48 100Z" stroke="#3a2a1f" stroke-width="2.6"/>
+    <path d="M72 28H128V42H72Z" stroke="#3a2a1f" stroke-width="2.2"/>
+    <path d="M72 158H128V172H72Z" stroke="#3a2a1f" stroke-width="2.2"/>
+  </g>
+</svg>

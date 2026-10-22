@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Tea sprig</title>
+  <defs>
+    
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 180C100 140 98 110 100 66" stroke-width="3"/>
+    <path d="M33.09 99C59.55 91.18 92.45 110.18 98.91 137C72.45 144.82 39.55 125.82 33.09 99Z" stroke-width="1.6"/>
+    <path d="M101.09 119C107.55 92.18 140.45 73.18 166.91 81C160.45 107.82 127.55 126.82 101.09 119Z" stroke-width="1.6"/>
+    <path d="M100 72C88 59 88 33 100 20C112 33 112 59 100 72Z" stroke-width="1.6"/>
+    <path d="M38.03 101.85L93.97 134.15M106.03 116.15L161.97 83.85M100 68.1L100 23.9" stroke-width="1.4"/>
+    <path d="M33.09 99C59.55 91.18 92.45 110.18 98.91 137C72.45 144.82 39.55 125.82 33.09 99Z" stroke-width="2.6"/>
+    <path d="M101.09 119C107.55 92.18 140.45 73.18 166.91 81C160.45 107.82 127.55 126.82 101.09 119Z" stroke-width="2.6"/>
+    <path d="M100 72C88 59 88 33 100 20C112 33 112 59 100 72Z" stroke-width="2.6"/>
+  </g>
+</svg>

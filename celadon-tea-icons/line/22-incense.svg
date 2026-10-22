@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Incense</title>
+  <defs>
+    
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M108 66C96 54 118 44 106 30C98 20 108 12 114 8" stroke-width="1.8"/>
+    <path d="M108 66C122 56 104 46 116 36" stroke-width="1.8"/>
+    <path d="M84 154L108 66" stroke-width="2.8"/>
+    <path d="M105 66A3 3 0 1 0 111 66A3 3 0 1 0 105 66Z" stroke-width="1.6"/>
+    <path d="M36 158A64 16 0 1 0 164 158A64 16 0 1 0 36 158Z" stroke-width="1.6"/>
+    <path d="M52 156A48 9 0 1 0 148 156A48 9 0 1 0 52 156Z" stroke-width="1.6"/>
+    <path d="M77 154A7 4 0 1 0 91 154A7 4 0 1 0 77 154Z" stroke-width="1.6"/>
+    <path d="M36 158A64 16 0 1 0 164 158A64 16 0 1 0 36 158Z" stroke-width="2.6"/>
+    <path d="M36 160C40 172 160 172 164 160" stroke-width="2.2"/>
+    <path d="M77 154A7 4 0 1 0 91 154A7 4 0 1 0 77 154Z" stroke-width="1.6"/>
+  </g>
+</svg>

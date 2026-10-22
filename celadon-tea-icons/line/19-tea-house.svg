@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Tea house</title>
+  <defs>
+    <clipPath id="cel-tea-house-c0"><path d="M14 98C40 92 60 70 70 46H130C140 70 160 92 186 98L180 104C150 100 120 98 100 98C80 98 50 100 20 104Z"/></clipPath>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 92H150V156H50Z" stroke-width="1.6"/>
+    <path d="M76 112H124V156H76Z" stroke-width="1.6"/>
+    <path d="M100 112V156" stroke-width="2"/>
+    <path d="M14 98C40 92 60 70 70 46H130C140 70 160 92 186 98L180 104C150 100 120 98 100 98C80 98 50 100 20 104Z" stroke-width="1.6"/>
+    <path d="M40 92H160M56 80H144M64 66H136" stroke-width="1.4" clip-path="url(#cel-tea-house-c0)"/>
+    <path d="M66 34H134V46H66Z" stroke-width="1.6"/>
+    <path d="M50 92H150V156H50Z" stroke-width="2.6"/>
+    <path d="M76 112H124V156H76Z" stroke-width="2"/>
+    <path d="M14 98C40 92 60 70 70 46H130C140 70 160 92 186 98L180 104C150 100 120 98 100 98C80 98 50 100 20 104Z" stroke-width="2.6"/>
+    <path d="M66 34H134V46H66Z" stroke-width="2.2"/>
+    <path d="M36 156H164V172H36Z" stroke-width="2.2"/>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Whisk</title>
+  <defs>
+    <linearGradient id="cel-chasen-clay" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c9a3"/><stop offset="1" stop-color="#b88b60"/></linearGradient>
+    <radialGradient id="cel-chasen-bamboo" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#f6e7bd"/><stop offset=".55" stop-color="#dcc283"/><stop offset="1" stop-color="#a8873e"/></radialGradient>
+    <radialGradient id="cel-chasen-bambooDark" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#cfae68"/><stop offset=".55" stop-color="#a8873e"/><stop offset="1" stop-color="#6f5622"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <g><path d="M84 86C58 102 50 140 62 172H138C150 140 142 102 116 86Z" fill="url(#cel-chasen-bamboo)"/></g>
+    <g><path d="M86 30C86 24 114 24 114 30V88H86Z" fill="url(#cel-chasen-bamboo)"/></g>
+    <path d="M100 92C84 112 80 140 84 170M100 92C116 112 120 140 116 170M100 92V170M100 92C72 110 64 140 70 170M100 92C128 110 136 140 130 170" stroke="#3a2a1f" stroke-width="1.4"/>
+    <g><path d="M86 116A14 18 0 1 0 114 116A14 18 0 1 0 86 116Z" fill="url(#cel-chasen-bambooDark)"/></g>
+    <path d="M88 104C92 118 92 128 90 132M112 104C108 118 108 128 110 132" stroke="#3a2a1f" stroke-width="1.2"/>
+    <path d="M86 58H114" stroke="#3a2a1f" stroke-width="2"/>
+    <path d="M92 34V80" stroke="#fff" stroke-opacity=".78" stroke-width="3"/>
+    <path d="M84 86C58 102 50 140 62 172H138C150 140 142 102 116 86Z" stroke="#3a2a1f" stroke-width="2.6"/>
+    <path d="M86 30C86 24 114 24 114 30V88H86Z" stroke="#3a2a1f" stroke-width="2.6"/>
+  </g>
+</svg>

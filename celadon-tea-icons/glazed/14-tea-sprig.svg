@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Tea sprig</title>
+  <defs>
+    <linearGradient id="cel-tea-sprig-clay" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c9a3"/><stop offset="1" stop-color="#b88b60"/></linearGradient>
+    <radialGradient id="cel-tea-sprig-matcha" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#c9e08a"/><stop offset=".55" stop-color="#8cb043"/><stop offset="1" stop-color="#4f7020"/></radialGradient>
+    <radialGradient id="cel-tea-sprig-matchaLight" cx=".34" cy=".28" r=".9"><stop offset="0" stop-color="#e2efb0"/><stop offset=".55" stop-color="#b5d46a"/><stop offset="1" stop-color="#7fa33b"/></radialGradient>
+  </defs>
+  <g fill="none" stroke="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 180C100 140 98 110 100 66" stroke="#3a2a1f" stroke-width="3"/>
+    <g><path d="M33.09 99C59.55 91.18 92.45 110.18 98.91 137C72.45 144.82 39.55 125.82 33.09 99Z" fill="url(#cel-tea-sprig-matcha)"/></g>
+    <g><path d="M101.09 119C107.55 92.18 140.45 73.18 166.91 81C160.45 107.82 127.55 126.82 101.09 119Z" fill="url(#cel-tea-sprig-matcha)"/></g>
+    <g><path d="M100 72C88 59 88 33 100 20C112 33 112 59 100 72Z" fill="url(#cel-tea-sprig-matchaLight)"/></g>
+    <path d="M38.03 101.85L93.97 134.15M106.03 116.15L161.97 83.85M100 68.1L100 23.9" stroke="#3a2a1f" stroke-width="1.4"/>
+    <path d="M44 106C52 100 62 98 72 100" stroke="#fff" stroke-opacity=".78" stroke-width="3"/>
+    <path d="M116 86C124 82 134 82 142 84" stroke="#fff" stroke-opacity=".78" stroke-width="3"/>
+    <path d="M33.09 99C59.55 91.18 92.45 110.18 98.91 137C72.45 144.82 39.55 125.82 33.09 99Z" stroke="#3a2a1f" stroke-width="2.6"/>
+    <path d="M101.09 119C107.55 92.18 140.45 73.18 166.91 81C160.45 107.82 127.55 126.82 101.09 119Z" stroke="#3a2a1f" stroke-width="2.6"/>
+    <path d="M100 72C88 59 88 33 100 20C112 33 112 59 100 72Z" stroke="#3a2a1f" stroke-width="2.6"/>
+  </g>
+</svg>

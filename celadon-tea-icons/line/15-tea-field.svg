@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Tea field</title>
+  <defs>
+    <clipPath id="cel-tea-field-c0"><path d="M24 100A76 76 0 1 0 176 100A76 76 0 1 0 24 100Z"/></clipPath>
+    <clipPath id="cel-tea-field-c1"><path d="M24 100A76 76 0 1 0 176 100A76 76 0 1 0 24 100Z"/></clipPath>
+    <clipPath id="cel-tea-field-c2"><path d="M24 100A76 76 0 1 0 176 100A76 76 0 1 0 24 100Z"/></clipPath>
+    <clipPath id="cel-tea-field-c3"><path d="M24 100A76 76 0 1 0 176 100A76 76 0 1 0 24 100Z"/></clipPath>
+    <clipPath id="cel-tea-field-c4"><path d="M24 100A76 76 0 1 0 176 100A76 76 0 1 0 24 100Z"/></clipPath>
+    <clipPath id="cel-tea-field-c5"><path d="M24 100A76 76 0 1 0 176 100A76 76 0 1 0 24 100Z"/></clipPath>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 100A76 76 0 1 0 176 100A76 76 0 1 0 24 100Z" stroke-width="1.6"/>
+    <path d="M122 64A14 14 0 1 0 150 64A14 14 0 1 0 122 64Z" stroke-width="1.6" clip-path="url(#cel-tea-field-c0)"/>
+    <path d="M14 116C50 80 92 74 130 92C156 104 176 104 190 98V190H14Z" stroke-width="1.6" clip-path="url(#cel-tea-field-c1)"/>
+    <path d="M10 140C60 108 120 110 190 136V190H10Z" stroke-width="1.6" clip-path="url(#cel-tea-field-c2)"/>
+    <path d="M30 108C62 88 96 86 126 98M26 124C60 102 98 100 132 112" stroke-width="1.6" clip-path="url(#cel-tea-field-c3)"/>
+    <path d="M20 152C64 128 120 128 182 148M24 164C70 144 120 144 180 162M30 176C72 158 124 160 176 176" stroke-width="1.8" clip-path="url(#cel-tea-field-c4)"/>
+    <path d="M14 116C50 80 92 74 130 92C156 104 176 104 190 98M10 140C60 108 120 110 190 136" stroke-width="2.2" clip-path="url(#cel-tea-field-c5)"/>
+    <path d="M24 100A76 76 0 1 0 176 100A76 76 0 1 0 24 100Z" stroke-width="3"/>
+    <path d="M16 100A84 84 0 1 0 184 100A84 84 0 1 0 16 100Z" stroke-width="1.6"/>
+  </g>
+</svg>
