@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Fish course</title>
+  <defs>
+    <mask id="mai-fish-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M28 100C52 64 112 58 146 100C112 142 52 136 28 100Z" stroke="#fff" stroke-width="9"/><path d="M20 166H180" stroke="#fff" stroke-width="9"/><path d="M28 100C52 64 112 58 146 100C112 142 52 136 28 100Z" stroke="#000" stroke-width="3"/><path d="M20 166H180" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="currentColor">
+      <path d="M146 100L180 74V126Z"/>
+      <path d="M51 94A5 5 0 1 0 61 94A5 5 0 1 0 51 94Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M74 76C84 88 84 112 74 124" stroke-width="2"/>
+      <path d="M84 100a8 8 0 0 1 16 0a8 8 0 0 1 16 0a8 8 0 0 1 16 0M92 88a8 8 0 0 1 16 0a8 8 0 0 1 16 0M92 112a8 8 0 0 1 16 0a8 8 0 0 1 16 0" stroke-width="1.6"/>
+    </g>
+    <g id="inline" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-fish-hollow)">
+      <path d="M28 100C52 64 112 58 146 100C112 142 52 136 28 100Z"/>
+      <path d="M20 166H180"/>
+    </g>
+  </g>
+</svg>

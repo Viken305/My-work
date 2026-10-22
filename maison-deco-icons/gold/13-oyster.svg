@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Oyster</title>
+  <defs>
+    <linearGradient id="mai-oyster-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="mai-oyster-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M38 104A62 62 0 0 1 162 104Z" stroke="#fff" stroke-width="9"/><path d="M32 118H168C160 158 40 158 32 118Z" stroke="#fff" stroke-width="9"/><path d="M38 104A62 62 0 0 1 162 104Z" stroke="#000" stroke-width="3"/><path d="M32 118H168C160 158 40 158 32 118Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="url(#mai-oyster-gold)">
+      <path d="M89 134A11 11 0 1 0 111 134A11 11 0 1 0 89 134Z"/>
+      <path d="M88 104A12 12 0 0 1 112 104Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="url(#mai-oyster-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M84.35 100.67L47.18 92.77M86.36 95.64L53.96 75.79M89.93 91.57L66.02 62.03M94.66 88.92L81.97 53.1M100 88L100 50M105.34 88.92L118.03 53.1M110.07 91.57L133.98 62.03M113.64 95.64L146.04 75.79M115.65 100.67L152.82 92.77" stroke-width="2"/>
+    </g>
+    <g id="inline" fill="none" stroke="url(#mai-oyster-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-oyster-hollow)">
+      <path d="M38 104A62 62 0 0 1 162 104Z"/>
+      <path d="M32 118H168C160 158 40 158 32 118Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,1196 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Maison Icons</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0d2a22; --fg: #efe3c4; --muted: #8fa597; --line: #1f4237; --gold: #d6aa4e; }
+  body.alt { --bg: #f2ece0; --fg: #141414; --muted: #6e675c; --line: #ddd3c1; --gold: #141414; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 300 15px/1.5 'Josefin Sans', system-ui, sans-serif; transition: background .3s, color .3s; }
+  main { max-width: 1120px; margin: 0 auto; padding: 56px 16px 80px; }
+  header { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: end; border-bottom: 1px solid var(--line); padding-bottom: 28px; }
+  h1 { font: 400 clamp(52px, 9vw, 96px)/.9 'Italiana', serif; margin: 0; letter-spacing: .14em; color: var(--gold); }
+  header p { margin: 14px 0 0; color: var(--muted); max-width: 48ch; font-size: 14px; letter-spacing: .02em; }
+  .controls { display: grid; gap: 10px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+  .seg { display: inline-flex; border: 1px solid var(--line); padding: 3px; }
+  .seg button { all: unset; cursor: pointer; padding: 7px 14px; color: var(--muted); }
+  .seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+  .seg button:focus-visible { outline: 2px solid var(--gold); }
+  h2 { font: 400 30px 'Italiana', serif; letter-spacing: .14em; text-transform: uppercase; margin: 52px 0 18px; display: flex; gap: 14px; align-items: baseline; }
+  h2 span { font: 400 12px 'Josefin Sans', sans-serif; color: var(--muted); letter-spacing: .1em; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  figure { margin: 0; background: var(--bg); padding: 22px 16px 14px; display: grid; justify-items: center; gap: 12px; transition: background .3s; }
+  figure svg { width: 100%; max-width: 132px; height: auto; color: var(--fg); }
+  body[data-size="48"] figure svg { width: 48px; }
+  body[data-size="24"] figure svg { width: 24px; }
+  figcaption { display: grid; gap: 2px; text-align: center; font-size: 11px; }
+  figcaption b { font-weight: 600; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+  figcaption code { color: var(--muted); }
+  .v-b, body.alt .v-a { display: none; }
+  body.alt .v-b { display: block; }
+</style>
+<body data-size="full">
+<main>
+  <header>
+    <div>
+      <h1>MAISON</h1>
+      <p>24 Art Deco fine-dining icons, drawn in hollow inline gold. Gold for dark lacquer grounds, Mono for any single colour.</p>
+    </div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Version">
+        <button data-v="a" aria-pressed="true">Gold</button><button data-v="b" aria-pressed="false">Mono</button>
+      </div>
+      <div class="seg" role="group" aria-label="Size">
+        <button data-s="full" aria-pressed="true">Full</button><button data-s="48" aria-pressed="false">48 px</button><button data-s="24" aria-pressed="false">24 px</button>
+      </div>
+    </div>
+  </header>
+  <div class="v-a">
+<section>
+  <h2>Service<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Cloche</title>
+  <defs>
+    <linearGradient id="gold-cloche-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-cloche-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M38 138A62 62 0 0 1 162 138" stroke="#fff" stroke-width="9"/><path d="M24 150H176" stroke="#fff" stroke-width="9"/><path d="M38 138A62 62 0 0 1 162 138" stroke="#000" stroke-width="3"/><path d="M24 150H176" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-cloche-gold)">
+      <path d="M92 66A8 8 0 1 0 108 66A8 8 0 1 0 92 66Z"/>
+      <path d="M86 138A14 14 0 0 1 114 138Z"/>
+      <path d="M60 166H140L132 158H68Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-cloche-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M79.33 130.48L53.02 120.9M84 122.9L63.63 103.69M91.29 117.8L80.2 92.09M100 116L100 88M108.71 117.8L119.8 92.09M116 122.9L136.37 103.69M120.67 130.48L146.98 120.9" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-cloche-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-cloche-hollow)">
+      <path d="M38 138A62 62 0 0 1 162 138"/>
+      <path d="M24 150H176"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Cloche</b><code>01-cloche.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Place setting</title>
+  <defs>
+    <linearGradient id="gold-place-setting-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-place-setting-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M54 106A46 46 0 1 0 146 106A46 46 0 1 0 54 106Z" stroke="#fff" stroke-width="9"/><path d="M34 84V164" stroke="#fff" stroke-width="9"/><path d="M166 100V164" stroke="#fff" stroke-width="9"/><path d="M54 106A46 46 0 1 0 146 106A46 46 0 1 0 54 106Z" stroke="#000" stroke-width="3"/><path d="M34 84V164" stroke="#000" stroke-width="3"/><path d="M166 100V164" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-place-setting-gold)">
+      <path d="M26 40H42V70C42 78 38 82 34 82C30 82 26 78 26 70Z"/>
+      <path d="M166 38C178 50 178 86 166 100Z"/>
+      <path d="M100 90L112 106L100 122L88 106Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-place-setting-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M68 106A32 32 0 1 0 132 106A32 32 0 1 0 68 106Z" stroke-width="2"/>
+      <path d="M31 40V64M37 40V64" stroke-width="2"/>
+      <path d="M118 106L128 106M112.73 118.73L119.8 125.8M100 124L100 134M87.27 118.73L80.2 125.8M82 106L72 106M87.27 93.27L80.2 86.2M100 88L100 78M112.73 93.27L119.8 86.2" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-place-setting-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-place-setting-hollow)">
+      <path d="M54 106A46 46 0 1 0 146 106A46 46 0 1 0 54 106Z"/>
+      <path d="M34 84V164"/>
+      <path d="M166 100V164"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Place setting</b><code>02-place-setting.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Reserved</title>
+  <defs>
+    <linearGradient id="gold-reserved-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-reserved-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M46 160L60 58H140L154 160Z" stroke="#fff" stroke-width="9"/><path d="M46 160L60 58H140L154 160Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-reserved-gold)">
+      <path d="M100 99L103.23 107.55L112.36 107.98L105.23 113.7L107.64 122.52L100 117.5L92.36 122.52L94.77 113.7L87.64 107.98L96.77 107.55Z"/>
+      <path d="M28 174H172L166 166H34Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-reserved-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M72 84H128" stroke-width="2"/>
+      <path d="M78 96H122" stroke-width="2"/>
+      <path d="M72 140H128" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-reserved-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-reserved-hollow)">
+      <path d="M46 160L60 58H140L154 160Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Reserved</b><code>03-reserved.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Menu</title>
+  <defs>
+    <linearGradient id="gold-menu-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-menu-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M56 178V74A44 44 0 0 1 144 74V178Z" stroke="#fff" stroke-width="9"/><path d="M56 178V74A44 44 0 0 1 144 74V178Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-menu-gold)">
+      <path d="M82 80A18 18 0 0 1 118 80Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-menu-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M78.75 74.31L69.09 71.72M83.15 65.86L75.49 59.43M90.7 60.06L86.48 51M100 58L100 48M109.3 60.06L113.52 51M116.85 65.86L124.51 59.43M121.25 74.31L130.91 71.72" stroke-width="2"/>
+      <path d="M76 108H124" stroke-width="2"/>
+      <path d="M84 124H116M80 136H120M88 148H112M84 160H116" stroke-width="1.6"/>
+    </g>
+    <g fill="none" stroke="url(#gold-menu-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-menu-hollow)">
+      <path d="M56 178V74A44 44 0 0 1 144 74V178Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Menu</b><code>04-menu.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Candelabra</title>
+  <defs>
+    <linearGradient id="gold-candelabra-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-candelabra-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 100C48 128 152 128 152 100" stroke="#fff" stroke-width="9"/><path d="M100 98V158" stroke="#fff" stroke-width="9"/><path d="M38 98H62M88 96H112M138 98H162" stroke="#fff" stroke-width="9"/><path d="M48 100C48 128 152 128 152 100" stroke="#000" stroke-width="3"/><path d="M100 98V158" stroke="#000" stroke-width="3"/><path d="M38 98H62M88 96H112M138 98H162" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-candelabra-gold)">
+      <path d="M43 64H57V94H43Z"/>
+      <path d="M93 42H107V92H93Z"/>
+      <path d="M143 64H157V94H143Z"/>
+      <path d="M50 38C57 48 56 56 50 58C44 56 43 48 50 38Z"/>
+      <path d="M100 16C107 26 106 34 100 36C94 34 93 26 100 16Z"/>
+      <path d="M150 38C157 48 156 56 150 58C144 56 143 48 150 38Z"/>
+      <path d="M66 180H134L122 164H78Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-candelabra-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 82V88" stroke-width="2"/>
+      <path d="M150 82V88" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-candelabra-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-candelabra-hollow)">
+      <path d="M48 100C48 128 152 128 152 100"/>
+      <path d="M100 98V158"/>
+      <path d="M38 98H62M88 96H112M138 98H162"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Candelabra</b><code>05-candelabra.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Award</title>
+  <defs>
+    <linearGradient id="gold-award-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-award-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M66 160C34 140 28 92 50 58" stroke="#fff" stroke-width="9"/><path d="M134 160C166 140 172 92 150 58" stroke="#fff" stroke-width="9"/><path d="M66 160C34 140 28 92 50 58" stroke="#000" stroke-width="3"/><path d="M134 160C166 140 172 92 150 58" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-award-gold)">
+      <path d="M100 68L107.64 87.48L128.53 88.73L112.36 102.02L117.63 122.27L100 111L82.37 122.27L87.64 102.02L71.47 88.73L92.36 87.48Z"/>
+      <path d="M46.36 155.96Q30.65 152.17 29.64 136.04Q45.35 139.83 46.36 155.96Z"/>
+      <path d="M31.36 132.56Q18.73 122.48 24.64 107.44Q37.27 117.52 31.36 132.56Z"/>
+      <path d="M25.74 106.8Q18.55 92.33 30.26 81.2Q37.45 95.67 25.74 106.8Z"/>
+      <path d="M28.54 80.65Q28.14 64.49 43.46 59.35Q43.86 75.51 28.54 80.65Z"/>
+      <path d="M153.64 155.96Q154.65 139.83 170.36 136.04Q169.35 152.17 153.64 155.96Z"/>
+      <path d="M168.64 132.56Q162.73 117.52 175.36 107.44Q181.27 122.48 168.64 132.56Z"/>
+      <path d="M174.26 106.8Q162.55 95.67 169.74 81.2Q181.45 92.33 174.26 106.8Z"/>
+      <path d="M171.46 80.65Q156.14 75.51 156.54 59.35Q171.86 64.49 171.46 80.65Z"/>
+      <path d="M80 168H120L114 178H86Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-award-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M58 98A42 42 0 1 0 142 98A42 42 0 1 0 58 98Z" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-award-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-award-hollow)">
+      <path d="M66 160C34 140 28 92 50 58"/>
+      <path d="M134 160C166 140 172 92 150 58"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Award</b><code>06-award.svg</code></figcaption></figure>
+  </div>
+</section>
+<section>
+  <h2>Cellar<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Wine glass</title>
+  <defs>
+    <linearGradient id="gold-wine-glass-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-wine-glass-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M66 34C62 84 76 110 100 112C124 110 138 84 134 34Z" stroke="#fff" stroke-width="9"/><path d="M100 112V160" stroke="#fff" stroke-width="9"/><path d="M70 166H130" stroke="#fff" stroke-width="9"/><path d="M66 34C62 84 76 110 100 112C124 110 138 84 134 34Z" stroke="#000" stroke-width="3"/><path d="M100 112V160" stroke="#000" stroke-width="3"/><path d="M70 166H130" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-wine-glass-gold)">
+      <path d="M75 74C78 94 88 102 100 102C112 102 122 94 125 74Z"/>
+      <path d="M100 128L106 136L100 144L94 136Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-wine-glass-gold)" stroke-linecap="round" stroke-linejoin="round">
+      
+    </g>
+    <g fill="none" stroke="url(#gold-wine-glass-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-wine-glass-hollow)">
+      <path d="M66 34C62 84 76 110 100 112C124 110 138 84 134 34Z"/>
+      <path d="M100 112V160"/>
+      <path d="M70 166H130"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Wine glass</b><code>07-wine-glass.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Champagne coupe</title>
+  <defs>
+    <linearGradient id="gold-champagne-coupe-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-champagne-coupe-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M40 72C48 102 74 110 100 110C126 110 152 102 160 72Z" stroke="#fff" stroke-width="9"/><path d="M100 110V160" stroke="#fff" stroke-width="9"/><path d="M70 166H130" stroke="#fff" stroke-width="9"/><path d="M40 72C48 102 74 110 100 110C126 110 152 102 160 72Z" stroke="#000" stroke-width="3"/><path d="M100 110V160" stroke="#000" stroke-width="3"/><path d="M70 166H130" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-champagne-coupe-gold)">
+      <path d="M54 82C62 96 80 100 100 100C120 100 138 96 146 82Z"/>
+      <path d="M100 128L106 136L100 144L94 136Z"/>
+      <path d="M86.5 56A3.5 3.5 0 1 0 93.5 56A3.5 3.5 0 1 0 86.5 56Z"/>
+      <path d="M101 42A3 3 0 1 0 107 42A3 3 0 1 0 101 42Z"/>
+      <path d="M93.6 28A2.4 2.4 0 1 0 98.4 28A2.4 2.4 0 1 0 93.6 28Z"/>
+      <path d="M108 18A2 2 0 1 0 112 18A2 2 0 1 0 108 18Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-champagne-coupe-gold)" stroke-linecap="round" stroke-linejoin="round">
+      
+    </g>
+    <g fill="none" stroke="url(#gold-champagne-coupe-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-champagne-coupe-hollow)">
+      <path d="M40 72C48 102 74 110 100 110C126 110 152 102 160 72Z"/>
+      <path d="M100 110V160"/>
+      <path d="M70 166H130"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Champagne coupe</b><code>08-champagne-coupe.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Decanter</title>
+  <defs>
+    <linearGradient id="gold-decanter-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-decanter-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M90 34V64C60 78 48 104 52 132C56 160 76 172 100 172C124 172 144 160 148 132C152 104 140 78 110 64V34" stroke="#fff" stroke-width="9"/><path d="M84 34H116" stroke="#fff" stroke-width="9"/><path d="M90 34V64C60 78 48 104 52 132C56 160 76 172 100 172C124 172 144 160 148 132C152 104 140 78 110 64V34" stroke="#000" stroke-width="3"/><path d="M84 34H116" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-decanter-gold)">
+      <path d="M100 6L109 18L100 30L91 18Z"/>
+      <path d="M62 128C64 152 80 160 100 160C120 160 136 152 138 128Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-decanter-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M74 96L100 82L126 96" stroke-width="2"/>
+      <path d="M68 112L100 96L132 112" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-decanter-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-decanter-hollow)">
+      <path d="M90 34V64C60 78 48 104 52 132C56 160 76 172 100 172C124 172 144 160 148 132C152 104 140 78 110 64V34"/>
+      <path d="M84 34H116"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Decanter</b><code>09-decanter.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Martini</title>
+  <defs>
+    <linearGradient id="gold-martini-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-martini-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M42 50H158L100 114Z" stroke="#fff" stroke-width="9"/><path d="M100 114V160" stroke="#fff" stroke-width="9"/><path d="M70 166H130" stroke="#fff" stroke-width="9"/><path d="M42 50H158L100 114Z" stroke="#000" stroke-width="3"/><path d="M100 114V160" stroke="#000" stroke-width="3"/><path d="M70 166H130" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-martini-gold)">
+      <path d="M68 66H132L100 100Z"/>
+      <path d="M123 40A9 9 0 1 0 141 40A9 9 0 1 0 123 40Z"/>
+      <path d="M100 130L106 138L100 146L94 138Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-martini-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M146 24L104 80" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-martini-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-martini-hollow)">
+      <path d="M42 50H158L100 114Z"/>
+      <path d="M100 114V160"/>
+      <path d="M70 166H130"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Martini</b><code>10-martini.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Cocktail shaker</title>
+  <defs>
+    <linearGradient id="gold-cocktail-shaker-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-cocktail-shaker-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M76 44H124L118 66H82Z" stroke="#fff" stroke-width="9"/><path d="M74 72H126L118 178H82Z" stroke="#fff" stroke-width="9"/><path d="M76 44H124L118 66H82Z" stroke="#000" stroke-width="3"/><path d="M74 72H126L118 178H82Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-cocktail-shaker-gold)">
+      <path d="M88 20H112V36H88Z"/>
+      <path d="M84 100H116L115 110H85Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-cocktail-shaker-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M80 90H120" stroke-width="2"/>
+      <path d="M86 122H114" stroke-width="2"/>
+      <path d="M87 134H113" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-cocktail-shaker-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-cocktail-shaker-hollow)">
+      <path d="M76 44H124L118 66H82Z"/>
+      <path d="M74 72H126L118 178H82Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Cocktail shaker</b><code>11-cocktail-shaker.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Ice bucket</title>
+  <defs>
+    <linearGradient id="gold-ice-bucket-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-ice-bucket-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M50 102H150L136 178H64Z" stroke="#fff" stroke-width="9"/><path d="M92 100V62C92 54 96 50 96 40V30M112 30V40C112 50 116 54 116 62V100" stroke="#fff" stroke-width="9"/><path d="M50 114C36 114 36 132 52 132M150 114C164 114 164 132 148 132" stroke="#fff" stroke-width="9"/><path d="M50 102H150L136 178H64Z" stroke="#000" stroke-width="3"/><path d="M92 100V62C92 54 96 50 96 40V30M112 30V40C112 50 116 54 116 62V100" stroke="#000" stroke-width="3"/><path d="M50 114C36 114 36 132 52 132M150 114C164 114 164 132 148 132" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-ice-bucket-gold)">
+      <path d="M93 14H115V32H93Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-ice-bucket-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M64 102L72 90L82 102M120 102L128 90L138 102" stroke-width="2"/>
+      <path d="M78 116L82 166M100 116V166M122 116L118 166" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-ice-bucket-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-ice-bucket-hollow)">
+      <path d="M50 102H150L136 178H64Z"/>
+      <path d="M92 100V62C92 54 96 50 96 40V30M112 30V40C112 50 116 54 116 62V100"/>
+      <path d="M50 114C36 114 36 132 52 132M150 114C164 114 164 132 148 132"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Ice bucket</b><code>12-ice-bucket.svg</code></figcaption></figure>
+  </div>
+</section>
+<section>
+  <h2>Delicacies<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Oyster</title>
+  <defs>
+    <linearGradient id="gold-oyster-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-oyster-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M38 104A62 62 0 0 1 162 104Z" stroke="#fff" stroke-width="9"/><path d="M32 118H168C160 158 40 158 32 118Z" stroke="#fff" stroke-width="9"/><path d="M38 104A62 62 0 0 1 162 104Z" stroke="#000" stroke-width="3"/><path d="M32 118H168C160 158 40 158 32 118Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-oyster-gold)">
+      <path d="M89 134A11 11 0 1 0 111 134A11 11 0 1 0 89 134Z"/>
+      <path d="M88 104A12 12 0 0 1 112 104Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-oyster-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M84.35 100.67L47.18 92.77M86.36 95.64L53.96 75.79M89.93 91.57L66.02 62.03M94.66 88.92L81.97 53.1M100 88L100 50M105.34 88.92L118.03 53.1M110.07 91.57L133.98 62.03M113.64 95.64L146.04 75.79M115.65 100.67L152.82 92.77" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-oyster-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-oyster-hollow)">
+      <path d="M38 104A62 62 0 0 1 162 104Z"/>
+      <path d="M32 118H168C160 158 40 158 32 118Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Oyster</b><code>13-oyster.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Caviar</title>
+  <defs>
+    <linearGradient id="gold-caviar-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-caviar-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M34 78A66 20 0 1 0 166 78A66 20 0 1 0 34 78Z" stroke="#fff" stroke-width="9"/><path d="M34 78V130C34 154 166 154 166 130V78" stroke="#fff" stroke-width="9"/><path d="M34 78A66 20 0 1 0 166 78A66 20 0 1 0 34 78Z" stroke="#000" stroke-width="3"/><path d="M34 78V130C34 154 166 154 166 130V78" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-caviar-gold)">
+      <path d="M55.85 72.31A2.9 2.9 0 1 0 61.65 72.31A2.9 2.9 0 1 0 55.85 72.31ZM64.35 72.31A2.9 2.9 0 1 0 70.15 72.31A2.9 2.9 0 1 0 64.35 72.31ZM72.85 72.31A2.9 2.9 0 1 0 78.65 72.31A2.9 2.9 0 1 0 72.85 72.31ZM81.35 72.31A2.9 2.9 0 1 0 87.15 72.31A2.9 2.9 0 1 0 81.35 72.31ZM89.85 72.31A2.9 2.9 0 1 0 95.65 72.31A2.9 2.9 0 1 0 89.85 72.31ZM98.35 72.31A2.9 2.9 0 1 0 104.15 72.31A2.9 2.9 0 1 0 98.35 72.31ZM106.85 72.31A2.9 2.9 0 1 0 112.65 72.31A2.9 2.9 0 1 0 106.85 72.31ZM115.35 72.31A2.9 2.9 0 1 0 121.15 72.31A2.9 2.9 0 1 0 115.35 72.31ZM123.85 72.31A2.9 2.9 0 1 0 129.65 72.31A2.9 2.9 0 1 0 123.85 72.31ZM132.35 72.31A2.9 2.9 0 1 0 138.15 72.31A2.9 2.9 0 1 0 132.35 72.31ZM51.6 79.62A2.9 2.9 0 1 0 57.4 79.62A2.9 2.9 0 1 0 51.6 79.62ZM60.1 79.62A2.9 2.9 0 1 0 65.9 79.62A2.9 2.9 0 1 0 60.1 79.62ZM68.6 79.62A2.9 2.9 0 1 0 74.4 79.62A2.9 2.9 0 1 0 68.6 79.62ZM77.1 79.62A2.9 2.9 0 1 0 82.9 79.62A2.9 2.9 0 1 0 77.1 79.62ZM85.6 79.62A2.9 2.9 0 1 0 91.4 79.62A2.9 2.9 0 1 0 85.6 79.62ZM94.1 79.62A2.9 2.9 0 1 0 99.9 79.62A2.9 2.9 0 1 0 94.1 79.62ZM102.6 79.62A2.9 2.9 0 1 0 108.4 79.62A2.9 2.9 0 1 0 102.6 79.62ZM111.1 79.62A2.9 2.9 0 1 0 116.9 79.62A2.9 2.9 0 1 0 111.1 79.62ZM119.6 79.62A2.9 2.9 0 1 0 125.4 79.62A2.9 2.9 0 1 0 119.6 79.62ZM128.1 79.62A2.9 2.9 0 1 0 133.9 79.62A2.9 2.9 0 1 0 128.1 79.62ZM136.6 79.62A2.9 2.9 0 1 0 142.4 79.62A2.9 2.9 0 1 0 136.6 79.62ZM145.1 79.62A2.9 2.9 0 1 0 150.9 79.62A2.9 2.9 0 1 0 145.1 79.62ZM72.85 86.93A2.9 2.9 0 1 0 78.65 86.93A2.9 2.9 0 1 0 72.85 86.93ZM81.35 86.93A2.9 2.9 0 1 0 87.15 86.93A2.9 2.9 0 1 0 81.35 86.93ZM89.85 86.93A2.9 2.9 0 1 0 95.65 86.93A2.9 2.9 0 1 0 89.85 86.93ZM98.35 86.93A2.9 2.9 0 1 0 104.15 86.93A2.9 2.9 0 1 0 98.35 86.93ZM106.85 86.93A2.9 2.9 0 1 0 112.65 86.93A2.9 2.9 0 1 0 106.85 86.93ZM115.35 86.93A2.9 2.9 0 1 0 121.15 86.93A2.9 2.9 0 1 0 115.35 86.93ZM123.85 86.93A2.9 2.9 0 1 0 129.65 86.93A2.9 2.9 0 1 0 123.85 86.93Z"/>
+      <path d="M58 172H142L136 164H64Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-caviar-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M34 106C34 128 166 128 166 106" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-caviar-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-caviar-hollow)">
+      <path d="M34 78A66 20 0 1 0 166 78A66 20 0 1 0 34 78Z"/>
+      <path d="M34 78V130C34 154 166 154 166 130V78"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Caviar</b><code>14-caviar.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Grapes</title>
+  <defs>
+    <linearGradient id="gold-grapes-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-grapes-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M57 78A13 13 0 1 0 83 78A13 13 0 1 0 57 78Z" stroke="#fff" stroke-width="9"/><path d="M87 78A13 13 0 1 0 113 78A13 13 0 1 0 87 78Z" stroke="#fff" stroke-width="9"/><path d="M117 78A13 13 0 1 0 143 78A13 13 0 1 0 117 78Z" stroke="#fff" stroke-width="9"/><path d="M72 106A13 13 0 1 0 98 106A13 13 0 1 0 72 106Z" stroke="#fff" stroke-width="9"/><path d="M102 106A13 13 0 1 0 128 106A13 13 0 1 0 102 106Z" stroke="#fff" stroke-width="9"/><path d="M87 134A13 13 0 1 0 113 134A13 13 0 1 0 87 134Z" stroke="#fff" stroke-width="9"/><path d="M100 64C100 50 96 40 88 30" stroke="#fff" stroke-width="9"/><path d="M57 78A13 13 0 1 0 83 78A13 13 0 1 0 57 78Z" stroke="#000" stroke-width="3"/><path d="M87 78A13 13 0 1 0 113 78A13 13 0 1 0 87 78Z" stroke="#000" stroke-width="3"/><path d="M117 78A13 13 0 1 0 143 78A13 13 0 1 0 117 78Z" stroke="#000" stroke-width="3"/><path d="M72 106A13 13 0 1 0 98 106A13 13 0 1 0 72 106Z" stroke="#000" stroke-width="3"/><path d="M102 106A13 13 0 1 0 128 106A13 13 0 1 0 102 106Z" stroke="#000" stroke-width="3"/><path d="M87 134A13 13 0 1 0 113 134A13 13 0 1 0 87 134Z" stroke="#000" stroke-width="3"/><path d="M100 64C100 50 96 40 88 30" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-grapes-gold)">
+      <path d="M138.91 31.84Q126.93 51.53 105.09 44.16Q117.07 24.47 138.91 31.84Z"/>
+      <path d="M96 166A4 4 0 1 0 104 166A4 4 0 1 0 96 166Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-grapes-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 52C112 48 120 44 124 36" stroke-width="2"/>
+      <path d="M100 148V160" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-grapes-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-grapes-hollow)">
+      <path d="M57 78A13 13 0 1 0 83 78A13 13 0 1 0 57 78Z"/>
+      <path d="M87 78A13 13 0 1 0 113 78A13 13 0 1 0 87 78Z"/>
+      <path d="M117 78A13 13 0 1 0 143 78A13 13 0 1 0 117 78Z"/>
+      <path d="M72 106A13 13 0 1 0 98 106A13 13 0 1 0 72 106Z"/>
+      <path d="M102 106A13 13 0 1 0 128 106A13 13 0 1 0 102 106Z"/>
+      <path d="M87 134A13 13 0 1 0 113 134A13 13 0 1 0 87 134Z"/>
+      <path d="M100 64C100 50 96 40 88 30"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Grapes</b><code>15-grapes.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Fish course</title>
+  <defs>
+    <linearGradient id="gold-fish-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-fish-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M28 100C52 64 112 58 146 100C112 142 52 136 28 100Z" stroke="#fff" stroke-width="9"/><path d="M20 166H180" stroke="#fff" stroke-width="9"/><path d="M28 100C52 64 112 58 146 100C112 142 52 136 28 100Z" stroke="#000" stroke-width="3"/><path d="M20 166H180" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-fish-gold)">
+      <path d="M146 100L180 74V126Z"/>
+      <path d="M51 94A5 5 0 1 0 61 94A5 5 0 1 0 51 94Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-fish-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M74 76C84 88 84 112 74 124" stroke-width="2"/>
+      <path d="M84 100a8 8 0 0 1 16 0a8 8 0 0 1 16 0a8 8 0 0 1 16 0M92 88a8 8 0 0 1 16 0a8 8 0 0 1 16 0M92 112a8 8 0 0 1 16 0a8 8 0 0 1 16 0" stroke-width="1.6"/>
+    </g>
+    <g fill="none" stroke="url(#gold-fish-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-fish-hollow)">
+      <path d="M28 100C52 64 112 58 146 100C112 142 52 136 28 100Z"/>
+      <path d="M20 166H180"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Fish course</b><code>16-fish.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Fruit tart</title>
+  <defs>
+    <linearGradient id="gold-fruit-tart-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-fruit-tart-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M164 104A11.11 11.11 0 0 1 160.14 125.89A11.11 11.11 0 0 1 149.03 145.14A11.11 11.11 0 0 1 132 159.43A11.11 11.11 0 0 1 111.11 167.03A11.11 11.11 0 0 1 88.89 167.03A11.11 11.11 0 0 1 68 159.43A11.11 11.11 0 0 1 50.97 145.14A11.11 11.11 0 0 1 39.86 125.89A11.11 11.11 0 0 1 36 104A11.11 11.11 0 0 1 39.86 82.11A11.11 11.11 0 0 1 50.97 62.86A11.11 11.11 0 0 1 68 48.57A11.11 11.11 0 0 1 88.89 40.97A11.11 11.11 0 0 1 111.11 40.97A11.11 11.11 0 0 1 132 48.57A11.11 11.11 0 0 1 149.03 62.86A11.11 11.11 0 0 1 160.14 82.11A11.11 11.11 0 0 1 164 104Z" stroke="#fff" stroke-width="9"/><path d="M164 104A11.11 11.11 0 0 1 160.14 125.89A11.11 11.11 0 0 1 149.03 145.14A11.11 11.11 0 0 1 132 159.43A11.11 11.11 0 0 1 111.11 167.03A11.11 11.11 0 0 1 88.89 167.03A11.11 11.11 0 0 1 68 159.43A11.11 11.11 0 0 1 50.97 145.14A11.11 11.11 0 0 1 39.86 125.89A11.11 11.11 0 0 1 36 104A11.11 11.11 0 0 1 39.86 82.11A11.11 11.11 0 0 1 50.97 62.86A11.11 11.11 0 0 1 68 48.57A11.11 11.11 0 0 1 88.89 40.97A11.11 11.11 0 0 1 111.11 40.97A11.11 11.11 0 0 1 132 48.57A11.11 11.11 0 0 1 149.03 62.86A11.11 11.11 0 0 1 160.14 82.11A11.11 11.11 0 0 1 164 104Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-fruit-tart-gold)">
+      <path d="M126 104A8 8 0 1 0 142 104A8 8 0 1 0 126 104Z"/>
+      <path d="M116.04 128.04A8 8 0 1 0 132.04 128.04A8 8 0 1 0 116.04 128.04Z"/>
+      <path d="M92 138A8 8 0 1 0 108 138A8 8 0 1 0 92 138Z"/>
+      <path d="M67.96 128.04A8 8 0 1 0 83.96 128.04A8 8 0 1 0 67.96 128.04Z"/>
+      <path d="M58 104A8 8 0 1 0 74 104A8 8 0 1 0 58 104Z"/>
+      <path d="M67.96 79.96A8 8 0 1 0 83.96 79.96A8 8 0 1 0 67.96 79.96Z"/>
+      <path d="M92 70A8 8 0 1 0 108 70A8 8 0 1 0 92 70Z"/>
+      <path d="M116.04 79.96A8 8 0 1 0 132.04 79.96A8 8 0 1 0 116.04 79.96Z"/>
+      <path d="M100 90L104.24 99.76L114 104L104.24 108.24L100 118L95.76 108.24L86 104L95.76 99.76Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-fruit-tart-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 104A50 50 0 1 0 150 104A50 50 0 1 0 50 104Z" stroke-width="2"/>
+      <path d="M78 104A22 22 0 1 0 122 104A22 22 0 1 0 78 104Z" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-fruit-tart-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-fruit-tart-hollow)">
+      <path d="M164 104A11.11 11.11 0 0 1 160.14 125.89A11.11 11.11 0 0 1 149.03 145.14A11.11 11.11 0 0 1 132 159.43A11.11 11.11 0 0 1 111.11 167.03A11.11 11.11 0 0 1 88.89 167.03A11.11 11.11 0 0 1 68 159.43A11.11 11.11 0 0 1 50.97 145.14A11.11 11.11 0 0 1 39.86 125.89A11.11 11.11 0 0 1 36 104A11.11 11.11 0 0 1 39.86 82.11A11.11 11.11 0 0 1 50.97 62.86A11.11 11.11 0 0 1 68 48.57A11.11 11.11 0 0 1 88.89 40.97A11.11 11.11 0 0 1 111.11 40.97A11.11 11.11 0 0 1 132 48.57A11.11 11.11 0 0 1 149.03 62.86A11.11 11.11 0 0 1 160.14 82.11A11.11 11.11 0 0 1 164 104Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Fruit tart</b><code>17-fruit-tart.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Cheese</title>
+  <defs>
+    <linearGradient id="gold-cheese-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-cheese-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M26 118L150 64L174 96V152H26Z" stroke="#fff" stroke-width="9"/><path d="M26 118L174 96" stroke="#fff" stroke-width="9"/><path d="M26 118L150 64L174 96V152H26Z" stroke="#000" stroke-width="3"/><path d="M26 118L174 96" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-cheese-gold)">
+      <path d="M55 134A7 7 0 1 0 69 134A7 7 0 1 0 55 134Z"/>
+      <path d="M103 128A9 9 0 1 0 121 128A9 9 0 1 0 103 128Z"/>
+      <path d="M144 138A6 6 0 1 0 156 138A6 6 0 1 0 144 138Z"/>
+      <path d="M84 144A4 4 0 1 0 92 144A4 4 0 1 0 84 144Z"/>
+      <path d="M119 88A7 3.5 0 1 0 133 88A7 3.5 0 1 0 119 88Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-cheese-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 168H180" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-cheese-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-cheese-hollow)">
+      <path d="M26 118L150 64L174 96V152H26Z"/>
+      <path d="M26 118L174 96"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Cheese</b><code>18-cheese.svg</code></figcaption></figure>
+  </div>
+</section>
+<section>
+  <h2>Kitchen<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Chef's toque</title>
+  <defs>
+    <linearGradient id="gold-toque-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-toque-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M62 116C40 112 36 78 62 74C64 48 92 42 100 58C108 42 136 48 138 74C164 78 160 112 138 116Z" stroke="#fff" stroke-width="9"/><path d="M62 124H138V156H62Z" stroke="#fff" stroke-width="9"/><path d="M62 116C40 112 36 78 62 74C64 48 92 42 100 58C108 42 136 48 138 74C164 78 160 112 138 116Z" stroke="#000" stroke-width="3"/><path d="M62 124H138V156H62Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-toque-gold)">
+      <path d="M100 131L107 140L100 149L93 140Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-toque-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M78 128V152M122 128V152" stroke-width="2"/>
+      <path d="M80 96C84 84 92 80 100 84M120 96C116 84 108 80 100 84" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-toque-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-toque-hollow)">
+      <path d="M62 116C40 112 36 78 62 74C64 48 92 42 100 58C108 42 136 48 138 74C164 78 160 112 138 116Z"/>
+      <path d="M62 124H138V156H62Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Chef's toque</b><code>19-toque.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Chef's knife</title>
+  <defs>
+    <linearGradient id="gold-chef-knife-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-chef-knife-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M132 90H46C32 90 22 100 20 110C58 122 104 118 132 114Z" stroke="#fff" stroke-width="9"/><path d="M144 90H174C182 90 182 114 174 114H144" stroke="#fff" stroke-width="9"/><path d="M132 90H46C32 90 22 100 20 110C58 122 104 118 132 114Z" stroke="#000" stroke-width="3"/><path d="M144 90H174C182 90 182 114 174 114H144" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g transform="rotate(-32 100 100)">
+    <g fill="url(#gold-chef-knife-gold)">
+      <path d="M132 84H144V120H132Z"/>
+      <path d="M152.5 102A3.5 3.5 0 1 0 159.5 102A3.5 3.5 0 1 0 152.5 102Z"/>
+      <path d="M164.5 102A3.5 3.5 0 1 0 171.5 102A3.5 3.5 0 1 0 164.5 102Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-chef-knife-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M44 104H126" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-chef-knife-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-chef-knife-hollow)">
+      <path d="M132 90H46C32 90 22 100 20 110C58 122 104 118 132 114Z"/>
+      <path d="M144 90H174C182 90 182 114 174 114H144"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Chef's knife</b><code>20-chef-knife.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Whisk</title>
+  <defs>
+    <linearGradient id="gold-whisk-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-whisk-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M100 118C58 92 66 28 100 22C134 28 142 92 100 118" stroke="#fff" stroke-width="9"/><path d="M100 132V180" stroke="#fff" stroke-width="9"/><path d="M100 118C58 92 66 28 100 22C134 28 142 92 100 118" stroke="#000" stroke-width="3"/><path d="M100 132V180" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-whisk-gold)">
+      <path d="M90 116H110V132H90Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-whisk-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 118C82 92 84 42 100 24C116 42 118 92 100 118" stroke-width="2"/>
+      <path d="M100 118V24" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-whisk-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-whisk-hollow)">
+      <path d="M100 118C58 92 66 28 100 22C134 28 142 92 100 118"/>
+      <path d="M100 132V180"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Whisk</b><code>21-whisk.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Saucepan</title>
+  <defs>
+    <linearGradient id="gold-saucepan-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-saucepan-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M38 96H134V142C134 154 126 162 114 162H58C46 162 38 154 38 142Z" stroke="#fff" stroke-width="9"/><path d="M134 106H182" stroke="#fff" stroke-width="9"/><path d="M38 96H134V142C134 154 126 162 114 162H58C46 162 38 154 38 142Z" stroke="#000" stroke-width="3"/><path d="M134 106H182" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-saucepan-gold)">
+      <path d="M30 88H142V96H30Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-saucepan-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M58 76C52 66 64 58 58 46M86 76C80 66 92 58 86 46M114 76C108 66 120 58 114 46" stroke-width="2"/>
+      <path d="M38 118H134" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-saucepan-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-saucepan-hollow)">
+      <path d="M38 96H134V142C134 154 126 162 114 162H58C46 162 38 154 38 142Z"/>
+      <path d="M134 106H182"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Saucepan</b><code>22-saucepan.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Gâteau</title>
+  <defs>
+    <linearGradient id="gold-gateau-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-gateau-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M42 132H158V174H42Z" stroke="#fff" stroke-width="9"/><path d="M58 98H142V132H58Z" stroke="#fff" stroke-width="9"/><path d="M74 68H126V98H74Z" stroke="#fff" stroke-width="9"/><path d="M42 132H158V174H42Z" stroke="#000" stroke-width="3"/><path d="M58 98H142V132H58Z" stroke="#000" stroke-width="3"/><path d="M74 68H126V98H74Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-gateau-gold)">
+      <path d="M95 44H105V66H95Z"/>
+      <path d="M100 22C107 31 106 38.2 100 40C94 38.2 93 31 100 22Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-gateau-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M42 146C56 160 70 160 84 146C98 160 112 160 126 146C140 160 154 160 158 152" stroke-width="2"/>
+      <path d="M58 110C68 120 80 120 90 110C100 120 112 120 122 110C130 118 138 118 142 112" stroke-width="2"/>
+      <path d="M74 80C82 88 92 88 100 80C108 88 118 88 126 80" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-gateau-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-gateau-hollow)">
+      <path d="M42 132H158V174H42Z"/>
+      <path d="M58 98H142V132H58Z"/>
+      <path d="M74 68H126V98H74Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Gâteau</b><code>23-gateau.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Pepper mill</title>
+  <defs>
+    <linearGradient id="gold-pepper-mill-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="gold-pepper-mill-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M86 36H114L118 62C128 74 128 92 118 102L126 176H74L82 102C72 92 72 74 82 62Z" stroke="#fff" stroke-width="9"/><path d="M86 36H114L118 62C128 74 128 92 118 102L126 176H74L82 102C72 92 72 74 82 62Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="url(#gold-pepper-mill-gold)">
+      <path d="M92 24A8 8 0 1 0 108 24A8 8 0 1 0 92 24Z"/>
+      <path d="M80 116H120L121 126H79Z"/>
+    </g>
+    <g fill="none" stroke="url(#gold-pepper-mill-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M84 140H116" stroke-width="2"/>
+      <path d="M84 150H116" stroke-width="2"/>
+      <path d="M86 62H114" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="url(#gold-pepper-mill-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#gold-pepper-mill-hollow)">
+      <path d="M86 36H114L118 62C128 74 128 92 118 102L126 176H74L82 102C72 92 72 74 82 62Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Pepper mill</b><code>24-pepper-mill.svg</code></figcaption></figure>
+  </div>
+</section>
+  </div>
+  <div class="v-b">
+<section>
+  <h2>Service<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Cloche</title>
+  <defs>
+    <mask id="mono-cloche-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M38 138A62 62 0 0 1 162 138" stroke="#fff" stroke-width="9"/><path d="M24 150H176" stroke="#fff" stroke-width="9"/><path d="M38 138A62 62 0 0 1 162 138" stroke="#000" stroke-width="3"/><path d="M24 150H176" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M92 66A8 8 0 1 0 108 66A8 8 0 1 0 92 66Z"/>
+      <path d="M86 138A14 14 0 0 1 114 138Z"/>
+      <path d="M60 166H140L132 158H68Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M79.33 130.48L53.02 120.9M84 122.9L63.63 103.69M91.29 117.8L80.2 92.09M100 116L100 88M108.71 117.8L119.8 92.09M116 122.9L136.37 103.69M120.67 130.48L146.98 120.9" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-cloche-hollow)">
+      <path d="M38 138A62 62 0 0 1 162 138"/>
+      <path d="M24 150H176"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Cloche</b><code>01-cloche.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Place setting</title>
+  <defs>
+    <mask id="mono-place-setting-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M54 106A46 46 0 1 0 146 106A46 46 0 1 0 54 106Z" stroke="#fff" stroke-width="9"/><path d="M34 84V164" stroke="#fff" stroke-width="9"/><path d="M166 100V164" stroke="#fff" stroke-width="9"/><path d="M54 106A46 46 0 1 0 146 106A46 46 0 1 0 54 106Z" stroke="#000" stroke-width="3"/><path d="M34 84V164" stroke="#000" stroke-width="3"/><path d="M166 100V164" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M26 40H42V70C42 78 38 82 34 82C30 82 26 78 26 70Z"/>
+      <path d="M166 38C178 50 178 86 166 100Z"/>
+      <path d="M100 90L112 106L100 122L88 106Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M68 106A32 32 0 1 0 132 106A32 32 0 1 0 68 106Z" stroke-width="2"/>
+      <path d="M31 40V64M37 40V64" stroke-width="2"/>
+      <path d="M118 106L128 106M112.73 118.73L119.8 125.8M100 124L100 134M87.27 118.73L80.2 125.8M82 106L72 106M87.27 93.27L80.2 86.2M100 88L100 78M112.73 93.27L119.8 86.2" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-place-setting-hollow)">
+      <path d="M54 106A46 46 0 1 0 146 106A46 46 0 1 0 54 106Z"/>
+      <path d="M34 84V164"/>
+      <path d="M166 100V164"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Place setting</b><code>02-place-setting.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Reserved</title>
+  <defs>
+    <mask id="mono-reserved-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M46 160L60 58H140L154 160Z" stroke="#fff" stroke-width="9"/><path d="M46 160L60 58H140L154 160Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M100 99L103.23 107.55L112.36 107.98L105.23 113.7L107.64 122.52L100 117.5L92.36 122.52L94.77 113.7L87.64 107.98L96.77 107.55Z"/>
+      <path d="M28 174H172L166 166H34Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M72 84H128" stroke-width="2"/>
+      <path d="M78 96H122" stroke-width="2"/>
+      <path d="M72 140H128" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-reserved-hollow)">
+      <path d="M46 160L60 58H140L154 160Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Reserved</b><code>03-reserved.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Menu</title>
+  <defs>
+    <mask id="mono-menu-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M56 178V74A44 44 0 0 1 144 74V178Z" stroke="#fff" stroke-width="9"/><path d="M56 178V74A44 44 0 0 1 144 74V178Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M82 80A18 18 0 0 1 118 80Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M78.75 74.31L69.09 71.72M83.15 65.86L75.49 59.43M90.7 60.06L86.48 51M100 58L100 48M109.3 60.06L113.52 51M116.85 65.86L124.51 59.43M121.25 74.31L130.91 71.72" stroke-width="2"/>
+      <path d="M76 108H124" stroke-width="2"/>
+      <path d="M84 124H116M80 136H120M88 148H112M84 160H116" stroke-width="1.6"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-menu-hollow)">
+      <path d="M56 178V74A44 44 0 0 1 144 74V178Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Menu</b><code>04-menu.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Candelabra</title>
+  <defs>
+    <mask id="mono-candelabra-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 100C48 128 152 128 152 100" stroke="#fff" stroke-width="9"/><path d="M100 98V158" stroke="#fff" stroke-width="9"/><path d="M38 98H62M88 96H112M138 98H162" stroke="#fff" stroke-width="9"/><path d="M48 100C48 128 152 128 152 100" stroke="#000" stroke-width="3"/><path d="M100 98V158" stroke="#000" stroke-width="3"/><path d="M38 98H62M88 96H112M138 98H162" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M43 64H57V94H43Z"/>
+      <path d="M93 42H107V92H93Z"/>
+      <path d="M143 64H157V94H143Z"/>
+      <path d="M50 38C57 48 56 56 50 58C44 56 43 48 50 38Z"/>
+      <path d="M100 16C107 26 106 34 100 36C94 34 93 26 100 16Z"/>
+      <path d="M150 38C157 48 156 56 150 58C144 56 143 48 150 38Z"/>
+      <path d="M66 180H134L122 164H78Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 82V88" stroke-width="2"/>
+      <path d="M150 82V88" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-candelabra-hollow)">
+      <path d="M48 100C48 128 152 128 152 100"/>
+      <path d="M100 98V158"/>
+      <path d="M38 98H62M88 96H112M138 98H162"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Candelabra</b><code>05-candelabra.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Award</title>
+  <defs>
+    <mask id="mono-award-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M66 160C34 140 28 92 50 58" stroke="#fff" stroke-width="9"/><path d="M134 160C166 140 172 92 150 58" stroke="#fff" stroke-width="9"/><path d="M66 160C34 140 28 92 50 58" stroke="#000" stroke-width="3"/><path d="M134 160C166 140 172 92 150 58" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M100 68L107.64 87.48L128.53 88.73L112.36 102.02L117.63 122.27L100 111L82.37 122.27L87.64 102.02L71.47 88.73L92.36 87.48Z"/>
+      <path d="M46.36 155.96Q30.65 152.17 29.64 136.04Q45.35 139.83 46.36 155.96Z"/>
+      <path d="M31.36 132.56Q18.73 122.48 24.64 107.44Q37.27 117.52 31.36 132.56Z"/>
+      <path d="M25.74 106.8Q18.55 92.33 30.26 81.2Q37.45 95.67 25.74 106.8Z"/>
+      <path d="M28.54 80.65Q28.14 64.49 43.46 59.35Q43.86 75.51 28.54 80.65Z"/>
+      <path d="M153.64 155.96Q154.65 139.83 170.36 136.04Q169.35 152.17 153.64 155.96Z"/>
+      <path d="M168.64 132.56Q162.73 117.52 175.36 107.44Q181.27 122.48 168.64 132.56Z"/>
+      <path d="M174.26 106.8Q162.55 95.67 169.74 81.2Q181.45 92.33 174.26 106.8Z"/>
+      <path d="M171.46 80.65Q156.14 75.51 156.54 59.35Q171.86 64.49 171.46 80.65Z"/>
+      <path d="M80 168H120L114 178H86Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M58 98A42 42 0 1 0 142 98A42 42 0 1 0 58 98Z" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-award-hollow)">
+      <path d="M66 160C34 140 28 92 50 58"/>
+      <path d="M134 160C166 140 172 92 150 58"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Award</b><code>06-award.svg</code></figcaption></figure>
+  </div>
+</section>
+<section>
+  <h2>Cellar<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Wine glass</title>
+  <defs>
+    <mask id="mono-wine-glass-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M66 34C62 84 76 110 100 112C124 110 138 84 134 34Z" stroke="#fff" stroke-width="9"/><path d="M100 112V160" stroke="#fff" stroke-width="9"/><path d="M70 166H130" stroke="#fff" stroke-width="9"/><path d="M66 34C62 84 76 110 100 112C124 110 138 84 134 34Z" stroke="#000" stroke-width="3"/><path d="M100 112V160" stroke="#000" stroke-width="3"/><path d="M70 166H130" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M75 74C78 94 88 102 100 102C112 102 122 94 125 74Z"/>
+      <path d="M100 128L106 136L100 144L94 136Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-wine-glass-hollow)">
+      <path d="M66 34C62 84 76 110 100 112C124 110 138 84 134 34Z"/>
+      <path d="M100 112V160"/>
+      <path d="M70 166H130"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Wine glass</b><code>07-wine-glass.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Champagne coupe</title>
+  <defs>
+    <mask id="mono-champagne-coupe-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M40 72C48 102 74 110 100 110C126 110 152 102 160 72Z" stroke="#fff" stroke-width="9"/><path d="M100 110V160" stroke="#fff" stroke-width="9"/><path d="M70 166H130" stroke="#fff" stroke-width="9"/><path d="M40 72C48 102 74 110 100 110C126 110 152 102 160 72Z" stroke="#000" stroke-width="3"/><path d="M100 110V160" stroke="#000" stroke-width="3"/><path d="M70 166H130" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M54 82C62 96 80 100 100 100C120 100 138 96 146 82Z"/>
+      <path d="M100 128L106 136L100 144L94 136Z"/>
+      <path d="M86.5 56A3.5 3.5 0 1 0 93.5 56A3.5 3.5 0 1 0 86.5 56Z"/>
+      <path d="M101 42A3 3 0 1 0 107 42A3 3 0 1 0 101 42Z"/>
+      <path d="M93.6 28A2.4 2.4 0 1 0 98.4 28A2.4 2.4 0 1 0 93.6 28Z"/>
+      <path d="M108 18A2 2 0 1 0 112 18A2 2 0 1 0 108 18Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-champagne-coupe-hollow)">
+      <path d="M40 72C48 102 74 110 100 110C126 110 152 102 160 72Z"/>
+      <path d="M100 110V160"/>
+      <path d="M70 166H130"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Champagne coupe</b><code>08-champagne-coupe.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Decanter</title>
+  <defs>
+    <mask id="mono-decanter-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M90 34V64C60 78 48 104 52 132C56 160 76 172 100 172C124 172 144 160 148 132C152 104 140 78 110 64V34" stroke="#fff" stroke-width="9"/><path d="M84 34H116" stroke="#fff" stroke-width="9"/><path d="M90 34V64C60 78 48 104 52 132C56 160 76 172 100 172C124 172 144 160 148 132C152 104 140 78 110 64V34" stroke="#000" stroke-width="3"/><path d="M84 34H116" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M100 6L109 18L100 30L91 18Z"/>
+      <path d="M62 128C64 152 80 160 100 160C120 160 136 152 138 128Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M74 96L100 82L126 96" stroke-width="2"/>
+      <path d="M68 112L100 96L132 112" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-decanter-hollow)">
+      <path d="M90 34V64C60 78 48 104 52 132C56 160 76 172 100 172C124 172 144 160 148 132C152 104 140 78 110 64V34"/>
+      <path d="M84 34H116"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Decanter</b><code>09-decanter.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Martini</title>
+  <defs>
+    <mask id="mono-martini-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M42 50H158L100 114Z" stroke="#fff" stroke-width="9"/><path d="M100 114V160" stroke="#fff" stroke-width="9"/><path d="M70 166H130" stroke="#fff" stroke-width="9"/><path d="M42 50H158L100 114Z" stroke="#000" stroke-width="3"/><path d="M100 114V160" stroke="#000" stroke-width="3"/><path d="M70 166H130" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M68 66H132L100 100Z"/>
+      <path d="M123 40A9 9 0 1 0 141 40A9 9 0 1 0 123 40Z"/>
+      <path d="M100 130L106 138L100 146L94 138Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M146 24L104 80" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-martini-hollow)">
+      <path d="M42 50H158L100 114Z"/>
+      <path d="M100 114V160"/>
+      <path d="M70 166H130"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Martini</b><code>10-martini.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Cocktail shaker</title>
+  <defs>
+    <mask id="mono-cocktail-shaker-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M76 44H124L118 66H82Z" stroke="#fff" stroke-width="9"/><path d="M74 72H126L118 178H82Z" stroke="#fff" stroke-width="9"/><path d="M76 44H124L118 66H82Z" stroke="#000" stroke-width="3"/><path d="M74 72H126L118 178H82Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M88 20H112V36H88Z"/>
+      <path d="M84 100H116L115 110H85Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M80 90H120" stroke-width="2"/>
+      <path d="M86 122H114" stroke-width="2"/>
+      <path d="M87 134H113" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-cocktail-shaker-hollow)">
+      <path d="M76 44H124L118 66H82Z"/>
+      <path d="M74 72H126L118 178H82Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Cocktail shaker</b><code>11-cocktail-shaker.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Ice bucket</title>
+  <defs>
+    <mask id="mono-ice-bucket-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M50 102H150L136 178H64Z" stroke="#fff" stroke-width="9"/><path d="M92 100V62C92 54 96 50 96 40V30M112 30V40C112 50 116 54 116 62V100" stroke="#fff" stroke-width="9"/><path d="M50 114C36 114 36 132 52 132M150 114C164 114 164 132 148 132" stroke="#fff" stroke-width="9"/><path d="M50 102H150L136 178H64Z" stroke="#000" stroke-width="3"/><path d="M92 100V62C92 54 96 50 96 40V30M112 30V40C112 50 116 54 116 62V100" stroke="#000" stroke-width="3"/><path d="M50 114C36 114 36 132 52 132M150 114C164 114 164 132 148 132" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M93 14H115V32H93Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M64 102L72 90L82 102M120 102L128 90L138 102" stroke-width="2"/>
+      <path d="M78 116L82 166M100 116V166M122 116L118 166" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-ice-bucket-hollow)">
+      <path d="M50 102H150L136 178H64Z"/>
+      <path d="M92 100V62C92 54 96 50 96 40V30M112 30V40C112 50 116 54 116 62V100"/>
+      <path d="M50 114C36 114 36 132 52 132M150 114C164 114 164 132 148 132"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Ice bucket</b><code>12-ice-bucket.svg</code></figcaption></figure>
+  </div>
+</section>
+<section>
+  <h2>Delicacies<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Oyster</title>
+  <defs>
+    <mask id="mono-oyster-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M38 104A62 62 0 0 1 162 104Z" stroke="#fff" stroke-width="9"/><path d="M32 118H168C160 158 40 158 32 118Z" stroke="#fff" stroke-width="9"/><path d="M38 104A62 62 0 0 1 162 104Z" stroke="#000" stroke-width="3"/><path d="M32 118H168C160 158 40 158 32 118Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M89 134A11 11 0 1 0 111 134A11 11 0 1 0 89 134Z"/>
+      <path d="M88 104A12 12 0 0 1 112 104Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M84.35 100.67L47.18 92.77M86.36 95.64L53.96 75.79M89.93 91.57L66.02 62.03M94.66 88.92L81.97 53.1M100 88L100 50M105.34 88.92L118.03 53.1M110.07 91.57L133.98 62.03M113.64 95.64L146.04 75.79M115.65 100.67L152.82 92.77" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-oyster-hollow)">
+      <path d="M38 104A62 62 0 0 1 162 104Z"/>
+      <path d="M32 118H168C160 158 40 158 32 118Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Oyster</b><code>13-oyster.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Caviar</title>
+  <defs>
+    <mask id="mono-caviar-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M34 78A66 20 0 1 0 166 78A66 20 0 1 0 34 78Z" stroke="#fff" stroke-width="9"/><path d="M34 78V130C34 154 166 154 166 130V78" stroke="#fff" stroke-width="9"/><path d="M34 78A66 20 0 1 0 166 78A66 20 0 1 0 34 78Z" stroke="#000" stroke-width="3"/><path d="M34 78V130C34 154 166 154 166 130V78" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M55.85 72.31A2.9 2.9 0 1 0 61.65 72.31A2.9 2.9 0 1 0 55.85 72.31ZM64.35 72.31A2.9 2.9 0 1 0 70.15 72.31A2.9 2.9 0 1 0 64.35 72.31ZM72.85 72.31A2.9 2.9 0 1 0 78.65 72.31A2.9 2.9 0 1 0 72.85 72.31ZM81.35 72.31A2.9 2.9 0 1 0 87.15 72.31A2.9 2.9 0 1 0 81.35 72.31ZM89.85 72.31A2.9 2.9 0 1 0 95.65 72.31A2.9 2.9 0 1 0 89.85 72.31ZM98.35 72.31A2.9 2.9 0 1 0 104.15 72.31A2.9 2.9 0 1 0 98.35 72.31ZM106.85 72.31A2.9 2.9 0 1 0 112.65 72.31A2.9 2.9 0 1 0 106.85 72.31ZM115.35 72.31A2.9 2.9 0 1 0 121.15 72.31A2.9 2.9 0 1 0 115.35 72.31ZM123.85 72.31A2.9 2.9 0 1 0 129.65 72.31A2.9 2.9 0 1 0 123.85 72.31ZM132.35 72.31A2.9 2.9 0 1 0 138.15 72.31A2.9 2.9 0 1 0 132.35 72.31ZM51.6 79.62A2.9 2.9 0 1 0 57.4 79.62A2.9 2.9 0 1 0 51.6 79.62ZM60.1 79.62A2.9 2.9 0 1 0 65.9 79.62A2.9 2.9 0 1 0 60.1 79.62ZM68.6 79.62A2.9 2.9 0 1 0 74.4 79.62A2.9 2.9 0 1 0 68.6 79.62ZM77.1 79.62A2.9 2.9 0 1 0 82.9 79.62A2.9 2.9 0 1 0 77.1 79.62ZM85.6 79.62A2.9 2.9 0 1 0 91.4 79.62A2.9 2.9 0 1 0 85.6 79.62ZM94.1 79.62A2.9 2.9 0 1 0 99.9 79.62A2.9 2.9 0 1 0 94.1 79.62ZM102.6 79.62A2.9 2.9 0 1 0 108.4 79.62A2.9 2.9 0 1 0 102.6 79.62ZM111.1 79.62A2.9 2.9 0 1 0 116.9 79.62A2.9 2.9 0 1 0 111.1 79.62ZM119.6 79.62A2.9 2.9 0 1 0 125.4 79.62A2.9 2.9 0 1 0 119.6 79.62ZM128.1 79.62A2.9 2.9 0 1 0 133.9 79.62A2.9 2.9 0 1 0 128.1 79.62ZM136.6 79.62A2.9 2.9 0 1 0 142.4 79.62A2.9 2.9 0 1 0 136.6 79.62ZM145.1 79.62A2.9 2.9 0 1 0 150.9 79.62A2.9 2.9 0 1 0 145.1 79.62ZM72.85 86.93A2.9 2.9 0 1 0 78.65 86.93A2.9 2.9 0 1 0 72.85 86.93ZM81.35 86.93A2.9 2.9 0 1 0 87.15 86.93A2.9 2.9 0 1 0 81.35 86.93ZM89.85 86.93A2.9 2.9 0 1 0 95.65 86.93A2.9 2.9 0 1 0 89.85 86.93ZM98.35 86.93A2.9 2.9 0 1 0 104.15 86.93A2.9 2.9 0 1 0 98.35 86.93ZM106.85 86.93A2.9 2.9 0 1 0 112.65 86.93A2.9 2.9 0 1 0 106.85 86.93ZM115.35 86.93A2.9 2.9 0 1 0 121.15 86.93A2.9 2.9 0 1 0 115.35 86.93ZM123.85 86.93A2.9 2.9 0 1 0 129.65 86.93A2.9 2.9 0 1 0 123.85 86.93Z"/>
+      <path d="M58 172H142L136 164H64Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M34 106C34 128 166 128 166 106" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-caviar-hollow)">
+      <path d="M34 78A66 20 0 1 0 166 78A66 20 0 1 0 34 78Z"/>
+      <path d="M34 78V130C34 154 166 154 166 130V78"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Caviar</b><code>14-caviar.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Grapes</title>
+  <defs>
+    <mask id="mono-grapes-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M57 78A13 13 0 1 0 83 78A13 13 0 1 0 57 78Z" stroke="#fff" stroke-width="9"/><path d="M87 78A13 13 0 1 0 113 78A13 13 0 1 0 87 78Z" stroke="#fff" stroke-width="9"/><path d="M117 78A13 13 0 1 0 143 78A13 13 0 1 0 117 78Z" stroke="#fff" stroke-width="9"/><path d="M72 106A13 13 0 1 0 98 106A13 13 0 1 0 72 106Z" stroke="#fff" stroke-width="9"/><path d="M102 106A13 13 0 1 0 128 106A13 13 0 1 0 102 106Z" stroke="#fff" stroke-width="9"/><path d="M87 134A13 13 0 1 0 113 134A13 13 0 1 0 87 134Z" stroke="#fff" stroke-width="9"/><path d="M100 64C100 50 96 40 88 30" stroke="#fff" stroke-width="9"/><path d="M57 78A13 13 0 1 0 83 78A13 13 0 1 0 57 78Z" stroke="#000" stroke-width="3"/><path d="M87 78A13 13 0 1 0 113 78A13 13 0 1 0 87 78Z" stroke="#000" stroke-width="3"/><path d="M117 78A13 13 0 1 0 143 78A13 13 0 1 0 117 78Z" stroke="#000" stroke-width="3"/><path d="M72 106A13 13 0 1 0 98 106A13 13 0 1 0 72 106Z" stroke="#000" stroke-width="3"/><path d="M102 106A13 13 0 1 0 128 106A13 13 0 1 0 102 106Z" stroke="#000" stroke-width="3"/><path d="M87 134A13 13 0 1 0 113 134A13 13 0 1 0 87 134Z" stroke="#000" stroke-width="3"/><path d="M100 64C100 50 96 40 88 30" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M138.91 31.84Q126.93 51.53 105.09 44.16Q117.07 24.47 138.91 31.84Z"/>
+      <path d="M96 166A4 4 0 1 0 104 166A4 4 0 1 0 96 166Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 52C112 48 120 44 124 36" stroke-width="2"/>
+      <path d="M100 148V160" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-grapes-hollow)">
+      <path d="M57 78A13 13 0 1 0 83 78A13 13 0 1 0 57 78Z"/>
+      <path d="M87 78A13 13 0 1 0 113 78A13 13 0 1 0 87 78Z"/>
+      <path d="M117 78A13 13 0 1 0 143 78A13 13 0 1 0 117 78Z"/>
+      <path d="M72 106A13 13 0 1 0 98 106A13 13 0 1 0 72 106Z"/>
+      <path d="M102 106A13 13 0 1 0 128 106A13 13 0 1 0 102 106Z"/>
+      <path d="M87 134A13 13 0 1 0 113 134A13 13 0 1 0 87 134Z"/>
+      <path d="M100 64C100 50 96 40 88 30"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Grapes</b><code>15-grapes.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Fish course</title>
+  <defs>
+    <mask id="mono-fish-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M28 100C52 64 112 58 146 100C112 142 52 136 28 100Z" stroke="#fff" stroke-width="9"/><path d="M20 166H180" stroke="#fff" stroke-width="9"/><path d="M28 100C52 64 112 58 146 100C112 142 52 136 28 100Z" stroke="#000" stroke-width="3"/><path d="M20 166H180" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M146 100L180 74V126Z"/>
+      <path d="M51 94A5 5 0 1 0 61 94A5 5 0 1 0 51 94Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M74 76C84 88 84 112 74 124" stroke-width="2"/>
+      <path d="M84 100a8 8 0 0 1 16 0a8 8 0 0 1 16 0a8 8 0 0 1 16 0M92 88a8 8 0 0 1 16 0a8 8 0 0 1 16 0M92 112a8 8 0 0 1 16 0a8 8 0 0 1 16 0" stroke-width="1.6"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-fish-hollow)">
+      <path d="M28 100C52 64 112 58 146 100C112 142 52 136 28 100Z"/>
+      <path d="M20 166H180"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Fish course</b><code>16-fish.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Fruit tart</title>
+  <defs>
+    <mask id="mono-fruit-tart-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M164 104A11.11 11.11 0 0 1 160.14 125.89A11.11 11.11 0 0 1 149.03 145.14A11.11 11.11 0 0 1 132 159.43A11.11 11.11 0 0 1 111.11 167.03A11.11 11.11 0 0 1 88.89 167.03A11.11 11.11 0 0 1 68 159.43A11.11 11.11 0 0 1 50.97 145.14A11.11 11.11 0 0 1 39.86 125.89A11.11 11.11 0 0 1 36 104A11.11 11.11 0 0 1 39.86 82.11A11.11 11.11 0 0 1 50.97 62.86A11.11 11.11 0 0 1 68 48.57A11.11 11.11 0 0 1 88.89 40.97A11.11 11.11 0 0 1 111.11 40.97A11.11 11.11 0 0 1 132 48.57A11.11 11.11 0 0 1 149.03 62.86A11.11 11.11 0 0 1 160.14 82.11A11.11 11.11 0 0 1 164 104Z" stroke="#fff" stroke-width="9"/><path d="M164 104A11.11 11.11 0 0 1 160.14 125.89A11.11 11.11 0 0 1 149.03 145.14A11.11 11.11 0 0 1 132 159.43A11.11 11.11 0 0 1 111.11 167.03A11.11 11.11 0 0 1 88.89 167.03A11.11 11.11 0 0 1 68 159.43A11.11 11.11 0 0 1 50.97 145.14A11.11 11.11 0 0 1 39.86 125.89A11.11 11.11 0 0 1 36 104A11.11 11.11 0 0 1 39.86 82.11A11.11 11.11 0 0 1 50.97 62.86A11.11 11.11 0 0 1 68 48.57A11.11 11.11 0 0 1 88.89 40.97A11.11 11.11 0 0 1 111.11 40.97A11.11 11.11 0 0 1 132 48.57A11.11 11.11 0 0 1 149.03 62.86A11.11 11.11 0 0 1 160.14 82.11A11.11 11.11 0 0 1 164 104Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M126 104A8 8 0 1 0 142 104A8 8 0 1 0 126 104Z"/>
+      <path d="M116.04 128.04A8 8 0 1 0 132.04 128.04A8 8 0 1 0 116.04 128.04Z"/>
+      <path d="M92 138A8 8 0 1 0 108 138A8 8 0 1 0 92 138Z"/>
+      <path d="M67.96 128.04A8 8 0 1 0 83.96 128.04A8 8 0 1 0 67.96 128.04Z"/>
+      <path d="M58 104A8 8 0 1 0 74 104A8 8 0 1 0 58 104Z"/>
+      <path d="M67.96 79.96A8 8 0 1 0 83.96 79.96A8 8 0 1 0 67.96 79.96Z"/>
+      <path d="M92 70A8 8 0 1 0 108 70A8 8 0 1 0 92 70Z"/>
+      <path d="M116.04 79.96A8 8 0 1 0 132.04 79.96A8 8 0 1 0 116.04 79.96Z"/>
+      <path d="M100 90L104.24 99.76L114 104L104.24 108.24L100 118L95.76 108.24L86 104L95.76 99.76Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 104A50 50 0 1 0 150 104A50 50 0 1 0 50 104Z" stroke-width="2"/>
+      <path d="M78 104A22 22 0 1 0 122 104A22 22 0 1 0 78 104Z" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-fruit-tart-hollow)">
+      <path d="M164 104A11.11 11.11 0 0 1 160.14 125.89A11.11 11.11 0 0 1 149.03 145.14A11.11 11.11 0 0 1 132 159.43A11.11 11.11 0 0 1 111.11 167.03A11.11 11.11 0 0 1 88.89 167.03A11.11 11.11 0 0 1 68 159.43A11.11 11.11 0 0 1 50.97 145.14A11.11 11.11 0 0 1 39.86 125.89A11.11 11.11 0 0 1 36 104A11.11 11.11 0 0 1 39.86 82.11A11.11 11.11 0 0 1 50.97 62.86A11.11 11.11 0 0 1 68 48.57A11.11 11.11 0 0 1 88.89 40.97A11.11 11.11 0 0 1 111.11 40.97A11.11 11.11 0 0 1 132 48.57A11.11 11.11 0 0 1 149.03 62.86A11.11 11.11 0 0 1 160.14 82.11A11.11 11.11 0 0 1 164 104Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Fruit tart</b><code>17-fruit-tart.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Cheese</title>
+  <defs>
+    <mask id="mono-cheese-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M26 118L150 64L174 96V152H26Z" stroke="#fff" stroke-width="9"/><path d="M26 118L174 96" stroke="#fff" stroke-width="9"/><path d="M26 118L150 64L174 96V152H26Z" stroke="#000" stroke-width="3"/><path d="M26 118L174 96" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M55 134A7 7 0 1 0 69 134A7 7 0 1 0 55 134Z"/>
+      <path d="M103 128A9 9 0 1 0 121 128A9 9 0 1 0 103 128Z"/>
+      <path d="M144 138A6 6 0 1 0 156 138A6 6 0 1 0 144 138Z"/>
+      <path d="M84 144A4 4 0 1 0 92 144A4 4 0 1 0 84 144Z"/>
+      <path d="M119 88A7 3.5 0 1 0 133 88A7 3.5 0 1 0 119 88Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 168H180" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-cheese-hollow)">
+      <path d="M26 118L150 64L174 96V152H26Z"/>
+      <path d="M26 118L174 96"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Cheese</b><code>18-cheese.svg</code></figcaption></figure>
+  </div>
+</section>
+<section>
+  <h2>Kitchen<span>6</span></h2>
+  <div class="grid">
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Chef's toque</title>
+  <defs>
+    <mask id="mono-toque-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M62 116C40 112 36 78 62 74C64 48 92 42 100 58C108 42 136 48 138 74C164 78 160 112 138 116Z" stroke="#fff" stroke-width="9"/><path d="M62 124H138V156H62Z" stroke="#fff" stroke-width="9"/><path d="M62 116C40 112 36 78 62 74C64 48 92 42 100 58C108 42 136 48 138 74C164 78 160 112 138 116Z" stroke="#000" stroke-width="3"/><path d="M62 124H138V156H62Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M100 131L107 140L100 149L93 140Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M78 128V152M122 128V152" stroke-width="2"/>
+      <path d="M80 96C84 84 92 80 100 84M120 96C116 84 108 80 100 84" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-toque-hollow)">
+      <path d="M62 116C40 112 36 78 62 74C64 48 92 42 100 58C108 42 136 48 138 74C164 78 160 112 138 116Z"/>
+      <path d="M62 124H138V156H62Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Chef's toque</b><code>19-toque.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Chef's knife</title>
+  <defs>
+    <mask id="mono-chef-knife-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M132 90H46C32 90 22 100 20 110C58 122 104 118 132 114Z" stroke="#fff" stroke-width="9"/><path d="M144 90H174C182 90 182 114 174 114H144" stroke="#fff" stroke-width="9"/><path d="M132 90H46C32 90 22 100 20 110C58 122 104 118 132 114Z" stroke="#000" stroke-width="3"/><path d="M144 90H174C182 90 182 114 174 114H144" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g transform="rotate(-32 100 100)">
+    <g fill="currentColor">
+      <path d="M132 84H144V120H132Z"/>
+      <path d="M152.5 102A3.5 3.5 0 1 0 159.5 102A3.5 3.5 0 1 0 152.5 102Z"/>
+      <path d="M164.5 102A3.5 3.5 0 1 0 171.5 102A3.5 3.5 0 1 0 164.5 102Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M44 104H126" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-chef-knife-hollow)">
+      <path d="M132 90H46C32 90 22 100 20 110C58 122 104 118 132 114Z"/>
+      <path d="M144 90H174C182 90 182 114 174 114H144"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Chef's knife</b><code>20-chef-knife.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Whisk</title>
+  <defs>
+    <mask id="mono-whisk-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M100 118C58 92 66 28 100 22C134 28 142 92 100 118" stroke="#fff" stroke-width="9"/><path d="M100 132V180" stroke="#fff" stroke-width="9"/><path d="M100 118C58 92 66 28 100 22C134 28 142 92 100 118" stroke="#000" stroke-width="3"/><path d="M100 132V180" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M90 116H110V132H90Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 118C82 92 84 42 100 24C116 42 118 92 100 118" stroke-width="2"/>
+      <path d="M100 118V24" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-whisk-hollow)">
+      <path d="M100 118C58 92 66 28 100 22C134 28 142 92 100 118"/>
+      <path d="M100 132V180"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Whisk</b><code>21-whisk.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Saucepan</title>
+  <defs>
+    <mask id="mono-saucepan-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M38 96H134V142C134 154 126 162 114 162H58C46 162 38 154 38 142Z" stroke="#fff" stroke-width="9"/><path d="M134 106H182" stroke="#fff" stroke-width="9"/><path d="M38 96H134V142C134 154 126 162 114 162H58C46 162 38 154 38 142Z" stroke="#000" stroke-width="3"/><path d="M134 106H182" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M30 88H142V96H30Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M58 76C52 66 64 58 58 46M86 76C80 66 92 58 86 46M114 76C108 66 120 58 114 46" stroke-width="2"/>
+      <path d="M38 118H134" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-saucepan-hollow)">
+      <path d="M38 96H134V142C134 154 126 162 114 162H58C46 162 38 154 38 142Z"/>
+      <path d="M134 106H182"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Saucepan</b><code>22-saucepan.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Gâteau</title>
+  <defs>
+    <mask id="mono-gateau-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M42 132H158V174H42Z" stroke="#fff" stroke-width="9"/><path d="M58 98H142V132H58Z" stroke="#fff" stroke-width="9"/><path d="M74 68H126V98H74Z" stroke="#fff" stroke-width="9"/><path d="M42 132H158V174H42Z" stroke="#000" stroke-width="3"/><path d="M58 98H142V132H58Z" stroke="#000" stroke-width="3"/><path d="M74 68H126V98H74Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M95 44H105V66H95Z"/>
+      <path d="M100 22C107 31 106 38.2 100 40C94 38.2 93 31 100 22Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M42 146C56 160 70 160 84 146C98 160 112 160 126 146C140 160 154 160 158 152" stroke-width="2"/>
+      <path d="M58 110C68 120 80 120 90 110C100 120 112 120 122 110C130 118 138 118 142 112" stroke-width="2"/>
+      <path d="M74 80C82 88 92 88 100 80C108 88 118 88 126 80" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-gateau-hollow)">
+      <path d="M42 132H158V174H42Z"/>
+      <path d="M58 98H142V132H58Z"/>
+      <path d="M74 68H126V98H74Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Gâteau</b><code>23-gateau.svg</code></figcaption></figure>
+    <figure><svg viewBox="0 0 200 200" role="img">
+  <title>Pepper mill</title>
+  <defs>
+    <mask id="mono-pepper-mill-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M86 36H114L118 62C128 74 128 92 118 102L126 176H74L82 102C72 92 72 74 82 62Z" stroke="#fff" stroke-width="9"/><path d="M86 36H114L118 62C128 74 128 92 118 102L126 176H74L82 102C72 92 72 74 82 62Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g fill="currentColor">
+      <path d="M92 24A8 8 0 1 0 108 24A8 8 0 1 0 92 24Z"/>
+      <path d="M80 116H120L121 126H79Z"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M84 140H116" stroke-width="2"/>
+      <path d="M84 150H116" stroke-width="2"/>
+      <path d="M86 62H114" stroke-width="2"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mono-pepper-mill-hollow)">
+      <path d="M86 36H114L118 62C128 74 128 92 118 102L126 176H74L82 102C72 92 72 74 82 62Z"/>
+    </g>
+  </g>
+</svg>
+<figcaption><b>Pepper mill</b><code>24-pepper-mill.svg</code></figcaption></figure>
+  </div>
+</section>
+  </div>
+</main>
+<script>
+  const press = (sel, b) => document.querySelectorAll(sel).forEach((x) => x.setAttribute('aria-pressed', x === b));
+  document.querySelectorAll('[data-v]').forEach((b) => b.onclick = () => { document.body.classList.toggle('alt', b.dataset.v === 'b'); press('[data-v]', b); });
+  document.querySelectorAll('[data-s]').forEach((b) => b.onclick = () => { document.body.dataset.size = b.dataset.s; press('[data-s]', b); });
+</script>
+</body>
+</html>

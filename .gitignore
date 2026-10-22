@@ -49,5 +49,5 @@ ai-images/build/
 studio/mockups/out/
 
 # Download bundles for the icon sets (rebuilt from each set folder)
-coffee-riso-*.zip
-gilt-almanac-*.zip
+*-icons-svg.zip
+*-dribbble.zip

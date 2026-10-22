@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Cheese</title>
+  <defs>
+    <mask id="mai-cheese-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M26 118L150 64L174 96V152H26Z" stroke="#fff" stroke-width="9"/><path d="M26 118L174 96" stroke="#fff" stroke-width="9"/><path d="M26 118L150 64L174 96V152H26Z" stroke="#000" stroke-width="3"/><path d="M26 118L174 96" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="currentColor">
+      <path d="M55 134A7 7 0 1 0 69 134A7 7 0 1 0 55 134Z"/>
+      <path d="M103 128A9 9 0 1 0 121 128A9 9 0 1 0 103 128Z"/>
+      <path d="M144 138A6 6 0 1 0 156 138A6 6 0 1 0 144 138Z"/>
+      <path d="M84 144A4 4 0 1 0 92 144A4 4 0 1 0 84 144Z"/>
+      <path d="M119 88A7 3.5 0 1 0 133 88A7 3.5 0 1 0 119 88Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 168H180" stroke-width="2"/>
+    </g>
+    <g id="inline" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-cheese-hollow)">
+      <path d="M26 118L150 64L174 96V152H26Z"/>
+      <path d="M26 118L174 96"/>
+    </g>
+  </g>
+</svg>

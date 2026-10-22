@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Martini</title>
+  <defs>
+    <mask id="mai-martini-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M42 50H158L100 114Z" stroke="#fff" stroke-width="9"/><path d="M100 114V160" stroke="#fff" stroke-width="9"/><path d="M70 166H130" stroke="#fff" stroke-width="9"/><path d="M42 50H158L100 114Z" stroke="#000" stroke-width="3"/><path d="M100 114V160" stroke="#000" stroke-width="3"/><path d="M70 166H130" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="currentColor">
+      <path d="M68 66H132L100 100Z"/>
+      <path d="M123 40A9 9 0 1 0 141 40A9 9 0 1 0 123 40Z"/>
+      <path d="M100 130L106 138L100 146L94 138Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M146 24L104 80" stroke-width="2"/>
+    </g>
+    <g id="inline" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-martini-hollow)">
+      <path d="M42 50H158L100 114Z"/>
+      <path d="M100 114V160"/>
+      <path d="M70 166H130"/>
+    </g>
+  </g>
+</svg>

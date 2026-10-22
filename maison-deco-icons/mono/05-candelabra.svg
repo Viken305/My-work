@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Candelabra</title>
+  <defs>
+    <mask id="mai-candelabra-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 100C48 128 152 128 152 100" stroke="#fff" stroke-width="9"/><path d="M100 98V158" stroke="#fff" stroke-width="9"/><path d="M38 98H62M88 96H112M138 98H162" stroke="#fff" stroke-width="9"/><path d="M48 100C48 128 152 128 152 100" stroke="#000" stroke-width="3"/><path d="M100 98V158" stroke="#000" stroke-width="3"/><path d="M38 98H62M88 96H112M138 98H162" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="currentColor">
+      <path d="M43 64H57V94H43Z"/>
+      <path d="M93 42H107V92H93Z"/>
+      <path d="M143 64H157V94H143Z"/>
+      <path d="M50 38C57 48 56 56 50 58C44 56 43 48 50 38Z"/>
+      <path d="M100 16C107 26 106 34 100 36C94 34 93 26 100 16Z"/>
+      <path d="M150 38C157 48 156 56 150 58C144 56 143 48 150 38Z"/>
+      <path d="M66 180H134L122 164H78Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 82V88" stroke-width="2"/>
+      <path d="M150 82V88" stroke-width="2"/>
+    </g>
+    <g id="inline" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-candelabra-hollow)">
+      <path d="M48 100C48 128 152 128 152 100"/>
+      <path d="M100 98V158"/>
+      <path d="M38 98H62M88 96H112M138 98H162"/>
+    </g>
+  </g>
+</svg>

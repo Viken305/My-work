@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Chef's knife</title>
+  <defs>
+    <linearGradient id="mai-chef-knife-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="mai-chef-knife-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M132 90H46C32 90 22 100 20 110C58 122 104 118 132 114Z" stroke="#fff" stroke-width="9"/><path d="M144 90H174C182 90 182 114 174 114H144" stroke="#fff" stroke-width="9"/><path d="M132 90H46C32 90 22 100 20 110C58 122 104 118 132 114Z" stroke="#000" stroke-width="3"/><path d="M144 90H174C182 90 182 114 174 114H144" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g transform="rotate(-32 100 100)">
+    <g id="solid" fill="url(#mai-chef-knife-gold)">
+      <path d="M132 84H144V120H132Z"/>
+      <path d="M152.5 102A3.5 3.5 0 1 0 159.5 102A3.5 3.5 0 1 0 152.5 102Z"/>
+      <path d="M164.5 102A3.5 3.5 0 1 0 171.5 102A3.5 3.5 0 1 0 164.5 102Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="url(#mai-chef-knife-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M44 104H126" stroke-width="2"/>
+    </g>
+    <g id="inline" fill="none" stroke="url(#mai-chef-knife-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-chef-knife-hollow)">
+      <path d="M132 90H46C32 90 22 100 20 110C58 122 104 118 132 114Z"/>
+      <path d="M144 90H174C182 90 182 114 174 114H144"/>
+    </g>
+  </g>
+</svg>

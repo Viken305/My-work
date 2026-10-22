@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Place setting</title>
+  <defs>
+    <mask id="mai-place-setting-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M54 106A46 46 0 1 0 146 106A46 46 0 1 0 54 106Z" stroke="#fff" stroke-width="9"/><path d="M34 84V164" stroke="#fff" stroke-width="9"/><path d="M166 100V164" stroke="#fff" stroke-width="9"/><path d="M54 106A46 46 0 1 0 146 106A46 46 0 1 0 54 106Z" stroke="#000" stroke-width="3"/><path d="M34 84V164" stroke="#000" stroke-width="3"/><path d="M166 100V164" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="currentColor">
+      <path d="M26 40H42V70C42 78 38 82 34 82C30 82 26 78 26 70Z"/>
+      <path d="M166 38C178 50 178 86 166 100Z"/>
+      <path d="M100 90L112 106L100 122L88 106Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M68 106A32 32 0 1 0 132 106A32 32 0 1 0 68 106Z" stroke-width="2"/>
+      <path d="M31 40V64M37 40V64" stroke-width="2"/>
+      <path d="M118 106L128 106M112.73 118.73L119.8 125.8M100 124L100 134M87.27 118.73L80.2 125.8M82 106L72 106M87.27 93.27L80.2 86.2M100 88L100 78M112.73 93.27L119.8 86.2" stroke-width="2"/>
+    </g>
+    <g id="inline" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-place-setting-hollow)">
+      <path d="M54 106A46 46 0 1 0 146 106A46 46 0 1 0 54 106Z"/>
+      <path d="M34 84V164"/>
+      <path d="M166 100V164"/>
+    </g>
+  </g>
+</svg>

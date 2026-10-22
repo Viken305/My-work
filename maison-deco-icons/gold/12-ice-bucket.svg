@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Ice bucket</title>
+  <defs>
+    <linearGradient id="mai-ice-bucket-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="mai-ice-bucket-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M50 102H150L136 178H64Z" stroke="#fff" stroke-width="9"/><path d="M92 100V62C92 54 96 50 96 40V30M112 30V40C112 50 116 54 116 62V100" stroke="#fff" stroke-width="9"/><path d="M50 114C36 114 36 132 52 132M150 114C164 114 164 132 148 132" stroke="#fff" stroke-width="9"/><path d="M50 102H150L136 178H64Z" stroke="#000" stroke-width="3"/><path d="M92 100V62C92 54 96 50 96 40V30M112 30V40C112 50 116 54 116 62V100" stroke="#000" stroke-width="3"/><path d="M50 114C36 114 36 132 52 132M150 114C164 114 164 132 148 132" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="url(#mai-ice-bucket-gold)">
+      <path d="M93 14H115V32H93Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="url(#mai-ice-bucket-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M64 102L72 90L82 102M120 102L128 90L138 102" stroke-width="2"/>
+      <path d="M78 116L82 166M100 116V166M122 116L118 166" stroke-width="2"/>
+    </g>
+    <g id="inline" fill="none" stroke="url(#mai-ice-bucket-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-ice-bucket-hollow)">
+      <path d="M50 102H150L136 178H64Z"/>
+      <path d="M92 100V62C92 54 96 50 96 40V30M112 30V40C112 50 116 54 116 62V100"/>
+      <path d="M50 114C36 114 36 132 52 132M150 114C164 114 164 132 148 132"/>
+    </g>
+  </g>
+</svg>

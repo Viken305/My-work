@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Gâteau</title>
+  <defs>
+    <linearGradient id="mai-gateau-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="mai-gateau-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M42 132H158V174H42Z" stroke="#fff" stroke-width="9"/><path d="M58 98H142V132H58Z" stroke="#fff" stroke-width="9"/><path d="M74 68H126V98H74Z" stroke="#fff" stroke-width="9"/><path d="M42 132H158V174H42Z" stroke="#000" stroke-width="3"/><path d="M58 98H142V132H58Z" stroke="#000" stroke-width="3"/><path d="M74 68H126V98H74Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="url(#mai-gateau-gold)">
+      <path d="M95 44H105V66H95Z"/>
+      <path d="M100 22C107 31 106 38.2 100 40C94 38.2 93 31 100 22Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="url(#mai-gateau-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M42 146C56 160 70 160 84 146C98 160 112 160 126 146C140 160 154 160 158 152" stroke-width="2"/>
+      <path d="M58 110C68 120 80 120 90 110C100 120 112 120 122 110C130 118 138 118 142 112" stroke-width="2"/>
+      <path d="M74 80C82 88 92 88 100 80C108 88 118 88 126 80" stroke-width="2"/>
+    </g>
+    <g id="inline" fill="none" stroke="url(#mai-gateau-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-gateau-hollow)">
+      <path d="M42 132H158V174H42Z"/>
+      <path d="M58 98H142V132H58Z"/>
+      <path d="M74 68H126V98H74Z"/>
+    </g>
+  </g>
+</svg>

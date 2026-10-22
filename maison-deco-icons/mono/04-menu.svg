@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Menu</title>
+  <defs>
+    <mask id="mai-menu-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M56 178V74A44 44 0 0 1 144 74V178Z" stroke="#fff" stroke-width="9"/><path d="M56 178V74A44 44 0 0 1 144 74V178Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="currentColor">
+      <path d="M82 80A18 18 0 0 1 118 80Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M78.75 74.31L69.09 71.72M83.15 65.86L75.49 59.43M90.7 60.06L86.48 51M100 58L100 48M109.3 60.06L113.52 51M116.85 65.86L124.51 59.43M121.25 74.31L130.91 71.72" stroke-width="2"/>
+      <path d="M76 108H124" stroke-width="2"/>
+      <path d="M84 124H116M80 136H120M88 148H112M84 160H116" stroke-width="1.6"/>
+    </g>
+    <g id="inline" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-menu-hollow)">
+      <path d="M56 178V74A44 44 0 0 1 144 74V178Z"/>
+    </g>
+  </g>
+</svg>

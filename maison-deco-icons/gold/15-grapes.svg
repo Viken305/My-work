@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Grapes</title>
+  <defs>
+    <linearGradient id="mai-grapes-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="mai-grapes-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M57 78A13 13 0 1 0 83 78A13 13 0 1 0 57 78Z" stroke="#fff" stroke-width="9"/><path d="M87 78A13 13 0 1 0 113 78A13 13 0 1 0 87 78Z" stroke="#fff" stroke-width="9"/><path d="M117 78A13 13 0 1 0 143 78A13 13 0 1 0 117 78Z" stroke="#fff" stroke-width="9"/><path d="M72 106A13 13 0 1 0 98 106A13 13 0 1 0 72 106Z" stroke="#fff" stroke-width="9"/><path d="M102 106A13 13 0 1 0 128 106A13 13 0 1 0 102 106Z" stroke="#fff" stroke-width="9"/><path d="M87 134A13 13 0 1 0 113 134A13 13 0 1 0 87 134Z" stroke="#fff" stroke-width="9"/><path d="M100 64C100 50 96 40 88 30" stroke="#fff" stroke-width="9"/><path d="M57 78A13 13 0 1 0 83 78A13 13 0 1 0 57 78Z" stroke="#000" stroke-width="3"/><path d="M87 78A13 13 0 1 0 113 78A13 13 0 1 0 87 78Z" stroke="#000" stroke-width="3"/><path d="M117 78A13 13 0 1 0 143 78A13 13 0 1 0 117 78Z" stroke="#000" stroke-width="3"/><path d="M72 106A13 13 0 1 0 98 106A13 13 0 1 0 72 106Z" stroke="#000" stroke-width="3"/><path d="M102 106A13 13 0 1 0 128 106A13 13 0 1 0 102 106Z" stroke="#000" stroke-width="3"/><path d="M87 134A13 13 0 1 0 113 134A13 13 0 1 0 87 134Z" stroke="#000" stroke-width="3"/><path d="M100 64C100 50 96 40 88 30" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="url(#mai-grapes-gold)">
+      <path d="M138.91 31.84Q126.93 51.53 105.09 44.16Q117.07 24.47 138.91 31.84Z"/>
+      <path d="M96 166A4 4 0 1 0 104 166A4 4 0 1 0 96 166Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="url(#mai-grapes-gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 52C112 48 120 44 124 36" stroke-width="2"/>
+      <path d="M100 148V160" stroke-width="2"/>
+    </g>
+    <g id="inline" fill="none" stroke="url(#mai-grapes-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-grapes-hollow)">
+      <path d="M57 78A13 13 0 1 0 83 78A13 13 0 1 0 57 78Z"/>
+      <path d="M87 78A13 13 0 1 0 113 78A13 13 0 1 0 87 78Z"/>
+      <path d="M117 78A13 13 0 1 0 143 78A13 13 0 1 0 117 78Z"/>
+      <path d="M72 106A13 13 0 1 0 98 106A13 13 0 1 0 72 106Z"/>
+      <path d="M102 106A13 13 0 1 0 128 106A13 13 0 1 0 102 106Z"/>
+      <path d="M87 134A13 13 0 1 0 113 134A13 13 0 1 0 87 134Z"/>
+      <path d="M100 64C100 50 96 40 88 30"/>
+    </g>
+  </g>
+</svg>

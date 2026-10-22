@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Cocktail shaker</title>
+  <defs>
+    <mask id="mai-cocktail-shaker-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M76 44H124L118 66H82Z" stroke="#fff" stroke-width="9"/><path d="M74 72H126L118 178H82Z" stroke="#fff" stroke-width="9"/><path d="M76 44H124L118 66H82Z" stroke="#000" stroke-width="3"/><path d="M74 72H126L118 178H82Z" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="currentColor">
+      <path d="M88 20H112V36H88Z"/>
+      <path d="M84 100H116L115 110H85Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M80 90H120" stroke-width="2"/>
+      <path d="M86 122H114" stroke-width="2"/>
+      <path d="M87 134H113" stroke-width="2"/>
+    </g>
+    <g id="inline" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-cocktail-shaker-hollow)">
+      <path d="M76 44H124L118 66H82Z"/>
+      <path d="M74 72H126L118 178H82Z"/>
+    </g>
+  </g>
+</svg>

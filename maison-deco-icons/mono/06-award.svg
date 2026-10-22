@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Award</title>
+  <defs>
+    <mask id="mai-award-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M66 160C34 140 28 92 50 58" stroke="#fff" stroke-width="9"/><path d="M134 160C166 140 172 92 150 58" stroke="#fff" stroke-width="9"/><path d="M66 160C34 140 28 92 50 58" stroke="#000" stroke-width="3"/><path d="M134 160C166 140 172 92 150 58" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="currentColor">
+      <path d="M100 68L107.64 87.48L128.53 88.73L112.36 102.02L117.63 122.27L100 111L82.37 122.27L87.64 102.02L71.47 88.73L92.36 87.48Z"/>
+      <path d="M46.36 155.96Q30.65 152.17 29.64 136.04Q45.35 139.83 46.36 155.96Z"/>
+      <path d="M31.36 132.56Q18.73 122.48 24.64 107.44Q37.27 117.52 31.36 132.56Z"/>
+      <path d="M25.74 106.8Q18.55 92.33 30.26 81.2Q37.45 95.67 25.74 106.8Z"/>
+      <path d="M28.54 80.65Q28.14 64.49 43.46 59.35Q43.86 75.51 28.54 80.65Z"/>
+      <path d="M153.64 155.96Q154.65 139.83 170.36 136.04Q169.35 152.17 153.64 155.96Z"/>
+      <path d="M168.64 132.56Q162.73 117.52 175.36 107.44Q181.27 122.48 168.64 132.56Z"/>
+      <path d="M174.26 106.8Q162.55 95.67 169.74 81.2Q181.45 92.33 174.26 106.8Z"/>
+      <path d="M171.46 80.65Q156.14 75.51 156.54 59.35Q171.86 64.49 171.46 80.65Z"/>
+      <path d="M80 168H120L114 178H86Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M58 98A42 42 0 1 0 142 98A42 42 0 1 0 58 98Z" stroke-width="2"/>
+    </g>
+    <g id="inline" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-award-hollow)">
+      <path d="M66 160C34 140 28 92 50 58"/>
+      <path d="M134 160C166 140 172 92 150 58"/>
+    </g>
+  </g>
+</svg>

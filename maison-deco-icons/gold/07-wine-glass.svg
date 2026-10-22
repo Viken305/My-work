@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Wine glass</title>
+  <defs>
+    <linearGradient id="mai-wine-glass-gold" gradientUnits="userSpaceOnUse" x1="20" y1="10" x2="180" y2="190"><stop offset="0" stop-color="#f7e9bd"/><stop offset="0.3" stop-color="#d6aa4e"/><stop offset="0.48" stop-color="#fbf0c9"/><stop offset="0.66" stop-color="#b5852f"/><stop offset="1" stop-color="#e9c879"/></linearGradient>
+    <mask id="mai-wine-glass-hollow" maskUnits="userSpaceOnUse" x="-40" y="-40" width="280" height="280"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M66 34C62 84 76 110 100 112C124 110 138 84 134 34Z" stroke="#fff" stroke-width="9"/><path d="M100 112V160" stroke="#fff" stroke-width="9"/><path d="M70 166H130" stroke="#fff" stroke-width="9"/><path d="M66 34C62 84 76 110 100 112C124 110 138 84 134 34Z" stroke="#000" stroke-width="3"/><path d="M100 112V160" stroke="#000" stroke-width="3"/><path d="M70 166H130" stroke="#000" stroke-width="3"/></g></mask>
+  </defs>
+  <g>
+    <g id="solid" fill="url(#mai-wine-glass-gold)">
+      <path d="M75 74C78 94 88 102 100 102C112 102 122 94 125 74Z"/>
+      <path d="M100 128L106 136L100 144L94 136Z"/>
+    </g>
+    <g id="rule" fill="none" stroke="url(#mai-wine-glass-gold)" stroke-linecap="round" stroke-linejoin="round">
+      
+    </g>
+    <g id="inline" fill="none" stroke="url(#mai-wine-glass-gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" mask="url(#mai-wine-glass-hollow)">
+      <path d="M66 34C62 84 76 110 100 112C124 110 138 84 134 34Z"/>
+      <path d="M100 112V160"/>
+      <path d="M70 166H130"/>
+    </g>
+  </g>
+</svg>
