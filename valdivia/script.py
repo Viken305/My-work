@@ -13,7 +13,7 @@ PARTS = {
     "part2": [   # the crack
         ("A1", "Off the coast of Chile, one plate of the Earth's crust slides under another. Usually, it doesn't slide. It sticks."),
         ("A2", "For centuries, the strain kept building. Then, on the twenty second of May, at eleven minutes past three in the afternoon, it let go."),
-        ("A3", "A crack about a thousand kilometres long tore open along the coast. In places, the rock lurched by as much as twenty metres."),
+        ("A3", "A crack nearly a thousand kilometres long tore open along the coast. In places, the rock lurched by as much as twenty metres."),
     ],
     "part3": [   # how big
         ("B1", "In the city of Valdivia, the ground shook for about ten minutes."),
@@ -21,7 +21,7 @@ PARTS = {
         ("B3", "So this one released thousands of times more energy than the earthquake that destroyed Haiti's capital in twenty ten."),
     ],
     "part4": [   # the ocean
-        ("C1", "Then the sea moved. Waves up to twenty five metres high hit the coast of Chile. Somewhere between one and six thousand people died."),
+        ("C1", "Then the sea moved. Waves more than ten metres high hit the coast of Chile. Somewhere between one and six thousand people died."),
         ("C2", "But the tsunami kept going, across the entire Pacific, almost as fast as a passenger jet."),
         ("C3", "Fifteen hours later, it struck Hawaii and killed sixty one people. Almost a day later, it reached Japan, seventeen thousand kilometres away, and killed about a hundred and forty more."),
     ],
@@ -32,18 +32,18 @@ PARTS = {
     ],
     "part6": [   # what it left behind
         ("E1", "Two days after the quake, a volcano nearby erupted."),
-        ("E2", "Parts of the coast sank by about two metres. The sea flooded in, and whole forests drowned. Many of those dead trees are still standing in the water today."),
+        ("E2", "Parts of the coast sank by up to two metres. The sea flooded in. Whole forests drowned, and fields turned into tidal flats."),
         ("E3", "Since then, instruments have heard the Earth ring after every great earthquake. But never as loudly as in nineteen sixty."),
     ],
 }
 
 # spoken words -> what the captions show
 DISPLAY = [
-    ("nineteen sixty", "1960"), ("twenty ten", "2010"), ("twenty second of May", "22 May"),
-    ("eleven minutes past three in the afternoon", "3:11 pm"), ("a thousand kilometres", "1,000 km"),
+    ("nineteen sixty", "1960"), ("twenty ten", "2010"), ("twenty second of May", "22nd of May"),
+    ("eleven minutes past three in the afternoon", "3:11 in the afternoon"), ("a thousand kilometres", "1,000 km"),
     ("twenty metres", "20 metres"), ("ten minutes", "10 minutes"), ("nine point five", "9.5"),
-    ("thirty two times", "32×"), ("twenty five metres", "25 metres"), ("one and six thousand", "1,000 and 6,000"),
-    ("Fifteen hours", "15 hours"), ("sixty one", "61"), ("seventeen thousand kilometres", "17,000 km"),
+    ("thirty two times", "32 times"), ("ten metres", "10 metres"), ("one and six thousand", "1,000 and 6,000"),
+    ("fifteen hours", "15 hours"), ("sixty one", "61"), ("seventeen thousand kilometres", "17,000 km"),
     ("a hundred and forty", "140"), ("fifty four minutes", "54 minutes"), ("two metres", "2 metres"),
 ]
 

@@ -1,6 +1,6 @@
 # The Day the Earth Rang Like a Bell: style guide
 
-A 9:16 Short (**~2:35**) about the 1960 Valdivia earthquake in Chile, rendered entirely in code for @BrighterMinds.
+A 9:16 Short (**2:25**) about the 1960 Valdivia earthquake in Chile, rendered entirely in code for @BrighterMinds.
 Style frames: `python3 frames.py` writes `out/style/frame_*.png` and the contact sheet `out/style/style_frames.png`.
 
 This style is new. It is not the dark cyanotype of `krakatoa/` or the graphite noir of `deep-hole/`. This one is

@@ -406,6 +406,8 @@ def globe_land_path(proj, ss=2):
         for i, (px, py) in enumerate(cnt[:, 0, :]):
             (path.lineTo if i else path.moveTo)(ox + px / ss, oy + py / ss)
         path.close()
+    if len(_GLOBE) > 6:
+        _GLOBE.clear()
     _GLOBE[key] = path
     return path
 
@@ -430,6 +432,8 @@ def _coast_layer(path, lines, key, rgb):
     rgba[..., :3] = rgb
     rgba[..., 3] = (np.clip(a, 0, 1) * 255).astype(np.uint8)
     img = skia.Image.fromarray(rgba, colorType=skia.kRGBA_8888_ColorType, alphaType=skia.kUnpremul_AlphaType)
+    if len(_COAST) > 12:
+        _COAST.clear()
     _COAST[key] = img
     return img
 
