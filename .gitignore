@@ -47,3 +47,5 @@ ai-images/build/
 # studio: every project's build/ (voice clips, frames, history) and mockup screenshots
 */build/
 studio/mockups/out/
+
+valdivia/build/
