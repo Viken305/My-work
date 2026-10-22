@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Croissant</title>
+  <defs>
+    <filter id="riso-croissant-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-croissant-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-croissant-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-croissant-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="100" cy="154" rx="66" ry="9" fill="url(#riso-croissant-dots)"/>
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-croissant-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z"/>
+    <path d="M54 104 C58 112 58 118 56 122 M78 80 C81 98 81 116 78 132 M100 72 C102 92 102 114 100 134 M122 80 C119 98 119 116 122 132 M146 104 C142 112 142 118 144 122" stroke-width="3.5"/>
+    <path d="M88 92 L90 96 M110 100 L112 104 M66 108 L68 112 M132 110 L134 106" stroke-width="2.5"/>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Moka pot</title>
+  <defs>
+    <clipPath id="riso-moka-pot-tint-area">
+    <path d="M70 50 H130 L124 100 H76 Z"/>
+    </clipPath>
+    <clipPath id="riso-moka-pot-pink-area">
+    <path d="M76 108 H124 L134 168 H66 Z"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <path d="M70 50 H130 L124 100 H76 Z" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <path d="M76 108 H124 L134 168 H66 Z" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="91" y="38" width="18" height="10" rx="3" fill="#0078bf" stroke="none"/>
+    <path d="M70 50 H130 L124 100 H76 Z"/>
+    <path d="M72 54 L56 44 L76 72" stroke-width="4"/>
+    <rect x="70" y="99" width="60" height="10" rx="2" fill="#0078bf" stroke="none"/>
+    <path d="M76 108 H124 L134 168 H66 Z"/>
+    <path d="M100 52 V98 M100 110 V166" stroke-width="3"/>
+    <path d="M128 58 H148 C152 58 154 62 152 66 L140 96 H126" stroke-width="6"/>
+    <path d="M84 122 L80 154 M116 122 L120 154" stroke-width="3"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-moka-pot-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="91" y="38" width="18" height="10" rx="3" fill="#0054a5" stroke="none"/>
+    <path d="M70 50 H130 L124 100 H76 Z"/>
+    <path d="M72 54 L56 44 L76 72" stroke-width="4"/>
+    <rect x="70" y="99" width="60" height="10" rx="2" fill="#0054a5" stroke="none"/>
+    <path d="M76 108 H124 L134 168 H66 Z"/>
+    <path d="M100 52 V98 M100 110 V166" stroke-width="3"/>
+    <path d="M128 58 H148 C152 58 154 62 152 66 L140 96 H126" stroke-width="6"/>
+    <path d="M84 122 L80 154 M116 122 L120 154" stroke-width="3"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-moka-pot-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="91" y="38" width="18" height="10" rx="3" fill="#002284" stroke="none"/>
+    <path d="M70 50 H130 L124 100 H76 Z"/>
+    <path d="M72 54 L56 44 L76 72" stroke-width="4"/>
+    <rect x="70" y="99" width="60" height="10" rx="2" fill="#002284" stroke="none"/>
+    <path d="M76 108 H124 L134 168 H66 Z"/>
+    <path d="M100 52 V98 M100 110 V166" stroke-width="3"/>
+    <path d="M128 58 H148 C152 58 154 62 152 66 L140 96 H126" stroke-width="6"/>
+    <path d="M84 122 L80 154 M116 122 L120 154" stroke-width="3"/>
+  </g>
+</svg>

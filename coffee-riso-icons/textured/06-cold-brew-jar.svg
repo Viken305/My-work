@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Cold-brew jar</title>
+  <defs>
+    <filter id="riso-cold-brew-jar-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-cold-brew-jar-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-cold-brew-jar-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-cold-brew-jar-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="100" cy="176" rx="48" ry="6" fill="url(#riso-cold-brew-jar-dots)"/>
+    <path d="M60 86 H140 V156 A14 14 0 0 1 126 170 H74 A14 14 0 0 1 60 156 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-cold-brew-jar-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="42" width="92" height="16" rx="4" fill="#0078bf" stroke="none"/>
+    <path d="M66 58 V62 M134 58 V62"/>
+    <rect x="60" y="62" width="80" height="108" rx="14"/>
+    <rect x="74" y="96" width="20" height="20" rx="2" transform="rotate(12 84 106)" stroke-width="3.5"/>
+    <rect x="102" y="92" width="18" height="18" rx="2" transform="rotate(-10 111 101)" stroke-width="3.5"/>
+    <rect x="86" y="124" width="20" height="20" rx="2" transform="rotate(6 96 134)" stroke-width="3.5"/>
+    <path d="M140 104 H130 M140 124 H130 M140 144 H130" stroke-width="3"/>
+  </g>
+</svg>

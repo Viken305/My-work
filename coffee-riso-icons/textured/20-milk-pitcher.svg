@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Milk pitcher</title>
+  <defs>
+    <filter id="riso-milk-pitcher-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-milk-pitcher-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-milk-pitcher-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-milk-pitcher-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="102" cy="176" rx="52" ry="6" fill="url(#riso-milk-pitcher-dots)"/>
+    <path d="M64 64 H130 L148 52 L136 74 C140 102 142 130 140 158 C139 165 134 170 128 170 H76 C70 170 65 165 64 158 C62 130 62 96 64 64 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-milk-pitcher-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 64 H130 L148 52 L136 74 C140 102 142 130 140 158 C139 165 134 170 128 170 H76 C70 170 65 165 64 158 C62 130 62 96 64 64 Z"/>
+    <path d="M64 82 C38 82 38 142 64 142" stroke-width="7"/>
+    <path d="M118 108 H132 M122 124 H133 M118 140 H134" stroke-width="3"/>
+    <path d="M64 74 H134" stroke-width="3"/>
+  </g>
+</svg>

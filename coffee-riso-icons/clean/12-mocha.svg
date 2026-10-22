@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Mocha</title>
+  <defs>
+    <clipPath id="riso-mocha-tint-area">
+    <rect x="62" y="100" width="72" height="30"/>
+    </clipPath>
+    <clipPath id="riso-mocha-pink-area">
+    <path d="M62 130 H134 V160 A10 10 0 0 1 124 170 H72 A10 10 0 0 1 62 160 Z"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <rect x="62" y="100" width="72" height="30" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <path d="M62 130 H134 V160 A10 10 0 0 1 124 170 H72 A10 10 0 0 1 62 160 Z" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 78 C54 66 68 56 78 62 C82 50 100 48 106 58 C114 50 134 56 130 68 C142 70 142 82 132 82 H66 C58 82 54 78 60 78 Z"/>
+    <path d="M72 72 Q81 64 90 72 T108 71 T126 70" stroke-width="3"/>
+    <path d="M62 82 V160 A10 10 0 0 0 72 170 H124 A10 10 0 0 0 134 160 V82"/>
+    <path d="M62 100 H134 M62 130 H134" stroke-width="3"/>
+    <path d="M134 94 C158 94 158 142 134 142" stroke-width="6"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-mocha-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 78 C54 66 68 56 78 62 C82 50 100 48 106 58 C114 50 134 56 130 68 C142 70 142 82 132 82 H66 C58 82 54 78 60 78 Z"/>
+    <path d="M72 72 Q81 64 90 72 T108 71 T126 70" stroke-width="3"/>
+    <path d="M62 82 V160 A10 10 0 0 0 72 170 H124 A10 10 0 0 0 134 160 V82"/>
+    <path d="M62 100 H134 M62 130 H134" stroke-width="3"/>
+    <path d="M134 94 C158 94 158 142 134 142" stroke-width="6"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-mocha-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 78 C54 66 68 56 78 62 C82 50 100 48 106 58 C114 50 134 56 130 68 C142 70 142 82 132 82 H66 C58 82 54 78 60 78 Z"/>
+    <path d="M72 72 Q81 64 90 72 T108 71 T126 70" stroke-width="3"/>
+    <path d="M62 82 V160 A10 10 0 0 0 72 170 H124 A10 10 0 0 0 134 160 V82"/>
+    <path d="M62 100 H134 M62 130 H134" stroke-width="3"/>
+    <path d="M134 94 C158 94 158 142 134 142" stroke-width="6"/>
+  </g>
+</svg>

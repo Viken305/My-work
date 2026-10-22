@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Loyalty card</title>
+  <defs>
+    <clipPath id="riso-stamp-card-tint-area">
+    <rect x="34" y="56" width="132" height="90" rx="8"/>
+    </clipPath>
+    <clipPath id="riso-stamp-card-pink-area">
+    <circle cx="62" cy="92" r="11"/>
+    <circle cx="88" cy="92" r="11"/>
+    <circle cx="114" cy="92" r="11"/>
+    <circle cx="140" cy="92" r="11"/>
+    <circle cx="62" cy="122" r="11"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <rect x="34" y="56" width="132" height="90" rx="8" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <circle cx="62" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="88" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="114" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="140" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="62" cy="122" r="11" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="34" y="56" width="132" height="90" rx="8"/>
+    <path d="M48 70 H98" stroke-width="4"/>
+    <circle cx="62" cy="92" r="11" stroke-width="3"/>
+    <circle cx="88" cy="92" r="11" stroke-width="3"/>
+    <circle cx="114" cy="92" r="11" stroke-width="3"/>
+    <circle cx="140" cy="92" r="11" stroke-width="3"/>
+    <circle cx="62" cy="122" r="11" stroke-width="3"/>
+    <circle cx="88" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <circle cx="114" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <path d="M140 110 L143.2 116.6 L150.5 117.7 L145.2 122.8 L146.5 130 L140 126.6 L133.5 130 L134.8 122.8 L129.5 117.7 L136.8 116.6 Z" fill="#0078bf" stroke="none"/>
+    <path d="M58 92 L61 95 L67 88 M84 92 L87 95 L93 88 M110 92 L113 95 L119 88 M136 92 L139 95 L145 88 M58 122 L61 125 L67 118" stroke-width="2.5"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-stamp-card-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="34" y="56" width="132" height="90" rx="8"/>
+    <path d="M48 70 H98" stroke-width="4"/>
+    <circle cx="62" cy="92" r="11" stroke-width="3"/>
+    <circle cx="88" cy="92" r="11" stroke-width="3"/>
+    <circle cx="114" cy="92" r="11" stroke-width="3"/>
+    <circle cx="140" cy="92" r="11" stroke-width="3"/>
+    <circle cx="62" cy="122" r="11" stroke-width="3"/>
+    <circle cx="88" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <circle cx="114" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <path d="M140 110 L143.2 116.6 L150.5 117.7 L145.2 122.8 L146.5 130 L140 126.6 L133.5 130 L134.8 122.8 L129.5 117.7 L136.8 116.6 Z" fill="#0054a5" stroke="none"/>
+    <path d="M58 92 L61 95 L67 88 M84 92 L87 95 L93 88 M110 92 L113 95 L119 88 M136 92 L139 95 L145 88 M58 122 L61 125 L67 118" stroke-width="2.5"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-stamp-card-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="34" y="56" width="132" height="90" rx="8"/>
+    <path d="M48 70 H98" stroke-width="4"/>
+    <circle cx="62" cy="92" r="11" stroke-width="3"/>
+    <circle cx="88" cy="92" r="11" stroke-width="3"/>
+    <circle cx="114" cy="92" r="11" stroke-width="3"/>
+    <circle cx="140" cy="92" r="11" stroke-width="3"/>
+    <circle cx="62" cy="122" r="11" stroke-width="3"/>
+    <circle cx="88" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <circle cx="114" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <path d="M140 110 L143.2 116.6 L150.5 117.7 L145.2 122.8 L146.5 130 L140 126.6 L133.5 130 L134.8 122.8 L129.5 117.7 L136.8 116.6 Z" fill="#002284" stroke="none"/>
+    <path d="M58 92 L61 95 L67 88 M84 92 L87 95 L93 88 M110 92 L113 95 L119 88 M136 92 L139 95 L145 88 M58 122 L61 125 L67 118" stroke-width="2.5"/>
+  </g>
+</svg>

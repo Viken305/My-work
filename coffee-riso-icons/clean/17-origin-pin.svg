@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Origin pin</title>
+  <defs>
+    <clipPath id="riso-origin-pin-tint-area">
+    <ellipse cx="100" cy="170" rx="62" ry="13"/>
+    </clipPath>
+    <clipPath id="riso-origin-pin-pink-area">
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <ellipse cx="100" cy="170" rx="62" ry="13" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="170" rx="62" ry="13" stroke-width="3"/>
+    <ellipse cx="100" cy="170" rx="38" ry="7" stroke-width="3"/>
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z"/>
+    <path fill-rule="evenodd" d="M79 88 A21 21 0 1 0 121 88 A21 21 0 1 0 79 88 Z M92.75 91.38 A8 11 -25 1 0 107.25 84.62 A8 11 -25 1 0 92.75 91.38 Z" fill="#0078bf" stroke="none"/>
+    <path d="M102.5 78.5 C96 86 104 91 97.5 97.5" stroke-width="2.5"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-origin-pin-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="170" rx="62" ry="13" stroke-width="3"/>
+    <ellipse cx="100" cy="170" rx="38" ry="7" stroke-width="3"/>
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z"/>
+    <path fill-rule="evenodd" d="M79 88 A21 21 0 1 0 121 88 A21 21 0 1 0 79 88 Z M92.75 91.38 A8 11 -25 1 0 107.25 84.62 A8 11 -25 1 0 92.75 91.38 Z" fill="#0054a5" stroke="none"/>
+    <path d="M102.5 78.5 C96 86 104 91 97.5 97.5" stroke-width="2.5"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-origin-pin-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="170" rx="62" ry="13" stroke-width="3"/>
+    <ellipse cx="100" cy="170" rx="38" ry="7" stroke-width="3"/>
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z"/>
+    <path fill-rule="evenodd" d="M79 88 A21 21 0 1 0 121 88 A21 21 0 1 0 79 88 Z M92.75 91.38 A8 11 -25 1 0 107.25 84.62 A8 11 -25 1 0 92.75 91.38 Z" fill="#002284" stroke="none"/>
+    <path d="M102.5 78.5 C96 86 104 91 97.5 97.5" stroke-width="2.5"/>
+  </g>
+</svg>

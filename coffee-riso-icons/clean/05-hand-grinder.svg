@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Hand grinder</title>
+  <defs>
+    <clipPath id="riso-hand-grinder-tint-area">
+    <path d="M64 66 H136 L130 88 H70 Z"/>
+    </clipPath>
+    <clipPath id="riso-hand-grinder-pink-area">
+    <rect x="70" y="88" width="60" height="82" rx="8"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <path d="M64 66 H136 L130 88 H70 Z" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <rect x="70" y="88" width="60" height="82" rx="8" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 66 V50"/>
+    <path d="M100 50 H150" stroke-width="6"/>
+    <rect x="144" y="30" width="13" height="24" rx="6.5" fill="#0078bf" stroke="none"/>
+    <circle cx="100" cy="50" r="7" fill="#0078bf" stroke="none"/>
+    <path d="M64 66 H136 L130 88 H70 Z"/>
+    <rect x="70" y="88" width="60" height="82" rx="8"/>
+    <rect x="82" y="132" width="36" height="24" rx="3"/>
+    <circle cx="100" cy="144" r="3.5" fill="#0078bf" stroke="none"/>
+    <ellipse cx="86" cy="77" rx="6" ry="4" transform="rotate(-20 86 77)" fill="#0078bf" stroke="none"/>
+    <ellipse cx="112" cy="78" rx="6" ry="4" transform="rotate(25 112 78)" fill="#0078bf" stroke="none"/>
+    <path d="M78 104 H122" stroke-width="3"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-hand-grinder-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 66 V50"/>
+    <path d="M100 50 H150" stroke-width="6"/>
+    <rect x="144" y="30" width="13" height="24" rx="6.5" fill="#0054a5" stroke="none"/>
+    <circle cx="100" cy="50" r="7" fill="#0054a5" stroke="none"/>
+    <path d="M64 66 H136 L130 88 H70 Z"/>
+    <rect x="70" y="88" width="60" height="82" rx="8"/>
+    <rect x="82" y="132" width="36" height="24" rx="3"/>
+    <circle cx="100" cy="144" r="3.5" fill="#0054a5" stroke="none"/>
+    <ellipse cx="86" cy="77" rx="6" ry="4" transform="rotate(-20 86 77)" fill="#0054a5" stroke="none"/>
+    <ellipse cx="112" cy="78" rx="6" ry="4" transform="rotate(25 112 78)" fill="#0054a5" stroke="none"/>
+    <path d="M78 104 H122" stroke-width="3"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-hand-grinder-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 66 V50"/>
+    <path d="M100 50 H150" stroke-width="6"/>
+    <rect x="144" y="30" width="13" height="24" rx="6.5" fill="#002284" stroke="none"/>
+    <circle cx="100" cy="50" r="7" fill="#002284" stroke="none"/>
+    <path d="M64 66 H136 L130 88 H70 Z"/>
+    <rect x="70" y="88" width="60" height="82" rx="8"/>
+    <rect x="82" y="132" width="36" height="24" rx="3"/>
+    <circle cx="100" cy="144" r="3.5" fill="#002284" stroke="none"/>
+    <ellipse cx="86" cy="77" rx="6" ry="4" transform="rotate(-20 86 77)" fill="#002284" stroke="none"/>
+    <ellipse cx="112" cy="78" rx="6" ry="4" transform="rotate(25 112 78)" fill="#002284" stroke="none"/>
+    <path d="M78 104 H122" stroke-width="3"/>
+  </g>
+</svg>

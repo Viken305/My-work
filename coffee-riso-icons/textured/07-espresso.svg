@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Espresso</title>
+  <defs>
+    <filter id="riso-espresso-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-espresso-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-espresso-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-espresso-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z" fill="url(#riso-espresso-dots)"/>
+    <ellipse cx="100" cy="153" rx="66" ry="14" fill="#ff48b0"/>
+    <path d="M84 80 C76 68 92 62 84 48 M116 80 C108 68 124 62 116 48" fill="none" stroke="#ff48b0" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-espresso-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="153" rx="66" ry="14"/>
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z"/>
+    <ellipse cx="100" cy="94" rx="42" ry="7" fill="#0078bf" stroke="none"/>
+    <path d="M141 104 C162 102 162 130 134 130" stroke-width="6"/>
+    <path d="M100 78 C92 64 108 58 100 42" stroke-width="6"/>
+  </g>
+</svg>

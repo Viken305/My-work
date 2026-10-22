@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Pickup bell</title>
+  <defs>
+    <clipPath id="riso-pickup-bell-tint-area">
+    <ellipse cx="100" cy="162" rx="66" ry="7"/>
+    </clipPath>
+    <clipPath id="riso-pickup-bell-pink-area">
+    <path d="M50 136 C50 98 72 76 100 76 C128 76 150 98 150 136 Z"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <ellipse cx="100" cy="162" rx="66" ry="7" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <path d="M50 136 C50 98 72 76 100 76 C128 76 150 98 150 136 Z" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 136 C50 98 72 76 100 76 C128 76 150 98 150 136"/>
+    <rect x="36" y="134" width="128" height="13" rx="4" fill="#0078bf" stroke="none"/>
+    <rect x="95" y="62" width="10" height="16" rx="2" fill="#0078bf" stroke="none"/>
+    <circle cx="100" cy="58" r="8" fill="#0078bf" stroke="none"/>
+    <path d="M66 124 C66 106 76 94 90 88" stroke-width="4"/>
+    <path d="M42 72 L30 62 M42 94 L28 92 M158 72 L170 62 M158 94 L172 92" stroke-width="4"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-pickup-bell-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 136 C50 98 72 76 100 76 C128 76 150 98 150 136"/>
+    <rect x="36" y="134" width="128" height="13" rx="4" fill="#0054a5" stroke="none"/>
+    <rect x="95" y="62" width="10" height="16" rx="2" fill="#0054a5" stroke="none"/>
+    <circle cx="100" cy="58" r="8" fill="#0054a5" stroke="none"/>
+    <path d="M66 124 C66 106 76 94 90 88" stroke-width="4"/>
+    <path d="M42 72 L30 62 M42 94 L28 92 M158 72 L170 62 M158 94 L172 92" stroke-width="4"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-pickup-bell-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 136 C50 98 72 76 100 76 C128 76 150 98 150 136"/>
+    <rect x="36" y="134" width="128" height="13" rx="4" fill="#002284" stroke="none"/>
+    <rect x="95" y="62" width="10" height="16" rx="2" fill="#002284" stroke="none"/>
+    <circle cx="100" cy="58" r="8" fill="#002284" stroke="none"/>
+    <path d="M66 124 C66 106 76 94 90 88" stroke-width="4"/>
+    <path d="M42 72 L30 62 M42 94 L28 92 M158 72 L170 62 M158 94 L172 92" stroke-width="4"/>
+  </g>
+</svg>

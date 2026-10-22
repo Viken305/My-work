@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>French press</title>
+  <defs>
+    <clipPath id="riso-french-press-tint-area">
+    <rect x="62" y="60" width="76" height="36"/>
+    </clipPath>
+    <clipPath id="riso-french-press-pink-area">
+    <rect x="62" y="96" width="76" height="70"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <rect x="62" y="60" width="76" height="36" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <rect x="62" y="96" width="76" height="70" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 50 V32"/>
+    <circle cx="100" cy="28" r="7" fill="#0078bf" stroke="none"/>
+    <rect x="56" y="48" width="88" height="11" rx="3" fill="#0078bf" stroke="none"/>
+    <rect x="62" y="59" width="76" height="107"/>
+    <path d="M62 96 H138" stroke-width="5"/>
+    <path d="M100 59 V96" stroke-width="3"/>
+    <rect x="56" y="162" width="88" height="10" rx="3" fill="#0078bf" stroke="none"/>
+    <path d="M138 72 H150 C156 72 158 76 158 82 V136 C158 142 156 146 150 146 H138" stroke-width="6"/>
+    <circle cx="80" cy="118" r="2.5" fill="#0078bf" stroke="none"/>
+    <circle cx="112" cy="132" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="94" cy="146" r="2.5" fill="#0078bf" stroke="none"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-french-press-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 50 V32"/>
+    <circle cx="100" cy="28" r="7" fill="#0054a5" stroke="none"/>
+    <rect x="56" y="48" width="88" height="11" rx="3" fill="#0054a5" stroke="none"/>
+    <rect x="62" y="59" width="76" height="107"/>
+    <path d="M62 96 H138" stroke-width="5"/>
+    <path d="M100 59 V96" stroke-width="3"/>
+    <rect x="56" y="162" width="88" height="10" rx="3" fill="#0054a5" stroke="none"/>
+    <path d="M138 72 H150 C156 72 158 76 158 82 V136 C158 142 156 146 150 146 H138" stroke-width="6"/>
+    <circle cx="80" cy="118" r="2.5" fill="#0054a5" stroke="none"/>
+    <circle cx="112" cy="132" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="94" cy="146" r="2.5" fill="#0054a5" stroke="none"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-french-press-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 50 V32"/>
+    <circle cx="100" cy="28" r="7" fill="#002284" stroke="none"/>
+    <rect x="56" y="48" width="88" height="11" rx="3" fill="#002284" stroke="none"/>
+    <rect x="62" y="59" width="76" height="107"/>
+    <path d="M62 96 H138" stroke-width="5"/>
+    <path d="M100 59 V96" stroke-width="3"/>
+    <rect x="56" y="162" width="88" height="10" rx="3" fill="#002284" stroke="none"/>
+    <path d="M138 72 H150 C156 72 158 76 158 82 V136 C158 142 156 146 150 146 H138" stroke-width="6"/>
+    <circle cx="80" cy="118" r="2.5" fill="#002284" stroke="none"/>
+    <circle cx="112" cy="132" r="2" fill="#002284" stroke="none"/>
+    <circle cx="94" cy="146" r="2.5" fill="#002284" stroke="none"/>
+  </g>
+</svg>

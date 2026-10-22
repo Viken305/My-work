@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Mocha</title>
+  <defs>
+    <filter id="riso-mocha-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-mocha-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-mocha-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-mocha-ink-p)" transform="translate(2.2 -1.6)">
+    <rect x="62" y="100" width="72" height="30" fill="url(#riso-mocha-dots)"/>
+    <path d="M62 130 H134 V160 A10 10 0 0 1 124 170 H72 A10 10 0 0 1 62 160 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-mocha-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 78 C54 66 68 56 78 62 C82 50 100 48 106 58 C114 50 134 56 130 68 C142 70 142 82 132 82 H66 C58 82 54 78 60 78 Z"/>
+    <path d="M72 72 Q81 64 90 72 T108 71 T126 70" stroke-width="3"/>
+    <path d="M62 82 V160 A10 10 0 0 0 72 170 H124 A10 10 0 0 0 134 160 V82"/>
+    <path d="M62 100 H134 M62 130 H134" stroke-width="3"/>
+    <path d="M134 94 C158 94 158 142 134 142" stroke-width="6"/>
+  </g>
+</svg>

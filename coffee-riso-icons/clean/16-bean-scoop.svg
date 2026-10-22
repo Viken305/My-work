@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Scoop of beans</title>
+  <defs>
+    <clipPath id="riso-bean-scoop-tint-area">
+    <path d="M60 96 C64 74 84 64 100 64 C118 64 136 74 140 96 Z"/>
+    </clipPath>
+    <clipPath id="riso-bean-scoop-pink-area">
+    <path d="M58 96 C58 128 76 148 100 148 C124 148 142 128 142 96 Z"/>
+    <ellipse cx="62" cy="168" rx="8" ry="5.5" transform="rotate(-20 62 168)"/>
+    <ellipse cx="84" cy="172" rx="8" ry="5.5" transform="rotate(15 84 172)"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <path d="M60 96 C64 74 84 64 100 64 C118 64 136 74 140 96 Z" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <path d="M58 96 C58 128 76 148 100 148 C124 148 142 128 142 96 Z" fill="#ff48b0"/>
+    <ellipse cx="62" cy="168" rx="8" ry="5.5" transform="rotate(-20 62 168)" fill="#ff48b0"/>
+    <ellipse cx="84" cy="172" rx="8" ry="5.5" transform="rotate(15 84 172)" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 96 H142 C142 128 124 148 100 148 C76 148 58 128 58 96 Z"/>
+    <path d="M140 108 L176 134" stroke-width="9"/>
+    <ellipse cx="80" cy="84" rx="9" ry="6" transform="rotate(-20 80 84)" stroke-width="3"/>
+    <ellipse cx="100" cy="74" rx="9" ry="6" transform="rotate(15 100 74)" stroke-width="3"/>
+    <ellipse cx="120" cy="84" rx="9" ry="6" transform="rotate(30 120 84)" stroke-width="3"/>
+    <path d="M72 86 L88 82 M92 72 L108 76 M113 80 L127 88" stroke-width="2"/>
+    <path d="M55 170 L69 166 M77 170 L91 174" stroke-width="2"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-bean-scoop-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 96 H142 C142 128 124 148 100 148 C76 148 58 128 58 96 Z"/>
+    <path d="M140 108 L176 134" stroke-width="9"/>
+    <ellipse cx="80" cy="84" rx="9" ry="6" transform="rotate(-20 80 84)" stroke-width="3"/>
+    <ellipse cx="100" cy="74" rx="9" ry="6" transform="rotate(15 100 74)" stroke-width="3"/>
+    <ellipse cx="120" cy="84" rx="9" ry="6" transform="rotate(30 120 84)" stroke-width="3"/>
+    <path d="M72 86 L88 82 M92 72 L108 76 M113 80 L127 88" stroke-width="2"/>
+    <path d="M55 170 L69 166 M77 170 L91 174" stroke-width="2"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-bean-scoop-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 96 H142 C142 128 124 148 100 148 C76 148 58 128 58 96 Z"/>
+    <path d="M140 108 L176 134" stroke-width="9"/>
+    <ellipse cx="80" cy="84" rx="9" ry="6" transform="rotate(-20 80 84)" stroke-width="3"/>
+    <ellipse cx="100" cy="74" rx="9" ry="6" transform="rotate(15 100 74)" stroke-width="3"/>
+    <ellipse cx="120" cy="84" rx="9" ry="6" transform="rotate(30 120 84)" stroke-width="3"/>
+    <path d="M72 86 L88 82 M92 72 L108 76 M113 80 L127 88" stroke-width="2"/>
+    <path d="M55 170 L69 166 M77 170 L91 174" stroke-width="2"/>
+  </g>
+</svg>

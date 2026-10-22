@@ -1,0 +1,2172 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coffee Riso Icons</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a printer's proof sheet. Toolbar on top, then four groups of six paper swatches. */
+:root {
+  --bg: #e9e6df;
+  --fg: #1b1a2e;
+  --muted: #625f72;
+  --line: #d2cec4;
+  --paper: #f4f0e6;
+  --pink: #ff48b0;
+  --blue: #0078bf;
+  --chip: #ffffff;
+  --display: "Bricolage Grotesque", "Arial Narrow", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #16151d; --fg: #eeeaf4; --muted: #a29fb2; --line: #2d2b38; --chip: #23212d; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #16151d; --fg: #eeeaf4; --muted: #a29fb2; --line: #2d2b38; --chip: #23212d; color-scheme: dark; }
+body { background: var(--bg); color: var(--fg); font-family: var(--display); font-size: 16px; line-height: 1.5; }
+.wrap {
+  max-width: 1120px; margin: 0 auto; padding-block: 48px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+header { display: grid; gap: 12px; margin-bottom: 28px; }
+.eyebrow, .file, h2 span, .ctl-label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 0; font-size: clamp(40px, 8vw, 84px); line-height: .95; font-weight: 700; letter-spacing: -.02em; text-wrap: balance; }
+h1 .p { color: var(--pink); }
+h1 .b { color: var(--blue); }
+header p { margin: 0; max-width: 62ch; color: var(--muted); }
+.controls { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; padding-block: 14px; border-block: 1px solid var(--line); margin-bottom: 8px; }
+.seg { display: inline-flex; gap: 8px; align-items: center; }
+.seg button {
+  font: 500 13px var(--mono); padding: 7px 12px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--chip); color: var(--fg);
+}
+.seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.seg button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+section { padding-top: 28px; }
+h2 { font-size: 24px; margin: 0 0 14px; display: flex; gap: 10px; align-items: baseline; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+.card { margin: 0; min-width: 0; }
+.paper { aspect-ratio: 1; max-width: 100%; background: var(--paper); border-radius: 3px; display: grid; place-items: center; box-shadow: 0 1px 0 rgb(0 0 0 / .06); }
+.v { display: grid; place-items: center; width: 100%; height: 100%; }
+.v svg { display: block; width: var(--icon, 100%); height: var(--icon, 100%); }
+.v-clean { display: none; }
+body.show-clean .v-clean { display: grid; }
+body.show-clean .v-textured { display: none; }
+body.size-48 { --icon: 48px; }
+body.size-24 { --icon: 24px; }
+figcaption { display: grid; gap: 2px; margin-top: 8px; }
+.name { font-weight: 700; font-size: 15px; }
+.file { font-size: 11px; }
+.foot { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; max-width: 70ch; }
+@media (max-width: 440px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
+</style>
+
+<main class="wrap">
+  <header>
+    <div class="eyebrow">Icon set · 24 icons · 2 inks · SVG</div>
+    <h1>Coffee <span class="p">Riso</span> <span class="b">Icons</span></h1>
+    <p>A two-ink risograph set for specialty coffee: Fluorescent Pink and Blue on uncoated paper, printed slightly out of register. Every icon ships as a textured SVG with grain and halftone, and a clean SVG of flat, editable shapes.</p>
+  </header>
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Version">
+      <span class="ctl-label">Version</span>
+      <button type="button" id="v-textured" aria-pressed="true">Textured</button>
+      <button type="button" id="v-clean" aria-pressed="false">Clean</button>
+    </div>
+    <div class="seg" role="group" aria-label="Size">
+      <span class="ctl-label">Size</span>
+      <button type="button" id="s-full" aria-pressed="true">Full</button>
+      <button type="button" id="s-48" aria-pressed="false">48 px</button>
+      <button type="button" id="s-24" aria-pressed="false">24 px</button>
+    </div>
+  </div>
+  
+    <section>
+      <h2>Brewing <span>6</span></h2>
+      <div class="grid">
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Pour-over, textured" viewBox="0 0 200 200" role="img">
+  <title>Pour-over</title>
+  <defs>
+    <filter id="tx-pour-over-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-pour-over-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-pour-over-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-pour-over-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M72 126 C66 148 70 168 84 178 H116 C130 168 134 148 128 126 Z" fill="url(#tx-pour-over-dots)"/>
+    <path d="M54 50 H146 L120 110 H80 Z" fill="#ff48b0"/>
+    <circle cx="100" cy="134" r="3.5" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-pour-over-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="48" y="44" width="104" height="8" rx="2" fill="#0078bf" stroke="none"/>
+    <path d="M74 60 L88 104 M100 60 V104 M126 60 L112 104"/>
+    <rect x="78" y="110" width="44" height="8" rx="2" fill="#0078bf" stroke="none"/>
+    <path d="M68 123 H132"/>
+    <path d="M71 124 C65 148 69 168 84 178 H116 C131 168 135 148 129 124"/>
+    <path d="M70 152 C70 164 75 172 84 178 H116 C125 172 130 164 130 152 Z" fill="#0078bf" stroke="none"/>
+    <path d="M130 134 C146 134 148 160 127 164" stroke-width="6"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Pour-over, clean" viewBox="0 0 200 200" role="img">
+  <title>Pour-over</title>
+  <defs>
+    <clipPath id="cl-pour-over-tint-area">
+    <path d="M72 126 C66 148 70 168 84 178 H116 C130 168 134 148 128 126 Z"/>
+    </clipPath>
+    <clipPath id="cl-pour-over-pink-area">
+    <path d="M54 50 H146 L120 110 H80 Z"/>
+    <circle cx="100" cy="134" r="3.5"/>
+    </clipPath>
+  </defs>
+  <g>
+    <path d="M72 126 C66 148 70 168 84 178 H116 C130 168 134 148 128 126 Z" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M54 50 H146 L120 110 H80 Z" fill="#ff48b0"/>
+    <circle cx="100" cy="134" r="3.5" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="48" y="44" width="104" height="8" rx="2" fill="#0078bf" stroke="none"/>
+    <path d="M74 60 L88 104 M100 60 V104 M126 60 L112 104"/>
+    <rect x="78" y="110" width="44" height="8" rx="2" fill="#0078bf" stroke="none"/>
+    <path d="M68 123 H132"/>
+    <path d="M71 124 C65 148 69 168 84 178 H116 C131 168 135 148 129 124"/>
+    <path d="M70 152 C70 164 75 172 84 178 H116 C125 172 130 164 130 152 Z" fill="#0078bf" stroke="none"/>
+    <path d="M130 134 C146 134 148 160 127 164" stroke-width="6"/>
+  </g>
+  <g clip-path="url(#cl-pour-over-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="48" y="44" width="104" height="8" rx="2" fill="#0054a5" stroke="none"/>
+    <path d="M74 60 L88 104 M100 60 V104 M126 60 L112 104"/>
+    <rect x="78" y="110" width="44" height="8" rx="2" fill="#0054a5" stroke="none"/>
+    <path d="M68 123 H132"/>
+    <path d="M71 124 C65 148 69 168 84 178 H116 C131 168 135 148 129 124"/>
+    <path d="M70 152 C70 164 75 172 84 178 H116 C125 172 130 164 130 152 Z" fill="#0054a5" stroke="none"/>
+    <path d="M130 134 C146 134 148 160 127 164" stroke-width="6"/>
+  </g>
+  <g clip-path="url(#cl-pour-over-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="48" y="44" width="104" height="8" rx="2" fill="#002284" stroke="none"/>
+    <path d="M74 60 L88 104 M100 60 V104 M126 60 L112 104"/>
+    <rect x="78" y="110" width="44" height="8" rx="2" fill="#002284" stroke="none"/>
+    <path d="M68 123 H132"/>
+    <path d="M71 124 C65 148 69 168 84 178 H116 C131 168 135 148 129 124"/>
+    <path d="M70 152 C70 164 75 172 84 178 H116 C125 172 130 164 130 152 Z" fill="#002284" stroke="none"/>
+    <path d="M130 134 C146 134 148 160 127 164" stroke-width="6"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Pour-over</span><span class="file">01-pour-over</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="French press, textured" viewBox="0 0 200 200" role="img">
+  <title>French press</title>
+  <defs>
+    <filter id="tx-french-press-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-french-press-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-french-press-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-french-press-ink-p)" transform="translate(2.2 -1.6)">
+    <rect x="62" y="60" width="76" height="36" fill="url(#tx-french-press-dots)"/>
+    <rect x="62" y="96" width="76" height="70" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-french-press-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 50 V32"/>
+    <circle cx="100" cy="28" r="7" fill="#0078bf" stroke="none"/>
+    <rect x="56" y="48" width="88" height="11" rx="3" fill="#0078bf" stroke="none"/>
+    <rect x="62" y="59" width="76" height="107"/>
+    <path d="M62 96 H138" stroke-width="5"/>
+    <path d="M100 59 V96" stroke-width="3"/>
+    <rect x="56" y="162" width="88" height="10" rx="3" fill="#0078bf" stroke="none"/>
+    <path d="M138 72 H150 C156 72 158 76 158 82 V136 C158 142 156 146 150 146 H138" stroke-width="6"/>
+    <circle cx="80" cy="118" r="2.5" fill="#0078bf" stroke="none"/>
+    <circle cx="112" cy="132" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="94" cy="146" r="2.5" fill="#0078bf" stroke="none"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="French press, clean" viewBox="0 0 200 200" role="img">
+  <title>French press</title>
+  <defs>
+    <clipPath id="cl-french-press-tint-area">
+    <rect x="62" y="60" width="76" height="36"/>
+    </clipPath>
+    <clipPath id="cl-french-press-pink-area">
+    <rect x="62" y="96" width="76" height="70"/>
+    </clipPath>
+  </defs>
+  <g>
+    <rect x="62" y="60" width="76" height="36" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <rect x="62" y="96" width="76" height="70" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 50 V32"/>
+    <circle cx="100" cy="28" r="7" fill="#0078bf" stroke="none"/>
+    <rect x="56" y="48" width="88" height="11" rx="3" fill="#0078bf" stroke="none"/>
+    <rect x="62" y="59" width="76" height="107"/>
+    <path d="M62 96 H138" stroke-width="5"/>
+    <path d="M100 59 V96" stroke-width="3"/>
+    <rect x="56" y="162" width="88" height="10" rx="3" fill="#0078bf" stroke="none"/>
+    <path d="M138 72 H150 C156 72 158 76 158 82 V136 C158 142 156 146 150 146 H138" stroke-width="6"/>
+    <circle cx="80" cy="118" r="2.5" fill="#0078bf" stroke="none"/>
+    <circle cx="112" cy="132" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="94" cy="146" r="2.5" fill="#0078bf" stroke="none"/>
+  </g>
+  <g clip-path="url(#cl-french-press-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 50 V32"/>
+    <circle cx="100" cy="28" r="7" fill="#0054a5" stroke="none"/>
+    <rect x="56" y="48" width="88" height="11" rx="3" fill="#0054a5" stroke="none"/>
+    <rect x="62" y="59" width="76" height="107"/>
+    <path d="M62 96 H138" stroke-width="5"/>
+    <path d="M100 59 V96" stroke-width="3"/>
+    <rect x="56" y="162" width="88" height="10" rx="3" fill="#0054a5" stroke="none"/>
+    <path d="M138 72 H150 C156 72 158 76 158 82 V136 C158 142 156 146 150 146 H138" stroke-width="6"/>
+    <circle cx="80" cy="118" r="2.5" fill="#0054a5" stroke="none"/>
+    <circle cx="112" cy="132" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="94" cy="146" r="2.5" fill="#0054a5" stroke="none"/>
+  </g>
+  <g clip-path="url(#cl-french-press-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 50 V32"/>
+    <circle cx="100" cy="28" r="7" fill="#002284" stroke="none"/>
+    <rect x="56" y="48" width="88" height="11" rx="3" fill="#002284" stroke="none"/>
+    <rect x="62" y="59" width="76" height="107"/>
+    <path d="M62 96 H138" stroke-width="5"/>
+    <path d="M100 59 V96" stroke-width="3"/>
+    <rect x="56" y="162" width="88" height="10" rx="3" fill="#002284" stroke="none"/>
+    <path d="M138 72 H150 C156 72 158 76 158 82 V136 C158 142 156 146 150 146 H138" stroke-width="6"/>
+    <circle cx="80" cy="118" r="2.5" fill="#002284" stroke="none"/>
+    <circle cx="112" cy="132" r="2" fill="#002284" stroke="none"/>
+    <circle cx="94" cy="146" r="2.5" fill="#002284" stroke="none"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">French press</span><span class="file">02-french-press</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Moka pot, textured" viewBox="0 0 200 200" role="img">
+  <title>Moka pot</title>
+  <defs>
+    <filter id="tx-moka-pot-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-moka-pot-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-moka-pot-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-moka-pot-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M70 50 H130 L124 100 H76 Z" fill="url(#tx-moka-pot-dots)"/>
+    <path d="M76 108 H124 L134 168 H66 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-moka-pot-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="91" y="38" width="18" height="10" rx="3" fill="#0078bf" stroke="none"/>
+    <path d="M70 50 H130 L124 100 H76 Z"/>
+    <path d="M72 54 L56 44 L76 72" stroke-width="4"/>
+    <rect x="70" y="99" width="60" height="10" rx="2" fill="#0078bf" stroke="none"/>
+    <path d="M76 108 H124 L134 168 H66 Z"/>
+    <path d="M100 52 V98 M100 110 V166" stroke-width="3"/>
+    <path d="M128 58 H148 C152 58 154 62 152 66 L140 96 H126" stroke-width="6"/>
+    <path d="M84 122 L80 154 M116 122 L120 154" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Moka pot, clean" viewBox="0 0 200 200" role="img">
+  <title>Moka pot</title>
+  <defs>
+    <clipPath id="cl-moka-pot-tint-area">
+    <path d="M70 50 H130 L124 100 H76 Z"/>
+    </clipPath>
+    <clipPath id="cl-moka-pot-pink-area">
+    <path d="M76 108 H124 L134 168 H66 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <path d="M70 50 H130 L124 100 H76 Z" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M76 108 H124 L134 168 H66 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="91" y="38" width="18" height="10" rx="3" fill="#0078bf" stroke="none"/>
+    <path d="M70 50 H130 L124 100 H76 Z"/>
+    <path d="M72 54 L56 44 L76 72" stroke-width="4"/>
+    <rect x="70" y="99" width="60" height="10" rx="2" fill="#0078bf" stroke="none"/>
+    <path d="M76 108 H124 L134 168 H66 Z"/>
+    <path d="M100 52 V98 M100 110 V166" stroke-width="3"/>
+    <path d="M128 58 H148 C152 58 154 62 152 66 L140 96 H126" stroke-width="6"/>
+    <path d="M84 122 L80 154 M116 122 L120 154" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-moka-pot-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="91" y="38" width="18" height="10" rx="3" fill="#0054a5" stroke="none"/>
+    <path d="M70 50 H130 L124 100 H76 Z"/>
+    <path d="M72 54 L56 44 L76 72" stroke-width="4"/>
+    <rect x="70" y="99" width="60" height="10" rx="2" fill="#0054a5" stroke="none"/>
+    <path d="M76 108 H124 L134 168 H66 Z"/>
+    <path d="M100 52 V98 M100 110 V166" stroke-width="3"/>
+    <path d="M128 58 H148 C152 58 154 62 152 66 L140 96 H126" stroke-width="6"/>
+    <path d="M84 122 L80 154 M116 122 L120 154" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-moka-pot-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="91" y="38" width="18" height="10" rx="3" fill="#002284" stroke="none"/>
+    <path d="M70 50 H130 L124 100 H76 Z"/>
+    <path d="M72 54 L56 44 L76 72" stroke-width="4"/>
+    <rect x="70" y="99" width="60" height="10" rx="2" fill="#002284" stroke="none"/>
+    <path d="M76 108 H124 L134 168 H66 Z"/>
+    <path d="M100 52 V98 M100 110 V166" stroke-width="3"/>
+    <path d="M128 58 H148 C152 58 154 62 152 66 L140 96 H126" stroke-width="6"/>
+    <path d="M84 122 L80 154 M116 122 L120 154" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Moka pot</span><span class="file">03-moka-pot</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Gooseneck kettle, textured" viewBox="0 0 200 200" role="img">
+  <title>Gooseneck kettle</title>
+  <defs>
+    <filter id="tx-gooseneck-kettle-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-gooseneck-kettle-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-gooseneck-kettle-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-gooseneck-kettle-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="100" cy="176" rx="56" ry="6" fill="url(#tx-gooseneck-kettle-dots)"/>
+    <path d="M58 98 C58 80 74 70 100 70 C126 70 142 80 142 98 V156 C142 164 136 168 128 168 H72 C64 168 58 164 58 156 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-gooseneck-kettle-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 98 C58 80 74 70 100 70 C126 70 142 80 142 98 V156 C142 164 136 168 128 168 H72 C64 168 58 164 58 156 Z"/>
+    <path d="M76 70 C78 57 122 57 124 70 Z" fill="#0078bf" stroke="none"/>
+    <circle cx="100" cy="54" r="5" fill="#0078bf" stroke="none"/>
+    <path d="M60 142 C40 142 34 122 38 102 C41 88 38 74 24 66" stroke-width="6"/>
+    <path d="M142 86 C168 86 170 142 142 148" stroke-width="7"/>
+    <circle cx="100" cy="118" r="13"/>
+    <path d="M100 118 L107 111" stroke-width="3"/>
+    <path d="M58 154 H142" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Gooseneck kettle, clean" viewBox="0 0 200 200" role="img">
+  <title>Gooseneck kettle</title>
+  <defs>
+    <clipPath id="cl-gooseneck-kettle-tint-area">
+    <ellipse cx="100" cy="176" rx="56" ry="6"/>
+    </clipPath>
+    <clipPath id="cl-gooseneck-kettle-pink-area">
+    <path d="M58 98 C58 80 74 70 100 70 C126 70 142 80 142 98 V156 C142 164 136 168 128 168 H72 C64 168 58 164 58 156 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <ellipse cx="100" cy="176" rx="56" ry="6" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M58 98 C58 80 74 70 100 70 C126 70 142 80 142 98 V156 C142 164 136 168 128 168 H72 C64 168 58 164 58 156 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 98 C58 80 74 70 100 70 C126 70 142 80 142 98 V156 C142 164 136 168 128 168 H72 C64 168 58 164 58 156 Z"/>
+    <path d="M76 70 C78 57 122 57 124 70 Z" fill="#0078bf" stroke="none"/>
+    <circle cx="100" cy="54" r="5" fill="#0078bf" stroke="none"/>
+    <path d="M60 142 C40 142 34 122 38 102 C41 88 38 74 24 66" stroke-width="6"/>
+    <path d="M142 86 C168 86 170 142 142 148" stroke-width="7"/>
+    <circle cx="100" cy="118" r="13"/>
+    <path d="M100 118 L107 111" stroke-width="3"/>
+    <path d="M58 154 H142" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-gooseneck-kettle-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 98 C58 80 74 70 100 70 C126 70 142 80 142 98 V156 C142 164 136 168 128 168 H72 C64 168 58 164 58 156 Z"/>
+    <path d="M76 70 C78 57 122 57 124 70 Z" fill="#0054a5" stroke="none"/>
+    <circle cx="100" cy="54" r="5" fill="#0054a5" stroke="none"/>
+    <path d="M60 142 C40 142 34 122 38 102 C41 88 38 74 24 66" stroke-width="6"/>
+    <path d="M142 86 C168 86 170 142 142 148" stroke-width="7"/>
+    <circle cx="100" cy="118" r="13"/>
+    <path d="M100 118 L107 111" stroke-width="3"/>
+    <path d="M58 154 H142" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-gooseneck-kettle-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 98 C58 80 74 70 100 70 C126 70 142 80 142 98 V156 C142 164 136 168 128 168 H72 C64 168 58 164 58 156 Z"/>
+    <path d="M76 70 C78 57 122 57 124 70 Z" fill="#002284" stroke="none"/>
+    <circle cx="100" cy="54" r="5" fill="#002284" stroke="none"/>
+    <path d="M60 142 C40 142 34 122 38 102 C41 88 38 74 24 66" stroke-width="6"/>
+    <path d="M142 86 C168 86 170 142 142 148" stroke-width="7"/>
+    <circle cx="100" cy="118" r="13"/>
+    <path d="M100 118 L107 111" stroke-width="3"/>
+    <path d="M58 154 H142" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Gooseneck kettle</span><span class="file">04-gooseneck-kettle</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Hand grinder, textured" viewBox="0 0 200 200" role="img">
+  <title>Hand grinder</title>
+  <defs>
+    <filter id="tx-hand-grinder-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-hand-grinder-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-hand-grinder-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-hand-grinder-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M64 66 H136 L130 88 H70 Z" fill="url(#tx-hand-grinder-dots)"/>
+    <rect x="70" y="88" width="60" height="82" rx="8" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-hand-grinder-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 66 V50"/>
+    <path d="M100 50 H150" stroke-width="6"/>
+    <rect x="144" y="30" width="13" height="24" rx="6.5" fill="#0078bf" stroke="none"/>
+    <circle cx="100" cy="50" r="7" fill="#0078bf" stroke="none"/>
+    <path d="M64 66 H136 L130 88 H70 Z"/>
+    <rect x="70" y="88" width="60" height="82" rx="8"/>
+    <rect x="82" y="132" width="36" height="24" rx="3"/>
+    <circle cx="100" cy="144" r="3.5" fill="#0078bf" stroke="none"/>
+    <ellipse cx="86" cy="77" rx="6" ry="4" transform="rotate(-20 86 77)" fill="#0078bf" stroke="none"/>
+    <ellipse cx="112" cy="78" rx="6" ry="4" transform="rotate(25 112 78)" fill="#0078bf" stroke="none"/>
+    <path d="M78 104 H122" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Hand grinder, clean" viewBox="0 0 200 200" role="img">
+  <title>Hand grinder</title>
+  <defs>
+    <clipPath id="cl-hand-grinder-tint-area">
+    <path d="M64 66 H136 L130 88 H70 Z"/>
+    </clipPath>
+    <clipPath id="cl-hand-grinder-pink-area">
+    <rect x="70" y="88" width="60" height="82" rx="8"/>
+    </clipPath>
+  </defs>
+  <g>
+    <path d="M64 66 H136 L130 88 H70 Z" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <rect x="70" y="88" width="60" height="82" rx="8" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 66 V50"/>
+    <path d="M100 50 H150" stroke-width="6"/>
+    <rect x="144" y="30" width="13" height="24" rx="6.5" fill="#0078bf" stroke="none"/>
+    <circle cx="100" cy="50" r="7" fill="#0078bf" stroke="none"/>
+    <path d="M64 66 H136 L130 88 H70 Z"/>
+    <rect x="70" y="88" width="60" height="82" rx="8"/>
+    <rect x="82" y="132" width="36" height="24" rx="3"/>
+    <circle cx="100" cy="144" r="3.5" fill="#0078bf" stroke="none"/>
+    <ellipse cx="86" cy="77" rx="6" ry="4" transform="rotate(-20 86 77)" fill="#0078bf" stroke="none"/>
+    <ellipse cx="112" cy="78" rx="6" ry="4" transform="rotate(25 112 78)" fill="#0078bf" stroke="none"/>
+    <path d="M78 104 H122" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-hand-grinder-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 66 V50"/>
+    <path d="M100 50 H150" stroke-width="6"/>
+    <rect x="144" y="30" width="13" height="24" rx="6.5" fill="#0054a5" stroke="none"/>
+    <circle cx="100" cy="50" r="7" fill="#0054a5" stroke="none"/>
+    <path d="M64 66 H136 L130 88 H70 Z"/>
+    <rect x="70" y="88" width="60" height="82" rx="8"/>
+    <rect x="82" y="132" width="36" height="24" rx="3"/>
+    <circle cx="100" cy="144" r="3.5" fill="#0054a5" stroke="none"/>
+    <ellipse cx="86" cy="77" rx="6" ry="4" transform="rotate(-20 86 77)" fill="#0054a5" stroke="none"/>
+    <ellipse cx="112" cy="78" rx="6" ry="4" transform="rotate(25 112 78)" fill="#0054a5" stroke="none"/>
+    <path d="M78 104 H122" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-hand-grinder-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 66 V50"/>
+    <path d="M100 50 H150" stroke-width="6"/>
+    <rect x="144" y="30" width="13" height="24" rx="6.5" fill="#002284" stroke="none"/>
+    <circle cx="100" cy="50" r="7" fill="#002284" stroke="none"/>
+    <path d="M64 66 H136 L130 88 H70 Z"/>
+    <rect x="70" y="88" width="60" height="82" rx="8"/>
+    <rect x="82" y="132" width="36" height="24" rx="3"/>
+    <circle cx="100" cy="144" r="3.5" fill="#002284" stroke="none"/>
+    <ellipse cx="86" cy="77" rx="6" ry="4" transform="rotate(-20 86 77)" fill="#002284" stroke="none"/>
+    <ellipse cx="112" cy="78" rx="6" ry="4" transform="rotate(25 112 78)" fill="#002284" stroke="none"/>
+    <path d="M78 104 H122" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Hand grinder</span><span class="file">05-hand-grinder</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Cold-brew jar, textured" viewBox="0 0 200 200" role="img">
+  <title>Cold-brew jar</title>
+  <defs>
+    <filter id="tx-cold-brew-jar-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-cold-brew-jar-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-cold-brew-jar-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-cold-brew-jar-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="100" cy="176" rx="48" ry="6" fill="url(#tx-cold-brew-jar-dots)"/>
+    <path d="M60 86 H140 V156 A14 14 0 0 1 126 170 H74 A14 14 0 0 1 60 156 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-cold-brew-jar-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="42" width="92" height="16" rx="4" fill="#0078bf" stroke="none"/>
+    <path d="M66 58 V62 M134 58 V62"/>
+    <rect x="60" y="62" width="80" height="108" rx="14"/>
+    <rect x="74" y="96" width="20" height="20" rx="2" transform="rotate(12 84 106)" stroke-width="3.5"/>
+    <rect x="102" y="92" width="18" height="18" rx="2" transform="rotate(-10 111 101)" stroke-width="3.5"/>
+    <rect x="86" y="124" width="20" height="20" rx="2" transform="rotate(6 96 134)" stroke-width="3.5"/>
+    <path d="M140 104 H130 M140 124 H130 M140 144 H130" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Cold-brew jar, clean" viewBox="0 0 200 200" role="img">
+  <title>Cold-brew jar</title>
+  <defs>
+    <clipPath id="cl-cold-brew-jar-tint-area">
+    <ellipse cx="100" cy="176" rx="48" ry="6"/>
+    </clipPath>
+    <clipPath id="cl-cold-brew-jar-pink-area">
+    <path d="M60 86 H140 V156 A14 14 0 0 1 126 170 H74 A14 14 0 0 1 60 156 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <ellipse cx="100" cy="176" rx="48" ry="6" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M60 86 H140 V156 A14 14 0 0 1 126 170 H74 A14 14 0 0 1 60 156 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="42" width="92" height="16" rx="4" fill="#0078bf" stroke="none"/>
+    <path d="M66 58 V62 M134 58 V62"/>
+    <rect x="60" y="62" width="80" height="108" rx="14"/>
+    <rect x="74" y="96" width="20" height="20" rx="2" transform="rotate(12 84 106)" stroke-width="3.5"/>
+    <rect x="102" y="92" width="18" height="18" rx="2" transform="rotate(-10 111 101)" stroke-width="3.5"/>
+    <rect x="86" y="124" width="20" height="20" rx="2" transform="rotate(6 96 134)" stroke-width="3.5"/>
+    <path d="M140 104 H130 M140 124 H130 M140 144 H130" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-cold-brew-jar-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="42" width="92" height="16" rx="4" fill="#0054a5" stroke="none"/>
+    <path d="M66 58 V62 M134 58 V62"/>
+    <rect x="60" y="62" width="80" height="108" rx="14"/>
+    <rect x="74" y="96" width="20" height="20" rx="2" transform="rotate(12 84 106)" stroke-width="3.5"/>
+    <rect x="102" y="92" width="18" height="18" rx="2" transform="rotate(-10 111 101)" stroke-width="3.5"/>
+    <rect x="86" y="124" width="20" height="20" rx="2" transform="rotate(6 96 134)" stroke-width="3.5"/>
+    <path d="M140 104 H130 M140 124 H130 M140 144 H130" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-cold-brew-jar-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="42" width="92" height="16" rx="4" fill="#002284" stroke="none"/>
+    <path d="M66 58 V62 M134 58 V62"/>
+    <rect x="60" y="62" width="80" height="108" rx="14"/>
+    <rect x="74" y="96" width="20" height="20" rx="2" transform="rotate(12 84 106)" stroke-width="3.5"/>
+    <rect x="102" y="92" width="18" height="18" rx="2" transform="rotate(-10 111 101)" stroke-width="3.5"/>
+    <rect x="86" y="124" width="20" height="20" rx="2" transform="rotate(6 96 134)" stroke-width="3.5"/>
+    <path d="M140 104 H130 M140 124 H130 M140 144 H130" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Cold-brew jar</span><span class="file">06-cold-brew-jar</span></figcaption>
+      </figure>
+      </div>
+    </section>
+    <section>
+      <h2>Drinks <span>6</span></h2>
+      <div class="grid">
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Espresso, textured" viewBox="0 0 200 200" role="img">
+  <title>Espresso</title>
+  <defs>
+    <filter id="tx-espresso-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-espresso-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-espresso-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-espresso-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z" fill="url(#tx-espresso-dots)"/>
+    <ellipse cx="100" cy="153" rx="66" ry="14" fill="#ff48b0"/>
+    <path d="M84 80 C76 68 92 62 84 48 M116 80 C108 68 124 62 116 48" fill="none" stroke="#ff48b0" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-espresso-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="153" rx="66" ry="14"/>
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z"/>
+    <ellipse cx="100" cy="94" rx="42" ry="7" fill="#0078bf" stroke="none"/>
+    <path d="M141 104 C162 102 162 130 134 130" stroke-width="6"/>
+    <path d="M100 78 C92 64 108 58 100 42" stroke-width="6"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Espresso, clean" viewBox="0 0 200 200" role="img">
+  <title>Espresso</title>
+  <defs>
+    <clipPath id="cl-espresso-tint-area">
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z"/>
+    </clipPath>
+    <clipPath id="cl-espresso-pink-area">
+    <ellipse cx="100" cy="153" rx="66" ry="14"/>
+    </clipPath>
+  </defs>
+  <g>
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <ellipse cx="100" cy="153" rx="66" ry="14" fill="#ff48b0"/>
+    <path d="M84 80 C76 68 92 62 84 48 M116 80 C108 68 124 62 116 48" fill="none" stroke="#ff48b0" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="153" rx="66" ry="14"/>
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z"/>
+    <ellipse cx="100" cy="94" rx="42" ry="7" fill="#0078bf" stroke="none"/>
+    <path d="M141 104 C162 102 162 130 134 130" stroke-width="6"/>
+    <path d="M100 78 C92 64 108 58 100 42" stroke-width="6"/>
+  </g>
+  <g clip-path="url(#cl-espresso-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="153" rx="66" ry="14"/>
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z"/>
+    <ellipse cx="100" cy="94" rx="42" ry="7" fill="#0054a5" stroke="none"/>
+    <path d="M141 104 C162 102 162 130 134 130" stroke-width="6"/>
+    <path d="M100 78 C92 64 108 58 100 42" stroke-width="6"/>
+  </g>
+  <g clip-path="url(#cl-espresso-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="153" rx="66" ry="14"/>
+    <path d="M58 94 H142 C142 128 126 148 100 148 C74 148 58 128 58 94 Z"/>
+    <ellipse cx="100" cy="94" rx="42" ry="7" fill="#002284" stroke="none"/>
+    <path d="M141 104 C162 102 162 130 134 130" stroke-width="6"/>
+    <path d="M100 78 C92 64 108 58 100 42" stroke-width="6"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Espresso</span><span class="file">07-espresso</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Latte, textured" viewBox="0 0 200 200" role="img">
+  <title>Latte</title>
+  <defs>
+    <filter id="tx-latte-art-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-latte-art-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-latte-art-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-latte-art-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="100" cy="160" rx="68" ry="12" fill="url(#tx-latte-art-dots)"/>
+    <path d="M48 86 H152 C152 128 130 154 100 154 C70 154 48 128 48 86 Z" fill="url(#tx-latte-art-dots)"/>
+    <ellipse cx="100" cy="86" rx="52" ry="14" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-latte-art-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path fill-rule="evenodd" d="M48 86 A52 14 0 1 0 152 86 A52 14 0 1 0 48 86 Z M100 96 C86 89 81 82 86 78 C90 75 96 77 100 82 C104 77 110 75 114 78 C119 82 114 89 100 96 Z" fill="#0078bf" stroke="none"/>
+    <path d="M48 86 C48 128 70 154 100 154 C130 154 152 128 152 86"/>
+    <ellipse cx="100" cy="86" rx="52" ry="14"/>
+    <path d="M151 98 C174 98 174 128 144 128" stroke-width="6"/>
+    <ellipse cx="100" cy="160" rx="68" ry="12"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Latte, clean" viewBox="0 0 200 200" role="img">
+  <title>Latte</title>
+  <defs>
+    <clipPath id="cl-latte-art-tint-area">
+    <ellipse cx="100" cy="160" rx="68" ry="12"/>
+    <path d="M48 86 H152 C152 128 130 154 100 154 C70 154 48 128 48 86 Z"/>
+    </clipPath>
+    <clipPath id="cl-latte-art-pink-area">
+    <ellipse cx="100" cy="86" rx="52" ry="14"/>
+    </clipPath>
+  </defs>
+  <g>
+    <ellipse cx="100" cy="160" rx="68" ry="12" fill="#ffb3dc"/>
+    <path d="M48 86 H152 C152 128 130 154 100 154 C70 154 48 128 48 86 Z" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <ellipse cx="100" cy="86" rx="52" ry="14" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path fill-rule="evenodd" d="M48 86 A52 14 0 1 0 152 86 A52 14 0 1 0 48 86 Z M100 96 C86 89 81 82 86 78 C90 75 96 77 100 82 C104 77 110 75 114 78 C119 82 114 89 100 96 Z" fill="#0078bf" stroke="none"/>
+    <path d="M48 86 C48 128 70 154 100 154 C130 154 152 128 152 86"/>
+    <ellipse cx="100" cy="86" rx="52" ry="14"/>
+    <path d="M151 98 C174 98 174 128 144 128" stroke-width="6"/>
+    <ellipse cx="100" cy="160" rx="68" ry="12"/>
+  </g>
+  <g clip-path="url(#cl-latte-art-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path fill-rule="evenodd" d="M48 86 A52 14 0 1 0 152 86 A52 14 0 1 0 48 86 Z M100 96 C86 89 81 82 86 78 C90 75 96 77 100 82 C104 77 110 75 114 78 C119 82 114 89 100 96 Z" fill="#0054a5" stroke="none"/>
+    <path d="M48 86 C48 128 70 154 100 154 C130 154 152 128 152 86"/>
+    <ellipse cx="100" cy="86" rx="52" ry="14"/>
+    <path d="M151 98 C174 98 174 128 144 128" stroke-width="6"/>
+    <ellipse cx="100" cy="160" rx="68" ry="12"/>
+  </g>
+  <g clip-path="url(#cl-latte-art-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path fill-rule="evenodd" d="M48 86 A52 14 0 1 0 152 86 A52 14 0 1 0 48 86 Z M100 96 C86 89 81 82 86 78 C90 75 96 77 100 82 C104 77 110 75 114 78 C119 82 114 89 100 96 Z" fill="#002284" stroke="none"/>
+    <path d="M48 86 C48 128 70 154 100 154 C130 154 152 128 152 86"/>
+    <ellipse cx="100" cy="86" rx="52" ry="14"/>
+    <path d="M151 98 C174 98 174 128 144 128" stroke-width="6"/>
+    <ellipse cx="100" cy="160" rx="68" ry="12"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Latte</span><span class="file">08-latte-art</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Cappuccino, textured" viewBox="0 0 200 200" role="img">
+  <title>Cappuccino</title>
+  <defs>
+    <filter id="tx-cappuccino-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-cappuccino-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-cappuccino-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-cappuccino-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92 Z" fill="url(#tx-cappuccino-dots)"/>
+    <path d="M60 92 H140 L132 160 C131 166 126 170 120 170 H80 C74 170 69 166 68 160 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-cappuccino-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92"/>
+    <path d="M54 92 H146" stroke-width="5"/>
+    <path d="M60 92 L68 160 C69 166 74 170 80 170 H120 C126 170 131 166 132 160 L140 92"/>
+    <path d="M138 106 C160 106 158 140 134 142" stroke-width="6"/>
+    <path d="M42 174 H158"/>
+    <circle cx="82" cy="74" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="96" cy="68" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="110" cy="72" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="122" cy="80" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="90" cy="82" r="1.6" fill="#0078bf" stroke="none"/>
+    <circle cx="106" cy="84" r="1.6" fill="#0078bf" stroke="none"/>
+    <circle cx="72" cy="84" r="1.6" fill="#0078bf" stroke="none"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Cappuccino, clean" viewBox="0 0 200 200" role="img">
+  <title>Cappuccino</title>
+  <defs>
+    <clipPath id="cl-cappuccino-tint-area">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92 Z"/>
+    </clipPath>
+    <clipPath id="cl-cappuccino-pink-area">
+    <path d="M60 92 H140 L132 160 C131 166 126 170 120 170 H80 C74 170 69 166 68 160 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92 Z" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M60 92 H140 L132 160 C131 166 126 170 120 170 H80 C74 170 69 166 68 160 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92"/>
+    <path d="M54 92 H146" stroke-width="5"/>
+    <path d="M60 92 L68 160 C69 166 74 170 80 170 H120 C126 170 131 166 132 160 L140 92"/>
+    <path d="M138 106 C160 106 158 140 134 142" stroke-width="6"/>
+    <path d="M42 174 H158"/>
+    <circle cx="82" cy="74" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="96" cy="68" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="110" cy="72" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="122" cy="80" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="90" cy="82" r="1.6" fill="#0078bf" stroke="none"/>
+    <circle cx="106" cy="84" r="1.6" fill="#0078bf" stroke="none"/>
+    <circle cx="72" cy="84" r="1.6" fill="#0078bf" stroke="none"/>
+  </g>
+  <g clip-path="url(#cl-cappuccino-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92"/>
+    <path d="M54 92 H146" stroke-width="5"/>
+    <path d="M60 92 L68 160 C69 166 74 170 80 170 H120 C126 170 131 166 132 160 L140 92"/>
+    <path d="M138 106 C160 106 158 140 134 142" stroke-width="6"/>
+    <path d="M42 174 H158"/>
+    <circle cx="82" cy="74" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="96" cy="68" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="110" cy="72" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="122" cy="80" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="90" cy="82" r="1.6" fill="#0054a5" stroke="none"/>
+    <circle cx="106" cy="84" r="1.6" fill="#0054a5" stroke="none"/>
+    <circle cx="72" cy="84" r="1.6" fill="#0054a5" stroke="none"/>
+  </g>
+  <g clip-path="url(#cl-cappuccino-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92"/>
+    <path d="M54 92 H146" stroke-width="5"/>
+    <path d="M60 92 L68 160 C69 166 74 170 80 170 H120 C126 170 131 166 132 160 L140 92"/>
+    <path d="M138 106 C160 106 158 140 134 142" stroke-width="6"/>
+    <path d="M42 174 H158"/>
+    <circle cx="82" cy="74" r="2" fill="#002284" stroke="none"/>
+    <circle cx="96" cy="68" r="2" fill="#002284" stroke="none"/>
+    <circle cx="110" cy="72" r="2" fill="#002284" stroke="none"/>
+    <circle cx="122" cy="80" r="2" fill="#002284" stroke="none"/>
+    <circle cx="90" cy="82" r="1.6" fill="#002284" stroke="none"/>
+    <circle cx="106" cy="84" r="1.6" fill="#002284" stroke="none"/>
+    <circle cx="72" cy="84" r="1.6" fill="#002284" stroke="none"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Cappuccino</span><span class="file">09-cappuccino</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Iced coffee, textured" viewBox="0 0 200 200" role="img">
+  <title>Iced coffee</title>
+  <defs>
+    <filter id="tx-iced-coffee-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-iced-coffee-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-iced-coffee-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-iced-coffee-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M63.3 72 H136.7 L135.5 90 H64.5 Z" fill="url(#tx-iced-coffee-dots)"/>
+    <path d="M64.5 90 H135.5 L130 168 H70 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-iced-coffee-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M126 24 L114 50 V150" stroke-width="6"/>
+    <path d="M62 54 H138 L130 168 H70 Z"/>
+    <rect x="76" y="100" width="20" height="20" rx="2" transform="rotate(10 86 110)" stroke-width="3.5"/>
+    <rect x="96" y="112" width="18" height="18" rx="2" transform="rotate(-8 105 121)" stroke-width="3.5"/>
+    <rect x="80" y="134" width="18" height="18" rx="2" transform="rotate(-4 89 143)" stroke-width="3.5"/>
+    <path d="M64.5 90 H135.5" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Iced coffee, clean" viewBox="0 0 200 200" role="img">
+  <title>Iced coffee</title>
+  <defs>
+    <clipPath id="cl-iced-coffee-tint-area">
+    <path d="M63.3 72 H136.7 L135.5 90 H64.5 Z"/>
+    </clipPath>
+    <clipPath id="cl-iced-coffee-pink-area">
+    <path d="M64.5 90 H135.5 L130 168 H70 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <path d="M63.3 72 H136.7 L135.5 90 H64.5 Z" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M64.5 90 H135.5 L130 168 H70 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M126 24 L114 50 V150" stroke-width="6"/>
+    <path d="M62 54 H138 L130 168 H70 Z"/>
+    <rect x="76" y="100" width="20" height="20" rx="2" transform="rotate(10 86 110)" stroke-width="3.5"/>
+    <rect x="96" y="112" width="18" height="18" rx="2" transform="rotate(-8 105 121)" stroke-width="3.5"/>
+    <rect x="80" y="134" width="18" height="18" rx="2" transform="rotate(-4 89 143)" stroke-width="3.5"/>
+    <path d="M64.5 90 H135.5" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-iced-coffee-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M126 24 L114 50 V150" stroke-width="6"/>
+    <path d="M62 54 H138 L130 168 H70 Z"/>
+    <rect x="76" y="100" width="20" height="20" rx="2" transform="rotate(10 86 110)" stroke-width="3.5"/>
+    <rect x="96" y="112" width="18" height="18" rx="2" transform="rotate(-8 105 121)" stroke-width="3.5"/>
+    <rect x="80" y="134" width="18" height="18" rx="2" transform="rotate(-4 89 143)" stroke-width="3.5"/>
+    <path d="M64.5 90 H135.5" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-iced-coffee-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M126 24 L114 50 V150" stroke-width="6"/>
+    <path d="M62 54 H138 L130 168 H70 Z"/>
+    <rect x="76" y="100" width="20" height="20" rx="2" transform="rotate(10 86 110)" stroke-width="3.5"/>
+    <rect x="96" y="112" width="18" height="18" rx="2" transform="rotate(-8 105 121)" stroke-width="3.5"/>
+    <rect x="80" y="134" width="18" height="18" rx="2" transform="rotate(-4 89 143)" stroke-width="3.5"/>
+    <path d="M64.5 90 H135.5" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Iced coffee</span><span class="file">10-iced-coffee</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Takeaway cup, textured" viewBox="0 0 200 200" role="img">
+  <title>Takeaway cup</title>
+  <defs>
+    <filter id="tx-takeaway-cup-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-takeaway-cup-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-takeaway-cup-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-takeaway-cup-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M66 64 H134 L124 172 H76 Z" fill="url(#tx-takeaway-cup-dots)"/>
+    <path d="M69.3 100 H130.7 L127.5 134 H72.5 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-takeaway-cup-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M66 50 C70 38 130 38 134 50"/>
+    <rect x="110" y="41" width="12" height="5" rx="2" fill="#0078bf" stroke="none"/>
+    <rect x="56" y="50" width="88" height="14" rx="4" fill="#0078bf" stroke="none"/>
+    <path d="M66 64 L76 172 H124 L134 64"/>
+    <path d="M69.3 100 H130.7 M72.5 134 H127.5" stroke-width="3"/>
+    <ellipse cx="100" cy="117" rx="7" ry="10" stroke-width="3"/>
+    <path d="M100 108 C97 114 103 120 100 126" stroke-width="2.5"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Takeaway cup, clean" viewBox="0 0 200 200" role="img">
+  <title>Takeaway cup</title>
+  <defs>
+    <clipPath id="cl-takeaway-cup-tint-area">
+    <path d="M66 64 H134 L124 172 H76 Z"/>
+    </clipPath>
+    <clipPath id="cl-takeaway-cup-pink-area">
+    <path d="M69.3 100 H130.7 L127.5 134 H72.5 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <path d="M66 64 H134 L124 172 H76 Z" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M69.3 100 H130.7 L127.5 134 H72.5 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M66 50 C70 38 130 38 134 50"/>
+    <rect x="110" y="41" width="12" height="5" rx="2" fill="#0078bf" stroke="none"/>
+    <rect x="56" y="50" width="88" height="14" rx="4" fill="#0078bf" stroke="none"/>
+    <path d="M66 64 L76 172 H124 L134 64"/>
+    <path d="M69.3 100 H130.7 M72.5 134 H127.5" stroke-width="3"/>
+    <ellipse cx="100" cy="117" rx="7" ry="10" stroke-width="3"/>
+    <path d="M100 108 C97 114 103 120 100 126" stroke-width="2.5"/>
+  </g>
+  <g clip-path="url(#cl-takeaway-cup-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M66 50 C70 38 130 38 134 50"/>
+    <rect x="110" y="41" width="12" height="5" rx="2" fill="#0054a5" stroke="none"/>
+    <rect x="56" y="50" width="88" height="14" rx="4" fill="#0054a5" stroke="none"/>
+    <path d="M66 64 L76 172 H124 L134 64"/>
+    <path d="M69.3 100 H130.7 M72.5 134 H127.5" stroke-width="3"/>
+    <ellipse cx="100" cy="117" rx="7" ry="10" stroke-width="3"/>
+    <path d="M100 108 C97 114 103 120 100 126" stroke-width="2.5"/>
+  </g>
+  <g clip-path="url(#cl-takeaway-cup-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M66 50 C70 38 130 38 134 50"/>
+    <rect x="110" y="41" width="12" height="5" rx="2" fill="#002284" stroke="none"/>
+    <rect x="56" y="50" width="88" height="14" rx="4" fill="#002284" stroke="none"/>
+    <path d="M66 64 L76 172 H124 L134 64"/>
+    <path d="M69.3 100 H130.7 M72.5 134 H127.5" stroke-width="3"/>
+    <ellipse cx="100" cy="117" rx="7" ry="10" stroke-width="3"/>
+    <path d="M100 108 C97 114 103 120 100 126" stroke-width="2.5"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Takeaway cup</span><span class="file">11-takeaway-cup</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Mocha, textured" viewBox="0 0 200 200" role="img">
+  <title>Mocha</title>
+  <defs>
+    <filter id="tx-mocha-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-mocha-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-mocha-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-mocha-ink-p)" transform="translate(2.2 -1.6)">
+    <rect x="62" y="100" width="72" height="30" fill="url(#tx-mocha-dots)"/>
+    <path d="M62 130 H134 V160 A10 10 0 0 1 124 170 H72 A10 10 0 0 1 62 160 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-mocha-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 78 C54 66 68 56 78 62 C82 50 100 48 106 58 C114 50 134 56 130 68 C142 70 142 82 132 82 H66 C58 82 54 78 60 78 Z"/>
+    <path d="M72 72 Q81 64 90 72 T108 71 T126 70" stroke-width="3"/>
+    <path d="M62 82 V160 A10 10 0 0 0 72 170 H124 A10 10 0 0 0 134 160 V82"/>
+    <path d="M62 100 H134 M62 130 H134" stroke-width="3"/>
+    <path d="M134 94 C158 94 158 142 134 142" stroke-width="6"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Mocha, clean" viewBox="0 0 200 200" role="img">
+  <title>Mocha</title>
+  <defs>
+    <clipPath id="cl-mocha-tint-area">
+    <rect x="62" y="100" width="72" height="30"/>
+    </clipPath>
+    <clipPath id="cl-mocha-pink-area">
+    <path d="M62 130 H134 V160 A10 10 0 0 1 124 170 H72 A10 10 0 0 1 62 160 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <rect x="62" y="100" width="72" height="30" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M62 130 H134 V160 A10 10 0 0 1 124 170 H72 A10 10 0 0 1 62 160 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 78 C54 66 68 56 78 62 C82 50 100 48 106 58 C114 50 134 56 130 68 C142 70 142 82 132 82 H66 C58 82 54 78 60 78 Z"/>
+    <path d="M72 72 Q81 64 90 72 T108 71 T126 70" stroke-width="3"/>
+    <path d="M62 82 V160 A10 10 0 0 0 72 170 H124 A10 10 0 0 0 134 160 V82"/>
+    <path d="M62 100 H134 M62 130 H134" stroke-width="3"/>
+    <path d="M134 94 C158 94 158 142 134 142" stroke-width="6"/>
+  </g>
+  <g clip-path="url(#cl-mocha-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 78 C54 66 68 56 78 62 C82 50 100 48 106 58 C114 50 134 56 130 68 C142 70 142 82 132 82 H66 C58 82 54 78 60 78 Z"/>
+    <path d="M72 72 Q81 64 90 72 T108 71 T126 70" stroke-width="3"/>
+    <path d="M62 82 V160 A10 10 0 0 0 72 170 H124 A10 10 0 0 0 134 160 V82"/>
+    <path d="M62 100 H134 M62 130 H134" stroke-width="3"/>
+    <path d="M134 94 C158 94 158 142 134 142" stroke-width="6"/>
+  </g>
+  <g clip-path="url(#cl-mocha-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 78 C54 66 68 56 78 62 C82 50 100 48 106 58 C114 50 134 56 130 68 C142 70 142 82 132 82 H66 C58 82 54 78 60 78 Z"/>
+    <path d="M72 72 Q81 64 90 72 T108 71 T126 70" stroke-width="3"/>
+    <path d="M62 82 V160 A10 10 0 0 0 72 170 H124 A10 10 0 0 0 134 160 V82"/>
+    <path d="M62 100 H134 M62 130 H134" stroke-width="3"/>
+    <path d="M134 94 C158 94 158 142 134 142" stroke-width="6"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Mocha</span><span class="file">12-mocha</span></figcaption>
+      </figure>
+      </div>
+    </section>
+    <section>
+      <h2>Beans &amp; origin <span>6</span></h2>
+      <div class="grid">
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Coffee bean, textured" viewBox="0 0 200 200" role="img">
+  <title>Coffee bean</title>
+  <defs>
+    <filter id="tx-coffee-bean-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-coffee-bean-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-coffee-bean-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-coffee-bean-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="116" cy="116" rx="46" ry="62" transform="rotate(-30 116 116)" fill="url(#tx-coffee-bean-dots)"/>
+    <ellipse cx="96" cy="96" rx="46" ry="62" transform="rotate(-30 96 96)" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-coffee-bean-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="96" cy="96" rx="46" ry="62" transform="rotate(-30 96 96)"/>
+    <path d="M96 36 C80 68 112 124 96 156" transform="rotate(-30 96 96)" stroke-width="6"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Coffee bean, clean" viewBox="0 0 200 200" role="img">
+  <title>Coffee bean</title>
+  <defs>
+    <clipPath id="cl-coffee-bean-tint-area">
+    <ellipse cx="116" cy="116" rx="46" ry="62" transform="rotate(-30 116 116)"/>
+    </clipPath>
+    <clipPath id="cl-coffee-bean-pink-area">
+    <ellipse cx="96" cy="96" rx="46" ry="62" transform="rotate(-30 96 96)"/>
+    </clipPath>
+  </defs>
+  <g>
+    <ellipse cx="116" cy="116" rx="46" ry="62" transform="rotate(-30 116 116)" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <ellipse cx="96" cy="96" rx="46" ry="62" transform="rotate(-30 96 96)" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="96" cy="96" rx="46" ry="62" transform="rotate(-30 96 96)"/>
+    <path d="M96 36 C80 68 112 124 96 156" transform="rotate(-30 96 96)" stroke-width="6"/>
+  </g>
+  <g clip-path="url(#cl-coffee-bean-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="96" cy="96" rx="46" ry="62" transform="rotate(-30 96 96)"/>
+    <path d="M96 36 C80 68 112 124 96 156" transform="rotate(-30 96 96)" stroke-width="6"/>
+  </g>
+  <g clip-path="url(#cl-coffee-bean-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="96" cy="96" rx="46" ry="62" transform="rotate(-30 96 96)"/>
+    <path d="M96 36 C80 68 112 124 96 156" transform="rotate(-30 96 96)" stroke-width="6"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Coffee bean</span><span class="file">13-coffee-bean</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Coffee cherry, textured" viewBox="0 0 200 200" role="img">
+  <title>Coffee cherry</title>
+  <defs>
+    <filter id="tx-coffee-cherry-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-coffee-cherry-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-coffee-cherry-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-coffee-cherry-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M122 84 C132 58 154 50 170 54 C162 72 144 88 122 84 Z" fill="url(#tx-coffee-cherry-dots)"/>
+    <path d="M66 138 C48 122 32 122 24 130 C38 146 54 148 66 138 Z" fill="url(#tx-coffee-cherry-dots)"/>
+    <circle cx="88" cy="130" r="12" fill="#ff48b0"/>
+    <circle cx="112" cy="126" r="12" fill="#ff48b0"/>
+    <circle cx="100" cy="148" r="12" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-coffee-cherry-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 164 C70 132 110 100 164 46" stroke-width="5"/>
+    <path d="M122 84 C132 58 154 50 170 54 C162 72 144 88 122 84 Z" stroke-width="3"/>
+    <path d="M126 80 C138 70 150 62 166 56" stroke-width="2.5"/>
+    <path d="M66 138 C48 122 32 122 24 130 C38 146 54 148 66 138 Z" stroke-width="3"/>
+    <path d="M62 136 C50 132 40 130 28 130" stroke-width="2.5"/>
+    <path d="M92 112 L90 118 M106 108 L110 114 M98 114 L100 136" stroke-width="3"/>
+    <path d="M78 136 A12 12 0 0 0 98 138" stroke-width="3"/>
+    <path d="M106 136 A12 12 0 0 0 124 128" stroke-width="3"/>
+    <path d="M90 156 A12 12 0 0 0 112 152" stroke-width="3"/>
+    <circle cx="88" cy="141" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="112" cy="137" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="100" cy="159" r="2" fill="#0078bf" stroke="none"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Coffee cherry, clean" viewBox="0 0 200 200" role="img">
+  <title>Coffee cherry</title>
+  <defs>
+    <clipPath id="cl-coffee-cherry-tint-area">
+    <path d="M122 84 C132 58 154 50 170 54 C162 72 144 88 122 84 Z"/>
+    <path d="M66 138 C48 122 32 122 24 130 C38 146 54 148 66 138 Z"/>
+    </clipPath>
+    <clipPath id="cl-coffee-cherry-pink-area">
+    <circle cx="88" cy="130" r="12"/>
+    <circle cx="112" cy="126" r="12"/>
+    <circle cx="100" cy="148" r="12"/>
+    </clipPath>
+  </defs>
+  <g>
+    <path d="M122 84 C132 58 154 50 170 54 C162 72 144 88 122 84 Z" fill="#ffb3dc"/>
+    <path d="M66 138 C48 122 32 122 24 130 C38 146 54 148 66 138 Z" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <circle cx="88" cy="130" r="12" fill="#ff48b0"/>
+    <circle cx="112" cy="126" r="12" fill="#ff48b0"/>
+    <circle cx="100" cy="148" r="12" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 164 C70 132 110 100 164 46" stroke-width="5"/>
+    <path d="M122 84 C132 58 154 50 170 54 C162 72 144 88 122 84 Z" stroke-width="3"/>
+    <path d="M126 80 C138 70 150 62 166 56" stroke-width="2.5"/>
+    <path d="M66 138 C48 122 32 122 24 130 C38 146 54 148 66 138 Z" stroke-width="3"/>
+    <path d="M62 136 C50 132 40 130 28 130" stroke-width="2.5"/>
+    <path d="M92 112 L90 118 M106 108 L110 114 M98 114 L100 136" stroke-width="3"/>
+    <path d="M78 136 A12 12 0 0 0 98 138" stroke-width="3"/>
+    <path d="M106 136 A12 12 0 0 0 124 128" stroke-width="3"/>
+    <path d="M90 156 A12 12 0 0 0 112 152" stroke-width="3"/>
+    <circle cx="88" cy="141" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="112" cy="137" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="100" cy="159" r="2" fill="#0078bf" stroke="none"/>
+  </g>
+  <g clip-path="url(#cl-coffee-cherry-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 164 C70 132 110 100 164 46" stroke-width="5"/>
+    <path d="M122 84 C132 58 154 50 170 54 C162 72 144 88 122 84 Z" stroke-width="3"/>
+    <path d="M126 80 C138 70 150 62 166 56" stroke-width="2.5"/>
+    <path d="M66 138 C48 122 32 122 24 130 C38 146 54 148 66 138 Z" stroke-width="3"/>
+    <path d="M62 136 C50 132 40 130 28 130" stroke-width="2.5"/>
+    <path d="M92 112 L90 118 M106 108 L110 114 M98 114 L100 136" stroke-width="3"/>
+    <path d="M78 136 A12 12 0 0 0 98 138" stroke-width="3"/>
+    <path d="M106 136 A12 12 0 0 0 124 128" stroke-width="3"/>
+    <path d="M90 156 A12 12 0 0 0 112 152" stroke-width="3"/>
+    <circle cx="88" cy="141" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="112" cy="137" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="100" cy="159" r="2" fill="#0054a5" stroke="none"/>
+  </g>
+  <g clip-path="url(#cl-coffee-cherry-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 164 C70 132 110 100 164 46" stroke-width="5"/>
+    <path d="M122 84 C132 58 154 50 170 54 C162 72 144 88 122 84 Z" stroke-width="3"/>
+    <path d="M126 80 C138 70 150 62 166 56" stroke-width="2.5"/>
+    <path d="M66 138 C48 122 32 122 24 130 C38 146 54 148 66 138 Z" stroke-width="3"/>
+    <path d="M62 136 C50 132 40 130 28 130" stroke-width="2.5"/>
+    <path d="M92 112 L90 118 M106 108 L110 114 M98 114 L100 136" stroke-width="3"/>
+    <path d="M78 136 A12 12 0 0 0 98 138" stroke-width="3"/>
+    <path d="M106 136 A12 12 0 0 0 124 128" stroke-width="3"/>
+    <path d="M90 156 A12 12 0 0 0 112 152" stroke-width="3"/>
+    <circle cx="88" cy="141" r="2" fill="#002284" stroke="none"/>
+    <circle cx="112" cy="137" r="2" fill="#002284" stroke="none"/>
+    <circle cx="100" cy="159" r="2" fill="#002284" stroke="none"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Coffee cherry</span><span class="file">14-coffee-cherry</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Roast bag, textured" viewBox="0 0 200 200" role="img">
+  <title>Roast bag</title>
+  <defs>
+    <filter id="tx-roast-bag-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-roast-bag-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-roast-bag-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-roast-bag-ink-p)" transform="translate(2.2 -1.6)">
+    <rect x="54" y="38" width="92" height="20" rx="2" fill="url(#tx-roast-bag-dots)"/>
+    <path d="M58 60 H142 L148 170 H52 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-roast-bag-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="38" width="92" height="20" rx="2" stroke-width="3"/>
+    <rect x="48" y="55" width="104" height="7" rx="3.5" fill="#0078bf" stroke="none"/>
+    <path d="M58 62 L52 170 H148 L142 62"/>
+    <circle cx="100" cy="80" r="5" stroke-width="3"/>
+    <rect x="74" y="96" width="52" height="54" rx="2" stroke-width="3.5"/>
+    <ellipse cx="100" cy="116" rx="9" ry="12" transform="rotate(-20 100 116)" stroke-width="3"/>
+    <path d="M101 104 C96 112 104 120 99 128" stroke-width="2.5"/>
+    <path d="M84 140 H116" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Roast bag, clean" viewBox="0 0 200 200" role="img">
+  <title>Roast bag</title>
+  <defs>
+    <clipPath id="cl-roast-bag-tint-area">
+    <rect x="54" y="38" width="92" height="20" rx="2"/>
+    </clipPath>
+    <clipPath id="cl-roast-bag-pink-area">
+    <path d="M58 60 H142 L148 170 H52 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <rect x="54" y="38" width="92" height="20" rx="2" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M58 60 H142 L148 170 H52 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="38" width="92" height="20" rx="2" stroke-width="3"/>
+    <rect x="48" y="55" width="104" height="7" rx="3.5" fill="#0078bf" stroke="none"/>
+    <path d="M58 62 L52 170 H148 L142 62"/>
+    <circle cx="100" cy="80" r="5" stroke-width="3"/>
+    <rect x="74" y="96" width="52" height="54" rx="2" stroke-width="3.5"/>
+    <ellipse cx="100" cy="116" rx="9" ry="12" transform="rotate(-20 100 116)" stroke-width="3"/>
+    <path d="M101 104 C96 112 104 120 99 128" stroke-width="2.5"/>
+    <path d="M84 140 H116" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-roast-bag-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="38" width="92" height="20" rx="2" stroke-width="3"/>
+    <rect x="48" y="55" width="104" height="7" rx="3.5" fill="#0054a5" stroke="none"/>
+    <path d="M58 62 L52 170 H148 L142 62"/>
+    <circle cx="100" cy="80" r="5" stroke-width="3"/>
+    <rect x="74" y="96" width="52" height="54" rx="2" stroke-width="3.5"/>
+    <ellipse cx="100" cy="116" rx="9" ry="12" transform="rotate(-20 100 116)" stroke-width="3"/>
+    <path d="M101 104 C96 112 104 120 99 128" stroke-width="2.5"/>
+    <path d="M84 140 H116" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-roast-bag-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="54" y="38" width="92" height="20" rx="2" stroke-width="3"/>
+    <rect x="48" y="55" width="104" height="7" rx="3.5" fill="#002284" stroke="none"/>
+    <path d="M58 62 L52 170 H148 L142 62"/>
+    <circle cx="100" cy="80" r="5" stroke-width="3"/>
+    <rect x="74" y="96" width="52" height="54" rx="2" stroke-width="3.5"/>
+    <ellipse cx="100" cy="116" rx="9" ry="12" transform="rotate(-20 100 116)" stroke-width="3"/>
+    <path d="M101 104 C96 112 104 120 99 128" stroke-width="2.5"/>
+    <path d="M84 140 H116" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Roast bag</span><span class="file">15-roast-bag</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Scoop of beans, textured" viewBox="0 0 200 200" role="img">
+  <title>Scoop of beans</title>
+  <defs>
+    <filter id="tx-bean-scoop-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-bean-scoop-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-bean-scoop-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-bean-scoop-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M60 96 C64 74 84 64 100 64 C118 64 136 74 140 96 Z" fill="url(#tx-bean-scoop-dots)"/>
+    <path d="M58 96 C58 128 76 148 100 148 C124 148 142 128 142 96 Z" fill="#ff48b0"/>
+    <ellipse cx="62" cy="168" rx="8" ry="5.5" transform="rotate(-20 62 168)" fill="#ff48b0"/>
+    <ellipse cx="84" cy="172" rx="8" ry="5.5" transform="rotate(15 84 172)" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-bean-scoop-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 96 H142 C142 128 124 148 100 148 C76 148 58 128 58 96 Z"/>
+    <path d="M140 108 L176 134" stroke-width="9"/>
+    <ellipse cx="80" cy="84" rx="9" ry="6" transform="rotate(-20 80 84)" stroke-width="3"/>
+    <ellipse cx="100" cy="74" rx="9" ry="6" transform="rotate(15 100 74)" stroke-width="3"/>
+    <ellipse cx="120" cy="84" rx="9" ry="6" transform="rotate(30 120 84)" stroke-width="3"/>
+    <path d="M72 86 L88 82 M92 72 L108 76 M113 80 L127 88" stroke-width="2"/>
+    <path d="M55 170 L69 166 M77 170 L91 174" stroke-width="2"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Scoop of beans, clean" viewBox="0 0 200 200" role="img">
+  <title>Scoop of beans</title>
+  <defs>
+    <clipPath id="cl-bean-scoop-tint-area">
+    <path d="M60 96 C64 74 84 64 100 64 C118 64 136 74 140 96 Z"/>
+    </clipPath>
+    <clipPath id="cl-bean-scoop-pink-area">
+    <path d="M58 96 C58 128 76 148 100 148 C124 148 142 128 142 96 Z"/>
+    <ellipse cx="62" cy="168" rx="8" ry="5.5" transform="rotate(-20 62 168)"/>
+    <ellipse cx="84" cy="172" rx="8" ry="5.5" transform="rotate(15 84 172)"/>
+    </clipPath>
+  </defs>
+  <g>
+    <path d="M60 96 C64 74 84 64 100 64 C118 64 136 74 140 96 Z" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M58 96 C58 128 76 148 100 148 C124 148 142 128 142 96 Z" fill="#ff48b0"/>
+    <ellipse cx="62" cy="168" rx="8" ry="5.5" transform="rotate(-20 62 168)" fill="#ff48b0"/>
+    <ellipse cx="84" cy="172" rx="8" ry="5.5" transform="rotate(15 84 172)" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 96 H142 C142 128 124 148 100 148 C76 148 58 128 58 96 Z"/>
+    <path d="M140 108 L176 134" stroke-width="9"/>
+    <ellipse cx="80" cy="84" rx="9" ry="6" transform="rotate(-20 80 84)" stroke-width="3"/>
+    <ellipse cx="100" cy="74" rx="9" ry="6" transform="rotate(15 100 74)" stroke-width="3"/>
+    <ellipse cx="120" cy="84" rx="9" ry="6" transform="rotate(30 120 84)" stroke-width="3"/>
+    <path d="M72 86 L88 82 M92 72 L108 76 M113 80 L127 88" stroke-width="2"/>
+    <path d="M55 170 L69 166 M77 170 L91 174" stroke-width="2"/>
+  </g>
+  <g clip-path="url(#cl-bean-scoop-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 96 H142 C142 128 124 148 100 148 C76 148 58 128 58 96 Z"/>
+    <path d="M140 108 L176 134" stroke-width="9"/>
+    <ellipse cx="80" cy="84" rx="9" ry="6" transform="rotate(-20 80 84)" stroke-width="3"/>
+    <ellipse cx="100" cy="74" rx="9" ry="6" transform="rotate(15 100 74)" stroke-width="3"/>
+    <ellipse cx="120" cy="84" rx="9" ry="6" transform="rotate(30 120 84)" stroke-width="3"/>
+    <path d="M72 86 L88 82 M92 72 L108 76 M113 80 L127 88" stroke-width="2"/>
+    <path d="M55 170 L69 166 M77 170 L91 174" stroke-width="2"/>
+  </g>
+  <g clip-path="url(#cl-bean-scoop-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M58 96 H142 C142 128 124 148 100 148 C76 148 58 128 58 96 Z"/>
+    <path d="M140 108 L176 134" stroke-width="9"/>
+    <ellipse cx="80" cy="84" rx="9" ry="6" transform="rotate(-20 80 84)" stroke-width="3"/>
+    <ellipse cx="100" cy="74" rx="9" ry="6" transform="rotate(15 100 74)" stroke-width="3"/>
+    <ellipse cx="120" cy="84" rx="9" ry="6" transform="rotate(30 120 84)" stroke-width="3"/>
+    <path d="M72 86 L88 82 M92 72 L108 76 M113 80 L127 88" stroke-width="2"/>
+    <path d="M55 170 L69 166 M77 170 L91 174" stroke-width="2"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Scoop of beans</span><span class="file">16-bean-scoop</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Origin pin, textured" viewBox="0 0 200 200" role="img">
+  <title>Origin pin</title>
+  <defs>
+    <filter id="tx-origin-pin-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-origin-pin-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-origin-pin-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-origin-pin-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="100" cy="170" rx="62" ry="13" fill="url(#tx-origin-pin-dots)"/>
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-origin-pin-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="170" rx="62" ry="13" stroke-width="3"/>
+    <ellipse cx="100" cy="170" rx="38" ry="7" stroke-width="3"/>
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z"/>
+    <path fill-rule="evenodd" d="M79 88 A21 21 0 1 0 121 88 A21 21 0 1 0 79 88 Z M92.75 91.38 A8 11 -25 1 0 107.25 84.62 A8 11 -25 1 0 92.75 91.38 Z" fill="#0078bf" stroke="none"/>
+    <path d="M102.5 78.5 C96 86 104 91 97.5 97.5" stroke-width="2.5"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Origin pin, clean" viewBox="0 0 200 200" role="img">
+  <title>Origin pin</title>
+  <defs>
+    <clipPath id="cl-origin-pin-tint-area">
+    <ellipse cx="100" cy="170" rx="62" ry="13"/>
+    </clipPath>
+    <clipPath id="cl-origin-pin-pink-area">
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <ellipse cx="100" cy="170" rx="62" ry="13" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="170" rx="62" ry="13" stroke-width="3"/>
+    <ellipse cx="100" cy="170" rx="38" ry="7" stroke-width="3"/>
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z"/>
+    <path fill-rule="evenodd" d="M79 88 A21 21 0 1 0 121 88 A21 21 0 1 0 79 88 Z M92.75 91.38 A8 11 -25 1 0 107.25 84.62 A8 11 -25 1 0 92.75 91.38 Z" fill="#0078bf" stroke="none"/>
+    <path d="M102.5 78.5 C96 86 104 91 97.5 97.5" stroke-width="2.5"/>
+  </g>
+  <g clip-path="url(#cl-origin-pin-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="170" rx="62" ry="13" stroke-width="3"/>
+    <ellipse cx="100" cy="170" rx="38" ry="7" stroke-width="3"/>
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z"/>
+    <path fill-rule="evenodd" d="M79 88 A21 21 0 1 0 121 88 A21 21 0 1 0 79 88 Z M92.75 91.38 A8 11 -25 1 0 107.25 84.62 A8 11 -25 1 0 92.75 91.38 Z" fill="#0054a5" stroke="none"/>
+    <path d="M102.5 78.5 C96 86 104 91 97.5 97.5" stroke-width="2.5"/>
+  </g>
+  <g clip-path="url(#cl-origin-pin-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="170" rx="62" ry="13" stroke-width="3"/>
+    <ellipse cx="100" cy="170" rx="38" ry="7" stroke-width="3"/>
+    <path d="M100 170 C100 170 56 118 56 88 A44 44 0 0 1 144 88 C144 118 100 170 100 170 Z"/>
+    <path fill-rule="evenodd" d="M79 88 A21 21 0 1 0 121 88 A21 21 0 1 0 79 88 Z M92.75 91.38 A8 11 -25 1 0 107.25 84.62 A8 11 -25 1 0 92.75 91.38 Z" fill="#002284" stroke="none"/>
+    <path d="M102.5 78.5 C96 86 104 91 97.5 97.5" stroke-width="2.5"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Origin pin</span><span class="file">17-origin-pin</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Roast level, textured" viewBox="0 0 200 200" role="img">
+  <title>Roast level</title>
+  <defs>
+    <filter id="tx-roast-gauge-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-roast-gauge-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-roast-gauge-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-roast-gauge-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M30 140 A70 70 0 0 1 65 79.4 L77 100.2 A46 46 0 0 0 54 140 Z" fill="url(#tx-roast-gauge-dots)"/>
+    <path d="M65 79.4 A70 70 0 0 1 135 79.4 L123 100.2 A46 46 0 0 0 77 100.2 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-roast-gauge-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M135 79.4 A70 70 0 0 1 170 140 L146 140 A46 46 0 0 0 123 100.2 Z" fill="#0078bf" stroke="none"/>
+    <path d="M30 140 A70 70 0 0 1 170 140 M54 140 A46 46 0 0 1 146 140"/>
+    <path d="M100 140 L100 84" stroke-width="5"/>
+    <circle cx="100" cy="140" r="9" fill="#0078bf" stroke="none"/>
+    <path d="M24 140 H176"/>
+    <ellipse cx="42" cy="160" rx="8" ry="5.5" transform="rotate(-15 42 160)" stroke-width="3"/>
+    <ellipse cx="158" cy="160" rx="8" ry="5.5" transform="rotate(15 158 160)" fill="#0078bf" stroke="none"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Roast level, clean" viewBox="0 0 200 200" role="img">
+  <title>Roast level</title>
+  <defs>
+    <clipPath id="cl-roast-gauge-tint-area">
+    <path d="M30 140 A70 70 0 0 1 65 79.4 L77 100.2 A46 46 0 0 0 54 140 Z"/>
+    </clipPath>
+    <clipPath id="cl-roast-gauge-pink-area">
+    <path d="M65 79.4 A70 70 0 0 1 135 79.4 L123 100.2 A46 46 0 0 0 77 100.2 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <path d="M30 140 A70 70 0 0 1 65 79.4 L77 100.2 A46 46 0 0 0 54 140 Z" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M65 79.4 A70 70 0 0 1 135 79.4 L123 100.2 A46 46 0 0 0 77 100.2 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M135 79.4 A70 70 0 0 1 170 140 L146 140 A46 46 0 0 0 123 100.2 Z" fill="#0078bf" stroke="none"/>
+    <path d="M30 140 A70 70 0 0 1 170 140 M54 140 A46 46 0 0 1 146 140"/>
+    <path d="M100 140 L100 84" stroke-width="5"/>
+    <circle cx="100" cy="140" r="9" fill="#0078bf" stroke="none"/>
+    <path d="M24 140 H176"/>
+    <ellipse cx="42" cy="160" rx="8" ry="5.5" transform="rotate(-15 42 160)" stroke-width="3"/>
+    <ellipse cx="158" cy="160" rx="8" ry="5.5" transform="rotate(15 158 160)" fill="#0078bf" stroke="none"/>
+  </g>
+  <g clip-path="url(#cl-roast-gauge-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M135 79.4 A70 70 0 0 1 170 140 L146 140 A46 46 0 0 0 123 100.2 Z" fill="#0054a5" stroke="none"/>
+    <path d="M30 140 A70 70 0 0 1 170 140 M54 140 A46 46 0 0 1 146 140"/>
+    <path d="M100 140 L100 84" stroke-width="5"/>
+    <circle cx="100" cy="140" r="9" fill="#0054a5" stroke="none"/>
+    <path d="M24 140 H176"/>
+    <ellipse cx="42" cy="160" rx="8" ry="5.5" transform="rotate(-15 42 160)" stroke-width="3"/>
+    <ellipse cx="158" cy="160" rx="8" ry="5.5" transform="rotate(15 158 160)" fill="#0054a5" stroke="none"/>
+  </g>
+  <g clip-path="url(#cl-roast-gauge-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M135 79.4 A70 70 0 0 1 170 140 L146 140 A46 46 0 0 0 123 100.2 Z" fill="#002284" stroke="none"/>
+    <path d="M30 140 A70 70 0 0 1 170 140 M54 140 A46 46 0 0 1 146 140"/>
+    <path d="M100 140 L100 84" stroke-width="5"/>
+    <circle cx="100" cy="140" r="9" fill="#002284" stroke="none"/>
+    <path d="M24 140 H176"/>
+    <ellipse cx="42" cy="160" rx="8" ry="5.5" transform="rotate(-15 42 160)" stroke-width="3"/>
+    <ellipse cx="158" cy="160" rx="8" ry="5.5" transform="rotate(15 158 160)" fill="#002284" stroke="none"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Roast level</span><span class="file">18-roast-gauge</span></figcaption>
+      </figure>
+      </div>
+    </section>
+    <section>
+      <h2>Café life <span>6</span></h2>
+      <div class="grid">
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Croissant, textured" viewBox="0 0 200 200" role="img">
+  <title>Croissant</title>
+  <defs>
+    <filter id="tx-croissant-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-croissant-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-croissant-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-croissant-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="100" cy="154" rx="66" ry="9" fill="url(#tx-croissant-dots)"/>
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-croissant-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z"/>
+    <path d="M54 104 C58 112 58 118 56 122 M78 80 C81 98 81 116 78 132 M100 72 C102 92 102 114 100 134 M122 80 C119 98 119 116 122 132 M146 104 C142 112 142 118 144 122" stroke-width="3.5"/>
+    <path d="M88 92 L90 96 M110 100 L112 104 M66 108 L68 112 M132 110 L134 106" stroke-width="2.5"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Croissant, clean" viewBox="0 0 200 200" role="img">
+  <title>Croissant</title>
+  <defs>
+    <clipPath id="cl-croissant-tint-area">
+    <ellipse cx="100" cy="154" rx="66" ry="9"/>
+    </clipPath>
+    <clipPath id="cl-croissant-pink-area">
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <ellipse cx="100" cy="154" rx="66" ry="9" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z"/>
+    <path d="M54 104 C58 112 58 118 56 122 M78 80 C81 98 81 116 78 132 M100 72 C102 92 102 114 100 134 M122 80 C119 98 119 116 122 132 M146 104 C142 112 142 118 144 122" stroke-width="3.5"/>
+    <path d="M88 92 L90 96 M110 100 L112 104 M66 108 L68 112 M132 110 L134 106" stroke-width="2.5"/>
+  </g>
+  <g clip-path="url(#cl-croissant-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z"/>
+    <path d="M54 104 C58 112 58 118 56 122 M78 80 C81 98 81 116 78 132 M100 72 C102 92 102 114 100 134 M122 80 C119 98 119 116 122 132 M146 104 C142 112 142 118 144 122" stroke-width="3.5"/>
+    <path d="M88 92 L90 96 M110 100 L112 104 M66 108 L68 112 M132 110 L134 106" stroke-width="2.5"/>
+  </g>
+  <g clip-path="url(#cl-croissant-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 128 C26 110 40 100 54 104 C58 84 78 70 100 70 C122 70 142 84 146 104 C160 100 174 110 172 128 C162 134 150 130 144 122 C132 132 116 136 100 136 C84 136 68 132 56 122 C50 130 38 134 28 128 Z"/>
+    <path d="M54 104 C58 112 58 118 56 122 M78 80 C81 98 81 116 78 132 M100 72 C102 92 102 114 100 134 M122 80 C119 98 119 116 122 132 M146 104 C142 112 142 118 144 122" stroke-width="3.5"/>
+    <path d="M88 92 L90 96 M110 100 L112 104 M66 108 L68 112 M132 110 L134 106" stroke-width="2.5"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Croissant</span><span class="file">19-croissant</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Milk pitcher, textured" viewBox="0 0 200 200" role="img">
+  <title>Milk pitcher</title>
+  <defs>
+    <filter id="tx-milk-pitcher-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-milk-pitcher-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-milk-pitcher-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-milk-pitcher-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="102" cy="176" rx="52" ry="6" fill="url(#tx-milk-pitcher-dots)"/>
+    <path d="M64 64 H130 L148 52 L136 74 C140 102 142 130 140 158 C139 165 134 170 128 170 H76 C70 170 65 165 64 158 C62 130 62 96 64 64 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-milk-pitcher-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 64 H130 L148 52 L136 74 C140 102 142 130 140 158 C139 165 134 170 128 170 H76 C70 170 65 165 64 158 C62 130 62 96 64 64 Z"/>
+    <path d="M64 82 C38 82 38 142 64 142" stroke-width="7"/>
+    <path d="M118 108 H132 M122 124 H133 M118 140 H134" stroke-width="3"/>
+    <path d="M64 74 H134" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Milk pitcher, clean" viewBox="0 0 200 200" role="img">
+  <title>Milk pitcher</title>
+  <defs>
+    <clipPath id="cl-milk-pitcher-tint-area">
+    <ellipse cx="102" cy="176" rx="52" ry="6"/>
+    </clipPath>
+    <clipPath id="cl-milk-pitcher-pink-area">
+    <path d="M64 64 H130 L148 52 L136 74 C140 102 142 130 140 158 C139 165 134 170 128 170 H76 C70 170 65 165 64 158 C62 130 62 96 64 64 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <ellipse cx="102" cy="176" rx="52" ry="6" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M64 64 H130 L148 52 L136 74 C140 102 142 130 140 158 C139 165 134 170 128 170 H76 C70 170 65 165 64 158 C62 130 62 96 64 64 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 64 H130 L148 52 L136 74 C140 102 142 130 140 158 C139 165 134 170 128 170 H76 C70 170 65 165 64 158 C62 130 62 96 64 64 Z"/>
+    <path d="M64 82 C38 82 38 142 64 142" stroke-width="7"/>
+    <path d="M118 108 H132 M122 124 H133 M118 140 H134" stroke-width="3"/>
+    <path d="M64 74 H134" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-milk-pitcher-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 64 H130 L148 52 L136 74 C140 102 142 130 140 158 C139 165 134 170 128 170 H76 C70 170 65 165 64 158 C62 130 62 96 64 64 Z"/>
+    <path d="M64 82 C38 82 38 142 64 142" stroke-width="7"/>
+    <path d="M118 108 H132 M122 124 H133 M118 140 H134" stroke-width="3"/>
+    <path d="M64 74 H134" stroke-width="3"/>
+  </g>
+  <g clip-path="url(#cl-milk-pitcher-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 64 H130 L148 52 L136 74 C140 102 142 130 140 158 C139 165 134 170 128 170 H76 C70 170 65 165 64 158 C62 130 62 96 64 64 Z"/>
+    <path d="M64 82 C38 82 38 142 64 142" stroke-width="7"/>
+    <path d="M118 108 H132 M122 124 H133 M118 140 H134" stroke-width="3"/>
+    <path d="M64 74 H134" stroke-width="3"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Milk pitcher</span><span class="file">20-milk-pitcher</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Portafilter, textured" viewBox="0 0 200 200" role="img">
+  <title>Portafilter</title>
+  <defs>
+    <filter id="tx-portafilter-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-portafilter-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-portafilter-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-portafilter-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M66 150 H112 C112 166 102 174 89 174 C76 174 66 166 66 150 Z" fill="url(#tx-portafilter-dots)"/>
+    <path d="M54 80 H122 V96 C122 112 108 122 88 122 C68 122 54 112 54 96 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-portafilter-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="50" y="72" width="76" height="8" rx="2" fill="#0078bf" stroke="none"/>
+    <path d="M54 80 V96 C54 112 68 122 88 122 C108 122 122 112 122 96 V80"/>
+    <path d="M122 84 H170 C176 84 180 88 180 94 C180 100 176 104 170 104 H122 Z" fill="#0078bf" stroke="none"/>
+    <path d="M80 122 V132 M96 122 V132" stroke-width="5"/>
+    <path d="M80 138 C78 141 78 143 80 144 C82 143 82 141 80 138 Z M96 140 C94 143 94 145 96 146 C98 145 98 143 96 140 Z" fill="#0078bf"/>
+    <path d="M66 150 H112 C112 166 102 174 89 174 C76 174 66 166 66 150 Z"/>
+    <path d="M112 154 C124 154 124 166 110 166" stroke-width="4"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Portafilter, clean" viewBox="0 0 200 200" role="img">
+  <title>Portafilter</title>
+  <defs>
+    <clipPath id="cl-portafilter-tint-area">
+    <path d="M66 150 H112 C112 166 102 174 89 174 C76 174 66 166 66 150 Z"/>
+    </clipPath>
+    <clipPath id="cl-portafilter-pink-area">
+    <path d="M54 80 H122 V96 C122 112 108 122 88 122 C68 122 54 112 54 96 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <path d="M66 150 H112 C112 166 102 174 89 174 C76 174 66 166 66 150 Z" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M54 80 H122 V96 C122 112 108 122 88 122 C68 122 54 112 54 96 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="50" y="72" width="76" height="8" rx="2" fill="#0078bf" stroke="none"/>
+    <path d="M54 80 V96 C54 112 68 122 88 122 C108 122 122 112 122 96 V80"/>
+    <path d="M122 84 H170 C176 84 180 88 180 94 C180 100 176 104 170 104 H122 Z" fill="#0078bf" stroke="none"/>
+    <path d="M80 122 V132 M96 122 V132" stroke-width="5"/>
+    <path d="M80 138 C78 141 78 143 80 144 C82 143 82 141 80 138 Z M96 140 C94 143 94 145 96 146 C98 145 98 143 96 140 Z" fill="#0078bf"/>
+    <path d="M66 150 H112 C112 166 102 174 89 174 C76 174 66 166 66 150 Z"/>
+    <path d="M112 154 C124 154 124 166 110 166" stroke-width="4"/>
+  </g>
+  <g clip-path="url(#cl-portafilter-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="50" y="72" width="76" height="8" rx="2" fill="#0054a5" stroke="none"/>
+    <path d="M54 80 V96 C54 112 68 122 88 122 C108 122 122 112 122 96 V80"/>
+    <path d="M122 84 H170 C176 84 180 88 180 94 C180 100 176 104 170 104 H122 Z" fill="#0054a5" stroke="none"/>
+    <path d="M80 122 V132 M96 122 V132" stroke-width="5"/>
+    <path d="M80 138 C78 141 78 143 80 144 C82 143 82 141 80 138 Z M96 140 C94 143 94 145 96 146 C98 145 98 143 96 140 Z" fill="#0054a5"/>
+    <path d="M66 150 H112 C112 166 102 174 89 174 C76 174 66 166 66 150 Z"/>
+    <path d="M112 154 C124 154 124 166 110 166" stroke-width="4"/>
+  </g>
+  <g clip-path="url(#cl-portafilter-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="50" y="72" width="76" height="8" rx="2" fill="#002284" stroke="none"/>
+    <path d="M54 80 V96 C54 112 68 122 88 122 C108 122 122 112 122 96 V80"/>
+    <path d="M122 84 H170 C176 84 180 88 180 94 C180 100 176 104 170 104 H122 Z" fill="#002284" stroke="none"/>
+    <path d="M80 122 V132 M96 122 V132" stroke-width="5"/>
+    <path d="M80 138 C78 141 78 143 80 144 C82 143 82 141 80 138 Z M96 140 C94 143 94 145 96 146 C98 145 98 143 96 140 Z" fill="#002284"/>
+    <path d="M66 150 H112 C112 166 102 174 89 174 C76 174 66 166 66 150 Z"/>
+    <path d="M112 154 C124 154 124 166 110 166" stroke-width="4"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Portafilter</span><span class="file">21-portafilter</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Loyalty card, textured" viewBox="0 0 200 200" role="img">
+  <title>Loyalty card</title>
+  <defs>
+    <filter id="tx-stamp-card-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-stamp-card-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-stamp-card-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-stamp-card-ink-p)" transform="translate(2.2 -1.6)">
+    <rect x="34" y="56" width="132" height="90" rx="8" fill="url(#tx-stamp-card-dots)"/>
+    <circle cx="62" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="88" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="114" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="140" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="62" cy="122" r="11" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-stamp-card-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="34" y="56" width="132" height="90" rx="8"/>
+    <path d="M48 70 H98" stroke-width="4"/>
+    <circle cx="62" cy="92" r="11" stroke-width="3"/>
+    <circle cx="88" cy="92" r="11" stroke-width="3"/>
+    <circle cx="114" cy="92" r="11" stroke-width="3"/>
+    <circle cx="140" cy="92" r="11" stroke-width="3"/>
+    <circle cx="62" cy="122" r="11" stroke-width="3"/>
+    <circle cx="88" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <circle cx="114" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <path d="M140 110 L143.2 116.6 L150.5 117.7 L145.2 122.8 L146.5 130 L140 126.6 L133.5 130 L134.8 122.8 L129.5 117.7 L136.8 116.6 Z" fill="#0078bf" stroke="none"/>
+    <path d="M58 92 L61 95 L67 88 M84 92 L87 95 L93 88 M110 92 L113 95 L119 88 M136 92 L139 95 L145 88 M58 122 L61 125 L67 118" stroke-width="2.5"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Loyalty card, clean" viewBox="0 0 200 200" role="img">
+  <title>Loyalty card</title>
+  <defs>
+    <clipPath id="cl-stamp-card-tint-area">
+    <rect x="34" y="56" width="132" height="90" rx="8"/>
+    </clipPath>
+    <clipPath id="cl-stamp-card-pink-area">
+    <circle cx="62" cy="92" r="11"/>
+    <circle cx="88" cy="92" r="11"/>
+    <circle cx="114" cy="92" r="11"/>
+    <circle cx="140" cy="92" r="11"/>
+    <circle cx="62" cy="122" r="11"/>
+    </clipPath>
+  </defs>
+  <g>
+    <rect x="34" y="56" width="132" height="90" rx="8" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <circle cx="62" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="88" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="114" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="140" cy="92" r="11" fill="#ff48b0"/>
+    <circle cx="62" cy="122" r="11" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="34" y="56" width="132" height="90" rx="8"/>
+    <path d="M48 70 H98" stroke-width="4"/>
+    <circle cx="62" cy="92" r="11" stroke-width="3"/>
+    <circle cx="88" cy="92" r="11" stroke-width="3"/>
+    <circle cx="114" cy="92" r="11" stroke-width="3"/>
+    <circle cx="140" cy="92" r="11" stroke-width="3"/>
+    <circle cx="62" cy="122" r="11" stroke-width="3"/>
+    <circle cx="88" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <circle cx="114" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <path d="M140 110 L143.2 116.6 L150.5 117.7 L145.2 122.8 L146.5 130 L140 126.6 L133.5 130 L134.8 122.8 L129.5 117.7 L136.8 116.6 Z" fill="#0078bf" stroke="none"/>
+    <path d="M58 92 L61 95 L67 88 M84 92 L87 95 L93 88 M110 92 L113 95 L119 88 M136 92 L139 95 L145 88 M58 122 L61 125 L67 118" stroke-width="2.5"/>
+  </g>
+  <g clip-path="url(#cl-stamp-card-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="34" y="56" width="132" height="90" rx="8"/>
+    <path d="M48 70 H98" stroke-width="4"/>
+    <circle cx="62" cy="92" r="11" stroke-width="3"/>
+    <circle cx="88" cy="92" r="11" stroke-width="3"/>
+    <circle cx="114" cy="92" r="11" stroke-width="3"/>
+    <circle cx="140" cy="92" r="11" stroke-width="3"/>
+    <circle cx="62" cy="122" r="11" stroke-width="3"/>
+    <circle cx="88" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <circle cx="114" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <path d="M140 110 L143.2 116.6 L150.5 117.7 L145.2 122.8 L146.5 130 L140 126.6 L133.5 130 L134.8 122.8 L129.5 117.7 L136.8 116.6 Z" fill="#0054a5" stroke="none"/>
+    <path d="M58 92 L61 95 L67 88 M84 92 L87 95 L93 88 M110 92 L113 95 L119 88 M136 92 L139 95 L145 88 M58 122 L61 125 L67 118" stroke-width="2.5"/>
+  </g>
+  <g clip-path="url(#cl-stamp-card-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="34" y="56" width="132" height="90" rx="8"/>
+    <path d="M48 70 H98" stroke-width="4"/>
+    <circle cx="62" cy="92" r="11" stroke-width="3"/>
+    <circle cx="88" cy="92" r="11" stroke-width="3"/>
+    <circle cx="114" cy="92" r="11" stroke-width="3"/>
+    <circle cx="140" cy="92" r="11" stroke-width="3"/>
+    <circle cx="62" cy="122" r="11" stroke-width="3"/>
+    <circle cx="88" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <circle cx="114" cy="122" r="11" stroke-width="3" stroke-dasharray="3 3"/>
+    <path d="M140 110 L143.2 116.6 L150.5 117.7 L145.2 122.8 L146.5 130 L140 126.6 L133.5 130 L134.8 122.8 L129.5 117.7 L136.8 116.6 Z" fill="#002284" stroke="none"/>
+    <path d="M58 92 L61 95 L67 88 M84 92 L87 95 L93 88 M110 92 L113 95 L119 88 M136 92 L139 95 L145 88 M58 122 L61 125 L67 118" stroke-width="2.5"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Loyalty card</span><span class="file">22-stamp-card</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Café front, textured" viewBox="0 0 200 200" role="img">
+  <title>Café front</title>
+  <defs>
+    <filter id="tx-storefront-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-storefront-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-storefront-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-storefront-ink-p)" transform="translate(2.2 -1.6)">
+    <rect x="56" y="104" width="50" height="40" fill="url(#tx-storefront-dots)"/>
+    <path d="M34 60 H56 V84 A11 6 0 0 1 34 84 Z" fill="#ff48b0"/>
+    <path d="M78 60 H100 V84 A11 6 0 0 1 78 84 Z" fill="#ff48b0"/>
+    <path d="M122 60 H144 V84 A11 6 0 0 1 122 84 Z" fill="#ff48b0"/>
+    <rect x="116" y="108" width="30" height="64" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-storefront-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="70" y="34" width="60" height="18" rx="3" stroke-width="3.5"/>
+    <path d="M92 43 H108" stroke-width="3"/>
+    <path d="M56 60 H78 V84 A11 6 0 0 1 56 84 Z M100 60 H122 V84 A11 6 0 0 1 100 84 Z M144 60 H166 V84 A11 6 0 0 1 144 84 Z" fill="#0078bf" stroke="none"/>
+    <path d="M34 60 H166"/>
+    <path d="M42 90 V172 M158 90 V172"/>
+    <rect x="56" y="104" width="50" height="40"/>
+    <path d="M72 116 H90 C90 126 86 132 81 132 C76 132 72 126 72 116 Z" stroke-width="3"/>
+    <path d="M90 119 C96 119 96 126 89 126" stroke-width="2.5"/>
+    <rect x="116" y="108" width="30" height="64"/>
+    <circle cx="138" cy="142" r="2.5" fill="#0078bf" stroke="none"/>
+    <path d="M28 172 H172"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Café front, clean" viewBox="0 0 200 200" role="img">
+  <title>Café front</title>
+  <defs>
+    <clipPath id="cl-storefront-tint-area">
+    <rect x="56" y="104" width="50" height="40"/>
+    </clipPath>
+    <clipPath id="cl-storefront-pink-area">
+    <path d="M34 60 H56 V84 A11 6 0 0 1 34 84 Z"/>
+    <path d="M78 60 H100 V84 A11 6 0 0 1 78 84 Z"/>
+    <path d="M122 60 H144 V84 A11 6 0 0 1 122 84 Z"/>
+    <rect x="116" y="108" width="30" height="64"/>
+    </clipPath>
+  </defs>
+  <g>
+    <rect x="56" y="104" width="50" height="40" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M34 60 H56 V84 A11 6 0 0 1 34 84 Z" fill="#ff48b0"/>
+    <path d="M78 60 H100 V84 A11 6 0 0 1 78 84 Z" fill="#ff48b0"/>
+    <path d="M122 60 H144 V84 A11 6 0 0 1 122 84 Z" fill="#ff48b0"/>
+    <rect x="116" y="108" width="30" height="64" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="70" y="34" width="60" height="18" rx="3" stroke-width="3.5"/>
+    <path d="M92 43 H108" stroke-width="3"/>
+    <path d="M56 60 H78 V84 A11 6 0 0 1 56 84 Z M100 60 H122 V84 A11 6 0 0 1 100 84 Z M144 60 H166 V84 A11 6 0 0 1 144 84 Z" fill="#0078bf" stroke="none"/>
+    <path d="M34 60 H166"/>
+    <path d="M42 90 V172 M158 90 V172"/>
+    <rect x="56" y="104" width="50" height="40"/>
+    <path d="M72 116 H90 C90 126 86 132 81 132 C76 132 72 126 72 116 Z" stroke-width="3"/>
+    <path d="M90 119 C96 119 96 126 89 126" stroke-width="2.5"/>
+    <rect x="116" y="108" width="30" height="64"/>
+    <circle cx="138" cy="142" r="2.5" fill="#0078bf" stroke="none"/>
+    <path d="M28 172 H172"/>
+  </g>
+  <g clip-path="url(#cl-storefront-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="70" y="34" width="60" height="18" rx="3" stroke-width="3.5"/>
+    <path d="M92 43 H108" stroke-width="3"/>
+    <path d="M56 60 H78 V84 A11 6 0 0 1 56 84 Z M100 60 H122 V84 A11 6 0 0 1 100 84 Z M144 60 H166 V84 A11 6 0 0 1 144 84 Z" fill="#0054a5" stroke="none"/>
+    <path d="M34 60 H166"/>
+    <path d="M42 90 V172 M158 90 V172"/>
+    <rect x="56" y="104" width="50" height="40"/>
+    <path d="M72 116 H90 C90 126 86 132 81 132 C76 132 72 126 72 116 Z" stroke-width="3"/>
+    <path d="M90 119 C96 119 96 126 89 126" stroke-width="2.5"/>
+    <rect x="116" y="108" width="30" height="64"/>
+    <circle cx="138" cy="142" r="2.5" fill="#0054a5" stroke="none"/>
+    <path d="M28 172 H172"/>
+  </g>
+  <g clip-path="url(#cl-storefront-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="70" y="34" width="60" height="18" rx="3" stroke-width="3.5"/>
+    <path d="M92 43 H108" stroke-width="3"/>
+    <path d="M56 60 H78 V84 A11 6 0 0 1 56 84 Z M100 60 H122 V84 A11 6 0 0 1 100 84 Z M144 60 H166 V84 A11 6 0 0 1 144 84 Z" fill="#002284" stroke="none"/>
+    <path d="M34 60 H166"/>
+    <path d="M42 90 V172 M158 90 V172"/>
+    <rect x="56" y="104" width="50" height="40"/>
+    <path d="M72 116 H90 C90 126 86 132 81 132 C76 132 72 126 72 116 Z" stroke-width="3"/>
+    <path d="M90 119 C96 119 96 126 89 126" stroke-width="2.5"/>
+    <rect x="116" y="108" width="30" height="64"/>
+    <circle cx="138" cy="142" r="2.5" fill="#002284" stroke="none"/>
+    <path d="M28 172 H172"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Café front</span><span class="file">23-storefront</span></figcaption>
+      </figure>
+      <figure class="card">
+        <div class="paper">
+          <div class="v v-textured"><svg aria-label="Pickup bell, textured" viewBox="0 0 200 200" role="img">
+  <title>Pickup bell</title>
+  <defs>
+    <filter id="tx-pickup-bell-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="tx-pickup-bell-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="tx-pickup-bell-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-pickup-bell-ink-p)" transform="translate(2.2 -1.6)">
+    <ellipse cx="100" cy="162" rx="66" ry="7" fill="url(#tx-pickup-bell-dots)"/>
+    <path d="M50 136 C50 98 72 76 100 76 C128 76 150 98 150 136 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#tx-pickup-bell-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 136 C50 98 72 76 100 76 C128 76 150 98 150 136"/>
+    <rect x="36" y="134" width="128" height="13" rx="4" fill="#0078bf" stroke="none"/>
+    <rect x="95" y="62" width="10" height="16" rx="2" fill="#0078bf" stroke="none"/>
+    <circle cx="100" cy="58" r="8" fill="#0078bf" stroke="none"/>
+    <path d="M66 124 C66 106 76 94 90 88" stroke-width="4"/>
+    <path d="M42 72 L30 62 M42 94 L28 92 M158 72 L170 62 M158 94 L172 92" stroke-width="4"/>
+  </g>
+</svg>
+</div>
+          <div class="v v-clean"><svg aria-label="Pickup bell, clean" viewBox="0 0 200 200" role="img">
+  <title>Pickup bell</title>
+  <defs>
+    <clipPath id="cl-pickup-bell-tint-area">
+    <ellipse cx="100" cy="162" rx="66" ry="7"/>
+    </clipPath>
+    <clipPath id="cl-pickup-bell-pink-area">
+    <path d="M50 136 C50 98 72 76 100 76 C128 76 150 98 150 136 Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <ellipse cx="100" cy="162" rx="66" ry="7" fill="#ffb3dc"/>
+  </g>
+  <g>
+    <path d="M50 136 C50 98 72 76 100 76 C128 76 150 98 150 136 Z" fill="#ff48b0"/>
+  </g>
+  <g fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 136 C50 98 72 76 100 76 C128 76 150 98 150 136"/>
+    <rect x="36" y="134" width="128" height="13" rx="4" fill="#0078bf" stroke="none"/>
+    <rect x="95" y="62" width="10" height="16" rx="2" fill="#0078bf" stroke="none"/>
+    <circle cx="100" cy="58" r="8" fill="#0078bf" stroke="none"/>
+    <path d="M66 124 C66 106 76 94 90 88" stroke-width="4"/>
+    <path d="M42 72 L30 62 M42 94 L28 92 M158 72 L170 62 M158 94 L172 92" stroke-width="4"/>
+  </g>
+  <g clip-path="url(#cl-pickup-bell-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 136 C50 98 72 76 100 76 C128 76 150 98 150 136"/>
+    <rect x="36" y="134" width="128" height="13" rx="4" fill="#0054a5" stroke="none"/>
+    <rect x="95" y="62" width="10" height="16" rx="2" fill="#0054a5" stroke="none"/>
+    <circle cx="100" cy="58" r="8" fill="#0054a5" stroke="none"/>
+    <path d="M66 124 C66 106 76 94 90 88" stroke-width="4"/>
+    <path d="M42 72 L30 62 M42 94 L28 92 M158 72 L170 62 M158 94 L172 92" stroke-width="4"/>
+  </g>
+  <g clip-path="url(#cl-pickup-bell-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 136 C50 98 72 76 100 76 C128 76 150 98 150 136"/>
+    <rect x="36" y="134" width="128" height="13" rx="4" fill="#002284" stroke="none"/>
+    <rect x="95" y="62" width="10" height="16" rx="2" fill="#002284" stroke="none"/>
+    <circle cx="100" cy="58" r="8" fill="#002284" stroke="none"/>
+    <path d="M66 124 C66 106 76 94 90 88" stroke-width="4"/>
+    <path d="M42 72 L30 62 M42 94 L28 92 M158 72 L170 62 M158 94 L172 92" stroke-width="4"/>
+  </g>
+</svg>
+</div>
+        </div>
+        <figcaption><span class="name">Pickup bell</span><span class="file">24-pickup-bell</span></figcaption>
+      </figure>
+      </div>
+    </section>
+  <p class="foot">Textured files use SVG filters and blend modes, so they look right in browsers and on websites. Clean files use only flat fills and clip paths, so they open correctly in Figma, Illustrator and Sketch. Overlaps in the clean files are pre-mixed: blue over pink becomes deep indigo, blue over the halftone becomes mid blue.</p>
+</main>
+
+<script>
+  (function () {
+    var b = document.body;
+    function pick(ids, active, apply) {
+      ids.forEach(function (id) { document.getElementById(id).setAttribute('aria-pressed', String(id === active)); });
+      apply();
+    }
+    var versions = ['v-textured', 'v-clean'];
+    versions.forEach(function (id) {
+      document.getElementById(id).addEventListener('click', function () {
+        pick(versions, id, function () { b.classList.toggle('show-clean', id === 'v-clean'); });
+      });
+    });
+    var sizes = ['s-full', 's-48', 's-24'];
+    sizes.forEach(function (id) {
+      document.getElementById(id).addEventListener('click', function () {
+        pick(sizes, id, function () {
+          b.classList.remove('size-48', 'size-24');
+          if (id !== 's-full') b.classList.add('size-' + id.slice(2));
+        });
+      });
+    });
+  })();
+</script>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Cappuccino</title>
+  <defs>
+    <filter id="riso-cappuccino-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-cappuccino-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-cappuccino-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-cappuccino-ink-p)" transform="translate(2.2 -1.6)">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92 Z" fill="url(#riso-cappuccino-dots)"/>
+    <path d="M60 92 H140 L132 160 C131 166 126 170 120 170 H80 C74 170 69 166 68 160 Z" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-cappuccino-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92"/>
+    <path d="M54 92 H146" stroke-width="5"/>
+    <path d="M60 92 L68 160 C69 166 74 170 80 170 H120 C126 170 131 166 132 160 L140 92"/>
+    <path d="M138 106 C160 106 158 140 134 142" stroke-width="6"/>
+    <path d="M42 174 H158"/>
+    <circle cx="82" cy="74" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="96" cy="68" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="110" cy="72" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="122" cy="80" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="90" cy="82" r="1.6" fill="#0078bf" stroke="none"/>
+    <circle cx="106" cy="84" r="1.6" fill="#0078bf" stroke="none"/>
+    <circle cx="72" cy="84" r="1.6" fill="#0078bf" stroke="none"/>
+  </g>
+</svg>

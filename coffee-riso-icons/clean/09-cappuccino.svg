@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Cappuccino</title>
+  <defs>
+    <clipPath id="riso-cappuccino-tint-area">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92 Z"/>
+    </clipPath>
+    <clipPath id="riso-cappuccino-pink-area">
+    <path d="M60 92 H140 L132 160 C131 166 126 170 120 170 H80 C74 170 69 166 68 160 Z"/>
+    </clipPath>
+  </defs>
+  <g id="tint">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92 Z" fill="#ffb3dc"/>
+  </g>
+  <g id="pink">
+    <path d="M60 92 H140 L132 160 C131 166 126 170 120 170 H80 C74 170 69 166 68 160 Z" fill="#ff48b0"/>
+  </g>
+  <g id="blue" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92"/>
+    <path d="M54 92 H146" stroke-width="5"/>
+    <path d="M60 92 L68 160 C69 166 74 170 80 170 H120 C126 170 131 166 132 160 L140 92"/>
+    <path d="M138 106 C160 106 158 140 134 142" stroke-width="6"/>
+    <path d="M42 174 H158"/>
+    <circle cx="82" cy="74" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="96" cy="68" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="110" cy="72" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="122" cy="80" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="90" cy="82" r="1.6" fill="#0078bf" stroke="none"/>
+    <circle cx="106" cy="84" r="1.6" fill="#0078bf" stroke="none"/>
+    <circle cx="72" cy="84" r="1.6" fill="#0078bf" stroke="none"/>
+  </g>
+  <g id="blue-over-tint" clip-path="url(#riso-cappuccino-tint-area)" fill="none" stroke="#0054a5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92"/>
+    <path d="M54 92 H146" stroke-width="5"/>
+    <path d="M60 92 L68 160 C69 166 74 170 80 170 H120 C126 170 131 166 132 160 L140 92"/>
+    <path d="M138 106 C160 106 158 140 134 142" stroke-width="6"/>
+    <path d="M42 174 H158"/>
+    <circle cx="82" cy="74" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="96" cy="68" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="110" cy="72" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="122" cy="80" r="2" fill="#0054a5" stroke="none"/>
+    <circle cx="90" cy="82" r="1.6" fill="#0054a5" stroke="none"/>
+    <circle cx="106" cy="84" r="1.6" fill="#0054a5" stroke="none"/>
+    <circle cx="72" cy="84" r="1.6" fill="#0054a5" stroke="none"/>
+  </g>
+  <g id="blue-over-pink" clip-path="url(#riso-cappuccino-pink-area)" fill="none" stroke="#002284" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 92 C56 70 76 58 100 58 C124 58 144 70 144 92"/>
+    <path d="M54 92 H146" stroke-width="5"/>
+    <path d="M60 92 L68 160 C69 166 74 170 80 170 H120 C126 170 131 166 132 160 L140 92"/>
+    <path d="M138 106 C160 106 158 140 134 142" stroke-width="6"/>
+    <path d="M42 174 H158"/>
+    <circle cx="82" cy="74" r="2" fill="#002284" stroke="none"/>
+    <circle cx="96" cy="68" r="2" fill="#002284" stroke="none"/>
+    <circle cx="110" cy="72" r="2" fill="#002284" stroke="none"/>
+    <circle cx="122" cy="80" r="2" fill="#002284" stroke="none"/>
+    <circle cx="90" cy="82" r="1.6" fill="#002284" stroke="none"/>
+    <circle cx="106" cy="84" r="1.6" fill="#002284" stroke="none"/>
+    <circle cx="72" cy="84" r="1.6" fill="#002284" stroke="none"/>
+  </g>
+</svg>

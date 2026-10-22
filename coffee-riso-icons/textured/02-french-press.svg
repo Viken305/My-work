@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>French press</title>
+  <defs>
+    <filter id="riso-french-press-ink-p" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="11" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <filter id="riso-french-press-ink-b" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.65" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+    <pattern id="riso-french-press-dots" width="4.6" height="4.6" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+      <circle cx="2.3" cy="2.3" r="1.45" fill="#ff48b0"/>
+    </pattern>
+  </defs>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-french-press-ink-p)" transform="translate(2.2 -1.6)">
+    <rect x="62" y="60" width="76" height="36" fill="url(#riso-french-press-dots)"/>
+    <rect x="62" y="96" width="76" height="70" fill="#ff48b0"/>
+  </g>
+  <g style="mix-blend-mode:multiply" filter="url(#riso-french-press-ink-b)" fill="none" stroke="#0078bf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 50 V32"/>
+    <circle cx="100" cy="28" r="7" fill="#0078bf" stroke="none"/>
+    <rect x="56" y="48" width="88" height="11" rx="3" fill="#0078bf" stroke="none"/>
+    <rect x="62" y="59" width="76" height="107"/>
+    <path d="M62 96 H138" stroke-width="5"/>
+    <path d="M100 59 V96" stroke-width="3"/>
+    <rect x="56" y="162" width="88" height="10" rx="3" fill="#0078bf" stroke="none"/>
+    <path d="M138 72 H150 C156 72 158 76 158 82 V136 C158 142 156 146 150 146 H138" stroke-width="6"/>
+    <circle cx="80" cy="118" r="2.5" fill="#0078bf" stroke="none"/>
+    <circle cx="112" cy="132" r="2" fill="#0078bf" stroke="none"/>
+    <circle cx="94" cy="146" r="2.5" fill="#0078bf" stroke="none"/>
+  </g>
+</svg>
