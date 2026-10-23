@@ -603,7 +603,7 @@ def aurora(c, t, x0, x1, base_y, height, seed=0, a=1.0, n=420, folds=3, lean=0.0
     # the hem: the sharp bright green lower edge every curtain has
     for k in range(1, len(hem)):
         (xa, ya, ba), (xb, yb, bb) = hem[k - 1], hem[k]
-        c.drawLine(xa, ya, xb, yb, paint(AUR_G, 255 * a * clamp(0.25 + 0.75 * ba), stroke=1.6, blend=ADD))
+        c.drawLine(xa, ya, xb, yb, paint(AUR_G, 170 * a * clamp(0.25 + 0.75 * ba), stroke=1.4, blend=ADD))
         c.drawLine(xa, ya, xb, yb, paint(AUR_G, 120 * a * ba, sigma=6, stroke=8, blend=ADD))
 
 
@@ -739,7 +739,7 @@ def _dust():
     return cv2.GaussianBlur(m, (0, 0), 0.8)
 
 
-def post(img, t, halation=1.0, ca=0.8, grain=5.0, flicker=1.0, weave=1.0, shake=0.0):
+def post(img, t, halation=1.0, ca=0.8, grain=5.0, flicker=1.0, weave=1.0, shake=0.0, defocus=0.0, dim=0.0, flash=0.0):
     """img float32 HxWx3. The projector: hot-spot falloff, halation (warm bloom around every bright light), lens
     fringing, flicker and gate weave from the limelight and the slide carrier, dust on the glass, grain."""
     global _GRAIN, _VIG, _DUST
@@ -768,6 +768,10 @@ def post(img, t, halation=1.0, ca=0.8, grain=5.0, flicker=1.0, weave=1.0, shake=
         b = cv2.GaussianBlur(hi, (0, 0), 5) * 0.35 + cv2.GaussianBlur(hi, (0, 0), 20) * 0.4
         b = b * np.array([1.0, 0.8, 0.62], np.float32)                       # halation runs warm
         img = img + cv2.resize(b, (W, H), interpolation=cv2.INTER_LINEAR) * halation
+    if defocus > 0.01:              # the lantern being racked out of focus (slide changes)
+        img = cv2.GaussianBlur(img, (0, 0), 1 + defocus * 22)
+    if flash > 0.005:               # a burst of white light (the flare, an impact)
+        img = img + (np.array([255, 246, 225], np.float32) - img) * clamp(flash) * 0.85
     k = 0.0014 * ca
     if k > 0:
         Mr = np.float32([[1 + k, 0, -W / 2 * k], [0, 1 + k, -H / 2 * k]])
@@ -776,7 +780,7 @@ def post(img, t, halation=1.0, ca=0.8, grain=5.0, flicker=1.0, weave=1.0, shake=
         img[..., 0] = cv2.warpAffine(img[..., 0], Mr, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
         img[..., 2] = cv2.warpAffine(img[..., 2], Mb, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
     fl = 1 + flicker * (0.018 * math.sin(t * 47.0) + 0.012 * math.sin(t * 13.3 + 2) + 0.01 * rng.normal())
-    img = img * _VIG * fl
+    img = img * _VIG * fl * (1 - clamp(dim))
     img = img * (1 - _DUST[..., None] * 0.35) + _DUST[..., None] * 6
     g = cv2.resize(_GRAIN[int(t * FPS) % 8], (W, H), interpolation=cv2.INTER_NEAREST)[..., None]
     img = img + g * (0.6 + img / 255 * 1.4)
