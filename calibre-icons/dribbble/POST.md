@@ -9,8 +9,12 @@
 | 3 | `03-the-finish.png` | Exploded view of the chrome: rim, body, specular, blued steel |
 | 4 | `04-editions.png` | Chrome on black, Line on white ceramic and on a navy dial |
 | 5 | `05-in-use.png` | Certificate of authenticity, service ticket and atelier app |
+| 6 | `06-macro.png` | Editorial close-up of the chronograph |
+| 7 | `07-motion.mp4` | 12-second seamless loop: the tourbillon turns, light sweeps the chrome |
 
-Every shot is 1600 × 1200 (4:3), Dribbble's standard size. The `@2x.jpg` files are 3200 × 2400 for retina; upload those instead if you want extra sharpness.
+Every still is 1600 × 1200 (4:3), Dribbble's standard size. The `@2x.jpg` files are 3200 × 2400 for retina; upload those instead if you want extra sharpness.
+
+The motion shot is a 1600 × 1200 H.264 MP4 at 30 fps, 12 seconds long and about 3.6 MB, with no audio. Add it as one of the shot's media; `07-motion-poster.png` is its first frame, in case a thumbnail is needed. If you'd rather the video were the first thing people see, drag it to the front.
 
 ## Title
 

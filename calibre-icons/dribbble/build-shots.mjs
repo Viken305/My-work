@@ -232,12 +232,33 @@ function inUse() {
 </div>`;
 }
 
+// ── 06 Macro: the chronograph, filling the frame ─────────────────────────────
+function macro() {
+  const spec = [['Complication', 'No. 13'], ['Pushers', '2 o’clock · 4 o’clock'], ['Sub-dials', '3 · blued hands'], ['Scale', 'Tachymeter, 60 ticks']];
+  return `${base}
+<div class="shot" style="background:radial-gradient(circle at 70% 62%, #343a44 0%, #16181c 46%, #060708 100%)">
+  <div class="abs" style="left:590px;top:-10px;width:1400px;height:1400px;border-radius:50%;background:radial-gradient(circle, rgba(75,125,230,.16), transparent 62%)"></div>
+  ${img('chronograph', 'left:640px;top:40px;width:1300px;height:1300px;filter:drop-shadow(0 60px 80px rgba(0,0,0,.7))')}
+  <div class="abs" style="left:0;top:0;width:900px;height:1200px;background:linear-gradient(90deg, rgba(6,7,8,.92) 0%, rgba(6,7,8,.6) 45%, transparent 100%)"></div>
+  <div class="abs" style="left:110px;top:120px;width:520px">
+    <div class="mono" style="font-size:14px;color:var(--blue)">Calibre · Macro</div>
+    <div class="chrome-text" style="font:200 80px/1.25 var(--sans);letter-spacing:.04em;margin-top:18px;white-space:nowrap">Chronograph</div>
+    <div style="font:300 24px/1.5 var(--sans);color:#b7bdc6;margin-top:24px">Three sub-dials, blued hands and a tachymeter scale, drawn as polished steel at any size.</div>
+    <div style="margin-top:46px;border-top:1px solid #2c3038">
+      ${spec.map(([k, v]) => `<div class="mono" style="display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #2c3038;font-size:13px"><span style="color:#7d838d">${k}</span><span style="color:#e9ecf0">${v}</span></div>`).join('')}
+    </div>
+  </div>
+  <div class="abs mono" style="left:110px;bottom:84px;font-size:12px;color:#5d636d">Shown at 6.5× · SVG, 200 grid</div>
+</div>`;
+}
+
 const shots = [
   ['01-cover', cover()],
   ['02-parts-tray', tray()],
   ['03-the-finish', exploded()],
   ['04-editions', editions()],
   ['05-in-use', inUse()],
+  ['06-macro', macro()],
 ];
 
 const browser = await chromium.launch();
