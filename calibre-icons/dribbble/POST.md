@@ -4,13 +4,15 @@
 
 | # | File | Purpose |
 |---|---|---|
-| 1 | `01-cover.png` | Cover and feed thumbnail: a technical drawing of the tourbillon |
+| 1 | `01-cover.png` | Cover and feed thumbnail: a chrome CALIBRE wordmark with the icons floating around it in depth |
 | 2 | `02-parts-tray.png` | All 24 icons in a watchmaker's parts tray |
 | 3 | `03-the-finish.png` | Exploded view of the chrome: rim, body, specular, blued steel |
 | 4 | `04-editions.png` | Chrome on black, Line on white ceramic and on a navy dial |
 | 5 | `05-in-use.png` | Certificate of authenticity, service ticket and atelier app |
 | 6 | `06-macro.png` | Editorial close-up of the chronograph |
 | 7 | `07-motion.mp4` | 12-second seamless loop: the tourbillon turns, light sweeps the chrome |
+| 8 | `08-blueprint.png` | Technical drawing of the tourbillon (the previous cover) |
+| 9 | `09-film-960x540.mp4` | 24-second film of all 24 icons: title, carousel, then the full grid |
 
 Every still is 1600 × 1200 (4:3), Dribbble's standard size. The `@2x.jpg` files are 3200 × 2400 for retina; upload those instead if you want extra sharpness.
 
@@ -43,3 +45,8 @@ icons, icon set, watch, watchmaking, horology, luxury, chrome, metal, steel, tou
 
 - If you sell the set (Gumroad, Creative Market, UI8 and so on), put the link in the description and in the shot's "Website" field.
 - "Calibre" and the reference numbers in the mockups are made up. Swap them for your own brand if you prefer.
+
+## The film
+
+`09-film-960x540.mp4` is 960 × 540 (16:9, half of 1920 × 1080), 24 seconds at 30 fps, H.264 with no audio. It shows the title, then every icon in turn with its number, name and group, then all 24 in a grid. It works as a Dribbble video shot, or on Behance, Instagram, LinkedIn and the Creative Market listing.
+

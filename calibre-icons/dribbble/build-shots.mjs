@@ -252,69 +252,38 @@ function macro() {
 </div>`;
 }
 
-// ── 01 Cover: the whole shot is a watch face ─────────────────────────────────
-function dialCover() {
-  const c = [800, 600];
-  const markers = ['tourbillon', 'escape-wheel', 'moon-phase', 'chronograph', 'balance-wheel', 'hourglass', 'ruby-jewel', 'world-time', 'gear', 'pocket-watch', 'crown', 'loupe'];
-  let minutes = '';
-  for (let i = 0; i < 60; i++) {
-    const a = -90 + i * 6, [x0, y0] = polar(...c, 512, a), [x1, y1] = polar(...c, i % 5 ? 524 : 532, a);
-    minutes += `M${x0.toFixed(1)} ${y0.toFixed(1)}L${x1.toFixed(1)} ${y1.toFixed(1)}`;
-  }
-  // A faceted dauphine hand pointing to 12, rotated into place.
-  const dauphine = (len, w, deg) => `<g transform="rotate(${deg} ${c[0]} ${c[1]})">
-      <path d="M${c[0]} ${c[1] - len}L${c[0] - w} ${c[1] - len * 0.16}L${c[0]} ${c[1] + len * 0.1}Z" fill="url(#facetL)"/>
-      <path d="M${c[0]} ${c[1] - len}L${c[0] + w} ${c[1] - len * 0.16}L${c[0]} ${c[1] + len * 0.1}Z" fill="url(#facetR)"/>
-      <path d="M${c[0]} ${c[1] - len}L${c[0] - w} ${c[1] - len * 0.16}L${c[0]} ${c[1] + len * 0.1}L${c[0] + w} ${c[1] - len * 0.16}Z" fill="none" stroke="#0b1838" stroke-width="2" stroke-linejoin="round"/>
-    </g>`;
+// ── 01 Cover: a chrome wordmark with the icons floating around it in depth ───
+function heroCover() {
+  // [slug, x, y, size, depth]: depth 0 is in front and sharp, 2 is far back and soft.
+  const field = [
+    ['gear', 70, 120, 150, 2], ['hourglass', 520, 70, 130, 2], ['escape-wheel', 1460, 330, 120, 2],
+    ['balance-wheel', 760, 930, 140, 2], ['crown', 1130, 900, 130, 2], ['loupe', 40, 470, 120, 2],
+    ['moon-phase', 300, 150, 230, 1], ['chronograph', 1290, 760, 250, 1], ['ruby-jewel', 930, 110, 150, 1],
+    ['tourbillon', 1110, 150, 380, 0], ['wristwatch', 110, 600, 380, 0],
+  ];
+  const icon = ([s, x, y, size, d]) => img(s, `left:${x}px;top:${y}px;width:${size}px;height:${size}px;z-index:${d === 0 ? 5 : 1};` +
+    (d === 2 ? 'filter:blur(4px) brightness(.7);opacity:.75' : d === 1 ? 'filter:blur(1.2px) drop-shadow(0 20px 30px rgba(0,0,0,.6));opacity:.92' : 'filter:drop-shadow(0 34px 44px rgba(0,0,0,.75))'));
   return `${base}
-<div class="shot" style="background:radial-gradient(circle at 50% 50%, #1a1d23 0%, #0b0c0e 60%, #040405 100%)">
-  <div class="abs" style="left:${c[0] - 592}px;top:${c[1] - 592}px;width:1184px;height:1184px;border-radius:50%;
-    background:conic-gradient(from 10deg, #f5f7f9, #6b7584 12%, #e8edf2 22%, #2a313b 34%, #c9d0d9 46%, #ffffff 55%, #59626f 68%, #e8edf2 80%, #3f4753 90%, #f5f7f9);
-    box-shadow:0 40px 120px rgba(0,0,0,.8), inset 0 0 0 2px #0d1015"></div>
-  <div class="abs" style="left:${c[0] - 556}px;top:${c[1] - 556}px;width:1112px;height:1112px;border-radius:50%;box-shadow:0 0 0 3px #0d1015, inset 0 18px 40px rgba(0,0,0,.65);
-    background:radial-gradient(circle, #2552ad 0%, rgba(37,82,173,.85) 6%, rgba(37,82,173,0) 26%),
-      repeating-conic-gradient(from 0deg, rgba(255,255,255,.04) 0deg .6deg, rgba(0,0,0,.055) .6deg 1.2deg),
-      conic-gradient(from 30deg, #3466c8, #112c6b 22%, #0b1f50 30%, #2c5cbf 50%, #112c6b 72%, #0b1f50 80%, #3466c8);"></div>
-  <div class="abs" style="left:${c[0] - 556}px;top:${c[1] - 556}px;width:1112px;height:1112px;border-radius:50%;background:radial-gradient(circle, transparent 55%, rgba(4,10,30,.55) 100%)"></div>
-  <svg class="layer" width="1600" height="1200">
-    <defs>
-      <linearGradient id="facetL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#b9c1cc"/></linearGradient>
-      <linearGradient id="facetR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8f98a5"/><stop offset="1" stop-color="#3f4753"/></linearGradient>
-      <radialGradient id="cap" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#a3acb8"/><stop offset="1" stop-color="#2a313b"/></radialGradient>
-      <radialGradient id="rubyCap" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff9aa8"/><stop offset=".45" stop-color="#d4143a"/><stop offset="1" stop-color="#5c0418"/></radialGradient>
-    </defs>
-    <circle cx="${c[0]}" cy="${c[1]}" r="536" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
-    <path d="${minutes}" stroke="#e9eef7" stroke-width="2" opacity=".85"/>
-  </svg>
-  ${markers.map((s, i) => { const [x, y] = polar(...c, 420, -90 + i * 30); return img(s, `left:${(x - 66).toFixed(1)}px;top:${(y - 66).toFixed(1)}px;width:132px;height:132px;filter:drop-shadow(0 10px 14px rgba(0,0,0,.55))`); }).join('')}
-  <div class="abs" style="left:${c[0] - 300}px;width:600px;top:318px;text-align:center">
-    <div class="chrome-text" style="font:300 92px/1.15 var(--sans);letter-spacing:.24em;padding-left:.24em">CALIBRE</div>
-    <div class="mono" style="font-size:14px;color:#c6d4f2;margin-top:4px;letter-spacing:.42em;padding-left:.42em">Ref. CAL-24</div>
+<div class="shot" style="background:radial-gradient(ellipse at 50% 58%, #22324f 0%, #12161e 45%, #07080a 100%)">
+  <div class="abs" style="left:200px;top:640px;width:1200px;height:420px;border-radius:50%;background:radial-gradient(ellipse, rgba(75,125,230,.28), transparent 70%);filter:blur(10px)"></div>
+  ${field.filter((f) => f[4] > 0).map(icon).join('')}
+  <div class="abs" style="left:0;right:0;top:418px;text-align:center;z-index:3">
+    <div class="chrome-text" style="font:300 270px/1.1 var(--sans);letter-spacing:.04em;padding-left:.04em;filter:drop-shadow(0 18px 30px rgba(0,0,0,.6))">CALIBRE</div>
   </div>
-  <div class="abs" style="left:${c[0] - 300}px;width:600px;top:760px;text-align:center">
-    <div style="font:300 30px var(--sans);color:#f2f5fb;letter-spacing:.06em">24 chrome watchmaking icons</div>
-    <div class="mono" style="font-size:13px;color:#9db3e0;margin-top:12px;letter-spacing:.36em;padding-left:.36em">SVG · Chrome &amp; Line</div>
+  ${field.filter((f) => f[4] === 0).map(icon).join('')}
+  <div class="abs" style="left:0;right:0;top:760px;text-align:center;z-index:6">
+    <div style="font:300 32px var(--sans);color:#eef2f8;letter-spacing:.04em">24 watchmaking icons in polished chrome</div>
+    <div class="mono" style="display:inline-flex;gap:14px;margin-top:22px;font-size:13px;color:#9cc1ff">
+      <span style="border:1px solid #2b56b8;border-radius:99px;padding:8px 16px">SVG</span>
+      <span style="border:1px solid #2b56b8;border-radius:99px;padding:8px 16px">Chrome + Line</span>
+      <span style="border:1px solid #2b56b8;border-radius:99px;padding:8px 16px">Blued steel · Ruby</span>
+    </div>
   </div>
-  <svg class="layer" width="1600" height="1200" style="filter:drop-shadow(0 16px 18px rgba(0,0,0,.55))">
-    ${dauphine(250, 20, -60)}
-    ${dauphine(330, 17, 60)}
-    <g transform="rotate(256 ${c[0]} ${c[1]})">
-      <path d="M${c[0]} ${c[1] + 96}V${c[1] - 470}" stroke="#e9eef7" stroke-width="3" stroke-linecap="round"/>
-      <circle cx="${c[0]}" cy="${c[1] + 78}" r="11" fill="url(#rubyCap)" stroke="#3a0610" stroke-width="1.5"/>
-    </g>
-    <circle cx="${c[0]}" cy="${c[1]}" r="16" fill="url(#cap)" stroke="#0d1015" stroke-width="2"/>
-    <circle cx="${c[0]}" cy="${c[1]}" r="5" fill="url(#rubyCap)"/>
-  </svg>
-  <div class="abs mono" style="left:56px;top:48px;font-size:13px;color:#6b717b">Ref. CAL-24</div>
-  <div class="abs mono" style="right:56px;top:48px;font-size:13px;color:#6b717b">Chrome · Line</div>
-  <div class="abs mono" style="left:56px;bottom:48px;font-size:13px;color:#6b717b">24 icons</div>
-  <div class="abs mono" style="right:56px;bottom:48px;font-size:13px;color:#6b717b">SVG · 200 grid</div>
 </div>`;
 }
 
 const shots = [
-  ['01-cover', dialCover()],
+  ['01-cover', heroCover()],
   ['02-parts-tray', tray()],
   ['03-the-finish', exploded()],
   ['04-editions', editions()],
