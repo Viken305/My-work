@@ -51,3 +51,6 @@ studio/mockups/out/
 # Download bundles for the icon sets (rebuilt from each set folder)
 coffee-riso-*.zip
 gilt-almanac-*.zip
+
+# physics-everyday: render scratch
+physics-everyday/*/build/
