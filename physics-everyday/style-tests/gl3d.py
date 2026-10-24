@@ -444,9 +444,9 @@ class Renderer:
         if dyn[1]:
             ctx.enable(moderngl.BLEND)
             ctx.blend_func = moderngl.SRC_ALPHA, moderngl.ONE_MINUS_SRC_ALPHA
-            ctx.depth_mask = False
+            self.fbo.depth_mask = False      # see-through things never hide what is behind them
             dyn[1][0][0].render()
-            ctx.depth_mask = True
+            self.fbo.depth_mask = True
             ctx.disable(moderngl.BLEND)
         img = np.frombuffer(self.color.read(), np.float32).reshape(self.rh, self.rw, 4)[::-1, :, :3]
         d = np.frombuffer(self.depth.read(), np.float32).reshape(self.rh, self.rw)[::-1]
