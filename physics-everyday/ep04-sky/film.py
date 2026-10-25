@@ -319,7 +319,7 @@ MOLS[7]["kind"] = "O2"
 
 def air_bg(c, a=1.0):
     sh = skia.GradientShader.MakeLinear([skia.Point(0, 0), skia.Point(0, H)], [K.c4((54, 84, 196)), K.c4((110, 165, 245))])
-    c.drawRect(skia.Rect(0, 0, W, H), skia.Paint(Shader=sh))
+    c.drawRect(skia.Rect(-W, -H, 2 * W, 2 * H), skia.Paint(Shader=sh))
     for k in range(3):
         K.glow(c, [200, 900, 500][k], [400, 900, 1500][k], 600, (180, 210, 255), 0.12)
 
@@ -801,14 +801,16 @@ def frame(t):
         fx, fy = focus
         # outgoing scene flies past the camera (zoom in) or shrinks away (zoom out); incoming scales into place
         s_out = lerp(1.0, 6.0, u) if kind == "zoom_in" else lerp(1.0, 0.25, u)
-        s_in = lerp(0.2, 1.0, u) if kind == "zoom_in" else lerp(3.5, 1.0, u)
+        s_in = lerp(0.6, 1.0, u) if kind == "zoom_in" else lerp(3.5, 1.0, u)
         c.save()
         c.translate(fx, fy)
         c.scale(s_out, s_out)
         c.translate(-fx, -fy)
         draw_seg(c, prev, t, words)
         c.restore()
-        c.saveLayer(None, skia.Paint(Color=K.col((255, 255, 255), ss(u * 1.4))))
+        c.saveLayer(None, skia.Paint(Color=K.col((255, 255, 255), ss(u * 1.4) if kind == "zoom_out" else 1.0)))
+        if kind == "zoom_in":  # dive through a growing circular opening
+            c.clipPath(K.circle_path(fx, fy, lerp(1, 1.5 * H, u ** 1.6)), skia.ClipOp.kIntersect, True)
         c.translate(fx, fy)
         c.scale(s_in, s_in)
         c.translate(-fx, -fy)
