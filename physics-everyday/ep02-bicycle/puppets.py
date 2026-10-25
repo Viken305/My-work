@@ -13,6 +13,9 @@ BIKE = dict(rear=(0, 0), front=(360, 0), bb=(140, 26), seat=(108, -168), saddle=
             ht_top=(310, -168), ht_bot=(325, -112), stem=(304, -204), grip=(272, -210), crank=46)
 
 
+EXTRA, EXTRA_R = (372, -196), 72
+
+
 def steer_axis_ground():
     (x0, y0), (x1, y1) = BIKE["ht_top"], BIKE["ht_bot"]
     k = (R - y1) / (y1 - y0)
@@ -55,7 +58,8 @@ def hash_s(*k):
     return zlib.crc32(repr(k).encode()) & 0xFFFF
 
 
-def bike_side(c, x, ground, s=1.0, wheel_ang=0.0, crank=0.0, frame=RED, key="bike", rider=None, steer=0.0, tilt=0.0):
+def bike_side(c, x, ground, s=1.0, wheel_ang=0.0, crank=0.0, frame=RED, key="bike", rider=None, steer=0.0, tilt=0.0, extra=None,
+              after=None):
     """Side-view bike puppet; (x, ground) = rear contact point. rider(c, pts) draws the kid in between layers."""
     B = BIKE
     c.save()
@@ -81,6 +85,9 @@ def bike_side(c, x, ground, s=1.0, wheel_ang=0.0, crank=0.0, frame=RED, key="bik
     c.translate(-B["ht_bot"][0], -B["ht_bot"][1])
     wheel(c, B["front"][0], 0, wheel_ang, key=(key, "fw"))
     c.restore()
+    if extra is not None:  # Jones' anti-gyro wheel: on a bracket above the front wheel, spun backwards
+        piece(c, capsule(B["ht_top"], EXTRA, 12), shade(STEEL, 0.6), 0.4, seed=hash_s(key, 30))
+        wheel(c, EXTRA[0], EXTRA[1], extra, r=EXTRA_R, key=(key, "xw"), rim_col=(120, 190, 235), spokes=6)
     # frame tubes, one cut piece (union) so it casts one shadow
     tubes = [(B["rear"], bb, 13), (B["rear"], (113, -128), 11), (bb, B["seat"], 17), (bb, (322, -122), 19),
              ((112, -128), (312, -158), 16)]
@@ -111,6 +118,8 @@ def bike_side(c, x, ground, s=1.0, wheel_ang=0.0, crank=0.0, frame=RED, key="bik
     brad(c, *B["ht_bot"], 6)
     if rider:
         rider(c, pts, "near")
+    if after:
+        after(c)
     c.restore()
 
 
@@ -122,7 +131,7 @@ P.pts_path_pts = pts_path_pts
 
 
 # ---------------------------------------------------------------- the kid (rides the side-view bike)
-def kid_rider(shirt=BLUE, pants=DENIM, skin=SKIN, helmet=YELLOW, key="kid", lean=0.0):
+def kid_rider(shirt=BLUE, pants=DENIM, skin=SKIN, helmet=YELLOW, key="kid", lean=0.0, hair=HAIR, goggles=False, stripe=YELLOW):
     def draw(c, pts, layer):
         hip = pts["saddle"] + np.array([4, -14])
         sh = hip + np.array([70 + lean, -106])
@@ -145,18 +154,29 @@ def kid_rider(shirt=BLUE, pants=DENIM, skin=SKIN, helmet=YELLOW, key="kid", lean
             d = sh - hip
             u = d / np.linalg.norm(d)
             m = hip + d * 0.55
-            piece(c, capsule(m - np.array([-u[1], u[0]]) * 30, m + np.array([-u[1], u[0]]) * 30, 12), YELLOW, 0.15,
+            piece(c, capsule(m - np.array([-u[1], u[0]]) * 30, m + np.array([-u[1], u[0]]) * 30, 12), stripe, 0.15,
                   seed=hash_s(key, 8))
             hd = sh + np.array([30, -62])
             piece(c, capsule(sh + np.array([4, -6]), hd + np.array([-8, 20]), 22), skin, 0.2, seed=hash_s(key, 9))
             piece(c, circle(hd[0], hd[1], 46, 40), skin, 0.6, seed=hash_s(key, 10), smooth=True)
             piece(c, circle(hd[0] - 30, hd[1] + 2, 12, 16), shade(skin, 0.9), 0.15, seed=hash_s(key, 11))
             # hair tuft + helmet
-            piece(c, P.ellipse(hd[0] - 18, hd[1] + 6, 30, 20, 24), HAIR, 0.2, seed=hash_s(key, 12))
-            hel = np.vstack([P.ellipse(hd[0] - 4, hd[1] - 10, 56, 44, 40)[20:40], [[hd[0] + 52, hd[1] - 6]]])
-            piece(c, hel, helmet, 0.5, seed=hash_s(key, 13))
-            piece(c, capsule((hd[0] - 30, hd[1] - 40), (hd[0] + 10, hd[1] - 50), 9), shade(helmet, 0.8), 0.1, seed=hash_s(key, 14))
+            piece(c, P.ellipse(hd[0] - 18, hd[1] + 6, 30, 20, 24), hair, 0.2, seed=hash_s(key, 12))
+            if helmet:
+                hel = np.vstack([P.ellipse(hd[0] - 4, hd[1] - 10, 56, 44, 40)[20:40], [[hd[0] + 52, hd[1] - 6]]])
+                piece(c, hel, helmet, 0.5, seed=hash_s(key, 13))
+                piece(c, capsule((hd[0] - 30, hd[1] - 40), (hd[0] + 10, hd[1] - 50), 9), shade(helmet, 0.8), 0.1, seed=hash_s(key, 14))
+            else:  # wild scientist hair
+                hp = None
+                for k, (dx, dy, r) in enumerate(((-40, -30, 26), (-14, -48, 28), (18, -46, 24), (-50, 0, 22), (40, -34, 18))):
+                    q = P.pts_path(P.wobble(circle(hd[0] + dx, hd[1] + dy, r, 28), 1.5, k))
+                    hp = q if hp is None else union(hp, q)
+                piece(c, hp, hair, 0.45, seed=hash_s(key, 15))
             # face: eye, smile (ink on paper), cheek
+            if goggles:
+                piece(c, ring(hd[0] + 22, hd[1] - 4, 10, 17), (70, 70, 80), 0.25, seed=hash_s(key, 16))
+                c.drawCircle(hd[0] + 22, hd[1] - 4, 10, skia.Paint(AntiAlias=True, Color=col((200, 235, 245), 0.7)))
+                piece(c, capsule((hd[0] - 40, hd[1] - 10), (hd[0] + 6, hd[1] - 6), 7), (70, 70, 80), 0.15, seed=hash_s(key, 17))
             c.drawCircle(hd[0] + 20, hd[1] - 2, 5.5, skia.Paint(AntiAlias=True, Color=col(INK)))
             c.drawCircle(hd[0] + 21.5, hd[1] - 4, 1.8, skia.Paint(AntiAlias=True, Color=col(WHITE)))
             sm = skia.Path()
@@ -364,15 +384,15 @@ def snail(c, x, y, s=1.0, key="snail", helmet=True):
 
 
 def road_side(c, top, color=ROAD, key="road"):
-    piece(c, P.rect(-40, top, W + 80, H - top + 40), color, 0.4, seed=hash_s(key, 1))
-    for i in range(7):
+    piece(c, P.rect(-300, top, W + 700, H - top + 300), color, 0.4, seed=hash_s(key, 1))
+    for i in range(-1, 9):
         x = i * 200 - 40
         piece(c, P.wobble(P.resample(P.rect(x, top + 120, 120, 16), 10), 0.8, i), (240, 236, 222), 0.1, seed=hash_s(key, 10 + i))
 
 
 def curb(c, top, key="curb"):
-    piece(c, P.rect(-40, top, W + 80, 40), CURB, 0.5, seed=hash_s(key, 1))
-    piece(c, P.rect(-40, top - 120, W + 80, 120), (214, 208, 196), 0.4, seed=hash_s(key, 2))
+    piece(c, P.rect(-300, top, W + 700, 40), CURB, 0.5, seed=hash_s(key, 1))
+    piece(c, P.rect(-300, top - 120, W + 700, 120), (214, 208, 196), 0.4, seed=hash_s(key, 2))
     for i in range(7):
         c.drawLine(i * 180 + 40, top - 120, i * 180 + 10, top, skia.Paint(AntiAlias=True, StrokeWidth=2, Color=col(shade(CURB, 0.75))))
 
