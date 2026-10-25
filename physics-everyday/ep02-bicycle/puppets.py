@@ -229,6 +229,10 @@ def bike_rear(c, x, ground, s=1.0, lean=0.0, steer=0.0, key="rear", shirt=BLUE, 
     piece(c, P.rrect(-26, -R - 20, 52, 26, 8), RED, 0.4, seed=hash_s(key, 8))  # mudguard/rack
     piece(c, P.rrect(-12, -R - 54, 24, 30, 6), (255, 80, 60), 0.3, seed=hash_s(key, 9))  # reflector
     c.drawRect(skia.Rect(-7, -R - 48, 7, -R - 30), skia.Paint(AntiAlias=True, Color=col((255, 200, 180), 0.5)))
+    if not rider:  # empty bike: seat post, saddle and stem are visible
+        piece(c, capsule((0, -R - 30), (0, -2 * R - 40), 14), shade(STEEL, 0.7), 0.4, seed=hash_s(key, 40))
+        piece(c, P.ellipse(0, -2 * R - 50, 46, 16, 30), TIRE, 0.5, seed=hash_s(key, 41))
+        piece(c, capsule((steer * 1.5, bar_y + 4), (steer * 0.6, -2 * R - 10), 14), shade(STEEL, 0.6), 0.3, seed=hash_s(key, 42))
     if rider:
         hip_y = -2 * R - 40
         for sx, ph in ((-1, pedal), (1, pedal + math.pi)):

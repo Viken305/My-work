@@ -84,12 +84,30 @@ def sfx(kind):
         t = A.T(d)
         y = np.sin(2 * np.pi * (2600 + 900 * np.sin(np.pi * t / d)) * t) * np.sin(np.pi * t / d) ** 2
         return A.st(y * 0.3, 0.4)
-    if kind in ("paper_whoosh", "paper_slap", "stamp", "pop", "swish", "whoosh"):
+    if kind in ("paper_whoosh", "paper_slap", "stamp", "pop", "swish", "whoosh", "reverse_swell", "low_hit", "trailer_hit", "wind"):
         return A.SFX(kind)
     return extra_sfx(kind)
 
 
 def events(F):
+    ev = test_events(F)
+    S = lambda t0: [(t0 - 0.05, "paper_whoosh", 0.8), (t0 + 0.25, "paper_slap", 0.5)]
+    for t0 in (F.T_TRAIL, F.T_CASTER, F.T_STEER, F.T_GHOST, F.T_CATCH, F.T_2011, F.T_WRAP, F.T_END):
+        ev += S(t0)
+    ev += [(F.T_LINE - 0.05, "pop", 0.6), (F.T_LINE, "tape", 0.5), (F.T_HERE, "pop", 0.7), (F.word_t("09", "steering"), "scribble", 0.5),
+           (F.T_TOUCH, "pop", 0.6), (F.T_TOUCH + 0.3, "pop", 0.6), (F.T_BEHIND, "swish", 0.5), (F.T_TRAILW, "stamp", 0.6),
+           (F.T_TRAILW - 0.05, "scribble", 0.5), (F.T_SWING - 0.3, "swish", 0.6), (F.T_SWING + 0.2, "tape", 0.5),
+           (F.T_TIP, "reverse_swell", 0.35), (F.T_SWINGS, "swish", 0.6), (F.T_STEERS - 0.05, "paper_slap", 0.8),
+           (F.T_UP, "pop", 0.5), (F.T_CONST + 0.6, "pop", 0.5), (F.T_NOBODY - 0.05, "paper_slap", 0.8), (F.T_CATCH + 0.6, "stamp", 0.5),
+           (F.T_Y2011 - 0.05, "stamp", 0.6), (F.T_NOGYRO - 0.05, "paper_slap", 0.7), (F.T_NOTRAIL - 0.05, "paper_slap", 0.7),
+           (F.T_BAL - 0.05, "stamp", 0.6), (F.T_WEIGHT - 0.1, "low_hit", 0.5), (F.T_WEIGHT, "scribble", 0.5),
+           (F.T_LITTLE - 0.05, "paper_slap", 0.7), (F.T_YOU - 0.05, "trailer_hit", 0.45), (F.T_YOU + 0.4, "ding", 0.4),
+           (F.T_END + 0.15, "paper_slap", 0.6), (F.T_END + 0.37, "paper_slap", 0.6), (F.T_END + 0.59, "stamp", 0.6),
+           (F.T_END + 1.0, "pop", 0.6), (F.T_END + 2.2, "ding", 0.45)]
+    return ev
+
+
+def test_events(F):
     ws = F.words_of("03")
     ev = [(0.0, "whoosh", 0.6), (0.9, "ding", 0.35)]
     ev += [(s, "paper_slap", 0.8) for s in (ws[0][1], ws[2][1], ws[3][1])]
@@ -111,11 +129,18 @@ def render_audio(out_wav, F):
     for t0, kind, g in events(F):
         A.place(fx, t0, sfx(kind), g)
     fw = sfx("freewheel")
-    for a, b in ((0.0, F.T_MYTH), (F.T_JONES, F.DURATION)):
+    for a, b in ((0.0, F.T_MYTH), (F.T_JONES, F.T_TRAIL), (F.T_GHOST, F.T_CATCH), (F.T_WRAP, F.T_END)):
         seg = np.tile(fw, (int((b - a) / 2.0) + 1, 1))[: int((b - a) * A.SR)].copy()
         A.place(fx, a, seg, 0.35)
     wr = sfx("whirr")
     A.place(fx, F.T_MYTH, wr[: int((F.T_JONES - F.T_MYTH) * A.SR)], 0.25)
+    wind = A.SFX("wind")
+    for a, b in ((F.T_STEER, F.T_GHOST), (F.T_CATCH, F.T_2011)):
+        seg = np.tile(wind, (int((b - a) / (len(wind) / A.SR)) + 1, 1))[: int((b - a) * A.SR)].copy()
+        k = int(0.2 * A.SR)
+        seg[:k] *= np.linspace(0, 1, k)[:, None]
+        seg[-k:] *= np.linspace(1, 0, k)[:, None]
+        A.place(fx, a, seg, 0.25)
     vo = np.zeros(n)
     for key, item in F.TL.items():
         A.place1(vo, item["start"], A.load_vo(os.path.join(here, "build", "vo", f"{key}.wav")))
