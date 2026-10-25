@@ -146,10 +146,19 @@ def render_audio(out_wav, F):
         A.place1(vo, item["start"], A.load_vo(os.path.join(here, "build", "vo", f"{key}.wav")))
     vo = A.norm(vo, 0.9)
     music = bed(F.DURATION)
-    e = A.follower(vo)
-    e = np.clip(e / (e.max() + 1e-9) * 2.5, 0, 1)
-    mix = A.st(vo) * 0.78 + music * 0.42 * (1 - 0.55 * e)[:, None] + fx * 0.55 * (1 - 0.3 * e)[:, None]
-    mix = np.tanh(mix * 1.2) / np.tanh(1.2)
+    # balance stems against the voice: voice leads, music sits ~16 dB under it and ducks a further ~8 dB while
+    # someone is talking, effects sit ~11 dB under the voice with their peaks limited below the voice's peaks
+    rms = lambda x: np.sqrt(np.mean(np.square(x))) + 1e-12
+    speech = np.abs(vo) > 0.02
+    v_rms = rms(vo[speech])
+    music *= (v_rms * 10 ** (-16 / 20)) / rms(music)
+    fx *= (v_rms * 10 ** (-11 / 20)) / rms(fx[np.any(fx != 0, axis=1)])
+    lim = np.abs(vo).max() * 0.6
+    fx = np.tanh(fx / lim) * lim
+    e = A.follower(vo, 0.01, 0.4)
+    e = np.clip(e / (np.percentile(e[speech], 60) + 1e-9), 0, 1)
+    mix = A.st(vo) + music * (1 - 0.6 * e)[:, None] + fx * (1 - 0.45 * e)[:, None]
+    mix /= np.abs(mix).max() / 0.95
     import soundfile as sf
     raw = out_wav.replace(".wav", "_raw.wav")
     sf.write(raw, mix.astype(np.float32), A.SR)
