@@ -387,7 +387,7 @@ def road_side(c, top, color=ROAD, key="road"):
     piece(c, P.rect(-300, top, W + 700, H - top + 300), color, 0.4, seed=hash_s(key, 1))
     for i in range(-1, 9):
         x = i * 200 - 40
-        piece(c, P.wobble(P.resample(P.rect(x, top + 120, 120, 16), 10), 0.8, i), (240, 236, 222), 0.1, seed=hash_s(key, 10 + i))
+        piece(c, P.wobble(P.resample(P.rect(x, top + 120, 120, 16), 10), 0.8, i + 1), (240, 236, 222), 0.1, seed=hash_s(key, 10 + i))
 
 
 def curb(c, top, key="curb"):
