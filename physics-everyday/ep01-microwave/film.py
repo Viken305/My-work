@@ -73,10 +73,10 @@ def microwave(t, st):
             tr.append(g)
 
     door, lift, roof_a = st["door"], st["lift"], st["roof_a"]
-    for g in (box(-1, 1, 0, 1.2, -0.7, -0.64, BODY, 0.02, 1, S=0.35), box(-1, -0.94, 0, 1.2, -0.7, 0.7, BODY, 0.02, 2, S=0.35),
-              box(0.94, 1, 0, 1.2, -0.7, 0.7, BODY, 0.02, 3, S=0.35), box(-1, 1, 0, CY0, -0.7, 0.7, BODY, 0.02, 4, S=0.35),
-              box(CX1, CX1 + 0.04, CY0, 1.14, -0.64, 0.64, BODY, 0.02, 6, S=0.35),          # partition behind the cavity wall
-              box(CX1, 1, 0, 1.2, 0.64, 0.7, BODY, 0.02, 9, S=0.35)):                    # control panel face
+    for g in (box(-1, 1, 0, 1.2, -0.7, -0.64, BODY, 0.0, 1, S=0.35), box(-1, -0.94, 0, 1.2, -0.7, 0.7, BODY, 0.0, 2, S=0.35),
+              box(0.94, 1, 0, 1.2, -0.7, 0.7, BODY, 0.0, 3, S=0.35), box(-1, 1, 0, CY0, -0.7, 0.7, BODY, 0.0, 4, S=0.35),
+              box(CX1, CX1 + 0.04, CY0, 1.14, -0.64, 0.64, BODY, 0.0, 6, S=0.35),          # partition behind the cavity wall
+              box(CX1, 1, 0, 1.2, 0.64, 0.7, BODY, 0.0, 9, S=0.35)):                    # control panel face
         shell(g)
     op += [box(-0.95, -0.8, -0.04, 0.0, -0.6, -0.45, TRIM), box(0.8, 0.95, -0.04, 0.0, -0.6, -0.45, TRIM),
            box(-0.95, -0.8, -0.04, 0.0, 0.45, 0.6, TRIM), box(0.8, 0.95, -0.04, 0.0, 0.45, 0.6, TRIM)]
@@ -87,7 +87,7 @@ def microwave(t, st):
         y = 0.68 - k * 0.17
         shell(box(0.58, 0.82, y - 0.05, y + 0.05, 0.7, 0.74, TRIM, 0.0, 10 + k))
     if roof_a > 0.01:
-        roof = box(-1, 1, 1.14, 1.2, -0.7, 0.7, BODY, 0.02, 5, S=0.35).xf(T(0, 2.2 * lift, 0) @ T(0, 0.6, 0) @ Rx(-0.5 * lift) @ T(0, -0.6, 0))
+        roof = box(-1, 1, 1.14, 1.2, -0.7, 0.7, BODY, 0.0, 5, S=0.35).xf(T(0, 2.2 * lift, 0) @ T(0, 0.6, 0) @ Rx(-0.5 * lift) @ T(0, -0.6, 0))
         if roof_a < 0.99:
             roof.A[:] = roof_a
             tr.append(roof)
@@ -120,24 +120,26 @@ def microwave(t, st):
                limb((0.55, 0.32, -0.5), (mx - 0.08, my + 0.05, mz - 0.1), 0.012, hexc("111111"))]
     # cavity (inward quads) + the waveguide port (mica cover)
     cav = dict(S=0.1)
-    cq = [quad((CX0, CY0, CZ0), (CX1, CY0, CZ0), (CX1, CY0, CZ1), (CX0, CY0, CZ1), CAVITY, **cav),
-          quad((CX0, CY0, CZ0), (CX1, CY0, CZ0), (CX1, CY1, CZ0), (CX0, CY1, CZ0), CAVITY, **cav),
-          quad((CX0, CY0, CZ0), (CX0, CY1, CZ0), (CX0, CY1, CZ1), (CX0, CY0, CZ1), CAVITY, **cav),
-          quad((CX1, CY0, CZ0), (CX1, CY1, CZ0), (CX1, CY1, CZ1), (CX1, CY0, CZ1), CAVITY, **cav)]
+    e = 0.004                      # inset so the lining never shares a plane with the shell (no z-fighting)
+    x0, x1, y0, y1, z0, z1 = CX0 + e, CX1 - e, CY0 + e, CY1 - e, CZ0 + e, CZ1
+    cq = [quad((x0, y0, z0), (x1, y0, z0), (x1, y0, z1), (x0, y0, z1), CAVITY, **cav),
+          quad((x0, y0, z0), (x1, y0, z0), (x1, y1, z0), (x0, y1, z0), CAVITY, **cav),
+          quad((x0, y0, z0), (x0, y1, z0), (x0, y1, z1), (x0, y0, z1), CAVITY, **cav),
+          quad((x1, y0, z0), (x1, y1, z0), (x1, y1, z1), (x1, y0, z1), CAVITY, **cav)]
     if lift <= 0.01:
-        cq.append(quad((CX0, CY1, CZ0), (CX1, CY1, CZ0), (CX1, CY1, CZ1), (CX0, CY1, CZ1), CAVITY, **cav))
+        cq.append(quad((x0, y1, z0), (x1, y1, z0), (x1, y1, z1), (x0, y1, z1), CAVITY, **cav))
     for g in cq:
         if xr > 0.01:
             g.A[:] = 1 - 0.75 * xr
             tr.append(g)
         else:
             op.append(g)
-    op.append(quad((CX1 - 0.002, 0.8, -0.32), (CX1 - 0.002, 1.02, -0.32), (CX1 - 0.002, 1.02, -0.08), (CX1 - 0.002, 0.8, -0.08), hexc("D8C9A8"), S=0.3))
+    op.append(quad((CX1 - 0.008, 0.8, -0.32), (CX1 - 0.008, 1.02, -0.32), (CX1 - 0.008, 1.02, -0.08), (CX1 - 0.008, 0.8, -0.08), hexc("D8C9A8"), S=0.3))
     # door (hinged left) + glass
     if not st["door_hidden"]:
         hinge = T(-1.0, 0, 0.7) @ Ry(door) @ T(1.0, 0, -0.7)
-        for b in (box(-1, -0.86, 0, 1.2, 0.7, 0.78, BODY, 0.02, 20), box(0.26, 0.42, 0, 1.2, 0.7, 0.78, BODY, 0.02, 21),
-                  box(-0.86, 0.26, 0, 0.16, 0.7, 0.78, BODY, 0.02, 22), box(-0.86, 0.26, 1.04, 1.2, 0.7, 0.78, BODY, 0.02, 23)):
+        for b in (box(-1, -0.86, 0, 1.2, 0.7, 0.78, BODY, 0.0, 20), box(0.26, 0.42, 0, 1.2, 0.7, 0.78, BODY, 0.0, 21),
+                  box(-0.86, 0.26, 0, 0.16, 0.7, 0.78, BODY, 0.0, 22), box(-0.86, 0.26, 1.04, 1.2, 0.7, 0.78, BODY, 0.0, 23)):
             shell(b.set(S=0.35).xf(hinge))
         op.append(box(0.3, 0.36, 0.3, 0.9, 0.78, 0.86, TRIM).xf(hinge))
         gl = quad((-0.86, 0.16, 0.745), (0.26, 0.16, 0.745), (0.26, 1.04, 0.745), (-0.86, 1.04, 0.745), (18, 20, 30), S=2.0, A=0.55 * (1 - 0.8 * xr)).xf(hinge)
@@ -691,7 +693,7 @@ _R = None
 def get_renderer():
     global _R
     if _R is None:
-        _R = G.Renderer(W, H, 1.5)
+        _R = G.Renderer(W, H, 2.0)
         _R.set_static(K.kitchen_static())
         _R.clear_col = SKY
     return _R
@@ -781,14 +783,14 @@ def _job(i):
     return frame(i / FPS).tobytes()
 
 
-def render(procs=2, t0=0.0, t1=None):
+def render(procs=2, t0=0.0, t1=None, name="ep01_microwave"):
     import sound
     t1 = DURATION if t1 is None else t1
     os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
     bdir = os.path.join(HERE, "build")
     os.makedirs(bdir, exist_ok=True)
     wav = sound.render_audio(os.path.join(bdir, "mix.wav"), sys.modules[__name__])
-    silent = os.path.join(bdir, "video.mp4")
+    silent = os.path.join(bdir, f"{name}_video.mp4")
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
                            "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p", silent], stdin=subprocess.PIPE)
     frames = range(int(t0 * FPS), int(t1 * FPS))
@@ -799,7 +801,7 @@ def render(procs=2, t0=0.0, t1=None):
                 print(f"frame {k}/{len(frames)}", flush=True)
     ff.stdin.close()
     ff.wait()
-    out = os.path.join(HERE, "out", "ep01_microwave.mp4")
+    out = os.path.join(HERE, "out", f"{name}.mp4")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", silent, "-ss", str(t0), "-i", wav, "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
                     "-shortest", "-movflags", "+faststart", out], check=True)
     print(out)
@@ -815,4 +817,5 @@ if __name__ == "__main__":
             Image.fromarray(frame(float(s))).save(p)
             print(p)
     else:
-        render(int(os.environ.get("PROCS", "2")))
+        t1 = float(os.environ["UNTIL"]) if "UNTIL" in os.environ else None
+        render(int(os.environ.get("PROCS", "2")), 0.0, t1, "ep01_test15" if t1 else "ep01_microwave")

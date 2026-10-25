@@ -270,7 +270,7 @@ in vec3 in_pos; in vec3 in_nrm; in vec3 in_col; in float in_emit; in float in_sp
 out vec3 v_pos; out vec3 v_nrm; out vec3 v_col; out float v_emit; out float v_spec; out float v_heat; out float v_alpha; out vec4 v_lpos; out float v_mask;
 void main() {
     v_pos = in_pos; v_nrm = in_nrm; v_col = in_col; v_emit = in_emit; v_spec = in_spec; v_heat = in_heat; v_alpha = in_alpha; v_mask = in_mask;
-    v_lpos = light_vp * vec4(in_pos, 1.0);
+    v_lpos = light_vp * vec4(in_pos + normalize(in_nrm) * 0.012, 1.0);   // normal offset: no shadow acne
     gl_Position = vp * vec4(in_pos, 1.0);
 }
 """

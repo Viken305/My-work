@@ -145,7 +145,7 @@ def kitchen_static():
                 g.append(box(x0 + 0.012, x1 - 0.012, y0 + 0.012, y0 + 0.238, -1.25, -1.22, TILE, 0.04, r * 100 + k, S=0.5))
             x += 0.5
             k += 1
-    g.append(box(-11.5, 6.6, 0.0, 2.25, -1.251, -1.25, GROUT, 0.0))
+    g.append(box(-11.5, 6.6, 0.0, 2.25, -1.25, -1.244, GROUT, 0.0))   # just in front of the wall (no z-fighting)
     # lower cabinets + counter (with a sink hole)
     g += [box(-11.5, 6.4, -3.25, -0.16, -1.25, 1.22, CAB_DK, 0.0), box(-11.5, 6.4, -3.6, -3.25, -1.25, 0.95, hexc("1F2A33"), 0.0)]
     for i, x0 in enumerate(np.arange(-11.4, 6.3, 1.95)):
@@ -221,8 +221,8 @@ def microwave(t, thermal_on):
     lift = out_expo(prog(t, 6.1, 6.6))
     roof_a = 1 - smooth(prog(t, 6.35, 6.7))
     # shell
-    op += [box(-1, 1, 0, 1.2, -0.7, -0.64, BODY, 0.02, 1, S=0.35), box(-1, -0.94, 0, 1.2, -0.7, 0.7, BODY, 0.02, 2, S=0.35),
-           box(CX1, 1, 0, 1.2, -0.7, 0.7, BODY, 0.02, 3, S=0.35), box(-1, 1, 0, CY0, -0.7, 0.7, BODY, 0.02, 4, S=0.35),
+    op += [box(-1, 1, 0, 1.2, -0.7, -0.64, BODY, 0.0, 1, S=0.35), box(-1, -0.94, 0, 1.2, -0.7, 0.7, BODY, 0.0, 2, S=0.35),
+           box(CX1, 1, 0, 1.2, -0.7, 0.7, BODY, 0.0, 3, S=0.35), box(-1, 1, 0, CY0, -0.7, 0.7, BODY, 0.0, 4, S=0.35),
            box(-0.95, -0.8, -0.04, 0.0, -0.6, -0.45, TRIM), box(0.8, 0.95, -0.04, 0.0, -0.6, -0.45, TRIM),
            box(-0.95, -0.8, -0.04, 0.0, 0.45, 0.6, TRIM), box(0.8, 0.95, -0.04, 0.0, 0.45, 0.6, TRIM)]
     op.append(box(0.52, 0.88, 0.86, 1.02, 0.7, 0.71, hexc("1E3B3A"), 0.0, E=0.15))
@@ -231,7 +231,7 @@ def microwave(t, thermal_on):
         y = 0.68 - k * 0.17
         op.append(box(0.58, 0.82, y - 0.05, y + 0.05, 0.7, 0.74, TRIM, 0.0, 10 + k))
     if roof_a > 0.01:
-        roof = box(-1, 1, 1.14, 1.2, -0.7, 0.7, BODY, 0.02, 5, S=0.35).xf(T(0, 2.2 * lift, 0) @ T(0, 0.6, 0) @ Rx(-0.5 * lift) @ T(0, -0.6, 0))
+        roof = box(-1, 1, 1.14, 1.2, -0.7, 0.7, BODY, 0.0, 5, S=0.35).xf(T(0, 2.2 * lift, 0) @ T(0, 0.6, 0) @ Rx(-0.5 * lift) @ T(0, -0.6, 0))
         (op if roof_a > 0.99 else tr).append(roof.set(A=roof_a))
     if lift > 0.01:
         op.append(box(-1, 1, 1.14, 1.2, -0.7, -0.64, BODY, 0.0).set(S=0.35))
@@ -246,8 +246,8 @@ def microwave(t, thermal_on):
     # door (hinged on the left), glass
     hinge = T(-1.0, 0, 0.7) @ Ry(door) @ T(1.0, 0, -0.7)
     door_parts = [] if 9.7 <= t < 14.9 else [
-        box(-1, -0.86, 0, 1.2, 0.7, 0.78, BODY, 0.02, 20), box(0.26, 0.42, 0, 1.2, 0.7, 0.78, BODY, 0.02, 21),
-        box(-0.86, 0.26, 0, 0.16, 0.7, 0.78, BODY, 0.02, 22), box(-0.86, 0.26, 1.04, 1.2, 0.7, 0.78, BODY, 0.02, 23),
+        box(-1, -0.86, 0, 1.2, 0.7, 0.78, BODY, 0.0, 20), box(0.26, 0.42, 0, 1.2, 0.7, 0.78, BODY, 0.0, 21),
+        box(-0.86, 0.26, 0, 0.16, 0.7, 0.78, BODY, 0.0, 22), box(-0.86, 0.26, 1.04, 1.2, 0.7, 0.78, BODY, 0.0, 23),
         box(0.3, 0.36, 0.3, 0.9, 0.78, 0.86, TRIM)]
     for b in door_parts:
         op.append(b.set(S=0.35).xf(hinge))
