@@ -1,0 +1,60 @@
+{
+  "params_mm": {
+    "width": 381.0,
+    "height": 190.5,
+    "border": 25.4,
+    "bead_z": 13.0,
+    "bead_r": 2.4,
+    "field_z": 12.0,
+    "rebate_width": 6.35,
+    "rebate_depth": 6.0,
+    "lip": 2.6,
+    "key_head": 8.0,
+    "key_neck": 4.0,
+    "key_len": 7.0,
+    "key_neck_depth": 3.0,
+    "key_depth": 6.5,
+    "key_from_top": 13.5,
+    "key_xs": [
+      0.25,
+      0.75
+    ],
+    "pin_d": 2.0,
+    "pin_depth": 8.0,
+    "pin_ds": [
+      6.5,
+      14.0
+    ],
+    "pin_z": 6.5
+  },
+  "frame_full": {
+    "triangles": 1260,
+    "volume_cm3": 287.79,
+    "size_mm": [
+      381.0,
+      190.5,
+      15.4
+    ],
+    "genus": 1
+  },
+  "frame_left": {
+    "triangles": 1272,
+    "volume_cm3": 143.8,
+    "size_mm": [
+      190.5,
+      190.5,
+      15.4
+    ],
+    "genus": 0
+  },
+  "frame_right": {
+    "triangles": 1272,
+    "volume_cm3": 143.8,
+    "size_mm": [
+      190.5,
+      190.5,
+      15.4
+    ],
+    "genus": 0
+  }
+}
