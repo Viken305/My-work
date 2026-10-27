@@ -4,8 +4,9 @@
     "height": 190.5,
     "border": 25.4,
     "bead_z": 13.0,
-    "bead_r": 2.4,
+    "bead_r": 1.4,
     "field_z": 12.0,
+    "inner_w": 3.6,
     "rebate_width": 6.35,
     "rebate_depth": 6.0,
     "lip": 2.6,
@@ -25,36 +26,60 @@
       6.5,
       14.0
     ],
-    "pin_z": 6.5
+    "pin_z": 6.5,
+    "orn_image": "ref/top_center.webp",
+    "orn_relief": 2.6,
+    "orn_base": 0.8,
+    "orn_height": 17.4
   },
   "frame_full": {
     "triangles": 1260,
-    "volume_cm3": 287.79,
+    "volume_cm3": 283.56,
     "size_mm": [
       381.0,
       190.5,
-      15.4
+      14.4
     ],
     "genus": 1
   },
   "frame_left": {
-    "triangles": 1272,
-    "volume_cm3": 143.8,
+    "triangles": 1274,
+    "volume_cm3": 141.68,
     "size_mm": [
       190.5,
       190.5,
-      15.4
+      14.4
     ],
     "genus": 0
   },
   "frame_right": {
-    "triangles": 1272,
-    "volume_cm3": 143.8,
+    "triangles": 1276,
+    "volume_cm3": 141.68,
     "size_mm": [
       190.5,
       190.5,
-      15.4
+      14.4
     ],
     "genus": 0
+  },
+  "ornament_top_center": {
+    "triangles": 314998,
+    "volume_cm3": 1.87,
+    "size_mm": [
+      70.89,
+      17.43,
+      3.4
+    ],
+    "genus": 0
+  },
+  "frame_assembled": {
+    "triangles": 327728,
+    "volume_cm3": 287.22,
+    "size_mm": [
+      381.0,
+      190.5,
+      15.35
+    ],
+    "genus": 1
   }
 }

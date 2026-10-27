@@ -5,9 +5,10 @@ the profile is (d, z), where d is the distance in from the outer edge and z the
 height above the back. Insetting the outer rectangle by d gives mitered corners
 for free, so the whole body is exact and needs only a few hundred triangles.
 
-The carved ornaments (corner rosettes, top/bottom scroll panels, side flowers)
-are not modelled yet: they sit on the flat "field" band of the profile and will
-be added as relief bodies once the close-up references are ready.
+Carved ornaments sit on the flat "field" band of the profile. Each one is a
+flat-backed relief made from a close-up reference (see ornament.py), printed
+separately and glued on. Done so far: the top/bottom centre scroll panel.
+Still to come: corner rosettes, side flowers, running scrollwork.
 
 Usage:
     python frame.py                      # 15 x 7.5 in outer, 1 in border
@@ -21,6 +22,8 @@ from pathlib import Path
 
 import manifold3d as m3d
 import numpy as np
+
+from ornament import relief
 
 IN = 25.4  # mm per inch
 HERE = Path(__file__).resolve().parent
@@ -51,16 +54,17 @@ def profile(p):
     # cove down onto the field
     c = zb - zf
     pts += arc(2 * rb + c, zb, c, 180, 270)[1:]
-    field_end = B - 8.0
+    k = p["inner_w"] / 4.8  # inner moulding, drawn at 4.8 mm wide and scaled
+    field_end = B - p["inner_w"]
     pts.append((field_end, zf))
     # inner bead
-    pts += arc(field_end + 1.0, zf, 1.0, 180, 0)[1:]
+    pts += arc(field_end + 0.8 * k, zf, 0.8 * k, 180, 0)[1:]
     # step down to the inner flat
     z_step = zf - 1.2
-    pts.append((field_end + 2.2, z_step))
-    pts.append((field_end + 3.8, z_step))
+    pts.append((field_end + 1.8 * k, z_step))
+    pts.append((field_end + 2.6 * k, z_step))
     # small bead
-    pts += arc(field_end + 4.5, z_step, 0.7, 180, 0)[1:]
+    pts += arc(field_end + 3.1 * k, z_step, 0.5 * k, 180, 0)[1:]
     # slope down to the sight edge
     z_sight = p["rebate_depth"] + p["lip"]
     pts.append((B, z_sight))
@@ -148,6 +152,21 @@ def to_stl(solid, path):
     return len(t)
 
 
+def field_band(p):
+    """(start, end) of the flat ornament field, mm in from the outer edge."""
+    return 2 * p["bead_r"] + (p["bead_z"] - p["field_z"]), p["border"] - p["inner_w"]
+
+
+def place_ornaments(p, orn):
+    """Top-centre ornament on the top rail and the same part turned 180 deg on the bottom rail."""
+    W, H = p["width"], p["height"]
+    d = sum(field_band(p)) / 2
+    z = p["field_z"] - 0.05  # sink slightly so the union fuses
+    top = orn.translate((W / 2, H - d, z))
+    bottom = orn.rotate((0, 0, 180)).translate((W / 2, d, z))
+    return top + bottom
+
+
 def build(p):
     W, H = p["width"], p["height"]
     body = sweep(W, H, profile(p))
@@ -160,7 +179,27 @@ def build(p):
     halves = body - pin_holes(W / 2, p, H)
     left = halves.trim_by_plane((-1, 0, 0), -W / 2)
     right = halves.trim_by_plane((1, 0, 0), W / 2).translate((-W / 2, 0, 0))
-    return full, left, right
+    # ornaments: printed separately (flat back) and glued on; they hide the seam
+    orn, _ = relief(HERE / p["orn_image"], p["orn_height"], p["orn_relief"], p["orn_base"])
+    assembled = full + place_ornaments(p, orn)
+    return dict(frame_full=full, frame_left=left, frame_right=right,
+                ornament_top_center=orn, frame_assembled=assembled)
+
+
+def default_params(width_in=15.0, border_in=1.0):
+    W = width_in * IN
+    p = dict(
+        width=W, height=W / 2, border=border_in * IN,
+        bead_z=13.0, bead_r=1.4, field_z=12.0, inner_w=3.6,
+        rebate_width=6.35, rebate_depth=6.0, lip=2.6,
+        key_head=8.0, key_neck=4.0, key_len=7.0,
+        key_neck_depth=3.0, key_depth=6.5, key_from_top=13.5, key_xs=(0.25, 0.75),
+        pin_d=2.0, pin_depth=8.0, pin_ds=(6.5, 14.0), pin_z=6.5,
+        orn_image="ref/top_center.webp", orn_relief=2.6, orn_base=0.8,
+    )
+    f0, f1 = field_band(p)
+    p["orn_height"] = round(f1 - f0 - 0.6, 2)  # fill the field, 0.3 mm clear each side
+    return p
 
 
 def main():
@@ -170,20 +209,13 @@ def main():
     ap.add_argument("--out", default=str(HERE / "out"))
     a = ap.parse_args()
 
-    W = a.width_in * IN
-    p = dict(
-        width=W, height=W / 2, border=a.border_in * IN,
-        bead_z=13.0, bead_r=2.4, field_z=12.0,
-        rebate_width=6.35, rebate_depth=6.0, lip=2.6,
-        key_head=8.0, key_neck=4.0, key_len=7.0,
-        key_neck_depth=3.0, key_depth=6.5, key_from_top=13.5, key_xs=(0.25, 0.75),
-        pin_d=2.0, pin_depth=8.0, pin_ds=(6.5, 14.0), pin_z=6.5,
-    )
+    p = default_params(a.width_in, a.border_in)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
-    full, left, right = build(p)
-    report = {"params_mm": {k: (list(v) if isinstance(v, tuple) else round(v, 3)) for k, v in p.items()}}
-    for name, s in (("frame_full", full), ("frame_left", left), ("frame_right", right)):
+    parts = build(p)
+    report = {"params_mm": {k: (list(v) if isinstance(v, tuple) else v if isinstance(v, str) else round(v, 3))
+                            for k, v in p.items()}}
+    for name, s in parts.items():
         lo, hi = s.bounding_box()[:3], s.bounding_box()[3:]
         n = to_stl(s, out / f"{name}.stl")
         report[name] = dict(triangles=n, volume_cm3=round(s.volume() / 1000, 2),

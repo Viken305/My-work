@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:#1b1d22}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+// ?stl=../out/x.stl&w=1600&h=900&cam=x,y,z&look=x,y,z&fov=30&bg=1b1d22
+const q = new URLSearchParams(location.search);
+const W = +q.get('w') || 1600, H = +q.get('h') || 900;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setSize(W, H);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#' + (q.get('bg') || '1b1d22'));
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+
+const silver = new THREE.MeshStandardMaterial({ color: 0xd6d8dc, metalness: 0.92, roughness: 0.32 });
+const key = new THREE.DirectionalLight(0xffffff, 2.2);
+scene.add(key, new THREE.AmbientLight(0xffffff, 0.15));
+key.castShadow = true;
+key.shadow.mapSize.set(4096, 4096);
+key.shadow.bias = -0.0004;
+
+const geom = new STLLoader().parse(await (await fetch(q.get('stl'))).arrayBuffer());
+geom.computeVertexNormals();
+geom.computeBoundingBox();
+const bb = geom.boundingBox, c = bb.getCenter(new THREE.Vector3()), size = bb.getSize(new THREE.Vector3());
+const mesh = new THREE.Mesh(geom, silver);
+mesh.castShadow = mesh.receiveShadow = true;
+scene.add(mesh);
+
+const v = (s, d) => (s ? s.split(',').map(Number) : d);
+const look = new THREE.Vector3(...v(q.get('look'), [c.x, c.y, c.z]));
+const cam = new THREE.PerspectiveCamera(+q.get('fov') || 30, W / H, 0.1, 5000);
+const dist = Math.max(size.x / (W / H), size.y) / (2 * Math.tan(THREE.MathUtils.degToRad(cam.fov / 2))) * 1.12;
+cam.position.set(...v(q.get('cam'), [c.x, c.y - dist * 0.25, c.z + dist]));
+cam.up.set(0, 0, 1);
+if (!q.get('cam')) cam.up.set(0, 1, 0);
+cam.lookAt(look);
+// key light from upper left, raking across the relief
+const L = Math.max(size.x, size.y);
+key.position.set(c.x - L * 0.6, c.y + L * 0.8, c.z + L * 0.9);
+key.target.position.copy(c); scene.add(key.target);
+const sc = key.shadow.camera; sc.left = sc.bottom = -L; sc.right = sc.top = L; sc.far = L * 4;
+renderer.render(scene, cam);
+window.done = true;
+</script></body></html>
