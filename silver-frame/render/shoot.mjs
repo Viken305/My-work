@@ -18,10 +18,14 @@ const server = createServer(async (req, res) => {
 const port = server.address().port;
 
 const shots = JSON.parse(process.argv[2] || 'null') || [
-  { name: 'render_front', stl: 'out/frame_assembled.stl', w: 1800, h: 1000 },
-  { name: 'render_top_closeup', stl: 'out/frame_assembled.stl', w: 1600, h: 900,
+  { name: 'render_front', stl: 'out/_render_assembled.stl', w: 1800, h: 1000 },
+  { name: 'render_top_closeup', stl: 'out/_render_assembled.stl', w: 1600, h: 900,
     cam: '190.5,110,95', look: '190.5,178,12', fov: 32 },
-  { name: 'render_ornament', stl: 'out/ornament_top_center.stl', w: 1800, h: 600, fov: 20 },
+  { name: 'render_corner_closeup', stl: 'out/_render_assembled.stl', w: 1600, h: 1000,
+    cam: '60,95,110', look: '45,160,12', fov: 34 },
+  { name: 'render_ornament_scroll', stl: 'out/ornament_scroll_A.stl', w: 1800, h: 500, fov: 20 },
+  { name: 'render_ornament_rosette', stl: 'out/ornament_rosette.stl', w: 800, h: 800, fov: 20 },
+  { name: 'render_ornament_center', stl: 'out/ornament_center.stl', w: 1800, h: 600, fov: 20 },
 ];
 const browser = await chromium.launch();
 for (const s of shots) {
