@@ -15,41 +15,53 @@ Meet Sam. Sam woke up at seven this morning. And from that moment, a chemical ca
 Think of it as a jar of sleep pressure. Coffee can hide the feeling for a while. But the jar keeps filling.
 
 5
-00:00:26,016 --> 00:00:37,197
-Twenty four hours awake. Sam's reaction time is now about as bad as someone with a blood alcohol level of zero point one percent. That is over the legal limit for driving.
+00:00:24,966 --> 00:00:32,667
+By four in the morning, Sam's body clock hits its lowest point. Body temperature drops, and the urge to sleep is at its strongest.
 
 6
-00:00:37,831 --> 00:00:44,760
-The brain's emotional alarm, the amygdala, becomes about sixty percent more reactive. Small things feel huge.
+00:00:34,261 --> 00:00:45,441
+Twenty four hours awake. Sam's reaction time is now about as bad as someone with a blood alcohol level of zero point one percent. That is over the legal limit for driving.
 
 7
-00:00:45,356 --> 00:00:51,936
-And the hunger hormone rises, while the hormone that says you are full drops. Hello, junk food cravings.
+00:00:46,075 --> 00:00:53,004
+The brain's emotional alarm, the amygdala, becomes about sixty percent more reactive. Small things feel huge.
 
 8
-00:00:53,469 --> 00:01:00,909
-Thirty six hours. Sam's body now treats this like an emergency. Stress hormones climb, and inflammation spreads.
+00:00:53,600 --> 00:01:00,990
+Memory takes a hit too. The brain's memory center, the hippocampus, now takes in about forty percent less new information.
 
 9
-00:01:01,657 --> 00:01:07,347
-Forty eight hours. Now the brain starts taking microsleeps. Tiny blackouts, a few seconds long.
+00:01:01,617 --> 00:01:08,198
+And the hunger hormone rises, while the hormone that says you are full drops. Hello, junk food cravings.
 
 10
-00:01:07,967 --> 00:01:15,567
-Sam's eyes can stay open. Sam won't even notice. At highway speed, a few seconds is the length of a football field.
+00:01:09,731 --> 00:01:17,171
+Thirty six hours. Sam's body now treats this like an emergency. Stress hormones climb, and inflammation spreads.
 
 11
-00:01:17,227 --> 00:01:24,287
-Seventy two hours. The walls seem to breathe. Shapes move at the edge of your vision. Many people start to hallucinate.
+00:01:17,769 --> 00:01:28,229
+Even the brain's cleanup slows down. One study found a single sleepless night raised beta amyloid, a waste protein linked to Alzheimer's, by about five percent.
 
 12
-00:01:24,951 --> 00:01:30,951
-The record? In 1964, a student named Randy Gardner stayed awake for eleven days.
+00:01:28,986 --> 00:01:34,676
+Forty eight hours. Now the brain starts taking microsleeps. Tiny blackouts, a few seconds long.
 
 13
-00:01:31,739 --> 00:01:38,429
-The good news? Sam doesn't have to pay back every lost hour. A night or two of deep sleep, and the jar drains.
+00:01:35,296 --> 00:01:42,896
+Sam's eyes can stay open. Sam won't even notice. At highway speed, a few seconds is the length of a football field.
 
 14
-00:01:39,058 --> 00:01:42,429
-So the next time you think about an all nighter, remember the jar.
+00:01:44,555 --> 00:01:51,615
+Seventy two hours. The walls seem to breathe. Shapes move at the edge of your vision. Many people start to hallucinate.
+
+15
+00:01:52,280 --> 00:01:58,280
+The record? In 1964, a student named Randy Gardner stayed awake for eleven days.
+
+16
+00:01:59,067 --> 00:02:05,757
+The good news? Sam doesn't have to pay back every lost hour. A night or two of deep sleep, and the jar drains.
+
+17
+00:02:06,387 --> 00:02:12,617
+Most adults need seven to nine hours a night. So the next time you think about an all nighter, remember the jar.
