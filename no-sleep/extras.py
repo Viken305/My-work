@@ -15,7 +15,7 @@ from script import PARTS
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out")
 BOARD = [  # (part, local time, shot title)
-    ("part1", 3.2, "Cold open: the eye that won't close"),
+    ("part1", 3.2, "Cold open: the eye"),
     ("part1", 6.2, "Title: 72 hours without sleep"),
     ("part2", 2.5, "Hour 0: Sam wakes at 07:00"),
     ("part2", 14.5, "Adenosine jar, coffee sleeve"),

@@ -1,6 +1,6 @@
 # 72 Hours Without Sleep
 
-A 9:16 YouTube Short / Reel (~2:00) about what happens to your body at 24, 48 and 72 hours without sleep, rendered
+A 9:16 YouTube Short / Reel (1:45) about what happens to your body at 24, 48 and 72 hours without sleep, rendered
 entirely in code: vector animation, captions, music and sound effects. One character, Sam, through one long night.
 
 | File | What |
@@ -17,7 +17,7 @@ entirely in code: vector animation, captions, music and sound effects. One chara
 |---|---|---|
 | 1 | Hook: the eye that won't close, title | 0:09 |
 | 2 | Hours 0–16: Sam, the adenosine jar, coffee | 0:16 |
-| 3 | Hour 24: 0.10 % alcohol, amygdala +60 %, hunger hormones | 0:27 |
+| 3 | Hour 24: 0.10 % alcohol, amygdala +60 %, hunger hormones | 0:28 |
 | 4 | Hours 36–48: body on alarm, microsleeps, the road | 0:24 |
 | 5 | Hour 72: hallucinations, the 1964 record, recovery, "remember the jar" | 0:29 |
 

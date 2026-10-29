@@ -1,4 +1,4 @@
-# YouTube Short / Reel: posting kit (out/full_share.mp4, 9:16, ~2:00)
+# YouTube Short / Reel: posting kit (out/full_share.mp4, 9:16, 1:45)
 
 **Title:** What 72 Hours Without Sleep Does to Your Body #shorts
 

@@ -1,6 +1,6 @@
 # 72 Hours Without Sleep: style guide
 
-A 9:16 Short (~2:00) rendered entirely in code. The style is **"Night Shift" motion graphics**: one character, Sam, and
+A 9:16 Short (1:45) rendered entirely in code. The style is **"Night Shift" motion graphics**: one character, Sam, and
 one long night. A clock HUD and a 0–72 h timeline sit at the top of every shot, so viewers always know where they are.
 
 ## The picture gets tired too
