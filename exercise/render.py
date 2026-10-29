@@ -15,7 +15,7 @@ import skia
 
 from engine import FPS, H, HERE, W, finish
 
-PARTS = ["city", "beat", "micro"]   # the three style tests
+PARTS = ["part1", "part2", "part3", "part4", "part5", "part6", "part7"]   # the full video (style tests: city, beat, micro)
 OUT = os.path.join(HERE, "out")
 _MOD = None
 

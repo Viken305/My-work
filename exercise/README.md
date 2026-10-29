@@ -1,4 +1,28 @@
-# What Happens Inside Your Body During Exercise: style tests
+# What Happens Inside Your Body During Exercise
+
+## Full video: Beat Drop (`part1.py` … `part7.py`, engine `game.py`)
+About 1:44, 9:16. Your workout as a rhythm game: every spoken word is a note that hits the line exactly when it is
+said, then flies into the caption line; numbers land as gold notes. The music is a four-on-the-floor track
+(`audio.drive`) whose tempo rises level by level, and the lights, highway and runner lock to its beat. Script and
+sources: `SCRIPT.md`; title, description, tags: `SHORTS_POST.md`.
+
+| Part | Level | Scene |
+|---|---|---|
+| part1 | Press Play | Play button pressed, beat drop, equaliser runner assembles, organ tags, level select |
+| part2 | 1 · Ignition | Brain signal to the adrenal glands, adrenaline; vessel opens wide; blood-flow mixing desk 20% → 80% |
+| part3 | 2 · Air | Lungs as speakers, breaths 12 → 40, air 6 → 100 L/min; blood cells race oxygen to the muscle |
+| part4 | 3 · Fuel | ATP battery drains in seconds; sugar and fat reactor recharges it; O2 runs low, acid, the burn |
+| part5 | 4 · Max Heart | Runner over an ECG, heart rate locks on 180; four 5 L jugs fill, 4X stamp |
+| part6 | 5 · Heat | 25% move / 75% heat bar, runner on fire, thermometer 37 → 38.5 °C, sweat jug to 1 L |
+| part7 | Bonus | Mirror-ball brain (endorphins, endocannabinoids), tape-stop + afterburn, stronger heart, LEVEL COMPLETE, loop |
+
+```
+for p in 1 2 3 4 5 6 7; do python3 voiceover.py part$p; done
+python3 render.py part4 --still 6,12      # check frames
+python3 render.py full                    # -> out/full.mp4 + out/full_share.mp4 (not in git)
+```
+
+# Style tests
 
 Three out-of-the-box directions for a 9:16 explainer, each with its own animation idea and caption system, rendered
 entirely in code (same kit as `../no-sleep`).

@@ -533,12 +533,84 @@ def bed(kind, d, seed=0):
             place(y, i * step, st(fft_filter(ton, 300, 5000) * 0.07, (i % 2 - 0.5) * 0.6, 0.008))
         pad = sum(np.sin(2 * np.pi * f * t + r.uniform(0, 6)) for f in (220, 277.2, 329.6)) * 0.03
         y += st(pad, 0, 0.015)
+    elif kind.startswith("drive"):
+        # a beat that follows the level: "drive<bpm>_<energy>" (energy 0 = kick and bass ... 3 = everything)
+        bpm_, lvl = (int(v) for v in kind[5:].split("_"))
+        y = drive(d, bpm_, lvl, seed)
     elif kind == "silence":
         y = np.zeros((len(t), 2))
     else:
         raise KeyError(kind)
     fade = np.minimum(1, np.minimum(t / 0.6, (d - t) / 0.8))[:, None]
     return y * np.clip(fade, 0, 1)
+
+
+_NOTE = {}
+
+
+def _tone(f, d, shape, lo, hi, decay):
+    key = (round(f, 2), round(d, 4), shape, lo, hi, decay)
+    if key not in _NOTE:
+        tb = T(d)
+        _NOTE[key] = fft_filter(osc(f, d, shape) * np.exp(-tb * decay), lo, hi)
+    return _NOTE[key]
+
+
+def drive(d, bpm_, lvl, seed=0):
+    """Four-on-the-floor synth track: kick, side-chained saw bass, hats, claps, a 16th arpeggio and a pad.
+    Bar 1 of every chord is beat 0 at t = 0, so the picture can lock to the same grid (beat = t * bpm / 60)."""
+    beat_ = 60 / bpm_
+    n = int(d / beat_) + 1
+    y = np.zeros((int(d * SR), 2))
+    r = np.random.default_rng(seed)
+    prog_ = ((55, 65.4, 82.4), (43.65, 65.4, 87.3), (65.4, 82.4, 98), (49, 73.4, 98))      # Am F C G
+    kick, hat, clap = SFX("kick"), None, None
+    hd = 0.06
+    hat = st(fft_filter(noise(hd, seed), 7000, 16000) * env(hd, 0.001, 0.02), 0.2, 0.004)
+    cd = 0.25
+    cn = fft_filter(noise(cd, seed + 1), 900, 5000)
+    ce = sum(env(cd, 0.001, 0.04) * (np.arange(len(cn)) >= int(o * SR)) for o in (0, 0.012, 0.024))
+    clap = with_tail(st(cn * ce * 0.8), 0.3, 1.0, 6000)
+    pump = np.ones(len(y))                         # side-chain: bass and pad duck on every kick
+    for b in range(n):
+        i0 = int(b * beat_ * SR)
+        k = np.arange(min(int(beat_ * SR), len(y) - i0)) / SR if i0 < len(y) else np.arange(0)
+        pump[i0:i0 + len(k)] = 1 - 0.75 * np.exp(-k * 9)
+    bass = np.zeros(len(y))
+    arp = np.zeros((len(y), 2))
+    for b in range(n):
+        ch = prog_[(b // 4) % 4]
+        t0 = b * beat_
+        place(y, t0, kick, 0.9)
+        if lvl >= 1:
+            place(y, t0 + beat_ / 2, hat, 0.5)
+        if lvl >= 2 and b % 2 == 1:
+            place(y, t0, clap, 0.55)
+        if lvl >= 3:
+            place(y, t0 + beat_ / 4, hat, 0.22)
+            place(y, t0 + beat_ * 3 / 4, hat, 0.22)
+        for e in range(2):                           # bass: off-beat eighths an octave apart
+            f = ch[0] * (2 if e else 1)
+            nd = beat_ / 2 * 0.9
+            place1(bass, t0 + e * beat_ / 2, _tone(f, nd, "saw", 30, 500 + 300 * lvl, 5), 0.32)
+        if lvl >= 1:
+            for s in range(4):                       # 16th arpeggio
+                f = ch[(b * 4 + s) % 3] * (4 if s % 2 == 0 else 8)
+                nd = beat_ / 4 * 0.9
+                place(arp, t0 + s * beat_ / 4, st(_tone(f, nd, "saw", 400, 2500 + 1500 * lvl, 14), (s % 2 - 0.5) * 0.5), 0.05 + 0.015 * lvl)
+    t = T(d)
+    pad = np.zeros(len(t))
+    bars = int(d / (beat_ * 4)) + 1
+    for i in range(bars):
+        ch = prog_[i % 4]
+        i0, i1 = int(i * beat_ * 4 * SR), min(len(t), int((i + 1) * beat_ * 4 * SR))
+        if i0 >= len(t):
+            break
+        tt = t[i0:i1]
+        pad[i0:i1] = sum(np.sin(2 * np.pi * f * 4 * (1 + det) * tt + r.uniform(0, 6)) for f in ch for det in (-0.004, 0.004))
+    pad = fft_filter(pad, 150, 2000) * 0.025 * (1 + lvl * 0.3)
+    y += st(bass * pump, 0, 0.0) + arp * pump[:, None] + st(pad * pump, 0, 0.015)
+    return y
 
 
 def pulse(d, bpm):
