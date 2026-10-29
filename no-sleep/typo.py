@@ -74,24 +74,32 @@ def spring(u, k=7.0, w=10.0):
 
 
 def reveal(c, s, x, y, size, t, t0, kind="semibold", rgb=PAPER, a=255, align="left", tracking=0.0, stagger=0.022,
-           dur=0.5, rise=0.42, blur=11.0, shadow=True):
-    """Text whose letters rise out of a blur, one after another, starting at t0."""
+           dur=0.5, rise=0.42, blur=11.0, shadow=True, outline=0.0):
+    """Text whose letters rise out of a blur, one after another, starting at t0. outline = dark stroke width."""
     if t < t0 - 0.02 or a <= 1:
         return
     f = font(kind, size)
     w = width(s, kind, size, tracking)
     cx = x - w / 2 if align == "center" else x - w if align == "right" else x
+    glyphs = []
     for i, ch in enumerate(s):
         u = prog(t, t0 + i * stagger, t0 + i * stagger + dur)
-        adv = f.measureText(ch) + tracking * size
         if u > 0 and ch != " ":
-            dy = size * rise * (1 - spring(u))
-            sg = blur * (1 - smooth(u)) ** 2
-            al = a * smooth(clamp(u * 1.8))
-            if shadow:
-                c.drawString(ch, cx, y + dy + size * 0.05, f, paint((0, 0, 0), al * 0.55, 6 + sg))
-            c.drawString(ch, cx, y + dy, f, paint(rgb, al, sg))
-        cx += adv
+            glyphs.append((ch, cx, y + size * rise * (1 - spring(u)), blur * (1 - smooth(u)) ** 2, a * smooth(clamp(u * 1.8))))
+        cx += f.measureText(ch) + tracking * size
+    # all shadows, then all outlines, then all fills, so no letter's outline cuts into its neighbour
+    if shadow:
+        for ch, gx, gy, sg, al in glyphs:
+            c.drawString(ch, gx, gy + size * 0.06, f, paint((0, 0, 0), al * 0.6, 7 + sg))
+    if outline > 0:
+        for ch, gx, gy, sg, al in glyphs:
+            op = paint((6, 6, 14), al * 0.92, sg)
+            op.setStyle(skia.Paint.kStroke_Style)
+            op.setStrokeWidth(outline)
+            op.setStrokeJoin(skia.Paint.kRound_Join)
+            c.drawString(ch, gx, gy, f, op)
+    for ch, gx, gy, sg, al in glyphs:
+        c.drawString(ch, gx, gy, f, paint(rgb, al, sg))
 
 
 def _clean(w):
@@ -107,7 +115,7 @@ class Captions:
     hide     {line_key: [(t0, t1)]} windows where captions are suppressed (a big on-screen title says it instead)
     """
 
-    def __init__(self, tm, anchors=None, emph=(), hide=None, size=78, max_words=3, max_chars=18, skip=(), accent=EMBER):
+    def __init__(self, tm, anchors=None, emph=(), hide=None, size=88, max_words=3, max_chars=17, skip=(), accent=EMBER):
         self.size, self.emph, self.accent = size, set(emph), accent
         self.hide = hide or {}
         self.phrases = []
@@ -158,31 +166,46 @@ class Captions:
         return dict(key=k, t0=words[0]["t0"] - 0.05, words=words)
 
     def draw(self, c, t):
+        """Spoken word: full white and a quick scale pop. Spoken words settle slightly dimmer. Emphasis words: accent
+        colour, display face, glow. Every word has a dark outline and shadow so it reads over any picture."""
         for p in self.phrases:
             if t < p["t0"] - 0.05 or t > p["t1"] + 0.4:
                 continue
             if any(a <= t <= b for a, b in self.hide.get(p["key"], ())):
                 continue
-            drift = -10 * prog(t, p["t0"], p["t1"])
+            drift = -8 * prog(t, p["t0"], p["t1"])
             for i, wd in enumerate(p["words"]):
-                ex = prog(t, p["t1"] + i * 0.03, p["t1"] + i * 0.03 + 0.22)     # exit: drift up + blur out
-                if ex >= 1:
+                ex = prog(t, p["t1"] + i * 0.03, p["t1"] + i * 0.03 + 0.2)      # exit: drift up + blur out
+                if ex >= 1 or t < wd["t0"] - 0.08:
                     continue
                 speaking = wd["t0"] - 0.05 <= t <= wd["t1"] + 0.08
-                rgb = PAPER if speaking or t < wd["t1"] else (200, 204, 222)
+                rgb = PAPER if speaking else (212, 216, 232)
                 if wd["emph"]:
-                    rgb = tuple(min(255, v + 30) for v in self.accent) if speaking else self.accent
+                    rgb = tuple(min(255, v + 35) for v in self.accent) if speaking else self.accent
                 a = 255 * (1 - smooth(ex))
                 y = wd["y"] + drift - 26 * smooth(ex)
+                ol = wd["size"] * 0.11
                 if ex > 0:
                     f = font(wd["kind"], wd["size"])
+                    op = paint((6, 6, 14), a * 0.9, 9 * ex)
+                    op.setStyle(skia.Paint.kStroke_Style)
+                    op.setStrokeWidth(ol)
+                    c.drawString(wd["text"], wd["x"], y, f, op)
                     c.drawString(wd["text"], wd["x"], y, f, paint(rgb, a, 9 * ex))
                     continue
+                u = prog(t, wd["t0"] - 0.06, wd["t0"] + 0.3)
+                sc = 1.0 + (0.2 if wd["emph"] else 0.1) * (1 - spring(u, 9.0, 12.0))       # pop as it is spoken
+                cx, cy = wd["x"] + wd["w"] / 2, y - wd["size"] * 0.34
+                c.save()
+                c.translate(cx, cy)
+                c.scale(sc, sc)
+                c.translate(-cx, -cy)
                 if wd["emph"] and t > wd["t0"]:
-                    gl = smooth(prog(t, wd["t0"], wd["t0"] + 0.4))
-                    label(c, wd["text"], wd["x"], y, wd["size"], wd["kind"], self.accent, 110 * gl, sigma=14)
+                    gl = smooth(prog(t, wd["t0"], wd["t0"] + 0.35))
+                    label(c, wd["text"], wd["x"], y, wd["size"], wd["kind"], self.accent, 120 * gl, sigma=18)
                 reveal(c, wd["text"], wd["x"], y, wd["size"], t, wd["t0"] - 0.06, wd["kind"], rgb, a,
-                       stagger=0.016 if wd["emph"] else 0.012, dur=0.42)
+                       stagger=0.014 if wd["emph"] else 0.01, dur=0.32, rise=0.3, outline=ol)
+                c.restore()
 
 
 class Counter:

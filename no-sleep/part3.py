@@ -11,7 +11,9 @@ TM = Timing(PART, VO)
 DURATION = _end + 0.5
 
 CARD_T = TM.word("B1", "twenty") - 0.15
-EQ_T = CARD_T + 1.45
+REACT_T = CARD_T + 1.3                          # the falling-mug gag
+DROP_T = TM.word("B1", "reaction") - 0.15
+EQ_T = TM.word("B1", "someone") - 0.2           # 24 h awake = 0.10 % alcohol
 GLASS_T = TM.word("B1", "blood") - 0.15
 GAUGE_T = TM.word("B1", "that is") - 0.1
 LIMIT_T = TM.word("B1", "legal") - 0.05
@@ -69,43 +71,152 @@ def drink(c, x, y, s, t, acc):
         c.drawCircle(x - s * 0.3 + i * s * 0.2, y - s * 0.1 + (1 - ph) * s * 0.3 - s * 0.3 * ph, 5, stroke((255, 255, 255), 2, 160 * (1 - ph)))
 
 
+SHARDS = [(math.radians(200 + 140 * hsh(i, 1)), 500 + 700 * hsh(i, 2), 14 + 16 * hsh(i, 3), 600 * (hsh(i, 4) - 0.5)) for i in range(11)]
+FLOOR = 1290
+
+
+def mug_y(t):
+    """Mug falls from the shelf under gravity and hits the floor."""
+    d = max(0.0, t - DROP_T)
+    return min(FLOOR - 40, 600 + 0.5 * 4200 * d * d)
+
+
+IMPACT_T = DROP_T + math.sqrt(2 * (FLOOR - 40 - 600) / 4200)
+
+
+def reaction_scene(c, t, pal):
+    room(c, t, pal, lamp=0.8, win=(-400, 0, 10, 10))
+    c.drawRect(skia.Rect.MakeXYWH(700, 640, 330, 22), fillp(mix(pal["dim"], (0, 0, 0), 0.2)))     # shelf
+    for i, (bx, bh, rgb) in enumerate(((730, 110, (120, 70, 40)), (770, 130, (60, 90, 130)), (812, 96, (150, 60, 60)))):
+        c.drawRRect(rrect(bx, 640 - bh, 34, bh, 4), fillp(rgb))
+    # the mug: wobbles, falls, smashes
+    if t < IMPACT_T:
+        wob = 6 * math.sin((t - DROP_T + 0.3) * 30) * smooth(prog(t, DROP_T - 0.3, DROP_T)) if t < DROP_T else 0
+        rot = 0 if t < DROP_T else 380 * (t - DROP_T)
+        mx = 930 + (0 if t < DROP_T else 60 * (t - DROP_T))
+        my = mug_y(t)
+        c.save()
+        c.translate(mx, my)
+        c.rotate(wob + rot)
+        mug(c, 0, 40, 85, 0, 255, 0.7 if t < DROP_T else 0, t)
+        c.restore()
+    else:
+        d = t - IMPACT_T
+        sp = out_cubic(prog(t, IMPACT_T, IMPACT_T + 0.5))                        # coffee spreads on the floor
+        c.drawOval(skia.Rect.MakeXYWH(960 - 170 * sp, FLOOR - 8 - 22 * sp, 340 * sp, 44 * sp), fillp((90, 54, 30), 230))
+        for ang, v, sz, spin in SHARDS:
+            x = 960 + math.cos(ang) * v * d * 0.5
+            y = min(FLOOR + 6, FLOOR - 30 + math.sin(ang) * v * d + 0.5 * 3000 * d * d)
+            c.save()
+            c.translate(x, y)
+            c.rotate(spin * d)
+            c.drawPath(path_of([(-sz, 0), (0, -sz * 0.7), (sz * 0.8, sz * 0.4)], True), fillp((245, 245, 250)))
+            c.restore()
+        if d < 0.25:
+            light(c, 960, FLOOR - 30, 260, (255, 240, 220), 160 * (1 - d / 0.25))
+    late = DROP_T + 0.85                                                         # Sam reacts much too late
+    reach = out_back(prog(t, late, late + 0.35), 1.6)
+    track = smooth(prog(t, DROP_T + 0.35, DROP_T + 0.9))
+    shocked = smooth(prog(t, late + 0.3, late + 0.5))
+    sam(c, 430, FLOOR, 135, t, lid=lerp(0.5, 0.1, shocked), bags=0.65, mouth="o" if shocked > 0.5 else -0.1,
+        look=(lerp(0.6, 1.0, track), lerp(-0.6, 0.8, track)), arm=reach, tilt=lerp(0, 8, reach))
+    # reaction-time bars
+    ka = smooth(prog(t, REACT_T + 0.2, REACT_T + 0.6))
+    if ka > 0:
+        label(c, "REACTION TIME", 72, 470, 28, "mono_bold", PAPER, 255 * ka, tracking=0.12)
+        for i, (name, rgb, t0, full) in enumerate((("RESTED", CYAN, DROP_T, 0.3), ("SAM", pal["acc"], DROP_T, 0.82))):
+            y = 520 + i * 56
+            label(c, name, 72, y + 26, 22, "mono", ASH, 255 * ka)
+            c.drawRRect(rrect(200, y, 470, 30, 15), fillp((0, 0, 0), 110 * ka))
+            g = full * out_cubic(prog(t, t0, t0 + (0.35 if i == 0 else 1.5)))
+            if g > 0.01:
+                c.drawRRect(rrect(200, y, 470 * g, 30, 15), fillp(rgb, 255 * ka))
+
+
+def drink(c, x, y, s, t, acc, slosh=0.0):
+    """A cocktail glass (x, y = bowl centre). slosh tilts the drink's surface."""
+    d = slosh * s * 0.16
+    c.drawPath(path_of([(x - s * 0.78, y - s * 0.5 + d), (x + s * 0.78, y - s * 0.5 - d), (x, y + s * 0.4)], True),
+               shaded(linear((0, y - s * 0.5), (0, y + s * 0.4), [mix(acc, (255, 255, 255), 0.3), mix(acc, (0, 0, 0), 0.2)])))
+    bowl = path_of([(x - s, y - s * 0.7), (x + s, y - s * 0.7), (x, y + s * 0.4)], True)
+    c.drawPath(bowl, stroke(PAPER, 8))
+    c.drawLine(x - s * 0.62, y - s * 0.6, x - s * 0.2, y + s * 0.1, stroke((255, 255, 255), 6, 90))   # glass highlight
+    c.drawLine(x, y + s * 0.4, x, y + s * 1.25, stroke(PAPER, 8))
+    c.drawLine(x - s * 0.5, y + s * 1.25, x + s * 0.5, y + s * 1.25, stroke(PAPER, 8))
+    c.drawLine(x + s * 0.1, y - s * 0.9 - d, x + s * 0.45, y - s * 0.62 - d, stroke((200, 190, 170), 4))   # cocktail stick
+    c.drawCircle(x + s * 0.45, y - s * 0.62 - d, s * 0.16, fillp((120, 200, 90)))
+    for i in range(4):
+        ph = (t * 0.5 + i / 4) % 1
+        c.drawCircle(x - s * 0.3 + i * s * 0.2, y - s * 0.1 + (1 - ph) * s * 0.3 - s * 0.3 * ph, 5, stroke((255, 255, 255), 2, 160 * (1 - ph)))
+
+
 def bac_scene(c, t, pal):
     acc = pal["acc"]
-    k1 = out_back(prog(t, EQ_T - 0.3, EQ_T + 0.2), 1.3)
-    k2 = out_back(prog(t, GLASS_T, GLASS_T + 0.5), 1.3)
-    ke = smooth(prog(t, GLASS_T - 0.2, GLASS_T + 0.2))
+    bg(c, pal)
+    light(c, 540, 820, 700, acc, 50)
+    # clock spins in from the left, hands racing then settling
+    k1 = prog(t, EQ_T, EQ_T + 0.55)
     if k1 > 0:
+        cx = lerp(-200, 280, out_back(k1, 1.4))
         c.save()
-        c.translate(280, 780)
-        c.scale(k1, k1)
-        clock_icon(c, 0, 0, 150, t, acc)
+        c.translate(cx, 780)
+        c.rotate(lerp(-200, 0, out_cubic(k1)))
+        clock_icon(c, 0, 0, 150, t * (1 + 9 * (1 - out_cubic(prog(t, EQ_T, EQ_T + 1.5)))), acc)
         c.restore()
-        label(c, "24 h awake", 280, 1010, 44, "bold", PAPER, 255 * smooth(k1), "center")
-    if ke > 0:
-        label(c, "=", 540, 830, 150, "display", acc, 255 * ke, "center")
+        reveal(c, "24 h awake", 280, 1010, 46, t, EQ_T + 0.35, "bold", PAPER, 255, "center", stagger=0.02, dur=0.3, rise=0.3, outline=5)
+    # glass drops in from above and sloshes
+    k2 = prog(t, GLASS_T - 0.1, GLASS_T + 0.45)
     if k2 > 0:
+        gy = lerp(-300, 760, out_back(k2, 1.8))
+        d = max(0.0, t - GLASS_T - 0.25)
+        slosh = math.exp(-d * 3.0) * math.sin(d * 13) if t > GLASS_T + 0.25 else 0.0
         c.save()
-        c.translate(810, 760)
-        c.scale(k2, k2)
-        drink(c, 0, 0, 140, t, acc)
+        c.translate(810, gy)
+        c.rotate(4 * slosh)
+        drink(c, 0, 0, 140, t, acc, slosh)
         c.restore()
-        label(c, "0.10% alcohol", 810, 1010, 44, "bold", PAPER, 255 * smooth(k2), "center")
-    kg = smooth(prog(t, GAUGE_T, GAUGE_T + 0.4))
-    if kg > 0:                                         # blood alcohol scale with the driving limits
-        x0, x1, y = 120, 960, 1200
+        reveal(c, "0.10% alcohol", 810, 1010, 46, t, GLASS_T + 0.35, "bold", PAPER, 255, "center", stagger=0.02, dur=0.3, rise=0.3, outline=5)
+    # the equals sign stamps down between them
+    ke = prog(t, GLASS_T + 0.3, GLASS_T + 0.5)
+    if ke > 0:
+        sc = lerp(2.2, 1.0, out_expo(ke))
+        c.save()
+        c.translate(540, 790)
+        c.scale(sc, sc)
+        c.drawRRect(rrect(-46, -38, 92, 22, 8), fillp(acc, 255 * smooth(ke * 2)))
+        c.drawRRect(rrect(-46, 16, 92, 22, 8), fillp(acc, 255 * smooth(ke * 2)))
+        c.restore()
+    # blood alcohol scale with the driving limits; the needle swings past and settles at 0.10
+    kg = prog(t, GAUGE_T - 0.1, GAUGE_T + 0.4)
+    if kg > 0:
+        x0, x1 = 120, 960
+        y = lerp(1500, 1200, out_cubic(kg))
+        ga = smooth(kg * 1.5)
         def X(v):
             return lerp(x0, x1, v / 0.12)
-        c.drawRRect(rrect(x0, y - 22, x1 - x0, 44, 22), fillp((0, 0, 0), 120 * kg))
-        c.drawRRect(rrect(X(0.05), y - 22, X(0.12) - X(0.05), 44, 22), fillp(RED, 110 * kg))
+        nv = 0.10 * out_back(prog(t, GAUGE_T + 0.2, GAUGE_T + 1.3), 2.0)
+        nv += 0.002 * math.sin(t * 9) * smooth(prog(t, GAUGE_T + 1.3, GAUGE_T + 1.8))
+        c.drawRRect(rrect(x0, y - 22, x1 - x0, 44, 22), fillp((0, 0, 0), 130 * ga))
+        over = smooth(prog(nv, 0.045, 0.055))
+        flash = 0.6 + 0.4 * math.sin(t * 14) if over > 0 else 0
+        c.drawRRect(rrect(X(0.05), y - 22, X(0.12) - X(0.05), 44, 22), fillp(RED, (70 + 110 * over * flash) * ga))
+        c.drawRRect(rrect(x0, y - 22, max(44, X(nv) - x0), 44, 22), fillp(acc, 150 * ga))
         for v in (0.0, 0.05, 0.08, 0.12):
-            c.drawLine(X(v), y - 34, X(v), y + 34, stroke(PAPER, 3, 200 * kg))
-            label(c, f"{v:.2f}%", X(v), y + 76, 24, "mono", ASH, 230 * kg, "center")
-        lk = smooth(prog(t, LIMIT_T, LIMIT_T + 0.4))
-        label(c, "DRIVING LIMIT", (X(0.05) + X(0.08)) / 2, y - 56, 24, "mono_bold", RED, 255 * lk, "center", tracking=0.1)
-        nv = 0.10 * out_cubic(prog(t, GAUGE_T, GAUGE_T + 1.0))
-        c.drawCircle(X(nv), y, 30, fillp(acc, 255 * kg))
-        light(c, X(nv), y, 90, acc, 120 * kg)
-        label(c, "SAM", X(nv), y + 9, 22, "mono_bold", INK, 255 * kg, "center")
+            c.drawLine(X(v), y - 34, X(v), y + 34, stroke(PAPER, 3, 200 * ga))
+            label(c, f"{v:.2f}%", X(v), y + 76, 24, "mono", ASH, 230 * ga, "center")
+        lk = prog(t, LIMIT_T, LIMIT_T + 0.2)
+        if lk > 0:
+            sc = lerp(1.8, 1.0, out_expo(lk))
+            c.save()
+            mx = (X(0.05) + X(0.08)) / 2
+            c.translate(mx, y - 64)
+            c.scale(sc, sc)
+            label(c, "DRIVING LIMIT", 0, 0, 26, "mono_bold", RED, 255 * smooth(lk * 2), "center", tracking=0.1)
+            c.restore()
+        light(c, X(nv), y, 110, acc, 140 * ga)
+        c.drawCircle(X(nv), y, 34, fillp(acc, 255 * ga))
+        c.drawCircle(X(nv), y, 34, stroke(PAPER, 4, 255 * ga))
+        label(c, "SAM", X(nv), y + 9, 22, "mono_bold", INK, 255 * ga, "center")
 
 
 def brain_scene(c, t, pal):
@@ -177,9 +288,13 @@ def fridge_scene(c, t, pal):
 def draw_frame(c, t):
     pal = pal_at(t)
     bg(c, pal)
-    if t < CARD_T + 1.2:
-        room(c, t, ACTS[1], moon=1.0, lamp=1.0)
-        sam(c, 400, 1290, 135, t, lid=0.25 + 0.3 * prog(t, 0, CARD_T), bags=0.5, mouth=0.0)
+    shx, shy = shake(t, IMPACT_T, 14, 8) if t < EQ_T else shake(t, GLASS_T + 0.5, 12, 8)
+    c.save()
+    c.translate(shx, shy)
+    if t < CARD_T:
+        c.drawPaint(fillp((0, 0, 0)))
+    elif t < EQ_T:
+        reaction_scene(c, t, pal)
     elif t < BRAIN_T:
         bac_scene(c, t, pal)
     elif t < METER_T:
@@ -188,7 +303,9 @@ def draw_frame(c, t):
         meters_scene(c, t, pal)
     else:
         fridge_scene(c, t, pal)
+    c.restore()
     MOTES.draw(c, t, (255, 220, 170), 0.6)
+    blink(c, t, EQ_T, 0.14)
     for tc in (BRAIN_T, METER_T, SNACK_T):
         blink(c, t, tc, 0.16)
     hour_card(c, t, CARD_T, 24, AMBER, 1.4)
@@ -205,7 +322,9 @@ def POST(t):
 
 def sfx_events():
     ev = [(CARD_T - 0.8, "riser", 0.6), (CARD_T, "trailer_hit", 0.9), (CARD_T + 0.02, "sub_drop", 0.6),
-          (EQ_T - 0.3, "pop", 0.6), (GLASS_T, "glass_ting", 0.45), (GAUGE_T, "swish", 0.4), (LIMIT_T, "low_hit", 0.5),
+          (DROP_T - 0.3, "tick_roll", 0.25), (DROP_T, "swish", 0.5), (IMPACT_T, "smash", 0.9), (DROP_T + 0.85, "whoosh", 0.35),
+          (EQ_T - 0.1, "whoosh", 0.55), (EQ_T + 0.4, "pop", 0.5), (GLASS_T - 0.1, "swish", 0.55), (GLASS_T + 0.3, "glass_ting", 0.5),
+          (GLASS_T + 0.45, "stamp", 0.7), (GAUGE_T - 0.1, "swish", 0.45), (GAUGE_T + 0.2, "riser", 0.3), (LIMIT_T, "low_hit", 0.6),
           (BRAIN_T - 0.2, "whoosh", 0.6), (AMYG_T, "heartbeat", 0.8), (AMYG_T + 0.6, "heartbeat", 0.8),
           (SIXTY_T, "counter", 0.5), (HUGE_T + 0.3, "low_hit", 0.7), (METER_T - 0.2, "swish", 0.5),
           (GHR_T, "riser", 0.35), (LEP_T, "descend", 0.4), (SNACK_T - 0.1, "fridge", 0.6), (SNACK_T + 0.2, "pop", 0.5),

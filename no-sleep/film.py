@@ -14,7 +14,7 @@ from premium import add, light  # noqa: F401
 from timing import Timing, schedule  # noqa: F401
 from typo import ASH, PAPER, Captions, Counter, font, label, paint, reveal, width  # noqa: F401
 
-PREMIUM, SAMPLES = True, 2
+PREMIUM, SAMPLES = True, 4
 
 # ---------------------------------------------------------------- palettes
 SAM = (201, 195, 255)
@@ -160,7 +160,7 @@ def hour_card(c, t, t0, num, acc, dur=1.4, sub="HOURS AWAKE"):
 
 # ---------------------------------------------------------------- Sam
 def sam(c, x, y, s, t, lid=0.0, bags=0.0, wide=0.0, mouth=0.6, look=(0.0, 0.0), tilt=0.0, a=255, blink_phase=0.0,
-        slump=0.0, outline=None, arm=0.0, prop=None):
+        slump=0.0, outline=None, arm=0.0, prop=None, idle=1.0):
     """Sam, in a lavender hoodie. (x, y) = bottom centre, s = head radius.
     lid 0..1 = upper eyelids closing, bags 0..1 = dark circles, wide 0..1 = staring eyes, mouth -1 frown .. 1 smile,
     slump 0..1 = head drops forward, outline = rgb draws an x-ray line version instead."""
@@ -171,8 +171,10 @@ def sam(c, x, y, s, t, lid=0.0, bags=0.0, wide=0.0, mouth=0.6, look=(0.0, 0.0), 
     c.save()
     c.translate(x, y)
     c.rotate(tilt)
-    bw, bh = s * 2.1, s * 2.5
-    hy = -bh - s * 0.72 + slump * s * 0.35
+    br = math.sin(t * 2.3 + x * 0.01) * idle                 # breathing: body swells, head rides on it
+    bw, bh = s * 2.1 * (1 - 0.006 * br), s * 2.5 * (1 + 0.014 * br)
+    hy = -bh - s * 0.72 + slump * s * 0.35 + s * 0.02 * math.sin(t * 2.3 + 0.7 + x * 0.01) * idle
+    head_tilt = 2.2 * math.sin(t * 0.9 + x * 0.003) * idle
     if outline is None:
         c.drawOval(skia.Rect.MakeXYWH(-bw * 0.62, -s * 0.12, bw * 1.24, s * 0.24), blur(fillp((0, 0, 0), 90), 10))
     body = skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(-bw / 2, -bh, bw, bh), s * 0.85, s * 0.85)
@@ -219,7 +221,7 @@ def sam(c, x, y, s, t, lid=0.0, bags=0.0, wide=0.0, mouth=0.6, look=(0.0, 0.0), 
     # head
     c.save()
     c.translate(0, hy)
-    c.rotate(slump * 8)
+    c.rotate(slump * 8 + head_tilt)
     c.drawCircle(s * 0.06, s * 0.1, s, blur(fillp((0, 0, 0), 60), s * 0.12))
     c.drawCircle(0, 0, s, shaded(radial((-s * 0.35, -s * 0.4), s * 1.6, [mix(SAM, (255, 255, 255), 0.3), SAM, mix(SAM, SAM_DK, 0.3)], [0, 0.5, 1])))
     tuft = skia.Path()

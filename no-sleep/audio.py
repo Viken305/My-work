@@ -352,6 +352,19 @@ def SFX(kind):
             b = boom(70, 40, 0.3, 0.06)
             place1(y, tt, b, g)
         return st(y * 0.9)
+    if kind == "smash":
+        d = 1.6
+        t = T(d)
+        y = fft_filter(noise(d), 1500, 12000) * np.exp(-t * 18) * 0.9
+        for i in range(14):                            # ceramic fragments ringing and skittering
+            tt = R.uniform(0, 0.5) ** 1.5
+            tb = T(0.25)
+            f0 = R.uniform(2200, 6500)
+            g = np.sin(2 * np.pi * f0 * tb) * np.exp(-tb * R.uniform(25, 60))
+            place1(y, tt, g, R.uniform(0.15, 0.4))
+        b = boom(180, 90, 0.25, 0.05)
+        y[:len(b)] += b * 0.6
+        return with_tail(st(norm(y) * 0.85, 0.4, 0.008), 0.25, 1.4, 7000)
     if kind == "pour":
         d = 2.2
         t = T(d)
