@@ -24,6 +24,7 @@ GOOD_T = VO["D2"] - 0.3
 DEEP_T = TM.word("D2", "deep") - 0.15
 DRAIN_T = TM.word("D2", "drains") - 0.4
 END_T = VO["D3"] - 0.2
+NINE_T = TM.word("D3", "seven") - 0.15
 JAR_T = TM.word("D3", "remember") - 0.1
 HANDLE_T = TM.end("D3") + 0.3
 LOOP_T = DURATION - 0.45                           # blink back into the opening eye
@@ -32,7 +33,7 @@ CAPS = Captions(TM, anchors={k: (W / 2, 1450) for k in ("D1", "D4", "D2", "D3")}
                 emph={"seventy", "two", "breathe.", "hallucinate.", "record?", "eleven", "days."},
                 hide={"D1": [(CARD_T, CARD_T + 1.25)], "D3": [(JAR_T, DURATION)]})
 CAPS_CALM = Captions(TM, anchors={"D2": (W / 2, 1450), "D3": (W / 2, 1450)}, accent=CYAN,
-                     emph={"good", "news?", "deep", "sleep,", "drains."}, skip=("D1", "D4"), hide={"D3": [(JAR_T, DURATION)]})
+                     emph={"good", "news?", "deep", "sleep,", "drains.", "seven", "nine"}, skip=("D1", "D4"), hide={"D3": [(JAR_T, DURATION)]})
 MOTES = Motes(40, 9)
 YEAR = Counter("1964", 200, "display")
 HRS = Counter("264", 240, "display")
@@ -137,18 +138,36 @@ def level72():
     return 0.04 + 0.92
 
 
+NIGHTS = Counter("7-9", 380, "display")
+
+
 def ending(c, t):
     pal = ACTS[1]
     bg(c, pal)
-    k = out_back(prog(t, END_T, END_T + 0.5), 1.2)
-    c.save()
-    c.translate(540, 1110)
-    sc = lerp(0.8, 1.15, k)
-    c.scale(sc, sc)
-    jar(c, 0, 0, 230, 430, 0.04 + 0.08 * smooth(prog(t, END_T, DURATION)), t, CYAN, 1.0, label_a=0.0)
-    c.restore()
-    reveal(c, "REMEMBER", W / 2, 1330, 130, t, JAR_T, "display", PAPER, 255, "center", stagger=0.03, dur=0.4, blur=12)
-    reveal(c, "THE JAR", W / 2, 1460, 130, t, JAR_T + 0.3, "display", CYAN, 255, "center", stagger=0.03, dur=0.4, blur=12)
+    light(c, 540, 900, 700, CYAN, 40)
+    out = smooth(prog(t, JAR_T - 0.25, JAR_T + 0.05))
+    if t < JAR_T + 0.1:                                # the takeaway number
+        a = 255 * (1 - out)
+        if t > NINE_T:
+            NIGHTS.draw(c, 540, 980, t, NINE_T, 0.8, PAPER, a, "center")
+        reveal(c, "HOURS A NIGHT", W / 2, 1090, 56, t, NINE_T + 0.5, "mono_bold", CYAN, a, "center", tracking=0.2, stagger=0.02, dur=0.3, blur=8)
+        for i in range(9):                             # nine little moons for nine hours
+            k = smooth(prog(t, NINE_T + 0.6 + i * 0.06, NINE_T + 0.8 + i * 0.06))
+            mx, my = 540 + (i - 4) * 96, 620
+            col_ = CYAN if i < 7 else (90, 130, 200)
+            c.drawCircle(mx, my, 28 * k, fillp(col_, a))
+            c.drawCircle(mx + 12, my - 8, 25 * k, fillp(pal["top"], a))
+        label(c, "for most adults", W / 2, 1160, 38, "regular", ASH, a * smooth(prog(t, NINE_T + 0.8, NINE_T + 1.1)), "center")
+    k = out_back(prog(t, JAR_T - 0.05, JAR_T + 0.45), 1.3)
+    if t > JAR_T - 0.05:
+        c.save()
+        c.translate(540, 1110)
+        sc = lerp(0.6, 1.15, k)
+        c.scale(sc, sc)
+        jar(c, 0, 0, 230, 430, 0.04 + 0.06 * smooth(prog(t, JAR_T, DURATION)), t, CYAN, 1.0, label_a=0.0)
+        c.restore()
+    reveal(c, "REMEMBER", W / 2, 1330, 130, t, JAR_T, "display", PAPER, 255, "center", stagger=0.03, dur=0.4, blur=12, outline=10)
+    reveal(c, "THE JAR", W / 2, 1460, 130, t, JAR_T + 0.3, "display", CYAN, 255, "center", stagger=0.03, dur=0.4, blur=12, outline=10)
     handle(c, t, HANDLE_T, y=470)
 
 
@@ -202,6 +221,7 @@ def sfx_events():
           (REC_T + 0.2, "counter", 0.5), (DAYS_T, "counter", 0.5)]
     ev += [(DAYS_T + 0.1 + i * 0.12, "tick", 0.6) for i in range(11)]
     ev += [(GOOD_T, "glass_ting", 0.5), (GOOD_T + 0.1, "shimmer", 0.5), (DRAIN_T, "pour", 0.45), (END_T, "whoosh", 0.4),
+           (NINE_T, "counter", 0.45), (NINE_T + 0.6, "shimmer", 0.35), (JAR_T - 0.1, "whoosh", 0.4),
            (JAR_T, "low_hit", 0.5), (LOOP_T, "swish", 0.5)]
     tt = 0.5
     while tt < GOOD_T:

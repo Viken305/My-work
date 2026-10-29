@@ -1,6 +1,6 @@
 # 72 Hours Without Sleep: style guide
 
-A 9:16 Short (1:45) rendered entirely in code. The style is **"Night Shift" motion graphics**: one character, Sam, and
+A 9:16 Short (2:16) rendered entirely in code. The style is **"Night Shift" motion graphics**: one character, Sam, and
 one long night. A clock HUD and a 0–72 h timeline sit at the top of every shot, so viewers always know where they are.
 
 ## The picture gets tired too
@@ -26,8 +26,9 @@ one long night. A clock HUD and a 0–72 h timeline sit at the top of every shot
 - **Martian Mono** for the HUD, labels and numbers.
 
 ## Captions
-Word-synced from the real audio (same system as the other Shorts). Spoken word in white; emphasis words switch to the
-condensed display face in upper case, in the act's accent colour. Max 3 words per phrase, kept above y = 1480 so the
+Word-synced from the real audio (same system as the other Shorts), 88 px Atkinson Bold with a dark outline and a soft
+shadow so they read over any picture. The spoken word pops (a quick 10 % scale spring); emphasis words switch to the
+condensed display face in upper case, in the act's accent colour, with a glow and a bigger pop. Max 3 words per phrase, kept above y = 1480 so the
 Shorts interface never covers them. In the hallucination they are drawn after the post pass, so they stay readable
 while the picture warps.
 

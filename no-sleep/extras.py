@@ -1,6 +1,6 @@
 """Storyboard sheet, Shorts thumbnail and an .srt caption file, all from the real film code and timings.
 
-  python3 extras.py storyboard   -> out/storyboard.png (15 key frames with timecodes)
+  python3 extras.py storyboard   -> out/storyboard.png (20 key frames with timecodes)
   python3 extras.py thumb        -> out/thumb_short.png (1080x1920)
   python3 extras.py srt          -> out/captions_en.srt
 """
@@ -15,21 +15,26 @@ from script import PARTS
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out")
 BOARD = [  # (part, local time, shot title)
-    ("part1", 3.2, "Cold open: the eye"),
-    ("part1", 6.2, "Title: 72 hours without sleep"),
+    ("part1", 1.15, "Cold open: the lid fights sleep"),
+    ("part1", 6.6, "Title: 72 hours without sleep"),
     ("part2", 2.5, "Hour 0: Sam wakes at 07:00"),
-    ("part2", 14.5, "Adenosine jar, coffee sleeve"),
+    ("part2", 13.5, "Adenosine jar, coffee sleeve"),
+    ("part2", 22.4, "04:00: body clock at its lowest"),
     ("part3", 1.0, "Hour 24 slam"),
-    ("part3", 10.5, "24 h awake = 0.10% alcohol"),
-    ("part3", 16.5, "Amygdala +60%"),
-    ("part3", 26.0, "Hunger hormones, the fridge"),
-    ("part4", 7.5, "Hour 36: body on alarm"),
-    ("part4", 16.0, "Hour 48: eyes open, brain off"),
-    ("part4", 22.5, "Microsleep: 3 s = 90 m"),
+    ("part3", 3.15, "Reaction time: the mug smashes"),
+    ("part3", 10.6, "24 h awake = 0.10% alcohol"),
+    ("part3", 17.0, "Amygdala +60%"),
+    ("part3", 25.9, "Hippocampus: 40% less memory"),
+    ("part3", 34.0, "Hunger hormones, the fridge"),
+    ("part4", 5.5, "Hour 36: body on alarm"),
+    ("part4", 18.9, "Beta-amyloid +5%"),
+    ("part4", 27.0, "Hour 48: eyes open, brain off"),
+    ("part4", 33.5, "Microsleep: 3 s = 90 m"),
     ("part5", 3.0, "Hour 72: the walls breathe"),
     ("part5", 13.6, "The record: 264 hours"),
-    ("part5", 17.0, "Recovery: deep sleep, jar drains"),
-    ("part5", 26.5, "Remember the jar"),
+    ("part5", 17.0, "Recovery: deep sleep"),
+    ("part5", 24.8, "7-9 hours a night"),
+    ("part5", 29.0, "Remember the jar"),
 ]
 
 
@@ -54,7 +59,7 @@ def storyboard():
     c = s.getCanvas()
     c.drawPaint(fillp((10, 12, 22)))
     label(c, "72 HOURS WITHOUT SLEEP", pad, 82, 64, "display", PAPER, 255)
-    label(c, f"STORYBOARD · 9:16 SHORT · {tc(total)} · 15 KEY FRAMES", pad, 124, 22, "mono", ASH, 255, tracking=0.08)
+    label(c, f"STORYBOARD · 9:16 SHORT · {tc(total)} · {len(BOARD)} KEY FRAMES", pad, 124, 22, "mono", ASH, 255, tracking=0.08)
     for i, (part, t, title) in enumerate(BOARD):
         mod = importlib.import_module(part)
         img = Image.fromarray(render.frame(mod, t)).resize((tw, th), Image.LANCZOS)

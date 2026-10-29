@@ -16,6 +16,12 @@ XRAY_T = CARD1_T + 1.3
 EMERG_T = TM.word("C1", "emergency") - 0.1
 STRESS_T = TM.word("C1", "stress") - 0.1
 INFL_T = TM.word("C1", "inflammation") - 0.1
+AMY_T = VO["C4"] - 0.3                          # the brain's cleanup slows; beta amyloid builds up
+SLOW_T = TM.word("C4", "slows") - 0.1
+STUDY_T = TM.word("C4", "one study") - 0.1
+BETA_T = TM.word("C4", "beta") - 0.1
+ALZ_T = TM.word("C4", "alzheimer's") - 0.1
+FIVE_T = TM.word("C4", "five") - 0.1
 CARD2_T = TM.word("C2", "forty") - 0.15
 FACE_T = CARD2_T + 1.3
 MICRO_T = TM.word("C2", "microsleeps") - 0.05
@@ -26,8 +32,8 @@ ROAD_T = TM.word("C3", "at highway") - 0.25
 FIELD_T = TM.word("C3", "football") - 0.25
 OUT_T = DURATION - 0.22
 
-CAPS = Captions(TM, anchors={k: (W / 2, 1450) for k in ("C1", "C2", "C3")}, accent=RED,
-                emph={"thirty", "six", "emergency.", "stress", "inflammation", "forty", "eight", "microsleeps.",
+CAPS = Captions(TM, anchors={k: (W / 2, 1450) for k in ("C1", "C4", "C2", "C3")}, accent=RED,
+                emph={"cleanup", "slows", "beta", "amyloid,", "alzheimer's,", "five", "thirty", "six", "emergency.", "stress", "inflammation", "forty", "eight", "microsleeps.",
                       "blackouts,", "open.", "notice.", "football", "field."},
                 hide={"C1": [(CARD1_T, CARD1_T + 1.25)], "C2": [(CARD2_T, CARD2_T + 1.25)]})
 MOTES = Motes(36, 8)
@@ -73,6 +79,60 @@ def xray_scene(c, t, pal):
         ax = x + (width(txt, "mono_bold", 32, 0.05) + 40) * (1 if side < 0 else -1)
         c.drawLine(ax, y0 + 10, ax, y0 - 40, stroke(RED if side > 0 else acc, 7, 255 * a))
         c.drawPath(path_of([(ax - 16, y0 - 24), (ax, y0 - 44), (ax + 16, y0 - 24)]), stroke(RED if side > 0 else acc, 7, 255 * a))
+
+
+AMY_PCT = Counter("+5%", 190, "display")
+SPECKS = [(hsh(i, 31), hsh(i, 32), hsh(i, 33)) for i in range(38)]
+
+
+def amyloid_scene(c, t, pal):
+    acc = pal["acc"]
+    k = in_out(prog(t, AMY_T, AMY_T + 1.0))
+    cx, cy, s = 540, 860, 300
+    c.save()
+    c.translate(cx, cy)
+    sc = lerp(0.95, 1.05, k)
+    c.scale(sc, sc)
+    brain(c, 0, 0, s, t, acc=mix(AMBER, (200, 120, 140), 0.35))
+    from engine import smooth_closed
+    clip = smooth_closed([(u * s, v * s) for u, v in ((-1.0, 0.15), (-0.98, -0.3), (-0.75, -0.7), (-0.3, -0.92), (0.2, -0.9),
+                         (0.62, -0.7), (0.92, -0.3), (0.95, 0.12), (0.78, 0.42), (0.45, 0.52), (0.2, 0.7), (-0.05, 0.62),
+                         (-0.45, 0.6), (-0.85, 0.45))])
+    c.save()
+    c.clipPath(clip, doAntiAlias=True)
+    slow = smooth(prog(t, SLOW_T, SLOW_T + 1.2))
+    flow = 1 - 0.85 * slow                             # the cleaning fluid slows to a crawl
+    for i in range(9):                                 # cleaning fluid washing through
+        y = (-0.8 + i * 0.18) * s
+        ph = (t * 0.9 * flow + i * 0.37) % 1.0
+        x0 = (-1.1 + 2.2 * ph) * s
+        c.drawLine(x0 - 160, y + 20 * math.sin(i), x0 + 40, y + 20 * math.sin(i), stroke(CYAN, 14, 200 * (1 - 0.55 * slow)))
+    n = int(len(SPECKS) * smooth(prog(t, AMY_T + 0.4, FIVE_T + 0.6)))
+    for i in range(n):                                 # waste builds up and clumps
+        u, v, r = SPECKS[i]
+        px, py = (-0.8 + 1.6 * u) * s, (-0.7 + 1.2 * v) * s
+        kk = smooth(prog(t, AMY_T + 0.6 + i * 0.22, AMY_T + 0.9 + i * 0.22))
+        rr = (5 + 6 * r) * kk
+        light(c, px, py, rr * 3, (255, 190, 90), 60 * kk)
+        c.drawCircle(px, py, rr, fillp((255, 214, 120), 240 * kk))
+    c.restore()
+    c.restore()
+    sk = smooth(prog(t, STUDY_T, STUDY_T + 0.3))
+    if sk > 0:                                         # study tag
+        tag = "1 SLEEPLESS NIGHT · PNAS 2018"
+        tw = width(tag, "mono_bold", 24, 0.06)
+        c.drawRRect(rrect(540 - tw / 2 - 24, 470, tw + 48, 54, 27), fillp((0, 0, 0), 150 * sk))
+        c.drawRRect(rrect(540 - tw / 2 - 24, 470, tw + 48, 54, 27), stroke(PAPER, 2, 120 * sk))
+        label(c, tag, 540, 506, 24, "mono_bold", PAPER, 255 * sk, "center", tracking=0.06)
+    bk = smooth(prog(t, BETA_T, BETA_T + 0.4))
+    if bk > 0:
+        label(c, "BETA-AMYLOID", 80, 1160, 36, "mono_bold", (255, 214, 120), 255 * bk, tracking=0.06)
+        c.drawLine(300, 1120, 420, 1000, stroke((255, 214, 120), 3, 200 * bk))
+    ak = smooth(prog(t, ALZ_T, ALZ_T + 0.4))
+    if ak > 0:
+        label(c, "linked to Alzheimer's", 80, 1208, 34, "regular", ASH, 255 * ak)
+    if t > FIVE_T:
+        AMY_PCT.draw(c, 1000, 1350, t, FIVE_T, 0.6, RED, 255, "right")
 
 
 def face_scene(c, t, pal):
@@ -144,14 +204,17 @@ def road_scene(c, t, pal):
 def draw_frame(c, t):
     pal = pal_at(t)
     bg(c, pal)
-    if t < CARD2_T + 1.2:
+    if t < AMY_T:
         xray_scene(c, t, pal)
+    elif t < CARD2_T + 1.2:
+        amyloid_scene(c, t, pal)
     elif t < ROAD_T:
         face_scene(c, t, pal)
     else:
         road_scene(c, t, pal)
     MOTES.draw(c, t, (255, 190, 200), 0.5)
     blink(c, t, ROAD_T, 0.16)
+    blink(c, t, AMY_T, 0.16)
     hour_card(c, t, CARD1_T, 36, mix(AMBER, RED, 0.25), 1.35)
     hour_card(c, t, CARD2_T, 48, RED, 1.35)
     hud(c, t, hour_at(t), pal["acc"], 1.0, glitch=0.4 * smooth(prog(t, CARD2_T, CARD2_T + 1)))
@@ -177,6 +240,8 @@ def sfx_events():
     ev = [(CARD1_T - 0.8, "riser", 0.55), (CARD1_T, "trailer_hit", 0.85), (CARD1_T + 0.02, "sub_drop", 0.6),
           (XRAY_T, "shimmer", 0.3), (EMERG_T, "heartbeat", 0.8), (EMERG_T + 0.55, "heartbeat", 0.8),
           (EMERG_T + 1.1, "heartbeat", 0.8), (STRESS_T, "pop", 0.5), (INFL_T, "boil", 0.35),
+          (AMY_T - 0.15, "swish", 0.45), (SLOW_T, "descend", 0.35), (STUDY_T, "paper_slap", 0.5), (BETA_T, "boil", 0.3),
+          (FIVE_T, "counter", 0.5), (FIVE_T + 0.6, "low_hit", 0.5),
           (CARD2_T - 0.8, "riser_dark", 0.6), (CARD2_T, "trailer_hit", 0.95), (CARD2_T + 0.02, "sub_drop", 0.7),
           (OPEN_T, "glass_ting", 0.3), (ROAD_T - 0.2, "car_pass", 0.8), (ROAD_T + 0.9, "rumble_strip", 0.7),
           (FIELD_T, "low_hit", 0.6), (FIELD_T + 0.3, "horn", 0.35), (OUT_T - 0.1, "swish", 0.5)]

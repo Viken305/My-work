@@ -1,6 +1,6 @@
 # 72 Hours Without Sleep
 
-A 9:16 YouTube Short / Reel (1:45) about what happens to your body at 24, 48 and 72 hours without sleep, rendered
+A 9:16 YouTube Short / Reel (2:16) about what happens to your body at 24, 48 and 72 hours without sleep, rendered
 entirely in code: vector animation, captions, music and sound effects. One character, Sam, through one long night.
 
 | File | What |
@@ -15,11 +15,13 @@ entirely in code: vector animation, captions, music and sound effects. One chara
 
 | Part | What | Length |
 |---|---|---|
-| 1 | Hook: the eye that won't close, title | 0:09 |
-| 2 | Hours 0–16: Sam, the adenosine jar, coffee | 0:16 |
-| 3 | Hour 24: 0.10 % alcohol, amygdala +60 %, hunger hormones | 0:28 |
-| 4 | Hours 36–48: body on alarm, microsleeps, the road | 0:24 |
-| 5 | Hour 72: hallucinations, the 1964 record, recovery, "remember the jar" | 0:29 |
+| 1 | Hook: the eye that won't close (eye darts, lid fights, heartbeat), title slam | 0:09 |
+| 2 | Hours 0–21: Sam, the adenosine jar, coffee, the 04:00 body-clock low | 0:25 |
+| 3 | Hour 24: the falling-mug gag, 0.10 % alcohol, amygdala +60 %, memory −40 %, hunger hormones | 0:35 |
+| 4 | Hours 36–48: body on alarm, beta-amyloid +5 %, microsleeps, the road | 0:35 |
+| 5 | Hour 72: hallucinations, the 1964 record, recovery, 7–9 hours, "remember the jar" | 0:31 |
+
+`python3 render.py test20` renders the 21-second test cut (hook + hour 24 to the driving limit).
 
 ## Build
 Needs Python 3, FFmpeg and `pip install -r requirements.txt` (on Linux servers also `libegl1` for Skia and

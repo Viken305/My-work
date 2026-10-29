@@ -22,14 +22,17 @@ DIM_T = TM.word("B2", "emotional") - 0.1
 AMYG_T = TM.word("B2", "amygdala") - 0.1
 SIXTY_T = TM.word("B2", "sixty") - 0.1
 HUGE_T = TM.word("B2", "small") - 0.05
+MEM_T = VO["B4"] - 0.3                          # memory: cards fly into the hippocampus, 40 % bounce off
+HIPPO_T = TM.word("B4", "hippocampus") - 0.1
+FORTY_T = TM.word("B4", "forty") - 0.1
 METER_T = VO["B3"] - 0.35
 GHR_T = TM.word("B3", "hunger") - 0.1
 LEP_T = TM.word("B3", "full") - 0.1
 SNACK_T = TM.word("B3", "hello") - 0.2
 OUT_T = DURATION - 0.22
 
-CAPS = Captions(TM, anchors={k: (W / 2, 1450) for k in ("B1", "B2", "B3")}, accent=AMBER,
-                emph={"twenty", "four", "zero", "point", "one", "percent.", "legal", "limit", "amygdala", "sixty",
+CAPS = Captions(TM, anchors={k: (W / 2, 1450) for k in ("B1", "B2", "B4", "B3")}, accent=AMBER,
+                emph={"memory", "hippocampus,", "forty", "less", "twenty", "four", "zero", "point", "one", "percent.", "legal", "limit", "amygdala", "sixty",
                       "huge.", "hunger", "rises", "full", "drops.", "junk"},
                 hide={"B1": [(CARD_T, CARD_T + 1.3)]})
 MOTES = Motes(40, 5)
@@ -243,6 +246,80 @@ def brain_scene(c, t, pal):
         PCT.draw(c, 540, 1345, t, SIXTY_T, 0.7, RED, 255, "center")
 
 
+MEM_PCT = Counter("-40%", 190, "display")
+CARDS = [(i, 1.0 if i % 5 in (1, 3) else 0.0, hsh(i, 21), "A7BX3K9Q2ZM5R8PW4N"[i]) for i in range(18)]
+
+
+def hippocampus(cx, cy, s):
+    """A curled seahorse-like tube inside the brain (path)."""
+    p = skia.Path()
+    p.moveTo(cx - 0.32 * s, cy + 0.14 * s)
+    p.cubicTo(cx - 0.18 * s, cy + 0.42 * s, cx + 0.16 * s, cy + 0.44 * s, cx + 0.26 * s, cy + 0.26 * s)
+    p.cubicTo(cx + 0.34 * s, cy + 0.1 * s, cx + 0.16 * s, cy + 0.02 * s, cx + 0.1 * s, cy + 0.14 * s)
+    return p
+
+
+def memory_scene(c, t, pal):
+    acc = pal["acc"]
+    k = in_out(prog(t, MEM_T, MEM_T + 0.8))
+    c.save()
+    c.translate(540, lerp(840, 820, k))
+    sc = lerp(1.0, 1.08, k)
+    c.scale(sc, sc)
+    brain(c, 0, 0, 290, t, front_dim=0.6, amyg=0.3 * (1 - k), acc=acc)
+    hk = smooth(prog(t, HIPPO_T, HIPPO_T + 0.4))
+    hp = hippocampus(0, 0, 290)
+    glow_p = stroke(CYAN, 34, 90 * (0.3 + 0.7 * hk))
+    glow_p.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, 14))
+    c.drawPath(hp, glow_p)
+    c.drawPath(hp, stroke(CYAN, 16, 255 * (0.4 + 0.6 * hk)))
+    c.restore()
+    tx, ty = 540 + 0.0 * 290 * sc, 820 + 0.3 * 290 * sc                         # where the cards are headed
+    if hk > 0:
+        label(c, "HIPPOCAMPUS", 1000, 1160, 34, "mono_bold", CYAN, 255 * hk, "right", tracking=0.06)
+        label(c, "saves new memories", 1000, 1204, 30, "regular", ASH, 255 * hk, "right")
+        c.drawLine(820, 1130, tx + 70, ty + 30, stroke(CYAN, 3, 200 * hk))
+    for i, bounce, r, ch in CARDS:                     # new information arriving
+        t0 = MEM_T + 0.4 + i * 0.33
+        u = prog(t, t0, t0 + 0.55)
+        if u <= 0:
+            continue
+        side = -1 if i % 2 else 1
+        sx, sy = W / 2 + side * 660, 480 + 760 * r
+        rejected = bounce > 0
+        if not rejected:
+            if u >= 1:
+                continue
+            e = in_cubic(u)
+            x, y = lerp(sx, tx, e), lerp(sy, ty, e)
+            sz, a = lerp(120, 36, e), 255 * (1 - smooth(prog(u, 0.85, 1)))
+            rgb = CYAN
+        else:
+            e = out_cubic(min(1, u / 0.55))
+            x, y = lerp(sx, tx, 0.75 * e), lerp(sy, ty, 0.75 * e)
+            d = max(0, t - t0 - 0.3)
+            x += side * 260 * d
+            y += -300 * d + 1400 * d * d
+            sz, a = lerp(120, 80, e), 255 * (1 - smooth(prog(t, t0 + 0.9, t0 + 1.2)))
+            rgb = RED
+        if a <= 1:
+            continue
+        c.save()
+        c.translate(x, y)
+        c.rotate(side * 20 * (1 - u) + (side * 200 * max(0, t - t0 - 0.3) if rejected else 0))
+        c.drawRRect(rrect(-sz / 2, -sz / 2, sz, sz, sz * 0.18), fillp((14, 16, 30), a))
+        c.drawRRect(rrect(-sz / 2, -sz / 2, sz, sz, sz * 0.18), stroke(rgb, max(2, sz * 0.06), a))
+        label(c, ch, 0, sz * 0.2, sz * 0.55, "mono_bold", rgb, a, "center")
+        if rejected and t > t0 + 0.3:                  # bounced off: crossed out
+            xk = smooth(prog(t, t0 + 0.3, t0 + 0.45))
+            q = sz * 0.6 * xk
+            c.drawLine(-q, -q, q, q, stroke(RED, 7, a))
+            c.drawLine(-q, q, q, -q, stroke(RED, 7, a))
+        c.restore()
+    if t > FORTY_T:
+        MEM_PCT.draw(c, 540, 1345, t, FORTY_T, 0.7, RED, 255, "center")
+
+
 def meters_scene(c, t, pal):
     k = smooth(prog(t, METER_T, METER_T + 0.4))
     g = 0.3 + 0.62 * out_cubic(prog(t, GHR_T, GHR_T + 1.1))
@@ -297,8 +374,10 @@ def draw_frame(c, t):
         reaction_scene(c, t, pal)
     elif t < BRAIN_T:
         bac_scene(c, t, pal)
-    elif t < METER_T:
+    elif t < MEM_T:
         brain_scene(c, t, pal)
+    elif t < METER_T:
+        memory_scene(c, t, pal)
     elif t < SNACK_T:
         meters_scene(c, t, pal)
     else:
@@ -326,7 +405,8 @@ def sfx_events():
           (EQ_T - 0.1, "whoosh", 0.55), (EQ_T + 0.4, "pop", 0.5), (GLASS_T - 0.1, "swish", 0.55), (GLASS_T + 0.3, "glass_ting", 0.5),
           (GLASS_T + 0.45, "stamp", 0.7), (GAUGE_T - 0.1, "swish", 0.45), (GAUGE_T + 0.2, "riser", 0.3), (LIMIT_T, "low_hit", 0.6),
           (BRAIN_T - 0.2, "whoosh", 0.6), (AMYG_T, "heartbeat", 0.8), (AMYG_T + 0.6, "heartbeat", 0.8),
-          (SIXTY_T, "counter", 0.5), (HUGE_T + 0.3, "low_hit", 0.7), (METER_T - 0.2, "swish", 0.5),
+          (SIXTY_T, "counter", 0.5), (HUGE_T + 0.3, "low_hit", 0.7), (MEM_T, "shimmer", 0.35), (HIPPO_T, "glass_ting", 0.35),
+          (FORTY_T, "counter", 0.5), (FORTY_T + 0.7, "low_hit", 0.5), (METER_T - 0.2, "swish", 0.5),
           (GHR_T, "riser", 0.35), (LEP_T, "descend", 0.4), (SNACK_T - 0.1, "fridge", 0.6), (SNACK_T + 0.2, "pop", 0.5),
           (OUT_T - 0.1, "swish", 0.5)]
     tt = 0.5
