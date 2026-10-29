@@ -31,7 +31,7 @@ LEP_T = TM.word("B3", "full") - 0.1
 SNACK_T = TM.word("B3", "hello") - 0.2
 OUT_T = DURATION - 0.22
 
-CAPS = Captions(TM, anchors={k: (W / 2, 1450) for k in ("B1", "B2", "B4", "B3")}, accent=AMBER,
+CAPS = Captions(TM, anchors={"B1": (W / 2, 1450), "B2": (W / 2, 1490), "B4": (W / 2, 1490), "B3": (W / 2, 1450)}, accent=AMBER,
                 emph={"memory", "hippocampus,", "forty", "less", "twenty", "four", "zero", "point", "one", "percent.", "legal", "limit", "amygdala", "sixty",
                       "huge.", "hunger", "rises", "full", "drops.", "junk"},
                 hide={"B1": [(CARD_T, CARD_T + 1.3)]})
@@ -243,7 +243,7 @@ def brain_scene(c, t, pal):
     label(c, "CALM + CONTROL", 90, 520, 26, "mono_bold", ASH, 230 * da, tracking=0.1)
     c.drawLine(200, 540, 270, 660, stroke(ASH, 3, 200 * da))
     if t > SIXTY_T:
-        PCT.draw(c, 540, 1345, t, SIXTY_T, 0.7, RED, 255, "center")
+        PCT.draw(c, 540, 1315, t, SIXTY_T, 0.7, RED, 255, "center")
 
 
 MEM_PCT = Counter("-40%", 190, "display")
@@ -317,7 +317,7 @@ def memory_scene(c, t, pal):
             c.drawLine(-q, q, q, -q, stroke(RED, 7, a))
         c.restore()
     if t > FORTY_T:
-        MEM_PCT.draw(c, 540, 1345, t, FORTY_T, 0.7, RED, 255, "center")
+        MEM_PCT.draw(c, 540, 1315, t, FORTY_T, 0.7, RED, 255, "center")
 
 
 def meters_scene(c, t, pal):
