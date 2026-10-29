@@ -7,7 +7,7 @@ entirely in code: vector animation, captions, music and sound effects. One chara
 |---|---|
 | `out/full_share.mp4` | **The Short**, ready to post (not in git; rebuild with `python3 render.py full`) |
 | `out/storyboard.png` | Storyboard: 15 key frames with timecodes |
-| `out/thumb_short.png` | Thumbnail (1080×1920) |
+| `out/thumb_short.png` | Thumbnail (1080×1920, split face; `thumbs.py` also makes `thumb_toothpicks.png` and `thumb_wide.png`) |
 | `out/captions_en.srt` | Captions to upload with the video |
 | `SHORTS_POST.md` | Title, description, sources, tags, pinned comment |
 | `SCRIPT.md` | Narration and fact sheet with sources |
