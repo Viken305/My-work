@@ -20,6 +20,7 @@ sources: `SCRIPT.md`; title, description, tags: `SHORTS_POST.md`.
 for p in 1 2 3 4 5 6 7; do python3 voiceover.py part$p; done
 python3 render.py part4 --still 6,12      # check frames
 python3 render.py full                    # -> out/full.mp4 + out/full_share.mp4 (not in git)
+python3 thumbnail.py                      # -> out/thumb_vertical.png + out/thumb_16x9.png
 ```
 
 # Style tests
