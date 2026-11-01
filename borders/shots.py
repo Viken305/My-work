@@ -15,17 +15,17 @@ SHOTS = [
     ("1B", "H2", "frame_1", "Three red rings: Pyrenees *wiggly*, Egypt–Sudan *ruler straight*, Wakhan *just strange*", "Each ring is hand-drawn on its word"),
     ("1C", "H3", "", "Title: *Why Are Borders Shaped Like This?*", "Map dims, title types on in serif"),
     ("2A", "N1", "frame_2", "US–Mexico: the Rio Grande traces in blue, the red border rides on it", "River draws El Paso → Gulf on \"Rio Grande\""),
-    ("2B", "N3", "", "France–Spain: the Pyrenees in relief shading, border along the ridge", "Border draws along the crest"),
-    ("2C", "N4", "", "Split screen: river + ridge, labels *easy to see / hard to cross*", "Two quick stamps"),
+    ("2B", "N3", "", "France–Spain: hachure peaks along the Pyrenees, border along the crest", "Peaks rise west → east, red border draws along the crest"),
+    ("2C", "N4", "", "Same map: rubber stamps *EASY TO SEE* / *HARD TO CROSS*", "Two stamps land on \"see\" and \"cross\""),
     ("3A", "S1", "", "A ruler and pencil draw a line across a blank paper map", "Pencil draws, ruler slides away"),
-    ("3B", "S2", "", "US–Canada: the 49th parallel, \"1818\" date stamp, prairie", "Line snaps straight west across the prairies"),
+    ("3B", "S2", "", "US–Canada: the 49th parallel, \"1818\" stamp, grass on the prairies, \"extended 1846\" to the Pacific", "Line runs straight west from Lake of the Woods"),
     ("3C", "S3", "frame_3", "Africa: every straight border lights up red, ruler on 22° N", "Red lines appear one by one"),
-    ("4A", "W1", "", "Card: *the strange shapes are deals*, handshake stamp", "Stamp"),
+    ("4A", "W1", "", "A treaty paper: two signatures and a red DEAL seal", "Paper slides up, signatures scribble, seal stamps on \"deals\""),
     ("4B", "W2", "frame_4", "Namibia + Caprivi Strip, the Zambezi, the dashed route crossed out at Victoria Falls", "Strip grows out of Namibia; route dashes east, red ✕ at the falls"),
     ("4C", "W3", "frame_5", "Wakhan Corridor between \"Russian Empire\" and \"British India\"", "Both empires' colours slide in, stop at the corridor"),
-    ("5A", "B1", "", "Baarle: patchwork of Belgian and Dutch pieces (schematic), zoom to one street", "Pieces pop in, push into the street"),
+    ("5A", "B1", "", "Baarle: patchwork of Belgian pieces inside the Netherlands (schematic); café, garden, home icons", "Pieces pop in, icons on their words, push in"),
     ("5B", "B2", "frame_6", "A house with the border through it; front door in Belgium", "Border paints across pavement and up the wall"),
-    ("5C", "B3", "", "Pull back to the world: rivers blue, straight lines red, deals circled", "Fast pull-back; hold; fade to paper (loops to 1A)"),
+    ("5C", "B3", "", "The world: rivers blue, straight lines red, deals and Baarle circled; *Every border is a story.*", "Layers land on their words; last 0.5 s blends into frame 0 (loop)"),
 ]
 
 
