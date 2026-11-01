@@ -10,7 +10,7 @@ import skia
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "build", "data")
-FILES = ["ne_10m_admin_0_countries", "ne_10m_admin_0_boundary_lines_land", "ne_10m_rivers_lake_centerlines", "ne_10m_lakes"]
+FILES = ["ne_10m_admin_0_countries", "ne_50m_admin_0_countries", "ne_10m_admin_0_boundary_lines_land", "ne_10m_rivers_lake_centerlines", "ne_10m_lakes"]
 URL = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/{}.geojson"
 _CACHE = {}
 

@@ -1,25 +1,24 @@
 # Why Borders Are Shaped the Way They Are: script, facts, sources
 
-Vertical Short, about 1:20, in the simple **Paper Atlas** style:
-- Cream paper, pale flat countries and thin ink coastlines.
-- One red line for the border each shot is about, and blue where a river draws it.
-- A serif headline and a plain bold caption with the key word in red.
-- Handwritten notes for the callouts.
+A full-screen **3D globe flythrough**, about 2:22.
+- One camera flies over a real globe (Natural Earth data) from story to story.
+- Borders burn on as glowing lines, countries rise as 3D slabs, and mountains stand up along ridges.
+- Chapter cards play during the flights.
 
-Shot list with running times: `SHOTS.md`.
+Shot list with running times: `SHOTS.md`. The earlier flat "Paper Atlas" version is kept in `film_atlas.py`, `render_atlas.py` and `shots_atlas.py`.
 
-| Section | Narration |
-|---|---|
-| Hook | Look at a map, and borders seem random. Some wiggle, some run ruler straight, and some are just strange. But every shape has a reason. |
-| Nature | The oldest borders follow nature. Rivers, like the Rio Grande, between the US and Mexico. Or mountain ridges, like the Pyrenees, between France and Spain. Easy to see, and hard to cross. |
-| Straight lines | Straight lines are different. They were drawn on paper, often far from the land. In 1818, the US and Britain picked a line of latitude, the 49th parallel, across the prairies. And in the late 1800s, European empires split up Africa, with long straight lines that cut right through hundreds of peoples. |
-| Deals | The strange shapes are deals. Namibia's long arm, the Caprivi Strip, was Germany's bid to reach the Zambezi River. But Victoria Falls blocks the way to the sea. And Afghanistan's thin Wakhan Corridor was left as a buffer, so the British and Russian empires would never touch. |
-| Baarle | Then there's Baarle, where medieval land deals left the Belgian-Dutch border running through cafes, gardens and homes. Your house belongs to whichever country your front door is in. So every border is a story. Rivers, rulers, deals and accidents, frozen into lines. |
+Narration: `script.py`, in chapters: The Hook · Nature · Straight Lines · Deals · Accidents · The Story.
 
 ## Fact check
 
 | Claim | Basis | Source |
 |---|---|---|
+| The Rio Grande moved south, and El Chamizal ended up on the US side | Floods in the 1860s (notably 1864) shifted the river south, leaving about 600 acres (2.4 km²) north of it | U.S. National Park Service, Chamizal National Memorial |
+| About a hundred years of arguing, until 1963 | The dispute ran from the 1860s to the Chamizal Convention of 1963, which handed the land back (transfer completed in 1967), with the river put into a new concrete channel | Chamizal Convention (1963) |
+| Chile is long and thin between the Andes and the Pacific | About 4,300 km long and on average about 180 km wide. Its border with Argentina follows the Andes (1881 Boundary Treaty: highest peaks and the water divide). | *Encyclopaedia Britannica*, "Chile"; Boundary Treaty of 1881 |
+| Point Roberts: US land you reach through Canada | The tip of the Tsawwassen peninsula lies south of the 49th parallel, so it is part of Washington State, but its only land route runs through British Columbia | *Encyclopaedia Britannica*, "Point Roberts"; Oregon Treaty (1846) |
+| Berlin Conference badge (1884) | The conference ran November 1884 – February 1885 | Herbst (2000) |
+| Bir Tawil: two lines, claimed by no one | The 1899 Anglo-Egyptian agreement put the border on the 22nd parallel; a 1902 administrative line moved it in two places. Egypt claims the 1899 line (Bir Tawil would be Sudan's) and Sudan the 1902 line (Bir Tawil would be Egypt's), so neither claims its about 2,060 km² | Anglo-Egyptian Condominium Agreement (1899); *Encyclopaedia Britannica*, "Bir Tawil" |
 | The Rio Grande is part of the US–Mexico border | The river forms about 2,019 km (1,254 mi) of the border, from El Paso to the Gulf of Mexico | International Boundary and Water Commission (IBWC) |
 | The Pyrenees divide France and Spain | The Treaty of the Pyrenees (1659) took the mountains as the boundary; the line was fixed along the range by the Treaties of Bayonne (1856–1868) | Sahlins, *Boundaries: The Making of France and Spain in the Pyrenees* (1989) |
 | 1818, US and Britain, 49th parallel | The Anglo-American Convention of 1818 set the border on the 49th parallel from Lake of the Woods to the Rocky Mountains; the Oregon Treaty (1846) carried it to the Pacific | Convention of 1818, Art. II |

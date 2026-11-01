@@ -656,6 +656,8 @@ def bed(kind, d, seed=0):
         y = drive(d, bpm_, lvl, seed)
     elif kind.startswith("lounge"):
         y = lounge(d, seed, dark=kind.endswith("dark"))
+    elif kind == "voyage":
+        y = voyage(d, seed)
     elif kind == "atlas":
         y = atlas(d, seed)
     elif kind == "silence":
@@ -671,6 +673,37 @@ def _pluck(f, d, bright=1.0):
     tb = T(d)
     y = sum(np.sin(2 * np.pi * f * k * tb) * np.exp(-tb * (2.2 + 2.5 * k)) * (bright / k ** 1.4) for k in (1, 2, 3, 4))
     return y * np.minimum(1, tb / 0.004) * np.minimum(1, (d - tb) / 0.05)
+
+
+def voyage(d, seed=0, bpm_=100):
+    """Cinematic travel bed: wide minor-key pads (Am - F - C - G), a soft pulsing low end on every beat, a plucked
+    ostinato in eighths, and a shimmer on top; builds a little every 16 bars."""
+    r = np.random.default_rng(seed)
+    beat = 60 / bpm_
+    bar = 4 * beat
+    chords = [(110.0, 164.8, 220.0, 261.6, 329.6), (87.3, 130.8, 174.6, 220.0, 261.6),
+              (130.8, 196.0, 261.6, 329.6, 392.0), (98.0, 146.8, 196.0, 246.9, 293.7)]
+    y = np.zeros((int(d * SR), 2))
+    nbars = int(d / bar) + 1
+    for b in range(nbars):
+        ch = chords[b % 4]
+        t0 = b * bar
+        lift = min(1.0, 0.55 + 0.45 * ((b % 16) / 15))
+        tt = T(bar + 1.4)
+        e = np.minimum(1, tt / 0.9) * np.minimum(1, np.maximum(0, bar + 1.4 - tt) / 1.2)
+        pad = sum(np.sin(2 * np.pi * f * (1 + s_ * 0.003) * tt + r.uniform(0, 6)) for f in ch for s_ in (-1, 1)) * e
+        place(y, t0, st(fft_filter(pad, 70, 2600) * 0.03 * lift, 0, 0.018))
+        for i in range(4):                                  # pulsing sub on every beat
+            tb = T(beat)
+            sub_ = np.sin(2 * np.pi * ch[0] / 2 * tb) * np.exp(-tb * 5) * np.minimum(1, tb / 0.01)
+            place(y, t0 + i * beat, st(sub_ * 0.20 * lift))
+        pat = [0, 2, 3, 2, 4, 2, 3, 1]
+        for i in range(8):
+            f = ch[pat[i]] * 2
+            place(y, t0 + i * beat / 2, st(_pluck(f, 1.0, 0.9) * (0.07 if i % 2 == 0 else 0.05) * lift, (i % 4 - 1.5) * 0.3))
+        sh = sum(np.sin(2 * np.pi * f * 4 * tt + r.uniform(0, 6)) for f in ch[2:4]) * e * (0.5 + 0.5 * np.sin(2 * np.pi * 0.25 * tt))
+        place(y, t0, st(sh * 0.006 * lift, 0.4, 0.02))
+    return y
 
 
 def atlas(d, seed=0, bpm_=96):

@@ -1,34 +1,34 @@
-# Posting kit: "Why Borders Are Shaped the Way They Are"
+# Posting kit: "Why Borders Are Shaped the Way They Are" (3D globe)
 
-Video: `out/full_share.mp4` (1:20, 9:16).
+Video: `out/full_share.mp4` (2:22, 9:16). YouTube Shorts allows up to 3 minutes; on Instagram this posts as a Reel.
 
 ## Title (YouTube Shorts)
-Why Are Borders Shaped Like This? 🗺️
+Why Are Borders Shaped Like This? 🌍
 
 Alternatives:
+- The Land That No Country Wants (and Other Weird Borders) 🌍
 - Why Some Borders Are Ruler Straight 📏
-- The Weirdest Border Shapes, Explained
-- This House Is in Two Countries 🇧🇪🇳🇱
+- This House Is in Two Countries 🏠🇧🇪🇳🇱
 
 ## Description
-Look at a map and borders seem random: some wiggle, some run ruler straight, some are just strange. Every shape has a reason. 🗺️
+Look at a map and borders seem random: some wiggle, some run ruler straight, some are just strange. Every shape is a story. 🌍
 
-🌊 NATURE: rivers and ridges, like the Rio Grande (US–Mexico) and the Pyrenees (France–Spain)
-📏 STRAIGHT LINES: drawn on paper, like the 49th parallel (1818) and the borders of colonial Africa
-🤝 DEALS: Namibia's Caprivi Strip (Germany's bid for the Zambezi) and Afghanistan's Wakhan Corridor (a buffer between two empires)
-🏠 ACCIDENTS: Baarle, where the Belgian–Dutch border runs through homes, and your front door decides your country
+🌊 NATURE: the Rio Grande (and the time it moved, El Chamizal), the Pyrenees, and why Chile is so long and thin
+📏 STRAIGHT LINES: the 49th parallel (1818), Point Roberts, Africa's colonial lines, and Bir Tawil, the desert neither Egypt nor Sudan claims
+🤝 DEALS: Namibia's Caprivi Strip and Afghanistan's Wakhan Corridor
+🏠 ACCIDENTS: Baarle, where your front door decides your country
 
-Which border shape should get its own video? 👇
+Which border should get its own video? 👇
 
-Sources: International Boundary and Water Commission · Convention of 1818 · Herbst, States and Power in Africa (2000) · Michalopoulos & Papaioannou 2016 (AER) · Heligoland–Zanzibar Treaty (1890) · Anglo-Russian Pamir Agreement (1895) · Municipality of Baarle-Hertog. Map data: Natural Earth.
+Sources: International Boundary and Water Commission · NPS Chamizal National Memorial · Chamizal Convention (1963) · Convention of 1818 · Oregon Treaty (1846) · Herbst, States and Power in Africa (2000) · Michalopoulos & Papaioannou 2016 (AER) · Anglo-Egyptian Agreement (1899) · Heligoland–Zanzibar Treaty (1890) · Anglo-Russian Pamir Agreement (1895) · Municipality of Baarle-Hertog. Map data: Natural Earth.
 
 #maps #geography #borders #history #shorts
 
 ## Tags
-why are borders shaped like this, border shapes, weird borders, geography, maps, map facts, history, 49th parallel, Rio Grande, Pyrenees, Africa borders, Scramble for Africa, Caprivi Strip, Wakhan Corridor, Baarle-Hertog, Baarle-Nassau, enclaves, straight borders, geography shorts, history shorts
+why are borders shaped like this, weird borders, border shapes, geography, maps, history, 3d globe, Rio Grande, El Chamizal, Pyrenees, Chile, Andes, 49th parallel, Point Roberts, Scramble for Africa, Bir Tawil, Caprivi Strip, Wakhan Corridor, Baarle-Hertog, enclaves, geography shorts
 
 ## Pinned comment
-In Baarle, some houses have the border running right through the living room. The country is the one your front door is in. 🚪 Which weird border should be next?
+Bir Tawil is one of the only places on Earth no country claims, because Egypt and Sudan each prefer a border that gives it to the other. 🏜️ Which weird border should be next?
 
 ## Instagram / TikTok caption
-Why are borders shaped like this? 🗺️ Rivers, rulers, deals and accidents. Wait for the house that's in two countries 🏠 #maps #geography #borders #history
+Why are borders shaped like this? 🌍 Rivers, rulers, deals and accidents, plus the desert nobody wants and the house in two countries 🏠 #maps #geography #borders #history
