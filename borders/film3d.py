@@ -643,7 +643,7 @@ def captions(c, t, y=1470, size=64, width=920):
                 c.save()
                 wd = f.measureText(s)
                 c.translate(x + wd / 2, yy - size * 0.35)
-                sc = lerp(1.0, 1.0 + (0.06 if key else 0.0), 1 - abs(1 - k)) if said else 1.0
+                sc = 1.0 + (0.06 if key else 0.0) * math.sin(math.pi * prog(t, ts, ts + 0.3)) if said else 1.0
                 c.scale(sc, sc)
                 c.translate(-(x + wd / 2), -(yy - size * 0.35))
                 sh = fillp((0, 0, 0), alpha * 0.8)
