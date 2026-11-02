@@ -6,7 +6,7 @@ from scipy import ndimage
 
 BG = 255.0
 
-def repair_and_trim(src_rgb, cut_path, out_path, margin=60, band=3, paint_diff=25, white_reach=6):
+def repair_and_trim(src_rgb, cut_path, out_path, margin=60, band=3, paint_diff=25, white_reach=6, clear_center=False, near_thresh=36):
     rgb = np.array(Image.open(src_rgb).convert("RGB")).astype(np.float32)
     a = np.array(Image.open(cut_path).convert("RGBA"))[..., 3].astype(np.float32)
     diff = np.abs(rgb - BG).sum(-1)
@@ -24,7 +24,7 @@ def repair_and_trim(src_rgb, cut_path, out_path, margin=60, band=3, paint_diff=2
 
     # 1b) flood from the transparent outside through near-white pixels: removes white gaps
     #     between needles/fur and the bright upscaler ring, but keeps enclosed white paint
-    near_white = diff < 36
+    near_white = diff < near_thresh
     outside0 = a < 8
     m = near_white | outside0
     if white_reach is None:   # unlimited: for gappy foliage on pale paint-free areas
@@ -32,6 +32,12 @@ def repair_and_trim(src_rgb, cut_path, out_path, margin=60, band=3, paint_diff=2
     else:                     # only a thin ring: protects white fur touching the edge
         reach = ndimage.binary_dilation(outside0, iterations=white_reach, mask=m)
     a[reach] = 0
+    if clear_center:  # wreaths/frames: large enclosed white areas become transparent
+        lab2, n2 = ndimage.label(near_white & (a > 8))
+        if n2:
+            sz = ndimage.sum(np.ones_like(a), lab2, range(1, n2 + 1))
+            big = np.zeros(n2 + 1, bool); big[1:] = sz > 0.01 * a.size
+            a[big[lab2]] = 0
     a = ndimage.grey_erosion(a, size=(3, 3))
     a = ndimage.uniform_filter(a, size=3)
 
