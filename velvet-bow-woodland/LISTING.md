@@ -1,7 +1,7 @@
 # Creative Market Listing — Velvet Bow Woodland
 
-## Title (max ~60 chars)
-Velvet Bow Woodland – Christmas Animal Clipart
+## Title (max 36 chars)
+Velvet Bow Woodland Christmas Pack
 
 ## Short description / tagline
 90 vintage storybook Christmas illustrations: woodland animals in velvet bows, botanicals, patterns, scenes and cards.
