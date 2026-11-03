@@ -1,7 +1,7 @@
 VELVET BOW WOODLAND — Vintage Christmas Illustration Collection
 ================================================================
 
-90 items in a cohesive storybook gouache style
+90 items in a cohesive vintage storybook style
 Palette: burgundy, cranberry, antique gold, cream, sage, cocoa
 
 CONTENTS
@@ -10,7 +10,7 @@ CONTENTS
   03_Festive_Treasures .. 20 transparent PNG props (gifts, ornaments, candles...)
   04_Winter_Botanicals .. 12 transparent PNG holly, pine, berries, florals
   05_Wreaths_Frames ..... 4 transparent PNG wreaths, frame and garland
-  06_Phrases ............ 6 transparent PNG hand-lettered phrases
+  06_Phrases ............ 6 transparent PNG script phrases
   07_Scenes ............. 4 full painted scenes, JPG
   08_Seamless_Patterns .. 10 seamless tiles (5 designs x burgundy/cream), 3600 x 3600 px
   09_Cards_Tags ......... 3 printable 5x7 in cards (JPG) + 3 gift tags (PNG)
