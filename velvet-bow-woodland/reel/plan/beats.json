@@ -1,0 +1,438 @@
+{
+ "fps": 30,
+ "beat_s": 0.3333333333333333,
+ "duration_s": 19.333333333333332,
+ "music": {
+  "file": "Jingle Bells \u2014 Kevin MacLeod (incompetech.com), CC BY 4.0",
+  "in_s": 117.69
+ },
+ "scenes": [
+  {
+   "name": "hook",
+   "t0": 0.0,
+   "t1": 2.6666666666666665
+  },
+  {
+   "name": "cast",
+   "t0": 2.6666666666666665,
+   "t1": 6.0
+  },
+  {
+   "name": "details",
+   "t0": 6.0,
+   "t1": 8.666666666666666
+  },
+  {
+   "name": "card",
+   "t0": 8.666666666666666,
+   "t1": 11.333333333333332
+  },
+  {
+   "name": "patterns",
+   "t0": 11.333333333333332,
+   "t1": 13.333333333333332
+  },
+  {
+   "name": "count",
+   "t0": 13.333333333333332,
+   "t1": 16.0
+  },
+  {
+   "name": "end",
+   "t0": 16.0,
+   "t1": 19.333333333333332
+  }
+ ],
+ "cues": [
+  {
+   "t": 2.5667,
+   "sfx": "swish",
+   "gain_db": -9,
+   "note": "push into cast"
+  },
+  {
+   "t": 5.9,
+   "sfx": "swish",
+   "gain_db": -9,
+   "note": "push into details"
+  },
+  {
+   "t": 8.5667,
+   "sfx": "swish",
+   "gain_db": -9,
+   "note": "push into card"
+  },
+  {
+   "t": 11.2333,
+   "sfx": "swish",
+   "gain_db": -9,
+   "note": "push into patterns"
+  },
+  {
+   "t": 13.2333,
+   "sfx": "swish",
+   "gain_db": -9,
+   "note": "push into count"
+  },
+  {
+   "t": 15.9,
+   "sfx": "swish",
+   "gain_db": -9,
+   "note": "push into end"
+  },
+  {
+   "t": 0.0,
+   "sfx": "swish_soft",
+   "gain_db": -10,
+   "note": "bow drops"
+  },
+  {
+   "t": 0.5,
+   "sfx": "pop_soft",
+   "gain_db": -16,
+   "note": "bow lands"
+  },
+  {
+   "t": 0.1667,
+   "sfx": "pop_soft",
+   "gain_db": -18,
+   "note": "line 1"
+  },
+  {
+   "t": 0.6667,
+   "sfx": "pop_soft",
+   "gain_db": -18,
+   "note": "line 2"
+  },
+  {
+   "t": 1.1667,
+   "sfx": "bell",
+   "gain_db": -9,
+   "note": "someone\u2026"
+  },
+  {
+   "t": 1.3333,
+   "sfx": "chime",
+   "gain_db": -13,
+   "note": "fawn rises"
+  },
+  {
+   "t": 3.0,
+   "sfx": "pop0",
+   "gain_db": -10,
+   "note": "cast c03_fox"
+  },
+  {
+   "t": 3.1667,
+   "sfx": "pop1",
+   "gain_db": -11,
+   "note": "cast c05_bunny"
+  },
+  {
+   "t": 3.3333,
+   "sfx": "pop2",
+   "gain_db": -12,
+   "note": "cast c07_bear"
+  },
+  {
+   "t": 3.5,
+   "sfx": "pop3",
+   "gain_db": -10,
+   "note": "cast c10_owl"
+  },
+  {
+   "t": 3.6667,
+   "sfx": "pop0",
+   "gain_db": -11,
+   "note": "cast c11_hedgehog"
+  },
+  {
+   "t": 3.8333,
+   "sfx": "pop1",
+   "gain_db": -12,
+   "note": "cast c12_squirrel"
+  },
+  {
+   "t": 4.0,
+   "sfx": "pop2",
+   "gain_db": -10,
+   "note": "cast c09_mouse"
+  },
+  {
+   "t": 4.1667,
+   "sfx": "pop3",
+   "gain_db": -11,
+   "note": "cast c13_polarbear"
+  },
+  {
+   "t": 4.3333,
+   "sfx": "pop0",
+   "gain_db": -12,
+   "note": "cast c14_lamb"
+  },
+  {
+   "t": 4.5,
+   "sfx": "pop1",
+   "gain_db": -10,
+   "note": "cast c15_raccoon"
+  },
+  {
+   "t": 4.6667,
+   "sfx": "pop2",
+   "gain_db": -11,
+   "note": "cast c16_badger"
+  },
+  {
+   "t": 4.8333,
+   "sfx": "pop3",
+   "gain_db": -12,
+   "note": "cast c02_fawn_stand"
+  },
+  {
+   "t": 5.0,
+   "sfx": "pop0",
+   "gain_db": -10,
+   "note": "cast c06_bunny_sit"
+  },
+  {
+   "t": 5.1667,
+   "sfx": "pop1",
+   "gain_db": -11,
+   "note": "cast c08_bear_stand"
+  },
+  {
+   "t": 5.3333,
+   "sfx": "pop2",
+   "gain_db": -12,
+   "note": "cast c04_fox_walk"
+  },
+  {
+   "t": 5.5,
+   "sfx": "pop3",
+   "gain_db": -10,
+   "note": "cast c01_fawn"
+  },
+  {
+   "t": 7.0,
+   "sfx": "chime",
+   "gain_db": -12,
+   "note": "magnifier"
+  },
+  {
+   "t": 7.6667,
+   "sfx": "pop_soft",
+   "gain_db": -14,
+   "note": "spec pill"
+  },
+  {
+   "t": 9.3333,
+   "sfx": "pop0",
+   "gain_db": -11,
+   "note": "wreath"
+  },
+  {
+   "t": 9.8333,
+   "sfx": "swish_soft",
+   "gain_db": -12,
+   "note": "holly"
+  },
+  {
+   "t": 10.1667,
+   "sfx": "swish_soft",
+   "gain_db": -12,
+   "note": "ornament"
+  },
+  {
+   "t": 10.5,
+   "sfx": "swish",
+   "gain_db": -12,
+   "note": "phrase"
+  },
+  {
+   "t": 10.8,
+   "sfx": "bell",
+   "gain_db": -12,
+   "note": "phrase lands"
+  },
+  {
+   "t": 11.3833,
+   "sfx": "whoosh",
+   "gain_db": -10,
+   "note": "strips"
+  },
+  {
+   "t": 11.6667,
+   "sfx": "pop1",
+   "gain_db": -10,
+   "note": "pattern pill"
+  },
+  {
+   "t": 12.1667,
+   "sfx": "pop_soft",
+   "gain_db": -15,
+   "note": "sub pill"
+  },
+  {
+   "t": 13.3333,
+   "sfx": "tick",
+   "gain_db": -20,
+   "note": "count tick"
+  },
+  {
+   "t": 13.3793,
+   "sfx": "tick",
+   "gain_db": -20,
+   "note": "count tick"
+  },
+  {
+   "t": 13.4289,
+   "sfx": "tick",
+   "gain_db": -20,
+   "note": "count tick"
+  },
+  {
+   "t": 13.4828,
+   "sfx": "tick",
+   "gain_db": -20,
+   "note": "count tick"
+  },
+  {
+   "t": 13.5421,
+   "sfx": "tick",
+   "gain_db": -20,
+   "note": "count tick"
+  },
+  {
+   "t": 13.6084,
+   "sfx": "tick",
+   "gain_db": -20,
+   "note": "count tick"
+  },
+  {
+   "t": 13.6843,
+   "sfx": "tick",
+   "gain_db": -20,
+   "note": "count tick"
+  },
+  {
+   "t": 13.7741,
+   "sfx": "tick",
+   "gain_db": -20,
+   "note": "count tick"
+  },
+  {
+   "t": 13.8869,
+   "sfx": "tick",
+   "gain_db": -20,
+   "note": "count tick"
+  },
+  {
+   "t": 14.0478,
+   "sfx": "tick",
+   "gain_db": -20,
+   "note": "count tick"
+  },
+  {
+   "t": 14.6667,
+   "sfx": "bell",
+   "gain_db": -9,
+   "note": "90 lands"
+  },
+  {
+   "t": 14.7333,
+   "sfx": "pop0",
+   "gain_db": -15,
+   "note": "chip"
+  },
+  {
+   "t": 14.8033,
+   "sfx": "pop1",
+   "gain_db": -15,
+   "note": "chip"
+  },
+  {
+   "t": 14.8733,
+   "sfx": "pop2",
+   "gain_db": -15,
+   "note": "chip"
+  },
+  {
+   "t": 15.0,
+   "sfx": "pop1",
+   "gain_db": -15,
+   "note": "chip"
+  },
+  {
+   "t": 15.07,
+   "sfx": "pop2",
+   "gain_db": -15,
+   "note": "chip"
+  },
+  {
+   "t": 15.14,
+   "sfx": "pop3",
+   "gain_db": -15,
+   "note": "chip"
+  },
+  {
+   "t": 15.2667,
+   "sfx": "pop2",
+   "gain_db": -15,
+   "note": "chip"
+  },
+  {
+   "t": 15.3367,
+   "sfx": "pop3",
+   "gain_db": -15,
+   "note": "chip"
+  },
+  {
+   "t": 15.4067,
+   "sfx": "pop0",
+   "gain_db": -15,
+   "note": "chip"
+  },
+  {
+   "t": 16.05,
+   "sfx": "swish_soft",
+   "gain_db": -11,
+   "note": "garland"
+  },
+  {
+   "t": 16.45,
+   "sfx": "pop_soft",
+   "gain_db": -15,
+   "note": "garland lands"
+  },
+  {
+   "t": 18.0667,
+   "sfx": "pop2",
+   "gain_db": -13,
+   "note": "char hop"
+  },
+  {
+   "t": 18.2333,
+   "sfx": "pop2",
+   "gain_db": -13,
+   "note": "char hop"
+  },
+  {
+   "t": 18.4,
+   "sfx": "pop2",
+   "gain_db": -13,
+   "note": "char hop"
+  },
+  {
+   "t": 18.5667,
+   "sfx": "pop2",
+   "gain_db": -13,
+   "note": "char hop"
+  },
+  {
+   "t": 18.3333,
+   "sfx": "bell",
+   "gain_db": -8,
+   "note": "CTA"
+  }
+ ]
+}
