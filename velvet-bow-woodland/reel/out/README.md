@@ -1,6 +1,6 @@
-# Velvet Bow Woodland — Reel v1
+# Velvet Bow Woodland — Reel v2 (frames 1–2 = cover thumbnail, also cover_thumbnail.jpg)
 
-`velvet_bow_woodland_reel_v1.mp4`: 1080×1920, 30 fps, 19.3 s, H.264 + AAC 256k, −14 LUFS integrated, peak −1.3 dBFS.
+`velvet_bow_woodland_reel_v2.mp4`: 1080×1920, 30 fps, 19.3 s, H.264 + AAC 256k, −14 LUFS integrated, peak −1.3 dBFS.
 
 ## Music — attribution REQUIRED (put this in the post caption)
 "Jingle Bells" Kevin MacLeod (incompetech.com)

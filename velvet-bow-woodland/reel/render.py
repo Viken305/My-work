@@ -160,6 +160,7 @@ def build():
     A.endchars = [(with_shadow(a(f"characters/{n}", w), 22), x) for n, x, w in [("c11_hedgehog", 170, 300), ("c05_bunny", 380, 360), ("c01_fawn", 620, 430), ("c03_fox", 880, 380)]]
     A.cta = pillsprite("Now on Creative Market", font("b", 50), CREAM + (255,), BURG, 56, 110)
     A.bio = tsprite("link in bio", font("i", 42), CREAM, (10, 0, 0, 140))
+    A.cover = make_cover(); A.cover.convert("RGB").save("reel/out/cover_thumbnail.jpg", quality=94)
 
 # ---------------------------------------------------------------- scenes (u = local time in seconds)
 B = BEAT
@@ -268,6 +269,17 @@ def s_end(u):
     fade = prog(u, T1["end"] - T0["end"] - .25, .25)
     if fade > 0: f.alpha_composite(Image.new("RGBA", (W, H), DEEP + (int(255 * fade),)))
     return f
+def make_cover():
+    """Thumbnail: key content kept inside the centre 1080x1350 (4:5 grid crop, y 285-1635)."""
+    f = drift(A.vel, 0, 1.03, 1.03, 1); f.alpha_composite(A.vig6); sparkles(f, 2.0, 40, 31, (40, 300, W - 40, 1600))
+    g = with_shadow(a("frames/w04_garland_swag", 1240), 20); put(f, g, W / 2, g.info["rh"] / 2 + 60)
+    put(f, tsprite("90 Christmas", font("bi", 150), CREAM, (10, 0, 0, 190)), W / 2, 790)
+    put(f, tsprite("Woodland Clipart", font("bi", 118), GOLD2, (10, 0, 0, 190)), W / 2, 940)
+    rule(f, W / 2, 1045, 520)
+    put(f, tsprite("animals in velvet bows", font("i", 54), CREAM, (10, 0, 0, 150)), W / 2, 1110)
+    for n, x, w in [("c11_hedgehog", 150, 290), ("c05_bunny", 360, 360), ("c01_fawn", 610, 450), ("c03_fox", 900, 390)]:
+        spr = with_shadow(a(f"characters/{n}", w), 22); put(f, spr, x, 1590 - spr.info["rh"] / 2)
+    return f
 FN = {"hook": s_hook, "cast": s_cast, "details": s_details, "card": s_card, "patterns": s_patterns, "count": s_count, "end": s_end}
 
 # ---------------------------------------------------------------- timeline & cues
@@ -298,6 +310,7 @@ def build_cues():
 def out_cubic_inv(y): return 1 - (1 - y) ** (1 / 3)
 
 def frame(t):
+    if t < 2 / FPS - 1e-6: return A.cover          # first 2 frames = thumbnail
     names = [n for n, s, e in SCENES]
     i = max(k for k, (n, s, e) in enumerate(SCENES) if s * B <= t + 1e-9)
     n = names[i]; u = t - T0[n]
@@ -365,7 +378,7 @@ def main():
         p.stdin.write(im.tobytes())
         if k % 60 == 0: print(f"frame {k}/{nf}", flush=True)
     p.stdin.close(); p.wait()
-    final = "reel/out/velvet_bow_woodland_reel_v1" + ("_half" if half else "") + ".mp4"
+    final = "reel/out/velvet_bow_woodland_reel_v2" + ("_half" if half else "") + ".mp4"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", out, "-i", wav, "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "48000", "-c:a", "aac", "-b:a", "256k", "-shortest", "-movflags", "+faststart", final], check=True)
     print(final)
 
